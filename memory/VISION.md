@@ -26,9 +26,9 @@ only user input is the two ZIP codes. There is **no in-match interaction**.
   feel different to a sparse new one.
 - **Simulation, not a game you play.** Output is a deterministic-ish battle replay
   driven by the data, not a skill-based game.
-- **Tower defense framing.** Trees act as towers. (Open design question: what are
-  the enemies/creeps, and how do two ZIP codes oppose each other — e.g. each side's
-  trees defend while the other side's "threat" attacks, or both armies clash.)
+- **Marching armies.** Trees are the OFFENSIVE units: each ZIP code fields an army of
+  its trees that **advances and clashes** with the opponent's. Not stationary tower
+  defense — trees move, so movement speed matters. (Locked 2026-06-27.)
 
 ## Characters = tree genera
 
