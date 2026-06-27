@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"https://api.data.amsterdam.nl/v1/bomen/stamgegevens/?_pageSize=1&_format=json&conditiescore[not]=null&_count=true\" -D - -o /dev/null)",
+      "Bash(curl -s \"https://api.data.amsterdam.nl/v1/bomen/stamgegevens/?_pageSize=3&_format=csv\")",
+      "Bash(curl -s \"https://api.data.amsterdam.nl/v1/bomen/veiligheidsinspecties/?_pageSize=5&_format=csv\")",
+      "Bash(curl -s \"https://api.data.amsterdam.nl/v1/bomen/veiligheidsinspecties/?_pageSize=500&_format=csv&_fields=boomId,boomconditie,inspectieDatum\")",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s \"https://api.data.amsterdam.nl/v1/bomen/stamgegevens/?_pageSize=2000&_format=csv\")",
+      "Bash(curl -s \"https://api.data.amsterdam.nl/v1/bomen/stamgegevens/?_pageSize=10000&_format=csv\")",
+      "Bash(python3 -c \"import pyproj; print\\('pyproj', pyproj.__version__\\)\")",
+      "Bash(python3 -c \"import requests; print\\('requests ok'\\)\")",
+      "Bash(python3 -m pip install --quiet pyproj)",
+      "Bash(python3 -c \"import pyproj;from pyproj import Transformer; t=Transformer.from_crs\\('EPSG:28992','EPSG:4326',always_xy=True\\); print\\(t.transform\\(122115.11,483653.0\\)\\)\")",
+      "Bash(time python3 extract_trees.py)"
+    ]
+  }
+}
