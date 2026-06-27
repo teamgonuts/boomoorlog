@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boomoorlog Wiki — The Tree Roster</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">🌳 Boomoorlog <span>Wiki</span></a>
+  <span class="tagline">The trees of Amsterdam, ready for war</span>
+</header>
+<main>
+<section class="hero">
+<h1>The Tree Roster</h1>
+<p>Two Amsterdam ZIP codes send their real trees to war. Every genus below is a playable archetype — its stats derived from the height, age, wood and rarity of the actual trees growing in the city. Sorted by how many grow in Amsterdam. Pick a fighter.</p>
+</section>
+<div class="toolbar">
+<div class="tb-group"><label>Sort</label><select id="sortby"><option value="count">Trees in Amsterdam</option><option value="rarity">Rarity</option><option value="atk">Attack</option><option value="rng">Range</option><option value="hp">Health</option><option value="as">Attack speed</option><option value="mv">Movement</option><option value="power">Power</option><option value="name">Name (A–Z)</option></select><button id="dir" class="dir" title="Toggle ascending / descending">▼ Desc</button></div>
+<div class="tb-group"><label>Rarity</label><button class="chip rarity-common" data-rf="common">Common</button><button class="chip rarity-notable" data-rf="notable">Uncommon</button><button class="chip rarity-rare" data-rf="rare">Legendary</button></div>
+<div class="tb-group"><label>Archetype</label><button class="chip" data-af="bruiser">Bruiser</button><button class="chip" data-af="juggernaut">Juggernaut</button><button class="chip" data-af="skirmisher">Skirmisher</button><button class="chip" data-af="support">Support</button></div>
+<div class="tb-count"><span id="shown">0</span> trees shown</div>
+</div>
+<div class="grid">
+<a class="card rarity-common" href="trees/Ulmus.html" data-name="Ulmus" data-rarity="common" data-rrank="1" data-arch="bruiser" data-count="37505" data-atk="5.0" data-rng="6.0" data-hp="4.0" data-as="6.0" data-mv="6.0" data-power="5.5">
+<div class="card-art"><img class="pixel" src="assets/sprites/Ulmus.png" alt=""></div>
+<div class="card-name">Ulmus</div>
+<div class="card-common">Elm</div>
+<div class="card-foot"><span class="cnt">🌳 37,505</span></div>
+<div class="card-stats">
+<div class="cs-name">Ulmus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-power"><span>POWER</span><b>5.5</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Tilia.html" data-name="Tilia" data-rarity="common" data-rrank="1" data-arch="juggernaut" data-count="27034" data-atk="5.0" data-rng="5.0" data-hp="5.0" data-as="6.0" data-mv="5.0" data-power="5.2">
+<div class="card-art"><img class="pixel" src="assets/sprites/Tilia.png" alt=""></div>
+<div class="card-name">Tilia</div>
+<div class="card-common">Linden</div>
+<div class="card-foot"><span class="cnt">🌳 27,034</span></div>
+<div class="card-stats">
+<div class="cs-name">Tilia</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-power"><span>POWER</span><b>5.2</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Acer.html" data-name="Acer" data-rarity="common" data-rrank="1" data-arch="juggernaut" data-count="26746" data-atk="7.0" data-rng="5.0" data-hp="4.0" data-as="4.0" data-mv="5.0" data-power="5.0">
+<div class="card-art"><img class="pixel" src="assets/sprites/Acer.png" alt=""></div>
+<div class="card-name">Acer</div>
+<div class="card-common">Maple</div>
+<div class="card-foot"><span class="cnt">🌳 26,746</span></div>
+<div class="card-stats">
+<div class="cs-name">Acer</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-power"><span>POWER</span><b>5.0</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Fraxinus.html" data-name="Fraxinus" data-rarity="common" data-rrank="1" data-arch="juggernaut" data-count="19757" data-atk="7.0" data-rng="6.0" data-hp="4.0" data-as="4.0" data-mv="6.0" data-power="5.4">
+<div class="card-art"><img class="pixel" src="assets/sprites/Fraxinus.png" alt=""></div>
+<div class="card-name">Fraxinus</div>
+<div class="card-common">Ash</div>
+<div class="card-foot"><span class="cnt">🌳 19,757</span></div>
+<div class="card-stats">
+<div class="cs-name">Fraxinus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-power"><span>POWER</span><b>5.4</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Quercus.html" data-name="Quercus" data-rarity="common" data-rrank="1" data-arch="juggernaut" data-count="18085" data-atk="7.0" data-rng="6.0" data-hp="5.0" data-as="4.0" data-mv="7.0" data-power="5.9">
+<div class="card-art"><img class="pixel" src="assets/sprites/Quercus.png" alt=""></div>
+<div class="card-name">Quercus</div>
+<div class="card-common">Oak</div>
+<div class="card-foot"><span class="cnt">🌳 18,085</span></div>
+<div class="card-stats">
+<div class="cs-name">Quercus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-power"><span>POWER</span><b>5.9</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Platanus.html" data-name="Platanus" data-rarity="common" data-rrank="1" data-arch="bruiser" data-count="15962" data-atk="5.0" data-rng="7.0" data-hp="7.0" data-as="6.0" data-mv="6.0" data-power="6.0">
+<div class="card-art"><img class="pixel" src="assets/sprites/Platanus.png" alt=""></div>
+<div class="card-name">Platanus</div>
+<div class="card-common">Plane</div>
+<div class="card-foot"><span class="cnt">🌳 15,962</span></div>
+<div class="card-stats">
+<div class="cs-name">Platanus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-power"><span>POWER</span><b>6.0</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Salix.html" data-name="Salix" data-rarity="common" data-rrank="1" data-arch="skirmisher" data-count="13546" data-atk="4.0" data-rng="3.0" data-hp="2.0" data-as="7.0" data-mv="4.0" data-power="4.1">
+<div class="card-art"><img class="pixel" src="assets/sprites/Salix.png" alt=""></div>
+<div class="card-name">Salix</div>
+<div class="card-common">Willow</div>
+<div class="card-foot"><span class="cnt">🌳 13,546</span></div>
+<div class="card-stats">
+<div class="cs-name">Salix</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-power"><span>POWER</span><b>4.1</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Alnus.html" data-name="Alnus" data-rarity="common" data-rrank="1" data-arch="bruiser" data-count="13044" data-atk="5.0" data-rng="6.0" data-hp="3.0" data-as="6.0" data-mv="6.0" data-power="5.2">
+<div class="card-art"><img class="pixel" src="assets/sprites/Alnus.png" alt=""></div>
+<div class="card-name">Alnus</div>
+<div class="card-common">Alder</div>
+<div class="card-foot"><span class="cnt">🌳 13,044</span></div>
+<div class="card-stats">
+<div class="cs-name">Alnus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-power"><span>POWER</span><b>5.2</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Populus.html" data-name="Populus" data-rarity="common" data-rrank="1" data-arch="bruiser" data-count="12981" data-atk="3.0" data-rng="10.0" data-hp="7.0" data-as="8.0" data-mv="9.0" data-power="7.5">
+<div class="card-art"><img class="pixel" src="assets/sprites/Populus.png" alt=""></div>
+<div class="card-name">Populus</div>
+<div class="card-common">Poplar</div>
+<div class="card-foot"><span class="cnt">🌳 12,981</span></div>
+<div class="card-stats">
+<div class="cs-name">Populus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:100%"></span></span><b>10</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:80%"></span></span><b>8</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:90%"></span></span><b>9</b></div>
+<div class="cs-power"><span>POWER</span><b>7.5</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Prunus.html" data-name="Prunus" data-rarity="common" data-rrank="1" data-arch="support" data-count="11853" data-atk="5.0" data-rng="2.0" data-hp="3.0" data-as="6.0" data-mv="4.0" data-power="3.9">
+<div class="card-art"><img class="pixel" src="assets/sprites/Prunus.png" alt=""></div>
+<div class="card-name">Prunus</div>
+<div class="card-common">Cherry</div>
+<div class="card-foot"><span class="cnt">🌳 11,853</span></div>
+<div class="card-stats">
+<div class="cs-name">Prunus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-power"><span>POWER</span><b>3.9</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Betula.html" data-name="Betula" data-rarity="common" data-rrank="1" data-arch="skirmisher" data-count="11715" data-atk="4.0" data-rng="5.0" data-hp="2.0" data-as="7.0" data-mv="6.0" data-power="4.9">
+<div class="card-art"><img class="pixel" src="assets/sprites/Betula.png" alt=""></div>
+<div class="card-name">Betula</div>
+<div class="card-common">Birch</div>
+<div class="card-foot"><span class="cnt">🌳 11,715</span></div>
+<div class="card-stats">
+<div class="cs-name">Betula</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-power"><span>POWER</span><b>4.9</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Carpinus.html" data-name="Carpinus" data-rarity="common" data-rrank="1" data-arch="juggernaut" data-count="6879" data-atk="9.0" data-rng="4.0" data-hp="4.0" data-as="2.0" data-mv="5.0" data-power="4.7">
+<div class="card-art"><img class="pixel" src="assets/sprites/Carpinus.png" alt=""></div>
+<div class="card-name">Carpinus</div>
+<div class="card-common">Hornbeam</div>
+<div class="card-foot"><span class="cnt">🌳 6,879</span></div>
+<div class="card-stats">
+<div class="cs-name">Carpinus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:90%"></span></span><b>9</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-power"><span>POWER</span><b>4.7</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Crataegus.html" data-name="Crataegus" data-rarity="common" data-rrank="1" data-arch="juggernaut" data-count="5809" data-atk="10.0" data-rng="2.0" data-hp="3.0" data-as="1.0" data-mv="2.0" data-power="3.4">
+<div class="card-art"><img class="pixel" src="assets/sprites/Crataegus.png" alt=""></div>
+<div class="card-name">Crataegus</div>
+<div class="card-common">Hawthorn</div>
+<div class="card-foot"><span class="cnt">🌳 5,809</span></div>
+<div class="card-stats">
+<div class="cs-name">Crataegus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:100%"></span></span><b>10</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:10%"></span></span><b>1</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-power"><span>POWER</span><b>3.4</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Robinia.html" data-name="Robinia" data-rarity="common" data-rrank="1" data-arch="juggernaut" data-count="5782" data-atk="8.0" data-rng="5.0" data-hp="3.0" data-as="3.0" data-mv="7.0" data-power="5.1">
+<div class="card-art"><img class="pixel" src="assets/sprites/Robinia.png" alt=""></div>
+<div class="card-name">Robinia</div>
+<div class="card-common">Black locust</div>
+<div class="card-foot"><span class="cnt">🌳 5,782</span></div>
+<div class="card-stats">
+<div class="cs-name">Robinia</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:80%"></span></span><b>8</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-power"><span>POWER</span><b>5.1</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Malus.html" data-name="Malus" data-rarity="common" data-rrank="1" data-arch="support" data-count="4344" data-atk="8.0" data-rng="1.0" data-hp="2.0" data-as="3.0" data-mv="2.0" data-power="3.3">
+<div class="card-art"><img class="pixel" src="assets/sprites/Malus.png" alt=""></div>
+<div class="card-name">Malus</div>
+<div class="card-common">Apple</div>
+<div class="card-foot"><span class="cnt">🌳 4,344</span></div>
+<div class="card-stats">
+<div class="cs-name">Malus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:80%"></span></span><b>8</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:10%"></span></span><b>1</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-power"><span>POWER</span><b>3.3</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Sorbus.html" data-name="Sorbus" data-rarity="common" data-rrank="1" data-arch="support" data-count="3968" data-atk="8.0" data-rng="2.0" data-hp="2.0" data-as="3.0" data-mv="3.0" data-power="3.7">
+<div class="card-art"><img class="pixel" src="assets/sprites/Sorbus.png" alt=""></div>
+<div class="card-name">Sorbus</div>
+<div class="card-common">Rowan</div>
+<div class="card-foot"><span class="cnt">🌳 3,968</span></div>
+<div class="card-stats">
+<div class="cs-name">Sorbus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:80%"></span></span><b>8</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-power"><span>POWER</span><b>3.7</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Gleditsia.html" data-name="Gleditsia" data-rarity="common" data-rrank="1" data-arch="juggernaut" data-count="3936" data-atk="8.0" data-rng="4.0" data-hp="2.0" data-as="3.0" data-mv="7.0" data-power="4.8">
+<div class="card-art"><img class="pixel" src="assets/sprites/Gleditsia.png" alt=""></div>
+<div class="card-name">Gleditsia</div>
+<div class="card-common">Honey locust</div>
+<div class="card-foot"><span class="cnt">🌳 3,936</span></div>
+<div class="card-stats">
+<div class="cs-name">Gleditsia</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:80%"></span></span><b>8</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-power"><span>POWER</span><b>4.8</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Aesculus.html" data-name="Aesculus" data-rarity="common" data-rrank="1" data-arch="bruiser" data-count="3805" data-atk="4.0" data-rng="5.0" data-hp="4.0" data-as="7.0" data-mv="4.0" data-power="4.8">
+<div class="card-art"><img class="pixel" src="assets/sprites/Aesculus.png" alt=""></div>
+<div class="card-name">Aesculus</div>
+<div class="card-common">Horse chestnut</div>
+<div class="card-foot"><span class="cnt">🌳 3,805</span></div>
+<div class="card-stats">
+<div class="cs-name">Aesculus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-power"><span>POWER</span><b>4.8</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Pyrus.html" data-name="Pyrus" data-rarity="common" data-rrank="1" data-arch="support" data-count="3065" data-atk="7.0" data-rng="2.0" data-hp="2.0" data-as="4.0" data-mv="4.0" data-power="3.9">
+<div class="card-art"><img class="pixel" src="assets/sprites/Pyrus.png" alt=""></div>
+<div class="card-name">Pyrus</div>
+<div class="card-common">Pear</div>
+<div class="card-foot"><span class="cnt">🌳 3,065</span></div>
+<div class="card-stats">
+<div class="cs-name">Pyrus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-power"><span>POWER</span><b>3.9</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Fagus.html" data-name="Fagus" data-rarity="common" data-rrank="1" data-arch="juggernaut" data-count="2937" data-atk="7.0" data-rng="7.0" data-hp="5.0" data-as="4.0" data-mv="7.0" data-power="5.8">
+<div class="card-art"><img class="pixel" src="assets/sprites/Fagus.png" alt=""></div>
+<div class="card-name">Fagus</div>
+<div class="card-common">Beech</div>
+<div class="card-foot"><span class="cnt">🌳 2,937</span></div>
+<div class="card-stats">
+<div class="cs-name">Fagus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-power"><span>POWER</span><b>5.8</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Liquidambar.html" data-name="Liquidambar" data-rarity="common" data-rrank="1" data-arch="bruiser" data-count="2724" data-atk="6.0" data-rng="4.0" data-hp="3.0" data-as="5.0" data-mv="8.0" data-power="5.3">
+<div class="card-art"><img class="pixel" src="assets/sprites/Liquidambar.png" alt=""></div>
+<div class="card-name">Liquidambar</div>
+<div class="card-common">Sweetgum</div>
+<div class="card-foot"><span class="cnt">🌳 2,724</span></div>
+<div class="card-stats">
+<div class="cs-name">Liquidambar</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:80%"></span></span><b>8</b></div>
+<div class="cs-power"><span>POWER</span><b>5.3</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Pinus.html" data-name="Pinus" data-rarity="common" data-rrank="1" data-arch="bruiser" data-count="1831" data-atk="4.0" data-rng="4.0" data-hp="4.0" data-as="7.0" data-mv="6.0" data-power="5.1">
+<div class="card-art"><img class="pixel" src="assets/sprites/Pinus.png" alt=""></div>
+<div class="card-name">Pinus</div>
+<div class="card-common">Pine</div>
+<div class="card-foot"><span class="cnt">🌳 1,831</span></div>
+<div class="card-stats">
+<div class="cs-name">Pinus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-power"><span>POWER</span><b>5.1</b></div>
+</div>
+</a>
+<a class="card rarity-notable" href="trees/Pterocarya.html" data-name="Pterocarya" data-rarity="notable" data-rrank="2" data-arch="bruiser" data-count="1815" data-atk="4.0" data-rng="6.0" data-hp="6.0" data-as="7.0" data-mv="5.0" data-power="6.1">
+<div class="card-art"><img class="pixel" src="assets/sprites/Pterocarya.png" alt=""></div>
+<div class="card-name">Pterocarya</div>
+<div class="card-common">Wingnut</div>
+<div class="card-foot"><span class="cnt">🌳 1,815</span></div>
+<div class="card-stats">
+<div class="cs-name">Pterocarya</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-power"><span>POWER</span><b>6.1</b></div>
+</div>
+</a>
+<a class="card rarity-rare" href="trees/Metasequoia.html" data-name="Metasequoia" data-rarity="rare" data-rrank="3" data-arch="bruiser" data-count="1759" data-atk="1.0" data-rng="7.0" data-hp="6.0" data-as="10.0" data-mv="9.0" data-power="8.1">
+<div class="card-art"><img class="pixel" src="assets/sprites/Metasequoia.png" alt=""></div>
+<div class="card-name">Metasequoia</div>
+<div class="card-common">Dawn Redwood</div>
+<div class="card-foot"><span class="cnt">🌳 1,759</span></div>
+<div class="card-stats">
+<div class="cs-name">Metasequoia</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:10%"></span></span><b>1</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:100%"></span></span><b>10</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:90%"></span></span><b>9</b></div>
+<div class="cs-power"><span>POWER</span><b>8.1</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Ilex.html" data-name="Ilex" data-rarity="common" data-rrank="1" data-arch="support" data-count="1612" data-atk="6.0" data-rng="2.0" data-hp="3.0" data-as="5.0" data-mv="1.0" data-power="3.3">
+<div class="card-art"><img class="pixel" src="assets/sprites/Ilex.png" alt=""></div>
+<div class="card-name">Ilex</div>
+<div class="card-common">Holly</div>
+<div class="card-foot"><span class="cnt">🌳 1,612</span></div>
+<div class="card-stats">
+<div class="cs-name">Ilex</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:10%"></span></span><b>1</b></div>
+<div class="cs-power"><span>POWER</span><b>3.3</b></div>
+</div>
+</a>
+<a class="card rarity-notable" href="trees/Ginkgo.html" data-name="Ginkgo" data-rarity="notable" data-rrank="2" data-arch="bruiser" data-count="1463" data-atk="4.0" data-rng="4.0" data-hp="5.0" data-as="7.0" data-mv="6.0" data-power="5.6">
+<div class="card-art"><img class="pixel" src="assets/sprites/Ginkgo.png" alt=""></div>
+<div class="card-name">Ginkgo</div>
+<div class="card-common">Ginkgo</div>
+<div class="card-foot"><span class="cnt">🌳 1,463</span></div>
+<div class="card-stats">
+<div class="cs-name">Ginkgo</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-power"><span>POWER</span><b>5.6</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Magnolia.html" data-name="Magnolia" data-rarity="common" data-rrank="1" data-arch="support" data-count="1440" data-atk="6.0" data-rng="2.0" data-hp="2.0" data-as="5.0" data-mv="5.0" data-power="3.9">
+<div class="card-art"><img class="pixel" src="assets/sprites/Magnolia.png" alt=""></div>
+<div class="card-name">Magnolia</div>
+<div class="card-common">Magnolia</div>
+<div class="card-foot"><span class="cnt">🌳 1,440</span></div>
+<div class="card-stats">
+<div class="cs-name">Magnolia</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-power"><span>POWER</span><b>3.9</b></div>
+</div>
+</a>
+<a class="card rarity-notable" href="trees/Taxus.html" data-name="Taxus" data-rarity="notable" data-rrank="2" data-arch="juggernaut" data-count="1399" data-atk="7.0" data-rng="2.0" data-hp="5.0" data-as="4.0" data-mv="1.0" data-power="4.1">
+<div class="card-art"><img class="pixel" src="assets/sprites/Taxus.png" alt=""></div>
+<div class="card-name">Taxus</div>
+<div class="card-common">Yew</div>
+<div class="card-foot"><span class="cnt">🌳 1,399</span></div>
+<div class="card-stats">
+<div class="cs-name">Taxus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:10%"></span></span><b>1</b></div>
+<div class="cs-power"><span>POWER</span><b>4.1</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Styphnolobium.html" data-name="Styphnolobium" data-rarity="common" data-rrank="1" data-arch="juggernaut" data-count="1282" data-atk="6.0" data-rng="3.0" data-hp="3.0" data-as="5.0" data-mv="6.0" data-power="4.6">
+<div class="card-art"><img class="pixel" src="assets/sprites/Styphnolobium.png" alt=""></div>
+<div class="card-name">Styphnolobium</div>
+<div class="card-common">Pagoda tree</div>
+<div class="card-foot"><span class="cnt">🌳 1,282</span></div>
+<div class="card-stats">
+<div class="cs-name">Styphnolobium</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-power"><span>POWER</span><b>4.6</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Corylus.html" data-name="Corylus" data-rarity="common" data-rrank="1" data-arch="support" data-count="1247" data-atk="4.0" data-rng="3.0" data-hp="2.0" data-as="7.0" data-mv="3.0" data-power="3.9">
+<div class="card-art"><img class="pixel" src="assets/sprites/Corylus.png" alt=""></div>
+<div class="card-name">Corylus</div>
+<div class="card-common">Hazel</div>
+<div class="card-foot"><span class="cnt">🌳 1,247</span></div>
+<div class="card-stats">
+<div class="cs-name">Corylus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-power"><span>POWER</span><b>3.9</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Ailanthus.html" data-name="Ailanthus" data-rarity="common" data-rrank="1" data-arch="support" data-count="885" data-atk="6.0" data-rng="4.0" data-hp="2.0" data-as="5.0" data-mv="5.0" data-power="4.3">
+<div class="card-art"><img class="pixel" src="assets/sprites/Ailanthus.png" alt=""></div>
+<div class="card-name">Ailanthus</div>
+<div class="card-common">Tree of Heaven</div>
+<div class="card-foot"><span class="cnt">🌳 885</span></div>
+<div class="card-stats">
+<div class="cs-name">Ailanthus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-power"><span>POWER</span><b>4.3</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Juglans.html" data-name="Juglans" data-rarity="common" data-rrank="1" data-arch="skirmisher" data-count="866" data-atk="6.0" data-rng="3.0" data-hp="3.0" data-as="5.0" data-mv="7.0" data-power="4.8">
+<div class="card-art"><img class="pixel" src="assets/sprites/Juglans.png" alt=""></div>
+<div class="card-name">Juglans</div>
+<div class="card-common">Walnut</div>
+<div class="card-foot"><span class="cnt">🌳 866</span></div>
+<div class="card-stats">
+<div class="cs-name">Juglans</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-power"><span>POWER</span><b>4.8</b></div>
+</div>
+</a>
+<a class="card rarity-notable" href="trees/Liriodendron.html" data-name="Liriodendron" data-rarity="notable" data-rrank="2" data-arch="skirmisher" data-count="781" data-atk="4.0" data-rng="4.0" data-hp="3.0" data-as="7.0" data-mv="7.0" data-power="5.7">
+<div class="card-art"><img class="pixel" src="assets/sprites/Liriodendron.png" alt=""></div>
+<div class="card-name">Liriodendron</div>
+<div class="card-common">Tulip tree</div>
+<div class="card-foot"><span class="cnt">🌳 781</span></div>
+<div class="card-stats">
+<div class="cs-name">Liriodendron</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-power"><span>POWER</span><b>5.7</b></div>
+</div>
+</a>
+<a class="card rarity-notable" href="trees/Taxodium.html" data-name="Taxodium" data-rarity="notable" data-rrank="2" data-arch="bruiser" data-count="772" data-atk="4.0" data-rng="5.0" data-hp="6.0" data-as="7.0" data-mv="6.0" data-power="6.4">
+<div class="card-art"><img class="pixel" src="assets/sprites/Taxodium.png" alt=""></div>
+<div class="card-name">Taxodium</div>
+<div class="card-common">Bald Cypress</div>
+<div class="card-foot"><span class="cnt">🌳 772</span></div>
+<div class="card-stats">
+<div class="cs-name">Taxodium</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-power"><span>POWER</span><b>6.4</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Catalpa.html" data-name="Catalpa" data-rarity="common" data-rrank="1" data-arch="skirmisher" data-count="700" data-atk="4.0" data-rng="3.0" data-hp="2.0" data-as="7.0" data-mv="4.0" data-power="3.8">
+<div class="card-art"><img class="pixel" src="assets/sprites/Catalpa.png" alt=""></div>
+<div class="card-name">Catalpa</div>
+<div class="card-common">Catalpa</div>
+<div class="card-foot"><span class="cnt">🌳 700</span></div>
+<div class="card-stats">
+<div class="cs-name">Catalpa</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-power"><span>POWER</span><b>3.8</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Cornus.html" data-name="Cornus" data-rarity="common" data-rrank="1" data-arch="support" data-count="675" data-atk="9.0" data-rng="1.0" data-hp="1.0" data-as="2.0" data-mv="2.0" data-power="3.1">
+<div class="card-art"><img class="pixel" src="assets/sprites/Cornus.png" alt=""></div>
+<div class="card-name">Cornus</div>
+<div class="card-common">Dogwood</div>
+<div class="card-foot"><span class="cnt">🌳 675</span></div>
+<div class="card-stats">
+<div class="cs-name">Cornus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:90%"></span></span><b>9</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:10%"></span></span><b>1</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:10%"></span></span><b>1</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-power"><span>POWER</span><b>3.1</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Koelreuteria.html" data-name="Koelreuteria" data-rarity="common" data-rrank="1" data-arch="support" data-count="532" data-atk="6.0" data-rng="2.0" data-hp="1.0" data-as="5.0" data-mv="5.0" data-power="3.8">
+<div class="card-art"><img class="pixel" src="assets/sprites/Koelreuteria.png" alt=""></div>
+<div class="card-name">Koelreuteria</div>
+<div class="card-common">Golden Rain Tree</div>
+<div class="card-foot"><span class="cnt">🌳 532</span></div>
+<div class="card-stats">
+<div class="cs-name">Koelreuteria</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:10%"></span></span><b>1</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-power"><span>POWER</span><b>3.8</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Castanea.html" data-name="Castanea" data-rarity="common" data-rrank="1" data-arch="skirmisher" data-count="387" data-atk="4.0" data-rng="4.0" data-hp="4.0" data-as="7.0" data-mv="5.0" data-power="4.8">
+<div class="card-art"><img class="pixel" src="assets/sprites/Castanea.png" alt=""></div>
+<div class="card-name">Castanea</div>
+<div class="card-common">Sweet Chestnut</div>
+<div class="card-foot"><span class="cnt">🌳 387</span></div>
+<div class="card-stats">
+<div class="cs-name">Castanea</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-power"><span>POWER</span><b>4.8</b></div>
+</div>
+</a>
+<a class="card rarity-rare" href="trees/Parrotia.html" data-name="Parrotia" data-rarity="rare" data-rrank="3" data-arch="juggernaut" data-count="364" data-atk="10.0" data-rng="2.0" data-hp="2.0" data-as="1.0" data-mv="5.0" data-power="4.9">
+<div class="card-art"><img class="pixel" src="assets/sprites/Parrotia.png" alt=""></div>
+<div class="card-name">Parrotia</div>
+<div class="card-common">Persian ironwood</div>
+<div class="card-foot"><span class="cnt">🌳 364</span></div>
+<div class="card-stats">
+<div class="cs-name">Parrotia</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:100%"></span></span><b>10</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:10%"></span></span><b>1</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-power"><span>POWER</span><b>4.9</b></div>
+</div>
+</a>
+<a class="card rarity-notable" href="trees/Cercidiphyllum.html" data-name="Cercidiphyllum" data-rarity="notable" data-rrank="2" data-arch="skirmisher" data-count="363" data-atk="3.0" data-rng="3.0" data-hp="4.0" data-as="8.0" data-mv="4.0" data-power="4.8">
+<div class="card-art"><img class="pixel" src="assets/sprites/Cercidiphyllum.png" alt=""></div>
+<div class="card-name">Cercidiphyllum</div>
+<div class="card-common">Katsura</div>
+<div class="card-foot"><span class="cnt">🌳 363</span></div>
+<div class="card-stats">
+<div class="cs-name">Cercidiphyllum</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:80%"></span></span><b>8</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-power"><span>POWER</span><b>4.8</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Picea.html" data-name="Picea" data-rarity="common" data-rrank="1" data-arch="bruiser" data-count="355" data-atk="4.0" data-rng="5.0" data-hp="4.0" data-as="7.0" data-mv="6.0" data-power="5.2">
+<div class="card-art"><img class="pixel" src="assets/sprites/Picea.png" alt=""></div>
+<div class="card-name">Picea</div>
+<div class="card-common">Spruce</div>
+<div class="card-foot"><span class="cnt">🌳 355</span></div>
+<div class="card-stats">
+<div class="cs-name">Picea</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-power"><span>POWER</span><b>5.2</b></div>
+</div>
+</a>
+<a class="card rarity-notable" href="trees/Chamaecyparis.html" data-name="Chamaecyparis" data-rarity="notable" data-rrank="2" data-arch="skirmisher" data-count="319" data-atk="3.0" data-rng="4.0" data-hp="5.0" data-as="8.0" data-mv="3.0" data-power="5.0">
+<div class="card-art"><img class="pixel" src="assets/sprites/Chamaecyparis.png" alt=""></div>
+<div class="card-name">Chamaecyparis</div>
+<div class="card-common">False cypress</div>
+<div class="card-foot"><span class="cnt">🌳 319</span></div>
+<div class="card-stats">
+<div class="cs-name">Chamaecyparis</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:80%"></span></span><b>8</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-power"><span>POWER</span><b>5.0</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Laburnum.html" data-name="Laburnum" data-rarity="common" data-rrank="1" data-arch="support" data-count="294" data-atk="9.0" data-rng="1.0" data-hp="1.0" data-as="2.0" data-mv="2.0" data-power="3.1">
+<div class="card-art"><img class="pixel" src="assets/sprites/Laburnum.png" alt=""></div>
+<div class="card-name">Laburnum</div>
+<div class="card-common">Laburnum</div>
+<div class="card-foot"><span class="cnt">🌳 294</span></div>
+<div class="card-stats">
+<div class="cs-name">Laburnum</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:90%"></span></span><b>9</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:10%"></span></span><b>1</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:10%"></span></span><b>1</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-power"><span>POWER</span><b>3.1</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Celtis.html" data-name="Celtis" data-rarity="common" data-rrank="1" data-arch="skirmisher" data-count="292" data-atk="6.0" data-rng="2.0" data-hp="2.0" data-as="5.0" data-mv="7.0" data-power="4.6">
+<div class="card-art"><img class="pixel" src="assets/sprites/Celtis.png" alt=""></div>
+<div class="card-name">Celtis</div>
+<div class="card-common">Hackberry</div>
+<div class="card-foot"><span class="cnt">🌳 292</span></div>
+<div class="card-stats">
+<div class="cs-name">Celtis</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-power"><span>POWER</span><b>4.6</b></div>
+</div>
+</a>
+<a class="card rarity-notable" href="trees/Ostrya.html" data-name="Ostrya" data-rarity="notable" data-rrank="2" data-arch="juggernaut" data-count="268" data-atk="10.0" data-rng="3.0" data-hp="2.0" data-as="1.0" data-mv="5.0" data-power="4.7">
+<div class="card-art"><img class="pixel" src="assets/sprites/Ostrya.png" alt=""></div>
+<div class="card-name">Ostrya</div>
+<div class="card-common">Hop hornbeam</div>
+<div class="card-foot"><span class="cnt">🌳 268</span></div>
+<div class="card-stats">
+<div class="cs-name">Ostrya</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:100%"></span></span><b>10</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:10%"></span></span><b>1</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-power"><span>POWER</span><b>4.7</b></div>
+</div>
+</a>
+<a class="card rarity-notable" href="trees/Zelkova.html" data-name="Zelkova" data-rarity="notable" data-rrank="2" data-arch="bruiser" data-count="268" data-atk="7.0" data-rng="2.0" data-hp="3.0" data-as="4.0" data-mv="10.0" data-power="5.7">
+<div class="card-art"><img class="pixel" src="assets/sprites/Zelkova.png" alt=""></div>
+<div class="card-name">Zelkova</div>
+<div class="card-common">Zelkova</div>
+<div class="card-foot"><span class="cnt">🌳 268</span></div>
+<div class="card-stats">
+<div class="cs-name">Zelkova</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:100%"></span></span><b>10</b></div>
+<div class="cs-power"><span>POWER</span><b>5.7</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Thuja.html" data-name="Thuja" data-rarity="common" data-rrank="1" data-arch="skirmisher" data-count="240" data-atk="2.0" data-rng="4.0" data-hp="3.0" data-as="9.0" data-mv="5.0" data-power="4.7">
+<div class="card-art"><img class="pixel" src="assets/sprites/Thuja.png" alt=""></div>
+<div class="card-name">Thuja</div>
+<div class="card-common">Arborvitae</div>
+<div class="card-foot"><span class="cnt">🌳 240</span></div>
+<div class="card-stats">
+<div class="cs-name">Thuja</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:90%"></span></span><b>9</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-power"><span>POWER</span><b>4.7</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Morus.html" data-name="Morus" data-rarity="common" data-rrank="1" data-arch="support" data-count="238" data-atk="7.0" data-rng="2.0" data-hp="3.0" data-as="4.0" data-mv="3.0" data-power="3.6">
+<div class="card-art"><img class="pixel" src="assets/sprites/Morus.png" alt=""></div>
+<div class="card-name">Morus</div>
+<div class="card-common">Mulberry</div>
+<div class="card-foot"><span class="cnt">🌳 238</span></div>
+<div class="card-stats">
+<div class="cs-name">Morus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-power"><span>POWER</span><b>3.6</b></div>
+</div>
+</a>
+<a class="card rarity-notable" href="trees/Cercis.html" data-name="Cercis" data-rarity="notable" data-rrank="2" data-arch="support" data-count="228" data-atk="7.0" data-rng="1.0" data-hp="1.0" data-as="4.0" data-mv="4.0" data-power="4.0">
+<div class="card-art"><img class="pixel" src="assets/sprites/Cercis.png" alt=""></div>
+<div class="card-name">Cercis</div>
+<div class="card-common">Redbud</div>
+<div class="card-foot"><span class="cnt">🌳 228</span></div>
+<div class="card-stats">
+<div class="cs-name">Cercis</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:10%"></span></span><b>1</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:10%"></span></span><b>1</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-power"><span>POWER</span><b>4.0</b></div>
+</div>
+</a>
+<a class="card rarity-notable" href="trees/Paulownia.html" data-name="Paulownia" data-rarity="notable" data-rrank="2" data-arch="skirmisher" data-count="208" data-atk="1.0" data-rng="3.0" data-hp="1.0" data-as="10.0" data-mv="9.0" data-power="5.2">
+<div class="card-art"><img class="pixel" src="assets/sprites/Paulownia.png" alt=""></div>
+<div class="card-name">Paulownia</div>
+<div class="card-common">Foxglove Tree</div>
+<div class="card-foot"><span class="cnt">🌳 208</span></div>
+<div class="card-stats">
+<div class="cs-name">Paulownia</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:10%"></span></span><b>1</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:10%"></span></span><b>1</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:100%"></span></span><b>10</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:90%"></span></span><b>9</b></div>
+<div class="cs-power"><span>POWER</span><b>5.2</b></div>
+</div>
+</a>
+<a class="card rarity-notable" href="trees/Cedrus.html" data-name="Cedrus" data-rarity="notable" data-rrank="2" data-arch="bruiser" data-count="205" data-atk="5.0" data-rng="4.0" data-hp="5.0" data-as="6.0" data-mv="6.0" data-power="5.7">
+<div class="card-art"><img class="pixel" src="assets/sprites/Cedrus.png" alt=""></div>
+<div class="card-name">Cedrus</div>
+<div class="card-common">Cedar</div>
+<div class="card-foot"><span class="cnt">🌳 205</span></div>
+<div class="card-stats">
+<div class="cs-name">Cedrus</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-power"><span>POWER</span><b>5.7</b></div>
+</div>
+</a>
+<a class="card rarity-notable" href="trees/Nyssa.html" data-name="Nyssa" data-rarity="notable" data-rrank="2" data-arch="skirmisher" data-count="204" data-atk="5.0" data-rng="2.0" data-hp="3.0" data-as="6.0" data-mv="10.0" data-power="5.8">
+<div class="card-art"><img class="pixel" src="assets/sprites/Nyssa.png" alt=""></div>
+<div class="card-name">Nyssa</div>
+<div class="card-common">Tupelo</div>
+<div class="card-foot"><span class="cnt">🌳 204</span></div>
+<div class="card-stats">
+<div class="cs-name">Nyssa</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:30%"></span></span><b>3</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:100%"></span></span><b>10</b></div>
+<div class="cs-power"><span>POWER</span><b>5.8</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Larix.html" data-name="Larix" data-rarity="common" data-rrank="1" data-arch="bruiser" data-count="122" data-atk="6.0" data-rng="4.0" data-hp="4.0" data-as="5.0" data-mv="5.0" data-power="4.9">
+<div class="card-art"><img class="pixel" src="assets/sprites/Larix.png" alt=""></div>
+<div class="card-name">Larix</div>
+<div class="card-common">Larch</div>
+<div class="card-foot"><span class="cnt">🌳 122</span></div>
+<div class="card-stats">
+<div class="cs-name">Larix</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:60%"></span></span><b>6</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-power"><span>POWER</span><b>4.9</b></div>
+</div>
+</a>
+<a class="card rarity-common" href="trees/Cupressocyparis.html" data-name="Cupressocyparis" data-rarity="common" data-rrank="1" data-arch="skirmisher" data-count="101" data-atk="4.0" data-rng="5.0" data-hp="2.0" data-as="7.0" data-mv="5.0" data-power="4.7">
+<div class="card-art"><img class="pixel" src="assets/sprites/Cupressocyparis.png" alt=""></div>
+<div class="card-name">Cupressocyparis</div>
+<div class="card-common">Leyland Cypress</div>
+<div class="card-foot"><span class="cnt">🌳 101</span></div>
+<div class="card-stats">
+<div class="cs-name">Cupressocyparis</div>
+<div class="cs-row"><span class="cs-l">ATK</span><span class="cs-t"><span class="cs-f" style="width:40%"></span></span><b>4</b></div>
+<div class="cs-row"><span class="cs-l">RNG</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-row"><span class="cs-l">HP</span><span class="cs-t"><span class="cs-f" style="width:20%"></span></span><b>2</b></div>
+<div class="cs-row"><span class="cs-l">SPD</span><span class="cs-t"><span class="cs-f" style="width:70%"></span></span><b>7</b></div>
+<div class="cs-row"><span class="cs-l">MOV</span><span class="cs-t"><span class="cs-f" style="width:50%"></span></span><b>5</b></div>
+<div class="cs-power"><span>POWER</span><b>4.7</b></div>
+</div>
+</a>
+</div>
+</main>
+<script>
+
+(function(){
+  const grid = document.querySelector('.grid');
+  const cards = Array.from(grid.children);
+  const sortSel = document.getElementById('sortby');
+  const dirBtn = document.getElementById('dir');
+  const shown = document.getElementById('shown');
+  const rarityF = new Set(), archF = new Set();
+  let dir = -1;  // -1 = descending, 1 = ascending
+
+  function keyVal(card, key){
+    if(key === 'rarity') return +card.dataset.rrank;
+    if(key === 'name')   return card.dataset.name.toLowerCase();
+    return parseFloat(card.dataset[key] || '0');
+  }
+  function apply(){
+    let n = 0;
+    cards.forEach(c => {
+      const rOk = rarityF.size === 0 || rarityF.has(c.dataset.rarity);
+      const aOk = archF.size === 0 || archF.has(c.dataset.arch);
+      const vis = rOk && aOk;
+      c.classList.toggle('hidden', !vis);
+      if(vis) n++;
+    });
+    shown.textContent = n;
+    const key = sortSel.value;
+    const sorted = cards.slice().sort((a,b) => {
+      let va = keyVal(a,key), vb = keyVal(b,key);
+      if(typeof va === 'string') return dir * va.localeCompare(vb);
+      if(va === vb) return (+b.dataset.count) - (+a.dataset.count);  // tiebreak: most common first
+      return dir * (va - vb);
+    });
+    sorted.forEach(c => grid.appendChild(c));
+  }
+  sortSel.addEventListener('change', apply);
+  dirBtn.addEventListener('click', () => {
+    dir *= -1;
+    dirBtn.textContent = dir < 0 ? '▼ Desc' : '▲ Asc';
+    apply();
+  });
+  document.querySelectorAll('[data-rf]').forEach(b => b.addEventListener('click', () => {
+    b.classList.toggle('on');
+    const v = b.dataset.rf;
+    rarityF.has(v) ? rarityF.delete(v) : rarityF.add(v);
+    apply();
+  }));
+  document.querySelectorAll('[data-af]').forEach(b => b.addEventListener('click', () => {
+    b.classList.toggle('on');
+    const v = b.dataset.af;
+    archF.has(v) ? archF.delete(v) : archF.add(v);
+    apply();
+  }));
+  apply();
+})();
+
+</script>
+<footer class="site">
+  <span>Boomoorlog — an Amsterdam tree-war simulation. Stats derived from real open-data trees.</span>
+</footer>
+</body>
+</html>
