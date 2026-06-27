@@ -94,6 +94,60 @@ def amsterdam_totals():
     return total, len(genera)
 
 
+# Genera that get an embedded OpenStreetMap of real locations.
+# A set limits the scope (prototyping); None maps every roster genus.
+MAP_GENERA = None
+
+
+def clean_height(h):
+    """'a. tot 6 m.' -> '≤6 m'; 'b. 6 tot 9 m.' -> '6–9 m'."""
+    h = re.sub(r"^[a-z]\.\s*", "", h.strip()).rstrip(".").strip()
+    h = h.replace(" tot ", "–")
+    h = re.sub(r"^tot\s*", "≤", h)
+    return h
+
+
+def collect_points(wanted):
+    """One pass over TREECSV -> {genus: [tree dict, ...]} for wanted genera.
+
+    `wanted` is a set of genus names (matched on 'soortnaamKort'), or None for
+    all. Each tree dict carries la/lo (coords, 5 decimals ~1 m) plus any present
+    per-tree fields: sp (species/cultivar), yr (year planted), h (height class),
+    pc (postcode). Returns {} if the CSV is absent.
+    """
+    if not os.path.exists(TREECSV):
+        return {}
+    import csv
+    trees = defaultdict(list)
+    with open(TREECSV) as f:
+        r = csv.DictReader(f)
+        for row in r:
+            g = row["soortnaamKort"].strip()
+            if not g or (wanted is not None and g not in wanted):
+                continue
+            lo, la = row["longitude"].strip(), row["latitude"].strip()
+            if not (lo and la):
+                continue
+            try:
+                rec = {"la": round(float(la), 5), "lo": round(float(lo), 5)}
+            except ValueError:
+                continue
+            sp = row.get("soortnaam", "").strip()
+            yr = row.get("jaarVanAanleg", "").strip()
+            ht = clean_height(row.get("boomhoogteklasseActueel", ""))
+            pc = row.get("postcode6", "").strip()
+            if sp:
+                rec["sp"] = sp
+            if yr:
+                rec["yr"] = yr
+            if ht:
+                rec["h"] = ht
+            if pc:
+                rec["pc"] = pc
+            trees[g].append(rec)
+    return trees
+
+
 def sections(text):
     """Split markdown into {heading: body} for '## ' headings."""
     out, cur, buf = {}, None, []
@@ -185,7 +239,7 @@ PAGE_FOOT = """</main>
 </html>"""
 
 
-def char_page(c, st, rel_photo, rel_sprite):
+def char_page(c, st, rel_photo, rel_sprite, has_map=False):
     rarity_key = (st["rarity"] if st else c["inputs"].get("world_rarity", "common")).lower()
     rar_label, rar_cls = RARITY.get(rarity_key, ("Common", "common"))
     arch = st["arch"].replace(" (Legendary)", "") if st else "Long-tail / Unranked"
@@ -206,6 +260,13 @@ def char_page(c, st, rel_photo, rel_sprite):
     if c["facts"]:
         out.append('<h3>Real-world facts</h3>')
         out.append(f'<div class="facts">{bullets(c["facts"])}</div>')
+
+    if has_map:
+        out.append('<h3>Where they grow in Amsterdam</h3>')
+        out.append(f'<div id="treemap" class="treemap" data-genus="{esc(c["genus"])}"></div>')
+        out.append('<p class="map-note">Every pin is a real registered tree in the municipal '
+                   'open-data registry. Clusters show how many trees they hold — zoom in and '
+                   'they split apart down to individual trees.</p>')
 
     out.append('<h3>Gallery</h3>')
     out.append('<div class="gallery">')
@@ -243,8 +304,68 @@ def char_page(c, st, rel_photo, rel_sprite):
     out.append('</aside>')
 
     out.append('</article>')
+    if has_map:
+        out.append(MAP_ASSETS)
+        out.append('<script>\n' + MAP_JS + '\n</script>')
     out.append(PAGE_FOOT)
     return "\n".join(out)
+
+
+MAP_ASSETS = """<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>"""
+
+MAP_JS = r"""
+(function(){
+  var el = document.getElementById('treemap');
+  if(!el || !window.L) return;
+  var genus = el.dataset.genus;
+  var map = L.map('treemap', {scrollWheelZoom:false}).setView([52.3676, 4.9041], 11);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    subdomains:'abcd', maxZoom:19,
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+  }).addTo(map);
+
+  var icon = L.icon({
+    iconUrl: '../assets/sprites/' + genus + '.png',
+    iconSize: [30, 40], iconAnchor: [15, 38], tooltipAnchor: [0, -34],
+    className: 'tree-pin'
+  });
+  var thisYear = new Date().getFullYear();
+  function tip(t){
+    var rows = [];
+    if(t.sp) rows.push('<em>' + t.sp + '</em>');
+    if(t.yr){ var age = thisYear - parseInt(t.yr, 10);
+      rows.push('Planted ' + t.yr + (age > 0 ? ' &middot; ~' + age + ' yr old' : '')); }
+    if(t.h) rows.push('Height ' + t.h);
+    if(t.pc) rows.push('📍 ' + t.pc);
+    return rows.join('<br>');
+  }
+
+  var cluster = L.markerClusterGroup({
+    chunkedLoading:true, showCoverageOnHover:false,
+    maxClusterRadius:45,
+    disableClusteringAtZoom:14,   // zoom >= 14 -> every tree shows as its own sprite
+    spiderfyOnMaxZoom:false
+  });
+  fetch('../assets/maps/' + genus + '.json')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var arr = d.trees, ms = [];
+      for(var i=0; i<arr.length; i++){
+        var t = arr[i];
+        var m = L.marker([t.la, t.lo], {icon: icon, riseOnHover: true});
+        m.bindTooltip(tip(t), {direction:'top', opacity:0.97, className:'tree-tip'});
+        ms.push(m);
+      }
+      cluster.addLayers(ms);
+      map.addLayer(cluster);
+      if(ms.length) map.fitBounds(cluster.getBounds().pad(0.05));
+    });
+})();
+"""
 
 
 def index_page(chars, totals=(None, None)):
@@ -402,7 +523,11 @@ def build():
     os.makedirs(f"{OUT}/assets/css", exist_ok=True)
     os.makedirs(f"{OUT}/assets/photos", exist_ok=True)
     os.makedirs(f"{OUT}/assets/sprites", exist_ok=True)
+    os.makedirs(f"{OUT}/assets/maps", exist_ok=True)
     open(f"{OUT}/.nojekyll", "w").close()
+
+    import json
+    map_pts = collect_points(MAP_GENERA)
 
     chars = []
     for path in sorted(glob.glob(f"{CHARDIR}/*.md")):
@@ -417,7 +542,13 @@ def build():
         shutil.copy(photo, f"{OUT}/assets/photos/{g}.jpg")
         shutil.copy(sprite, f"{OUT}/assets/sprites/{g}.png")
         st = stats.get(g)
-        html_out = char_page(c, st, f"../assets/photos/{g}.jpg", f"../assets/sprites/{g}.png")
+        has_map = g in map_pts and len(map_pts[g]) > 0
+        if has_map:
+            with open(f"{OUT}/assets/maps/{g}.json", "w") as mf:
+                json.dump({"n": len(map_pts[g]), "trees": map_pts[g]},
+                          mf, separators=(",", ":"))
+        html_out = char_page(c, st, f"../assets/photos/{g}.jpg",
+                             f"../assets/sprites/{g}.png", has_map=has_map)
         with open(f"{OUT}/trees/{g}.html", "w") as f:
             f.write(html_out)
         chars.append((c, st))
@@ -567,6 +698,17 @@ main{max-width:1040px;margin:0 auto;padding:28px}
 .gallery img{border-radius:5px;margin:0 auto;max-height:340px;width:auto}
 .gallery .pixel{max-height:300px}
 .gallery figcaption{color:var(--dim);font-size:13px;margin-top:8px}
+.treemap{height:400px;border-radius:10px;border:1px solid var(--line);
+  margin-top:8px;background:#0c0e12;z-index:0}
+.leaflet-container{background:#0c0e12;font-family:inherit}
+.map-note{color:var(--dim);font-size:13px;font-style:italic;margin-top:10px}
+.tree-pin{image-rendering:pixelated;image-rendering:crisp-edges;
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,.6))}
+.leaflet-tooltip.tree-tip{background:#14161b;color:var(--ink);border:1px solid var(--line);
+  border-radius:6px;font-family:inherit;font-size:12px;line-height:1.5;
+  box-shadow:0 4px 14px rgba(0,0,0,.5);padding:7px 10px}
+.leaflet-tooltip.tree-tip em{color:#e6b566;font-style:italic;font-weight:600}
+.leaflet-tooltip-top.tree-tip:before{border-top-color:var(--line)}
 
 /* ---- infobox ---- */
 .infobox{background:linear-gradient(#1b1f27,#15181e);border:1px solid var(--line);

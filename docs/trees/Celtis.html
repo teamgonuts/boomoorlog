@@ -24,6 +24,9 @@
 <div class="fact"><span class="fact-k">Wood</span><span class="fact-v">595 kg/m³ air-dry; Janka 880 lbf (3,910 N) — moderate hardness, flexible, shock-resistant; described as "heavy but soft" with limited commercial timber value but good for tool handles and sporting goods</span></div>
 <div class="fact"><span class="fact-k">Growth speed</span><span class="fact-v">fast (up to 60 cm/year on good sites)</span></div>
 <div class="fact"><span class="fact-k">Ecology / notable traits</span><span class="fact-v">Extremely wide climatic tolerance — grows from Great Plains (360 mm rain/yr) to humid Southeast (1,520 mm/yr); prefers limestone-rich soils; important wildlife food tree (berries consumed by 25+ bird species); often develops distinctive "witches' broom" galls from a mite-fungus complex; not invasive but highly adaptable; related genera include famous sugarberries and Mediterranean nettle trees</span></div></div>
+<h3>Where they grow in Amsterdam</h3>
+<div id="treemap" class="treemap" data-genus="Celtis"></div>
+<p class="map-note">Every pin is a real registered tree in the municipal open-data registry. Clusters show how many trees they hold — zoom in and they split apart down to individual trees.</p>
 <h3>Gallery</h3>
 <div class="gallery">
 <figure><img src="../assets/photos/Celtis.jpg" alt="Celtis real tree"><figcaption>The real tree</figcaption></figure>
@@ -52,6 +55,62 @@
 <div class="ib-count">292 trees in Amsterdam</div>
 </aside>
 </article>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+
+(function(){
+  var el = document.getElementById('treemap');
+  if(!el || !window.L) return;
+  var genus = el.dataset.genus;
+  var map = L.map('treemap', {scrollWheelZoom:false}).setView([52.3676, 4.9041], 11);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    subdomains:'abcd', maxZoom:19,
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+  }).addTo(map);
+
+  var icon = L.icon({
+    iconUrl: '../assets/sprites/' + genus + '.png',
+    iconSize: [30, 40], iconAnchor: [15, 38], tooltipAnchor: [0, -34],
+    className: 'tree-pin'
+  });
+  var thisYear = new Date().getFullYear();
+  function tip(t){
+    var rows = [];
+    if(t.sp) rows.push('<em>' + t.sp + '</em>');
+    if(t.yr){ var age = thisYear - parseInt(t.yr, 10);
+      rows.push('Planted ' + t.yr + (age > 0 ? ' &middot; ~' + age + ' yr old' : '')); }
+    if(t.h) rows.push('Height ' + t.h);
+    if(t.pc) rows.push('📍 ' + t.pc);
+    return rows.join('<br>');
+  }
+
+  var cluster = L.markerClusterGroup({
+    chunkedLoading:true, showCoverageOnHover:false,
+    maxClusterRadius:45,
+    disableClusteringAtZoom:14,   // zoom >= 14 -> every tree shows as its own sprite
+    spiderfyOnMaxZoom:false
+  });
+  fetch('../assets/maps/' + genus + '.json')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var arr = d.trees, ms = [];
+      for(var i=0; i<arr.length; i++){
+        var t = arr[i];
+        var m = L.marker([t.la, t.lo], {icon: icon, riseOnHover: true});
+        m.bindTooltip(tip(t), {direction:'top', opacity:0.97, className:'tree-tip'});
+        ms.push(m);
+      }
+      cluster.addLayers(ms);
+      map.addLayer(cluster);
+      if(ms.length) map.fitBounds(cluster.getBounds().pad(0.05));
+    });
+})();
+
+</script>
 </main>
 <footer class="site">
   <a href="../index.html">← Back to roster</a>
