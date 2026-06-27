@@ -30,6 +30,14 @@ main{max-width:1040px;margin:0 auto;padding:28px}
 .hero{padding:18px 0 8px;border-bottom:1px solid var(--line);margin-bottom:26px}
 .hero h1{font-size:40px;margin:0 0 8px}
 .hero p{color:var(--dim);max-width:70ch;margin:0}
+.hero-stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:4px}
+.hero-stats .hstat{display:flex;flex-direction:column;gap:2px;
+  padding:10px 18px 10px 0;border-right:1px solid var(--line)}
+.hero-stats .hstat:last-child{border-right:none}
+.hero-stats .hstat b{font-size:30px;line-height:1;color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif}
+.hero-stats .hstat span{font-size:12px;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--dim)}
 .legend{display:flex;gap:10px;margin-top:16px}
 .legend .lg{font-size:12px;text-transform:uppercase;letter-spacing:.05em;
   padding:3px 12px;border-radius:20px;border:1px solid var(--line);font-weight:700}

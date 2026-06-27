@@ -20,6 +20,7 @@ CHARDIR = "memory/characters"
 CHARTABLE = "memory/CHARACTERS.md"
 PHOTODIR = "data/tree_pics"
 SPRITEDIR = "data/sprites_pixel"
+TREECSV = "data/amsterdam_trees_zip.csv"
 OUT = "docs"
 
 RARITY = {
@@ -69,6 +70,28 @@ def parse_table():
             except ValueError:
                 continue
     return stats
+
+
+def amsterdam_totals():
+    """Read the municipal tree registry CSV -> (total_trees, distinct_genera).
+
+    Genus is column 'soortnaamTop' (e.g. 'Iep (Ulmus)'); blanks are counted as
+    trees but not as a named genus. Returns (None, None) if the CSV is absent.
+    """
+    if not os.path.exists(TREECSV):
+        return None, None
+    import csv
+    with open(TREECSV) as f:
+        r = csv.reader(f)
+        header = next(r)
+        gi = header.index("soortnaamTop")
+        total, genera = 0, set()
+        for row in r:
+            total += 1
+            g = row[gi].strip()
+            if g:
+                genera.add(g)
+    return total, len(genera)
 
 
 def sections(text):
@@ -224,14 +247,19 @@ def char_page(c, st, rel_photo, rel_sprite):
     return "\n".join(out)
 
 
-def index_page(chars):
+def index_page(chars, totals=(None, None)):
     """chars: list of (c, st). Rendered as one grid sorted by Amsterdam tree count."""
+    total_trees, total_genera = totals
     out = [page_head("Boomoorlog Wiki — The Tree Roster", 0)]
     out.append('<section class="hero">')
     out.append('<h1>The Tree Roster</h1>')
-    out.append('<p>Two Amsterdam ZIP codes send their real trees to war. Every genus below is a '
-               'playable archetype — its stats derived from the height, age, wood and rarity of the '
-               'actual trees growing in the city. Sorted by how many grow in Amsterdam. Pick a fighter.</p>')
+    out.append('<div class="hero-stats">')
+    if total_trees:
+        out.append(f'<div class="hstat"><b>{total_trees:,}</b><span>trees in Amsterdam</span></div>')
+    if total_genera:
+        out.append(f'<div class="hstat"><b>{total_genera}</b><span>genera in the city</span></div>')
+    out.append(f'<div class="hstat"><b>{len(chars)}</b><span>playable archetypes</span></div>')
+    out.append('</div>')
     out.append('</section>')
 
     # ---- toolbar: sort + filters
@@ -395,7 +423,7 @@ def build():
         chars.append((c, st))
 
     with open(f"{OUT}/index.html", "w") as f:
-        f.write(index_page(chars))
+        f.write(index_page(chars, amsterdam_totals()))
     write_css()
 
     ranked = sum(1 for _, st in chars if st)
@@ -440,6 +468,14 @@ main{max-width:1040px;margin:0 auto;padding:28px}
 .hero{padding:18px 0 8px;border-bottom:1px solid var(--line);margin-bottom:26px}
 .hero h1{font-size:40px;margin:0 0 8px}
 .hero p{color:var(--dim);max-width:70ch;margin:0}
+.hero-stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:4px}
+.hero-stats .hstat{display:flex;flex-direction:column;gap:2px;
+  padding:10px 18px 10px 0;border-right:1px solid var(--line)}
+.hero-stats .hstat:last-child{border-right:none}
+.hero-stats .hstat b{font-size:30px;line-height:1;color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif}
+.hero-stats .hstat span{font-size:12px;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--dim)}
 .legend{display:flex;gap:10px;margin-top:16px}
 .legend .lg{font-size:12px;text-transform:uppercase;letter-spacing:.05em;
   padding:3px 12px;border-radius:20px;border:1px solid var(--line);font-weight:700}
