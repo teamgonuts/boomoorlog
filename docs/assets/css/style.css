@@ -101,7 +101,7 @@ main{max-width:1040px;margin:0 auto;padding:28px}
 .rarity-rare{border-top-color:var(--rare)}
 
 /* ---- character page ---- */
-.char{display:grid;grid-template-columns:1fr 320px;gap:30px;align-items:start}
+.char{display:grid;grid-template-columns:1fr 360px;gap:30px;align-items:start}
 .char-body h1{font-size:38px;margin:0 0 6px;line-height:1.15}
 .char-body h1 .common{color:var(--dim);font-weight:400;font-size:24px}
 .char-body h1 .nl{color:var(--dim);font-size:18px;font-style:italic}

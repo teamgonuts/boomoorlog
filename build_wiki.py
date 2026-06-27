@@ -172,7 +172,26 @@ def char_page(c, st, rel_photo, rel_sprite):
     out = [page_head(f'{c["genus"]} — {c["common"]} | Boomoorlog Wiki', 1)]
     out.append(f'<article class="char rarity-{rar_cls}">')
 
-    # ---- infobox
+    # ---- body (left, scrollable)
+    out.append('<div class="char-body">')
+    out.append(f'<h1>{esc(c["genus"])} <span class="common">— {esc(c["common"])}</span>{dutch}</h1>')
+    if c["personality"]:
+        out.append(f'<p class="lead">{inline(c["personality"])}</p>')
+    if c["flavor"]:
+        out.append('<h3>Combat flavor</h3>')
+        out.append(f'<p>{inline(c["flavor"])}</p>')
+    if c["facts"]:
+        out.append('<h3>Real-world facts</h3>')
+        out.append(f'<div class="facts">{bullets(c["facts"])}</div>')
+
+    out.append('<h3>Gallery</h3>')
+    out.append('<div class="gallery">')
+    out.append(f'<figure><img src="{rel_photo}" alt="{esc(c["genus"])} real tree"><figcaption>The real tree</figcaption></figure>')
+    out.append(f'<figure><img class="pixel" src="{rel_sprite}" alt="{esc(c["genus"])} sprite"><figcaption>Battle sprite</figcaption></figure>')
+    out.append('</div>')
+    out.append('</div>')  # char-body
+
+    # ---- infobox (right, sticky/static)
     out.append('<aside class="infobox">')
     out.append('<div class="ib-compare">')
     out.append(f'<figure><img src="{rel_photo}" alt="{esc(c["genus"])} real tree"><figcaption>Real tree</figcaption></figure>')
@@ -199,25 +218,6 @@ def char_page(c, st, rel_photo, rel_sprite):
         if c["inputs"].get("max_height_m"):
             out.append(f'<div class="ib-count">Max height ~{esc(c["inputs"]["max_height_m"])} m</div>')
     out.append('</aside>')
-
-    # ---- body
-    out.append('<div class="char-body">')
-    out.append(f'<h1>{esc(c["genus"])} <span class="common">— {esc(c["common"])}</span>{dutch}</h1>')
-    if c["personality"]:
-        out.append(f'<p class="lead">{inline(c["personality"])}</p>')
-    if c["flavor"]:
-        out.append('<h3>Combat flavor</h3>')
-        out.append(f'<p>{inline(c["flavor"])}</p>')
-    if c["facts"]:
-        out.append('<h3>Real-world facts</h3>')
-        out.append(f'<div class="facts">{bullets(c["facts"])}</div>')
-
-    out.append('<h3>Gallery</h3>')
-    out.append('<div class="gallery">')
-    out.append(f'<figure><img src="{rel_photo}" alt="{esc(c["genus"])} real tree"><figcaption>The real tree</figcaption></figure>')
-    out.append(f'<figure><img class="pixel" src="{rel_sprite}" alt="{esc(c["genus"])} sprite"><figcaption>Battle sprite</figcaption></figure>')
-    out.append('</div>')
-    out.append('</div>')  # char-body
 
     out.append('</article>')
     out.append(PAGE_FOOT)
@@ -511,7 +511,7 @@ main{max-width:1040px;margin:0 auto;padding:28px}
 .rarity-rare{border-top-color:var(--rare)}
 
 /* ---- character page ---- */
-.char{display:grid;grid-template-columns:1fr 320px;gap:30px;align-items:start}
+.char{display:grid;grid-template-columns:1fr 360px;gap:30px;align-items:start}
 .char-body h1{font-size:38px;margin:0 0 6px;line-height:1.15}
 .char-body h1 .common{color:var(--dim);font-weight:400;font-size:24px}
 .char-body h1 .nl{color:var(--dim);font-size:18px;font-style:italic}
