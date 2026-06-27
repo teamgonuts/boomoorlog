@@ -175,7 +175,11 @@
       "Bash(python3 .claude/skills/tree-pixel-art/scripts/render_tree_sprite.py --form conifer --hue 80 --out data/sprites_pixel/skilltest_Metasequoia.png)",
       "Bash(python3 .claude/skills/tree-pixel-art/scripts/render_tree_sprite.py --form round --hue 115 --out data/sprites_pixel/skilltest_Quercus.png)",
       "Bash(python3 .claude/skills/tree-pixel-art/scripts/render_tree_sprite.py --form weeping --hue 90 --out data/sprites_pixel/skilltest_Salix.png)",
-      "Bash(lsof -nP -iTCP -sTCP:LISTEN)"
+      "Bash(lsof -nP -iTCP -sTCP:LISTEN)",
+      "Bash(xargs -n1 basename)",
+      "Bash(mkdir -p /tmp/wtqa_results)",
+      "Bash(rm -f /tmp/wtqa_results/*.txt)",
+      "Bash(rm -f /tmp/wtqa_results/batch_*.txt)"
     ]
   }
 }
