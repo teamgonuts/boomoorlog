@@ -18,16 +18,25 @@ Two independent axes from the data drive the stats so big trees are NOT auto-slo
 | **Attack** | avg trunk diameter (girth = punching power) |
 | **Health** | mass proxy = height × diameter (tankiness) |
 
-**VIGOR axis** (growth rate, independent of absolute size) → agility stats:
+**VIGOR / research stats:**
 | Stat | Derived from |
 |---|---|
-| **Attack speed** | growth rate (height ÷ age) |
-| **Movement speed** | growth rate (vigor) |
+| **Movement speed** | growth rate (height ÷ age) — data vigor |
+| **Attack speed** | **wood density/hardness (researched)** — soft/light wood = fast flicking strikes; dense/hard wood = slow heavy blows |
 
-Payoff: a **fast-growing giant** (Poplar, Metasequoia) is big AND fast = elite killer.
-A slow-growing giant (Oak) is devastating but ponderous. Small trees are quick but
-feeble. Big trees are never auto-slow. Attack speed & Movement both come from vigor,
-so they correlate (one "agility" axis) — accepted for simplicity.
+Attack speed and Movement are now **decoupled** (locked 2026-06-27): Movement = data
+growth vigor; Attack speed = researched wood density. A fast-growing soft-wood tree
+(Poplar, Willow) moves AND jabs fast; a dense-hardwood slow-grower (Hornbeam, Yew)
+is slow-moving with heavy, infrequent hits.
+
+Payoff: a **fast-growing giant** (Poplar, Metasequoia) is big AND mobile = elite killer.
+
+### Research-grounded balancing (2026-06-27)
+Per-genus stats are informed by **real tree research** (one MD per genus in
+`memory/characters/`), to keep the game balanced and add a one-sentence **personality**
+per character. Agents collect raw facts (max height, lifespan, wood density, growth
+class, world rarity); central normalization in `generate_characters.py` turns them into
+1-10 stats.
 
 ## Data coverage notes
 - Height: ~87% populated — strong basis for Range.

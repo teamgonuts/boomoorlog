@@ -14,12 +14,18 @@ Stat mapping (see memory/STATS.md):
 """
 
 import csv
+import glob
+import math
+import os
+import re
 from collections import defaultdict
 
 CSV = "data/amsterdam_trees.csv"
 OUT = "memory/CHARACTERS.md"
+CHARDIR = "memory/characters"
 NOW = 2026
 MIN_COUNT = 100  # genera below this are folded into the "long tail" note
+RARITY_MULT = {"common": 1.00, "notable": 1.10, "rare": 1.25}
 
 HEIGHT = {'a. tot 6 m.': 4, 'b. 6 tot 9 m.': 7.5, 'c. 9 tot 12 m.': 10.5,
           'd. 12 tot 15 m.': 13.5, 'e. 15 tot 18 m.': 16.5, 'f. 18 tot 24 m.': 21,
@@ -28,13 +34,31 @@ DIA = {'tot 0,1 m.': 0.05, '0,1 tot 0,2 m.': 0.15, '0,2 tot 0,3 m.': 0.25,
        '0,3 tot 0,5 m.': 0.4, '0,5 tot 1 m.': 0.75, '1,0 tot 1,5 m.': 1.25,
        '1,5 m. en groter': 1.75}
 
-# World-rarity multiplier: globally rare / exotic / iconic only. Default 1.0.
-WORLD_RARITY = {
-    'Ginkgo': 1.30, 'Metasequoia': 1.30, 'Parrotia': 1.20, 'Taxodium': 1.15,
-    'Pterocarya': 1.15, 'Liriodendron': 1.10, 'Cercidiphyllum': 1.10,
-    'Zelkova': 1.10, 'Liquidambar': 1.05, 'Catalpa': 1.05, 'Koelreuteria': 1.05,
-    'Styphnolobium': 1.05, 'Magnolia': 1.05,
-}
+def first_num(s):
+    m = re.search(r"-?\d+(?:\.\d+)?", s)
+    return float(m.group()) if m else None
+
+
+def load_research():
+    """Parse per-genus research (Stat inputs block) from memory/characters/*.md."""
+    res = {}
+    for path in glob.glob(f"{CHARDIR}/*.md"):
+        genus = os.path.splitext(os.path.basename(path))[0]
+        if genus.startswith("_"):
+            continue
+        with open(path) as f:
+            txt = f.read()
+        d = {}
+        for key in ("max_height_m", "lifespan_yr", "wood_density_kgm3"):
+            m = re.search(rf"{key}:\s*([^\n]+)", txt)
+            d[key] = first_num(m.group(1)) if m else None
+        m = re.search(r"world_rarity:\s*(\w+)", txt)
+        d["world_rarity"] = m.group(1).lower() if m else "common"
+        m = re.search(r"^## Personality\s*\n+([^\n]+)", txt, re.M)
+        d["personality"] = m.group(1).strip() if m else ""
+        res[genus] = d
+    return res
+
 
 # English common names for readability (fallback: genus name).
 COMMON = {
@@ -97,56 +121,70 @@ def norm_map(raw):
     return out
 
 
-def archetype(size, vigor, smed, vmed, world):
-    legend = " (Legendary)" if world >= 1.15 else ""
-    if size >= smed and vigor < vmed:
+def archetype(power, agility, pmed, amed, world):
+    legend = " (Legendary)" if world >= 1.25 else ""
+    if power >= pmed and agility < amed:
         return "Juggernaut — Tank/Artillery" + legend
-    if size >= smed and vigor >= vmed:
+    if power >= pmed and agility >= amed:
         return "Bruiser — Elite Carry" + legend
-    if size < smed and vigor >= vmed:
+    if power < pmed and agility >= amed:
         return "Skirmisher — Glass Cannon" + legend
-    return ("Support — Chaff/Filler" + legend) if size < smed else "Balanced" + legend
+    return "Support — Chaff/Filler" + legend
 
 
 def main():
     cnt, H, D, A, dutch = collect()
-    genera = [g for g in cnt if cnt[g] >= MIN_COUNT]
+    research = load_research()
+    genera = [g for g in cnt if cnt[g] >= MIN_COUNT and g in research]
 
+    # Amsterdam-data metrics
     h = {g: avg(H[g]) for g in genera}
     d = {g: avg(D[g]) for g in genera}
     a = {g: avg(A[g]) for g in genera}
     mass = {g: (h[g] * d[g]) if (h[g] and d[g]) else None for g in genera}
     growth = {g: (h[g] / a[g]) if (h[g] and a[g]) else None for g in genera}
 
-    nR, nA, nH = norm_map(h), norm_map(d), norm_map(mass)
-    nS = norm_map(growth)  # attack speed
-    nM = nS                # movement = vigor
+    # Research metrics
+    dens = {g: research[g]["wood_density_kgm3"] for g in genera}
+    life = {g: research[g]["lifespan_yr"] for g in genera}
+    loglife = {g: (math.log(life[g]) if life[g] else None) for g in genera}
+    invdens = {g: (-dens[g] if dens[g] else None) for g in genera}
+
+    nRange = norm_map(h)            # Range  <- local height
+    nMass = norm_map(mass)          # mass component of Health
+    nLife = norm_map(loglife)       # longevity component of Health
+    nAtk = norm_map(dens)           # Attack <- wood hardness
+    nSpd = norm_map(invdens)        # Attack speed <- inverse hardness
+    nMove = norm_map(growth)        # Movement <- growth vigor
 
     rows = []
     for g in genera:
-        if None in (nR[g], nA[g], nH[g], nS[g]):
+        if None in (nRange[g], nMass[g], nLife[g], nAtk[g], nSpd[g], nMove[g]):
             continue
-        world = WORLD_RARITY.get(g, 1.0)
-        size = (nR[g] + nA[g] + nH[g]) / 3
-        vigor = nS[g]
-        power = round((nA[g] + nR[g] + nH[g] + nS[g] + nM[g]) / 5 * world, 1)
+        hp = 0.6 * nMass[g] + 0.4 * nLife[g]   # tankiness = mass + longevity
+        world = RARITY_MULT.get(research[g]["world_rarity"], 1.0)
+        power_axis = (nAtk[g] + nRange[g] + hp) / 3
+        agility_axis = (nSpd[g] + nMove[g]) / 2
+        power = round((nAtk[g] + nRange[g] + hp + nSpd[g] + nMove[g]) / 5 * world, 1)
         nl = max(dutch[g], key=dutch[g].get)
         rows.append({
             'g': g, 'common': COMMON.get(g, g), 'nl': nl, 'count': cnt[g],
-            'atk': nA[g], 'rng': nR[g], 'hp': nH[g], 'as': nS[g], 'mv': nM[g],
-            'world': world, 'size': size, 'vigor': vigor, 'power': power,
+            'atk': nAtk[g], 'rng': nRange[g], 'hp': hp, 'as': nSpd[g], 'mv': nMove[g],
+            'world': world, 'rarity': research[g]["world_rarity"],
+            'pa': power_axis, 'aa': agility_axis, 'power': power,
+            'persona': research[g]["personality"],
         })
 
-    sizes = sorted(r['size'] for r in rows)
-    vigs = sorted(r['vigor'] for r in rows)
-    smed = sizes[len(sizes) // 2]
-    vmed = vigs[len(vigs) // 2]
+    pas = sorted(r['pa'] for r in rows)
+    aas = sorted(r['aa'] for r in rows)
+    pmed = pas[len(pas) // 2]
+    amed = aas[len(aas) // 2]
     for r in rows:
-        r['arch'] = archetype(r['size'], r['vigor'], smed, vmed, r['world'])
+        r['arch'] = archetype(r['pa'], r['aa'], pmed, amed, r['world'])
 
     # Group by base archetype name (strip legendary suffix) for the MD sections.
     order = ["Bruiser — Elite Carry", "Juggernaut — Tank/Artillery",
-             "Skirmisher — Glass Cannon", "Balanced", "Support — Chaff/Filler"]
+             "Skirmisher — Glass Cannon", "Support — Chaff/Filler"]
     groups = defaultdict(list)
     for r in rows:
         base = r['arch'].replace(" (Legendary)", "")
@@ -157,48 +195,50 @@ def main():
 
     with open(OUT, 'w') as f:
         f.write("# Characters — Boomoorlog Genus Roster\n\n")
-        f.write("Auto-generated by `generate_characters.py` from "
-                "`data/amsterdam_trees.csv`. One row per genus (count >= "
-                f"{MIN_COUNT}). Stats normalized 1-10; **Power** = mean stat x "
-                "world-rarity multiplier.\n\n")
-        f.write("Stat sources: Attack=trunk girth, Range=height, Health=height x "
-                "girth, Atk speed & Move=growth vigor. See `STATS.md`.\n\n")
-        f.write(f"Archetype split uses medians: size={smed:.1f}, vigor={vmed:.1f}.\n\n")
+        f.write("Auto-generated by `generate_characters.py`. One row per genus "
+                f"(count >= {MIN_COUNT}). Stats normalized 1-10; **Power** = mean "
+                "stat x world-rarity multiplier.\n\n")
+        f.write("Stat sources (see `STATS.md`): **Attack**=wood hardness (research), "
+                "**Range**=local height (data), **HP**=mass (data) + longevity "
+                "(research), **A.Spd**=inverse wood hardness (research), "
+                "**Move**=growth vigor (data). Per-genus research in "
+                "`memory/characters/`.\n\n")
+        f.write(f"Archetype split uses medians: power-axis={pmed:.1f}, "
+                f"agility-axis={amed:.1f}.\n\n")
 
         # Master table sorted by power.
         f.write("## All characters (by Power)\n\n")
-        f.write("| Genus | Common | NL | Trees | Atk | Rng | HP | A.Spd | Move | World× | Power | Archetype |\n")
-        f.write("|---|---|---|--:|--:|--:|--:|--:|--:|--:|--:|---|\n")
+        f.write("| Genus | Common | NL | Trees | Atk | Rng | HP | A.Spd | Move | Rarity | Power | Archetype |\n")
+        f.write("|---|---|---|--:|--:|--:|--:|--:|--:|:--|--:|---|\n")
         for r in sorted(rows, key=lambda x: -x['power']):
             f.write(f"| *{r['g']}* | {r['common']} | {r['nl'].split(' (')[0]} | "
                     f"{r['count']} | {fmt(r['atk'])} | {fmt(r['rng'])} | {fmt(r['hp'])} | "
-                    f"{fmt(r['as'])} | {fmt(r['mv'])} | {r['world']:.2f} | "
+                    f"{fmt(r['as'])} | {fmt(r['mv'])} | {r['rarity']} | "
                     f"{r['power']} | {r['arch']} |\n")
 
-        # Archetype sections.
+        # Archetype sections with personalities.
         f.write("\n## Archetypes (TD stat builds)\n\n")
         blurbs = {
-            "Bruiser — Elite Carry": "Big AND vigorous: strong, durable, and fast. "
-                "The carnage units — a fast-growing giant that hits hard and keeps up.",
-            "Juggernaut — Tank/Artillery": "Big but slow: high Attack/Health/Range, "
-                "low Attack speed & Movement. Lumbering heavy hitters / walls.",
-            "Skirmisher — Glass Cannon": "Small but vigorous: fast move & attack, "
-                "low Health/Range. Cheap swarmers that die fast.",
-            "Balanced": "No extreme axis — flexible mid-tier all-rounders.",
-            "Support — Chaff/Filler": "Low size and low vigor: weak filler that wins "
-                "by sheer numbers in tree-dense ZIP codes.",
+            "Bruiser — Elite Carry": "High power AND high agility: strong, durable, "
+                "and quick. The carnage units.",
+            "Juggernaut — Tank/Artillery": "High power, low agility: hard-hitting, "
+                "tanky, long-range, but slow to move and strike. Walls & artillery.",
+            "Skirmisher — Glass Cannon": "Low power, high agility: fast strikes and "
+                "movement, fragile and short-range. Swarmers.",
+            "Support — Chaff/Filler": "Low power and low agility: weak filler that "
+                "wins by sheer numbers in tree-dense ZIP codes.",
         }
         for name in order:
             grp = groups.get(name)
             if not grp:
                 continue
             f.write(f"### {name}\n{blurbs[name]}\n\n")
-            members = sorted(grp, key=lambda x: -x['power'])
-            f.write(", ".join(f"*{r['g']}* ({r['common']})"
-                    + ("★" if r['world'] >= 1.15 else "") for r in members))
-            f.write("\n\n")
+            for r in sorted(grp, key=lambda x: -x['power']):
+                star = "★" if r['world'] >= 1.25 else ""
+                f.write(f"- **{r['g']}** ({r['common']}){star} — {r['persona']}\n")
+            f.write("\n")
 
-        f.write("★ = Legendary (world-rarity multiplier >= 1.15).\n\n")
+        f.write("★ = Legendary (world rarity = rare, multiplier 1.25).\n\n")
         f.write("## Long tail\n\n")
         tail = sorted((g for g in cnt if cnt[g] < MIN_COUNT), key=lambda g: -cnt[g])
         f.write(f"{len(tail)} more genera have <{MIN_COUNT} Amsterdam trees and are "
