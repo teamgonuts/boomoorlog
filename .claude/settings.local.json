@@ -12,7 +12,9 @@
       "Bash(python3 -c \"import requests; print\\('requests ok'\\)\")",
       "Bash(python3 -m pip install --quiet pyproj)",
       "Bash(python3 -c \"import pyproj;from pyproj import Transformer; t=Transformer.from_crs\\('EPSG:28992','EPSG:4326',always_xy=True\\); print\\(t.transform\\(122115.11,483653.0\\)\\)\")",
-      "Bash(time python3 extract_trees.py)"
+      "Bash(time python3 extract_trees.py)",
+      "WebSearch",
+      "Bash(git mv *)"
     ]
   }
 }
