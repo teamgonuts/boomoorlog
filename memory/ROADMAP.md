@@ -162,7 +162,9 @@ Replace the Python static-site generator with a proper app reading from Supabase
       table sorted by tree count. Each row links to the detail page.
 - [x] **8. Genus detail page** — `/wiki/[slug]` renders sprite + 5-stat grid +
       personality + avg height/diameter + full lore (via react-markdown).
-      `data/sprites_pixel/` symlinked into `web/public/sprites/`.
+      `data/sprites_pixel/` and `data/tree_pics/` copied into
+      `web/public/sprites/` + `web/public/photos/` (Vercel needs them
+      inside the app root). Source-of-truth copy remains in `data/`.
 - [x] **9. Wiki home / index** — `/` groups all 55 genera into archetype
       sections (Bruiser / Juggernaut / Skirmisher / Support) with sprite cards
       and legendary stars. Archetype computed live in `web/lib/archetype.ts`

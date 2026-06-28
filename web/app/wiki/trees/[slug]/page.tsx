@@ -31,12 +31,17 @@ export default async function GenusPage({ params }: { params: Params }) {
 
   // Pull this genus + the full stat-blocked roster (we need the latter to
   // compute archetype medians the same way the home page does).
-  const [{ data: genus }, { data: allStatBlocked }] = await Promise.all([
+  const [genusResp, allStatBlockedResp] = await Promise.all([
     supabase.from("genera").select("*").eq("slug", slug).maybeSingle(),
     supabase.from("genera").select("*").not("attack", "is", null),
   ]);
 
-  if (!genus) notFound();
+  const genus = genusResp.data;
+  const allStatBlocked = allStatBlockedResp.data;
+
+  if (!genus) {
+    return notFound();
+  }
 
   const classified = classifyGenera(allStatBlocked ?? []);
   const me = classified.find((g) => g.slug === genus.slug);

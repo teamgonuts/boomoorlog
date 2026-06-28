@@ -1,9 +1,10 @@
 import Image from "next/image";
 
 /**
- * Pixel-art tree sprite. Symlinked from data/sprites_pixel/<slug>.png to
- * web/public/sprites/<slug>.png at install time. Always rendered with
- * crisp upscaling (no bilinear blur).
+ * Pixel-art tree sprite. Files live at web/public/sprites/<slug>.png; the
+ * source-of-truth copy is data/sprites_pixel/ (Python pipeline output) and
+ * mirrored here so Vercel can build the app from web/ alone. Always rendered
+ * with crisp upscaling (no bilinear blur).
  */
 export function Sprite({
   slug,

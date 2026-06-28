@@ -5,6 +5,11 @@
  * Docker/Podman locally; for a 2-table schema it's faster to maintain by hand.
  * Keep in sync with db/001_schema.sql.
  *
+ * Shape matches @supabase/postgrest-js's `GenericSchema`:
+ *   { Tables, Views, Functions } where each Table has
+ *   { Row, Insert, Update, Relationships }. Without the trailing fields,
+ *   `.from()` falls back to `never` row types.
+ *
  * If the schema changes, edit this file in the same PR as the migration.
  */
 
@@ -51,6 +56,7 @@ export type Database = {
           created_at?: string;
         };
         Update: Partial<Database["public"]["Tables"]["genera"]["Insert"]>;
+        Relationships: [];
       };
       trees: {
         Row: {
@@ -85,8 +91,19 @@ export type Database = {
         };
         Insert: Database["public"]["Tables"]["trees"]["Row"];
         Update: Partial<Database["public"]["Tables"]["trees"]["Insert"]>;
+        Relationships: [
+          {
+            foreignKeyName: "trees_genus_slug_fkey";
+            columns: ["genus_slug"];
+            isOneToOne: false;
+            referencedRelation: "genera";
+            referencedColumns: ["slug"];
+          },
+        ];
       };
     };
+    Views: Record<string, never>;
+    Functions: Record<string, never>;
   };
 };
 
