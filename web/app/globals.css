@@ -588,21 +588,34 @@ main {
 
 /* ---- /play — address → neighborhood ---- */
 
+/* Page wrapper: full viewport-width main, max-width still enforced from .play-page main parent */
+.play-page {
+  max-width: 1400px;
+  padding: 18px 24px 24px;
+}
+
+/* Search bar — compact, prominent. Search + map are the two stars of this page. */
+.play-search {
+  margin-bottom: 14px;
+}
 .play-form {
   display: flex;
   gap: 10px;
-  margin-top: 18px;
-  max-width: 560px;
+  align-items: stretch;
+}
+.play-input-wrap {
+  position: relative;
+  flex: 1;
 }
 .play-input {
-  flex: 1;
+  width: 100%;
   background: var(--bg2);
   color: var(--ink);
   border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 9px 12px;
+  border-radius: 8px;
+  padding: 12px 14px;
   font: inherit;
-  font-size: 15px;
+  font-size: 16px;
 }
 .play-input:focus {
   outline: none;
@@ -612,16 +625,64 @@ main {
   background: var(--accent);
   color: #fff;
   border: none;
-  border-radius: 6px;
-  padding: 9px 18px;
+  border-radius: 8px;
+  padding: 0 22px;
   font: inherit;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.03em;
   cursor: pointer;
+  white-space: nowrap;
 }
 .play-submit:hover {
   filter: brightness(1.1);
+}
+
+/* Autocomplete dropdown */
+.play-suggestions {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  max-height: 320px;
+  overflow-y: auto;
+  /* Leaflet's default zoom controls sit at z-index 1000; we need to clear that. */
+  z-index: 2000;
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+}
+.play-suggestions li {
+  margin: 0;
+}
+.play-suggestion {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  color: var(--ink);
+  border: none;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  line-height: 1.4;
+}
+.play-suggestion:hover,
+.play-suggestion.active {
+  background: var(--bg2);
+  color: var(--gold);
+}
+
+.play-empty {
+  margin: 36px 0 0;
+  color: var(--dim);
+  font-style: italic;
+  text-align: center;
 }
 
 .play-error {
@@ -640,69 +701,93 @@ main {
   font-style: italic;
 }
 
-.play-result {
-  margin-top: 26px;
+/* Result layout: dominant map, compact info row above, stats overlaid. */
+.play-result-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.play-result-head {
-  margin-bottom: 14px;
+.play-where-bar {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  padding: 8px 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 14px;
 }
-.play-where {
-  margin: 0 0 4px;
+.play-where-addr {
   color: var(--ink);
+  font-weight: 600;
 }
-.play-stats {
-  margin: 0;
+.play-where-meta {
+  margin-left: auto;
   color: var(--dim);
-  font-size: 15px;
+  font-size: 13px;
+  letter-spacing: 0.02em;
 }
-.play-stats b {
+.play-where-meta b {
   color: var(--gold);
-  font-size: 18px;
+  font-weight: 700;
 }
 
-.play-grid {
-  display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 20px;
-  align-items: start;
+.play-map-wrapper {
+  position: relative;
+  width: 100%;
 }
 .play-map {
-  height: 560px;
+  height: calc(100vh - 220px);
+  min-height: 480px;
   border-radius: 10px;
   border: 1px solid var(--line);
   background: #0c0e12;
   overflow: hidden;
 }
-.play-summary {
-  background: var(--panel);
+
+/* Top genera floats over the map, top-right. Secondary role per design. */
+.play-overlay {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 240px;
+  background: rgba(20, 22, 27, 0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: 14px;
+  padding: 12px;
+  z-index: 500;
+  max-height: calc(100% - 28px);
+  overflow-y: auto;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
 }
-.play-summary-h {
-  font-size: 14px;
+.play-overlay-h {
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: var(--gold);
-  margin: 0 0 10px;
+  margin: 0 0 8px;
 }
+
 .play-top {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 .play-top li {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
-  background: var(--bg2);
+  background: rgba(0, 0, 0, 0.25);
   border: 1px solid var(--line);
   border-left: 3px solid var(--common);
-  border-radius: 6px;
-  padding: 8px 10px;
+  border-radius: 5px;
+  padding: 6px 8px;
 }
 .play-top li.rarity-notable {
   border-left-color: var(--notable);
@@ -712,27 +797,29 @@ main {
 }
 .play-top img {
   background: rgba(255, 255, 255, 0.04);
-  border-radius: 4px;
+  border-radius: 3px;
+  flex-shrink: 0;
 }
 .play-top-body {
   min-width: 0;
   flex: 1;
 }
 .play-top-name {
-  font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
+  line-height: 1.2;
 }
 .play-top-name em {
   color: var(--ink);
   font-style: italic;
+  font-weight: 600;
 }
 .play-top-dutch {
   color: var(--dim);
-  font-size: 12px;
+  font-size: 11px;
   margin-left: 4px;
 }
 .play-top-meta {
-  font-size: 11px;
+  font-size: 10px;
   color: var(--dim);
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -773,10 +860,13 @@ main {
 }
 
 @media (max-width: 820px) {
-  .play-grid {
-    grid-template-columns: 1fr;
-  }
   .play-map {
-    height: 380px;
+    height: 480px;
+  }
+  .play-overlay {
+    position: static;
+    width: auto;
+    max-height: none;
+    margin-top: 10px;
   }
 }

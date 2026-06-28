@@ -1,12 +1,12 @@
 /**
- * Server-side OpenStreetMap Nominatim helper.
+ * Server-side OpenStreetMap Nominatim helpers.
  *
  * Used by:
- *  - /api/geocode  (REST endpoint for future client-side use)
- *  - /play page    (called directly from the server component)
+ *  - /play  page  — single best hit (geocodeAmsterdam, internally calls search)
+ *  - /api/geocode — array, used by the AddressInput autocomplete
  *
- * Nominatim requires a unique User-Agent (their usage policy) and has a
- * 1 req/sec rate limit. We stay way under that — solo project.
+ * Nominatim requires a unique User-Agent and has a 1 req/sec rate limit. Both
+ * helpers stay well under that — solo project.
  *
  * Restricts results to the Netherlands and an Amsterdam bounding box so
  * "Hoofdstraat 10" doesn't match Hoofdstraat in some other city.
@@ -39,11 +39,16 @@ type NominatimHit = {
   display_name: string;
 };
 
-export async function geocodeAmsterdam(q: string): Promise<GeocodeResult> {
+/**
+ * Returns up to `limit` matches in Amsterdam. Used for autocomplete.
+ * Returns [] on errors (autocomplete should fail silently).
+ */
+export async function searchAmsterdam(
+  q: string,
+  limit = 5,
+): Promise<GeocodeHit[]> {
   const cleaned = q.trim();
-  if (!cleaned) {
-    return { error: "Empty address.", status: 400 };
-  }
+  if (cleaned.length < 3) return [];
 
   const url = new URL("https://nominatim.openstreetmap.org/search");
   url.searchParams.set("q", cleaned);
@@ -51,10 +56,9 @@ export async function geocodeAmsterdam(q: string): Promise<GeocodeResult> {
   url.searchParams.set("countrycodes", "nl");
   url.searchParams.set("viewbox", AMSTERDAM_VIEWBOX);
   url.searchParams.set("bounded", "1");
-  url.searchParams.set("limit", "1");
+  url.searchParams.set("limit", String(limit));
   url.searchParams.set("addressdetails", "0");
 
-  let hits: NominatimHit[];
   try {
     const r = await fetch(url, {
       headers: {
@@ -64,25 +68,29 @@ export async function geocodeAmsterdam(q: string): Promise<GeocodeResult> {
       },
       cache: "no-store",
     });
-    if (!r.ok) {
-      return { error: `Geocoder returned ${r.status}.`, status: 502 };
-    }
-    hits = (await r.json()) as NominatimHit[];
-  } catch (e) {
-    return {
-      error: `Geocoder unreachable: ${(e as Error).message}`,
-      status: 502,
-    };
+    if (!r.ok) return [];
+    const hits = (await r.json()) as NominatimHit[];
+    return hits.map((h) => ({
+      lat: parseFloat(h.lat),
+      lng: parseFloat(h.lon),
+      display_name: h.display_name,
+    }));
+  } catch {
+    return [];
   }
+}
 
+/**
+ * Returns the single best match or an error object. Used by /play server-side
+ * when the user actually submits the form.
+ */
+export async function geocodeAmsterdam(q: string): Promise<GeocodeResult> {
+  const cleaned = q.trim();
+  if (!cleaned) return { error: "Empty address.", status: 400 };
+
+  const hits = await searchAmsterdam(cleaned, 1);
   if (hits.length === 0) {
     return { error: "No match in Amsterdam for that address.", status: 404 };
   }
-
-  const hit = hits[0];
-  return {
-    lat: parseFloat(hit.lat),
-    lng: parseFloat(hit.lon),
-    display_name: hit.display_name,
-  };
+  return hits[0];
 }

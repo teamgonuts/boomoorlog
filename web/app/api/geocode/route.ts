@@ -1,18 +1,17 @@
 import { NextResponse } from "next/server";
-import { geocodeAmsterdam, isGeocodeHit } from "@/lib/geocode";
+import { searchAmsterdam } from "@/lib/geocode";
 
 /**
- * REST endpoint mirroring the geocodeAmsterdam() helper.
+ * GET /api/geocode?q=<address>&limit=<n>  →  GeocodeHit[]
  *
- * Not currently used by /play (it calls the helper directly server-side),
- * but kept around for future client-side debouncing / autocomplete.
+ * Used by the AddressInput autocomplete on /play. Returns an empty array on
+ * any error so the client can fail silently.
  */
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const q = searchParams.get("q") ?? "";
-  const result = await geocodeAmsterdam(q);
-  if (isGeocodeHit(result)) {
-    return NextResponse.json(result);
-  }
-  return NextResponse.json({ error: result.error }, { status: result.status });
+  const limitParam = parseInt(searchParams.get("limit") ?? "5", 10);
+  const limit = Math.min(Math.max(limitParam, 1), 10);
+  const hits = await searchAmsterdam(q, limit);
+  return NextResponse.json(hits);
 }

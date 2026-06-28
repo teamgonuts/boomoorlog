@@ -1,3 +1,4 @@
+import { AddressInput } from "@/components/AddressInput";
 import PlayMap from "@/components/PlayMap";
 import { classifyGenera } from "@/lib/archetype";
 import { geocodeAmsterdam, isGeocodeHit } from "@/lib/geocode";
@@ -25,7 +26,7 @@ async function fetchAllTreesWithin(
     if (!data || data.length === 0) break;
     out.push(...(data as unknown as Tree[]));
     if (data.length < PAGE_SIZE) break;
-    if (from > 50_000) break; // hard safety stop
+    if (from > 50_000) break; // safety stop
   }
   return out;
 }
@@ -47,31 +48,18 @@ export default async function PlayPage({
   const address = (q ?? "").trim();
 
   return (
-    <main>
-      <section className="hero">
-        <h1>Defend your neighborhood</h1>
-        <p>
-          Type your Amsterdam address. We&apos;ll find every real tree within
-          500&nbsp;m — these are the towers that will defend you in your wave.
-        </p>
-        <form action="/play" method="get" className="play-form">
-          <input
-            type="text"
-            name="q"
-            defaultValue={address}
-            placeholder="e.g. Dam 1, Amsterdam"
-            autoComplete="street-address"
-            required
-            minLength={3}
-            className="play-input"
-          />
-          <button type="submit" className="play-submit">
-            Find my trees
-          </button>
-        </form>
+    <main className="play-page">
+      <section className="play-search">
+        <AddressInput defaultValue={address} />
       </section>
 
-      {address && <PlayResults address={address} />}
+      {address ? (
+        <PlayResults address={address} />
+      ) : (
+        <p className="play-empty">
+          Type an address above to see the trees that defend your neighborhood.
+        </p>
+      )}
     </main>
   );
 }
@@ -92,8 +80,6 @@ async function PlayResults({ address }: { address: string }) {
     );
   }
 
-  // Supabase enforces a hard 1000-row cap per request; fetchAllTreesWithin
-  // pages through it.
   const [treeList, { data: allGenera }] = await Promise.all([
     fetchAllTreesWithin(geo.lat, geo.lng, RADIUS_M),
     supabase.from("genera").select("*"),
@@ -102,10 +88,10 @@ async function PlayResults({ address }: { address: string }) {
   const generaList: Genus[] = allGenera ?? [];
   const generaBySlug = new Map(generaList.map((g) => [g.slug, g]));
 
-  // Tally by genus for the summary panel.
   const counts = new Map<string, number>();
   for (const t of treeList) {
-    if (t.genus_slug) counts.set(t.genus_slug, (counts.get(t.genus_slug) ?? 0) + 1);
+    if (t.genus_slug)
+      counts.set(t.genus_slug, (counts.get(t.genus_slug) ?? 0) + 1);
   }
   const classified = classifyGenera(generaList);
   const classifiedBySlug = new Map(classified.map((c) => [c.slug, c]));
@@ -127,18 +113,16 @@ async function PlayResults({ address }: { address: string }) {
     });
 
   return (
-    <section className="play-result">
-      <div className="play-result-head">
-        <p className="play-where">
-          <strong>{geo.display_name}</strong>
-        </p>
-        <p className="play-stats">
-          <b>{treeList.length.toLocaleString()}</b> trees within 500&nbsp;m ·{" "}
-          <b>{counts.size}</b> genera
-        </p>
+    <section className="play-result-v2">
+      <div className="play-where-bar">
+        <strong className="play-where-addr">{geo.display_name}</strong>
+        <span className="play-where-meta">
+          <b>{treeList.length.toLocaleString()}</b> trees ·{" "}
+          <b>{counts.size}</b> genera within {RADIUS_M}&nbsp;m
+        </span>
       </div>
 
-      <div className="play-grid">
+      <div className="play-map-wrapper">
         <PlayMap
           center={{ lat: geo.lat, lng: geo.lng }}
           radiusM={RADIUS_M}
@@ -152,8 +136,8 @@ async function PlayResults({ address }: { address: string }) {
               height_m: t.height_m ?? null,
             }))}
         />
-        <aside className="play-summary">
-          <h2 className="play-summary-h">Top genera</h2>
+        <aside className="play-overlay">
+          <h2 className="play-overlay-h">Top genera</h2>
           <ol className="play-top">
             {top.map((row) => (
               <li key={row.slug} className={`rarity-${row.rarity}`}>
@@ -162,8 +146,8 @@ async function PlayResults({ address }: { address: string }) {
                   className="pixel"
                   src={`/sprites/${row.slug}.png`}
                   alt=""
-                  width={40}
-                  height={40}
+                  width={32}
+                  height={32}
                 />
                 <div className="play-top-body">
                   <div className="play-top-name">
@@ -172,7 +156,6 @@ async function PlayResults({ address }: { address: string }) {
                   </div>
                   <div className="play-top-meta">
                     {row.n.toLocaleString()} · {row.pct.toFixed(1)}%
-                    {row.archetype && ` · ${row.archetype}`}
                   </div>
                 </div>
               </li>
