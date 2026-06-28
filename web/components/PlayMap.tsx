@@ -146,38 +146,36 @@ function escapeForAttr(s: string): string {
 }
 
 /**
- * Animate a creature sprite hopping tree-to-tree, ignoring streets and
- * physics. Used for the M4.5 "Living map" demo. Hovering shows the real
- * creature photo + name as a tooltip. Returns a stop() function that
- * cancels the loop and removes the marker.
+ * Animate a creature sprite making ONE tree-to-tree flight, then perch
+ * briefly and disappear. Calls `onComplete` when the flight finishes
+ * naturally — the parent uses that to spawn a new creature in the same slot.
+ * Returns a stop() function that cancels mid-flight and removes the marker
+ * (used on unmount). Hovering shows the real creature photo + name.
  */
 function startCreatureFlight(
   layer: L.LayerGroup,
   creature: CreatureForMap,
   trees: TreePoint[],
+  onComplete: () => void,
 ): () => void {
   if (trees.length < 2) return () => {};
 
   const SPEED_MPS = 6;
-  const PAUSE_MS = 600;
+  // Brief perch on the destination tree before the creature disappears, so
+  // it's clearly "landed" rather than vanishing mid-air.
+  const PERCH_MS = 500;
   const MIN_DURATION_MS = 800;
 
   const icon = L.divIcon({
     className: "creature-flying",
     html: `<img src="/creature_sprites/${creature.slug}.png" alt="" />`,
-    iconSize: [28, 20],
-    iconAnchor: [14, 10],
+    iconSize: [56, 40],
+    iconAnchor: [28, 20],
   });
 
-  const pickIndex = (exclude: number): number => {
-    if (trees.length <= 1) return 0;
-    let i = Math.floor(Math.random() * trees.length);
-    if (i === exclude) i = (i + 1) % trees.length;
-    return i;
-  };
-
-  let fromIdx = Math.floor(Math.random() * trees.length);
-  let toIdx = pickIndex(fromIdx);
+  const fromIdx = Math.floor(Math.random() * trees.length);
+  let toIdx = Math.floor(Math.random() * trees.length);
+  if (toIdx === fromIdx) toIdx = (toIdx + 1) % trees.length;
 
   const marker = L.marker([trees[fromIdx].lat, trees[fromIdx].lng], {
     icon,
@@ -224,13 +222,15 @@ function startCreatureFlight(
       Math.abs(angleDeg) > 90 ? "scaleX(-1)" : `rotate(${angleDeg}deg)`;
   }
 
-  let segmentStart = performance.now();
-  let segmentDurMs =
-    Math.max(MIN_DURATION_MS, (metersBetween(trees[fromIdx], trees[toIdx]) / SPEED_MPS) * 1000);
+  const segmentStart = performance.now();
+  const segmentDurMs = Math.max(
+    MIN_DURATION_MS,
+    (metersBetween(trees[fromIdx], trees[toIdx]) / SPEED_MPS) * 1000,
+  );
   setSpriteRotation(trees[fromIdx], trees[toIdx]);
 
-  let mode: "flying" | "paused" = "flying";
-  let pauseUntil = 0;
+  let mode: "flying" | "perched" = "flying";
+  let perchUntil = 0;
   let running = true;
 
   function tick(now: number) {
@@ -244,19 +244,15 @@ function startCreatureFlight(
         from.lng + (to.lng - from.lng) * t,
       ]);
       if (t >= 1) {
-        mode = "paused";
-        pauseUntil = now + PAUSE_MS;
+        mode = "perched";
+        perchUntil = now + PERCH_MS;
       }
-    } else if (now >= pauseUntil) {
-      fromIdx = toIdx;
-      toIdx = pickIndex(fromIdx);
-      segmentStart = now;
-      segmentDurMs = Math.max(
-        MIN_DURATION_MS,
-        (metersBetween(trees[fromIdx], trees[toIdx]) / SPEED_MPS) * 1000,
-      );
-      setSpriteRotation(trees[fromIdx], trees[toIdx]);
-      mode = "flying";
+    } else if (now >= perchUntil) {
+      // Journey done — disappear and let the parent spawn a replacement.
+      running = false;
+      marker.remove();
+      onComplete();
+      return;
     }
     requestAnimationFrame(tick);
   }
@@ -364,14 +360,24 @@ export default function PlayMap({
     const bounds = L.latLng(center.lat, center.lng).toBounds(radiusM * 2.2);
     map.fitBounds(bounds, { padding: [40, 40], maxZoom: 18, animate: false });
 
-    // M4.5: animate the creatures-of-the-moment between random trees in view.
-    const creatureStops: Array<() => void> = [];
-    for (const creature of creatures ?? []) {
-      creatureStops.push(startCreatureFlight(layer, creature, trees));
+    // M4.5: 5 creatures on screen at any moment. Each does ONE flight, then
+    // disappears and is replaced by a fresh random pick from the full pool —
+    // rotation over time. `slotStops[i]` is replaced on every respawn, so the
+    // cleanup below always cancels whichever creature is currently flying.
+    const NUM_CREATURE_SLOTS = 5;
+    const pool = creatures ?? [];
+    const slotStops: Array<() => void> = [];
+    function spawnSlot(slot: number) {
+      if (pool.length === 0) return;
+      const c = pool[Math.floor(Math.random() * pool.length)];
+      slotStops[slot] = startCreatureFlight(layer, c, trees, () =>
+        spawnSlot(slot),
+      );
     }
+    for (let i = 0; i < NUM_CREATURE_SLOTS; i++) spawnSlot(i);
 
     return () => {
-      creatureStops.forEach((stop) => stop());
+      slotStops.forEach((stop) => stop?.());
       layer.remove();
     };
   }, [center, radiusM, trees, creatures]);

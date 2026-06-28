@@ -3,6 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { AddressInput } from "@/components/AddressInput";
+import { AreaPanel } from "@/components/AreaPanel";
 import PlayMap from "@/components/PlayMap";
 import { classifyGenera } from "@/lib/archetype";
 import { geocodeAmsterdam, isGeocodeHit } from "@/lib/geocode";
@@ -35,16 +36,6 @@ function bboxAround(lat: number, lng: number, halfSideM: number) {
     lat_max: lat + dLat,
     lng_max: lng + dLng,
   };
-}
-
-// Fisher-Yates picker — used for the creature-of-the-moment selection.
-function pickRandom<T>(arr: T[], n: number): T[] {
-  const out = [...arr];
-  for (let i = out.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [out[i], out[j]] = [out[j], out[i]];
-  }
-  return out.slice(0, n);
 }
 
 async function fetchTreesInBbox(args: {
@@ -100,15 +91,24 @@ export default async function PlayPage({
   let allGenera: Genus[] = [];
   let geocodeError: string | null = null;
 
-  // M4.5: pick 5 random creatures from the wiki on each page load. Each one
-  // flies tree-to-tree on the map for visual life. Uniform random across the
-  // full pool. Pull common + latin name now so the hover popup can show them
-  // without an extra round-trip.
+  // M4.5: pass the full creature pool to the map. The map keeps ~5 creatures
+  // animating at once; each does one tree-to-tree flight, then disappears and
+  // is replaced by a fresh random pick — rotation over time. Common + latin
+  // name come along so the hover popup can show them without a round-trip.
   let creaturesForMap: Array<{
     slug: string;
     common_name: string;
     latin_name: string | null;
     photo_url: string | null;
+  }> = [];
+  // Pulled once so we can a) pick 5 to animate and b) filter the area panel
+  // to creatures whose host trees are present in this neighborhood.
+  let allCreaturesRaw: Array<{
+    slug: string;
+    common_name: string;
+    latin_name: string | null;
+    pic_file: string | null;
+    tree_genera: string[];
   }> = [];
 
   if (address) {
@@ -122,15 +122,15 @@ export default async function PlayPage({
         supabase.from("genera").select("*"),
         supabase
           .from("creatures")
-          .select("slug, common_name, latin_name, pic_file"),
+          .select("slug, common_name, latin_name, pic_file, tree_genera"),
       ]);
       trees = treeList;
       allGenera = gResp.data ?? [];
+      allCreaturesRaw = creaturesResp.data ?? [];
       // `pic_file` is the original pipeline path (e.g. `data/creature_pics/foo.jpg`);
       // we mirror those files at `web/public/creature_photos/`, so swap the prefix
       // (preserving the original extension — most are .jpg, a few .png, one .jpeg).
-      const picked = pickRandom(creaturesResp.data ?? [], 5);
-      creaturesForMap = picked.map((c) => ({
+      creaturesForMap = allCreaturesRaw.map((c) => ({
         slug: c.slug,
         common_name: c.common_name,
         latin_name: c.latin_name,
@@ -143,7 +143,7 @@ export default async function PlayPage({
     }
   }
 
-  // Top genera ranking for the overlay panel.
+  // Genus counts in this area — full list (used by the searchable side panel).
   const counts = new Map<string, number>();
   for (const t of trees) {
     if (t.genus_slug)
@@ -152,9 +152,9 @@ export default async function PlayPage({
   const generaBySlug = new Map(allGenera.map((g) => [g.slug, g]));
   const classified = classifyGenera(allGenera);
   const classifiedBySlug = new Map(classified.map((c) => [c.slug, c]));
-  const top = [...counts.entries()]
+  // Sort by count desc, no slice — the panel scrolls / searches.
+  const areaTrees = [...counts.entries()]
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 5)
     .map(([slug, n]) => {
       const g = generaBySlug.get(slug);
       const c = classifiedBySlug.get(slug);
@@ -166,6 +166,19 @@ export default async function PlayPage({
         rarity: c?.rarity ?? "common",
       };
     });
+
+  // Creatures whose host-tree genera overlap with this neighborhood — the
+  // "wildlife you might actually see here" list. Sorted alphabetically by
+  // common name; the panel can rank differently later if needed.
+  const genusSet = new Set(counts.keys());
+  const areaCreatures = allCreaturesRaw
+    .filter((c) => c.tree_genera.some((g) => genusSet.has(g)))
+    .map((c) => ({
+      slug: c.slug,
+      common_name: c.common_name,
+      latin_name: c.latin_name,
+    }))
+    .sort((a, b) => a.common_name.localeCompare(b.common_name));
 
   return (
     <main className="play-page">
@@ -208,39 +221,9 @@ export default async function PlayPage({
           )}
         </div>
 
-        {/* Top genera overlay, top-right. Each row links to its wiki page. */}
-        {top.length > 0 && (
-          <aside className="play-overlay">
-            <h2 className="play-overlay-h">Top genera</h2>
-            <ol className="play-top">
-              {top.map((row) => (
-                <li key={row.slug} className={`rarity-${row.rarity}`}>
-                  <Link
-                    href={`/wiki/trees/${row.slug}`}
-                    className="play-top-link"
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      className="pixel"
-                      src={`/sprites/${row.slug}.png`}
-                      alt=""
-                      width={32}
-                      height={32}
-                    />
-                    <div className="play-top-body">
-                      <div className="play-top-name">
-                        <em>{row.slug}</em>{" "}
-                        <span className="play-top-dutch">{row.dutch}</span>
-                      </div>
-                      <div className="play-top-meta">
-                        {row.n.toLocaleString()} · {row.pct.toFixed(1)}%
-                      </div>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ol>
-          </aside>
+        {/* Area panel — searchable list of trees + creatures in this neighborhood. */}
+        {(areaTrees.length > 0 || areaCreatures.length > 0) && (
+          <AreaPanel trees={areaTrees} creatures={areaCreatures} />
         )}
       </div>
     </main>
