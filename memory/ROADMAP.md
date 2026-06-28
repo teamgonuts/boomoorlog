@@ -209,7 +209,7 @@ within 1km of an arbitrary point" is `ST_DWithin`).
 - **Geocoder: OpenStreetMap Nominatim.** Free, no API key, open-data theme, well within
   the 1 req/sec rate limit at our scale. Proxied through a Next.js API route so the User-
   Agent header (required by Nominatim) is set server-side.
-- **Radius: 500 m, hard-coded.** Becomes user-tunable when M5 needs it (board size).
+- **Radius: 250 m, hard-coded.** Becomes user-tunable when M5 needs it (board size).
 - **Map library: Leaflet** + the dark CARTO basemap (matches the wiki's dark theme).
   Loaded client-side only (Leaflet touches `window`).
 - **Route: `/play`** (linked from `/`'s top nav). The wiki at `/` stays as the browse view.
@@ -222,7 +222,7 @@ within 1km of an arbitrary point" is `ST_DWithin`).
       PostGIS, adds `trees.geom geography(Point, 4326)`, backfills 298,710 rows
       from lon/lat, GiST index. Idempotent.
 - [x] **2. Spatial RPC function** — `db/005_trees_within.sql` defines
-      `trees_within_radius(lat, lng, radius_m default 500)` using ST_DWithin.
+      `trees_within_radius(lat, lng, radius_m default 250)` using ST_DWithin.
 - [x] **3. Verify spatial query** — Dam Square (52.3731/4.8926) returns 3,256
       trees within 1km; top genera Ulmus (2513), Tilia (157), Platanus (123).
 - [x] **4. Nominatim proxy** — `web/lib/geocode.ts` (shared helper) +

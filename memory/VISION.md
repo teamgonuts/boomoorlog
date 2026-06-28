@@ -1,7 +1,7 @@
 # Project Vision — Boomoorlog ("Tree War")
 
 > **Direction change (2026-06-28):** pivoted from "two ZIP codes battle, marching armies
-> clash" to "defend your own ~500m neighborhood against waves of spawns, classic
+> clash" to "defend your own ~250m neighborhood against waves of spawns, classic
 > tower-defense." This reverses the *marching-armies* decision locked 2026-06-27. Delivery
 > plan lives in [ROADMAP.md](ROADMAP.md).
 
@@ -9,7 +9,7 @@
 
 A web app where you defend **your own Amsterdam neighborhood** in a **classic
 tower-defense** game built from real open data. You enter your address; the game generates
-a board from the **real world within ~500m** — the actual roads, canals, buildings, and
+a board from the **real world within ~250m** — the actual roads, canals, buildings, and
 **trees** around you. Waves of enemies spawn and march your streets toward the center; the
 **real trees are your defensive towers**.
 
@@ -20,7 +20,7 @@ new one, because the towers *are* the trees that actually grow there.
 
 1. User opens the website.
 2. User enters **their Amsterdam address**.
-3. The app geocodes the address and pulls the real world within ~500m: the trees (from the
+3. The app geocodes the address and pulls the real world within ~250m: the trees (from the
    open trees dataset) and the roads / buildings / canals (from OSM).
 4. It generates a **tower-defense board** — a walkable grid (roads = lanes; buildings +
    canals = blocked) plus a pixel-art render.
@@ -69,7 +69,7 @@ Attack / Range / Attack speed map cleanly to a tower; the **enemies** carry move
 
 - **Trees:** Amsterdam DSO API, dataset `bomen`, table `stamgegevens` (~323k trees, 298,734
   "currently living" after filtering stumps + to-be-felled). Seeded into Supabase.
-- **Spatial query:** the board needs "trees within ~500m of an address" → **PostGIS**
+- **Spatial query:** the board needs "trees within ~250m of an address" → **PostGIS**
   (`ST_DWithin` on a geography column built from the existing lon/lat). This revives PostGIS,
   which was deferred during the ZIP-only phase.
 - **Geocoding:** address → coordinates (Amsterdam-only) is needed to center the board.

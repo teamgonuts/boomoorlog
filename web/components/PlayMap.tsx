@@ -4,6 +4,10 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useRef } from "react";
 
+// Map opens centered on Amsterdam if no address has been searched.
+const AMSTERDAM_CENTER: [number, number] = [52.3676, 4.9041];
+const AMSTERDAM_ZOOM = 12;
+
 /**
  * Leaflet map for the /play page.
  *
@@ -114,21 +118,22 @@ export default function PlayMap({
   radiusM,
   trees,
 }: {
-  center: { lat: number; lng: number };
+  center: { lat: number; lng: number } | null;
   radiusM: number;
   trees: TreePoint[];
 }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<L.Map | null>(null);
 
-  // Mount / unmount the Leaflet map once. Subsequent prop changes update layers.
+  // Mount the Leaflet map once. Subsequent prop changes update layers.
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
 
     const map = L.map(containerRef.current, {
-      center: [center.lat, center.lng],
-      zoom: 15,
-      scrollWheelZoom: false,
+      center: AMSTERDAM_CENTER,
+      zoom: AMSTERDAM_ZOOM,
+      scrollWheelZoom: true,
+      zoomControl: true,
     });
     L.tileLayer(
       "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
@@ -146,19 +151,24 @@ export default function PlayMap({
       map.remove();
       mapRef.current = null;
     };
-  }, [center.lat, center.lng]);
+  }, []);
 
-  // Re-render markers + radius whenever inputs change.
+  // Re-render markers + radius whenever inputs change; fit zoom to the data.
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
 
     const layer = L.layerGroup().addTo(map);
 
-    // Recenter (in case the address changed between renders).
-    map.setView([center.lat, center.lng], 15);
+    if (!center) {
+      // No search yet — keep the default Amsterdam-wide view.
+      map.setView(AMSTERDAM_CENTER, AMSTERDAM_ZOOM);
+      return () => {
+        layer.remove();
+      };
+    }
 
-    // Radius circle.
+    // Radius circle (so the player sees the area they're defending).
     L.circle([center.lat, center.lng], {
       radius: radiusM,
       color: "#e0a33a",
@@ -189,10 +199,16 @@ export default function PlayMap({
       marker.addTo(layer);
     }
 
+    // Auto-zoom so all trees + radius are visible, then bias slightly closer.
+    // We use the radius circle's bounds because it always exists and is wider
+    // than any tree at the very edge of a small search.
+    const bounds = L.latLng(center.lat, center.lng).toBounds(radiusM * 2.2);
+    map.fitBounds(bounds, { padding: [60, 60], maxZoom: 18, animate: false });
+
     return () => {
       layer.remove();
     };
-  }, [center.lat, center.lng, radiusM, trees]);
+  }, [center, radiusM, trees]);
 
   return <div ref={containerRef} className="play-map" />;
 }

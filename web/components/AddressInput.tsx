@@ -3,6 +3,10 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
+const COOKIE_NAME = "lastAddress";
+// 1 year — long enough that returning users don't lose their last search.
+const COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
+
 type Hit = {
   lat: number;
   lng: number;
@@ -26,6 +30,16 @@ export function AddressInput({ defaultValue = "" }: { defaultValue?: string }) {
   const [active, setActive] = useState(-1);
   const abortRef = useRef<AbortController | null>(null);
   const timerRef = useRef<number | null>(null);
+
+  // Remember successful searches so a returning visitor lands on their last
+  // neighborhood instead of an empty map. Server reads this cookie in /play.
+  useEffect(() => {
+    if (defaultValue) {
+      document.cookie =
+        `${COOKIE_NAME}=${encodeURIComponent(defaultValue)}; ` +
+        `path=/; max-age=${COOKIE_MAX_AGE}; SameSite=Lax`;
+    }
+  }, [defaultValue]);
 
   // Debounced suggestion fetch.
   useEffect(() => {
@@ -95,6 +109,21 @@ export function AddressInput({ defaultValue = "" }: { defaultValue?: string }) {
       }}
     >
       <div className="play-input-wrap">
+        <svg
+          className="play-search-icon"
+          aria-hidden="true"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
         <input
           type="text"
           name="q"
@@ -105,11 +134,10 @@ export function AddressInput({ defaultValue = "" }: { defaultValue?: string }) {
           }}
           onFocus={() => setOpen(true)}
           onBlur={() => {
-            // Defer so a suggestion click registers first.
             setTimeout(() => setOpen(false), 150);
           }}
           onKeyDown={handleKeyDown}
-          placeholder="e.g. Dam 1, Amsterdam"
+          placeholder="Your Amsterdam address"
           autoComplete="off"
           autoCorrect="off"
           spellCheck={false}
@@ -119,6 +147,21 @@ export function AddressInput({ defaultValue = "" }: { defaultValue?: string }) {
           aria-autocomplete="list"
           aria-expanded={showSuggestions}
         />
+        {value && (
+          <button
+            type="button"
+            className="play-clear"
+            aria-label="Clear"
+            onMouseDown={(e) => {
+              e.preventDefault();
+              setValue("");
+              setHits([]);
+              setOpen(false);
+            }}
+          >
+            ×
+          </button>
+        )}
         {showSuggestions && (
           <ul className="play-suggestions" role="listbox">
             {hits.map((h, i) => (
@@ -127,7 +170,6 @@ export function AddressInput({ defaultValue = "" }: { defaultValue?: string }) {
                   type="button"
                   className={`play-suggestion ${i === active ? "active" : ""}`}
                   onMouseDown={(e) => {
-                    // Prevent input blur so the click registers.
                     e.preventDefault();
                     submit(h.display_name);
                   }}
@@ -140,9 +182,6 @@ export function AddressInput({ defaultValue = "" }: { defaultValue?: string }) {
           </ul>
         )}
       </div>
-      <button type="submit" className="play-submit">
-        Find my trees
-      </button>
     </form>
   );
 }
