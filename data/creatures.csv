@@ -1,0 +1,320 @@
+slug,common_name,latin_name,pic_file,tree_count,tree_genera
+acanthis-cabaret,Lesser Redpoll,Acanthis cabaret,data/creature_pics/acanthis-cabaret.jpg,2,Alnus;Betula
+acanthosoma-haemorrhoidale,Hawthorn shieldbug,Acanthosoma haemorrhoidale,data/creature_pics/acanthosoma-haemorrhoidale.jpg,1,Crataegus
+acari,Sooty-mould-grazing mites,Acari,data/creature_pics/acari.jpg,3,Liriodendron;Ulmus;Zelkova
+aceria,Hornbeam gall mites,Aceria / Eriophyidae,data/creature_pics/aceria.jpg,1,Carpinus
+aceria-celtis,Hackberry gall mite,Aceria celtis / Eriophyes spp.,data/creature_pics/aceria-celtis.jpg,1,Celtis
+aceria-pseudoplatini,Eriophyid gall mites,"Aceria pseudoplatini, A. eriobia / Eriophyidae",data/creature_pics/aceria-pseudoplatini.jpg,1,Acer
+acronicta-aceris,Sycamore moth caterpillar,Acronicta aceris / Noctuidae,data/creature_pics/acronicta-aceris.jpg,1,Acer
+acronicta-alni,Alder moths and tussocks,"Acronicta alni, Eriogaster lanestris / Noctuidae, Lasiocampidae",data/creature_pics/acronicta-alni.jpg,1,Alnus
+aculus-mosoniensis,Ailanthus eriophyid mite,Aculus mosoniensis / Eriophyidae,data/creature_pics/aculus-mosoniensis.jpg,1,Ailanthus
+adelges-abietis,Spruce gall adelgids,"Adelges abietis, A. viridis",data/creature_pics/adelges-abietis.jpg,1,Picea
+adelges-laricis,Larch woolly adelgid,"Adelges laricis, Adelgidae",data/creature_pics/adelges-laricis.jpg,1,Larix
+agelastica-alni,Alder leaf beetle,Agelastica alni / Chrysomelidae,data/creature_pics/agelastica-alni.jpg,1,Alnus
+agrilus-difficilis,Honey locust borer,"Agrilus difficilis, Buprestidae",data/creature_pics/agrilus-difficilis.jpg,1,Gleditsia
+aleurocanthus-spiniferus,Spiny whitefly,Aleurocanthus spiniferus / Aleyrodidae,data/creature_pics/aleurocanthus-spiniferus.jpg,1,Ailanthus
+andrena,Solitary mining bees,Andrena spp. / Andrenidae,data/creature_pics/andrena.jpg,6,Amelanchier;Koelreuteria;Laburnum;Paulownia;Salix;Sorbus
+anthonomus-pomorum,Apple blossom weevil,Anthonomus pomorum / Curculionidae,data/creature_pics/anthonomus-pomorum.jpg,1,Malus
+anthophora,Solitary bees,"Anthophora, Osmia spp.",data/creature_pics/anthophora.jpg,1,Laburnum
+apatura-iris,Purple Emperor & White Admiral,Apatura iris / Limenitis camilla,data/creature_pics/apatura-iris.jpg,1,Salix
+aphidoidea,Generalist sap-feeders,"assorted Aphidoidea, Coccidae",data/creature_pics/aphidoidea.jpg,15,Ailanthus;Amelanchier;Castanea;Catalpa;Celtis;Cercidiphyllum;Cercis;Koelreuteria;Laburnum;Liquidambar;Nyssa;Ostrya;Parrotia;Populus;Pterocarya
+aphidoidea-esp-corylobium-avellanae-myzocallis-coryli,Aphids,"Aphidoidea, esp. Corylobium avellanae, Myzocallis coryli",data/creature_pics/aphidoidea-esp-corylobium-avellanae-myzocallis-coryli.jpg,1,Corylus
+aphidoidea-esp-dysaphis-crataegi-ovatus-crataegarius,Aphids,"Aphidoidea, esp. Dysaphis crataegi, Ovatus crataegarius",data/creature_pics/aphidoidea-esp-dysaphis-crataegi-ovatus-crataegarius.jpg,1,Crataegus
+aphidoidea-generalist-greenfly,Aphids,"Aphidoidea, generalist greenfly",data/creature_pics/aphidoidea-generalist-greenfly.jpg,1,Metasequoia
+aphidoidea-incl-anoecia-corni,Aphids,"Aphidoidea, incl. Anoecia corni",data/creature_pics/aphidoidea-incl-anoecia-corni.jpg,1,Cornus
+aphidoidea-including-aphis-gossypii,Aphids,"Aphidoidea, including Aphis gossypii",data/creature_pics/aphidoidea-including-aphis-gossypii.jpg,1,Morus
+aphidoidea-occasional,Generalist aphids,"Aphidoidea, occasional",data/creature_pics/aphidoidea-occasional.jpg,1,Ginkgo
+aphis,Generalist aphids,Aphis spp.,data/creature_pics/aphis.jpg,2,Paulownia;Styphnolobium
+aphrophora-alni,Alder spittlebugs & psyllids,"Aphrophora alni, Psylla alni",data/creature_pics/aphrophora-alni.jpg,1,Alnus
+apidae,Honeybees & early bumblebees,Apidae,data/creature_pics/apidae.jpg,2,Corylus;Morus
+apidae-andrenidae,Honey bees & solitary bees,"Apidae, Andrenidae",data/creature_pics/apidae-andrenidae.jpg,1,Ostrya
+apiognomonia-veneta,Anthracnose fungus,"Apiognomonia veneta, asexual Discula platani",data/creature_pics/apiognomonia-veneta.jpg,1,Platanus
+apis,Honey bees & bumblebees,Apis / Bombus,data/creature_pics/apis.jpg,3,Acer;Gleditsia;Ilex
+apis-bombus,Honeybees & bumblebees,"Apis, Bombus",data/creature_pics/apis-bombus.jpg,1,Pterocarya
+apis-mellifera,Honey bees,Apis mellifera,data/creature_pics/apis-mellifera.jpg,20,Aesculus;Ailanthus;Alnus;Amelanchier;Castanea;Catalpa;Cercidiphyllum;Cercis;Koelreuteria;Laburnum;Liriodendron;Magnolia;Nyssa;Parrotia;Paulownia;Pyrus;Robinia;Salix;Styphnolobium;Tilia
+apis-mellifera-andrena-spp,Honey bees & solitary bees,"Apis mellifera, Andrena spp. / Apidae+Andrenidae",data/creature_pics/apis-mellifera-andrena-spp.jpg,1,Malus
+apodemus-myodes-sciurus,Wood mouse / Bank vole / Grey & Red Squirrel,"Apodemus, Myodes, Sciurus",data/creature_pics/apodemus-myodes-sciurus.jpg,1,Fagus
+apodemus-sylvaticus,Wood mouse / yellow-necked mouse,Apodemus sylvaticus / A. flavicollis,data/creature_pics/apodemus-sylvaticus.jpg,1,Prunus
+apodemus-sylvaticus-myodes-glareolus,Wood mouse / Bank vole,Apodemus sylvaticus / Myodes glareolus,data/creature_pics/apodemus-sylvaticus-myodes-glareolus.jpg,3,Cornus;Crataegus;Ostrya
+apodemus-sylvaticus-myodes-glareolus-sciurus-vulgaris,Wood Mouse / Bank Vole / Red Squirrel,Apodemus sylvaticus / Myodes glareolus / Sciurus vulgaris,data/creature_pics/apodemus-sylvaticus-myodes-glareolus-sciurus-vulgaris.jpg,1,Corylus
+apoidea,Honeybees & solitary bees,Apoidea,data/creature_pics/apoidea.jpg,1,Cornus
+appendiseta-robiniae,Locust aphid,Appendiseta robiniae,data/creature_pics/appendiseta-robiniae.jpg,1,Robinia
+arachnida,Spiders & harvestmen,Arachnida,data/creature_pics/arachnida.png,1,Ginkgo
+arachnida-isopoda,"Spiders, harvestmen, woodlice",Arachnida / Isopoda,data/creature_pics/arachnida-isopoda.png,1,Cupressocyparis
+araneae,Overwintering invertebrates in marcescent leaves,"mixed Araneae, Hemiptera, Coleoptera",data/creature_pics/araneae.jpg,3,Carpinus;Cercidiphyllum;Chamaecyparis
+araneidae,Generalist canopy spiders,"Araneidae, Theridiidae",data/creature_pics/araneidae.jpg,1,Ailanthus
+argynnis,High brown / silver-washed fritillary butterflies,Argynnis spp.,data/creature_pics/argynnis.jpg,1,Fraxinus
+argyresthia,Cypress tip moth,Argyresthia spp.,data/creature_pics/argyresthia.jpg,2,Cupressocyparis;Thuja
+argyresthia-conjugella,Apple fruit moth,Argyresthia conjugella,data/creature_pics/argyresthia-conjugella.jpg,1,Sorbus
+asterocampa-celtis,Hackberry Emperor butterfly,Asterocampa celtis,data/creature_pics/asterocampa-celtis.jpg,1,Celtis
+atteva-aurea,Ailanthus webworm moth,Atteva aurea / Attevidae,data/creature_pics/atteva-aurea.jpg,1,Ailanthus
+barbastella-barbastellus,Barbastelle & Pipistrelle bats,Barbastella barbastellus / Pipistrellus spp.,data/creature_pics/barbastella-barbastellus.jpg,1,Salix
+blepharidopterus-chlorionis,Honey locust plant bug,"Blepharidopterus chlorionis, Miridae",data/creature_pics/blepharidopterus-chlorionis.jpg,1,Gleditsia
+bombus,Bumblebees,"Bombus spp., both short- and long-tongued",data/creature_pics/bombus.jpg,5,Catalpa;Cercidiphyllum;Cercis;Liriodendron;Robinia
+bombus-terrestris,Bumblebees,Bombus terrestris / B. hortorum / Apidae,data/creature_pics/bombus-terrestris.jpg,6,Aesculus;Amelanchier;Koelreuteria;Laburnum;Paulownia;Styphnolobium
+bombycilla,Cedar/Bohemian waxwings,Bombycilla spp.,data/creature_pics/bombycilla.jpg,1,Morus
+bombycilla-garrulus,Fruit-eating songbirds,"cedar waxwing equiv. — in Europe Bohemian Waxwing Bombycilla garrulus, Blackbird Turdus merula, Mistle Thrush",data/creature_pics/bombycilla-garrulus.jpg,2,Celtis;Sorbus
+bombyx-mori,Silkworm,Bombyx mori / Bombycidae,data/creature_pics/bombyx-mori.jpg,1,Morus
+bradyrhizobium,Rhizobial root bacteria,Bradyrhizobium / Rhizobium nodules,data/creature_pics/bradyrhizobium.jpg,1,Cercis
+bruchidius-siliquastri,Judas tree seed beetle,Bruchidius siliquastri,data/creature_pics/bruchidius-siliquastri.jpg,1,Cercis
+buprestidae,Wood-boring beetles,"Buprestidae, Cerambycidae larvae",data/creature_pics/buprestidae.jpg,1,Celtis
+cacopsylla-pyri,Pear psylla,Cacopsylla pyri / C. pyricola,data/creature_pics/cacopsylla-pyri.jpg,1,Pyrus
+callipterinella,Other birch aphids,"Callipterinella, Symydobius / Aphidoidea",data/creature_pics/callipterinella.jpg,1,Betula
+cameraria-ohridella,Horse-chestnut leaf miner,Cameraria ohridella / Gracillariidae,data/creature_pics/cameraria-ohridella.jpg,1,Aesculus
+capreolus-capreolus,Roe deer browsing,Capreolus capreolus,data/creature_pics/capreolus-capreolus.jpg,1,Pterocarya
+carduelis,Opportunistic city birds,"Carduelis, Passer",data/creature_pics/carduelis.jpg,1,Ailanthus
+carduelis-carduelis,European Goldfinch,Carduelis carduelis,data/creature_pics/carduelis-carduelis.jpg,4,Alnus;Liquidambar;Ulmus;Zelkova
+carduelis-carduelis-spinus-spinus,Goldfinch & siskin,"Carduelis carduelis, Spinus spinus / Fringillidae",data/creature_pics/carduelis-carduelis-spinus-spinus.jpg,1,Ostrya
+carulaspis,Juniper / cypress scales and mites,"Carulaspis spp., spider mites",data/creature_pics/carulaspis.jpg,1,Chamaecyparis
+carulaspis-juniper-scale,Scale insects,"Carulaspis spp., juniper scale",data/creature_pics/carulaspis-juniper-scale.jpg,1,Cupressocyparis
+carulaspis-juniperi,Juniper scale,"Carulaspis juniperi, Diaspididae",data/creature_pics/carulaspis-juniperi.jpg,1,Thuja
+cecidophyopsis-psilaspis,Yew big-bud mite,"Cecidophyopsis psilaspis, Eriophyidae",data/creature_pics/cecidophyopsis-psilaspis.jpg,1,Taxus
+cedrobium-laportei,Cedar woolly aphid,Cedrobium laportei,,1,Cedrus
+celastrina-argiolus,Holly Blue butterfly,"Celastrina argiolus, Lycaenidae",data/creature_pics/celastrina-argiolus.jpg,1,Ilex
+cerambycidae,Wood-boring beetles & longhorns,"Cerambycidae, in declining trees",data/creature_pics/cerambycidae.jpg,1,Aesculus
+ceratomia-catalpae,Catalpa sphinx,Ceratomia catalpae,data/creature_pics/ceratomia-catalpae.jpg,1,Catalpa
+certhia-familiaris,Treecreeper,Certhia familiaris,data/creature_pics/certhia-familiaris.jpg,2,Cedrus;Taxus
+certhia-sitta,Bark-foraging birds,"Treecreeper, Nuthatch — Certhia / Sitta",data/creature_pics/certhia-sitta.jpg,1,Pterocarya
+cerura,Puss moth & sallow kitten,"Cerura/Furcula, Notodontidae",data/creature_pics/cerura.jpg,1,Populus
+cetonia-aurata,Rose chafers,Cetonia aurata / Scarabaeidae,data/creature_pics/cetonia-aurata.jpg,1,Magnolia
+chalcidoidea,Parasitoid wasps of the leaf miner,"Chalcidoidea, esp. Chrysocharis, Pleurotropis",data/creature_pics/chalcidoidea.png,2,Ilex;Magnolia
+chionaspis-gleditsiae,Armored scale,Chionaspis gleditsiae and others,data/creature_pics/chionaspis-gleditsiae.jpg,1,Gleditsia
+chloris,Greenfinch / Goldfinch,Chloris / Carduelis,data/creature_pics/chloris.jpg,2,Laburnum;Liquidambar
+chloris-chloris,Greenfinch & House Sparrow,Chloris chloris / Passer domesticus,data/creature_pics/chloris-chloris.jpg,1,Styphnolobium
+chloris-chloris-prunella-modularis-troglodytes-troglodytes-erithacus-rubecula,Greenfinch / Dunnock / Wren / Robin,Chloris chloris / Prunella modularis / Troglodytes troglodytes / Erithacus rubecula,data/creature_pics/chloris-chloris-prunella-modularis-troglodytes-troglodytes-erithacus-rubecula.jpg,1,Cupressocyparis
+choristoneura,Spruce / larch budworm complex,"Choristoneura, Tortricidae",data/creature_pics/choristoneura.jpg,1,Larix
+chromaphis-juglandicola,Small walnut aphid,"Chromaphis juglandicola, Aphididae",data/creature_pics/chromaphis-juglandicola.jpg,1,Juglans
+chrysomela-populi,Poplar leaf beetles,"Chrysomela populi, C. tremula",data/creature_pics/chrysomela-populi.jpg,1,Populus
+cinara-cedri,Cedar aphid,Cinara cedri,data/creature_pics/cinara-cedri.jpg,1,Cedrus
+cinara-cupressi,Cypress aphid,Cinara cupressi sensu lato,data/creature_pics/cinara-cupressi.jpg,3,Chamaecyparis;Cupressocyparis;Thuja
+cinara-laricis,Speckled larch aphid,"Cinara laricis, Lachninae",data/creature_pics/cinara-laricis.jpg,1,Larix
+cinara-pinea,Giant conifer aphids,"Cinara pinea, C. pini",data/creature_pics/cinara-pinea.jpg,1,Pinus
+coccinella-septempunctata,Seven-spot ladybird (Coccinella septempunctata) + larvae,,data/creature_pics/coccinella-septempunctata.jpg,1,Tilia
+coccinellidae,Ladybirds & lacewings,"Coccinellidae, Chrysopidae",data/creature_pics/coccinellidae.jpg,4,Juglans;Larix;Magnolia;Parrotia
+coccothraustes-coccothraustes,Hawfinch,Coccothraustes coccothraustes,data/creature_pics/coccothraustes-coccothraustes.jpg,1,Carpinus
+coleophora-laricella,Larch casebearer moth,"Coleophora laricella, Coleophoridae",data/creature_pics/coleophora-laricella.jpg,1,Larix
+coleophoridae,Case-bearer moth caterpillars,Coleophoridae,data/creature_pics/coleophoridae.jpg,1,Cornus
+coleoptera-saproxylica,Hericium & beech wood-decay beetles,Coleoptera saproxylica,data/creature_pics/coleoptera-saproxylica.png,1,Fagus
+collembola,Springtails and bark-dwelling Collembola,Collembola,data/creature_pics/collembola.jpg,7,Cercidiphyllum;Metasequoia;Parrotia;Paulownia;Platanus;Populus;Quercus
+collembola-oribatida,Springtails & oribatid mites in litter,"Collembola, Oribatida",data/creature_pics/collembola-oribatida.jpg,1,Fagus
+collembola-psocoptera,Bark-crevice springtails & psocids,"Collembola, Psocoptera",data/creature_pics/collembola-psocoptera.jpg,1,Ginkgo
+colocasia-coryli,Nut-tree tussock,Colocasia coryli / Noctuidae,data/creature_pics/colocasia-coryli.jpg,1,Carpinus
+columba-corvus,Wood pigeons & corvids,Columba/Corvus,data/creature_pics/columba-corvus.jpg,2,Metasequoia;Nyssa
+columba-palumbus,Wood Pigeon and roosting passerines,"Columba palumbus, Turdus merula",data/creature_pics/columba-palumbus.jpg,8,Cercidiphyllum;Chamaecyparis;Cornus;Ilex;Liquidambar;Taxodium;Thuja;Zelkova
+columba-palumbus-pica-pica-corvus-cornix,Wood Pigeon / Eurasian Magpie / Hooded Crow,Columba palumbus / Pica pica / Corvus cornix,data/creature_pics/columba-palumbus-pica-pica-corvus-cornix.jpg,1,Ginkgo
+columba-palumbus-streptopelia-decaocto,Wood Pigeon / Collared Dove,Columba palumbus / Streptopelia decaocto,data/creature_pics/columba-palumbus-streptopelia-decaocto.jpg,1,Cupressocyparis
+corvus,Crow / magpie roost,"Corvus, Pica",data/creature_pics/corvus.jpg,1,Gleditsia
+corvus-corone,Carrion Crow / Hooded Crow,Corvus corone,data/creature_pics/corvus-corone.jpg,1,Juglans
+corvus-frugilegus,Rooks & carrion crows,Corvus frugilegus / C. corone,data/creature_pics/corvus-frugilegus.jpg,1,Platanus
+corythucha-ciliata,Sycamore lace bug,"Corythucha ciliata, Tingidae",data/creature_pics/corythucha-ciliata.jpg,1,Platanus
+cosmia-diffinis,White-spotted Pinion moth,"Cosmia diffinis, Noctuidae",data/creature_pics/cosmia-diffinis.jpg,1,Ulmus
+cossus-cossus,Wood-boring beetles,"goat moth Cossus cossus, clearwing Synanthedon",data/creature_pics/cossus-cossus.jpg,2,Castanea;Salix
+cryptogams,Lichens & mosses on bark,cryptogams,data/creature_pics/cryptogams.jpg,1,Ginkgo
+curculio-elephas,Chestnut weevil,Curculio elephas,data/creature_pics/curculio-elephas.jpg,1,Castanea
+curculio-glandium,Acorn weevils,Curculio glandium / C. elephas,data/creature_pics/curculio-glandium.jpg,1,Quercus
+curculio-nucum,Nut weevil,Curculio nucum,data/creature_pics/curculio-nucum.jpg,1,Corylus
+curculionoidea,Willow weevils,Curculionoidea — ~100+ Salix-associated spp. across Europe,data/creature_pics/curculionoidea.jpg,1,Salix
+cyanistes,Blue & Great Tits,Cyanistes / Parus,data/creature_pics/cyanistes.jpg,6,Aesculus;Amelanchier;Carpinus;Ilex;Robinia;Styphnolobium
+cyanistes-caeruleus,Blue & Great Tits,Cyanistes caeruleus / Parus major,data/creature_pics/cyanistes-caeruleus.jpg,17,Acer;Castanea;Catalpa;Celtis;Cercidiphyllum;Cercis;Gleditsia;Laburnum;Parrotia;Populus;Pyrus;Quercus;Taxodium;Taxus;Tilia;Ulmus;Zelkova
+cyanistes-caeruleus-parus-major,Blue & Great Tits,Cyanistes caeruleus / Parus major,data/creature_pics/cyanistes-caeruleus-parus-major.jpg,1,Corylus
+cyanistes-parus,Blue & Great Tits,Cyanistes/Parus / Paridae,data/creature_pics/cyanistes-parus.jpg,4,Liriodendron;Magnolia;Malus;Ostrya
+cydia-illutana,Larch tortrix and cone moths,"Cydia illutana, Zeiraphera",data/creature_pics/cydia-illutana.jpg,1,Larix
+cydia-pomonella,Codling moth,"Cydia pomonella, Tortricidae",data/creature_pics/cydia-pomonella.jpg,3,Juglans;Malus;Pyrus
+cydia-splendana,Chestnut tortrix,Cydia splendana,data/creature_pics/cydia-splendana.jpg,1,Castanea
+cynipidae,Oak gall wasps,"Cynipidae, ~30+ spp. per tree",data/creature_pics/cynipidae.jpg,1,Quercus
+dasineura-pyri,Pear leaf-curling midge,Dasineura pyri,data/creature_pics/dasineura-pyri.jpg,1,Pyrus
+dendrocopos-major,Great Spotted Woodpecker,Dendrocopos major,data/creature_pics/dendrocopos-major.jpg,2,Betula;Cedrus
+dendrocopos-major-sitta-europaea,Great Spotted Woodpecker & Nuthatch,Dendrocopos major / Sitta europaea,data/creature_pics/dendrocopos-major-sitta-europaea.jpg,1,Fagus
+diaspididae,Armoured scales and mealybugs,"Diaspididae, Pseudococcidae",data/creature_pics/diaspididae.png,2,Celtis;Cercidiphyllum
+diaspididae-pseudococcidae,Armored scales & mealybugs,"Diaspididae, Pseudococcidae",data/creature_pics/diaspididae-pseudococcidae.png,1,Nyssa
+diprion-pini,Pine sawflies,"Diprion pini, Neodiprion sertifer, Diprionidae",data/creature_pics/diprion-pini.jpg,1,Pinus
+diptera-hymenoptera-coleoptera,Pollinators on Mayflower,"Diptera, Hymenoptera, Coleoptera",data/creature_pics/diptera-hymenoptera-coleoptera.jpg,1,Crataegus
+dorcus-parallelipipedus,Lesser stag beetle,Dorcus parallelipipedus,data/creature_pics/dorcus-parallelipipedus.jpg,1,Fraxinus
+drepanosiphum-platanoidis,Sycamore aphid,Drepanosiphum platanoidis / Aphididae,data/creature_pics/drepanosiphum-platanoidis.jpg,1,Acer
+dryocosmus-kuriphilus,Oriental chestnut gall wasp,Dryocosmus kuriphilus,data/creature_pics/dryocosmus-kuriphilus.jpg,1,Castanea
+dysaphis-plantaginea-aphis-pomi,Rosy apple aphid & green apple aphid,"Dysaphis plantaginea, Aphis pomi / Aphididae",data/creature_pics/dysaphis-plantaginea-aphis-pomi.jpg,1,Malus
+dysaphis-pyri,Pear & rosy apple aphids,"Dysaphis pyri, D. plantaginea",data/creature_pics/dysaphis-pyri.jpg,1,Pyrus
+dysaphis-sorbi,Aphids,"Aphidoidea — Dysaphis sorbi, Eriosoma spp.",data/creature_pics/dysaphis-sorbi.jpg,1,Sorbus
+elasmostethus-interstinctus,Birch shieldbug,Elasmostethus interstinctus / Acanthosomatidae,data/creature_pics/elasmostethus-interstinctus.jpg,1,Betula
+elatobium-abietinum,Spruce aphids,"Elatobium abietinum, Cinara pilicornis",data/creature_pics/elatobium-abietinum.jpg,1,Picea
+enarmonia-formosana,Cherry bark tortrix & cherry fruit moth,"Enarmonia formosana, Argyresthia pruniella",data/creature_pics/enarmonia-formosana.jpg,1,Prunus
+endromis-versicolora,Birch moths,"Geometridae & Notodontidae, incl. Endromis versicolora",data/creature_pics/endromis-versicolora.jpg,1,Betula
+eriophyes,Gall mites,Eriophyes spp.,data/creature_pics/eriophyes.jpg,1,Crataegus
+eriophyes-tiliae,Lime nail gall mite,"Eriophyes tiliae, Eriophyidae",data/creature_pics/eriophyes-tiliae.jpg,1,Tilia
+eucallipterus-tiliae,Lime aphid,"Eucallipterus tiliae, Aphididae",data/creature_pics/eucallipterus-tiliae.jpg,1,Tilia
+euceraphis-betulae,Silver birch aphid,Euceraphis betulae / Aphididae,data/creature_pics/euceraphis-betulae.jpg,1,Betula
+fascista-cercerisella,Redbud leaf-folder moth and Lepidoptera larvae,Fascista cercerisella and ~10–19 spp.,data/creature_pics/fascista-cercerisella.jpg,1,Cercis
+favonius-quercus,Purple hairstreak butterfly,Favonius quercus,data/creature_pics/favonius-quercus.jpg,1,Quercus
+fomitopsis-betulina,Birch polypore & associated fungus gnats,Fomitopsis betulina + Mycetophilidae,data/creature_pics/fomitopsis-betulina.jpg,1,Betula
+forficula-auricularia,Earwigs,Forficula auricularia,data/creature_pics/forficula-auricularia.jpg,3,Parrotia;Paulownia;Pyrus
+formica,Wood ants & sugar-tending ants,"Formica, Lasius / Formicidae",data/creature_pics/formica.jpg,1,Acer
+formica-rufa,Red wood ants,"Formica rufa group, incl. Scottish wood ant F. aquilonia",data/creature_pics/formica-rufa.jpg,1,Pinus
+formicidae-e-g-lasius-niger,Honeydew-feeding ants,"Formicidae, e.g. Lasius niger",data/creature_pics/formicidae-e-g-lasius-niger.jpg,1,Liriodendron
+frankia-alni,Frankia root nodule bacteria,Frankia alni / Frankiaceae,data/creature_pics/frankia-alni.jpg,1,Alnus
+fringilla-coelebs,Finches and small passerines,"Fringilla coelebs, Carduelis spp., Sylvia spp.",data/creature_pics/fringilla-coelebs.jpg,1,Chamaecyparis
+fringilla-coelebs-montifringilla,Chaffinch & Brambling,Fringilla coelebs / montifringilla,data/creature_pics/fringilla-coelebs-montifringilla.jpg,1,Fagus
+garrulus-glandarius,Eurasian Jay,Garrulus glandarius,data/creature_pics/garrulus-glandarius.jpg,4,Aesculus;Juglans;Pterocarya;Quercus
+geometridae,Maple-feeding moths,multiple Geometridae & Noctuidae,data/creature_pics/geometridae.jpg,4,Acer;Picea;Tilia;Zelkova
+gilpinia-hercyniae,Spruce sawflies,"Gilpinia hercyniae, Pristiphora abietina, Diprionidae/Tenthredinidae",data/creature_pics/gilpinia-hercyniae.jpg,1,Picea
+glyphodes-pyloalis,Mulberry leaf-webber,Glyphodes pyloalis / Crambidae,data/creature_pics/glyphodes-pyloalis.jpg,1,Morus
+gracillariidae,Leaf-mining micromoths,"Gracillariidae, Stigmella spp. / Nepticulidae",data/creature_pics/gracillariidae.jpg,1,Ostrya
+grylloprociphilus-imbricator,Beech blight aphid,"Grylloprociphilus imbricator, Aphididae",data/creature_pics/grylloprociphilus-imbricator.jpg,1,Taxodium
+hammerschmidtia-ferruginea,Aspen hoverfly,Hammerschmidtia ferruginea,data/creature_pics/hammerschmidtia-ferruginea.jpg,1,Populus
+heterarthrus,Birch leaf-mining sawflies,"Heterarthrus, Fenusa / Tenthredinidae",data/creature_pics/heterarthrus.jpg,1,Betula
+honeybees-flies-aphid-honeydew,Honeybees & flies on aphid honeydew,,data/creature_pics/honeybees-flies-aphid-honeydew.jpg,1,Juglans
+honeybees-flies-extrafloral,Honeybees & flies on extrafloral nectaries / sap,,data/creature_pics/honeybees-flies-extrafloral.jpg,1,Liquidambar
+hylesinus-leperisinus-fraxini,Ash bark beetle,Hylesinus / Leperisinus fraxini,data/creature_pics/hylesinus-leperisinus-fraxini.jpg,1,Fraxinus
+illinoia-liriodendri,Tulip-tree aphid,Illinoia liriodendri / Aphididae,data/creature_pics/illinoia-liriodendri.jpg,2,Liriodendron;Magnolia
+ips-typographus,Eurasian spruce bark beetle,"Ips typographus, Scolytinae",data/creature_pics/ips-typographus.jpg,1,Picea
+jadera-haematoloma,"Soapberry / ""goldenrain tree"" bug","Jadera haematoloma, Rhopalidae",data/creature_pics/jadera-haematoloma.jpg,1,Koelreuteria
+laothoe-populi,Poplar hawk moth,"Laothoe populi, Sphingidae",data/creature_pics/laothoe-populi.jpg,1,Populus
+lasioglossum,Halictid sweat bees,"Lasioglossum, Halictus spp.",data/creature_pics/lasioglossum.jpg,1,Gleditsia
+lasius,Ants on extrafloral nectaries,"Lasius, Formica / Formicidae",data/creature_pics/lasius.jpg,2,Ailanthus;Liquidambar
+lasius-niger,Ants,Lasius niger and others,data/creature_pics/lasius-niger.jpg,6,Laburnum;Styphnolobium;Taxodium;Thuja;Tilia;Zelkova
+leaf-mining-flies-micro-moths,Leaf-mining flies / micro-moths,,data/creature_pics/leaf-mining-flies-micro-moths.jpg,1,Laburnum
+lepidoptera,"Moth caterpillars — Nut-tree Tussock, Large Emerald, Barred Umber, Small White Wave",Lepidoptera,data/creature_pics/lepidoptera.jpg,4,Corylus;Fagus;Fraxinus;Nyssa
+lepidoptera-incl-trichiura-crataegi-lackey-vapourer-light-emerald,Hawthorn moth caterpillars,"Lepidoptera, incl. Trichiura crataegi, lackey, vapourer, light emerald",data/creature_pics/lepidoptera-incl-trichiura-crataegi-lackey-vapourer-light-emerald.jpg,1,Crataegus
+lepidoptera-rare,Loopers / generalist caterpillars,"Lepidoptera, rare",data/creature_pics/lepidoptera-rare.jpg,1,Ginkgo
+lepus,Hares & deer browsing,"Lepus, Capreolus",data/creature_pics/lepus.jpg,1,Laburnum
+lobarion-graphidion-communities,Lichens & bark mosses,"Lobarion, Graphidion communities",data/creature_pics/lobarion-graphidion-communities.jpg,1,Fraxinus
+lochmaea-crataegi,Hawthorn leaf beetle,Lochmaea crataegi,data/creature_pics/lochmaea-crataegi.jpg,1,Crataegus
+loxia-curvirostra,Common Crossbill,Loxia curvirostra,data/creature_pics/loxia-curvirostra.jpg,2,Larix;Pinus
+lutra-lutra,Otter & water vole,"Lutra lutra, Arvicola amphibius",data/creature_pics/lutra-lutra.jpg,1,Alnus
+lycorma-delicatula,Spotted lanternfly,Lycorma delicatula / Fulgoridae,data/creature_pics/lycorma-delicatula.jpg,1,Ailanthus
+lymantria-dispar,Gypsy moth caterpillars,Lymantria dispar / Erebidae,data/creature_pics/lymantria-dispar.jpg,1,Ostrya
+macroglossum-stellatarum,Night-flying hawkmoths,"Sphingidae, e.g. Macroglossum stellatarum",data/creature_pics/macroglossum-stellatarum.jpg,1,Catalpa
+macropsis-fumipennis,Honey locust leafhopper,Macropsis fumipennis,data/creature_pics/macropsis-fumipennis.jpg,1,Gleditsia
+malacosoma-disstria,Forest tent caterpillar,"Malacosoma disstria, native range only",data/creature_pics/malacosoma-disstria.jpg,1,Nyssa
+malacosoma-neustria,Lackey moth,Malacosoma neustria,data/creature_pics/malacosoma-neustria.jpg,1,Cornus
+martes-martes,Pine marten,Martes martes,data/creature_pics/martes-martes.jpg,2,Pinus;Sorbus
+megabruchidius-dorsalis,Asian honey-locust seed beetle,"Megabruchidius dorsalis, Bruchinae",data/creature_pics/megabruchidius-dorsalis.jpg,1,Gleditsia
+megachile,Leafcutter bees,Megachile spp.,data/creature_pics/megachile.jpg,1,Cercis
+megachile-sculpturalis,Asian giant resin bee,Megachile sculpturalis,data/creature_pics/megachile-sculpturalis.jpg,1,Styphnolobium
+meles-meles,Badger,Meles meles,data/creature_pics/meles-meles.jpg,1,Prunus
+mesostigmata,Phoretic mites on Ips typographus,"Mesostigmata, e.g. Trichouropoda, Dendrolaelaps",data/creature_pics/mesostigmata.jpg,1,Picea
+mimas-tiliae,Lime hawk-moth,"Mimas tiliae, Sphingidae",data/creature_pics/mimas-tiliae.jpg,1,Tilia
+muscardinus-avellanarius,Hazel Dormouse,Muscardinus avellanarius,data/creature_pics/muscardinus-avellanarius.jpg,3,Corylus;Crataegus;Prunus
+myzocallis-carpini,Hornbeam aphids,Myzocallis carpini / Aphididae,data/creature_pics/myzocallis-carpini.jpg,1,Carpinus
+myzus-cerasi,Aphids,"cherry blackfly, Myzus cerasi",data/creature_pics/myzus-cerasi.jpg,1,Prunus
+nematinae,Sawflies,Nematinae / Pontania gallers,data/creature_pics/nematinae.jpg,1,Salix
+nematus-tibialis,Locust sawfly,Nematus tibialis,data/creature_pics/nematus-tibialis.jpg,1,Robinia
+neolecanium-cornuparvum,Magnolia scale,Neolecanium cornuparvum / Coccidae,,1,Magnolia
+nyctalus,Roosting bats,"Nyctalus, Myotis spp.",data/creature_pics/nyctalus.jpg,1,Castanea
+nyctalus-noctula,Noctule Bat,Nyctalus noctula,data/creature_pics/nyctalus-noctula.jpg,1,Betula
+nymphalis-antiopa,Mourning Cloak / Camberwell Beauty,Nymphalis antiopa,data/creature_pics/nymphalis-antiopa.jpg,1,Celtis
+obolodiplosis-robiniae,Black locust gall midge,Obolodiplosis robiniae,data/creature_pics/obolodiplosis-robiniae.jpg,1,Robinia
+operophtera-brumata,Winter moth & mottled umber caterpillars,"Operophtera brumata, Erannis defoliaria / Geometridae",data/creature_pics/operophtera-brumata.jpg,6,Amelanchier;Malus;Platanus;Prunus;Pyrus;Quercus
+operophtera-brumata-etc,Winter moth & geometrid caterpillars,"Operophtera brumata, etc. / Geometridae",data/creature_pics/operophtera-brumata-etc.jpg,1,Ostrya
+opisthograptis-luteolata,Brimstone moth & grey dagger caterpillars,"Opisthograptis luteolata, Acronicta psi",data/creature_pics/opisthograptis-luteolata.jpg,2,Amelanchier;Prunus
+orthosia,Orthosia moths,"Noctuidae — Common Quaker, Hebrew Character, etc.",data/creature_pics/orthosia.jpg,1,Salix
+osmia,Mason and mining bees,"Osmia, Andrena spp.",data/creature_pics/osmia.jpg,2,Cercis;Prunus
+pachypsylla,Hackberry psyllids,"Pachypsylla spp., incl. P. celtidismamma, P. celtidisvesicula, P. celtidisgemma",data/creature_pics/pachypsylla.jpg,1,Celtis
+panaphis-juglandis,Large walnut aphid,"Panaphis juglandis, Aphididae",data/creature_pics/panaphis-juglandis.jpg,1,Juglans
+paracolopha-morrisoni,Zelkova gall aphid,"Paracolopha morrisoni, Aphididae",data/creature_pics/paracolopha-morrisoni.jpg,1,Zelkova
+parectopa-robiniella,Robinia leafminer moths,"Parectopa robiniella, Macrosaccus robiniella",data/creature_pics/parectopa-robiniella.jpg,1,Robinia
+paridae-aegithalidae,"Blue & Great Tits, Long-tailed Tit",Paridae / Aegithalidae,data/creature_pics/paridae-aegithalidae.jpg,1,Crataegus
+parthenolecanium-corni,European fruit lecanium scale,"Parthenolecanium corni, Coccidae",data/creature_pics/parthenolecanium-corni.jpg,1,Taxodium
+parus-major,Great Tit / Blue Tit,Parus major / Cyanistes caeruleus,data/creature_pics/parus-major.jpg,1,Juglans
+parus-pipistrellus,Cavity-nesting birds & roosting bats,"Parus, Pipistrellus",data/creature_pics/parus-pipistrellus.jpg,1,Pterocarya
+passer,House Sparrow / Great Tit,Passer / Parus,data/creature_pics/passer.jpg,1,Koelreuteria
+passer-domesticus,Roosting birds,"House Sparrow Passer domesticus, Wood Pigeon Columba palumbus",data/creature_pics/passer-domesticus.jpg,2,Catalpa;Paulownia
+passer-domesticus-montanus,House Sparrow / Eurasian Tree Sparrow,Passer domesticus / montanus,data/creature_pics/passer-domesticus-montanus.jpg,1,Ginkgo
+pauesia-anatolica,Aphid parasitoid wasps,Pauesia anatolica and relatives,data/creature_pics/pauesia-anatolica.jpg,1,Cedrus
+periparus-ater,Coal Tit,Periparus ater,data/creature_pics/periparus-ater.jpg,5,Cedrus;Chamaecyparis;Metasequoia;Picea;Pinus
+phloeosinus-aubei,Cypress bark beetle,Phloeosinus aubei / Curculionidae,data/creature_pics/phloeosinus-aubei.jpg,1,Metasequoia
+phloeosinus-metasequoiae,Bark beetle Phloeosinus metasequoiae,Curculionidae: Scolytinae,data/creature_pics/phloeosinus-metasequoiae.jpg,1,Metasequoia
+phyllaphis-fagi,Woolly beech aphid,Phyllaphis fagi,data/creature_pics/phyllaphis-fagi.jpg,1,Fagus
+phyllobius-intrusus,Arborvitae weevil,"Phyllobius intrusus, Curculionidae",data/creature_pics/phyllobius-intrusus.jpg,1,Thuja
+phyllonorycter,Micro-moths and leaf miners,"Lepidoptera, e.g. Phyllonorycter spp.",data/creature_pics/phyllonorycter.jpg,1,Castanea
+phyllonorycter-esperella,Generalist micro-moths,Phyllonorycter esperella & similar / Gracillariidae,data/creature_pics/phyllonorycter-esperella.jpg,1,Carpinus
+phytomyza-ilicis,Holly leaf miner,"Phytomyza ilicis, Agromyzidae",data/creature_pics/phytomyza-ilicis.jpg,1,Ilex
+phytophthora-lateralis,Phytophthora lateralis root pathogen,,data/creature_pics/phytophthora-lateralis.jpg,1,Chamaecyparis
+phytoptus-avellanae-big-bud-mite,Gall mites,"Phytoptus avellanae, big bud mite",data/creature_pics/phytoptus-avellanae-big-bud-mite.jpg,1,Corylus
+pica,Magpie / Carrion Crow,Pica / Corvus,data/creature_pics/pica.jpg,1,Koelreuteria
+picidae,Cavity-nesting birds & roosting bats,"Picidae, Pipistrellus / Vespertilionidae",data/creature_pics/picidae.jpg,1,Carpinus
+pipistrellus,Roosting bats,"Pipistrellus, Nyctalus / Vespertilionidae",data/creature_pics/pipistrellus.jpg,11,Aesculus;Cedrus;Liriodendron;Metasequoia;Nyssa;Ostrya;Pyrus;Quercus;Robinia;Taxus;Tilia
+pipistrellus-pipistrellus,Common Pipistrelle,Pipistrellus pipistrellus,data/creature_pics/pipistrellus-pipistrellus.jpg,6,Acer;Ailanthus;Paulownia;Platanus;Populus;Styphnolobium
+pipistrellus-pipistrellus-nyctalus-noctula,Common Pipistrelle / Noctule,Pipistrellus pipistrellus / Nyctalus noctula,data/creature_pics/pipistrellus-pipistrellus-nyctalus-noctula.jpg,1,Fagus
+pipistrellus-plecotus-auritus,Common Pipistrelle / brown long-eared bat,Pipistrellus / Plecotus auritus,data/creature_pics/pipistrellus-plecotus-auritus.jpg,1,Fraxinus
+prociphilus-aphis-fabae,Aphids on ash,"Prociphilus spp., Aphis fabae",data/creature_pics/prociphilus-aphis-fabae.jpg,1,Fraxinus
+pseudococcidae,Mealybugs,Pseudococcidae,data/creature_pics/pseudococcidae.jpg,1,Catalpa
+pseudoscorpiones,Bark-crevice pseudoscorpions,"Pseudoscorpiones, e.g. Chthonius",data/creature_pics/pseudoscorpiones.jpg,1,Parrotia
+psittacula-krameri,Rose-ringed parakeet,Psittacula krameri,data/creature_pics/psittacula-krameri.jpg,1,Platanus
+psocoptera,Bark-dwelling springtails & barklice,Psocoptera + Collembola,data/creature_pics/psocoptera.jpg,1,Taxus
+psychidae,Bagworm,"Psychidae, e.g. Thyridopteryx, Psyche",data/creature_pics/psychidae.jpg,1,Thuja
+pterocallis-alni,Alder aphids,Pterocallis alni / Aphididae,data/creature_pics/pterocallis-alni.jpg,1,Alnus
+pulvinaria-regalis,Aesculus scale,Pulvinaria regalis / Coccidae,data/creature_pics/pulvinaria-regalis.jpeg,2,Aesculus;Platanus
+pyrrhula-pyrrhula,Bullfinch,Pyrrhula pyrrhula,data/creature_pics/pyrrhula-pyrrhula.jpg,3,Fraxinus;Sorbus;Ulmus
+qualitative,Cytisine-tolerant generalist caterpillars,qualitative,,1,Styphnolobium
+rattus-norvegicus,Brown rats,Rattus norvegicus,data/creature_pics/rattus-norvegicus.jpg,1,Ginkgo
+regulus,Goldcrest / Coal Tit,Regulus / Periparus,data/creature_pics/regulus.jpg,1,Larix
+regulus-ignicapilla,Firecrest,Regulus ignicapilla,data/creature_pics/regulus-ignicapilla.jpg,1,Chamaecyparis
+regulus-regulus,Goldcrest,Regulus regulus,data/creature_pics/regulus-regulus.jpg,7,Cedrus;Chamaecyparis;Cupressocyparis;Metasequoia;Picea;Taxus;Thuja
+resseliella-craneiobia-corni,Dogwood gall midge,Resseliella / Craneiobia corni,data/creature_pics/resseliella-craneiobia-corni.jpg,1,Cornus
+rhagoletis-completa,Walnut husk fly,"Rhagoletis completa, Tephritidae",data/creature_pics/rhagoletis-completa.jpg,1,Juglans
+rhopobota,Holly tortrix and yellow-barred brindle moths,Rhopobota / Acasis,data/creature_pics/rhopobota.jpg,1,Ilex
+rhynchaenus-fagi,Beech leaf-mining weevil,Rhynchaenus fagi,data/creature_pics/rhynchaenus-fagi.jpg,1,Fagus
+roosting-garden-birds-in-winter,Roosting garden birds in winter,,,1,Cupressocyparis
+satyrium-w-album,White-letter Hairstreak,"Satyrium w-album, Lycaenidae",data/creature_pics/satyrium-w-album.jpg,1,Ulmus
+sciurus,Squirrels and bank voles,"Sciurus, Myodes glareolus",data/creature_pics/sciurus.jpg,8,Castanea;Cedrus;Celtis;Cercidiphyllum;Chamaecyparis;Liquidambar;Nyssa;Taxus
+sciurus-carolinensis,Eurasian Grey Squirrel,Sciurus carolinensis,data/creature_pics/sciurus-carolinensis.jpg,10,Acer;Aesculus;Carpinus;Liriodendron;Magnolia;Metasequoia;Platanus;Quercus;Ulmus;Zelkova
+sciurus-vulgaris,Eurasian red squirrel / introduced grey,Sciurus vulgaris / S. carolinensis,data/creature_pics/sciurus-vulgaris.jpg,4,Juglans;Picea;Pinus;Pterocarya
+sciurus-vulgaris-s-carolinensis,Squirrels,Sciurus vulgaris / S. carolinensis,data/creature_pics/sciurus-vulgaris-s-carolinensis.jpg,1,Ginkgo
+scolytus-scolytus,Elm bark beetles,"Scolytus scolytus, S. multistriatus, Curculionidae: Scolytinae",data/creature_pics/scolytus-scolytus.png,1,Ulmus
+sesia-apiformis,Hornet moth,"Sesia apiformis, Sesiidae",data/creature_pics/sesia-apiformis.jpg,1,Populus
+sitta-europaea-dendrocopos-major,Nuthatch & Great Spotted Woodpecker,Sitta europaea / Dendrocopos major,data/creature_pics/sitta-europaea-dendrocopos-major.jpg,1,Corylus
+small-mammals,"Foxes, squirrels, mice",small mammals,data/creature_pics/small-mammals.jpg,1,Morus
+smerinthus-ocellata,Eyed Hawk-moth & Puss Moth caterpillars,Smerinthus ocellata / Cerura vinula,data/creature_pics/smerinthus-ocellata.jpg,1,Salix
+sphinx-pinastri,Pine hawk-moth,"Sphinx pinastri, Sphingidae",data/creature_pics/sphinx-pinastri.jpg,1,Pinus
+spinus-spinus,Eurasian Siskin,Spinus spinus,data/creature_pics/spinus-spinus.jpg,4,Alnus;Betula;Larix;Picea
+stereonychus-fraxini,Ash weevil,Stereonychus fraxini,data/creature_pics/stereonychus-fraxini.jpg,1,Fraxinus
+stigmella-microtheriella,Hazel leaf-miner moth,Stigmella microtheriella / Nepticulidae,data/creature_pics/stigmella-microtheriella.jpg,1,Carpinus
+stomaphis-yanonis-aphididae,Giant zelkova aphid,"Stomaphis yanonis, Aphididae",,1,Zelkova
+strix-aluco-phoenicurus-phoenicurus-sitta-dendrocopos,"Tawny Owl, Redstart, Nuthatch, Woodpeckers",Strix aluco / Phoenicurus phoenicurus / Sitta / Dendrocopos,data/creature_pics/strix-aluco-phoenicurus-phoenicurus-sitta-dendrocopos.jpg,1,Fraxinus
+sturnus-vulgaris,European starling,Sturnus vulgaris / Sturnidae,data/creature_pics/sturnus-vulgaris.jpg,2,Morus;Nyssa
+sus-scrofa,Wild boar,Sus scrofa,data/creature_pics/sus-scrofa.jpg,2,Fagus;Robinia
+sylvia-atricapilla,Eurasian Blackcap,Sylvia atricapilla,data/creature_pics/sylvia-atricapilla.jpg,1,Amelanchier
+syrphidae,Hoverflies & lacewings,"Syrphidae, Chrysopidae",data/creature_pics/syrphidae.jpg,6,Acer;Aesculus;Koelreuteria;Magnolia;Styphnolobium;Tilia
+taxomyia-taxi,Yew gall midge,"Taxomyia taxi, Cecidomyiidae",data/creature_pics/taxomyia-taxi.jpg,1,Taxus
+tenthredinidae,Green dogwood sawfly & related sawflies,Tenthredinidae,data/creature_pics/tenthredinidae.jpg,1,Cornus
+tenthredinidae-e-g-croesus-septentrionalis,Hazel sawflies,"Tenthredinidae, e.g. Croesus septentrionalis",data/creature_pics/tenthredinidae-e-g-croesus-septentrionalis.jpg,1,Corylus
+tetranychidae,Spider mites,Tetranychidae,data/creature_pics/tetranychidae.jpg,8,Cupressocyparis;Ginkgo;Gleditsia;Koelreuteria;Liquidambar;Metasequoia;Pterocarya;Thuja
+tetranychus-urticae,Two-spotted spider mite (Tetranychus urticae) and relatives,,data/creature_pics/tetranychus-urticae.jpg,4,Cercidiphyllum;Parrotia;Paulownia;Robinia
+tetropium-gabrieli,Larch longhorn,"Tetropium gabrieli, Cerambycidae",data/creature_pics/tetropium-gabrieli.jpg,1,Larix
+thaumetopoea-pityocampa,Pine processionary moth,"Thaumetopoea pityocampa, Notodontidae",data/creature_pics/thaumetopoea-pityocampa.jpg,1,Pinus
+thelephoraceae,Ectomycorrhizal fungi,"Thelephoraceae, Trichophaea spp.",data/creature_pics/thelephoraceae.jpg,1,Cedrus
+tinocallis-platani,Elm leaf aphid,"Tinocallis platani, Eriosoma spp., Aphididae",data/creature_pics/tinocallis-platani.jpg,1,Ulmus
+tomicus-piniperda,Pine bark beetle,"Tomicus piniperda, Scolytinae",data/creature_pics/tomicus-piniperda.jpg,1,Pinus
+tortricidae,Generalist tortricid & geometrid moths,"Tortricidae, Geometridae",data/creature_pics/tortricidae.jpg,2,Parrotia;Paulownia
+tortrix-geometrid,Generalist tortrix and geometrid caterpillars,,data/creature_pics/tortrix-geometrid.jpg,1,Liquidambar
+toumeyella-liriodendri,Tulip-tree scale,Toumeyella liriodendri / Coccidae,data/creature_pics/toumeyella-liriodendri.jpg,1,Liriodendron
+trachys-yanoi,Trachys yanoi-type leaf-mining buprestid beetles,Buprestidae,data/creature_pics/trachys-yanoi.jpg,1,Zelkova
+troglodytes,Wren / Dunnock / Robin,"Troglodytes, Prunella, Erithacus",data/creature_pics/troglodytes.jpg,1,Ilex
+tuber-magnatum,White truffle (Tuber magnatum) mycorrhizal partner,,data/creature_pics/tuber-magnatum.jpg,1,Ostrya
+tuberculatus,Oak aphids,Tuberculatus / Lachnus / Thelaxes spp.,data/creature_pics/tuberculatus.jpg,1,Quercus
+tuberolachnus-salignus,Aphids,"Aphidoidea — Tuberolachnus salignus, Chaitophorus spp.",data/creature_pics/tuberolachnus-salignus.jpg,1,Salix
+turdus,"Song Thrush, Redwing, Fieldfare",Turdus spp.,data/creature_pics/turdus.jpg,5,Cornus;Ilex;Magnolia;Morus;Taxus
+turdus-iliacus-pilaris,Redwing & Fieldfare,Turdus iliacus / pilaris,data/creature_pics/turdus-iliacus-pilaris.jpg,1,Crataegus
+turdus-including-winter-migrants,Blackbirds & thrushes,"Turdus, including winter migrants",data/creature_pics/turdus-including-winter-migrants.jpg,1,Nyssa
+turdus-merula,Blackbird,Turdus merula,data/creature_pics/turdus-merula.jpg,6,Amelanchier;Cornus;Parrotia;Prunus;Sorbus;Thuja
+turdus-merula-t-philomelos,Blackbirds & thrushes,"Turdus merula, T. philomelos / Turdidae",data/creature_pics/turdus-merula-t-philomelos.jpg,1,Malus
+turdus-philomelos,Song Thrush & Mistle Thrush,Turdus philomelos / T. viscivorus,data/creature_pics/turdus-philomelos.jpg,1,Amelanchier
+turdus-pilaris,Fieldfare & Redwing,Turdus pilaris / T. iliacus,data/creature_pics/turdus-pilaris.jpg,1,Sorbus
+turdus-pilaris-t-iliacus,Fieldfare & redwing,"Turdus pilaris, T. iliacus",data/creature_pics/turdus-pilaris-t-iliacus.jpg,1,Malus
+turdus-viscivorus,Mistle Thrush,Turdus viscivorus,data/creature_pics/turdus-viscivorus.jpg,2,Ilex;Sorbus
+various-lepidoptera,"Eyed hawk-moth, pale tussock, green pug, Chinese character",various Lepidoptera,data/creature_pics/various-lepidoptera.jpg,1,Malus
+various-mammals,"Mice, voles, foxes, badgers",various mammals,data/creature_pics/various-mammals.jpg,1,Malus
+venusia-cambrica,Larger Welsh wave & autumn green carpet moths,Venusia cambrica / Chloroclysta miata,data/creature_pics/venusia-cambrica.jpg,1,Sorbus
+verticillium,Verticillium wilt-associated fungi,Verticillium spp.,data/creature_pics/verticillium.jpg,1,Catalpa
+vespidae,Wasps (Vespidae) and hoverflies (Syrphidae),,data/creature_pics/vespidae.jpg,2,Liriodendron;Morus
+vespula,Wasps,"Vespula spp., parasitoid wasps",data/creature_pics/vespula.jpg,1,Koelreuteria
+vulpes-vulpes,Frugivorous mammals,"Vulpes vulpes, Meles meles, Sus scrofa",data/creature_pics/vulpes-vulpes.jpg,1,Pyrus
+vulpes-vulpes-erinaceus-europaeus,Red Fox / Hedgehog,Vulpes vulpes / Erinaceus europaeus,data/creature_pics/vulpes-vulpes-erinaceus-europaeus.jpg,1,Cupressocyparis
+winter-moth-tortrix-spp,Generalist caterpillars,"winter moth, tortrix spp.",data/creature_pics/winter-moth-tortrix-spp.jpg,1,Pterocarya
+wood-pigeon-magpie-carrion-crow,Wood pigeon / Magpie / Carrion crow,,data/creature_pics/wood-pigeon-magpie-carrion-crow.jpg,1,Pterocarya
+xylocopa,Carpenter bees,Xylocopa spp.,data/creature_pics/xylocopa.jpg,2,Cercis;Platanus
+xylocopa-violacea,Violet carpenter bee,Xylocopa violacea,data/creature_pics/xylocopa-violacea.jpg,1,Catalpa
+xylosandrus-crassiusculus,Granulate ambrosia beetle,"Xylosandrus crassiusculus, Scolytinae",data/creature_pics/xylosandrus-crassiusculus.jpg,1,Liquidambar
+xylotrechus-chinensis,Asian longhorn mulberry pest,Xylotrechus chinensis / Cerambycidae,data/creature_pics/xylotrechus-chinensis.jpg,1,Morus
+yponomeuta-evonymella,Bird-cherry ermine moth,"Yponomeuta evonymella / Y. padella, Yponomeutidae",data/creature_pics/yponomeuta-evonymella.jpg,1,Prunus
+zeuzera-pyrina,"Wood leopard moth (Zeuzera pyrina, Cossidae) and figure of eight (Diloba caeruleocephala)",,data/creature_pics/zeuzera-pyrina.jpg,1,Populus
