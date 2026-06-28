@@ -32,6 +32,7 @@ export function AreaPanel({
   creatures: AreaCreature[];
 }) {
   const [q, setQ] = useState("");
+  const [tab, setTab] = useState<"trees" | "creatures">("trees");
   const needle = q.trim().toLowerCase();
 
   const { filteredTrees, filteredCreatures } = useMemo(() => {
@@ -51,12 +52,35 @@ export function AreaPanel({
     };
   }, [needle, trees, creatures]);
 
-  const showTrees = filteredTrees.length > 0;
-  const showCreatures = filteredCreatures.length > 0;
-  const empty = !showTrees && !showCreatures;
+  const activeList = tab === "trees" ? filteredTrees : filteredCreatures;
+  const otherCount =
+    tab === "trees" ? filteredCreatures.length : filteredTrees.length;
+  const otherTabLabel = tab === "trees" ? "Creatures" : "Trees";
 
   return (
     <aside className="area-panel">
+      <div className="area-tabs" role="tablist">
+        <button
+          type="button"
+          role="tab"
+          aria-selected={tab === "trees"}
+          className={`area-tab ${tab === "trees" ? "active" : ""}`}
+          onClick={() => setTab("trees")}
+        >
+          Trees <span className="area-tab-count">{filteredTrees.length}</span>
+        </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={tab === "creatures"}
+          className={`area-tab ${tab === "creatures" ? "active" : ""}`}
+          onClick={() => setTab("creatures")}
+        >
+          Creatures{" "}
+          <span className="area-tab-count">{filteredCreatures.length}</span>
+        </button>
+      </div>
+
       <div className="area-search">
         <svg
           aria-hidden="true"
@@ -76,7 +100,7 @@ export function AreaPanel({
           type="text"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Search trees & creatures"
+          placeholder={`Search ${tab}`}
           spellCheck={false}
           autoCorrect="off"
           autoComplete="off"
@@ -93,80 +117,87 @@ export function AreaPanel({
         )}
       </div>
 
-      <div className="area-scroll">
-        {showTrees && (
-          <section className="area-section">
-            <h3 className="area-section-h">
-              Trees <span>{filteredTrees.length}</span>
-            </h3>
-            <ol className="area-list">
-              {filteredTrees.map((t) => (
-                <li key={t.slug} className={`area-row rarity-${t.rarity}`}>
-                  <Link href={`/wiki/trees/${t.slug}`} className="area-link">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      className="pixel area-icon"
-                      src={`/sprites/${t.slug}.png`}
-                      alt=""
-                      width={32}
-                      height={32}
-                    />
-                    <div className="area-body">
-                      <div className="area-name">
-                        <em>{t.slug}</em>{" "}
-                        <span className="area-dutch">{t.dutch}</span>
-                      </div>
-                      <div className="area-meta">
-                        {t.n.toLocaleString()} · {t.pct.toFixed(1)}%
-                      </div>
+      <div className="area-scroll" role="tabpanel">
+        {tab === "trees" && filteredTrees.length > 0 && (
+          <ol className="area-list">
+            {filteredTrees.map((t) => (
+              <li key={t.slug} className={`area-row rarity-${t.rarity}`}>
+                <Link href={`/wiki/trees/${t.slug}`} className="area-link">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    className="pixel area-icon"
+                    src={`/sprites/${t.slug}.png`}
+                    alt=""
+                    width={32}
+                    height={32}
+                  />
+                  <div className="area-body">
+                    <div className="area-name">
+                      <em>{t.slug}</em>{" "}
+                      <span className="area-dutch">{t.dutch}</span>
                     </div>
-                  </Link>
-                </li>
-              ))}
-            </ol>
-          </section>
+                    <div className="area-meta">
+                      {t.n.toLocaleString()} · {t.pct.toFixed(1)}%
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ol>
         )}
 
-        {showCreatures && (
-          <section className="area-section">
-            <h3 className="area-section-h">
-              Creatures <span>{filteredCreatures.length}</span>
-            </h3>
-            <ol className="area-list">
-              {filteredCreatures.map((c) => (
-                <li key={c.slug} className="area-row">
-                  <Link
-                    href={`/wiki/creatures/${c.slug}`}
-                    className="area-link"
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      className="pixel area-icon"
-                      src={`/creature_sprites/${c.slug}.png`}
-                      alt=""
-                      width={32}
-                      height={32}
-                    />
-                    <div className="area-body">
-                      <div className="area-name area-name-creature">
-                        {c.common_name}
-                      </div>
-                      {c.latin_name && (
-                        <div className="area-meta area-latin">
-                          {c.latin_name}
-                        </div>
-                      )}
+        {tab === "creatures" && filteredCreatures.length > 0 && (
+          <ol className="area-list">
+            {filteredCreatures.map((c) => (
+              <li key={c.slug} className="area-row">
+                <Link href={`/wiki/creatures/${c.slug}`} className="area-link">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    className="pixel area-icon"
+                    src={`/creature_sprites/${c.slug}.png`}
+                    alt=""
+                    width={32}
+                    height={32}
+                  />
+                  <div className="area-body">
+                    <div className="area-name area-name-creature">
+                      {c.common_name}
                     </div>
-                  </Link>
-                </li>
-              ))}
-            </ol>
-          </section>
+                    {c.latin_name && (
+                      <div className="area-meta area-latin">
+                        {c.latin_name}
+                      </div>
+                    )}
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ol>
         )}
 
-        {empty && (
+        {activeList.length === 0 && (
           <p className="area-empty">
-            Nothing matches <em>&ldquo;{q}&rdquo;</em>.
+            {q ? (
+              <>
+                No {tab} match <em>&ldquo;{q}&rdquo;</em>.
+                {otherCount > 0 && (
+                  <>
+                    {" "}
+                    <button
+                      type="button"
+                      className="area-empty-jump"
+                      onClick={() =>
+                        setTab(tab === "trees" ? "creatures" : "trees")
+                      }
+                    >
+                      {otherCount} in {otherTabLabel} →
+                    </button>
+                  </>
+                )}
+              </>
+            ) : (
+              <>No {tab} in this neighborhood.</>
+            )}
           </p>
         )}
       </div>
