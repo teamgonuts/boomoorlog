@@ -61,6 +61,13 @@ export const ARCHETYPE_BLURBS: Record<ArchetypeBase, string> = {
     "Low power and low agility: weak filler that wins by sheer numbers in tree-dense ZIP codes.",
 };
 
+export const ARCHETYPE_FULL: Record<ArchetypeBase, string> = {
+  Bruiser: "Bruiser — Elite Carry",
+  Juggernaut: "Juggernaut — Tank/Artillery",
+  Skirmisher: "Skirmisher — Glass Cannon",
+  Support: "Support — Chaff/Filler",
+};
+
 function median(xs: number[]): number {
   const sorted = [...xs].sort((a, b) => a - b);
   return sorted[Math.floor(sorted.length / 2)];

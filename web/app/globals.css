@@ -458,6 +458,10 @@ main {
   background: rgba(224, 163, 58, 0.18);
   color: #f0cd84;
 }
+.badge.star {
+  background: rgba(224, 163, 58, 0.14);
+  color: #f0cd84;
+}
 .ib-arch {
   text-align: center;
   color: var(--dim);
