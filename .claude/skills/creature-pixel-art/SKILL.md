@@ -70,14 +70,18 @@ them distinct.
    | `bird`        | passerine perched, body + head + tail + eye                  | blue tit, robin, finch, sparrow, blackbird, jay |
    | `mammal`      | side-view 4-legged body with head + tail                     | squirrel, dormouse, mouse, marten, hedgehog |
    | `bat`         | small body + wings arched up-and-out, scalloped membrane     | pipistrelle, noctule, barbastelle |
+   | `fungus`      | bracket / lichen / mycorrhizal / bacterial-cluster — organic blob | Fomitopsis (`--aspect 1.0`), Lobarion lichen (`--aspect 0.7`), Bradyrhizobium nodules (`--aspect 0.8`) |
 
    When genuinely unsure: `bug` is the safe default for any small insect,
    `bird` for any small passerine. Prefer the more specific form when the
    photo clearly shows it — a bee with visible wings is `bee`, not `bug`.
 
-   **Microbe / bacteria / fungi** (Bradyrhizobium, Frankia, Verticillium,
-   etc.) → use `bug` with `--size 0.7` and `--accent 60 --accent-mode spots`
-   for a cluster look.
+   **Fungi, lichens, bacteria, root nodules** (Bradyrhizobium, Frankia,
+   Verticillium, Apiognomonia, Phytophthora, Lobarion, Thelephoraceae,
+   Tuber, etc.) → use `--form fungus`. Two modes via `--aspect`:
+   `>= 1.0` makes a BRACKET-fungus half-dome attached to a trunk on the
+   right (Fomitopsis-like); `< 1.0` makes a LICHEN/cluster crusty patch
+   (Lobarion, bacterial clusters, mycorrhizae).
 
 3. **Pick the hue** (`--hue`, degrees 0–360) — the dominant color of the
    *body* (ignore background, flowers, leaves). Saturation is fixed punchy
@@ -184,6 +188,12 @@ them distinct.
   `--form spider --hue 25 --sat 35 --seed 8`
 - **Ladybird (7-spot)** — red beetle with black spots:
   `--form beetle --hue 5 --sat 80 --accent-hue 0 --accent 30 --accent-mode spots --seed 9`
+- **Birch polypore (Fomitopsis betulina)** — pale bracket fungus on a trunk:
+  `--form fungus --hue 25 --sat 25 --aspect 1.0 --seed 1`
+- **Lobarion lichen** — leafy green crusty patch on bark:
+  `--form fungus --hue 90 --sat 45 --aspect 0.8 --seed 2`
+- **Frankia / Bradyrhizobium root nodules** — pale microbial cluster:
+  `--form fungus --hue 30 --sat 30 --aspect 0.8 --size 0.85 --seed 3`
 
 ## Batch conversion
 

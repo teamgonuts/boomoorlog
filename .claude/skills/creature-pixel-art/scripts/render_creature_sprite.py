@@ -516,6 +516,72 @@ def form_bat(ramp, P):
     return g, body_rx + wing_span // 2
 
 
+def form_fungus(ramp, P):
+    """Organic blob with lobed edges — covers bracket fungi, lichens, mycorrhizae,
+    bacterial-nodule clusters. Two modes via --aspect:
+      aspect >= 1.0 → BRACKET fungus (half-dome jutting from a "trunk" on the
+        right edge, classic Fomitopsis silhouette)
+      aspect <  1.0 → LICHEN/cluster (irregular crusty patch, lobed everywhere)"""
+    g = _blank()
+    s = P["size"]
+    seed = P["seed"]
+    if P["aspect"] >= 1.0:
+        # Bracket fungus: half-circle attached to trunk on the right edge.
+        # Trunk = ramp["outline"] vertical bar at the right side.
+        rx = max(8, int(round(11 * s)))
+        ry = max(5, int(round(7 * s)))
+        cy = CY + 1
+        anchor_x = WP - 4  # anchor on right side (the "trunk")
+        for y in range(HP):
+            for x in range(WP):
+                if x > anchor_x:
+                    continue   # trunk side, stays empty/becomes trunk
+                if ((x - anchor_x) / rx) ** 2 + ((y - cy) / ry) ** 2 <= 1.0:
+                    g[y][x] = shade(x, anchor_x - rx // 2, rx, ramp)
+        # carve a curved underside lip (subtle dark band on the lower edge)
+        for x in range(WP):
+            for y in range(HP - 1, -1, -1):
+                if g[y][x] is not None:
+                    if y + 1 < HP and g[y + 1][x] is None:
+                        # bottom edge: paint with a brighter "lip"
+                        g[y][x] = ramp["light"]
+                    break
+        # trunk strip
+        for y in range(HP):
+            for tx in range(anchor_x + 1, min(WP, anchor_x + 4)):
+                g[y][tx] = ramp["outline"] if tx == anchor_x + 1 else ramp["dark"]
+        # speckled texture across the cap
+        for y in range(HP):
+            for x in range(WP):
+                if g[y][x] in (ramp["mid"], ramp["dark"]):
+                    if _hash(x, y, seed + 23) < 0.06:
+                        g[y][x] = ramp["light"]
+        span = rx
+    else:
+        # Lichen / cluster: irregular lobed patch centered, no trunk
+        rx = max(7, int(round(10 * s)))
+        ry = max(5, int(round(7 * s)))
+        for y in range(HP):
+            for x in range(WP):
+                # lobed ellipse: radius wobbles with angle
+                dx, dy = x - CX, y - CY
+                ang = math.atan2(dy, dx)
+                wobble = 0.78 + 0.30 * math.sin(ang * 4 + seed)
+                if (dx / rx) ** 2 + (dy / ry) ** 2 <= wobble:
+                    g[y][x] = shade(x, CX, rx, ramp)
+        # carve a few internal gaps for crusty texture
+        for y in range(HP):
+            for x in range(WP):
+                if g[y][x] is None:
+                    continue
+                if _hash(x, y, seed + 91) < 0.10:
+                    g[y][x] = ramp["dark"]
+                elif _hash(x, y, seed + 137) < 0.04:
+                    g[y][x] = None  # tiny holes
+        span = rx
+    return g, span
+
+
 FORMS = {
     "bug": form_bug,
     "beetle": form_beetle,
@@ -526,6 +592,7 @@ FORMS = {
     "bird": form_bird,
     "mammal": form_mammal,
     "bat": form_bat,
+    "fungus": form_fungus,
 }
 
 
