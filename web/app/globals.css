@@ -1,20 +1,29 @@
 @import "tailwindcss";
 
-/* ---- Boomoorlog wiki theme — dark, leafy/wartime ---- */
+/* ---- Creatures theme — dark with a vibrant mint accent ----
+   Inspired by freakdesign.com.au: deep near-black backgrounds, one
+   signature electric mint, and a muted teal as secondary support.
+   Display type is uppercase Montserrat; body is Raleway. */
 
 :root {
-  --bg: #0c0d10;
-  --bg2: #14161b;
-  --panel: #191c23;
-  --panel2: #1f232c;
-  --ink: #e7e3da;
-  --dim: #9aa0ac;
-  --line: #2a2f3a;
-  --common: #7f8a99;
-  --notable: #4a9fd4;
-  --rare: #e0a33a;
-  --accent: #c0463b;
-  --gold: #e6b566;
+  --bg: #0e1514;
+  --bg2: #121a18;
+  --panel: #161f1d;
+  --panel2: #1e2826;
+  --ink: #efefef;
+  --dim: #a6a6a6;
+  --line: #242e2f;
+  --common: #6d6d6d;
+  --notable: #759891;
+  --rare: #30ffbb;
+  /* Primary accent = electric mint. Secondary = muted teal-green.
+     Var names "accent" and "gold" are kept for compatibility with the
+     existing rules below but now point at the new palette. */
+  --accent: #759891;
+  --gold: #30ffbb;
+
+  --font-display: "Montserrat", system-ui, sans-serif;
+  --font-body: "Raleway", system-ui, sans-serif;
 }
 
 * {
@@ -25,7 +34,13 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font: 16px/1.6 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font: 300 16px/1.6 var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
 a {
@@ -76,11 +91,11 @@ img {
   gap: 10px;
   color: var(--ink);
   text-decoration: none;
-  /* Slightly squared serif feels appropriate for "tree war" */
-  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  font-size: 22px;
+  font-family: var(--font-display);
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   transition: color 0.15s ease;
 }
 .brand:hover {
@@ -94,12 +109,12 @@ img {
   width: 32px;
   height: 32px;
   border-radius: 999px;
-  background: rgba(230, 181, 102, 0.12);
+  background: rgba(48, 255, 187, 0.12);
   color: var(--gold);
   transition: background 0.15s ease;
 }
 .brand:hover .brand-mark {
-  background: rgba(230, 181, 102, 0.2);
+  background: rgba(48, 255, 187, 0.22);
 }
 .brand-name {
   /* Stand the wordmark away from the icon a touch */
@@ -117,10 +132,10 @@ img {
 .nav-link {
   color: var(--dim);
   text-decoration: none;
-  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 8px 14px;
   border-radius: 999px;
@@ -174,7 +189,8 @@ main {
   font-size: 30px;
   line-height: 1;
   color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
+  font-weight: 700;
 }
 .hstat span {
   font-size: 12px;
@@ -238,25 +254,25 @@ main {
 
 /* Rarity tints */
 .card.rarity-common {
-  background: #161a21;
+  background: #161e1c;
   border-top-color: var(--common);
 }
 .card.rarity-notable {
-  background: #141d27;
+  background: #16201e;
   border-top-color: var(--notable);
-  border-color: rgba(74, 159, 212, 0.28);
+  border-color: rgba(117, 152, 145, 0.32);
 }
 .card.rarity-notable .cnt {
-  color: #8fcbf0;
+  color: #b9d3cd;
 }
 .card.rarity-rare {
-  background: #221c12;
+  background: #122321;
   border-top-color: var(--rare);
-  border-color: rgba(224, 163, 58, 0.4);
-  box-shadow: 0 0 14px rgba(224, 163, 58, 0.12);
+  border-color: rgba(48, 255, 187, 0.4);
+  box-shadow: 0 0 14px rgba(48, 255, 187, 0.18);
 }
 .card.rarity-rare .cnt {
-  color: #f0cd84;
+  color: #8af0d0;
 }
 
 /* Hover stat overlay */
@@ -306,7 +322,7 @@ main {
 .cs-f {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, #b8412f, var(--gold));
+  background: linear-gradient(90deg, var(--accent), var(--gold));
 }
 .cs-row b {
   font-size: 12px;
@@ -429,10 +445,10 @@ main {
   top: 18px;
 }
 .rarity-rare .infobox {
-  border-color: rgba(224, 163, 58, 0.5);
+  border-color: rgba(48, 255, 187, 0.5);
 }
 .rarity-notable .infobox {
-  border-color: rgba(74, 159, 212, 0.4);
+  border-color: rgba(117, 152, 145, 0.5);
 }
 .ib-compare {
   display: grid;
@@ -503,16 +519,16 @@ main {
   color: #c3cad6;
 }
 .badge.rarity-notable {
-  background: rgba(74, 159, 212, 0.18);
-  color: #8fcbf0;
+  background: rgba(117, 152, 145, 0.22);
+  color: #b9d3cd;
 }
 .badge.rarity-rare {
-  background: rgba(224, 163, 58, 0.18);
-  color: #f0cd84;
+  background: rgba(48, 255, 187, 0.18);
+  color: #8af0d0;
 }
 .badge.star {
-  background: rgba(224, 163, 58, 0.14);
-  color: #f0cd84;
+  background: rgba(48, 255, 187, 0.14);
+  color: #8af0d0;
 }
 .ib-arch {
   text-align: center;
@@ -550,7 +566,7 @@ main {
 .stat-fill {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, #b8412f, var(--gold));
+  background: linear-gradient(90deg, var(--accent), var(--gold));
 }
 .stat-n {
   text-align: right;
@@ -689,7 +705,7 @@ main {
 }
 .play-input-wrap:focus-within {
   border-color: var(--gold);
-  box-shadow: 0 6px 24px rgba(230, 181, 102, 0.18);
+  box-shadow: 0 6px 24px rgba(48, 255, 187, 0.22);
 }
 .play-search-icon {
   color: var(--dim);
@@ -831,13 +847,68 @@ main {
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55);
 }
 
+/* Two-tab segmented control across the top of the panel. */
+.area-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.25);
+}
+.area-tab {
+  background: transparent;
+  border: none;
+  color: var(--dim);
+  font-family: var(--font-display, inherit);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 11px 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+  transition: color 0.12s ease;
+}
+.area-tab:hover {
+  color: var(--ink);
+}
+.area-tab.active {
+  color: var(--ink);
+}
+.area-tab.active::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: -1px;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+.area-tab-count {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--dim);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1px 6px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+.area-tab.active .area-tab-count {
+  color: var(--gold);
+  background: rgba(48, 255, 187, 0.12);
+}
+
 .area-search {
   display: flex;
   align-items: center;
   gap: 6px;
   padding: 8px 10px;
   border-bottom: 1px solid var(--line);
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.18);
 }
 .area-search svg {
   color: var(--dim);
@@ -989,6 +1060,21 @@ main {
 .area-empty em {
   color: var(--ink);
   font-style: italic;
+}
+.area-empty-jump {
+  background: transparent;
+  border: none;
+  color: var(--gold);
+  font: inherit;
+  font-style: normal;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.area-empty-jump:hover {
+  text-decoration: none;
 }
 
 /* Leaflet integration */

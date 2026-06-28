@@ -227,6 +227,39 @@ hit; the list view returns `has_photo: true` and you fetch the URLs from the det
 
 ---
 
+## Reusable fetcher script
+
+`fetch_observations.py` at the repo root wraps both APIs behind one CLI. Std-lib only,
+no deps. Output is a unified CSV with the same columns regardless of source.
+
+```bash
+# last 7 days within 1km of an address, both sources, merged CSV
+python fetch_observations.py --source both \
+    --lat 52.3702 --lng 4.8952 --radius-km 1 --days 7 \
+    --out data/obs_dam_7d.csv
+
+# last 30 days, iNat only, also download every photo locally
+python fetch_observations.py --source inat \
+    --lat 52.3702 --lng 4.8952 --radius-km 2 --days 30 \
+    --out data/obs_inat_30d.csv \
+    --download-photos data/obs_photos
+
+# whole-city bbox, today only (iNat — Observation.org doesn't honour bbox)
+python fetch_observations.py --source inat \
+    --bbox 4.728,52.278,5.079,52.431 --days 1 \
+    --out data/obs_ams_today.csv
+```
+
+Unified output columns:
+`source · obs_id · observed_on · lat · lng · accuracy_m · scientific_name ·
+common_name · taxon_group · quality · photo_url · photo_license · permalink`
+
+Handles pagination, rate-limit-friendly sleeps, retries with backoff, and (for
+Observation.org's broken date filter) sorts by date desc and stops when crossing the
+cutoff. Photo download is opt-in and skips files that already exist.
+
+---
+
 ## Data volume — how many species/day in Amsterdam?
 
 Measured 2026-06-28 by querying both APIs for **2026-06-27** (a fully-posted day):

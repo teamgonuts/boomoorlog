@@ -74,6 +74,51 @@ exactly one genus." Enforced via `trees.genus_slug REFERENCES genera(slug)`.
 
 ---
 
+## `observations` — recent wildlife sightings (migration 007)
+
+A second small graph hangs off `creatures`: real sightings pulled from iNaturalist and
+Observation.org / Waarneming.nl, stored together with a `source` discriminator.
+
+```
+CREATURES ||--o{ OBSERVATIONS : "is sighted as"
+
+OBSERVATIONS {
+    text          source           "inat | waarneming"
+    bigint        source_obs_id    PK with source
+    date          observed_on
+    geography     point            "geography(Point,4326)"
+    integer       accuracy_m
+    text          scientific_name
+    text          common_name
+    text          taxon_group
+    text          quality          "inat grade · waarneming rarity"
+    text          photo_url
+    text          photo_license    "iNat only"
+    text          permalink
+    text          creature_slug    FK→creatures.slug  (nullable; matched later)
+    timestamptz   fetched_at
+}
+```
+
+**Natural key** is `(source, source_obs_id)` — what each API returns. The seed UPSERTs on
+this so re-running is safe and idempotent.
+
+**Why one table, not two?** Both sources share the same shape (species + coord + photo +
+timestamp). Splitting by source would just force every query to UNION. The `source`
+column is enough.
+
+**Why `creature_slug` nullable?** Most species observed in Amsterdam (~500/day) won't be
+in our hand-curated ~330-creature roster. Observations land in the table immediately;
+matching to the roster is a separate, best-effort step (migration 008, planned).
+
+**Spatial index** (`gist (point)`) powers `ST_DWithin` for "creatures within 1km of an
+address" — feeds the live creature map.
+
+**Source of truth**: the live APIs. Refreshed by `seed_observations.py` (defaults to
+last 30 days, 7km around Amsterdam city centre, both sources).
+
+---
+
 ## What goes where, and why
 
 ### `genera` — the archetypes (~56 rows)

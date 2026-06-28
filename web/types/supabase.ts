@@ -101,6 +101,40 @@ export type Database = {
           },
         ];
       };
+      observations: {
+        Row: {
+          source: "inat" | "waarneming";
+          source_obs_id: number;
+          observed_on: string;
+          // `point` is PostGIS geography — supabase-js returns hex EWKB. We
+          // never select it from the client; lat/lng below are the consumable
+          // copy. Typed as unknown so accidental use surfaces a TS error.
+          point: unknown;
+          lat: number | null;
+          lng: number | null;
+          accuracy_m: number | null;
+          scientific_name: string;
+          common_name: string | null;
+          taxon_group: string | null;
+          quality: string | null;
+          photo_url: string | null;
+          photo_license: string | null;
+          permalink: string | null;
+          creature_slug: string | null;
+          fetched_at: string;
+        };
+        Insert: Database["public"]["Tables"]["observations"]["Row"];
+        Update: Partial<Database["public"]["Tables"]["observations"]["Insert"]>;
+        Relationships: [
+          {
+            foreignKeyName: "observations_creature_slug_fkey";
+            columns: ["creature_slug"];
+            isOneToOne: false;
+            referencedRelation: "creatures";
+            referencedColumns: ["slug"];
+          },
+        ];
+      };
       creatures: {
         Row: {
           slug: string;
@@ -156,6 +190,46 @@ export type Database = {
         };
         Returns: Database["public"]["Tables"]["trees"]["Row"][];
       };
+      trees_for_view: {
+        Args: {
+          lat_min: number;
+          lng_min: number;
+          lat_max: number;
+          lng_max: number;
+          max_pins: number;
+          cells_per_side: number;
+        };
+        Returns: Array<{
+          mode: "individual" | "cluster";
+          cell_key: string;
+          id: number | null;
+          lat: number;
+          lng: number;
+          slug: string | null;
+          n: number;
+          species: string | null;
+          height_m: number | null;
+          diameter_cm: number | null;
+          planting_year: number | null;
+          location: string | null;
+          location_detail: string | null;
+          protection_status: string | null;
+        }>;
+      };
+      trees_top_genera_in_bbox: {
+        Args: {
+          lat_min: number;
+          lng_min: number;
+          lat_max: number;
+          lng_max: number;
+          limit_n: number;
+        };
+        Returns: Array<{
+          slug: string;
+          n: number;
+          total: number;
+        }>;
+      };
     };
   };
 };
@@ -163,3 +237,4 @@ export type Database = {
 export type Genus = Database["public"]["Tables"]["genera"]["Row"];
 export type Tree = Database["public"]["Tables"]["trees"]["Row"];
 export type Creature = Database["public"]["Tables"]["creatures"]["Row"];
+export type Observation = Database["public"]["Tables"]["observations"]["Row"];
