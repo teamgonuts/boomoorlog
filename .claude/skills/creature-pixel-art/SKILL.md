@@ -123,13 +123,40 @@ them distinct.
        --seed <n> --out <path.png>
    ```
 
-6. **Look at the output** next to the photo and ask "would someone match
-   these?" Iterate — the script is instant. Common fixes:
+6. **Look at the output WITH the Read tool, side-by-side with the photo.**
+   This step is NOT optional — first renders are wrong ~30% of the time.
+   Ask yourself: "Would a stranger match these?" Specifically check:
+   - Did I pick the right form? (caterpillar vs adult moth is the classic
+     mistake — the photo decides, not the name.)
+   - Is the dominant color right?
+   - Are the distinctive markings visible (bee stripes, ladybird spots,
+     blue-tit yellow belly)?
+   - Are wings/tails/legs actually showing if the creature has them?
+
+   If anything fails, re-render. Common fixes:
    - Wings invisible (bee/moth) → make sure you've actually picked `bee` or
      `moth` form, not `bug`.
    - Stripes too dominant → lower `--accent` toward 30, or switch to spots.
    - Mammal looks like a hot-dog → set `--tail bushy` for squirrel-likes.
    - Bird looks generic → use `--accent` with the right colored belly hue.
+
+   For a batch run: stitch the photo and sprite into one grid PNG and view
+   it — much faster than mentally rotating between two files:
+   ```python
+   from PIL import Image
+   ref = Image.open(photo_path).resize((320, 240))
+   spr = Image.open(sprite_path)
+   grid = Image.new('RGBA', (640, 240), (255,255,255,255))
+   grid.paste(ref, (0, 0)); grid.paste(spr, (320, 0), spr)
+   grid.save('/tmp/check.png')
+   ```
+
+7. **Escalate, don't force-fit.** If NONE of the 9 forms fits the creature
+   (e.g. a snail, slug, fungus cluster, fish), don't pick the closest-bad
+   match — stop, report it, and either:
+   - add a new `form_<name>` function to the script (~30 lines, model the
+     existing ones), or
+   - leave that creature un-rendered and surface it for a human pass.
 
 ## Worked examples (photo → call)
 
