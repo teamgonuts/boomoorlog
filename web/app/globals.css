@@ -936,6 +936,47 @@ main {
   transform-origin: center;
   transition: transform 0.25s ease;
 }
+
+/* Photo + names tooltip when hovering a flying creature. */
+.leaflet-tooltip.creature-tip {
+  background: #14161b;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+  min-width: 200px;
+  max-width: 240px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+}
+.creature-tip .creature-tip-photo {
+  width: 100%;
+  height: 140px;
+  background: #0c0e12;
+  overflow: hidden;
+}
+.creature-tip .creature-tip-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.creature-tip .creature-tip-name {
+  font-weight: 700;
+  color: var(--gold);
+  font-size: 14px;
+  padding: 8px 10px 2px;
+  letter-spacing: 0.02em;
+}
+.creature-tip .creature-tip-latin {
+  font-style: italic;
+  color: var(--dim);
+  font-size: 11px;
+  padding: 0 10px 8px;
+}
+.leaflet-tooltip-top.creature-tip:before {
+  border-top-color: var(--line);
+}
 .leaflet-tooltip.tree-tip {
   background: #14161b;
   color: var(--ink);

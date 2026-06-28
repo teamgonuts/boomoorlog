@@ -133,14 +133,27 @@ function iconFor(slug: string | null): L.Icon | L.DivIcon {
   return icon;
 }
 
+/** Creature data needed to render + identify the marker on hover. */
+type CreatureForMap = {
+  slug: string;
+  common_name: string;
+  latin_name: string | null;
+  photo_url: string | null;
+};
+
+function escapeForAttr(s: string): string {
+  return s.replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 /**
  * Animate a creature sprite hopping tree-to-tree, ignoring streets and
- * physics. Used for the M4.5 "Living map" demo. Returns a stop() function
- * that cancels the loop and removes the marker.
+ * physics. Used for the M4.5 "Living map" demo. Hovering shows the real
+ * creature photo + name as a tooltip. Returns a stop() function that
+ * cancels the loop and removes the marker.
  */
 function startCreatureFlight(
   layer: L.LayerGroup,
-  slug: string,
+  creature: CreatureForMap,
   trees: TreePoint[],
 ): () => void {
   if (trees.length < 2) return () => {};
@@ -151,7 +164,7 @@ function startCreatureFlight(
 
   const icon = L.divIcon({
     className: "creature-flying",
-    html: `<img src="/creature_sprites/${slug}.png" alt="" />`,
+    html: `<img src="/creature_sprites/${creature.slug}.png" alt="" />`,
     iconSize: [28, 20],
     iconAnchor: [14, 10],
   });
@@ -168,10 +181,26 @@ function startCreatureFlight(
 
   const marker = L.marker([trees[fromIdx].lat, trees[fromIdx].lng], {
     icon,
-    interactive: false,
+    // Interactive so hover shows the photo tooltip.
+    interactive: true,
     keyboard: false,
+    bubblingMouseEvents: false,
     zIndexOffset: 1000,
   }).addTo(layer);
+
+  // Photo + names on hover. Direction "top" so it sits above the bird.
+  const photoBlock = creature.photo_url
+    ? `<div class="creature-tip-photo"><img src="${escapeForAttr(creature.photo_url)}" alt="" loading="lazy" /></div>`
+    : "";
+  const latinLine = creature.latin_name
+    ? `<div class="creature-tip-latin">${escapeForAttr(creature.latin_name)}</div>`
+    : "";
+  marker.bindTooltip(
+    photoBlock +
+      `<div class="creature-tip-name">${escapeForAttr(creature.common_name)}</div>` +
+      latinLine,
+    { direction: "top", className: "creature-tip", offset: [0, -8], sticky: true },
+  );
 
   function metersBetween(a: TreePoint, b: TreePoint): number {
     const dLat = (b.lat - a.lat) * 111_320;
@@ -243,12 +272,12 @@ export default function PlayMap({
   center,
   radiusM,
   trees,
-  creatureSlugs,
+  creatures,
 }: {
   center: { lat: number; lng: number } | null;
   radiusM: number;
   trees: TreePoint[];
-  creatureSlugs?: string[];
+  creatures?: CreatureForMap[];
 }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<L.Map | null>(null);
@@ -337,15 +366,15 @@ export default function PlayMap({
 
     // M4.5: animate the creatures-of-the-moment between random trees in view.
     const creatureStops: Array<() => void> = [];
-    for (const slug of creatureSlugs ?? []) {
-      creatureStops.push(startCreatureFlight(layer, slug, trees));
+    for (const creature of creatures ?? []) {
+      creatureStops.push(startCreatureFlight(layer, creature, trees));
     }
 
     return () => {
       creatureStops.forEach((stop) => stop());
       layer.remove();
     };
-  }, [center, radiusM, trees, creatureSlugs]);
+  }, [center, radiusM, trees, creatures]);
 
   return <div ref={containerRef} className="play-map" />;
 }

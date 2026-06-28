@@ -100,10 +100,16 @@ export default async function PlayPage({
   let allGenera: Genus[] = [];
   let geocodeError: string | null = null;
 
-  // M4.5: pick 2 random creatures from the wiki on each page load. Each one
+  // M4.5: pick 5 random creatures from the wiki on each page load. Each one
   // flies tree-to-tree on the map for visual life. Uniform random across the
-  // full pool — small table (24 rows), trivial to shuffle in JS.
-  let creatureSlugs: string[] = [];
+  // full pool. Pull common + latin name now so the hover popup can show them
+  // without an extra round-trip.
+  let creaturesForMap: Array<{
+    slug: string;
+    common_name: string;
+    latin_name: string | null;
+    photo_url: string | null;
+  }> = [];
 
   if (address) {
     const geo = await geocodeAmsterdam(address);
@@ -114,14 +120,24 @@ export default async function PlayPage({
       const [treeList, gResp, creaturesResp] = await Promise.all([
         fetchTreesInBbox(bbox),
         supabase.from("genera").select("*"),
-        supabase.from("creatures").select("slug"),
+        supabase
+          .from("creatures")
+          .select("slug, common_name, latin_name, pic_file"),
       ]);
       trees = treeList;
       allGenera = gResp.data ?? [];
-      creatureSlugs = pickRandom(
-        (creaturesResp.data ?? []).map((c) => c.slug),
-        2,
-      );
+      // `pic_file` is the original pipeline path (e.g. `data/creature_pics/foo.jpg`);
+      // we mirror those files at `web/public/creature_photos/`, so swap the prefix
+      // (preserving the original extension — most are .jpg, a few .png, one .jpeg).
+      const picked = pickRandom(creaturesResp.data ?? [], 5);
+      creaturesForMap = picked.map((c) => ({
+        slug: c.slug,
+        common_name: c.common_name,
+        latin_name: c.latin_name,
+        photo_url: c.pic_file
+          ? "/creature_photos/" + c.pic_file.split("/").pop()
+          : null,
+      }));
     } else {
       geocodeError = geo.error;
     }
@@ -157,7 +173,7 @@ export default async function PlayPage({
         <PlayMap
           center={center}
           radiusM={RADIUS_M}
-          creatureSlugs={creatureSlugs}
+          creatures={creaturesForMap}
           trees={trees
             .filter((t) => t.latitude != null && t.longitude != null)
             .map((t) => ({
