@@ -16,18 +16,33 @@ export default function RootLayout({
       <body>
         <header className="site-header">
           <Link href="/" className="brand">
-            🌳 Boomoorlog <span>Wiki</span>
+            <span className="brand-mark" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 2 4 12h3l-3 5h5v5h6v-5h5l-3-5h3z" />
+              </svg>
+            </span>
+            <span className="brand-name">Boomoorlog</span>
           </Link>
-          <span className="tagline">The trees of Amsterdam, ready for war</span>
-          <Link href="/play" className="nav-link" style={{ marginLeft: "auto" }}>
-            Play
-          </Link>
-          <Link href="/wiki/trees" className="nav-link">
-            All trees
-          </Link>
-          <Link href="/wiki/creatures" className="nav-link">
-            All creatures
-          </Link>
+          <nav className="site-nav">
+            <Link href="/play" className="nav-link">
+              Play
+            </Link>
+            <Link href="/wiki/trees" className="nav-link">
+              Trees
+            </Link>
+            <Link href="/wiki/creatures" className="nav-link">
+              Creatures
+            </Link>
+          </nav>
         </header>
         {children}
       </body>

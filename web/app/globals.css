@@ -48,35 +48,87 @@ img {
 
 /* ---- Site header ---- */
 
-.site-header {
-  display: flex;
-  align-items: baseline;
-  gap: 18px;
-  flex-wrap: wrap;
-  padding: 14px 28px;
-  background: linear-gradient(#181b22, #0f1115);
-  border-bottom: 2px solid var(--accent);
+:root {
+  --nav-height: 56px;
 }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: var(--nav-height);
+  padding: 0 28px;
+  /* Translucent dark glass — same aesthetic as the /play overlay panels, so
+     the bar reads cleanly over both the dark wiki body and the light play
+     map. The hairline below is the only divider. */
+  background: rgba(12, 13, 16, 0.78);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  /* Slightly squared serif feels appropriate for "tree war" */
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   font-size: 22px;
   font-weight: 700;
-  color: var(--ink);
   letter-spacing: 0.5px;
+  transition: color 0.15s ease;
 }
-.brand span {
-  color: var(--accent);
+.brand:hover {
+  color: var(--gold);
+  text-decoration: none;
 }
-.tagline {
-  color: var(--dim);
-  font-style: italic;
-  font-size: 14px;
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: rgba(230, 181, 102, 0.12);
+  color: var(--gold);
+  transition: background 0.15s ease;
 }
+.brand:hover .brand-mark {
+  background: rgba(230, 181, 102, 0.2);
+}
+.brand-name {
+  /* Stand the wordmark away from the icon a touch */
+  position: relative;
+  top: 1px;
+}
+
+.site-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
 .nav-link {
   color: var(--dim);
-  font-size: 14px;
+  text-decoration: none;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: color 0.12s ease, background 0.12s ease;
 }
 .nav-link:hover {
   color: var(--ink);
+  background: rgba(255, 255, 255, 0.06);
   text-decoration: none;
 }
 
@@ -597,8 +649,7 @@ main {
 .play-map-stage {
   position: relative;
   width: 100%;
-  /* nav height ≈ 49px; everything else is the map */
-  height: calc(100vh - 50px);
+  height: calc(100vh - var(--nav-height));
   background: #efefef;
 }
 .play-map {
