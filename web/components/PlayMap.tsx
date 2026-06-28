@@ -194,14 +194,23 @@ export default function PlayMap({
       center: AMSTERDAM_CENTER,
       zoom: AMSTERDAM_ZOOM,
       scrollWheelZoom: true,
-      // Default control sits top-left and clashes with our search bar.
       zoomControl: false,
+      // Perf: with up to ~250 sprite-icon markers in view, Leaflet's
+      // per-marker reposition during zoom/fade animations is the dominant
+      // cost. Disabling these makes pan and zoom snap immediately.
+      fadeAnimation: false,
+      zoomAnimation: false,
+      markerZoomAnimation: false,
     });
     L.control.zoom({ position: "bottomleft" }).addTo(map);
     L.tileLayer(BASEMAP_URL, {
       subdomains: "abcd",
       maxZoom: 19,
       attribution: BASEMAP_ATTR,
+      // Defer tile requests until the user stops zooming/panning.
+      updateWhenZooming: false,
+      updateWhenIdle: true,
+      keepBuffer: 1,
     }).addTo(map);
     mapRef.current = map;
 
@@ -238,9 +247,14 @@ export default function PlayMap({
       .bindTooltip("Your address", { direction: "top" })
       .addTo(layer);
 
-    // Tree markers.
+    // Tree markers. `keyboard: false` + `bubblingMouseEvents: false` skip a
+    // per-marker listener install that adds up at 200+ markers.
     for (const t of trees) {
-      const marker = L.marker([t.lat, t.lng], { icon: iconFor(t.slug) });
+      const marker = L.marker([t.lat, t.lng], {
+        icon: iconFor(t.slug),
+        keyboard: false,
+        bubblingMouseEvents: false,
+      });
       marker.bindTooltip(tooltipFor(t), {
         direction: "top",
         className: "tree-tip",

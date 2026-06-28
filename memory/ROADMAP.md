@@ -210,7 +210,10 @@ within 1km of an arbitrary point" is `ST_DWithin`).
 - **Geocoder: OpenStreetMap Nominatim.** Free, no API key, open-data theme, well within
   the 1 req/sec rate limit at our scale. Proxied through a Next.js API route so the User-
   Agent header (required by Nominatim) is set server-side.
-- **Radius: 250 m, hard-coded.** Becomes user-tunable when M5 needs it (board size).
+- **Radius: 100 m, hard-coded.** Started at 1 km, came down to 250 m, then 100 m
+  for performance — Leaflet DOM markers (one `<img>` per tree) get sluggish past
+  a few hundred. 100 m gives ~80–250 trees in dense Amsterdam, ~30–100 elsewhere,
+  with a "your block" zoom level. Becomes user-tunable when M5 needs it.
 - **Map library: Leaflet** + the dark CARTO basemap (matches the wiki's dark theme).
   Loaded client-side only (Leaflet touches `window`).
 - **Route: `/play`** (linked from `/`'s top nav). The wiki at `/` stays as the browse view.

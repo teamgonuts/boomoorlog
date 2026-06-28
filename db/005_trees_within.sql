@@ -6,7 +6,7 @@
 create or replace function trees_within_radius(
     lat double precision,
     lng double precision,
-    radius_m double precision default 250
+    radius_m double precision default 100
 )
 returns setof trees
 language sql

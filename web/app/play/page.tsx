@@ -12,10 +12,13 @@ import type { Genus, Tree } from "@/types/supabase";
 // Spatial query + Nominatim → never cache the page.
 export const dynamic = "force-dynamic";
 
-const RADIUS_M = 250;
-// Bbox the map is going to show — slightly bigger than the auto-fit so corners
-// and a small pan margin are pre-loaded. fitBounds uses `radius * 2.2` as the
-// edge length; we query `radius * 2.4` to add a thin buffer.
+// "Your block" radius. We render every marker as a DOM element (sprite img),
+// and ~1k markers on screen at once choked low-end devices at 250m. 100m
+// gives ~80–250 trees in dense Amsterdam, ~30–100 in quieter areas — small
+// enough to stay snappy on pan/zoom, big enough to feel like a neighborhood.
+const RADIUS_M = 100;
+// Bbox the map will show — fitBounds uses `radius * 2.2` as the edge length;
+// we query `radius * 2.4` total to add a thin buffer for screen corners.
 const VIEW_BBOX_HALF_SIDE_M = RADIUS_M * 1.2;
 const PAGE_SIZE = 1000;
 const COOKIE_NAME = "lastAddress";
