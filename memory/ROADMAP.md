@@ -218,29 +218,25 @@ within 1km of an arbitrary point" is `ST_DWithin`).
 - **No board / wave logic in M4.** Map + summary only. M5 starts board generation.
 
 **Step-by-step deliverables (do in order, check off as completed):**
-- [ ] **1. PostGIS extension + geom column** — `db/004_postgis.sql` enables PostGIS,
-      adds `trees.geom geography(Point, 4326)` populated from `(longitude, latitude)`,
-      creates a GiST spatial index. Idempotent.
-- [ ] **2. Spatial RPC function** — `db/005_trees_within.sql` defines
-      `trees_within_radius(lat, lng, radius_m default 1000) RETURNS SETOF trees`. Called
-      via `supabase.rpc("trees_within_radius", …)`.
-- [ ] **3. Verify spatial query** — `psql` smoke test against a known Amsterdam point
-      (e.g. Dam Square, 52.3731 / 4.8926); confirm count + speed.
-- [ ] **4. Nominatim proxy** — `web/app/api/geocode/route.ts` POST endpoint takes
-      `{ address }`, forwards to Nominatim with `User-Agent: boomoorlog/0.1` and
-      `countrycodes=nl&viewbox=…&bounded=1` (Amsterdam-only). Returns `{ lat, lng,
-      display_name }` or 404.
-- [ ] **5. `/play` route shell** — `web/app/play/page.tsx` with an address input,
-      submit button, and a placeholder for the map. Validates submission, calls the
-      geocoder, then re-renders with results.
-- [ ] **6. Leaflet map component** — `web/components/PlayMap.tsx` (`"use client"`).
-      Receives `(center, trees[])` and renders Leaflet with dark basemap, center
-      marker for the address, sprite-icon markers for each tree (clustered if >200).
-- [ ] **7. Summary panel** — count, top-5 genera with sprite + count + percentage.
-      Sits next to the map (or below on mobile).
-- [ ] **8. Home → /play link** — top-nav adds "Play" before "All trees".
-- [ ] **9. Deploy + verify on prod** — push, watch Vercel build, test with real
-      Amsterdam addresses.
+- [x] **1. PostGIS extension + geom column** — `db/004_postgis.sql` enables
+      PostGIS, adds `trees.geom geography(Point, 4326)`, backfills 298,710 rows
+      from lon/lat, GiST index. Idempotent.
+- [x] **2. Spatial RPC function** — `db/005_trees_within.sql` defines
+      `trees_within_radius(lat, lng, radius_m default 1000)` using ST_DWithin.
+- [x] **3. Verify spatial query** — Dam Square (52.3731/4.8926) returns 3,256
+      trees within 1km; top genera Ulmus (2513), Tilia (157), Platanus (123).
+- [x] **4. Nominatim proxy** — `web/lib/geocode.ts` (shared helper) +
+      `web/app/api/geocode/route.ts` (REST). User-Agent set, NL-only,
+      Amsterdam-bbox bounded.
+- [x] **5. `/play` route** — server component with address form + result panel.
+      Pages through Supabase's 1000-row cap to get the full result set.
+- [x] **6. Leaflet map** — `web/components/PlayMap.tsx` (`"use client"`), dark
+      CARTO basemap, gold radius circle, red center pin, sprite icons per tree.
+- [x] **7. Summary panel** — top-5 genera with sprite, Dutch name, count, %,
+      archetype. Rarity-tinted left border.
+- [x] **8. Home → /play link** — top nav now has "Play" + "All trees".
+- [ ] **9. Deploy + verify on prod** — push went out (commit e1efaba); waiting
+      on Vercel auto-deploy to confirm.
 
 ### M5 — Board generation (OSM → playable grid) 🔲  *(new — the map-translation milestone)*
 Turn the real world inside the 1km box into a tower-defense board. Two **separate layers
