@@ -43,10 +43,10 @@ export default async function GenusPage({
   return (
     <main className="min-h-screen p-8 md:p-12 max-w-4xl mx-auto">
       <Link
-        href="/wiki"
+        href="/wiki/trees"
         className="text-sm text-emerald-700 hover:underline"
       >
-        ← Wiki
+        ← All trees
       </Link>
 
       <header className="mt-4 flex flex-row items-end gap-6">

@@ -44,7 +44,10 @@ export default async function HomePage() {
           combatants. {classified.length} genera fight in four archetypes.
         </p>
         <p className="mt-3">
-          <Link href="/wiki" className="text-emerald-700 hover:underline">
+          <Link
+            href="/wiki/trees"
+            className="text-emerald-700 hover:underline"
+          >
             Browse the full roster →
           </Link>
         </p>
@@ -74,7 +77,7 @@ export default async function HomePage() {
 function GenusCard({ g }: { g: Classified }) {
   return (
     <Link
-      href={`/wiki/${g.slug}`}
+      href={`/wiki/trees/${g.slug}`}
       className="block bg-white border border-stone-200 rounded p-3 hover:border-emerald-400 hover:shadow-sm transition"
     >
       <div className="flex items-start gap-3">
