@@ -121,14 +121,57 @@ Stand up the database and make it the single source for trees and genera.
       pipeline inputs only; app reads from Supabase.
 
 ### M3 — App skeleton & code-quality reset 🔲
-Replace the Python static-site generator with a proper app reading from the DB.
-*(Pick the frontend stack at the start of this milestone.)*
-**Deliverables**
-- [ ] Frontend/app stack decided and scaffolded.
-- [ ] Project structure, TypeScript, linting + formatting, test setup.
-- [ ] A small reusable component library.
-- [ ] **Wiki re-implemented as DB-fed components** (re-doing known content proves the
-      architecture end-to-end with no new design risk).
+Replace the Python static-site generator with a proper app reading from Supabase.
+
+**M3 locked decisions (2026-06-28):**
+- **Frontend stack: Next.js (App Router).** Chosen because user knows React already
+  — Next.js is React + file-based routing + server components, so almost zero new
+  concepts. Server components fetch from Supabase directly (no separate API layer).
+- **Hosting: Vercel.** Zero-config deploys from the GitHub repo on push to `main`,
+  free tier covers our scale, native Next.js integration.
+- **CSS: Tailwind.** Faster iteration than CSS modules; massive Next.js+Tailwind
+  ecosystem; low commitment (easy to rip out if user hates it after first page).
+- **TypeScript types: auto-generated** from Supabase schema via
+  `supabase gen types typescript --linked > web/types/supabase.ts`. Editor knows
+  every column; types stay in sync with DB.
+- **Test framework: Vitest.** Fast, Vite-native, minimal ceremony.
+- **Linter/formatter: ESLint + Prettier** (Next.js built-in defaults — no plugins
+  beyond what `create-next-app` ships).
+- **App location: `web/` subfolder in this repo.** Monorepo-light. Pipeline /
+  data / db live at repo root; the app lives under `web/`.
+- **Old `docs/` static wiki stays online until new app reaches parity**, then
+  deleted (and `build_wiki.py` removed from the pipeline).
+
+**Step-by-step deliverables (do in order, check off as completed):**
+- [ ] **1. Vercel account** — user creates a free Vercel account (GitHub OAuth is
+      easiest). Not blocking until step 12.
+- [x] **2. Scaffold Next.js app** — `create-next-app` in `web/` with TS + Tailwind
+      + App Router + ESLint. Booted on `localhost:3000`. Node upgraded to v26.
+- [x] **3. Supabase client wired** — `@supabase/supabase-js` installed.
+      `web/.env.local` (gitignored) holds `NEXT_PUBLIC_SUPABASE_URL` +
+      `NEXT_PUBLIC_SUPABASE_ANON_KEY`. Client wrapper at `web/lib/supabase.ts`.
+- [x] **4. Hello-world DB page** — `/test` route reads `select count(*) from
+      genera` and renders 167. Verified live in the browser preview.
+- [ ] **5. Auto-generated TS types** — Supabase CLI links to the project; types
+      generated into `web/types/supabase.ts`; client is typed.
+- [ ] **6. Dev experience** — Vitest installed with one example test passing.
+      ESLint + Prettier configs sanity-checked. Skip Storybook, skip component
+      tooling rabbit holes.
+- [ ] **7. Genus list page** — `/wiki` lists all 55 stat-blocked genera in a plain
+      table. No design yet. Proves the list-query path.
+- [ ] **8. Genus detail page** — `/wiki/[slug]` shows stat block, sprite, personality,
+      lore. Proves every column type renders.
+- [ ] **9. Wiki home / index** — `/` shows archetype groupings (Bruiser / Juggernaut
+      / Skirmisher / Support). Mirrors `memory/CHARACTERS.md` structure but DB-fed.
+- [ ] **10. Extract reusable components** — once 3 pages exist, the repetition is
+      obvious. Pull out `StatBlock`, `GenusCard`, `Sprite`, etc. as patterns emerge
+      — not before.
+- [ ] **11. Visual pass** — layout, typography, color, sprite presentation. Probably
+      the longest step. No architecture risk by this point.
+- [ ] **12. Deploy to Vercel** — connect Vercel to the GitHub repo, set env vars in
+      the Vercel dashboard, push to `main`, get a live URL.
+- [ ] **13. Deprecate old `docs/`** — delete `docs/`, remove `build_wiki.py` from
+      the pipeline list in README, add note about new URL.
 
 ### M4 — Zipcode → neighborhood map 🔲  *(user's "milestone 3")*
 User types an Amsterdam zipcode → sees the real trees in that neighborhood on a map.
