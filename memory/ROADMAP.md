@@ -197,7 +197,7 @@ Replace the Python static-site generator with a proper app reading from Supabase
       the pipeline list in README, add note about new URL. *(Destructive; needs
       explicit go-ahead.)*
 
-### M4 — Address → neighborhood map 🔲  *(was: zipcode → neighborhood map)*
+### M4 — Address → neighborhood map ✅  *(was: zipcode → neighborhood map)*
 User types their Amsterdam address → sees the real trees around them on a map. The first
 demoable "your neighborhood" moment, before any board or combat exists.
 
@@ -235,8 +235,9 @@ within 1km of an arbitrary point" is `ST_DWithin`).
 - [x] **7. Summary panel** — top-5 genera with sprite, Dutch name, count, %,
       archetype. Rarity-tinted left border.
 - [x] **8. Home → /play link** — top nav now has "Play" + "All trees".
-- [ ] **9. Deploy + verify on prod** — push went out (commit e1efaba); waiting
-      on Vercel auto-deploy to confirm.
+- [x] **9. Deploy + verify on prod** — live at
+      https://boomoorlog.vercel.app/play; verified Dam 1 returns 3,161 trees
+      across 37 genera.
 
 ### M5 — Board generation (OSM → playable grid) 🔲  *(new — the map-translation milestone)*
 Turn the real world inside the 1km box into a tower-defense board. Two **separate layers
