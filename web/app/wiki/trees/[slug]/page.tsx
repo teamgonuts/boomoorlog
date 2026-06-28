@@ -30,14 +30,22 @@ export default async function GenusPage({ params }: { params: Params }) {
   const { slug } = await params;
 
   // Pull this genus + the full stat-blocked roster (we need the latter to
-  // compute archetype medians the same way the home page does).
-  const [genusResp, allStatBlockedResp] = await Promise.all([
+  // compute archetype medians the same way the home page does) + every
+  // creature whose tree_genera contains this genus (for the cross-link).
+  const [genusResp, allStatBlockedResp, creaturesResp] = await Promise.all([
     supabase.from("genera").select("*").eq("slug", slug).maybeSingle(),
     supabase.from("genera").select("*").not("attack", "is", null),
+    supabase
+      .from("creatures")
+      .select("slug, common_name, latin_name, form")
+      .contains("tree_genera", [slug])
+      .order("tree_count", { ascending: false })
+      .limit(48),
   ]);
 
   const genus = genusResp.data;
   const allStatBlocked = allStatBlockedResp.data;
+  const creatures = creaturesResp.data ?? [];
 
   if (!genus) {
     return notFound();
@@ -87,6 +95,59 @@ export default async function GenusPage({ params }: { params: Params }) {
                     <span className="fact-k">{f.key}</span>
                     <span className="fact-v">{f.value}</span>
                   </div>
+                ))}
+              </div>
+            </>
+          )}
+
+          {creatures.length > 0 && (
+            <>
+              <h3>
+                Living creatures on this tree{" "}
+                <span style={{ opacity: 0.5, fontSize: 13, fontWeight: 400 }}>
+                  ({creatures.length})
+                </span>
+              </h3>
+              <div
+                className="grid"
+                style={{
+                  gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))",
+                  gap: 10,
+                  marginBottom: 18,
+                }}
+              >
+                {creatures.map((c) => (
+                  <Link
+                    key={c.slug}
+                    href={`/wiki/creatures/${c.slug}`}
+                    className="card"
+                    style={{ padding: 8, textAlign: "center" }}
+                  >
+                    <div className="card-art" style={{ height: 72 }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        className="pixel"
+                        src={`/creature_sprites/${c.slug}.png`}
+                        alt=""
+                        style={{ maxHeight: 72 }}
+                      />
+                    </div>
+                    <div className="card-name" style={{ fontSize: 12 }}>
+                      {c.common_name}
+                    </div>
+                    {c.latin_name && (
+                      <div
+                        className="card-common"
+                        style={{
+                          fontStyle: "italic",
+                          fontSize: 10,
+                          opacity: 0.7,
+                        }}
+                      >
+                        {c.latin_name}
+                      </div>
+                    )}
+                  </Link>
                 ))}
               </div>
             </>

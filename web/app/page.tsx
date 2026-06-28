@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { classifyGenera, type Classified } from "@/lib/archetype";
+import { toCard } from "@/lib/creature";
 import { supabase } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
@@ -14,9 +15,18 @@ const STAT_BARS: { key: keyof Classified; label: string }[] = [
 ];
 
 export default async function HomePage() {
-  const [{ data: allGenera, error }, { count: totalTrees }] = await Promise.all([
+  const [
+    { data: allGenera, error },
+    { count: totalTrees },
+    { data: creaturesRaw, count: totalCreatures },
+  ] = await Promise.all([
     supabase.from("genera").select("*"),
     supabase.from("trees").select("*", { count: "exact", head: true }),
+    supabase
+      .from("creatures")
+      .select("*", { count: "exact" })
+      .order("tree_count", { ascending: false })
+      .limit(24),
   ]);
 
   if (error) {
@@ -28,6 +38,8 @@ export default async function HomePage() {
   const cards = classifyGenera(allGenera ?? []).sort(
     (a, b) => b.tree_count - a.tree_count,
   );
+
+  const creatureCards = (creaturesRaw ?? []).map(toCard);
 
   return (
     <main>
@@ -56,6 +68,47 @@ export default async function HomePage() {
       <div className="grid">
         {cards.map((g) => (
           <GenusCard key={g.slug} g={g} />
+        ))}
+      </div>
+
+      <section className="hero" style={{ marginTop: 48 }}>
+        <h1>The Creature Roster</h1>
+        <p>
+          Every animal, insect, fungus, and lichen that lives in the Amsterdam
+          trees — deduped across the tree roster. Top {creatureCards.length}{" "}
+          most widespread shown below.{" "}
+          <Link href="/wiki/creatures">See all {totalCreatures ?? 0} →</Link>
+        </p>
+      </section>
+
+      <div className="grid">
+        {creatureCards.map((c) => (
+          <Link
+            key={c.slug}
+            href={`/wiki/creatures/${c.slug}`}
+            className="card"
+          >
+            <div className="card-art">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className="pixel"
+                src={c.spriteUrl}
+                alt=""
+              />
+            </div>
+            <div className="card-name">{c.common_name}</div>
+            <div className="card-common" style={{ fontStyle: "italic" }}>
+              {c.latin_name ?? ""}
+            </div>
+            <div className="card-foot">
+              <span className="cnt">🌳 {c.tree_count}</span>
+              {c.form && (
+                <span style={{ marginLeft: 8, opacity: 0.7, fontSize: 12 }}>
+                  {c.formLabel}
+                </span>
+              )}
+            </div>
+          </Link>
         ))}
       </div>
     </main>

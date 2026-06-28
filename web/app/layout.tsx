@@ -25,6 +25,9 @@ export default function RootLayout({
           <Link href="/wiki/trees" className="nav-link">
             All trees
           </Link>
+          <Link href="/wiki/creatures" className="nav-link">
+            All creatures
+          </Link>
         </header>
         {children}
       </body>
