@@ -11,12 +11,20 @@
 
 ## North star
 
-Two Amsterdam ZIP codes battle tower-defense / marching-army style, using the **real
-trees** in each ZIP as combatants. Read-only auto-simulation: ZIPs in → watch battle →
-winner. Built on a real **database source of truth** (not CSVs, not baked into HTML),
-structured to scale toward real users over time.
+You enter **your Amsterdam address** → the game builds a board from the **real world
+within ~1km**: the actual roads, canals, buildings, and **trees** around you. Waves of
+enemies spawn and march your streets toward the center of your neighborhood; the real
+trees are your **defensive towers**. Classic tower-defense, generated from open data.
+Built on a real **database source of truth** (not CSVs, not baked into HTML), structured
+to scale toward real users over time.
 
 See `memory/VISION.md` for the full game concept.
+
+> **Direction change (2026-06-28):** pivoted from "two ZIP codes battle, marching armies
+> clash" to "defend your 1km neighborhood against spawns, classic TD." This reverses the
+> *marching-armies* decision locked in VISION.md on 2026-06-27 and revives PostGIS + adds
+> OSM geometry (see below). VISION.md still describes the old model and needs a follow-up
+> rewrite.
 
 ---
 
@@ -32,6 +40,11 @@ These are settled. Change them only deliberately, and note the change here.
    We do **not** load the raw 315 MB PC6 GeoJSON — trees already carry a postcode, so
    "trees in ZIP X" is a `WHERE` clause. Add (simplified) boundary geometry only if/when
    needed.
+
+   **Direction change (2026-06-28):** the address-based pivot revives PostGIS *now* (M4) —
+   "trees within 1km of an address" is `ST_DWithin`, not a postcode `WHERE`. We also now
+   ingest OSM road/building/canal geometry for board generation (M5), which the M2 "don't
+   load big geometry" stance had deferred. Still no PC6 boundary GeoJSON.
 
 2. **The game engine is a pure, headless, framework-agnostic TypeScript module.**
    It takes plain data in (two armies + a random seed) and returns a battle log out.
@@ -143,8 +156,7 @@ Replace the Python static-site generator with a proper app reading from Supabase
   deleted (and `build_wiki.py` removed from the pipeline).
 
 **Step-by-step deliverables (do in order, check off as completed):**
-- [ ] **1. Vercel account** — user creates a free Vercel account (GitHub OAuth is
-      easiest). Not blocking until step 12.
+- [x] **1. Vercel account** — created via GitHub OAuth, hooked to `teamgonuts/boomoorlog`.
 - [x] **2. Scaffold Next.js app** — `create-next-app` in `web/` with TS + Tailwind
       + App Router + ESLint. Booted on `localhost:3000`. Node upgraded to v26.
 - [x] **3. Supabase client wired** — `@supabase/supabase-js` installed.
@@ -178,77 +190,150 @@ Replace the Python static-site generator with a proper app reading from Supabase
       `emerald-700` accents), Geist sans, top nav with Boomoorlog logo + Wiki
       link, pixelated sprite rendering, stat cards with help text. Adequate as
       a baseline; iterate when there's a feature reason to.
-- [ ] **12. Deploy to Vercel** — connect Vercel to the GitHub repo, set env vars in
-      the Vercel dashboard, push to `main`, get a live URL.
+- [x] **12. Deploy to Vercel** — live at https://boomoorlog.vercel.app. Root
+      Directory set to `web/`. `NEXT_PUBLIC_SUPABASE_URL` + `_ANON_KEY` set in
+      Vercel env. Auto-deploys on push to `main`.
 - [ ] **13. Deprecate old `docs/`** — delete `docs/`, remove `build_wiki.py` from
-      the pipeline list in README, add note about new URL.
+      the pipeline list in README, add note about new URL. *(Destructive; needs
+      explicit go-ahead.)*
 
-### M4 — Zipcode → neighborhood map 🔲  *(user's "milestone 3")*
-User types an Amsterdam zipcode → sees the real trees in that neighborhood on a map.
+### M4 — Address → neighborhood map 🔲  *(was: zipcode → neighborhood map)*
+User types their Amsterdam address → sees the real trees around them on a map. The first
+demoable "your neighborhood" moment, before any board or combat exists.
+
+**Pivot note:** address-based (~1km radius), not zipcode. This needs real spatial queries,
+so **PostGIS is back on** (the M2 deferral assumed zip-membership `WHERE` clauses; "trees
+within 1km of an arbitrary point" is `ST_DWithin`).
+
+**M4 locked decisions (2026-06-28):**
+- **Geocoder: OpenStreetMap Nominatim.** Free, no API key, open-data theme, well within
+  the 1 req/sec rate limit at our scale. Proxied through a Next.js API route so the User-
+  Agent header (required by Nominatim) is set server-side.
+- **Radius: 1 km, hard-coded.** Becomes user-tunable when M5 needs it (board size).
+- **Map library: Leaflet** + the dark CARTO basemap (matches the wiki's dark theme).
+  Loaded client-side only (Leaflet touches `window`).
+- **Route: `/play`** (linked from `/`'s top nav). The wiki at `/` stays as the browse view.
+- **Server vs client.** Address input + geocode = server action / route. Map + markers =
+  client component. Trees fetched server-side and passed as props.
+- **No board / wave logic in M4.** Map + summary only. M5 starts board generation.
+
+**Step-by-step deliverables (do in order, check off as completed):**
+- [ ] **1. PostGIS extension + geom column** — `db/004_postgis.sql` enables PostGIS,
+      adds `trees.geom geography(Point, 4326)` populated from `(longitude, latitude)`,
+      creates a GiST spatial index. Idempotent.
+- [ ] **2. Spatial RPC function** — `db/005_trees_within.sql` defines
+      `trees_within_radius(lat, lng, radius_m default 1000) RETURNS SETOF trees`. Called
+      via `supabase.rpc("trees_within_radius", …)`.
+- [ ] **3. Verify spatial query** — `psql` smoke test against a known Amsterdam point
+      (e.g. Dam Square, 52.3731 / 4.8926); confirm count + speed.
+- [ ] **4. Nominatim proxy** — `web/app/api/geocode/route.ts` POST endpoint takes
+      `{ address }`, forwards to Nominatim with `User-Agent: boomoorlog/0.1` and
+      `countrycodes=nl&viewbox=…&bounded=1` (Amsterdam-only). Returns `{ lat, lng,
+      display_name }` or 404.
+- [ ] **5. `/play` route shell** — `web/app/play/page.tsx` with an address input,
+      submit button, and a placeholder for the map. Validates submission, calls the
+      geocoder, then re-renders with results.
+- [ ] **6. Leaflet map component** — `web/components/PlayMap.tsx` (`"use client"`).
+      Receives `(center, trees[])` and renders Leaflet with dark basemap, center
+      marker for the address, sprite-icon markers for each tree (clustered if >200).
+- [ ] **7. Summary panel** — count, top-5 genera with sprite + count + percentage.
+      Sits next to the map (or below on mobile).
+- [ ] **8. Home → /play link** — top-nav adds "Play" before "All trees".
+- [ ] **9. Deploy + verify on prod** — push, watch Vercel build, test with real
+      Amsterdam addresses.
+
+### M5 — Board generation (OSM → playable grid) 🔲  *(new — the map-translation milestone)*
+Turn the real world inside the 1km box into a tower-defense board. Two **separate layers
+on one grid**: a *walkability/collision* layer (data) and a *pixel-art* layer (cosmetic).
+Build & test the grid headless; treat the art as a swappable skin (same discipline as the
+engine/renderer split below).
+
+**Locked decisions (2026-06-28):**
+- **On-demand + cache, not batch pre-render.** Generate a board the first time an address
+  is requested, then cache it. Amsterdam is bounded, so the cache fills in as people play
+  — we get the pre-render payoff without building a batch pipeline we might throw away.
+  (Simplify call, confirmed with user.)
+- **Collision layer:** roads = walkable lanes; buildings + canals = blocked. Pathfinding
+  reads *only* this layer.
+- **Pixel-art layer:** cosmetic 8bitcity-style render on top (see `memory/INSPIRATION.md`).
+  Can lag the collision layer — it's a skin, not a dependency.
+
 **Deliverables**
-- [ ] Zipcode input + validation.
-- [ ] Spatial query: trees within a postcode.
-- [ ] Map view with pins / clustering.
-- [ ] Summary panel: count, species mix.
+- [ ] OSM ingest for Amsterdam: roads (lines), buildings (polygons), water/canals
+      (polygons). Offline pipeline step, like the tree seed.
+- [ ] Rasterize the 1km box into a tile grid → per-tile walkable/blocked from OSM geometry.
+- [ ] Spawn points + goal: enemies enter from map edges along roads and march toward the
+      address center (the thing you defend). [open: exact spawn/goal placement rules]
+- [ ] Board cache keyed by address/box so repeat plays don't re-generate.
+- [ ] Pixel-art tile render of the board (cosmetic layer).
 
-### M5 — Army builder (data → units) 🔲
-Turn a zipcode's trees into an "army": aggregate by genus, attach stats, compute roster.
+### M6 — Tower roster (neighborhood trees → towers) 🔲  *(was: army builder)*
+Turn the trees the M4 query returned into placeable defensive **towers**: aggregate /
+attach stats, position them where they actually grow on the board.
 **Deliverables**
-- [ ] Pure function `zipcode → Army` (emits the data contract).
-- [ ] Army-preview screen reusing wiki components.
+- [ ] Pure function `neighborhood trees → Tower[]` (emits the data contract).
+- [ ] Towers sit at their real coordinates on the M5 grid.
+- [ ] Tower-preview reusing wiki components.
+- [ ] [open: do players place/upgrade towers, or are they fixed by the real trees?]
 
-### M6 — Battle engine (headless, no graphics) 🔲
-Deterministic marching-army combat logic. No rendering — logic + battle log only.
+### M7 — TD wave engine (headless, no graphics) 🔲  *(was: battle engine)*
+Deterministic tower-defense simulation. No rendering — logic + event log only. Enemies
+spawn in waves, **pathfind along roads** toward the goal; towers in range fire; enemies
+that reach the goal "leak". Seeded RNG → same inputs, same run.
 **Deliverables**
-- [ ] Simulation module (pure TS, seeded RNG).
-- [ ] Unit tests for fairness/balance.
-- [ ] Given two armies → reproducible turn-by-turn log + winner.
+- [ ] Pathfinding over the M5 walkability grid (e.g. A* / flow field along roads).
+- [ ] Simulation module (pure TS, seeded RNG): waves, enemy movement, tower targeting +
+      firing, damage, leaks, win/lose.
+- [ ] Unit tests for fairness/balance — run many boards headless in Node.
+- [ ] Given a board + roster + seed → reproducible tick-by-tick event log + result.
+- [ ] [open: what are the enemies? pests / disease / chainsaws / urbanization — STATS.md
+      follow-up.]
 
-### M7 — Battle visualization (animated sprites) 🔲
-Render the M6 battle log with Pixi.js — pixel-tree armies marching and clashing.
+### M8 — Board & battle visualization (Pixi.js) 🔲  *(was: battle visualization)*
+Render the M7 event log on the M5 pixel board — enemies marching the streets, tree-towers
+firing, hits, leaks, win/lose banner.
 **Deliverables**
-- [ ] Canvas renderer driven by the battle log.
-- [ ] Playback controls.
+- [ ] Canvas renderer driven by the event log, on top of the board render.
+- [ ] Playback / speed controls.
 
-### Engine ↔ Renderer contract (spans M6–M7)
-The engine and the visuals are two halves joined by a **battle log**: the engine decides
-*what happens*, the renderer decides *how it looks*. Clicking "Go" runs the whole battle
-instantly (no user input) → produces the log → the renderer plays it back with animation.
-
-- **Engine (M6)** is a pure function `simulate(armyA, armyB, seed) → BattleEvent[]`. It
-  records *facts only* (move / attack / death / result with `tick` + positions). It never
-  draws, never references a sprite, never flashes red.
-- **Renderer (M7)** consumes the log; all the "nice & fun" lives here (sprite tweens, hit
-  flashes, sound, slow-mo final blow, win banner). The engine imposes no limit on it.
-- **Design discipline:** the log must carry *enough detail to animate well* — per-event
-  `tick`, positions, who-hit-whom, hp changes, deaths. Design the event shape in M6 with
-  M7 in mind, or there'll be nothing rich to animate.
+### Engine ↔ Renderer contract (spans M7–M8)
+Same split, retuned for TD: the **engine** (M7) decides *what happens*, the **renderer**
+(M8) decides *how it looks*, joined by an event log. The engine records *facts only*
+(spawn / move / fire / hit / death / leak / result with `tick` + positions); it never
+draws. All the juice (sprite tweens, muzzle flashes, leak flashes, win banner) lives in
+the renderer. Design the event shape with M8 in mind so there's enough detail to animate.
 
 ```ts
-type Unit  = { id; genus; atk; hp; range; atkSpeed; move };
-type Army  = { side: "A" | "B"; units: Unit[] };
-type BattleEvent =
-  | { tick; type: "move";   id; x }
-  | { tick; type: "attack"; from; to }
+type Tower = { id; genus; atk; range; atkSpeed; x; y };   // a real tree, placed
+type Enemy = { id; kind; hp; speed };                     // a spawn
+type SimEvent =
+  | { tick; type: "spawn";  id; kind; x; y }
+  | { tick; type: "move";   id; x; y }
+  | { tick; type: "fire";   from; to }
+  | { tick; type: "hit";    id; hp }
   | { tick; type: "death";  id }
-  | { tick: -1; type: "result"; winner: "A" | "B" };
+  | { tick; type: "leak";   id }                           // reached the goal
+  | { tick: -1; type: "result"; outcome: "win" | "lose"; leaked: number };
 ```
 
-Payoffs: deterministic & replayable (share link = `zipA + zipB + seed`), balance testable
-by running thousands of battles headless in Node, and the frontend stays swappable (this is
-why the stack decision can wait until M3).
+Payoffs unchanged: deterministic & replayable (share link = `address + seed`), balance
+testable headless in Node, and the frontend stays swappable.
 
-### M8 — Full matchup loop (v1 playable) 🔲
-Enter two real ZIPs → watch the battle → see the winner. First version that's "the game."
+### M9 — Full playable loop (v1 playable) 🔲  *(was M8)*
+Enter your address → board generates → waves attack → you defend → win/lose. First version
+that's "the game."
 
-### M9+ — Later (the DB makes these cheap) 🔲
-Shareable battle results · user accounts · leaderboards / ZIP rankings.
+### M10+ — Later (the DB makes these cheap) 🔲  *(was M9+)*
+Neighborhood-vs-neighborhood competitive mode (the old zip-vs-zip North star, now an
+optional mode) · shareable results · user accounts · leaderboards / neighborhood rankings.
 
 ---
 
 ## Why this order
 - **Map (M4) early** → a satisfying, demoable thing (your own neighborhood's trees) well
-  before the battle exists.
-- **Engine logic (M6) before graphics (M7)** → test that battles are fair/fun without
+  before the board or combat exists.
+- **Board generation (M5) before combat** → the walkability grid is the foundation
+  everything pathfinds on; get it right before towers and waves depend on it.
+- **Engine logic (M7) before graphics (M8)** → test that defending is fair/fun without
   spending effort on art-driven rendering.
 - **Headless engine + data contract** → no early decision boxes in the eventual game.
