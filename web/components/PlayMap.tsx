@@ -27,8 +27,63 @@ type TreePoint = {
   lat: number;
   lng: number;
   slug: string | null;
+  species: string | null;
   height_m: number | null;
+  diameter_cm: number | null;
+  planting_year: number | null;
+  location: string | null;
+  location_detail: string | null;
+  protection_status: string | null;
 };
+
+// Today's calendar year. Used to compute ages. Fine to refresh on a 1-yr cadence.
+const CURRENT_YEAR = new Date().getFullYear();
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function tooltipFor(t: TreePoint): string {
+  const lines: string[] = [];
+
+  // Title: full species if we have it, else genus, else "Unknown".
+  const title = t.species ?? t.slug ?? "Unknown tree";
+  lines.push(`<div class="ttl-h">${escapeHtml(title)}</div>`);
+
+  // Numeric stats: height · diameter · age. Skip nulls.
+  const stats: string[] = [];
+  if (t.height_m != null) stats.push(`${t.height_m} m`);
+  if (t.diameter_cm != null) stats.push(`&Oslash; ${t.diameter_cm} cm`);
+  if (t.planting_year != null) {
+    const age = CURRENT_YEAR - t.planting_year;
+    if (age >= 0 && age < 400) {
+      stats.push(`${age} yrs`);
+    }
+  }
+  if (stats.length > 0) {
+    lines.push(`<div class="ttl-stats">${stats.join(" · ")}</div>`);
+  }
+
+  // Standplaats: where it stands. e.g. "Groenobject · Tegels".
+  const context = [t.location, t.location_detail]
+    .filter((s): s is string => Boolean(s))
+    .map(escapeHtml)
+    .join(" · ");
+  if (context) lines.push(`<div class="ttl-ctx">${context}</div>`);
+
+  // Protected status: rare (~1.6% of trees) so call it out.
+  if (t.protection_status) {
+    lines.push(
+      `<div class="ttl-protected">★ ${escapeHtml(t.protection_status)}</div>`,
+    );
+  }
+
+  return lines.join("");
+}
 
 const SPRITE_ICON_CACHE = new Map<string, L.Icon>();
 
@@ -126,13 +181,11 @@ export default function PlayMap({
     // Tree markers.
     for (const t of trees) {
       const marker = L.marker([t.lat, t.lng], { icon: iconFor(t.slug) });
-      const tooltip = [
-        t.slug ? `<em>${t.slug}</em>` : "Unknown genus",
-        t.height_m != null ? `${t.height_m} m tall` : null,
-      ]
-        .filter(Boolean)
-        .join(" · ");
-      marker.bindTooltip(tooltip, { direction: "top", className: "tree-tip" });
+      marker.bindTooltip(tooltipFor(t), {
+        direction: "top",
+        className: "tree-tip",
+        offset: [0, -4],
+      });
       marker.addTo(layer);
     }
 

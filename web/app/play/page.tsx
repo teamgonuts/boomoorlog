@@ -133,7 +133,13 @@ async function PlayResults({ address }: { address: string }) {
               lat: t.latitude!,
               lng: t.longitude!,
               slug: t.genus_slug ?? null,
+              species: t.species_full ?? null,
               height_m: t.height_m ?? null,
+              diameter_cm: t.diameter_cm ?? null,
+              planting_year: t.planting_year ?? null,
+              location: t.location ?? null,
+              location_detail: t.location_detail ?? null,
+              protection_status: t.protection_status ?? null,
             }))}
         />
         <aside className="play-overlay">
