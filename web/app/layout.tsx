@@ -3,9 +3,9 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Boomoorlog — Amsterdam tree-war",
+  title: "Creatures — Amsterdam",
   description:
-    "Two Amsterdam ZIP codes battle tower-defense style using the real trees that grow in each postcode.",
+    "Defend your Amsterdam neighborhood against waves of urban creatures — your real trees are the towers.",
 };
 
 export default function RootLayout({
@@ -22,15 +22,16 @@ export default function RootLayout({
                 height="22"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="currentColor"
+                stroke="#22c55e"
                 strokeWidth="1.6"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M12 2 4 12h3l-3 5h5v5h6v-5h5l-3-5h3z" />
+                <path d="M15 4 C17 4 19 6 19 8 L20.5 8 L19 9.5 L18 9 C18 12 17 15 15 17 L12 22 L11 22 L9 17 C8 14 8 10 10 8 C11 6 13 4 15 4 Z" />
+                <circle cx="17" cy="6.5" r="0.7" fill="#22c55e" stroke="none" />
               </svg>
             </span>
-            <span className="brand-name">Boomoorlog</span>
+            <span className="brand-name">Creatures</span>
           </Link>
           <nav className="site-nav">
             <Link href="/play" className="nav-link">
