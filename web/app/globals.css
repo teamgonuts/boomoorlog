@@ -61,6 +61,20 @@ img {
   image-rendering: pixelated;
 }
 
+.pixel-pending {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  background: var(--panel2);
+  color: var(--dim);
+  font-size: 10px;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px dashed var(--line);
+}
+
 /* ---- Site header ---- */
 
 :root {
@@ -1128,6 +1142,8 @@ main {
 .tree-pin {
   image-rendering: pixelated;
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.6));
+  /* Click → wiki page (new tab). Cursor cue says "this is interactive". */
+  cursor: pointer;
 }
 .tree-dot {
   background: #9fd6a0;
@@ -1200,6 +1216,9 @@ main {
 .creature-flying {
   background: transparent;
   border: none;
+  /* Outer wrapper passes clicks through to the inner <img> — `pointer-events: auto`
+     on the image gives the user a real hit-area on the sprite without making
+     the empty corners of the divIcon's bounding box clickable. */
   pointer-events: none;
 }
 .creature-flying img {
@@ -1209,6 +1228,8 @@ main {
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
   transform-origin: center;
   transition: transform 0.25s ease;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 /* Photo + names tooltip when hovering a flying creature. */

@@ -126,9 +126,17 @@ export default function PlayClient(props: Props) {
 
   const areaCreatures: AreaCreature[] = useMemo(() => {
     const genusSet = new Set((data?.topGenera ?? []).map((g) => g.slug));
-    if (genusSet.size === 0) return [];
+    const observedSlugs = new Set(data?.creatureSlugs ?? []);
+    // Union: include a creature if its tree_genera overlap the viewport
+    // (curated path) OR if it has at least one observation inside the viewport
+    // bbox (auto-promoted path — those rows have empty tree_genera).
+    if (genusSet.size === 0 && observedSlugs.size === 0) return [];
     return props.allCreatures
-      .filter((c) => c.tree_genera.some((g) => genusSet.has(g)))
+      .filter(
+        (c) =>
+          c.tree_genera.some((g) => genusSet.has(g)) ||
+          observedSlugs.has(c.slug),
+      )
       .map((c) => ({
         slug: c.slug,
         common_name: c.common_name,

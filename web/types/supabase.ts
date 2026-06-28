@@ -151,6 +151,13 @@ export type Database = {
           attack_speed: number | null;
           move_speed: number | null;
           created_at: string;
+          // Added in migration 012 — auto-promoted creatures from iNat/waarneming.
+          source: "curated" | "auto_observed";
+          promoted_at: string | null;
+          taxon_group: string | null;
+          wikipedia_summary: string | null;
+          observations_count: number;
+          sprite_pending: boolean;
         };
         Insert: {
           slug: string;
@@ -166,6 +173,12 @@ export type Database = {
           attack_speed?: number | null;
           move_speed?: number | null;
           created_at?: string;
+          source?: "curated" | "auto_observed";
+          promoted_at?: string | null;
+          taxon_group?: string | null;
+          wikipedia_summary?: string | null;
+          observations_count?: number;
+          sprite_pending?: boolean;
         };
         Update: Partial<Database["public"]["Tables"]["creatures"]["Insert"]>;
         Relationships: [];

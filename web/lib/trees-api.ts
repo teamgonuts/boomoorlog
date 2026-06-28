@@ -26,4 +26,9 @@ export type ViewportTreesResponse = {
   total: number;
   markers: ViewportMarker[];
   topGenera: Array<{ slug: string; n: number; pct: number }>;
+  // Distinct creature_slug values from observations whose lat/lng fall inside
+  // the current viewport bbox. Used by the AreaPanel to surface auto-promoted
+  // creatures (whose tree_genera array is empty, so the genus-overlap filter
+  // alone would miss them).
+  creatureSlugs: string[];
 };

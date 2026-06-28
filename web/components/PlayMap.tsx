@@ -22,6 +22,24 @@ const AMSTERDAM_ZOOM = 12;
 // Today's calendar year. Used to compute ages. Fine to refresh on a 1-yr cadence.
 const CURRENT_YEAR = new Date().getFullYear();
 
+// Creature density. Slot count scales with √(viewport km²): zoom out → more
+// creatures, zoom in → fewer. Square-root keeps city view from clumping while
+// still feeling more alive than a 1km neighborhood. Tune by eye.
+const CREATURE_K = 3;
+const CREATURE_MIN_SLOTS = 4;
+const CREATURE_MAX_SLOTS = 14;
+
+function slotsForBounds(bounds: L.LatLngBounds): number {
+  const south = bounds.getSouth();
+  const north = bounds.getNorth();
+  const latKm = (north - south) * 111.32;
+  const cosLat = Math.cos((((south + north) / 2) * Math.PI) / 180);
+  const lngKm = (bounds.getEast() - bounds.getWest()) * 111.32 * cosLat;
+  const areaKm2 = Math.max(0, latKm * lngKm);
+  const raw = Math.round(CREATURE_K * Math.sqrt(areaKm2));
+  return Math.max(CREATURE_MIN_SLOTS, Math.min(CREATURE_MAX_SLOTS, raw));
+}
+
 // Translations for the Dutch open-data protection field. Anything not listed
 // falls back to the original Dutch (better than dropping it).
 const PROTECTION_EN: Record<string, string> = {
@@ -198,6 +216,14 @@ function startCreatureFlight(
       latinLine,
     { direction: "top", className: "creature-tip", offset: [0, -8], sticky: true },
   );
+
+  // Click → open this creature's wiki page in a new tab. Note: the creature is
+  // a moving target while in flight; the click hit-area is the sprite itself
+  // so the user has to chase it. The brief perch at the end of each flight
+  // makes it easier (the marker is stationary for PERCH_MS).
+  marker.on("click", () => {
+    window.open(`/wiki/creatures/${creature.slug}`, "_blank", "noopener");
+  });
 
   function metersBetween(a: FlyPoint, b: FlyPoint): number {
     const dLat = (b.lat - a.lat) * 111_320;
@@ -435,6 +461,12 @@ export default function PlayMap({
           const target = Math.min(map.getZoom() + 2, 19);
           map.setView([m.lat, m.lng], target, { animate: false });
         });
+      } else if (m.slug) {
+        // Click an individual tree → open its genus wiki page in a new tab.
+        // `noopener` is the right default for window.open from user gestures.
+        marker.on("click", () => {
+          window.open(`/wiki/trees/${m.slug}`, "_blank", "noopener");
+        });
       }
       marker.addTo(layer);
       handles.set(m.key, marker);
@@ -447,13 +479,19 @@ export default function PlayMap({
   }, [markers]);
 
   // ---- Creatures: spawn N slots, each respawns on completion ----
+  // Depends on `markers` so the loop fully resets on every map change (pan or
+  // zoom triggers a /api/trees refetch → new markers → cleanup tears every
+  // creature down, then 5 fresh picks spawn against the new viewport's perches).
   useEffect(() => {
     const creatureLayer = creatureLayerRef.current;
     if (!creatureLayer) return;
     const pool = creatures ?? [];
     if (pool.length === 0) return;
 
-    const NUM_CREATURE_SLOTS = 5;
+    const map = mapRef.current;
+    const NUM_CREATURE_SLOTS = map
+      ? slotsForBounds(map.getBounds())
+      : CREATURE_MIN_SLOTS;
     const slotStops: Array<(() => void) | null> = Array(NUM_CREATURE_SLOTS).fill(null);
     let mounted = true;
 
@@ -477,7 +515,7 @@ export default function PlayMap({
       slotStops.forEach((stop) => stop?.());
       creatureLayer.clearLayers();
     };
-  }, [creatures]);
+  }, [creatures, markers]);
 
   return <div ref={containerRef} className="play-map" />;
 }

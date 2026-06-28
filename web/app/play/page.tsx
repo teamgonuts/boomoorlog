@@ -66,7 +66,9 @@ export default async function PlayPage({
     supabase.from("genera").select("*"),
     supabase
       .from("creatures")
-      .select("slug, common_name, latin_name, pic_file, tree_genera"),
+      .select(
+        "slug, common_name, latin_name, pic_file, tree_genera, sprite_pending",
+      ),
   ]);
   const allGenera = gResp.data ?? [];
   const allCreaturesRaw = creaturesResp.data ?? [];
@@ -83,14 +85,19 @@ export default async function PlayPage({
   // `pic_file` is the original pipeline path (e.g. `data/creature_pics/foo.jpg`);
   // we mirror those files at `web/public/creature_photos/`, so swap the prefix
   // (preserving the original extension — most are .jpg, a few .png, one .jpeg).
-  const creaturesForMap: CreatureForMap[] = allCreaturesRaw.map((c) => ({
-    slug: c.slug,
-    common_name: c.common_name,
-    latin_name: c.latin_name,
-    photo_url: c.pic_file
-      ? "/creature_photos/" + c.pic_file.split("/").pop()
-      : null,
-  }));
+  //
+  // Skip rows with `sprite_pending` (auto-promoted creatures whose pixel-art
+  // sprite hasn't been generated yet — rendering them would yield a broken
+  // <img>). Also require a non-null pic_file so we never queue a flier with no
+  // photo to show.
+  const creaturesForMap: CreatureForMap[] = allCreaturesRaw
+    .filter((c) => c.pic_file && !c.sprite_pending)
+    .map((c) => ({
+      slug: c.slug,
+      common_name: c.common_name,
+      latin_name: c.latin_name,
+      photo_url: "/creature_photos/" + c.pic_file!.split("/").pop(),
+    }));
 
   // Light shape for the area-panel filter (tree_genera overlap).
   const allCreatures: AllCreatureForFilter[] = allCreaturesRaw.map((c) => ({
