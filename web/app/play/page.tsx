@@ -7,7 +7,7 @@ import type { Genus, Tree } from "@/types/supabase";
 // Spatial query + Nominatim → never cache the page.
 export const dynamic = "force-dynamic";
 
-const RADIUS_M = 1000;
+const RADIUS_M = 500;
 // Supabase's PostgREST caps every request at 1000 rows. Page through it.
 const PAGE_SIZE = 1000;
 
@@ -52,7 +52,7 @@ export default async function PlayPage({
         <h1>Defend your neighborhood</h1>
         <p>
           Type your Amsterdam address. We&apos;ll find every real tree within
-          1&nbsp;km — these are the towers that will defend you in your wave.
+          500&nbsp;m — these are the towers that will defend you in your wave.
         </p>
         <form action="/play" method="get" className="play-form">
           <input
@@ -133,7 +133,7 @@ async function PlayResults({ address }: { address: string }) {
           <strong>{geo.display_name}</strong>
         </p>
         <p className="play-stats">
-          <b>{treeList.length.toLocaleString()}</b> trees within 1&nbsp;km ·{" "}
+          <b>{treeList.length.toLocaleString()}</b> trees within 500&nbsp;m ·{" "}
           <b>{counts.size}</b> genera
         </p>
       </div>

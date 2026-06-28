@@ -1,36 +1,46 @@
 # Project Vision — Boomoorlog ("Tree War")
 
+> **Direction change (2026-06-28):** pivoted from "two ZIP codes battle, marching armies
+> clash" to "defend your own ~500m neighborhood against waves of spawns, classic
+> tower-defense." This reverses the *marching-armies* decision locked 2026-06-27. Delivery
+> plan lives in [ROADMAP.md](ROADMAP.md).
+
 ## Concept
 
-A web app where two Amsterdam ZIP codes battle each other **tower-defense style**,
-using the **real trees** that grow in each ZIP code as the combatants.
+A web app where you defend **your own Amsterdam neighborhood** in a **classic
+tower-defense** game built from real open data. You enter your address; the game generates
+a board from the **real world within ~500m** — the actual roads, canals, buildings, and
+**trees** around you. Waves of enemies spawn and march your streets toward the center; the
+**real trees are your defensive towers**.
 
-The whole experience is data-driven and runs as an **automated simulation** — the
-only user input is the two ZIP codes. There is **no in-match interaction**.
+Every board is real and personal: a leafy old street defends very differently from a sparse
+new one, because the towers *are* the trees that actually grow there.
 
 ## User flow
 
 1. User opens the website.
-2. User enters **their ZIP code** (an Amsterdam postcode).
-3. User enters an **opponent ZIP code** (another Amsterdam postcode).
-4. The app looks up every real tree in each ZIP code from the dataset.
-5. A tower-defense battle simulation runs automatically, the trees fight, and a
-   winner is shown.
-6. That's it — no clicking towers, no upgrades mid-match. Watch the simulation.
+2. User enters **their Amsterdam address**.
+3. The app geocodes the address and pulls the real world within ~500m: the trees (from the
+   open trees dataset) and the roads / buildings / canals (from OSM).
+4. It generates a **tower-defense board** — a walkable grid (roads = lanes; buildings +
+   canals = blocked) plus a pixel-art render.
+5. The neighborhood's real trees become the **defensive towers**, placed where they grow.
+6. **Waves of enemies spawn** at the map edges and pathfind down the roads toward the
+   center (the thing you defend). Towers in range fire. Enemies that reach the center
+   "leak". Survive the waves → win.
 
 ## Core principles
 
-- **Real data only.** Every combatant comes from the Amsterdam open trees dataset
-  (`bomen` / `stamgegevens`). The number, species mix, age, and size of trees in a
-  ZIP code directly determine that side's army. A leafy, old neighborhood should
-  feel different to a sparse new one.
-- **Simulation, not a game you play.** Output is a deterministic-ish battle replay
-  driven by the data, not a skill-based game.
-- **Marching armies.** Trees are the OFFENSIVE units: each ZIP code fields an army of
-  its trees that **advances and clashes** with the opponent's. Not stationary tower
-  defense — trees move, so movement speed matters. (Locked 2026-06-27.)
+- **Real data only.** The trees come from the Amsterdam open trees dataset (`bomen` /
+  `stamgegevens`); the streets, canals, and buildings come from OSM. The board is a real
+  place, not a designed level.
+- **Classic tower-defense.** Stationary defenders (the trees) vs. moving attackers (the
+  spawns) that pathfind along the streets toward a goal. Not the old marching-armies model.
+- **One personal board per player.** Your address defines the board, so everyone defends
+  somewhere different. Boards are generated **on demand and cached** (Amsterdam is bounded,
+  so the cache fills in as people play — no upfront batch pre-render).
 
-## Characters = tree genera
+## Characters = tree genera (your towers)
 
 - One **stat block per genus** (~50 playable archetypes), NOT per individual tree.
 - Rarity tiers from the real frequency distribution:
@@ -43,25 +53,28 @@ only user input is the two ZIP codes. There is **no in-match interaction**.
 
 ## Stats
 
-4 core stats per genus: **Attack, Range, Attack speed, Health**. Full design and
-trait mappings live in [STATS.md](STATS.md). Health is included, which means
-tree-towers can be destroyed (the combat model is not pure classic TD).
+Core tower stats per genus: **Attack, Range, Attack speed, Health**. Full design and trait
+mappings live in [STATS.md](STATS.md). In the TD model the trees are stationary towers, so
+Attack / Range / Attack speed map cleanly to a tower; the **enemies** carry move speed.
 
 **Open design questions still to resolve:**
 - Numeric scale per stat.
 - AoE/splash as a 5th stat vs. a per-genus special ability (leaning: special ability).
-- What the enemies are; whether stats need damage/resist types.
-- ZIP strength from tree count (volume) vs. species stats.
+- **What the enemies are** — pests / disease / chainsaws / urbanization. (TD pivot makes
+  this the key open question.)
+- Whether towers can take damage (does `Health` still apply now that trees don't move?).
+- Do players **place / upgrade** towers, or are they fixed by the real trees?
 
 ## Data status / dependencies
 
-- Source: Amsterdam DSO API, dataset `bomen`, table `stamgegevens` (~323k trees,
-  298,734 "currently living" after filtering stumps + to-be-felled).
-- Current export `data/amsterdam_trees.csv` has coordinates (RD + WGS84) but
-  **no ZIP code** — the dataset has no postcode field.
-- **Dependency:** the ZIP-code battle requires assigning each tree to a postcode,
-  derived from its coordinates (e.g. spatial join to PC4/PC6 polygons, or reverse
-  geocoding). This is not yet built.
+- **Trees:** Amsterdam DSO API, dataset `bomen`, table `stamgegevens` (~323k trees, 298,734
+  "currently living" after filtering stumps + to-be-felled). Seeded into Supabase.
+- **Spatial query:** the board needs "trees within ~500m of an address" → **PostGIS**
+  (`ST_DWithin` on a geography column built from the existing lon/lat). This revives PostGIS,
+  which was deferred during the ZIP-only phase.
+- **Geocoding:** address → coordinates (Amsterdam-only) is needed to center the board.
+- **Map geometry:** roads / buildings / canals come from **OSM**, ingested offline and
+  rasterized into the walkability grid (M5 in the roadmap).
 
 ## Working name
 
