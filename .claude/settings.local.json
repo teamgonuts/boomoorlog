@@ -179,7 +179,33 @@
       "Bash(xargs -n1 basename)",
       "Bash(mkdir -p /tmp/wtqa_results)",
       "Bash(rm -f /tmp/wtqa_results/*.txt)",
-      "Bash(rm -f /tmp/wtqa_results/batch_*.txt)"
+      "Bash(rm -f /tmp/wtqa_results/batch_*.txt)",
+      "Bash(which jq *)",
+      "Bash(python3 -c 'import json,glob,os; d=\"/Users/calvino/.claude/projects/-Users-calvino-dev-boomoorlog/memory\"; files=sorted\\(glob.glob\\(os.path.join\\(d,\"**\",\"*.md\"\\),recursive=True\\)\\); parts=[\"=== \"+os.path.relpath\\(f,d\\)+\" ===\\\\n\"+open\\(f,encoding=\"utf-8\"\\).read\\(\\) for f in files]; ctx=\"Boomoorlog project memory files \\(full content — consult these for context\\):\\\\n\\\\n\"+\"\\\\n\\\\n\".join\\(parts\\); print\\(json.dumps\\({\"hookSpecificOutput\":{\"hookEventName\":\"SessionStart\",\"additionalContext\":ctx}}\\)\\)')",
+      "Bash(python3 -c 'import json; d=json.load\\(open\\(\".claude/settings.local.json\"\\)\\); h=d[\"hooks\"][\"SessionStart\"][0][\"hooks\"][0]; print\\(\"VALID JSON\"\\); print\\(\"type:\",h[\"type\"]\\); print\\(\"command runs:\"\\); import subprocess; out=subprocess.run\\([\"bash\",\"-c\",h[\"command\"]],capture_output=True,text=True\\); print\\(\"exit\",out.returncode\\); print\\(out.stdout[:200]\\)')",
+      "Bash(env)",
+      "Read(//Library/Application Support/ClaudeCode/**)",
+      "Read(//Users/calvino/**)",
+      "Read(//private/tmp/**)",
+      "Bash(rm -rf claudeasar)",
+      "Bash(npx --yes @electron/asar extract \"/Applications/Claude.app/Contents/Resources/app.asar\" claudeasar)",
+      "Bash(echo \"extracted exit $?\")",
+      "Bash(ASAR=\"/Applications/Claude.app/Contents/Resources/app.asar\"; echo \"=== context around 'Auto mode' ===\"; LC_ALL=C grep -aoE '.{80}Auto mode.{200}' \"$ASAR\" 2>/dev/null | head -5; echo; echo \"=== look for mode value tokens ===\"; LC_ALL=C grep -aoE '\"\\(permissionMode|defaultMode\\)\"[^A-Za-z0-9]{0,5}\"[a-zA-Z]+\"' \"$ASAR\" 2>/dev/null | sort -u | head; echo \"=== tokens: acceptEdits/bypassPermissions/plan/auto near each other ===\"; LC_ALL=C grep -aoE '.{40}Ask permissions.{260}' \"$ASAR\" 2>/dev/null | head -3)",
+      "Bash(echo \"=== find renderer bundles containing 'Bypass permissions' ===\"; grep -rln \"Bypass permissions\" \"/Applications/Claude.app/Contents/Resources\" 2>/dev/null | head; echo \"=== unpacked dir listing ===\"; ls \"/Applications/Claude.app/Contents/Resources/app.asar.unpacked\" 2>/dev/null; find \"/Applications/Claude.app/Contents/Resources\" -maxdepth 3 -name \"*.js\" 2>/dev/null | head; echo \"=== search whole app tree for label ===\"; grep -rln \"Auto mode\" \"/Applications/Claude.app\" 2>/dev/null | head)",
+      "Bash(grep -aoE '\\\\[\\(\"\\(default|ask|acceptEdits|plan|auto|bypassPermissions\\)\"[, ]*\\){2,}' /Applications/Claude.app/Contents/Resources/ion-dist/assets/v1/cda40c939-DeExI1vC.js)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c 'import json,glob,os; d=\"/Users/calvino/.claude/projects/-Users-calvino-dev-boomoorlog/memory\"; files=sorted(glob.glob(os.path.join(d,\"**\",\"*.md\"),recursive=True)); parts=[\"=== \"+os.path.relpath(f,d)+\" ===\\n\"+open(f,encoding=\"utf-8\").read() for f in files]; ctx=\"Boomoorlog project memory files (full content — consult these for context):\\n\\n\"+\"\\n\\n\".join(parts); print(json.dumps({\"hookSpecificOutput\":{\"hookEventName\":\"SessionStart\",\"additionalContext\":ctx}}))' 2>/dev/null || true",
+            "statusMessage": "Loading boomoorlog memory files..."
+          }
+        ]
+      }
     ]
   }
 }
