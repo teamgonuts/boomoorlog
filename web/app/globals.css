@@ -1183,6 +1183,15 @@ main {
   line-height: 1.2;
   pointer-events: none;
   white-space: nowrap;
+  /* Hidden by default — count was too noisy across a whole city of cluster
+     pins. Pops in on hover so it's still one quick glance away. */
+  opacity: 0;
+  transform: translateY(2px);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+}
+.tree-cluster:hover .tree-cluster-count {
+  opacity: 1;
+  transform: none;
 }
 
 /* M4.5: a creature sprite flying tree-to-tree. The wrapping divIcon does the
