@@ -599,7 +599,7 @@ main {
   width: 100%;
   /* nav height ≈ 49px; everything else is the map */
   height: calc(100vh - 50px);
-  background: #0c0e12;
+  background: #efefef;
 }
 .play-map {
   width: 100%;
@@ -855,7 +855,8 @@ main {
 
 /* Leaflet integration */
 .leaflet-container {
-  background: #0c0e12;
+  /* Matches the OSM Liberty background so tile-load flashes don't pop. */
+  background: #efefef;
   font-family: inherit;
 }
 .tree-pin {

@@ -4,6 +4,15 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useRef } from "react";
 
+// CARTO Voyager — light raster tiles, very close visual match to OSM Liberty
+// (beige residential, soft greens for parks, yellow/orange roads, light blue
+// water) but served as plain raster PNGs so Leaflet can render it directly
+// without dragging in MapLibre GL. Free for non-commercial; attributed below.
+const BASEMAP_URL =
+  "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png";
+const BASEMAP_ATTR =
+  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
+
 // Map opens centered on Amsterdam if no address has been searched.
 const AMSTERDAM_CENTER: [number, number] = [52.3676, 4.9041];
 const AMSTERDAM_ZOOM = 12;
@@ -189,16 +198,11 @@ export default function PlayMap({
       zoomControl: false,
     });
     L.control.zoom({ position: "bottomleft" }).addTo(map);
-    L.tileLayer(
-      "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
-      {
-        subdomains: "abcd",
-        maxZoom: 19,
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      },
-    ).addTo(map);
-
+    L.tileLayer(BASEMAP_URL, {
+      subdomains: "abcd",
+      maxZoom: 19,
+      attribution: BASEMAP_ATTR,
+    }).addTo(map);
     mapRef.current = map;
 
     return () => {
