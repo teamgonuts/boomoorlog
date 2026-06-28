@@ -102,7 +102,8 @@ Stand up the database and make it the single source for trees and genera.
       `genus_slug` FK. Includes individual-tree variance support: `trees.height_m` /
       `diameter_cm` (parsed midpoints) + `genera.avg_height_m` / `avg_diameter_cm`
       (baselines). Applied to Supabase 2026-06-28.
-- [ ] **4. Indexes SQL** — `db/002_indexes.sql` adds the three indexes above.
+- [x] **4. Indexes SQL** — `db/002_indexes.sql` adds the three indexes on `trees`
+      (`postcode4`, `postcode6`, `genus_slug`). Applied to Supabase 2026-06-28.
 - [ ] **5. Genera seed** — `seed_genera.py` loads the ~56 rows from
       `memory/characters/*.md` + `memory/CHARACTERS.md` into `genera`.
       **Also extract** shared derivation logic from `generate_characters.py` into
