@@ -1,11 +1,16 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { AddressInput } from "@/components/AddressInput";
 import { AreaPanel, type AreaCreature, type AreaTree } from "@/components/AreaPanel";
-import PlayMap, { type Bbox } from "@/components/PlayMap";
+import type { Bbox } from "@/components/PlayMap";
 import type { ViewportTreesResponse } from "@/lib/trees-api";
+
+// Leaflet touches `window` at module-load time, so the map component is
+// client-only. Dynamic import with ssr:false skips it during SSR.
+const PlayMap = dynamic(() => import("@/components/PlayMap"), { ssr: false });
 
 /**
  * Static metadata about a genus the area panel needs (Dutch name + rarity).
@@ -61,7 +66,6 @@ const VIEWPORT_DEBOUNCE_MS = 180;
  */
 export default function PlayClient(props: Props) {
   const [data, setData] = useState<ViewportTreesResponse | null>(null);
-  const [loading, setLoading] = useState(false);
 
   const abortRef = useRef<AbortController | null>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -72,7 +76,6 @@ export default function PlayClient(props: Props) {
       if (abortRef.current) abortRef.current.abort();
       const ac = new AbortController();
       abortRef.current = ac;
-      setLoading(true);
 
       const bboxStr = [bbox.lat_min, bbox.lng_min, bbox.lat_max, bbox.lng_max]
         .map((n) => n.toFixed(6))
@@ -85,13 +88,10 @@ export default function PlayClient(props: Props) {
         .then((json) => {
           if (ac.signal.aborted) return;
           setData(json);
-          setLoading(false);
         })
         .catch((err: unknown) => {
           if (err instanceof DOMException && err.name === "AbortError") return;
-          // eslint-disable-next-line no-console
           console.error("/api/trees", err);
-          setLoading(false);
         });
     }, VIEWPORT_DEBOUNCE_MS);
   }, []);
@@ -138,8 +138,6 @@ export default function PlayClient(props: Props) {
   }, [data, props.allCreatures]);
 
   const markers = data?.markers ?? [];
-  const total = data?.total ?? 0;
-  const generaCount = data?.topGenera.length ?? 0;
 
   return (
     <main className="play-page">
@@ -157,21 +155,6 @@ export default function PlayClient(props: Props) {
           <AddressInput defaultValue={props.address} />
           {props.geocodeError && (
             <p className="play-error-mini">{props.geocodeError}</p>
-          )}
-          {props.resolvedAddress && (
-            <p className="play-meta-mini">
-              <span>{props.resolvedAddress}</span>
-              <span className="play-meta-counts">
-                {loading && data === null ? (
-                  <span className="play-meta-loading">loading…</span>
-                ) : (
-                  <>
-                    <b>{total.toLocaleString()}</b> trees · <b>{generaCount}</b>{" "}
-                    genera
-                  </>
-                )}
-              </span>
-            </p>
           )}
         </div>
 

@@ -847,12 +847,54 @@ main {
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55);
 }
 
-/* Two-tab segmented control across the top of the panel. */
+/* Two-tab segmented control + collapse button across the top of the panel.
+   `auto` third column holds the × button at native width without squashing
+   the two tab labels. */
 .area-tabs {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr auto;
   border-bottom: 1px solid var(--line);
   background: rgba(0, 0, 0, 0.25);
+}
+.area-collapse-x {
+  background: transparent;
+  border: none;
+  border-left: 1px solid var(--line);
+  color: var(--dim);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0 14px;
+  align-self: stretch;
+  transition: color 0.12s ease;
+}
+.area-collapse-x:hover {
+  color: var(--ink);
+}
+
+/* Collapsed handle — small floating chip where the panel was. Click → expand. */
+.area-collapsed-handle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 22, 27, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  cursor: pointer;
+  z-index: 500;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55);
+  transition: background 0.12s ease;
+}
+.area-collapsed-handle:hover {
+  background: rgba(20, 22, 27, 1);
 }
 .area-tab {
   background: transparent;
@@ -1141,10 +1183,6 @@ main {
   line-height: 1.2;
   pointer-events: none;
   white-space: nowrap;
-}
-.play-meta-loading {
-  color: var(--dim);
-  font-style: italic;
 }
 
 /* M4.5: a creature sprite flying tree-to-tree. The wrapping divIcon does the

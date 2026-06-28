@@ -291,7 +291,9 @@ export default function PlayMap({
   // Callback captured into the mount-effect via ref so identity churn from
   // the parent doesn't trigger a remap remount.
   const onViewportChangeRef = useRef(onViewportChange);
-  onViewportChangeRef.current = onViewportChange;
+  useEffect(() => {
+    onViewportChangeRef.current = onViewportChange;
+  }, [onViewportChange]);
   // First-fit guard: only auto-fit when a new center arrives. After that,
   // panning/zooming is the user's.
   const lastFitCenterRef = useRef<string | null>(null);
@@ -341,6 +343,9 @@ export default function PlayMap({
     };
     map.on("moveend", emitViewport);
 
+    // Capture the marker-handles map up front so cleanup uses the same Map
+    // instance that the effect set up with (silences react-hooks/exhaustive-deps).
+    const handlesAtMount = markerHandlesRef.current;
     return () => {
       map.off("moveend", emitViewport);
       map.remove();
@@ -348,7 +353,7 @@ export default function PlayMap({
       addressLayerRef.current = null;
       markerLayerRef.current = null;
       creatureLayerRef.current = null;
-      markerHandlesRef.current.clear();
+      handlesAtMount.clear();
     };
   }, []);
 
