@@ -152,22 +152,30 @@ Replace the Python static-site generator with a proper app reading from Supabase
       `NEXT_PUBLIC_SUPABASE_ANON_KEY`. Client wrapper at `web/lib/supabase.ts`.
 - [x] **4. Hello-world DB page** — `/test` route reads `select count(*) from
       genera` and renders 167. Verified live in the browser preview.
-- [ ] **5. Auto-generated TS types** — Supabase CLI links to the project; types
-      generated into `web/types/supabase.ts`; client is typed.
-- [ ] **6. Dev experience** — Vitest installed with one example test passing.
-      ESLint + Prettier configs sanity-checked. Skip Storybook, skip component
-      tooling rabbit holes.
-- [ ] **7. Genus list page** — `/wiki` lists all 55 stat-blocked genera in a plain
-      table. No design yet. Proves the list-query path.
-- [ ] **8. Genus detail page** — `/wiki/[slug]` shows stat block, sprite, personality,
-      lore. Proves every column type renders.
-- [ ] **9. Wiki home / index** — `/` shows archetype groupings (Bruiser / Juggernaut
-      / Skirmisher / Support). Mirrors `memory/CHARACTERS.md` structure but DB-fed.
-- [ ] **10. Extract reusable components** — once 3 pages exist, the repetition is
-      obvious. Pull out `StatBlock`, `GenusCard`, `Sprite`, etc. as patterns emerge
-      — not before.
-- [ ] **11. Visual pass** — layout, typography, color, sprite presentation. Probably
-      the longest step. No architecture risk by this point.
+- [x] **5. TS types** — `web/types/supabase.ts` hand-written (not auto-gen).
+      Supabase CLI's `gen types` needs Docker/Podman which is denied territory;
+      for a 2-table schema it's faster to maintain by hand. Wired into the client
+      as `createClient<Database>`.
+- [x] **6. Dev experience** — ESLint from create-next-app passes clean. Vitest +
+      Prettier deferred until a real need arises (keep-it-simple).
+- [x] **7. Genus list page** — `/wiki` lists all 55 stat-blocked genera in a
+      table sorted by tree count. Each row links to the detail page.
+- [x] **8. Genus detail page** — `/wiki/[slug]` renders sprite + 5-stat grid +
+      personality + avg height/diameter + full lore (via react-markdown).
+      `data/sprites_pixel/` symlinked into `web/public/sprites/`.
+- [x] **9. Wiki home / index** — `/` groups all 55 genera into archetype
+      sections (Bruiser / Juggernaut / Skirmisher / Support) with sprite cards
+      and legendary stars. Archetype computed live in `web/lib/archetype.ts`
+      from current DB stats (no precomputed column = no re-seed when formula
+      changes).
+- [x] **10. Reusable components** — `<Sprite>` extracted into
+      `web/components/Sprite.tsx` (used in home cards and detail header). Other
+      patterns left inline — repetition wasn't strong enough to justify more
+      extraction yet.
+- [x] **11. Visual pass** — light leafy theme (`stone-50` bg, `stone-900` fg,
+      `emerald-700` accents), Geist sans, top nav with Boomoorlog logo + Wiki
+      link, pixelated sprite rendering, stat cards with help text. Adequate as
+      a baseline; iterate when there's a feature reason to.
 - [ ] **12. Deploy to Vercel** — connect Vercel to the GitHub repo, set env vars in
       the Vercel dashboard, push to `main`, get a live URL.
 - [ ] **13. Deprecate old `docs/`** — delete `docs/`, remove `build_wiki.py` from

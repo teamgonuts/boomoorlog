@@ -1,65 +1,101 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+import { Sprite } from "@/components/Sprite";
+import {
+  ARCHETYPE_BLURBS,
+  ARCHETYPE_ORDER,
+  classifyGenera,
+  type ArchetypeBase,
+  type Classified,
+} from "@/lib/archetype";
+import { supabase } from "@/lib/supabase";
+
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
+  const { data: genera, error } = await supabase
+    .from("genera")
+    .select("*")
+    .not("attack", "is", null);
+
+  if (error) {
+    return <p className="p-12 text-red-600">Error: {error.message}</p>;
+  }
+
+  const classified = classifyGenera(genera ?? []);
+  const byArchetype: Record<ArchetypeBase, Classified[]> = {
+    Bruiser: [],
+    Juggernaut: [],
+    Skirmisher: [],
+    Support: [],
+  };
+  for (const g of classified) byArchetype[g.archetype].push(g);
+  for (const list of Object.values(byArchetype)) {
+    list.sort((a, b) => b.tree_count - a.tree_count);
+  }
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen p-8 md:p-12 max-w-6xl mx-auto">
+      <header className="mb-12">
+        <h1 className="text-5xl font-bold tracking-tight">🌳 Boomoorlog</h1>
+        <p className="mt-3 text-lg text-gray-700 max-w-2xl">
+          &ldquo;Tree war.&rdquo; Two Amsterdam ZIP codes battle tower-defense
+          style using the <em>real</em> trees that grow in each postcode as
+          combatants. {classified.length} genera fight in four archetypes.
+        </p>
+        <p className="mt-3">
+          <Link href="/wiki" className="text-emerald-700 hover:underline">
+            Browse the full roster →
+          </Link>
+        </p>
+      </header>
+
+      {ARCHETYPE_ORDER.map((archetype) => {
+        const list = byArchetype[archetype];
+        if (list.length === 0) return null;
+        return (
+          <section key={archetype} className="mb-12">
+            <h2 className="text-2xl font-bold">{archetype}</h2>
+            <p className="mt-1 text-sm text-gray-600 max-w-2xl">
+              {ARCHETYPE_BLURBS[archetype]}
+            </p>
+            <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+              {list.map((g) => (
+                <GenusCard key={g.slug} g={g} />
+              ))}
+            </div>
+          </section>
+        );
+      })}
+    </main>
+  );
+}
+
+function GenusCard({ g }: { g: Classified }) {
+  return (
+    <Link
+      href={`/wiki/${g.slug}`}
+      className="block bg-white border border-stone-200 rounded p-3 hover:border-emerald-400 hover:shadow-sm transition"
+    >
+      <div className="flex items-start gap-3">
+        <Sprite slug={g.slug} size={48} />
+        <div className="min-w-0">
+          <div className="font-semibold italic truncate">
+            {g.latin_name}
+            {g.isLegendary && (
+              <span className="ml-1 text-amber-600" title="Legendary">
+                ★
+              </span>
+            )}
+          </div>
+          <div className="text-xs text-gray-600 truncate">
+            {g.dutch_name ?? "—"}
+          </div>
+          <div className="mt-1 text-xs text-gray-500 tabular-nums">
+            {g.tree_count.toLocaleString()} trees
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+    </Link>
   );
 }
