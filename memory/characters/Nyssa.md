@@ -18,6 +18,20 @@ The cross-grained, unsplittable wood makes Nyssa a classic skirmisher who absorb
 
 ## Living creatures
 Tupelo (Nyssa) is non-native to Europe and supports a small local fauna here — but its nectar is famously bee-attractive (Tupelo honey) and its sour autumn fruit is a magnet for thrushes.
+
+| Creature | Estimated count per tree |
+|---|---|
+| Honey bees (Apis mellifera / Apidae) | hundreds |
+| Aphids (Aphidoidea, e.g. Aphis coreopsidis) | hundreds to low thousands |
+| Tupelo leaf-miner moth & generalist Lepidoptera | 5–30 caterpillars |
+| Forest tent caterpillar (Malacosoma disstria, native range only) | dozens to hundreds (absent in Europe) |
+| Armored scales & mealybugs (Diaspididae, Pseudococcidae) | hundreds per twig |
+| Blackbirds & thrushes (Turdus, including winter migrants) | 3–10 |
+| Starlings (Sturnus vulgaris) | 10–50 |
+| Wood pigeons & corvids (Columba/Corvus) | 1–3 |
+| Squirrels & opossums (small mammals) | 1–3 |
+| Cavity-roosting bats (Pipistrellus spp.) & feral honeybee colonies | single roosts |
+
 - **Honey bees (Apis mellifera / Apidae)** — hundreds per flowering tree; the genus is a prime nectar tree, source of commercial Tupelo honey. [Wikipedia: Nyssa sylvatica](https://en.wikipedia.org/wiki/Nyssa_sylvatica)
 - **Aphids (Aphidoidea, e.g. Aphis coreopsidis)** — colonies of hundreds to low thousands; one of the few co-evolved sap-feeders. [Illinois Wildflowers: Black Tupelo](https://illinoiswildflowers.info/trees/plants/bl_tupelo.html)
 - **Tupelo leaf-miner moth & generalist Lepidoptera** — 5–30 caterpillars per tree in season; 26 Lepidoptera species use Nyssa in its native range, far fewer in Europe. [Wikipedia: Nyssa sylvatica](https://en.wikipedia.org/wiki/Nyssa_sylvatica)

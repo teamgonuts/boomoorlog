@@ -20,6 +20,19 @@ Low wood density means Thuja is no powerhouse on individual strikes, but its leg
 ## Living creatures
 Arborvitae (Thuja) is a North American conifer with a thin specialist insect fauna in NW Europe — but the dense evergreen wall is prime winter cover for small passerines and a reliable nesting hedge.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Cypress aphid (Cinara cupressi sensu lato, Aphididae) | 1,000–10,000+ |
+| Cypress tip moth / Arborvitae leafminer (Argyresthia spp., Argyresthiidae) | hundreds |
+| Juniper scale (Carulaspis juniperi, Diaspididae) | hundreds to thousands |
+| Bagworm (Psychidae, e.g. Thyridopteryx, Psyche) | ~10–200 bags |
+| Arborvitae weevil (Phyllobius intrusus, Curculionidae) | ~10–100 |
+| Spider mites (Tetranychidae, esp. Oligonychus ununguis) | tens of thousands |
+| Black garden ant (Lasius niger) | 1–2 colonies, hundreds of foragers |
+| Wood Pigeon & Collared Dove (Columba palumbus / Streptopelia decaocto) | 1–2 nesting pairs |
+| Goldcrest & Firecrest (Regulus regulus / R. ignicapilla) | 5–20 |
+| Blackbird (Turdus merula) | 1 pair |
+
 - **Cypress aphid (Cinara cupressi sensu lato, Aphididae)** — the #1 Thuja problem in NW Europe; colonies regularly 1,000–10,000+ per tree, blamed for over half of brown-patch dieback. [Hopes Grove Nurseries: Thuja pests & diseases](https://www.hopesgrovenurseries.co.uk/knowledge-base/thuja-pests-diseases/)
 - **Cypress tip moth / Arborvitae leafminer (Argyresthia spp., Argyresthiidae)** — needle-mining micromoth larvae; commonly hundreds per tree, browning the tips. [Hopes Grove Nurseries: Thuja pests & diseases](https://www.hopesgrovenurseries.co.uk/knowledge-base/thuja-pests-diseases/)
 - **Juniper scale (Carulaspis juniperi, Diaspididae)** — flat white scales smothering twigs; hundreds to thousands per infested tree. [University of Kentucky: Common insect pests of arborvitae](https://www.uky.edu/Ag/Entomology/treepestguide/arborvitae.html)

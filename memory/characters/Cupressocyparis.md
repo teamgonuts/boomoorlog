@@ -18,6 +18,20 @@ The Juggernaut archetype fits perfectly: blistering advance speed but a shorter 
 
 ## Living creatures
 Leyland is a non-native sterile hybrid with a famously thin native-insect fauna — its wildlife value is almost entirely as dense evergreen shelter, especially for nesting birds and the smallest songbird in Europe.
+
+| Creature | Estimated count per tree |
+|---|---|
+| Cypress aphid (Cinara cupressi) | ~1000s |
+| Scale insects (Carulaspis spp., juniper scale) | ~100s per branch |
+| Cypress tip moth (Argyresthia spp.) | ~10–100 mined shoots |
+| Spider mites (Tetranychidae) | ~1000s |
+| Goldcrest (Regulus regulus) | 1 nesting pair |
+| Greenfinch / Dunnock / Wren / Robin (Chloris chloris / Prunella modularis / Troglodytes troglodytes / Erithacus rubecula) | 1–3 nesting pairs |
+| Wood Pigeon / Collared Dove (Columba palumbus / Streptopelia decaocto) | 1–2 pairs |
+| Roosting garden birds in winter | ~10–50 |
+| Spiders, harvestmen, woodlice (Arachnida / Isopoda) | ~100s |
+| Red Fox / Hedgehog (Vulpes vulpes / Erinaceus europaeus) | 0–1 |
+
 - **Cypress aphid (Cinara cupressi)** — ~1000s per tree on infested specimens; the main herbivore that has actually adapted to Cupressaceae in Europe. [RHS cypress aphid](https://www.rhs.org.uk/biodiversity/cypress-aphid)
 - **Scale insects (Carulaspis spp., juniper scale)** — ~100s per branch on infested trees; common Cupressaceae pest. [Leyland cypress pests](https://hgic.clemson.edu/factsheet/leyland-cypress-diseases-insects-related-pests/)
 - **Cypress tip moth (Argyresthia spp.)** — ~10–100 mined shoots per tree; small moths whose larvae bore into cypress tips. [Leyland cypress pests](https://hgic.clemson.edu/factsheet/leyland-cypress-diseases-insects-related-pests/)

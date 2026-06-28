@@ -18,6 +18,20 @@ Dense wood and allelopathic litter make the Beech a slow but crushing fighter wh
 
 ## Living creatures
 Beech hosts a deep canopy aphid fauna and a thick litter-layer arthropod community — the dense canopy sterilises the ground above but the slow-rotting mast feeds millions of soil invertebrates below.
+
+| Creature | Estimated count per tree |
+|---|---|
+| Woolly beech aphid (Phyllaphis fagi) | ~1000s–10,000s |
+| Springtails & oribatid mites in litter (Collembola, Oribatida) | ~100,000s |
+| Beech leaf-mining weevil (Rhynchaenus fagi) | ~100s–1000s of mines |
+| Moth caterpillars — barred hook-tip, clay triple-lines, olive crescent, winter moth (Lepidoptera) | ~1000s |
+| Hericium & beech wood-decay beetles (Coleoptera saproxylica) | ~10–50 species per veteran |
+| Chaffinch & Brambling (Fringilla coelebs / montifringilla) | 10s–100s (in mast years) |
+| Great Spotted Woodpecker & Nuthatch (Dendrocopos major / Sitta europaea) | 1–2 pairs |
+| Common Pipistrelle / Noctule (Pipistrellus pipistrellus / Nyctalus noctula) | 1–20 |
+| Wood mouse / Bank vole / Grey & Red Squirrel (Apodemus, Myodes, Sciurus) | 5–30 |
+| Wild boar (Sus scrofa) | 0–1 |
+
 - **Woolly beech aphid (Phyllaphis fagi)** — ~1000s–10,000s per mature tree; the diagnostic white woolly fluff on undersides of beech leaves. [Phyllaphis fagi profile](https://influentialpoints.com/Gallery/Phyllaphis_fagi_Woolly_beech_aphid.htm)
 - **Springtails & oribatid mites in litter (Collembola, Oribatida)** — ~100,000s under one mature beech; beech mast and leaf litter sustain extremely dense soil microfauna. [Beech leaf litter fauna study](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3116155/)
 - **Beech leaf-mining weevil (Rhynchaenus fagi)** — ~100s–1000s of leaf mines per tree in outbreak years; specialist beech curculionid. [Rhynchaenus fagi notes](https://www.rhs.org.uk/biodiversity/woolly-beech-aphid)

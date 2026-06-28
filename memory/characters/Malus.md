@@ -18,6 +18,20 @@ Malus fights with measured, heavy precision — its dense, hickory-comparable wo
 
 ## Living creatures
 Apple (Malus) is one of Europe's richest insect hosts — ~200+ phytophagous arthropod species recorded in European orchards alone (Kennedy & Southwood-style counts), plus a heavy mammal and bird load from fallen fruit.
+
+| Creature | Estimated count per tree |
+|---|---|
+| Rosy apple aphid & green apple aphid (Dysaphis plantaginea, Aphis pomi / Aphididae) | thousands |
+| Codling moth (Cydia pomonella / Tortricidae) | 10–50 caterpillars per generation |
+| Winter moth caterpillars (Operophtera brumata / Geometridae) | hundreds |
+| Apple blossom weevil (Anthonomus pomorum / Curculionidae) | dozens to hundreds |
+| Eyed hawk-moth, pale tussock, green pug, Chinese character (various Lepidoptera) | 5–30 caterpillars |
+| Honey bees & solitary bees (Apis mellifera, Andrena spp. / Apidae+Andrenidae) | hundreds |
+| Blackbirds & thrushes (Turdus merula, T. philomelos / Turdidae) | 1–5 |
+| Fieldfare & redwing (Turdus pilaris, T. iliacus) | 10–100+ |
+| Blue & Great Tits (Cyanistes/Parus) | 1–2 nesting pairs |
+| Mice, voles, foxes, badgers (various mammals) | single individuals each |
+
 - **Rosy apple aphid & green apple aphid (Dysaphis plantaginea, Aphis pomi / Aphididae)** — thousands per tree in spring colonies; the dominant sap-feeders. [bioRxiv: parasitoid control of D. plantaginea](https://www.biorxiv.org/content/10.1101/2021.09.20.461076.full.pdf)
 - **Codling moth (Cydia pomonella / Tortricidae)** — typically 10–50 caterpillars per untreated tree per generation; the textbook "worm in the apple". [RHS: Codling moth](https://www.rhs.org.uk/biodiversity/codling-moth)
 - **Winter moth caterpillars (Operophtera brumata / Geometridae)** — hundreds per tree in spring outbreaks; defoliators that feed blue tit chicks. [RHS: Winter moth caterpillars](https://www.rhs.org.uk/biodiversity/winter-moth-caterpillars)

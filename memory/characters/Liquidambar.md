@@ -19,6 +19,19 @@ Fast growth and moderately hard wood deliver solid, sustained damage output; the
 ## Living creatures
 North-American ornamental — its native fauna (hundreds of moth species, big silkmoths) hasn't transferred to Europe, so NW European associates are mostly generalists plus a small ambrosia-beetle / seed-finch crew.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Aphids (Aphidoidea, generalist colonisers) | hundreds–low thousands |
+| Ants (Lasius, Formica spp.) | hundreds |
+| Spider mites (Tetranychidae) | 10,000+ |
+| Generalist tortrix and geometrid caterpillars | dozens |
+| Honeybees & flies on extrafloral nectaries / sap | tens |
+| Granulate ambrosia beetle (Xylosandrus crassiusculus, Scolytinae) | a handful–dozens |
+| Goldfinch & Siskin (Carduelis carduelis, Spinus spinus) | 5–20 |
+| Greenfinch / House Sparrow (Chloris / Passer) | 3–10 |
+| Squirrel (Sciurus spp.) | 1–2 |
+| Wood Pigeon / corvid roost (Columba palumbus, Corvus spp.) | 1–5 |
+
 - **Aphids (Aphidoidea, generalist colonisers)** — hundreds to low thousands on tender shoots in summer; no sweetgum-specialist aphid in Europe. [Gardenia: Liquidambar styraciflua](https://www.gardenia.net/plant/liquidambar-styraciflua)
 - **Ants (Lasius, Formica spp.)** — colonies in the hundreds tending aphids for honeydew. [Gardenia: Liquidambar styraciflua](https://www.gardenia.net/plant/liquidambar-styraciflua)
 - **Spider mites (Tetranychidae)** — easily 10,000+ on a hot, dry urban tree. [NCSU: Liquidambar styraciflua](https://plants.ces.ncsu.edu/plants/liquidambar-styraciflua/)

@@ -19,6 +19,19 @@ Massive, ancient, and near-indestructible — the Juggernaut archetype fits perf
 ## Living creatures
 Lawson cypress is a non-native ornamental conifer in NW Europe with an aromatic, insect-repellent foliage — its main fauna is the invasive cypress aphid (a tree-killer), plus the standard conifer cast of small-bird nesters that exploit the dense evergreen cover.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Cypress aphid (Cinara cupressi sensu lato) | thousands |
+| Juniper / cypress scales and mites (Carulaspis spp., spider mites) | hundreds to thousands |
+| Spiders (Araneae, web-builders) | dozens to low hundreds |
+| Phytophthora lateralis root pathogen | soil oomycete (not animal) |
+| Goldcrest (Regulus regulus) | 1–2 pairs |
+| Firecrest (Regulus ignicapilla) | 0–1 pairs |
+| Coal Tit (Periparus ater) | 1–2 pairs |
+| Finches and small passerines (Fringilla coelebs, Carduelis spp., Sylvia spp.) | several pairs |
+| Wood Pigeon and Collared Dove (Columba palumbus, Streptopelia decaocto) | 1–3 pairs |
+| Squirrels (Sciurus spp.) | 1 |
+
 - **Cypress aphid (Cinara cupressi sensu lato)** — thousands per heavily infested tree; on the IUCN "100 worst invasive species" list and a documented Lawson-cypress killer. [Wikipedia: Cinara cupressi](https://en.wikipedia.org/wiki/Cinara_cupressi)
 - **Juniper / cypress scales and mites (Carulaspis spp., spider mites)** — hundreds to thousands per tree at peak; standard Cupressaceae complement. [Arboriculture Association: cypress & juniper aphids PDF](https://www.trees.org.uk/Trees.org.uk/files/46/4607592e-e664-4374-8e58-c714fac9650e.pdf)
 - **Spiders (Araneae, web-builders)** — dozens to low hundreds per dense-foliage tree; the evergreen needle thicket is prime web habitat. [Backyard Gardener: Bird Nest Cypress](https://www.backyardgardener.com/plantname/chamaecyparis-lawsoniana-bird-nest-cypress/)

@@ -20,6 +20,19 @@ Dense, resinous wood drives slow but heavy strikes — a true Bruiser cadence. M
 ## Living creatures
 Only deciduous European conifer — soft annual needles plus tight seed cones support a specialist guild of needle-mining moths, sap-sucking adelgids, and seed-eating finches found on no other native tree.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Larch woolly adelgid (Adelges laricis, Adelgidae) | tens of thousands |
+| Larch casebearer moth (Coleophora laricella, Coleophoridae) | thousands of cases |
+| Speckled larch aphid (Cinara laricis, Lachninae) | hundreds–thousands |
+| Larch tortrix and cone moths (Cydia illutana, Zeiraphera) | hundreds of larvae |
+| Spruce / larch budworm complex (Choristoneura, Tortricidae) | tens–hundreds |
+| Ladybird beetles (Coccinellidae) | dozens–hundreds |
+| Larch longhorn (Tetropium gabrieli, Cerambycidae) | a handful of larvae |
+| Common Crossbill (Loxia curvirostra) | 1–6 |
+| Siskin & Redpoll (Spinus spinus, Acanthis) | 5–20 |
+| Goldcrest / Coal Tit (Regulus / Periparus) | 1 pair |
+
 - **Larch woolly adelgid (Adelges laricis, Adelgidae)** — woolly white tufts smother shoots; tens of thousands of individuals on a heavily infested tree. [Influentialpoints: Adelges laricis](http://influentialpoints.com/Gallery/Adelges_laricis_Larch_adelgid_Larch_woolly_aphid.htm)
 - **Larch casebearer moth (Coleophora laricella, Coleophoridae)** — needle-mining; thousands of cases on a mature tree in outbreak years. [Wikipedia: Coleophora laricella](https://en.wikipedia.org/wiki/Coleophora_laricella)
 - **Speckled larch aphid (Cinara laricis, Lachninae)** — large bark-feeding aphids; hundreds to thousands per tree in summer. [Influentialpoints: Cinara laricis](http://influentialpoints.com/Gallery/Cinara_laricis_speckled_larch_aphid.htm)

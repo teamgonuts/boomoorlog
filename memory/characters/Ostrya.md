@@ -18,6 +18,20 @@ Dense wood means slow, powerful strikes that ignore light armour. The hop-like s
 
 ## Living creatures
 Hop hornbeam (Ostrya carpinifolia) is a native European understory tree whose insect fauna overlaps heavily with its close cousin Carpinus — a respectable host with hop-like seed clusters that finches and small mammals exploit through winter.
+
+| Creature | Estimated count per tree |
+|---|---|
+| Leaf-mining micromoths (Gracillariidae, Stigmella spp. / Nepticulidae) | hundreds of mines |
+| Winter moth & geometrid caterpillars (Operophtera brumata, etc. / Geometridae) | hundreds |
+| Gypsy moth caterpillars (Lymantria dispar / Erebidae) | dozens to hundreds |
+| Aphids (Aphidoidea) | hundreds to low thousands |
+| Honey bees & solitary bees (Apidae, Andrenidae) | dozens |
+| Goldfinch & siskin (Carduelis carduelis, Spinus spinus / Fringillidae) | 3–15 |
+| Blue & Great Tits (Cyanistes/Parus) | 1–2 nesting pairs |
+| Wood mouse & bank vole (Apodemus sylvaticus, Myodes glareolus) | single individuals |
+| White truffle (Tuber magnatum) mycorrhizal partner | n/a (mycorrhizal) |
+| Roosting bats (Pipistrellus spp.) in old trunks | occasional 1 |
+
 - **Leaf-mining micromoths (Gracillariidae, Stigmella spp. / Nepticulidae)** — hundreds of mines per tree per year; the dominant herbivore guild on Ostrya. [UK Fly Mines: Stigmella carpinella](https://www.ukflymines.co.uk/Moths/Stigmella_carpinella.php)
 - **Winter moth & geometrid caterpillars (Operophtera brumata, etc. / Geometridae)** — hundreds per tree in spring; shared with most NW European broadleaves. [RHS: Winter moth](https://www.rhs.org.uk/biodiversity/winter-moth-caterpillars)
 - **Gypsy moth caterpillars (Lymantria dispar / Erebidae)** — dozens to hundreds in outbreak years; a known Ostrya defoliator in southern Europe. [Grokipedia: Ostrya carpinifolia](https://grokipedia.com/page/Ostrya_carpinifolia)

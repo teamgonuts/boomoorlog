@@ -19,6 +19,19 @@ Celtis is the opportunist skirmisher — fast deployment, mid-tier damage, and u
 ## Living creatures
 Celtis is famous for two things: a long roster of butterfly larvae that depend on it, and a galling-mite/psyllid complex that produces the conspicuous nipple galls and witches' brooms — a structurally distinctive fauna for an otherwise modest tree.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Hackberry psyllids (Pachypsylla spp., incl. P. celtidismamma, P. celtidisvesicula, P. celtidisgemma) | thousands of galls |
+| Hackberry gall mite (Aceria celtis / Eriophyes spp.) | millions (microscopic) |
+| Aphids (Aphidoidea, generalists) | hundreds to thousands |
+| Armoured scales and mealybugs (Diaspididae, Pseudococcidae) | dozens to hundreds |
+| Hackberry Emperor butterfly (Asterocampa celtis) | dozens of larvae in N. America; absent in Europe |
+| Mourning Cloak / Camberwell Beauty (Nymphalis antiopa) | 0–several larvae |
+| Wood-boring beetles (Buprestidae, Cerambycidae larvae) | handful |
+| Fruit-eating songbirds (cedar waxwing equiv. — in Europe Bohemian Waxwing Bombycilla garrulus, Blackbird Turdus merula, Mistle Thrush) | flocks of 5–50 |
+| Tits (Cyanistes caeruleus, Parus major) | 1–2 nesting pairs |
+| Squirrels (Sciurus spp.) | 1–2 |
+
 - **Hackberry psyllids (Pachypsylla spp., incl. P. celtidismamma, P. celtidisvesicula, P. celtidisgemma)** — thousands of nipple/blister galls on a single mature canopy; ~10 species recorded on the genus. [UMass: Pachypsylla spp.](https://ag.umass.edu/landscape/publications-resources/insect-mite-guide/pachypsylla-spp)
 - **Hackberry gall mite (Aceria celtis / Eriophyes spp.)** — microscopic, millions per tree; co-author (with powdery mildew Podosphaera phytoptophila) of the iconic witches' brooms. [Univ. Illinois: Witches'-broom of hackberry](https://hyg.ipm.illinois.edu/article.php?id=686)
 - **Aphids (Aphidoidea, generalists)** — hundreds to thousands per tree at peak; one of the routinely listed Celtis pests. [Illinois Wildflowers: Common hackberry](https://www.illinoiswildflowers.info/trees/plants/hackberry.html)

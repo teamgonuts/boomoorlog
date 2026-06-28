@@ -19,6 +19,19 @@ Carpinus is the Juggernaut in every sense — slow to advance but nearly impossi
 ## Living creatures
 Carpinus is the quiet workhorse of NW European ancient woodland — its retained dead leaves shelter overwintering invertebrates, and its hard seeds are the single most important winter food for the elusive hawfinch.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Hornbeam aphids (Myzocallis carpini / Aphididae) | thousands |
+| Hazel leaf-miner moth (Stigmella microtheriella / Nepticulidae) | hundreds of mines |
+| Nut-tree tussock (Colocasia coryli / Noctuidae) | a handful |
+| Generalist micro-moths (Phyllonorycter esperella & similar / Gracillariidae) | a few hundred mines |
+| Hornbeam gall mites (Aceria / Eriophyidae) | tens of thousands |
+| Overwintering invertebrates in marcescent leaves (mixed Araneae, Hemiptera, Coleoptera) | dozens to low hundreds |
+| Hawfinch (Coccothraustes coccothraustes) | 1–2 (occasionally 10+) |
+| Tits & finches at the samaras (Cyanistes, Parus, Fringilla) | 5–20 |
+| Eurasian Grey Squirrel (Sciurus carolinensis) | 1–3 |
+| Cavity-nesting birds & roosting bats (Picidae, Pipistrellus / Vespertilionidae) | 1 nesting pair or roosting bat |
+
 - **Hornbeam aphids (Myzocallis carpini / Aphididae)** — thousands per mature tree in summer; small yellow aphids producing the steady honeydew rain under hedged hornbeam. [Influential Points: Myzocallis carpini](https://influentialpoints.com/Gallery/Myzocallis_carpini_Hornbeam_aphid.htm)
 - **Hazel leaf-miner moth (Stigmella microtheriella / Nepticulidae)** — hundreds of mines per mature tree; despite the name it works hazel and hornbeam in equal measure. [Wikipedia: Stigmella microtheriella](https://en.wikipedia.org/wiki/Stigmella_microtheriella)
 - **Nut-tree tussock (Colocasia coryli / Noctuidae)** — a handful of larvae per tree; one of the signature hornbeam/hazel moths and a striking ginger-tufted caterpillar. [UKmoths: Colocasia coryli](https://www.ukmoths.org.uk/species/colocasia-coryli/)

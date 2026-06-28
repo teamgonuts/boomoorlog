@@ -19,6 +19,19 @@ Don't let the small stature fool you — Amelanchier packs surprisingly hard woo
 ## Living creatures
 Amelanchier punches well above its size as a wildlife multiplier — one of the earliest pollen sources in spring and a fruit-stop that draws 40+ bird species in early summer, all from a tree small enough to live in a hedgerow.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Solitary mining bees (Andrena spp. / Andrenidae) | dozens |
+| Bumblebees (Bombus terrestris / Apidae) | dozens |
+| Honey bees (Apis mellifera) | dozens to low hundreds |
+| Winter moth & mottled umber caterpillars (Operophtera brumata, Erannis defoliaria / Geometridae) | 20–100 |
+| Brimstone moth & grey dagger caterpillars (Opisthograptis luteolata, Acronicta psi) | a handful each |
+| Aphids (Aphidoidea, incl. Dysaphis spp.) | hundreds to low thousands |
+| Blackbird (Turdus merula) | 1–3 |
+| Song Thrush & Mistle Thrush (Turdus philomelos / T. viscivorus) | 1–2 |
+| Eurasian Blackcap (Sylvia atricapilla) | 1–2 |
+| Blue & Great Tits (Cyanistes / Parus) | 1 nesting pair |
+
 - **Solitary mining bees (Andrena spp. / Andrenidae)** — dozens per tree at peak bloom; serviceberry is among the very first nectar/pollen sources for emerging Andrena queens in April. [Wisconsin Hort: Serviceberry](https://hort.extension.wisc.edu/articles/serviceberry-amelanchier-spp/)
 - **Bumblebees (Bombus terrestris / Apidae)** — dozens of foundress queens working the early flowers, critical for colony establishment. [Wisconsin Hort: Woody plants for bees](https://hort.extension.wisc.edu/articles/whats-all-the-buzz-woody-plants-for-bees-butterflies-and-other-bee-t-full-pollinators/)
 - **Honey bees (Apis mellifera)** — dozens to low hundreds at full bloom; brief but valuable for hives still recovering from winter. [EcoBeneficial: Serviceberry](https://www.ecobeneficial.com/ask_ecobeneficial/is-autumn-brilliance-serviceberry-a-good-pollinator-bird-plant/)

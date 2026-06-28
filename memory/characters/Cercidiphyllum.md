@@ -19,6 +19,19 @@ Soft wood means rapid, light strikes — fast attack speed, low per-hit damage. 
 ## Living creatures
 Katsura is an Asian living fossil with almost no European fauna of its own — multiple horticultural sources independently note "no serious insect or disease pests." The list below is therefore mostly generalist visitors and structural users; per-tree counts are correspondingly low.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Aphids (Aphidoidea, generalist spp.) | hundreds |
+| Two-spotted spider mite (Tetranychus urticae) and relatives | thousands under hot dry conditions |
+| Armoured scales (Diaspididae) | dozens to low hundreds |
+| Honeybees (Apis mellifera) | handful |
+| Generalist bumblebees (Bombus spp.) | handful |
+| Springtails and bark-dwelling Collembola (Collembola) | many thousands |
+| Spiders (Araneae, generalists) | dozens |
+| Tits (Cyanistes caeruleus / Parus major) | 0–1 nesting pairs |
+| Wood Pigeon and roosting passerines (Columba palumbus, Turdus merula) | 1–3 individuals |
+| Squirrels (Sciurus spp.) | 0–1 transient |
+
 - **Aphids (Aphidoidea, generalist spp.)** — hundreds per tree at peak; routinely listed as one of the few pests, controllable with soap. [NC Extension: Cercidiphyllum japonicum](https://plants.ces.ncsu.edu/plants/cercidiphyllum-japonicum/)
 - **Two-spotted spider mite (Tetranychus urticae) and relatives** — thousands per tree under hot dry conditions; listed minor pest. [UMN UFOR: Katsura](https://trees.umn.edu/katsura-cercidiphyllum-japonicum)
 - **Armoured scales (Diaspididae)** — dozens to low hundreds per tree on bark/twigs; listed minor pest. [UMN UFOR: Katsura](https://trees.umn.edu/katsura-cercidiphyllum-japonicum)

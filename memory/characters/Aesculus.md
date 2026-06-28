@@ -19,6 +19,19 @@ Aesculus is a slow, immovable juggernaut — soft wood means it doesn't hit the 
 ## Living creatures
 Aesculus has an unusually thin native invertebrate community in NW Europe — it's not from here — but is now dominated by one runaway invasive miner, plus a strong pollinator and bird community drawn to its huge flower panicles and conker crop.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Horse-chestnut leaf miner (Cameraria ohridella / Gracillariidae) | 100,000+ mines |
+| Honey bees (Apis mellifera) | hundreds |
+| Bumblebees (Bombus terrestris / B. hortorum / Apidae) | dozens |
+| Aesculus scale (Pulvinaria regalis / Coccidae) | thousands of egg-masses |
+| Wood-boring beetles & longhorns (Cerambycidae, in declining trees) | a few dozen |
+| Hoverflies & solitary bees (Syrphidae, Andrena) | dozens |
+| Blue & Great Tits (Cyanistes / Parus) | 1 nesting pair |
+| Eurasian Jay (Garrulus glandarius) | 1–2 |
+| Eurasian Grey Squirrel (Sciurus carolinensis) | 1–3 |
+| Roosting bats (Pipistrellus, Nyctalus / Vespertilionidae) | 1 (or small colony) |
+
 - **Horse-chestnut leaf miner (Cameraria ohridella / Gracillariidae)** — easily 100,000+ mines per mature tree by late summer; the defining herbivore of every Dutch horse-chestnut. [Forest Research: Cameraria ohridella](https://www.forestresearch.gov.uk/tools-and-resources/fthr/pest-and-disease-resources/horse-chestnut-leaf-miner-cameraria-ohridella/)
 - **Honey bees (Apis mellifera)** — hundreds of foragers at peak bloom; horse-chestnut nectar can be a significant May honey crop. [Beespoke: Bee Trees – Horse Chestnut](http://beespoke.info/2014/02/10/bee-trees-horse-chestnut/)
 - **Bumblebees (Bombus terrestris / B. hortorum / Apidae)** — dozens working a panicle simultaneously; they're the key cross-pollinator, working spikes bottom-to-top. [Biological Flora: Aesculus hippocastanum](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/1365-2745.13116)

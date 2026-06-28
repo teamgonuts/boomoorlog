@@ -19,6 +19,19 @@ Nitrogen-fixing makes Cercis the premier soil-buffing support — a passive aura
 ## Living creatures
 Cercis is a small but ecologically loud tree — a Fabaceae nitrogen-fixer whose early-spring cauliflorous bloom is a magnet for solitary bees, paired with a host-specific Asian seed beetle (Bruchidius siliquastri) now invading European cities.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Judas tree seed beetle (Bruchidius siliquastri) | hundreds to low thousands of seeds attacked (75–82% of pods) |
+| Aphids (Aphidoidea, generalist spp.) | hundreds to low thousands |
+| Honeybees (Apis mellifera) | 50–200 workers |
+| Bumblebees (Bombus spp.) | 20–60 workers |
+| Mason and mining bees (Osmia, Andrena spp.) | dozens |
+| Carpenter bees (Xylocopa spp.) | 0–several |
+| Leafcutter bees (Megachile spp.) | dozens |
+| Redbud leaf-folder moth and Lepidoptera larvae (Fascista cercerisella and ~10–19 spp.) | dozens of caterpillars in N. America; fewer in Europe |
+| Rhizobial root bacteria (Bradyrhizobium / Rhizobium nodules) | millions (not animals) |
+| Tits and small passerines (Cyanistes caeruleus, Parus major, Sylvia atricapilla) | 1–2 individuals |
+
 - **Judas tree seed beetle (Bruchidius siliquastri)** — hundreds to low thousands of seeds attacked per mature tree; recorded infestation rates of 75–82% of seed pods. [Forestpests.eu: Bruchidius siliquastri](https://www.forestpests.eu/pest/bruchidius-siliquastri)
 - **Aphids (Aphidoidea, generalist spp.)** — hundreds to low thousands per tree at peak; standard early-spring legume colonisers. [NC Extension: Cercis siliquastrum](https://plants.ces.ncsu.edu/plants/cercis-siliquastrum/)
 - **Honeybees (Apis mellifera)** — 50–200 workers per tree during the few-week spring bloom; RHS Plant for Pollinators. [NC Extension: Cercis siliquastrum](https://plants.ces.ncsu.edu/plants/cercis-siliquastrum/)

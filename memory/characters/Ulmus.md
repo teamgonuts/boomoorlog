@@ -19,6 +19,19 @@ Fast growth means quick leveling and rapid deployment; interlocked grain gives e
 ## Living creatures
 Elm (Ulmus) was once the keystone deciduous host in NW Europe — Kennedy & Southwood ranked it among the very richest British trees for insect species, and the White-letter Hairstreak butterfly lives nowhere else. Dutch elm disease gutted the network but Amsterdam's surviving elm stock (the largest in Europe) still carries that ecological weight.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Elm leaf aphid (Tinocallis platani, Eriosoma spp., Aphididae) | tens of thousands |
+| White-letter Hairstreak (Satyrium w-album, Lycaenidae) | ~1–20 |
+| White-spotted Pinion moth (Cosmia diffinis, Noctuidae) | ~1–10 larvae |
+| Peppered & Light Emerald moths (Biston betularia, Campaea margaritaria) + Geometridae | dozens to low hundreds |
+| Elm bark beetles (Scolytus scolytus, S. multistriatus, Curculionidae: Scolytinae) | tens to hundreds |
+| Bullfinch (Pyrrhula pyrrhula) | 2–10 |
+| Blue & Great Tits (Cyanistes caeruleus / Parus major) | 2–4 pairs |
+| Goldfinch & Greenfinch (Carduelis carduelis / Chloris chloris) | 5–30 |
+| Bark-fissure mites & springtails (Acari + Collembola) | 10,000+ |
+| Grey Squirrel / Red Squirrel (Sciurus carolinensis / S. vulgaris) | 1–2 |
+
 - **Elm leaf aphid (Tinocallis platani, Eriosoma spp., Aphididae)** — multiple aphid species, including the gall-forming Eriosoma ulmi making the leaf-curl "purse galls"; populations in the tens of thousands per tree. [Woodland Trust: Wych Elm](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/wych-elm/)
 - **White-letter Hairstreak (Satyrium w-album, Lycaenidae)** — the obligate elm butterfly; ~1–20 individuals per mature elm in NW Europe, almost the entire population sits on this genus. [Butterfly Conservation: White-letter Hairstreak](https://butterfly-conservation.org/butterflies/white-letter-hairstreak)
 - **White-spotted Pinion moth (Cosmia diffinis, Noctuidae)** — UK BAP priority moth, elm specialist; ~1–10 larvae per tree where it survives. [Woodland Trust: Wych Elm](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/wych-elm/)

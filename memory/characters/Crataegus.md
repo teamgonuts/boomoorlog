@@ -18,6 +18,20 @@ Dense, slow-growing, and armored — Crataegus is a defensive specialist whose t
 
 ## Living creatures
 Hawthorn supports over 300 insect species and is the prototype "wildlife hedge" — nectar in May, haws all winter, and dense thorn-armoured nest sites in between.
+
+| Creature | Estimated count per tree |
+|---|---|
+| Aphids (Aphidoidea, esp. Dysaphis crataegi, Ovatus crataegarius) | ~1000s |
+| Hawthorn moth caterpillars (Lepidoptera, incl. Trichiura crataegi, lackey, vapourer, light emerald) | ~100s |
+| Hawthorn shieldbug (Acanthosoma haemorrhoidale) | ~5–30 |
+| Pollinators on Mayflower (Diptera, Hymenoptera, Coleoptera) | ~100s of visits per day |
+| Hawthorn leaf beetle (Lochmaea crataegi) | ~10–100 |
+| Gall mites (Eriophyes spp.) | ~100s of leaf-rolls and warts |
+| Blue & Great Tits, Long-tailed Tit (Paridae / Aegithalidae) | 1–3 nesting pairs |
+| Redwing & Fieldfare (Turdus iliacus / pilaris) | 5–50 |
+| Wood mouse / Bank vole (Apodemus sylvaticus / Myodes glareolus) | 2–8 |
+| Hazel Dormouse (Muscardinus avellanarius) | 0–1 |
+
 - **Aphids (Aphidoidea, esp. Dysaphis crataegi, Ovatus crataegarius)** — ~1000s per tree on young shoots; multiple specialist hawthorn aphids. [Aphids on hawthorn](https://influentialpoints.com/Gallery/Aphids_on_hawthorn_Crataegus_in_Britain.htm)
 - **Hawthorn moth caterpillars (Lepidoptera, incl. Trichiura crataegi, lackey, vapourer, light emerald)** — ~100s of larvae per mature tree in spring; 9+ named hawthorn-feeding moths. [Woodland Trust hawthorn](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/hawthorn/)
 - **Hawthorn shieldbug (Acanthosoma haemorrhoidale)** — ~5–30 adults & nymphs per fruiting tree; signature haw-feeder. [Acanthosoma haemorrhoidale](https://en.wikipedia.org/wiki/Acanthosoma_haemorrhoidale)

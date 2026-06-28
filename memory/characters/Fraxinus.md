@@ -18,6 +18,20 @@ Dense, shock-absorbing wood means powerful, punishing blows; its fast growth fee
 
 ## Living creatures
 Ash supports ~68 specialist invertebrates (Kennedy & Southwood 1984) plus an unusually rich bark-lichen and cavity-using vertebrate community — but the whole web is being shaken by ash dieback.
+
+| Creature | Estimated count per tree |
+|---|---|
+| Aphids on ash (Prociphilus spp., Aphis fabae) | ~1000s |
+| Ash bark beetle (Hylesinus / Leperisinus fraxini) | ~100s–1000s of galleries |
+| Ash weevil (Stereonychus fraxini) | ~10–100 |
+| Moth caterpillars — coronet, brick, centre-barred sallow, privet hawk-moth (Lepidoptera) | ~100s |
+| Lesser stag beetle (Dorcus parallelipipedus) | ~1–5 |
+| High brown / silver-washed fritillary butterflies (Argynnis spp.) | ~5–20 |
+| Bullfinch (Pyrrhula pyrrhula) | 1–5 |
+| Tawny Owl, Redstart, Nuthatch, Woodpeckers (Strix aluco / Phoenicurus phoenicurus / Sitta / Dendrocopos) | 1–2 pairs |
+| Lichens & bark mosses (Lobarion, Graphidion communities) | ~30–100+ species per veteran |
+| Common Pipistrelle / brown long-eared bat (Pipistrellus / Plecotus auritus) | 1–10 |
+
 - **Aphids on ash (Prociphilus spp., Aphis fabae)** — ~1000s per tree on leaf-nest aphids forming distinctive curled-leaf colonies. [Prociphilus on Fraxinus](https://influentialpoints.com/Gallery/Prociphilus_bumeliae_and_prociphilus_fraxini_ash_leaf-nest_aphid.htm)
 - **Ash bark beetle (Hylesinus / Leperisinus fraxini)** — ~100s–1000s of galleries per dead/stressed tree; the dominant ash subcortical beetle in Europe. [Hylesinus fraxini](https://en.wikipedia.org/wiki/Hylesinus_fraxini)
 - **Ash weevil (Stereonychus fraxini)** — ~10–100 adults defoliating per tree in outbreak years. [Stereonychus on stressed ash](https://resjournals.onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2311.1994.tb00251.x)

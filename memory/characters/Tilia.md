@@ -19,6 +19,19 @@ Tilia is the people's juggernaut — not the hardest wood, but near-immortal lon
 ## Living creatures
 Lime (Tilia) is one of NW Europe's top nectar trees — in flower the canopy roars with bees, and the aphid honeydew below feeds an entire secondary food web of hoverflies, ladybirds, ants, and birds.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Lime aphid (Eucallipterus tiliae, Aphididae) | hundreds of thousands |
+| Lime nail gall mite (Eriophyes tiliae, Eriophyidae) | 1,000–10,000+ galls |
+| Honeybees + bumblebees (Apis mellifera, Bombus spp.) | thousands (foraging/day) |
+| Hoverflies (Syrphidae, esp. Episyrphus balteatus, Eupeodes spp.) | hundreds |
+| Lime hawk-moth (Mimas tiliae, Sphingidae) | ~5–30 caterpillars |
+| Peppered, vapourer, triangle & scarce hook-tip moths (Geometridae/Erebidae/Drepanidae) | dozens to low hundreds |
+| Seven-spot ladybird (Coccinella septempunctata) + larvae | 20–200 |
+| Black garden ant (Lasius niger) | 1–2 colonies, thousands of workers |
+| Blue & Great Tits (Cyanistes caeruleus / Parus major) | 1–3 pairs |
+| Roosting bats (Pipistrellus, Nyctalus noctula) | 10–100+ (in hollow veterans) |
+
 - **Lime aphid (Eucallipterus tiliae, Aphididae)** — the iconic Tilia aphid producing the sticky honeydew rain; populations in the hundreds of thousands per mature tree at peak. [Woodland Trust: Common Lime](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/common-lime/)
 - **Lime nail gall mite (Eriophyes tiliae, Eriophyidae)** — the diagnostic red spike galls on leaves; routinely 1,000–10,000+ galls per tree. [Woodland Trust: Common Lime](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/common-lime/)
 - **Honeybees + bumblebees (Apis mellifera, Bombus spp.)** — Tilia is a top-tier honey plant; a single flowering tree can host thousands of foraging bees in a day. [Tilia trees: toxic or valuable resources for pollinators? (Apidologie)](https://link.springer.com/article/10.1007/s13592-018-0581-3)

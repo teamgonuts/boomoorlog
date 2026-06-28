@@ -18,6 +18,20 @@ Magnolia's medium-hard wood and living-fossil status make her a deliberate, endu
 
 ## Living creatures
 Magnolia is non-native to Europe and supports a modest local insect fauna — but its archaic beetle-pollinated flowers make it a uniquely Coleoptera-friendly tree.
+
+| Creature | Estimated count per tree |
+|---|---|
+| Rose chafers (Cetonia aurata / Scarabaeidae) | 5–30 |
+| Magnolia scale (Neolecanium cornuparvum / Coccidae) | hundreds to thousands |
+| Tulip-tree aphid (Illinoia liriodendri / Aphididae) | hundreds to thousands |
+| Honey bees (Apis mellifera / Apidae) | dozens |
+| Hoverflies (Syrphidae) | 10–50 |
+| Ladybirds (Coccinellidae) and lacewings (Chrysopidae) | dozens |
+| Encyrtid & eulophid parasitic wasps (Chalcidoidea) | abundant |
+| Blackbirds & thrushes (Turdus / Turdidae) | 1–3 |
+| Blue & Great Tits (Cyanistes/Parus) | ~1 nesting pair |
+| Grey squirrel (Sciurus carolinensis) | 1–2 |
+
 - **Rose chafers (Cetonia aurata / Scarabaeidae)** — 5–30 per flowering tree; classic beetle pollinator of M. grandiflora in Europe. [University of Tennessee thesis: Insects associated with Southern Magnolia](https://trace.tennessee.edu/cgi/viewcontent.cgi?article=3459&context=utk_gradthes)
 - **Magnolia scale (Neolecanium cornuparvum / Coccidae)** — hundreds to thousands per tree on twigs; the dominant sap-feeder, with crawlers dispersed by birds and ants. [UGA: Magnolia scale biology](https://site.caes.uga.edu/entomologyresearch/2024/07/magnolia-scale-biology-and-management/)
 - **Tulip-tree aphid (Illinoia liriodendri / Aphididae) on M. grandiflora** — colonies of hundreds–thousands; also crosses to magnolia in Europe. [Springer: Phenology of Illinoia liriodendri in Spain](https://link.springer.com/article/10.1007/s12600-024-01145-7)

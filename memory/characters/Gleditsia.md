@@ -19,6 +19,19 @@ Gleditsia is the classic skirmisher: fast growth means early deployment, dense w
 ## Living creatures
 Non-native North American legume — far fewer NW European insect associates than a native broadleaf of similar size, but its pollen-rich flowers and seed pods do attract a specific (and growing) crew.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Honeybees & bumblebees (Apis, Bombus spp.) | dozens |
+| Halictid sweat bees (Lasioglossum, Halictus spp.) | dozens |
+| Asian honey-locust seed beetle (Megabruchidius dorsalis, Bruchinae) | thousands |
+| Honey locust plant bug (Blepharidopterus chlorionis, Miridae) | hundreds |
+| Honey locust leafhopper (Macropsis fumipennis) | hundreds |
+| Armored scale (Chionaspis gleditsiae and others) | hundreds–thousands |
+| Spider mites (Tetranychidae) | 10,000+ |
+| Honey locust borer (Agrilus difficilis, Buprestidae) | a handful |
+| Generalist tit pair (Cyanistes caeruleus / Parus major) | 1 pair |
+| Crow / magpie roost (Corvus, Pica) | 1–3 |
+
 - **Honeybees & bumblebees (Apis, Bombus spp.)** — dozens of foragers when in bloom; flowers are nectar-rich and bee-pollinated. [Illinois Wildflowers pollinators of honey locust](https://www.illinoiswildflowers.info/trees/plants/honey_locust.html)
 - **Halictid sweat bees (Lasioglossum, Halictus spp.)** — common minor pollinators, dozens across flowering. [Illinois Wildflowers pollinators of honey locust](https://www.illinoiswildflowers.info/trees/plants/honey_locust.html)
 - **Asian honey-locust seed beetle (Megabruchidius dorsalis, Bruchinae)** — up to 94% of pods infested where established; multiple larvae per pod, can mean thousands per mature tree. [Megabruchidius dorsalis in Slovenia (Natura Sloveniae)](https://journals.uni-lj.si/NaturaSloveniae/article/view/16068)

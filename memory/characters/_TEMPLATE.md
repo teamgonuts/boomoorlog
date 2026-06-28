@@ -24,6 +24,11 @@ and any signature trait that could become a special ability later.}
 {One short intro sentence on this tree's overall ecological signature — e.g.
 "Hosts more insect species than any other European tree (400+)."}
 
+| Creature | Estimated count per tree |
+|---|---|
+| {Common name (Latin / family)} | ~{N or range} |
+| ... | ... |
+
 Top 10 residents (mix of absolute count and biomass; per mature tree, NW Europe):
 - **{Common name (Latin / family)}** — ~{N or range} per tree. [source]({URL})
 - ...

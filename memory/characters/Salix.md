@@ -19,6 +19,19 @@ Light, fast wood means rapid-fire strikes rather than crushing blows — Salix i
 ## Living creatures
 Salix is the runner-up to oak for British insect richness — Kennedy & Southwood list ~450 phytophagous invertebrates on willow, including ~160 Lepidoptera and ~100 sawflies/hymenopterans; in early spring it is the single most important nectar source in NW Europe.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Aphids (Aphidoidea — Tuberolachnus salignus, Chaitophorus spp.) | hundreds to many thousands per branch |
+| Andrena mining bees (Andrena spp., ~10+ Salix-specialist species) | hundreds to low thousands of visits/day |
+| Honey & bumblebees (Apis mellifera / Bombus spp.) | thousands of visits/day |
+| Willow weevils (Curculionoidea — ~100+ Salix-associated spp.) | dozens to hundreds |
+| Sawflies (Nematinae / Pontania gallers) | hundreds of galls |
+| Orthosia moths (Noctuidae — Common Quaker, Hebrew Character, etc.) | hundreds of adults/night |
+| Eyed Hawk-moth & Puss Moth caterpillars (Smerinthus ocellata / Cerura vinula) | handfuls |
+| Purple Emperor & White Admiral (Apatura iris / Limenitis camilla) | 1 to a few breeding individuals |
+| Goat moth larvae (Cossus cossus) | 1 to a few |
+| Barbastelle & Pipistrelle bats (Barbastella barbastellus / Pipistrellus spp.) | 1 to several |
+
 - **Aphids (Aphidoidea — Tuberolachnus salignus, Chaitophorus spp.)** — the giant willow aphid (T. salignus) forms colonies of hundreds to many thousands per branch on a mature tree, dripping honeydew. [Buglife giant willow aphid](https://www.buglife.org.uk/bugs/bug-directory/giant-willow-aphid/)
 - **Andrena mining bees (Andrena spp., ~10+ Salix-specialist species)** — a mature flowering sallow draws hundreds to low thousands of solitary bee visits per day in March–April. [Scottish Pollinators on willow](https://scottishpollinators.wordpress.com/2021/12/20/the-whomping-willow-and-golden-pollen/)
 - **Honey & bumblebees (Apis mellifera / Bombus spp.)** — a single mature catkin-bearing willow can be worked by thousands of bees per day, including emerging Bombus queens. [Dave Cushman on willow pollen](http://www.dave-cushman.net/bee/pollenthesis.html)

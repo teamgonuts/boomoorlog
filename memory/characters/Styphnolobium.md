@@ -19,6 +19,19 @@ Its hard, poison-laced wood makes it a skirmisher that poisons on hit — slow t
 ## Living creatures
 A non-native East-Asian legume, Styphnolobium has almost no specialist European herbivores — its ecological value is concentrated in one window: a massive late-summer (Aug–Sep) nectar flow that draws bees when little else is in bloom, plus persistent pods that birds occasionally probe in winter.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Honeybees (Apis mellifera) | thousands of foragers/day |
+| Asian giant resin bee (Megachile sculpturalis) | dozens |
+| Bumblebees (Bombus terrestris, B. pascuorum) | hundreds of late-season workers |
+| Hoverflies (Syrphidae) | hundreds of visits/day |
+| Aphids (Aphis spp.) | hundreds to low thousands |
+| Cytisine-tolerant generalist caterpillars (qualitative) | a handful |
+| Ants (Lasius niger, Formica spp.) | thousands |
+| Greenfinch & House Sparrow (Chloris chloris / Passer domesticus) | 5–20 |
+| Cavity-nesting birds (Cyanistes, Parus, Passer) | 1–2 nesting pairs |
+| Roosting bats (Pipistrellus pipistrellus) | occasional single bats |
+
 - **Honeybees (Apis mellifera)** — a mature pagoda in full bloom hums audibly with thousands of foraging honeybees per day; valued as a late-season nectar tree in NW European cities. [NC Extension Styphnolobium](https://plants.ces.ncsu.edu/plants/styphnolobium-japonicum/)
 - **Asian giant resin bee (Megachile sculpturalis)** — large invasive solitary bee, now widespread in Europe; Styphnolobium is one of its top pollen sources, dozens of individuals can work a single tree. [Asian giant resin bee Mallorca](https://www.tandfonline.com/doi/full/10.1080/00218839.2021.1874177)
 - **Bumblebees (Bombus terrestris, B. pascuorum)** — hundreds of late-season workers per tree, exploiting Styphnolobium's August nectar gap. [PFAF Styphnolobium](https://pfaf.org/user/Plant.aspx?LatinName=Styphnolobium+japonicum)

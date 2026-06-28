@@ -18,6 +18,20 @@ Hazel's coppice resilience is the defining mechanic hook — a low-HP support un
 
 ## Living creatures
 Hazel is a wildlife heavyweight — over 250 associated insect species plus the iconic hazel-dormouse-and-nut food web.
+
+| Creature | Estimated count per tree |
+|---|---|
+| Aphids (Aphidoidea, esp. Corylobium avellanae, Myzocallis coryli) | ~1000s |
+| Gall mites (Phytoptus avellanae, big bud mite) | ~100s of swollen buds |
+| Moth caterpillars — Nut-tree Tussock, Large Emerald, Barred Umber, Small White Wave (Lepidoptera) | ~10–100 |
+| Hazel sawflies (Tenthredinidae, e.g. Croesus septentrionalis) | ~5–30 per branch |
+| Nut weevil (Curculio nucum) | ~5–40% of nuts infested |
+| Honeybees & early bumblebees (Apidae) | ~100s of catkin visits |
+| Blue & Great Tits (Cyanistes caeruleus / Parus major) | 1–2 nesting pairs |
+| Nuthatch & Great Spotted Woodpecker (Sitta europaea / Dendrocopos major) | 1–2 |
+| Hazel Dormouse (Muscardinus avellanarius) | 0–1 |
+| Wood Mouse / Bank Vole / Red Squirrel (Apodemus sylvaticus / Myodes glareolus / Sciurus vulgaris) | 2–6 |
+
 - **Aphids (Aphidoidea, esp. Corylobium avellanae, Myzocallis coryli)** — ~1000s per tree across the canopy; hazel hosts several specialist aphids on young shoots and leaves. [Aphids on hazel](https://influentialpoints.com/Gallery/Aphids_on_hazel_Corylus_avellana.htm)
 - **Gall mites (Phytoptus avellanae, big bud mite)** — ~100s of swollen buds per tree in infested specimens; conspicuous "big bud" galls. [RHS hazel big bud mite](https://www.rhs.org.uk/biodiversity/hazel-big-bud-mite)
 - **Moth caterpillars — Nut-tree Tussock, Large Emerald, Barred Umber, Small White Wave (Lepidoptera)** — ~10–100 per mature tree in spring; classic hazel-feeding macromoths. [Woodland Trust hazel](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/hazel/)

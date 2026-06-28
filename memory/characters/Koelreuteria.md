@@ -19,6 +19,19 @@ Fast growth and prolific seeding make Koelreuteria a rapid-deployment support un
 ## Living creatures
 East-Asian ornamental in the soapberry family — very few European insects feed on it, but its late-summer flower spike is a genuine bee bonanza when little else is in bloom.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Honeybees (Apis mellifera) | hundreds |
+| Short-tongued bumblebees (Bombus terrestris, B. lapidarius) | dozens |
+| Hoverflies (Syrphidae) | dozens |
+| Solitary bees (Andrena, Lasioglossum spp.) | tens |
+| Aphids (Aphidoidea, generalist colonisers) | hundreds |
+| Spider mites (Tetranychidae) | thousands |
+| Soapberry / "goldenrain tree" bug (Jadera haematoloma, Rhopalidae) | absent in NW Europe |
+| Wasps (Vespula spp., parasitoid wasps) | dozens |
+| House Sparrow / Great Tit (Passer / Parus) | 1 pair |
+| Magpie / Carrion Crow (Pica / Corvus) | 1–2 |
+
 - **Honeybees (Apis mellifera)** — hundreds at a time on the panicles in July–August; major late-season nectar source. [Bee Happy Plants: Koelreuteria paniculata](https://beehappyplants.co.uk/bee-plants/koelreuteria-paniculata/)
 - **Short-tongued bumblebees (Bombus terrestris, B. lapidarius)** — dozens working the open flowers. [Balkan Ecology Project: Koelreuteria paniculata](https://www.balkep.org/koelreuteria-paniculata.html)
 - **Hoverflies (Syrphidae)** — dozens of nectar-feeders, supplementing the bees. [Balkan Ecology Project: Koelreuteria paniculata](https://www.balkep.org/koelreuteria-paniculata.html)

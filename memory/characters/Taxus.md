@@ -19,6 +19,19 @@ Slow and near-unkillable, Taxus is the Support that doubles as a slow-burn poiso
 ## Living creatures
 Yew (Taxus) is toxic to nearly everything — but its red arils are a winter feast for thrushes, and the dense evergreen interior is one of the best small-bird roost habitats in NW Europe.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Yew gall midge (Taxomyia taxi, Cecidomyiidae) | ~50–500+ galls |
+| Yew big-bud mite (Cecidophyopsis psilaspis, Eriophyidae) | tens of thousands |
+| Satin beauty moth (Deileptenia ribeata, Geometridae) | ~5–30 caterpillars |
+| Bark-dwelling springtails & barklice (Psocoptera + Collembola) | thousands |
+| Blackbird, Song Thrush, Mistle Thrush, Fieldfare, Redwing (Turdus spp.) | 5–20+ |
+| Goldcrest & Firecrest (Regulus regulus / R. ignicapilla) | 1–2 pairs |
+| Blue Tit (Cyanistes caeruleus) | ~1 pair |
+| Treecreeper (Certhia familiaris) | ~1 (across several trees) |
+| Grey Squirrel / Red Squirrel + Hazel Dormouse (Sciurus / Muscardinus) | 1–3 |
+| Roosting Pipistrellus bats | dozens (in hollow trunks) |
+
 - **Yew gall midge (Taxomyia taxi, Cecidomyiidae)** — the diagnostic "artichoke gall" at shoot tips; commonly 50–500+ galls on a mature tree. [Woodland Trust: Yew](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/yew/)
 - **Yew big-bud mite (Cecidophyopsis psilaspis, Eriophyidae)** — microscopic mites in swollen buds; tens of thousands per tree where present. [Woodland Trust: Yew](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/yew/)
 - **Satin beauty moth (Deileptenia ribeata, Geometridae)** caterpillars — one of the very few Lepidoptera that eats yew foliage; ~5–30 per tree in season. [Woodland Trust: Yew](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/yew/)

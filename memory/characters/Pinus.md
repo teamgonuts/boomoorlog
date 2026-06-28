@@ -19,6 +19,19 @@ Pinus is a medium-weight bruiser with a resin-toughness passive — moderate woo
 ## Living creatures
 Scots pine alone supports ~1,600 associated species in Britain, 215 of them found on no other tree — a unique conifer fauna of sawflies, bark beetles, seed-eating finches and red squirrels.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Giant conifer aphids (Cinara pinea, C. pini) | 1,000s |
+| Red wood ants (Formica rufa group, incl. F. aquilonia) | 100,000s in a single mound |
+| Pine bark beetle (Tomicus piniperda, Scolytinae) | 100s of galleries |
+| Pine sawflies (Diprion pini, Neodiprion sertifer, Diprionidae) | 100s of larvae per branch |
+| Pine hawk-moth (Sphinx pinastri, Sphingidae) | 1–10 caterpillars |
+| Pine processionary moth (Thaumetopoea pityocampa, Notodontidae) | 1–5 nests |
+| Crossbills (Loxia curvirostra / scotica) | 1 pair per stand |
+| Coal tit & crested tit (Periparus ater / Lophophanes cristatus) | 1–3 nesting pairs |
+| Red squirrel (Sciurus vulgaris) | 1 per ~1–2 ha |
+| Pine marten (Martes martes) | 1 territory per several hundred ha |
+
 - **Giant conifer aphids (Cinara pinea, C. pini)** — 1,000s per tree; big 6 mm sap-suckers tended by ants, dripping honeydew that blackens cars beneath. [Influential Points: Cinara pinea](https://influentialpoints.com/Gallery/Cinara_pinea_large_pine_aphid.htm)
 - **Red wood ants (Formica rufa group, incl. Scottish wood ant F. aquilonia)** — 100,000s in a single mound at the base of a mature pine, milking the Cinara colonies above. [Woodland Trust: Scots pine](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/scots-pine/)
 - **Pine bark beetle (Tomicus piniperda, Scolytinae)** — 100s of galleries under the bark of a stressed or recently dead pine. [PMC: Tomicus piniperda](https://pmc.ncbi.nlm.nih.gov/articles/PMC9695610/)

@@ -19,6 +19,20 @@ The paradox of Ginkgo: legendary age and indestructibility, but soft wood means 
 
 ## Living creatures
 Ginkgo is a living fossil with essentially no co-evolved European herbivores — the leaves' ginkgolides and bilobalide deter almost every insect, and wind-pollinated reproduction means no specialist pollinators either. Its fauna is mostly generalists using the tree as a perch or shelter.
+
+| Creature | Estimated count per tree |
+|---|---|
+| Generalist aphids (Aphidoidea, occasional) | ~10–100 |
+| Loopers / generalist caterpillars (Lepidoptera, rare) | ~0–5 |
+| Spider mites (Tetranychidae) | ~10–100 |
+| Bark-crevice springtails & psocids (Collembola, Psocoptera) | ~100s |
+| Spiders & harvestmen (Arachnida) | ~10–50 |
+| House Sparrow / Eurasian Tree Sparrow (Passer domesticus / montanus) | 1–10 |
+| Wood Pigeon / Eurasian Magpie / Hooded Crow (Columba palumbus / Pica pica / Corvus cornix) | 1–2 nesting pairs |
+| Squirrels (Sciurus vulgaris / S. carolinensis) | 1–3 |
+| Brown rats (Rattus norvegicus) | 1–5 |
+| Lichens & mosses on bark (cryptogams) | ~5–20 species |
+
 - **Generalist aphids (Aphidoidea, occasional)** — ~10–100 per tree at most; Ginkgo is famously aphid-light because of its leaf chemistry. [Ginkgo and Insects (Springer)](https://link.springer.com/chapter/10.1007/978-4-431-68416-9_19)
 - **Loopers / generalist caterpillars (Lepidoptera, rare)** — ~0–5 per tree per year; hand-pickable, an arborist's footnote rather than a real fauna. [Ginkgo insect problems](https://www.gardeningknowhow.com/ornamental/trees/ginkgo/ginkgo-insect-problems.htm)
 - **Spider mites (Tetranychidae)** — ~10–100 per stressed urban tree; one of the few groups that occasionally bothers ginkgo. [What eats Ginkgo biloba](https://greg.app/what-eats-ginkgo-biloba/)

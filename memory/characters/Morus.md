@@ -18,6 +18,20 @@ Mulberry's fast growth gives it rapid deployment speed, while its dense, durable
 
 ## Living creatures
 Mulberry (Morus) is a fruit magnet — ~50 European bird species recorded feeding on the berries, and a small but iconic insect cast led by the domesticated silkworm.
+
+| Creature | Estimated count per tree |
+|---|---|
+| Silkworm (Bombyx mori / Bombycidae) | historically thousands (managed) |
+| Mulberry leaf-webber (Glyphodes pyloalis / Crambidae) | dozens to low hundreds |
+| Asian longhorn mulberry pest (Xylotrechus chinensis / Cerambycidae) | 1–10 boring larvae |
+| Aphids (Aphidoidea, including Aphis gossypii) | thousands |
+| Honey bees & solitary bees (Apidae) | dozens |
+| Blackbirds & thrushes (Turdus / Turdidae) | 5–20 |
+| European starling (Sturnus vulgaris / Sturnidae) | 20–100+ |
+| Cedar/Bohemian waxwings (Bombycilla spp.) | 10–50 |
+| Foxes, squirrels, mice (small mammals) | single individuals each |
+| Wasps & hoverflies (Vespidae, Syrphidae) | dozens |
+
 - **Silkworm (Bombyx mori / Bombycidae)** — historically thousands per managed tree; M. alba is the sole larval food and is a living artefact of the silk trade. [Wikipedia: Morus alba](https://en.wikipedia.org/wiki/Morus_alba)
 - **Mulberry leaf-webber (Glyphodes pyloalis / Crambidae)** — dozens to low hundreds per tree in season; the dominant wild defoliator across the Morus range. [PDF: Glyphodes infestation in mulberry](https://www.ijpab.com/articles/IJPAB-2018-6-1-1195-1197.pdf)
 - **Asian longhorn mulberry pest (Xylotrechus chinensis / Cerambycidae)** — 1–10 boring larvae per infested trunk; invasive in southern Europe and rapidly spreading. [PMC: Xylotrechus chinensis in Europe](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7845995/)

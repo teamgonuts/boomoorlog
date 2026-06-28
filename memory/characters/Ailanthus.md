@@ -20,6 +20,19 @@ Fast growth and surprisingly dense, hard wood makes Ailanthus a deceptive Jugger
 ## Living creatures
 Ailanthus is an ecological desert in NW Europe — very few native insects can handle its quassinoid chemistry — but it has a small, distinctive set of specialists and is a known magnet for one looming invasive: the spotted lanternfly.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Spotted lanternfly (Lycorma delicatula / Fulgoridae) | thousands (where established) |
+| Ailanthus webworm moth (Atteva aurea / Attevidae) | dozens |
+| Ailanthus eriophyid mite (Aculus mosoniensis / Eriophyidae) | tens of thousands |
+| Spiny whitefly (Aleurocanthus spiniferus / Aleyrodidae) | hundreds per leaf colony |
+| Generalist sap-feeders (assorted Aphidoidea, Coccidae) | modest / low |
+| Honey bees & flies at flowering males (Apis mellifera, Calliphoridae) | dozens |
+| Ants on extrafloral nectaries (Lasius, Formica / Formicidae) | hundreds |
+| Generalist canopy spiders (Araneidae, Theridiidae) | a few dozen webs |
+| Opportunistic city birds (Carduelis, Passer) | 1–2 pairs |
+| Roosting Common Pipistrelle (Pipistrellus pipistrellus) | 1 (occasionally) |
+
 - **Spotted lanternfly (Lycorma delicatula / Fulgoridae)** — can reach thousands per mature tree where established; Ailanthus is its preferred host and the species is on the EU watchlist for likely arrival. [Bug of the Week: Tree of Heaven & lanternfly](https://bugoftheweek.com/blog/2024/10/7/watch-out-tree-of-heaven-native-and-invasive-insects-are-ready-to-wage-war-on-you-ailanthus-webworm-atteva-aurea-and-spotted-lanternfly-lycorma-delicatula)
 - **Ailanthus webworm moth (Atteva aurea / Attevidae)** — dozens of larvae per tree where present; specialist that tracked Ailanthus across the world. [Wikipedia: Ailanthus webworm](https://en.wikipedia.org/wiki/Ailanthus_webworm)
 - **Ailanthus eriophyid mite (Aculus mosoniensis / Eriophyidae)** — easily tens of thousands per tree; the one mite species in Europe associated specifically with Ailanthus and now under study as a possible biocontrol. [PMC: Aculus mosoniensis](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9146616/)

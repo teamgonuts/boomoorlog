@@ -19,6 +19,19 @@ Acer's dense hardwood translates to powerful but measured strikes — a Bruiser 
 ## Living creatures
 Acer supports a modest but locally dense fauna — about 16 aphid species in Britain alone, and sycamore in particular is famous for its summer aphid clouds and for hosting both blue tits and squirrels in the canopy.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Sycamore aphid (Drepanosiphum platanoidis / Aphididae) | thousands |
+| Eriophyid gall mites (Aceria pseudoplatini, A. eriobia / Eriophyidae) | tens of thousands |
+| Wood ants & sugar-tending ants (Formica, Lasius / Formicidae) | hundreds |
+| Sycamore moth caterpillar (Acronicta aceris / Noctuidae) | a handful |
+| Maple-feeding moths (multiple Geometridae & Noctuidae) | ~20–50 |
+| Honey bees & bumblebees (Apis / Bombus) | dozens |
+| Hoverflies & lacewings (Syrphidae, Chrysopidae) | dozens |
+| Blue & Great Tits (Cyanistes caeruleus / Parus major) | 1 nesting pair |
+| Eurasian Grey Squirrel (Sciurus carolinensis) | 1–3 |
+| Common Pipistrelle (Pipistrellus pipistrellus) | 1 (or small colony) |
+
 - **Sycamore aphid (Drepanosiphum platanoidis / Aphididae)** — thousands per mature sycamore in peak season; the dominant herbivore of NW European maples and a long-running study system for population ecology. [Influential Points: Aphids on Acer](http://influentialpoints.com/Gallery/Aphids_on_maple_and_sycamore_Acer_in_Britain.htm)
 - **Eriophyid gall mites (Aceria pseudoplatini, A. eriobia / Eriophyidae)** — easily tens of thousands per tree; producers of the red nail-galls and felt-galls that pepper sycamore leaves by June. [RHS: Gall mites](https://www.rhs.org.uk/biodiversity/gall-mites)
 - **Wood ants & sugar-tending ants (Formica, Lasius / Formicidae)** — a single ant column may run hundreds-strong on one tree, farming the aphid honeydew. [Influential Points: Aphids on Acer](http://influentialpoints.com/Gallery/Aphids_on_maple_and_sycamore_Acer_in_Britain.htm)

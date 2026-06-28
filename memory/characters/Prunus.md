@@ -19,6 +19,19 @@ The most numerous unit on the board and versatile — medium-hard wood gives sol
 ## Living creatures
 Prunus is one of the most wildlife-loaded genera planted in NW Europe — wild cherry alone supports 200+ Lepidoptera species, and the spring bloom is a critical early-season nectar shock for pollinators.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Aphids (cherry blackfly, Myzus cerasi) | 10,000s |
+| Mason bees, bumblebees & honeybees (Osmia, Bombus, Apis) | 100s at bloom |
+| Bird-cherry ermine moth (Yponomeuta evonymella / Y. padella, Yponomeutidae) | 100s–1000s of caterpillars |
+| Winter moth (Operophtera brumata, Geometridae) | 100s of looper caterpillars |
+| Brimstone moth, buff-tip & short-cloaked (Opisthograptis luteolata, Phalera bucephala, Nola cucullatella) | tens of caterpillars |
+| Cherry bark tortrix & cherry fruit moth (Enarmonia formosana, Argyresthia pruniella) | 10s of larvae |
+| Blackbird & song thrush (Turdus merula / T. philomelos) | 1–3 nesting pairs across a row |
+| Wood mouse / yellow-necked mouse (Apodemus sylvaticus / A. flavicollis) | 1–5 individuals |
+| Hazel dormouse (Muscardinus avellanarius) | 1 pair |
+| Badger (Meles meles) | 1 sett visits |
+
 - **Aphids (cherry blackfly, Myzus cerasi)** — 10,000s per tree at peak; dense black colonies curl young leaves every May–June. [Woodland Trust: wild cherry](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/wild-cherry/)
 - **Mason bees, bumblebees & honeybees (Osmia, Bombus, Apis)** — 100s foraging per tree during the ~2-week bloom; ornamental cherries are a keystone urban pollinator resource. [RHS: cherries for wildlife](https://www.rhs.org.uk/plants/types/trees/for-wildlife)
 - **Bird-cherry ermine moth (Yponomeuta evonymella / Y. padella, Yponomeutidae)** — 100s–1000s of caterpillars in silk-webbed colonies that can shroud an entire small tree. [Butterfly Conservation: bird-cherry ermine](https://butterfly-conservation.org/moths/bird-cherry-ermine)

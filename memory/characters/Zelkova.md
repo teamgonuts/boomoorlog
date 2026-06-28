@@ -19,6 +19,19 @@ Medium-hard wood and fast urban adaptability make Zelkova a mobile Skirmisher �
 ## Living creatures
 Zelkova is a non-native Asian elm-relative recently planted as an elm substitute — too new in NW Europe to have built up the rich elm fauna, but its aphids and dense vase crown still pull in generalist urban birds and ants.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Zelkova gall aphid (Paracolopha morrisoni, Aphididae) | hundreds to low thousands |
+| Giant zelkova aphid (Stomaphis yanonis, Aphididae) | tens to low hundreds |
+| Bark-fissure mites & springtails (Acari + Collembola) | 10,000+ |
+| Generalist elm-family moths (Geometridae) | ~5–30 |
+| Trachys yanoi-type leaf-mining buprestid beetles (Buprestidae) | ~10–100 mines |
+| Black garden ant (Lasius niger) | 1–2 colonies, hundreds of foragers |
+| Blue & Great Tits (Cyanistes caeruleus / Parus major) | ~1–2 pairs |
+| Goldfinch & Greenfinch (Carduelis carduelis / Chloris chloris) | 5–20 |
+| Wood Pigeon (Columba palumbus) | 1–2 |
+| Grey Squirrel (Sciurus carolinensis) | 1 |
+
 - **Zelkova gall aphid (Paracolopha morrisoni, Aphididae)** — host-specific aphid; hundreds to low thousands per tree where established. [Grokipedia: Zelkova serrata](https://grokipedia.com/page/Zelkova_serrata)
 - **Giant zelkova aphid (Stomaphis yanonis, Aphididae)** — large trunk-dwelling aphid tended by ants; tens to low hundreds per tree. [Grokipedia: Zelkova serrata](https://grokipedia.com/page/Zelkova_serrata)
 - **Bark-fissure mites & springtails (Acari + Collembola)** — the count winner as on any urban tree; easily 10,000+ per mature trunk. [Gardenia.net: Japanese Zelkova](https://www.gardenia.net/plant/zelkova-serrata-japanese-zelkova)

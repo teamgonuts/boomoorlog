@@ -19,6 +19,19 @@ Sorbus is a resilient support fighter — its high-altitude toughness translates
 ## Living creatures
 Rowan is a Rosaceae generalist host — moderately rich invertebrate fauna (~28 phytophagous insects in Britain per Kennedy & Southwood) but disproportionately important to over-wintering thrushes and finches because of its lipid-rich autumn berry crop.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Aphids (Aphidoidea — Dysaphis sorbi, Eriosoma spp.) | hundreds to low thousands per shoot |
+| Apple fruit moth (Argyresthia conjugella) | hundreds of larvae |
+| Larger Welsh wave & autumn green carpet moths (Venusia cambrica / Chloroclysta miata) | dozens of caterpillars |
+| Solitary bees & hoverflies (Andrena, Eristalis spp.) | hundreds of visits/day |
+| Mistle Thrush (Turdus viscivorus) | single (eats thousands of berries) |
+| Blackbird & Song Thrush (Turdus merula / T. philomelos) | several |
+| Fieldfare & Redwing (Turdus pilaris / T. iliacus) | flocks of 20–100 |
+| Bohemian Waxwing (Bombycilla garrulus) | flocks of 30–200 (invasion years) |
+| Bullfinch (Pyrrhula pyrrhula) | 1 to a few pairs |
+| Pine Marten / Red Fox / Badger (Martes martes / Vulpes vulpes / Meles meles) | single |
+
 - **Aphids (Aphidoidea — Dysaphis sorbi, Eriosoma spp.)** — leaf-curl aphid colonies of hundreds to low thousands per shoot in early summer. [RHS rowan aphids](https://www.rhs.org.uk/plants/sorbus/growing-guide)
 - **Apple fruit moth (Argyresthia conjugella)** — primary specialist of Sorbus berries; in mast-poor years moves to apple. Hundreds of larvae can occupy a single fruiting tree's berry crop. [Woodland Trust rowan](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/rowan/)
 - **Larger Welsh wave & autumn green carpet moths (Venusia cambrica / Chloroclysta miata)** — dozens of caterpillars per tree on rowan foliage in summer. [Woodland Trust rowan](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/rowan/)

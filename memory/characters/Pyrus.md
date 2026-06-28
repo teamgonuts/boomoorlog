@@ -19,6 +19,19 @@ Dense, smooth pearwood delivers heavy, precise blows — slow wind-up, high impa
 ## Living creatures
 As a Rosaceae fruit tree, Pyrus shares much of the rich apple/pear pest-and-pollinator complex — strong early-spring nectar value, codling-moth and psylla as headline specialists, plus old wild-pear trunks as cavity habitat for hole-nesters and bats.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Pear psylla (Cacopsylla pyri / C. pyricola) | tens of thousands |
+| Pear & rosy apple aphids (Dysaphis pyri, D. plantaginea) | thousands |
+| Honey & solitary bees (Apis mellifera, Osmia bicornis, Andrena spp.) | thousands of visits/day |
+| Codling moth (Cydia pomonella) | dozens to a few hundred larvae |
+| Pear leaf-curling midge (Dasineura pyri) | hundreds of galls |
+| Winter moth & tortrix caterpillars (Operophtera brumata, Archips spp.) | thousands |
+| European earwig (Forficula auricularia) | hundreds |
+| Blue & Great Tits (Cyanistes caeruleus / Parus major) | 1–2 nesting pairs |
+| Frugivorous mammals (Vulpes vulpes, Meles meles, Sus scrofa) | hundreds of fallen pears cleared/night |
+| Roosting bats (Pipistrellus / Myotis) | 1 to a few |
+
 - **Pear psylla (Cacopsylla pyri / C. pyricola)** — the defining pear specialist; populations of tens of thousands per mature tree at peak summer, generating sooty-mould honeydew. [WSU pear psylla IPM](https://treefruit.wsu.edu/crop-protection/opm/pear-psylla/)
 - **Pear & rosy apple aphids (Dysaphis pyri, D. plantaginea)** — leaf-curl colonies of hundreds per shoot, thousands per tree. [PNW pear aphid](https://pnwhandbooks.org/insect/tree-fruit/pear/pear-aphid)
 - **Honey & solitary bees (Apis mellifera, Osmia bicornis, Andrena spp.)** — a mature pear in full bloom attracts thousands of bee visits per day; pear flowers offer thin nectar but huge pollen reward. [Metschnikowia–pear pollinator study](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8061982/)

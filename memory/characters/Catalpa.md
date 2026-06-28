@@ -19,6 +19,19 @@ Light wood delivers rapid strikes, but don't underestimate it — its toxic root
 ## Living creatures
 Catalpa is a non-native ornamental in Europe — its associated fauna is sparse, dominated by big-bee pollinators on the trumpet flowers and a handful of generalist pests; the famous catalpa sphinx and predator-recruiting nectar deterrents are mostly a North-American phenomenon.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Aphids (Aphidoidea, generalist spp.) | hundreds to low thousands |
+| Mealybugs (Pseudococcidae) | dozens to hundreds |
+| Verticillium wilt-associated fungi (Verticillium spp.) | soil-borne (not animal) |
+| Honeybees (Apis mellifera) | 50–200+ workers |
+| Bumblebees (Bombus spp., both short- and long-tongued) | 10–40 foragers |
+| Violet carpenter bee (Xylocopa violacea) | 0–several |
+| Catalpa sphinx (Ceratomia catalpae) | dozens in N. America; absent in Europe |
+| Night-flying hawkmoths (Sphingidae, e.g. Macroglossum stellatarum) | handful per evening |
+| Roosting birds (House Sparrow Passer domesticus, Wood Pigeon Columba palumbus) | 1–5 individuals |
+| Nesting tits (Cyanistes caeruleus / Parus major) | 0–1 pairs |
+
 - **Aphids (Aphidoidea, generalist spp.)** — hundreds to low thousands per tree at peak; routinely listed as one of the few real Catalpa pests. [UKy Entomology: Catalpa pests](https://www.uky.edu/Ag/Entomology/treepestguide/catalpa.html)
 - **Mealybugs (Pseudococcidae)** — dozens to hundreds per infested tree; cottony masses on twigs causing leaf-drop. [UKy Entomology: Catalpa pests](https://www.uky.edu/Ag/Entomology/treepestguide/catalpa.html)
 - **Verticillium wilt-associated fungi (Verticillium spp.)** — soil-borne, not an animal, but the dominant biotic interaction for older Catalpa; included for completeness. [UKy Entomology: Catalpa pests](https://www.uky.edu/Ag/Entomology/treepestguide/catalpa.html)

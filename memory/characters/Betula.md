@@ -19,6 +19,19 @@ Lighter wood than Acer means quicker strikes at lower impact — a fast-swinging
 ## Living creatures
 Betula is one of the top insect-supporting trees in NW Europe — 300+ associated insect species and a winter seed-bank that keeps siskins, redpolls and lesser redpolls alive through the cold months.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Silver birch aphid (Euceraphis betulae / Aphididae) | thousands |
+| Other birch aphids (Callipterinella, Symydobius / Aphidoidea) | tens of thousands |
+| Birch leaf-mining sawflies (Heterarthrus, Fenusa / Tenthredinidae) | thousands of mines |
+| Birch moths (Geometridae & Notodontidae, incl. Endromis versicolora) | dozens |
+| Birch shieldbug (Elasmostethus interstinctus / Acanthosomatidae) | dozens |
+| Birch polypore & associated fungus gnats (Fomitopsis betulina + Mycetophilidae) | hundreds of larvae |
+| Eurasian Siskin (Spinus spinus) | 10–50 (winter) |
+| Lesser Redpoll (Acanthis cabaret) | 5–20 |
+| Great Spotted Woodpecker (Dendrocopos major) | 1 pair |
+| Noctule Bat (Nyctalus noctula) | 1 (or small maternity colony) |
+
 - **Silver birch aphid (Euceraphis betulae / Aphididae)** — thousands per mature tree; pale-green aphids drifting off leaves are the signature summer rain of a birch canopy. [Influential Points: Euceraphis betulae](https://influentialpoints.com/Gallery/Euceraphis_betulae_Silver_birch_aphid.htm)
 - **Other birch aphids (Callipterinella, Symydobius / Aphidoidea)** — 18 aphid species use silver/downy birch in Europe; combined populations easily reach the tens of thousands per tree. [Influential Points: Aphids on birch](https://influentialpoints.com/Gallery/Aphids_on_birch_betula.htm)
 - **Birch leaf-mining sawflies (Heterarthrus, Fenusa / Tenthredinidae)** — typically thousands of mines per mature tree by July; the spreading brown blotches are the giveaway. [Woodland Trust: Silver birch](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/silver-birch/)

@@ -20,6 +20,19 @@ Medium-dense wood gives balanced attack speed, while the spined burr is a ready-
 ## Living creatures
 Sweet Chestnut is a moderately rich host in Europe — long-established here (Roman introduction), it carries 150+ phytophagous insect species plus mast-loving birds and mammals.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Aphids (Aphidoidea, incl. Myzocallis castanicola) | thousands to tens of thousands |
+| Oriental chestnut gall wasp (Dryocosmus kuriphilus) | hundreds to thousands of galls |
+| Micro-moths and leaf miners (Lepidoptera, e.g. Phyllonorycter spp.) | hundreds of larvae |
+| Chestnut tortrix (Cydia splendana) | 30–90% of nuts infested |
+| Chestnut weevil (Curculio elephas) | up to 90% of nuts in bad seasons |
+| Honeybees and bumblebees (Apis mellifera, Bombus spp.) | dozens to hundreds foraging |
+| Wood-boring beetles (goat moth Cossus cossus, clearwing Synanthedon) | 0–several larvae |
+| Tits and woodpeckers (Cyanistes/Parus, Dendrocopos major) | 1–3 nesting pairs |
+| Roosting bats (Nyctalus, Myotis spp.) | 1 colony possible |
+| Squirrels and bank voles (Sciurus, Myodes glareolus) | 1–2 squirrels |
+
 - **Aphids (Aphidoidea, incl. Myzocallis castanicola)** — thousands to tens of thousands per mature tree at peak; the specialist chestnut aphid clusters under leaves. [aphid pest threshold context (UC ANR / pecan analogue)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4553575/)
 - **Oriental chestnut gall wasp (Dryocosmus kuriphilus)** — hundreds to thousands of galls per infested tree; now widespread across Europe. [Woodland Trust: Sweet Chestnut](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/sweet-chestnut/)
 - **Micro-moths and leaf miners (Lepidoptera, e.g. Phyllonorycter spp.)** — hundreds of larvae across the canopy in a good year; "a large number of micro-moths feed on the leaves and nuts." [Woodland Trust: Sweet Chestnut](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/sweet-chestnut/)

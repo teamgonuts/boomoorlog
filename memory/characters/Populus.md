@@ -19,6 +19,19 @@ The Poplar's feather-light wood means it strikes fast and cheap — high attack 
 ## Living creatures
 Populus is one of the richest insect hosts in NW Europe (Southwood/Kennedy & Southwood ranked it near the top, ~90+ associated phytophagous insect species in Britain) — a soft, fast-growing, sap-leaky tree that catkin-feeders, leaf-miners and bark-borers all exploit.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Aphids (Aphidoidea, esp. Chaitophorus, Pterocomma) | 10,000s |
+| Springtails & oribatid mites (Collembola, Oribatida) | 100,000s |
+| Poplar hawk moth (Laothoe populi, Sphingidae) | 1–5 caterpillars |
+| Hornet moth (Sesia apiformis, Sesiidae) | 1–3 larvae |
+| Wood leopard moth (Zeuzera pyrina, Cossidae) and figure of eight (Diloba caeruleocephala) | handful of larvae |
+| Puss moth & sallow kitten (Cerura/Furcula, Notodontidae) | 2–10 caterpillars |
+| Poplar leaf beetles (Chrysomela populi, C. tremula) | 100s |
+| Aspen hoverfly (Hammerschmidtia ferruginea) | 1 small population per old aspen |
+| Blue & Great Tits (Cyanistes caeruleus / Parus major) | 1–2 nesting pairs |
+| Common pipistrelle (Pipistrellus pipistrellus) | 1 maternity roost (10–50 bats) |
+
 - **Aphids (Aphidoidea, esp. Chaitophorus, Pterocomma)** — 10,000s per mature tree at summer peak; honeydew rains from poplar canopies. [Influential Points: Pterocomma populeum](https://influentialpoints.com/Gallery/Pterocomma_populeum_Large_poplar_aphid.htm)
 - **Springtails & oribatid mites (Collembola, Oribatida) in bark crevices** — 100,000s per tree (extrapolated from bark microfauna densities); the unseen majority of the canopy fauna. [Soil & bark microarthropods overview](https://www.britannica.com/animal/springtail)
 - **Poplar hawk moth (Laothoe populi, Sphingidae)** — 1–5 caterpillars per tree in good years; one of the most reliable Populus specialists in NW Europe. [Woodland Trust: black poplar](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/black-poplar/)

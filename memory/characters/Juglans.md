@@ -19,6 +19,19 @@ The Skirmisher's hallmark is zone-denial: juglone is essentially a deployable po
 ## Living creatures
 Walnut is famously allelopathic (juglone in roots, leaves, husks) — its understory is impoverished, but the canopy itself hosts a small, dedicated specialist guild plus the nut-eaters that make the whole evolutionary deal work.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Large walnut aphid (Panaphis juglandis, Aphididae) | thousands |
+| Small walnut aphid (Chromaphis juglandicola, Aphididae) | tens of thousands |
+| Walnut husk fly (Rhagoletis completa, Tephritidae) | hundreds of maggots |
+| Codling moth (Cydia pomonella, Tortricidae) | dozens of larvae |
+| Ladybirds & lacewings (Coccinellidae, Chrysopidae) | hundreds |
+| Honeybees & flies on aphid honeydew | dozens–hundreds |
+| Eurasian red squirrel / introduced grey (Sciurus vulgaris / S. carolinensis) | 1–3 |
+| Eurasian Jay (Garrulus glandarius) | 1–2 |
+| Carrion Crow / Hooded Crow (Corvus corone) | 1–4 |
+| Great Tit / Blue Tit (Parus major / Cyanistes caeruleus) | 1 pair |
+
 - **Large walnut aphid (Panaphis juglandis, Aphididae)** — rows along leaf veins; thousands per mature tree in summer, almost exclusively on Juglans regia. [Influentialpoints: Panaphis juglandis](https://influentialpoints.com/Gallery/Panaphis_juglandis_Large_walnut_aphid.htm)
 - **Small walnut aphid (Chromaphis juglandicola, Aphididae)** — leaf undersides; tens of thousands on a heavily infested tree. [Influentialpoints: Chromaphis juglandicola](https://influentialpoints.com/Gallery/Chromaphis_juglandicola_Small_walnut_aphid.htm)
 - **Walnut husk fly (Rhagoletis completa, Tephritidae)** — can infest up to 80% of nuts; hundreds of maggots in a fruiting tree. [PMC: defense dynamics in walnut fruit during husk fly infestation](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12604324/)

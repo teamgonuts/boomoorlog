@@ -18,6 +18,20 @@ Ultra-light wood paradoxically pairs with legendary bulk (huge max height, ancie
 
 ## Living creatures
 Dawn redwood (Metasequoia) is non-native to Europe with almost no co-evolved herbivores here — it stays famously pest-free. Most "tenants" are generalists using its dense feathery canopy as structure, not food.
+
+| Creature | Estimated count per tree |
+|---|---|
+| Aphids (Aphidoidea, generalist greenfly) | hundreds to low thousands |
+| Spider mites (Tetranychidae) | uncountable |
+| Bark beetle Phloeosinus metasequoiae (Curculionidae: Scolytinae) | absent in Europe (China only) |
+| Cypress bark beetle (Phloeosinus aubei / Curculionidae) | occasional dozens |
+| Springtails (Collembola) in bark crevices | many thousands |
+| Goldcrest (Regulus regulus / Regulidae) | 1–3 |
+| Coal tit (Periparus ater / Paridae) | ~1 nesting pair |
+| Wood pigeons & corvids (Columba/Corvus) | 1–2 nests |
+| Grey squirrel (Sciurus carolinensis) | 1–2 |
+| Roosting bats (Pipistrellus spp.) | occasional 1 |
+
 - **Aphids (Aphidoidea, generalist greenfly)** — hundreds to low thousands per tree in good years; generalist colonisers, no Metasequoia specialist in Europe. [Botanical Realm: Dawn redwood](https://www.botanicalrealm.com/plant-identification/dawn-redwoods-metasequoia/)
 - **Spider mites (Tetranychidae)** — uncountable on stressed, dry urban specimens; classic conifer pest opportunists. [Botanical Realm](https://www.botanicalrealm.com/plant-identification/dawn-redwoods-metasequoia/)
 - **Bark beetle Phloeosinus metasequoiae (Curculionidae: Scolytinae)** — China only; absent from Europe but the genus's only co-evolved herbivore worth naming. [PMC: Phloeosinus metasequoiae sp. nov.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11868798/)

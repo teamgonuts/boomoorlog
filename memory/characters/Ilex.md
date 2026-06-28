@@ -19,6 +19,19 @@ A slow-growing but resilient defender with double-edged ecology: its dense spiny
 ## Living creatures
 Evergreen dense canopy + winter berries = an unusually concentrated wildlife magnet for its size; specialist associates (holly leaf miner, Holly Blue) are tied to no other tree.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Holly leaf miner (Phytomyza ilicis, Agromyzidae) | several thousand mines |
+| Holly Blue butterfly (Celastrina argiolus, Lycaenidae) | 1–5 caterpillars |
+| Holly tortrix and yellow-barred brindle moths (Rhopobota / Acasis) | several dozen larvae |
+| Honeybees and solitary bees (Apis, Andrena spp.) | dozens–low hundreds |
+| Parasitoid wasps of the leaf miner (Chalcidoidea, esp. Chrysocharis, Pleurotropis) | hundreds |
+| Mistle Thrush (Turdus viscivorus) | 1 |
+| Blackbird, Song Thrush, Redwing, Fieldfare (Turdus spp.) | 1–10 |
+| Blue & Great Tits (Cyanistes / Parus) | 1 pair |
+| Wren / Dunnock / Robin (Troglodytes, Prunella, Erithacus) | 1–2 nests |
+| Woodpigeon (Columba palumbus) | a few |
+
 - **Holly leaf miner (Phytomyza ilicis, Agromyzidae)** — typically 5–25% of leaves mined; a mature tree can carry several thousand mines simultaneously. [Wikipedia: Phytomyza ilicis](https://en.wikipedia.org/wiki/Phytomyza_ilicis)
 - **Holly Blue butterfly (Celastrina argiolus, Lycaenidae)** — 1–5 caterpillars per tree on flower buds in spring; holly is the primary spring host. [Woodland Trust holly](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/holly/)
 - **Holly tortrix and yellow-barred brindle moths (Rhopobota / Acasis)** — several dozen larvae per tree across the season. [Woodland Trust holly](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/holly/)

@@ -19,6 +19,19 @@ Picea is the bog-standard bruiser of the boreal — it won't strike fast, but it
 ## Living creatures
 Picea hosts a distinct boreal/conifer fauna built around dense evergreen cover and resinous bark — fewer phytophagous insect species than oak or willow, but a few defining specialists (Ips bark beetles, sawflies, goldcrest).
 
+| Creature | Estimated count per tree |
+|---|---|
+| Spruce aphids (Elatobium abietinum, Cinara pilicornis) | 1,000s–10,000s |
+| Eurasian spruce bark beetle (Ips typographus, Scolytinae) | 100s–1,000s of galleries |
+| Phoretic mites on Ips typographus (Mesostigmata, e.g. Trichouropoda, Dendrolaelaps) | 1,000s+ |
+| Spruce sawflies (Gilpinia hercyniae, Pristiphora abietina, Diprionidae/Tenthredinidae) | 100s of larvae per branch |
+| Spruce gall adelgids (Adelges abietis, A. viridis) | 10s of galls (dozens of nymphs each) |
+| Spruce carpet, cloaked pug, dwarf pug, barred red moths (Geometridae, Erebidae) | handfuls of caterpillars |
+| Goldcrest (Regulus regulus) | 1–2 nesting pairs |
+| Coal tit (Periparus ater) | 1 nesting pair |
+| Siskin (Spinus spinus) | flocks of 5–20 |
+| Red squirrel (Sciurus vulgaris) | 1 per ~1–2 ha |
+
 - **Spruce aphids (Elatobium abietinum, Cinara pilicornis)** — 1,000s–10,000s per tree, especially in mild winters; defoliate older needles and shed honeydew. [Influential Points: Elatobium abietinum](https://influentialpoints.com/Gallery/Elatobium_abietinum_Green_spruce_aphid.htm)
 - **Eurasian spruce bark beetle (Ips typographus, Scolytinae)** — 100s–1,000s of galleries per stressed mature spruce; currently the most economically destructive pest of the species across Europe. [Springer: Ips typographus](https://link.springer.com/article/10.1007/s10340-021-01341-y)
 - **Phoretic mites on Ips typographus (Mesostigmata, e.g. Trichouropoda, Dendrolaelaps)** — 1,000s+ riding bark beetles into every gallery system. [PMC: phoretic mite communities](https://pmc.ncbi.nlm.nih.gov/articles/PMC12378774/)

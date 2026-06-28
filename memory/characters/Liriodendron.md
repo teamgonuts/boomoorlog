@@ -18,6 +18,20 @@ Light wood means fast attack speed despite its massive size — a Bruiser that t
 
 ## Living creatures
 Tulip tree (Liriodendron) is non-native to Europe, so its associated invertebrate fauna is small — but its nectar-rich flowers make it a heavyweight resource for generalist pollinators.
+
+| Creature | Estimated count per tree |
+|---|---|
+| Tulip-tree aphid (Illinoia liriodendri / Aphididae) | thousands |
+| Tulip-tree scale (Toumeyella liriodendri / Coccidae) | hundreds to thousands |
+| Honey bees (Apis mellifera / Apidae) | dozens to hundreds |
+| Bumblebees (Bombus spp. / Apidae) | 10–50 |
+| Honeydew-feeding ants (Formicidae, e.g. Lasius niger) | hundreds |
+| Sooty-mould-grazing mites (Acari) | uncountable |
+| Wasps (Vespidae) and hoverflies (Syrphidae) | dozens |
+| Blue & Great Tits (Cyanistes/Parus / Paridae) | ~1 nesting pair |
+| Grey squirrel (Sciurus carolinensis) | 1–3 |
+| Cavity-nesting bats (Pipistrellus spp.) | occasional 1 roost |
+
 - **Tulip-tree aphid (Illinoia liriodendri / Aphididae)** — thousands per tree in summer; the dominant herbivore, monophagous on Liriodendron, now widespread across Europe. [EPPO global pest record](https://gd.eppo.int/taxon/LIRTU/pests)
 - **Tulip-tree scale (Toumeyella liriodendri / Coccidae)** — hundreds to thousands per tree on twigs; produces copious honeydew. [NC State Extension on tulip-tree honeydew](https://entomology.ces.ncsu.edu/news/tulip-tree-aphids-and-scales-feeding-and-dropping-honeydew/)
 - **Honey bees (Apis mellifera / Apidae)** — dozens to hundreds foraging simultaneously on a flowering tree; one of the heaviest nectar producers a single tree can offer in late spring. [Backyard Ecology — tulip poplars for pollinators](https://www.backyardecology.net/tulip-poplars-a-source-of-abundant-nectar-and-pollen-for-kentucky-pollinators/)

@@ -19,6 +19,19 @@ Fast-growing but short-lived, Laburnum is a glass-cannon Support — it springs 
 ## Living creatures
 Cytisine-loaded legume — toxic to most vertebrates and many insects, so the associate list is short, but the spring flower racemes are a serious early-season bee buffet.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Bumblebees (Bombus terrestris, B. pascuorum, B. hortorum) | dozens–hundreds |
+| Honeybees (Apis mellifera) | dozens |
+| Solitary bees (Anthophora, Osmia spp.) | tens |
+| Mining bees (Andrena spp.) | small numbers |
+| Aphids (Aphidoidea, mainly broad-host species) | hundreds |
+| Leaf-mining flies / micro-moths | a handful of mines |
+| Ants (Lasius niger and others) | dozens–low hundreds |
+| Hares & deer browsing (Lepus, Capreolus) | occasional individuals |
+| Generalist tit pair (Cyanistes caeruleus / Parus major) | 1 pair |
+| Greenfinch / Goldfinch (Chloris / Carduelis) | 1–3 |
+
 - **Bumblebees (Bombus terrestris, B. pascuorum, B. hortorum)** — dozens to hundreds on a tree in full bloom; critical for early-spring colonies. [NCSU: Laburnum anagyroides](https://plants.ces.ncsu.edu/plants/laburnum-anagyroides/)
 - **Honeybees (Apis mellifera)** — dozens of foragers per tree in May. [NCSU: Laburnum anagyroides](https://plants.ces.ncsu.edu/plants/laburnum-anagyroides/)
 - **Solitary bees (Anthophora, Osmia spp.)** — tens of individuals; one of few suspended-flower legumes available so early. [Wikipedia: Laburnum anagyroides](https://en.wikipedia.org/wiki/Laburnum_anagyroides)

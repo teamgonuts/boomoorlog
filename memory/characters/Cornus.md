@@ -18,6 +18,20 @@ Despite its graceful looks, dogwood wood is brutally hard — the contradiction 
 
 ## Living creatures
 Dogwood is a modest insect host but a heavyweight nectar-and-berry buffet: pollinators on the flowers, frugivorous thrushes on the haws.
+
+| Creature | Estimated count per tree |
+|---|---|
+| Honeybees & solitary bees (Apoidea) | ~100s of visits per flowering day |
+| Common Blackbird (Turdus merula) | 1–3 |
+| Song Thrush, Redwing, Fieldfare (Turdus spp.) | 1–10 |
+| Case-bearer moth caterpillars (Coleophoridae) | ~10–50 |
+| Lackey moth (Malacosoma neustria) | 50–200 (in webs, occasional) |
+| Green dogwood sawfly & related sawflies (Tenthredinidae) | ~5–30 |
+| Aphids (Aphidoidea, incl. Anoecia corni) | ~100s–1000s per infested shoot |
+| Dogwood gall midge (Resseliella / Craneiobia corni) | ~10–100 galls per branch |
+| Wood Pigeon (Columba palumbus) | 1–2 pairs |
+| Wood mouse / Bank vole (Apodemus sylvaticus / Myodes glareolus) | 1–5 |
+
 - **Honeybees & solitary bees (Apoidea)** — ~100s of visits per tree per flowering day; cymes are a notable spring nectar source. [Bees and pollinators on Cornus sanguinea](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/dogwood/)
 - **Common Blackbird (Turdus merula)** — 1–3 birds at a time stripping berries in autumn; a frequent dogwood berry-consumer in NW Europe. [RSPB blackbird](https://www.rspb.org.uk/birds-and-wildlife/blackbird)
 - **Song Thrush, Redwing, Fieldfare (Turdus spp.)** — 1–10 per tree on autumn migration; dogwood berries are a known winter-thrush food. [Cornus sanguinea TCV profile](https://www.tcv.org.uk/i-dig-trees-tree-library/dogwood/)

@@ -19,6 +19,19 @@ Short lifespan means Alnus is a fast, cheap-to-deploy frontline unit that enrich
 ## Living creatures
 Alnus is a true ecological keystone of NW European wetlands — host to 90+ phytophagous invertebrate species, the only winter food source for siskins and redpolls, and one of the most insect-rich trees relative to its biomass.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Alder leaf beetle (Agelastica alni / Chrysomelidae) | hundreds to low thousands |
+| Alder aphids (Pterocallis alni / Aphididae) | thousands |
+| Alder spittlebugs & psyllids (Aphrophora alni, Psylla alni) | dozens to hundreds |
+| Frankia root nodule bacteria (Frankia alni / Frankiaceae) | billions |
+| Alder moths and tussocks (Acronicta alni, Eriogaster lanestris / Noctuidae, Lasiocampidae) | a few dozen |
+| Honey bees on early catkins (Apis mellifera) | dozens |
+| Eurasian Siskin (Spinus spinus) | 10–50 (winter) |
+| Lesser Redpoll (Acanthis cabaret) | 5–20 |
+| European Goldfinch (Carduelis carduelis) | 2–10 |
+| Otter & water vole (Lutra lutra, Arvicola amphibius) | 1 |
+
 - **Alder leaf beetle (Agelastica alni / Chrysomelidae)** — easily hundreds to low thousands per tree in outbreak years; iridescent blue beetles skeletonising foliage by mid-summer. [Wikipedia: Agelastica alni](https://en.wikipedia.org/wiki/Agelastica_alni)
 - **Alder aphids (Pterocallis alni / Aphididae)** — thousands per mature tree; dense colonies on leaf undersides driving the honeydew economy. [NatureSpot: Alder](https://www.naturespot.org/species/alder)
 - **Alder spittlebugs & psyllids (Aphrophora alni, Psylla alni)** — dozens to hundreds; the foam-flecked "cuckoo spit" on Alnus twigs in early summer is mostly Aphrophora. [NatureSpot: Alder](https://www.naturespot.org/species/alder)

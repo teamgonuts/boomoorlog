@@ -19,6 +19,19 @@ The Juggernaut label fits: fast growth to massive size, allelopathic root zone a
 ## Living creatures
 A non-native Asian member of the walnut family (Juglandaceae) with juglone-like allelopathy — Pterocarya carries no specialist NW European herbivores; its biological value in Amsterdam is mostly as massive structural habitat: huge canopy, riparian shade, deep cavities in old trunks, and a heavy autumn rain of winged nutlets.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Aphids (Aphidoidea, incl. Myzus persicae) | thousands |
+| Spider mites (Tetranychidae) | tens of thousands |
+| Generalist caterpillars (winter moth, tortrix spp.) | hundreds |
+| Honeybees & bumblebees (Apis, Bombus) | dozens |
+| Bark-foraging birds (Treecreeper, Nuthatch — Certhia / Sitta) | 1–2 |
+| Wood pigeon / Magpie / Carrion crow | 5–20 visits/day |
+| Eurasian Jay (Garrulus glandarius) | 1–few |
+| Squirrels (Sciurus vulgaris / S. carolinensis) | 1–2 |
+| Cavity-nesting birds & roosting bats (Parus, Pipistrellus) | 1–2 pairs + occasional bats |
+| Roe deer browsing (Capreolus capreolus) | single |
+
 - **Aphids (Aphidoidea, incl. Myzus persicae)** — thousands per tree on tender shoots, producing leaf curl, honeydew and sooty mould. [Botanical Realm Pterocarya](https://www.botanicalrealm.com/plant-identification/caucasian-wingnut-pterocarya-fraxinifolia/)
 - **Spider mites (Tetranychidae)** — tens of thousands per tree in hot dry city summers; common Juglandaceae pest. [Botanical Realm Pterocarya](https://www.botanicalrealm.com/plant-identification/caucasian-wingnut-pterocarya-fraxinifolia/)
 - **Generalist caterpillars (winter moth, tortrix spp.)** — hundreds per tree in May; juglone-like compounds keep specialist Lepidoptera away. [NTS plant of the month](https://www.nts.org.uk/stories/plant-of-the-month-pterocarya-fraxinifolia)

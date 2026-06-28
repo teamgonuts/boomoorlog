@@ -19,6 +19,19 @@ Robinia is the fastest-striking bruiser on the roster — hard, dense wood means
 ## Living creatures
 As a North American legume only recently naturalised in Europe, Robinia carries an impoverished herbivore fauna — a handful of invading Nearctic specialists plus generalists — but its mass white-flower display makes it a top honeybee tree, producing the famous "acacia honey."
 
+| Creature | Estimated count per tree |
+|---|---|
+| Honeybees (Apis mellifera) | tens of thousands over ~10-day bloom |
+| Bumblebees & solitary bees (Bombus spp., Anthophora, Xylocopa violacea) | hundreds of visits/day |
+| Robinia leafminer moths (Parectopa robiniella, Macrosaccus robiniella) | hundreds to thousands of mines |
+| Black locust gall midge (Obolodiplosis robiniae) | thousands of galls |
+| Locust aphid (Appendiseta robiniae) | hundreds to thousands |
+| Locust sawfly (Nematus tibialis) | hundreds |
+| Spider mites (Tetranychus urticae) | tens of thousands |
+| Cavity-nesting birds (Cyanistes / Parus / Sturnus vulgaris) | 1–3 nesting pairs |
+| Wild boar / deer browsing (Sus scrofa, Capreolus capreolus) | single |
+| Bats roosting in cavities (Pipistrellus, Nyctalus noctula) | 1 to a few |
+
 - **Honeybees (Apis mellifera)** — a single mature flowering Robinia can host tens of thousands of foraging honeybees over its ~10-day bloom; commercial "acacia honey" depends almost entirely on this tree. [EUFORGEN Robinia](https://www.euforgen.org/species/robinia-pseudoacacia/)
 - **Bumblebees & solitary bees (Bombus spp., Anthophora, Xylocopa violacea)** — hundreds of visits/day, including carpenter bees that perforate the corolla base. [Cierjacks Biological Flora Robinia](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/1365-2745.12162)
 - **Robinia leafminer moths (Parectopa robiniella, Macrosaccus robiniella)** — two invasive Nearctic specialists, now widespread in Europe; hundreds to thousands of mines per mature tree by late summer. [Insects MDPI Robinia specialists](https://www.mdpi.com/2075-4450/15/10/765)

@@ -19,6 +19,19 @@ Its iron-hard timber means attacks land slow but crushing — every blow carries
 ## Living creatures
 Parrotia is a Hyrcanian-relic ornamental in Hamamelidaceae with essentially no co-evolved European fauna and a famously "pest-free" reputation — its ecological footprint is dominated by early-spring pollen for bees and generalist bark/canopy microfauna.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Honeybees & early-flying bumblebees (Apis mellifera, Bombus terrestris queens) | 10s |
+| Generalist aphids (Aphidoidea) | 100s |
+| Spider mites (Tetranychus urticae) | 100s–1,000s per leaf |
+| Springtails & oribatid mites (Collembola, Oribatida) | 10,000s+ per mature trunk |
+| Bark-crevice pseudoscorpions (Pseudoscorpiones, e.g. Chthonius) | 10s per mature trunk |
+| Generalist tortricid & geometrid moths (Tortricidae, Geometridae) | handfuls of caterpillars |
+| Earwigs (Forficula auricularia) | 10s |
+| Ladybirds & lacewings (Coccinellidae, Chrysopidae) | 10s overwintering |
+| Blue & Great Tits (Cyanistes caeruleus / Parus major) | 1 nesting pair |
+| Blackbird (Turdus merula) | 1 pair |
+
 - **Honeybees & early-flying bumblebees (Apis mellifera, Bombus terrestris queens)** — 10s per tree at late-winter bloom; one of the few NW-European-grown trees flowering before witch-hazels finish. [Pacific Horticulture: Persian ironwood](https://pacifichorticulture.org/articles/striving-for-diversity-persian-ironwood/)
 - **Generalist aphids (Aphidoidea)** — 100s per tree at summer peak; no Parrotia-specialist aphid is recorded in Europe. [Influential Points: Aphidoidea overview](https://influentialpoints.com/aphid_genera.htm)
 - **Spider mites (Tetranychus urticae)** — 100s–1,000s per leaf in dry urban summers; standard ornamental-tree mite, not Parrotia-specific. [RHS: spider mites](https://www.rhs.org.uk/biodiversity/glasshouse-red-spider-mite)

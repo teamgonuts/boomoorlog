@@ -19,6 +19,19 @@ Cedrus hits slow but each blow carries the weight of centuries — dense resinou
 ## Living creatures
 Cedrus is a non-native conifer in NW Europe with markedly lower invertebrate value than native broadleaves — its insect-repellent aromatic resin keeps the fauna small but predictable, dominated by a couple of host-specific aphids and cavity/nest users.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Cedar aphid (Cinara cedri) | thousands to tens of thousands |
+| Cedar woolly aphid (Cedrobium laportei) | hundreds to low thousands |
+| Aphid parasitoid wasps (Pauesia anatolica and relatives) | dozens during outbreaks |
+| Ectomycorrhizal fungi (Thelephoraceae, Trichophaea spp.) | ~13–19 species (not animals) |
+| Goldcrest (Regulus regulus) | 1–2 pairs |
+| Coal Tit (Periparus ater) | 1 pair |
+| Treecreeper (Certhia familiaris) | 1 individual |
+| Woodpeckers (Dendrocopos major) | 0–1 pairs |
+| Squirrels (Sciurus spp.) | 1–2 |
+| Roosting bats (Pipistrellus, Nyctalus) | 0–1 small colonies |
+
 - **Cedar aphid (Cinara cedri)** — thousands to tens of thousands per heavily infested mature tree at peak; produces copious honeydew and sooty mould. [First record Cinara cedri Bulgaria (ResearchGate)](https://www.researchgate.net/publication/355204224_First_record_of_Cinara_Cinara_cedri_cedri_Mimeur_Hemiptera_Aphididae_in_Bulgaria)
 - **Cedar woolly aphid (Cedrobium laportei)** — hundreds to low thousands on susceptible C. deodara / C. atlantica individuals; two main aphid pests on the genus. [INRAE Cedrobium/Cinara susceptibility study](https://hal.inrae.fr/hal-02728526)
 - **Aphid parasitoid wasps (Pauesia anatolica and relatives)** — dozens per tree during aphid outbreaks; specialist parasitoids of Cinara cedri. [Pauesia anatolica description (Springer)](https://link.springer.com/article/10.1007/BF02981399)

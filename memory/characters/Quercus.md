@@ -19,6 +19,19 @@ The slowest-growing Bruiser but the hardest-hitting — millennial lifespan and 
 ## Living creatures
 Quercus hosts more invertebrate species than any other tree in northern Europe — Kennedy & Southwood (1984) list ~423 phytophagous insects on British oak, plus ~1000 oak-gall wasp species globally and dozens of vertebrate associates.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Springtails & oribatid mites (Collembola / Oribatida) | tens of thousands |
+| Winter moth caterpillars (Operophtera brumata) | up to ~150,000 |
+| Oak aphids (Tuberculatus / Lachnus / Thelaxes spp.) | many thousands to tens of thousands |
+| Oak gall wasps (Cynipidae, ~30+ spp. per tree) | hundreds to low thousands of galls |
+| Acorn weevils (Curculio glandium / C. elephas) | 30–60% of ~10,000+ acorns infested |
+| Purple hairstreak butterfly (Favonius quercus) | ~20–200 adults |
+| Blue & Great Tits (Cyanistes caeruleus / Parus major) | 1–3 nesting pairs |
+| Eurasian Jay (Garrulus glandarius) | 1–few |
+| Roosting bats (Pipistrellus / Myotis / Nyctalus) | 1 to a few (up to 20–50 in maternity colonies) |
+| Grey & Red Squirrels (Sciurus carolinensis / S. vulgaris) | 1–2 |
+
 - **Springtails & oribatid mites (Collembola / Oribatida)** — tens of thousands per mature tree across bark crevices, leaf litter and canopy moss; mites alone hit ~200,000/m² in forest soils beneath the tree. [forest arthropod density](https://www.science.org/doi/10.1126/sciadv.abq4049)
 - **Winter moth caterpillars (Operophtera brumata)** — up to ~150,000 defoliating larvae on a heavily infested mature oak in May. [UMass winter moth](https://www.umass.edu/agriculture-food-environment/fruit/news/winter-moth-operophtera-brumata)
 - **Oak aphids (Tuberculatus / Lachnus / Thelaxes spp.)** — many thousands to tens of thousands per canopy; produce the "sticky oak" honeydew rain in summer. [BYGL sticky oaks](https://bygl.osu.edu/node/1784)

@@ -19,6 +19,19 @@ Legendary durability translates directly to a near-unkillable tank role — the 
 ## Living creatures
 Bald Cypress (Taxodium) is a non-native ornamental conifer in NW Europe — its evergreen-deciduous needles host a thin local insect community, but the dense pyramidal crown is useful cover for generalist urban birds and roosting bats.
 
+| Creature | Estimated count per tree |
+|---|---|
+| European fruit lecanium scale (Parthenolecanium corni, Coccidae) | ~50–500+ |
+| Beech blight aphid (Grylloprociphilus imbricator, Aphididae) | dozens to low hundreds |
+| Bald cypress leafroller (Archips goyerana, Tortricidae) | ~10–100 larvae |
+| Springtails (Collembola) | 10,000+ per m² of leaf litter |
+| Bark mites & oribatid mites (Acari) | thousands |
+| Black garden ant (Lasius niger, Formicidae) | 1–2 colonies, hundreds of foragers |
+| Wood Pigeon (Columba palumbus) | 1–4 |
+| Blue & Great Tits (Cyanistes caeruleus / Parus major) | ~1 pair |
+| Common Wood Mouse (Apodemus sylvaticus) | 1–3 |
+| Common Pipistrelle (Pipistrellus pipistrellus) | occasional, 1+ |
+
 - **European fruit lecanium scale (Parthenolecanium corni, Coccidae)** — easily 50–500+ per tree on twigs and branches; conspicuous brown bumps. [Florida IPM key plant / key pests baldcypress](https://journals.flvc.org/edis/article/download/105352/120805)
 - **Beech blight aphid (Grylloprociphilus imbricator, Aphididae)** — colonies of dozens to low hundreds when present; recorded on Taxodium. [CABI Taxodium distichum datasheet](https://www.cabi.org/isc/datasheet/52620)
 - **Bald cypress leafroller (Archips goyerana, Tortricidae)** and related leafroller caterpillars — periodic outbreaks; ~10–100 larvae in normal years per mature tree. [K-State Extension bald cypress](https://blogs.k-state.edu/kansasbugs/tag/bald-cypress/)

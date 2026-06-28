@@ -19,6 +19,19 @@ Ultra-light wood means rapid-fire, low-mass strikes — a Skirmisher that darts 
 ## Living creatures
 Paulownia is an Asian ornamental with almost no co-evolved European fauna — its standout ecological feature in Amsterdam is a massive, fragrant nectar flush in May that pollinators raid opportunistically.
 
+| Creature | Estimated count per tree |
+|---|---|
+| Honeybees (Apis mellifera) | 100s–1,000s at bloom |
+| Bumblebees (Bombus terrestris, B. lapidarius, B. pascuorum) | 10s–100s at bloom |
+| Solitary bees & hoverflies (Andrena, Osmia, Syrphidae) | 10s at bloom |
+| Generalist aphids (Aphis spp.) | 100s–1,000s |
+| Spider mites (Tetranychus urticae) | 1,000s per leaf |
+| Springtails & oribatid mites (Collembola, Oribatida) | 1,000s–10,000s per mature trunk |
+| Generalist tortricid leaf-rollers (Tortricidae) | handfuls of caterpillars |
+| Earwigs (Forficula auricularia) | 10s |
+| House sparrow & blue tit (Passer domesticus, Cyanistes caeruleus) | 1–2 nesting pairs |
+| Common pipistrelle (Pipistrellus pipistrellus) | occasional roost (a few bats) |
+
 - **Honeybees (Apis mellifera)** — 100s–1,000s foraging per tree during the ~2-week bloom; Paulownia is one of very few forestry trees that is insect-pollinated and yields a prized monofloral honey. [Wikipedia: Paulownia tomentosa](https://en.wikipedia.org/wiki/Paulownia_tomentosa)
 - **Bumblebees (Bombus terrestris, B. lapidarius, B. pascuorum)** — 10s–100s per tree at bloom; the deep tubular flowers fit large bumblebee tongues. [RHS: Plants for Pollinators](https://www.rhs.org.uk/plants/types/trees/for-wildlife)
 - **Solitary bees & hoverflies (Andrena, Osmia, Syrphidae)** — 10s per tree during bloom; secondary visitors mopping up nectar. [Wikipedia: Paulownia tomentosa](https://en.wikipedia.org/wiki/Paulownia_tomentosa)
