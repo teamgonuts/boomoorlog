@@ -1093,6 +1093,60 @@ main {
   border: 1px solid #000;
 }
 
+/* Cluster pin (zoomed-out regime). Sprite is the dominant genus in the cell;
+   the badge shows the tree count. Click to drill in two zoom levels — handled
+   in PlayMap. The sprite is bottom-anchored so the foot of the pin sits on the
+   cell centroid (matching individual-pin anchoring). */
+.tree-cluster {
+  position: relative;
+  width: 36px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.tree-cluster-sprite {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 40px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.6));
+}
+.tree-cluster-dot {
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  border-radius: 50%;
+  background: #9fd6a0;
+  border: 1px solid #000;
+}
+.tree-cluster-count {
+  position: absolute;
+  bottom: -2px;
+  right: -6px;
+  background: #14161b;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 8px;
+  font-variant-numeric: tabular-nums;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  line-height: 1.2;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.play-meta-loading {
+  color: var(--dim);
+  font-style: italic;
+}
+
 /* M4.5: a creature sprite flying tree-to-tree. The wrapping divIcon does the
    Leaflet positioning; the inner <img> handles rotation/mirror so transitions
    on rotation don't fight Leaflet's transform on the outer div. */

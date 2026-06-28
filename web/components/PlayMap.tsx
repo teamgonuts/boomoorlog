@@ -4,6 +4,8 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useRef } from "react";
 
+import type { ViewportMarker } from "@/lib/trees-api";
+
 // CARTO Voyager — light raster tiles, very close visual match to OSM Liberty
 // (beige residential, soft greens for parks, yellow/orange roads, light blue
 // water) but served as plain raster PNGs so Leaflet can render it directly
@@ -16,38 +18,6 @@ const BASEMAP_ATTR =
 // Map opens centered on Amsterdam if no address has been searched.
 const AMSTERDAM_CENTER: [number, number] = [52.3676, 4.9041];
 const AMSTERDAM_ZOOM = 12;
-
-/**
- * Leaflet map for the /play page.
- *
- * Receives:
- *  - center: where the user's address geocoded to (map centre + radius circle)
- *  - radiusM: the search radius in meters (drawn as a translucent circle)
- *  - trees: array of trees within that radius, with lat/lng + (optional) genus
- *
- * Renders:
- *  - Dark CARTO basemap (matches the wiki's dark theme)
- *  - A radius circle so the player sees what 1km looks like
- *  - One marker per tree, sprite-icon if we know the genus, plain dot otherwise
- *  - Tooltip on hover: "Genus · height"
- *
- * Performance: ~3k markers is fine for Leaflet. If a board ever exceeds 10k
- * we'll bring in leaflet.markercluster — not worth the dependency now.
- */
-
-type TreePoint = {
-  id: number;
-  lat: number;
-  lng: number;
-  slug: string | null;
-  species: string | null;
-  height_m: number | null;
-  diameter_cm: number | null;
-  planting_year: number | null;
-  location: string | null;
-  location_detail: string | null;
-  protection_status: string | null;
-};
 
 // Today's calendar year. Used to compute ages. Fine to refresh on a 1-yr cadence.
 const CURRENT_YEAR = new Date().getFullYear();
@@ -71,33 +41,34 @@ function escapeHtml(s: string): string {
     .replace(/"/g, "&quot;");
 }
 
-function tooltipFor(t: TreePoint): string {
-  const lines: string[] = [];
+// Re-export so callers can `import type { Marker } from "@/components/PlayMap"`.
+// Single source of truth lives in lib/trees-api.ts (also used by /api/trees).
+export type Marker = ViewportMarker;
 
-  // Title: full species if we have it, else genus, else "Unknown".
+function tooltipForIndividual(t: Marker): string {
+  const lines: string[] = [];
   const title = t.species ?? t.slug ?? "Unknown tree";
   lines.push(`<div class="ttl-h">${escapeHtml(title)}</div>`);
 
-  // Numeric stats: height · diameter · age. Skip nulls.
   const stats: string[] = [];
-  if (t.height_m != null) stats.push(`${t.height_m} m`);
-  if (t.diameter_cm != null) stats.push(`&Oslash; ${t.diameter_cm} cm`);
+  if (t.height_m != null) stats.push(`${t.height_m} m`);
+  if (t.diameter_cm != null) stats.push(`&Oslash; ${t.diameter_cm} cm`);
   if (t.planting_year != null) {
     const age = CURRENT_YEAR - t.planting_year;
-    if (age >= 0 && age < 400) {
-      stats.push(`${age} yrs`);
-    }
+    if (age >= 0 && age < 400) stats.push(`${age} yrs`);
   }
   if (stats.length > 0) {
     lines.push(`<div class="ttl-stats">${stats.join(" · ")}</div>`);
   }
 
-  // Planted year — explicit and historical. Only shown when known.
-  if (t.planting_year != null && t.planting_year >= 1500 && t.planting_year <= CURRENT_YEAR + 1) {
+  if (
+    t.planting_year != null &&
+    t.planting_year >= 1500 &&
+    t.planting_year <= CURRENT_YEAR + 1
+  ) {
     lines.push(`<div class="ttl-ctx">Planted in ${t.planting_year}</div>`);
   }
 
-  // Protected status: rare (~1.6% of trees) so call it out.
   if (t.protection_status) {
     lines.push(
       `<div class="ttl-protected">★ ${escapeHtml(
@@ -109,9 +80,17 @@ function tooltipFor(t: TreePoint): string {
   return lines.join("");
 }
 
+function tooltipForCluster(m: Marker): string {
+  const slug = m.slug ?? "mixed";
+  return (
+    `<div class="ttl-h">${escapeHtml(slug)}</div>` +
+    `<div class="ttl-stats">${m.n.toLocaleString()} trees · click to zoom</div>`
+  );
+}
+
 const SPRITE_ICON_CACHE = new Map<string, L.Icon>();
 
-function iconFor(slug: string | null): L.Icon | L.DivIcon {
+function iconForIndividual(slug: string | null): L.Icon | L.DivIcon {
   if (!slug) {
     return L.divIcon({
       className: "tree-dot",
@@ -133,6 +112,22 @@ function iconFor(slug: string | null): L.Icon | L.DivIcon {
   return icon;
 }
 
+function iconForCluster(slug: string | null, n: number): L.DivIcon {
+  const sprite = slug
+    ? `<img class="tree-cluster-sprite pixel" src="/sprites/${slug}.png" alt="" />`
+    : `<span class="tree-cluster-dot"></span>`;
+  // Compact number; >=1k → "1.2k" so the badge stays readable at city zoom.
+  const label =
+    n >= 1000 ? (n / 1000).toFixed(n >= 10_000 ? 0 : 1) + "k" : String(n);
+  return L.divIcon({
+    className: "tree-cluster",
+    html: `${sprite}<span class="tree-cluster-count">${label}</span>`,
+    iconSize: [36, 44],
+    iconAnchor: [18, 40],
+    tooltipAnchor: [0, -34],
+  });
+}
+
 /** Creature data needed to render + identify the marker on hover. */
 type CreatureForMap = {
   slug: string;
@@ -145,24 +140,28 @@ function escapeForAttr(s: string): string {
   return s.replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
+type FlyPoint = { lat: number; lng: number };
+
 /**
- * Animate a creature sprite making ONE tree-to-tree flight, then perch
- * briefly and disappear. Calls `onComplete` when the flight finishes
- * naturally — the parent uses that to spawn a new creature in the same slot.
- * Returns a stop() function that cancels mid-flight and removes the marker
- * (used on unmount). Hovering shows the real creature photo + name.
+ * Animate a creature sprite making ONE flight between two points, then perch
+ * and disappear. Reads the "where can I land" point list from a ref so the
+ * creature loop survives marker prop changes (parent updates the ref when
+ * new /api/trees responses land). Calls `onComplete` when the flight finishes
+ * — the parent uses that to respawn a fresh pick in the same slot.
  */
 function startCreatureFlight(
   layer: L.LayerGroup,
   creature: CreatureForMap,
-  trees: TreePoint[],
+  pointsRef: { current: FlyPoint[] },
   onComplete: () => void,
 ): () => void {
-  if (trees.length < 2) return () => {};
+  const points = pointsRef.current;
+  if (points.length < 2) {
+    onComplete();
+    return () => {};
+  }
 
   const SPEED_MPS = 6;
-  // Brief perch on the destination tree before the creature disappears, so
-  // it's clearly "landed" rather than vanishing mid-air.
   const PERCH_MS = 500;
   const MIN_DURATION_MS = 800;
 
@@ -173,20 +172,20 @@ function startCreatureFlight(
     iconAnchor: [28, 20],
   });
 
-  const fromIdx = Math.floor(Math.random() * trees.length);
-  let toIdx = Math.floor(Math.random() * trees.length);
-  if (toIdx === fromIdx) toIdx = (toIdx + 1) % trees.length;
+  const fromIdx = Math.floor(Math.random() * points.length);
+  let toIdx = Math.floor(Math.random() * points.length);
+  if (toIdx === fromIdx) toIdx = (toIdx + 1) % points.length;
+  const from = points[fromIdx];
+  const to = points[toIdx];
 
-  const marker = L.marker([trees[fromIdx].lat, trees[fromIdx].lng], {
+  const marker = L.marker([from.lat, from.lng], {
     icon,
-    // Interactive so hover shows the photo tooltip.
     interactive: true,
     keyboard: false,
     bubblingMouseEvents: false,
     zIndexOffset: 1000,
   }).addTo(layer);
 
-  // Photo + names on hover. Direction "top" so it sits above the bird.
   const photoBlock = creature.photo_url
     ? `<div class="creature-tip-photo"><img src="${escapeForAttr(creature.photo_url)}" alt="" loading="lazy" /></div>`
     : "";
@@ -200,24 +199,19 @@ function startCreatureFlight(
     { direction: "top", className: "creature-tip", offset: [0, -8], sticky: true },
   );
 
-  function metersBetween(a: TreePoint, b: TreePoint): number {
+  function metersBetween(a: FlyPoint, b: FlyPoint): number {
     const dLat = (b.lat - a.lat) * 111_320;
     const cosLat = Math.cos((a.lat * Math.PI) / 180);
     const dLng = (b.lng - a.lng) * 111_320 * cosLat;
     return Math.hypot(dLat, dLng);
   }
 
-  function setSpriteRotation(from: TreePoint, to: TreePoint) {
+  function setSpriteRotation() {
     const el = marker.getElement()?.querySelector("img") as HTMLImageElement | null;
     if (!el) return;
     const dLat = to.lat - from.lat;
     const dLng = to.lng - from.lng;
-    // Screen y goes down (decreasing lat = increasing screen y).
-    // Original sprite faces east → 0° rotation = unchanged.
     const angleDeg = (Math.atan2(-dLat, dLng) * 180) / Math.PI;
-    // For mostly-westward moves, mirror horizontally so the bird never looks
-    // upside-down. Accept a tiny tilt mismatch on diagonals; simpler than a
-    // full rotation-matrix-aware sprite atlas.
     el.style.transform =
       Math.abs(angleDeg) > 90 ? "scaleX(-1)" : `rotate(${angleDeg}deg)`;
   }
@@ -225,9 +219,9 @@ function startCreatureFlight(
   const segmentStart = performance.now();
   const segmentDurMs = Math.max(
     MIN_DURATION_MS,
-    (metersBetween(trees[fromIdx], trees[toIdx]) / SPEED_MPS) * 1000,
+    (metersBetween(from, to) / SPEED_MPS) * 1000,
   );
-  setSpriteRotation(trees[fromIdx], trees[toIdx]);
+  setSpriteRotation();
 
   let mode: "flying" | "perched" = "flying";
   let perchUntil = 0;
@@ -237,8 +231,6 @@ function startCreatureFlight(
     if (!running) return;
     if (mode === "flying") {
       const t = Math.min(1, (now - segmentStart) / segmentDurMs);
-      const from = trees[fromIdx];
-      const to = trees[toIdx];
       marker.setLatLng([
         from.lat + (to.lat - from.lat) * t,
         from.lng + (to.lng - from.lng) * t,
@@ -264,21 +256,47 @@ function startCreatureFlight(
   };
 }
 
+export type Bbox = {
+  lat_min: number;
+  lng_min: number;
+  lat_max: number;
+  lng_max: number;
+};
+
 export default function PlayMap({
   center,
-  radiusM,
-  trees,
+  initialRadiusM,
+  markers,
   creatures,
+  onViewportChange,
 }: {
   center: { lat: number; lng: number } | null;
-  radiusM: number;
-  trees: TreePoint[];
+  /** Half-side of the initial fitBounds box, in meters. Only used the first
+   *  time a new `center` arrives — after that, the user controls the view. */
+  initialRadiusM: number;
+  markers: Marker[];
   creatures?: CreatureForMap[];
+  onViewportChange?: (bbox: Bbox, zoom: number) => void;
 }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<L.Map | null>(null);
+  const addressLayerRef = useRef<L.LayerGroup | null>(null);
+  const markerLayerRef = useRef<L.LayerGroup | null>(null);
+  const creatureLayerRef = useRef<L.LayerGroup | null>(null);
+  // Marker handles keyed by Marker.key for diff-update on marker prop change.
+  const markerHandlesRef = useRef<Map<string, L.Marker>>(new Map());
+  // Marker positions exposed to creature loops via ref so flights survive
+  // marker-prop changes without restarting.
+  const flyPointsRef = useRef<FlyPoint[]>([]);
+  // Callback captured into the mount-effect via ref so identity churn from
+  // the parent doesn't trigger a remap remount.
+  const onViewportChangeRef = useRef(onViewportChange);
+  onViewportChangeRef.current = onViewportChange;
+  // First-fit guard: only auto-fit when a new center arrives. After that,
+  // panning/zooming is the user's.
+  const lastFitCenterRef = useRef<string | null>(null);
 
-  // Mount the Leaflet map once. Subsequent prop changes update layers.
+  // ---- Mount the map once ----
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
 
@@ -287,9 +305,9 @@ export default function PlayMap({
       zoom: AMSTERDAM_ZOOM,
       scrollWheelZoom: true,
       zoomControl: false,
-      // Perf: with up to ~250 sprite-icon markers in view, Leaflet's
-      // per-marker reposition during zoom/fade animations is the dominant
-      // cost. Disabling these makes pan and zoom snap immediately.
+      // Perf: see bench results — disabling these avoids per-marker animation
+      // costs and makes pan/zoom snap. Acceptable trade since markers are
+      // capped at ~400 and zoom is the dominant cost (~50ms at the cap).
       fadeAnimation: false,
       zoomAnimation: false,
       markerZoomAnimation: false,
@@ -299,36 +317,54 @@ export default function PlayMap({
       subdomains: "abcd",
       maxZoom: 19,
       attribution: BASEMAP_ATTR,
-      // Defer tile requests until the user stops zooming/panning.
       updateWhenZooming: false,
       updateWhenIdle: true,
       keepBuffer: 1,
     }).addTo(map);
+
+    addressLayerRef.current = L.layerGroup().addTo(map);
+    markerLayerRef.current = L.layerGroup().addTo(map);
+    creatureLayerRef.current = L.layerGroup().addTo(map);
     mapRef.current = map;
 
+    const emitViewport = () => {
+      const b = map.getBounds();
+      onViewportChangeRef.current?.(
+        {
+          lat_min: b.getSouth(),
+          lng_min: b.getWest(),
+          lat_max: b.getNorth(),
+          lng_max: b.getEast(),
+        },
+        map.getZoom(),
+      );
+    };
+    map.on("moveend", emitViewport);
+
     return () => {
+      map.off("moveend", emitViewport);
       map.remove();
       mapRef.current = null;
+      addressLayerRef.current = null;
+      markerLayerRef.current = null;
+      creatureLayerRef.current = null;
+      markerHandlesRef.current.clear();
     };
   }, []);
 
-  // Re-render markers + radius whenever inputs change; fit zoom to the data.
+  // ---- Address pin + initial fit when center changes ----
   useEffect(() => {
     const map = mapRef.current;
-    if (!map) return;
+    const layer = addressLayerRef.current;
+    if (!map || !layer) return;
 
-    const layer = L.layerGroup().addTo(map);
-
+    layer.clearLayers();
     if (!center) {
-      // No search yet — keep the default Amsterdam-wide view.
       map.setView(AMSTERDAM_CENTER, AMSTERDAM_ZOOM);
-      return () => {
-        layer.remove();
-      };
+      lastFitCenterRef.current = null;
+      return;
     }
 
-    // Center pin (the user's address). No radius ring — the visible map IS
-    // the play area now.
     L.circleMarker([center.lat, center.lng], {
       radius: 6,
       color: "#c0463b",
@@ -339,48 +375,104 @@ export default function PlayMap({
       .bindTooltip("Your address", { direction: "top" })
       .addTo(layer);
 
-    // Tree markers. `keyboard: false` + `bubblingMouseEvents: false` skip a
-    // per-marker listener install that adds up at 200+ markers.
-    for (const t of trees) {
-      const marker = L.marker([t.lat, t.lng], {
-        icon: iconFor(t.slug),
+    const centerKey = `${center.lat},${center.lng}`;
+    if (lastFitCenterRef.current !== centerKey) {
+      // New address — auto-fit. `radius * 2.2` matches the prior look.
+      const bounds = L.latLng(center.lat, center.lng).toBounds(
+        initialRadiusM * 2.2,
+      );
+      map.fitBounds(bounds, { padding: [40, 40], maxZoom: 18, animate: false });
+      lastFitCenterRef.current = centerKey;
+    }
+  }, [center, initialRadiusM]);
+
+  // ---- Markers: diff-update on prop change ----
+  useEffect(() => {
+    const layer = markerLayerRef.current;
+    const map = mapRef.current;
+    if (!layer || !map) return;
+
+    const handles = markerHandlesRef.current;
+    const incoming = new Set(markers.map((m) => m.key));
+
+    // Remove markers that fell out of the new set.
+    for (const [key, handle] of handles) {
+      if (!incoming.has(key)) {
+        handle.remove();
+        handles.delete(key);
+      }
+    }
+
+    // Add markers that are new (kept-same markers are skipped, no churn).
+    for (const m of markers) {
+      if (handles.has(m.key)) continue;
+      const icon =
+        m.mode === "cluster"
+          ? iconForCluster(m.slug, m.n)
+          : iconForIndividual(m.slug);
+      const marker = L.marker([m.lat, m.lng], {
+        icon,
         keyboard: false,
         bubblingMouseEvents: false,
       });
-      marker.bindTooltip(tooltipFor(t), {
+      const tip =
+        m.mode === "cluster" ? tooltipForCluster(m) : tooltipForIndividual(m);
+      marker.bindTooltip(tip, {
         direction: "top",
         className: "tree-tip",
         offset: [0, -4],
       });
+      if (m.mode === "cluster") {
+        // Click a cluster → drill in two zoom levels. Two levels usually
+        // splits a dense cluster into finer ones (or unblocks individual mode
+        // if total drops under max_pins).
+        marker.on("click", () => {
+          const target = Math.min(map.getZoom() + 2, 19);
+          map.setView([m.lat, m.lng], target, { animate: false });
+        });
+      }
       marker.addTo(layer);
+      handles.set(m.key, marker);
     }
 
-    // Auto-zoom to roughly cover the radius area. With the ring gone, the
-    // visible viewport is the play area; bbox is queried 1.2× wider for buffer.
-    const bounds = L.latLng(center.lat, center.lng).toBounds(radiusM * 2.2);
-    map.fitBounds(bounds, { padding: [40, 40], maxZoom: 18, animate: false });
+    // Keep flyPointsRef in sync — creatures land on these on respawn. Using
+    // marker centroids for both modes is fine; cluster centroids are still
+    // "where trees are".
+    flyPointsRef.current = markers.map((m) => ({ lat: m.lat, lng: m.lng }));
+  }, [markers]);
 
-    // M4.5: 5 creatures on screen at any moment. Each does ONE flight, then
-    // disappears and is replaced by a fresh random pick from the full pool —
-    // rotation over time. `slotStops[i]` is replaced on every respawn, so the
-    // cleanup below always cancels whichever creature is currently flying.
-    const NUM_CREATURE_SLOTS = 5;
+  // ---- Creatures: spawn N slots, each respawns on completion ----
+  useEffect(() => {
+    const creatureLayer = creatureLayerRef.current;
+    if (!creatureLayer) return;
     const pool = creatures ?? [];
-    const slotStops: Array<() => void> = [];
-    function spawnSlot(slot: number) {
-      if (pool.length === 0) return;
+    if (pool.length === 0) return;
+
+    const NUM_CREATURE_SLOTS = 5;
+    const slotStops: Array<(() => void) | null> = Array(NUM_CREATURE_SLOTS).fill(null);
+    let mounted = true;
+
+    const spawnSlot = (slot: number) => {
+      if (!mounted) return;
+      if (flyPointsRef.current.length < 2) {
+        // No perches yet — the first /api/trees response will populate
+        // flyPointsRef. Try again shortly.
+        setTimeout(() => spawnSlot(slot), 600);
+        return;
+      }
       const c = pool[Math.floor(Math.random() * pool.length)];
-      slotStops[slot] = startCreatureFlight(layer, c, trees, () =>
+      slotStops[slot] = startCreatureFlight(creatureLayer, c, flyPointsRef, () =>
         spawnSlot(slot),
       );
-    }
+    };
     for (let i = 0; i < NUM_CREATURE_SLOTS; i++) spawnSlot(i);
 
     return () => {
+      mounted = false;
       slotStops.forEach((stop) => stop?.());
-      layer.remove();
+      creatureLayer.clearLayers();
     };
-  }, [center, radiusM, trees, creatures]);
+  }, [creatures]);
 
   return <div ref={containerRef} className="play-map" />;
 }
