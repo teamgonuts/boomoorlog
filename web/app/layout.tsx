@@ -19,7 +19,10 @@ export default function RootLayout({
             🌳 Boomoorlog <span>Wiki</span>
           </Link>
           <span className="tagline">The trees of Amsterdam, ready for war</span>
-          <Link href="/wiki/trees" className="nav-link" style={{ marginLeft: "auto" }}>
+          <Link href="/play" className="nav-link" style={{ marginLeft: "auto" }}>
+            Play
+          </Link>
+          <Link href="/wiki/trees" className="nav-link">
             All trees
           </Link>
         </header>
