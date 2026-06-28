@@ -30,9 +30,9 @@ for the full game design.
 |---|---|
 | `memory/` | Game-design source of truth + delivery plan — VISION, STATS, CHARACTERS, ROADMAP, per-genus notes. |
 | `data/` | Raw datasets — **offline pipeline inputs only** (see note below). |
-| `db/` | SQL migrations (`001_schema.sql`, `002_indexes.sql`, `003_backfill_genera.sql`). |
+| `db/` | SQL migrations (`001_schema.sql`, `002_indexes.sql`, `003_backfill_genera.sql`, `004_postgis.sql`, `005_trees_within.sql`). |
 | `pipeline/` | Shared pipeline modules (`stats.py` — single source of truth for per-genus stat derivation). |
-| `docs/` | Generated static character wiki (M1 output). |
+| `web/` | Next.js app (the runtime — wiki + `/play`). Reads from Supabase. |
 | `*.py` | Offline data pipeline — extract trees, derive ZIP codes, generate characters & sprites, seed the DB. |
 
 ## Data pipeline (Python scripts)
@@ -45,7 +45,6 @@ are **not** part of the runtime app.
 | `extract_trees.py` | Pull living trees out of the raw Amsterdam dataset. |
 | `generate_characters.py` | Render `memory/CHARACTERS.md` from `pipeline/stats.py`. |
 | `generate_sprites.py` / `_v2.py` / `generate_pixel_sprites.py` | Produce genus sprites. |
-| `build_wiki.py` | Render the static character wiki into `docs/`. |
 | `seed_genera.py` | Load `genera` table in Supabase (uses `pipeline/stats.py`). |
 | `seed_trees.py` | Bulk-load `trees` table via `COPY` (298k rows). |
 
@@ -65,7 +64,14 @@ scripts.
 
 Full delivery plan and rationale live in [`memory/ROADMAP.md`](memory/ROADMAP.md).
 
+## Live app
+
+The runtime app (wiki + `/play` neighborhood map) is deployed at
+**https://boomoorlog.vercel.app**. The old static `docs/` wiki was removed in M3 —
+the Next.js app under `web/` replaces it.
+
 ## Status
 
-M1 (character wiki) is done. Next up is the database foundation. Track progress in
+M1–M4 done (wiki, database foundation, app skeleton, address → neighborhood map).
+M5 (board generation from OSM) is next. Track progress in
 [`memory/ROADMAP.md`](memory/ROADMAP.md).
