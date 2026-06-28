@@ -4,3 +4,6 @@ data/amsterdam_pc6.geojson
 .env
 .env.local
 memory/Creds.md
+
+# Editor / IDE local state
+.obsidian/
