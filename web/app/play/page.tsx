@@ -37,6 +37,16 @@ function bboxAround(lat: number, lng: number, halfSideM: number) {
   };
 }
 
+// Fisher-Yates picker — used for the creature-of-the-moment selection.
+function pickRandom<T>(arr: T[], n: number): T[] {
+  const out = [...arr];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out.slice(0, n);
+}
+
 async function fetchTreesInBbox(args: {
   lat_min: number;
   lng_min: number;
@@ -90,18 +100,28 @@ export default async function PlayPage({
   let allGenera: Genus[] = [];
   let geocodeError: string | null = null;
 
+  // M4.5: pick 2 random creatures from the wiki on each page load. Each one
+  // flies tree-to-tree on the map for visual life. Uniform random across the
+  // full pool — small table (24 rows), trivial to shuffle in JS.
+  let creatureSlugs: string[] = [];
+
   if (address) {
     const geo = await geocodeAmsterdam(address);
     if (isGeocodeHit(geo)) {
       center = { lat: geo.lat, lng: geo.lng };
       resolvedAddress = geo.display_name;
       const bbox = bboxAround(geo.lat, geo.lng, VIEW_BBOX_HALF_SIDE_M);
-      const [treeList, gResp] = await Promise.all([
+      const [treeList, gResp, creaturesResp] = await Promise.all([
         fetchTreesInBbox(bbox),
         supabase.from("genera").select("*"),
+        supabase.from("creatures").select("slug"),
       ]);
       trees = treeList;
       allGenera = gResp.data ?? [];
+      creatureSlugs = pickRandom(
+        (creaturesResp.data ?? []).map((c) => c.slug),
+        2,
+      );
     } else {
       geocodeError = geo.error;
     }
@@ -137,6 +157,7 @@ export default async function PlayPage({
         <PlayMap
           center={center}
           radiusM={RADIUS_M}
+          creatureSlugs={creatureSlugs}
           trees={trees
             .filter((t) => t.latitude != null && t.longitude != null)
             .map((t) => ({

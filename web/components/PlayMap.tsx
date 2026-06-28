@@ -133,14 +133,122 @@ function iconFor(slug: string | null): L.Icon | L.DivIcon {
   return icon;
 }
 
+/**
+ * Animate a creature sprite hopping tree-to-tree, ignoring streets and
+ * physics. Used for the M4.5 "Living map" demo. Returns a stop() function
+ * that cancels the loop and removes the marker.
+ */
+function startCreatureFlight(
+  layer: L.LayerGroup,
+  slug: string,
+  trees: TreePoint[],
+): () => void {
+  if (trees.length < 2) return () => {};
+
+  const SPEED_MPS = 6;
+  const PAUSE_MS = 600;
+  const MIN_DURATION_MS = 800;
+
+  const icon = L.divIcon({
+    className: "creature-flying",
+    html: `<img src="/creature_sprites/${slug}.png" alt="" />`,
+    iconSize: [28, 20],
+    iconAnchor: [14, 10],
+  });
+
+  const pickIndex = (exclude: number): number => {
+    if (trees.length <= 1) return 0;
+    let i = Math.floor(Math.random() * trees.length);
+    if (i === exclude) i = (i + 1) % trees.length;
+    return i;
+  };
+
+  let fromIdx = Math.floor(Math.random() * trees.length);
+  let toIdx = pickIndex(fromIdx);
+
+  const marker = L.marker([trees[fromIdx].lat, trees[fromIdx].lng], {
+    icon,
+    interactive: false,
+    keyboard: false,
+    zIndexOffset: 1000,
+  }).addTo(layer);
+
+  function metersBetween(a: TreePoint, b: TreePoint): number {
+    const dLat = (b.lat - a.lat) * 111_320;
+    const cosLat = Math.cos((a.lat * Math.PI) / 180);
+    const dLng = (b.lng - a.lng) * 111_320 * cosLat;
+    return Math.hypot(dLat, dLng);
+  }
+
+  function setSpriteRotation(from: TreePoint, to: TreePoint) {
+    const el = marker.getElement()?.querySelector("img") as HTMLImageElement | null;
+    if (!el) return;
+    const dLat = to.lat - from.lat;
+    const dLng = to.lng - from.lng;
+    // Screen y goes down (decreasing lat = increasing screen y).
+    // Original sprite faces east → 0° rotation = unchanged.
+    const angleDeg = (Math.atan2(-dLat, dLng) * 180) / Math.PI;
+    // For mostly-westward moves, mirror horizontally so the bird never looks
+    // upside-down. Accept a tiny tilt mismatch on diagonals; simpler than a
+    // full rotation-matrix-aware sprite atlas.
+    el.style.transform =
+      Math.abs(angleDeg) > 90 ? "scaleX(-1)" : `rotate(${angleDeg}deg)`;
+  }
+
+  let segmentStart = performance.now();
+  let segmentDurMs =
+    Math.max(MIN_DURATION_MS, (metersBetween(trees[fromIdx], trees[toIdx]) / SPEED_MPS) * 1000);
+  setSpriteRotation(trees[fromIdx], trees[toIdx]);
+
+  let mode: "flying" | "paused" = "flying";
+  let pauseUntil = 0;
+  let running = true;
+
+  function tick(now: number) {
+    if (!running) return;
+    if (mode === "flying") {
+      const t = Math.min(1, (now - segmentStart) / segmentDurMs);
+      const from = trees[fromIdx];
+      const to = trees[toIdx];
+      marker.setLatLng([
+        from.lat + (to.lat - from.lat) * t,
+        from.lng + (to.lng - from.lng) * t,
+      ]);
+      if (t >= 1) {
+        mode = "paused";
+        pauseUntil = now + PAUSE_MS;
+      }
+    } else if (now >= pauseUntil) {
+      fromIdx = toIdx;
+      toIdx = pickIndex(fromIdx);
+      segmentStart = now;
+      segmentDurMs = Math.max(
+        MIN_DURATION_MS,
+        (metersBetween(trees[fromIdx], trees[toIdx]) / SPEED_MPS) * 1000,
+      );
+      setSpriteRotation(trees[fromIdx], trees[toIdx]);
+      mode = "flying";
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  return () => {
+    running = false;
+    marker.remove();
+  };
+}
+
 export default function PlayMap({
   center,
   radiusM,
   trees,
+  creatureSlugs,
 }: {
   center: { lat: number; lng: number } | null;
   radiusM: number;
   trees: TreePoint[];
+  creatureSlugs?: string[];
 }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<L.Map | null>(null);
@@ -227,10 +335,17 @@ export default function PlayMap({
     const bounds = L.latLng(center.lat, center.lng).toBounds(radiusM * 2.2);
     map.fitBounds(bounds, { padding: [40, 40], maxZoom: 18, animate: false });
 
+    // M4.5: animate the creatures-of-the-moment between random trees in view.
+    const creatureStops: Array<() => void> = [];
+    for (const slug of creatureSlugs ?? []) {
+      creatureStops.push(startCreatureFlight(layer, slug, trees));
+    }
+
     return () => {
+      creatureStops.forEach((stop) => stop());
       layer.remove();
     };
-  }, [center, radiusM, trees]);
+  }, [center, radiusM, trees, creatureSlugs]);
 
   return <div ref={containerRef} className="play-map" />;
 }

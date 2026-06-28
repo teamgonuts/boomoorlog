@@ -243,6 +243,30 @@ within 1km of an arbitrary point" is `ST_DWithin`).
       https://boomoorlog.vercel.app/play; verified Dam 1 returns 3,161 trees
       across 37 genera.
 
+### M4.5 — Living map ✅
+"Make the map *feel alive* before we build the real game." Two random creature
+sprites fly tree-to-tree on `/play`, ignoring streets and physics. Pure visual
+demo, no game logic, no pathfinding. Cheap, demoable, validates the animation
+tech path (Leaflet marker + requestAnimationFrame + CSS transform).
+
+**Locked decisions (2026-06-28):**
+- 2 creatures at a time, picked uniformly at random from the `creatures` table
+  on each page load. Variety per visit.
+- Straight-line tree → tree, linear lat/lng interpolation. No pathfinding.
+- ~6 m/s, scaled by hop distance (min 800ms per leg).
+- 600 ms pause on each tree before next hop.
+- Sprite faces direction of travel: rotate for east-ish moves, mirror
+  (`scaleX(-1)`) for west-ish moves so birds never look upside-down.
+- Single Leaflet `divIcon` per creature, animated with `requestAnimationFrame`
+  + `marker.setLatLng()`. No new dependencies.
+
+**Done:**
+- `pickRandom()` picks 2 creature slugs server-side at /play render.
+- `startCreatureFlight()` in `web/components/PlayMap.tsx` runs the RAF loop,
+  swaps from/to on arrival, manages rotation. Returns a stop() for cleanup.
+- `.creature-flying` styles in globals.css (transparent divIcon shell, inner
+  `<img>` constrained + smoothed transform transitions on rotation).
+
 ### M5 — Board generation (OSM → playable grid) 🔲  *(new — the map-translation milestone)*
 Turn the real world inside the 1km box into a tower-defense board. Two **separate layers
 on one grid**: a *walkability/collision* layer (data) and a *pixel-art* layer (cosmetic).
