@@ -1,1 +1,6 @@
 data/amsterdam_pc6.geojson
+
+# Local credentials — never commit
+.env
+.env.local
+memory/Creds.md
