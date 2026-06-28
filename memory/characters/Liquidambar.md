@@ -32,16 +32,16 @@ North-American ornamental — its native fauna (hundreds of moth species, big si
 | Squirrel (Sciurus spp.) | 1–2 |
 | Wood Pigeon / corvid roost (Columba palumbus, Corvus spp.) | 1–5 |
 
-- **Aphids (Aphidoidea, generalist colonisers)** — hundreds to low thousands on tender shoots in summer; no sweetgum-specialist aphid in Europe. [Gardenia: Liquidambar styraciflua](https://www.gardenia.net/plant/liquidambar-styraciflua)
-- **Ants (Lasius, Formica spp.)** — colonies in the hundreds tending aphids for honeydew. [Gardenia: Liquidambar styraciflua](https://www.gardenia.net/plant/liquidambar-styraciflua)
-- **Spider mites (Tetranychidae)** — easily 10,000+ on a hot, dry urban tree. [NCSU: Liquidambar styraciflua](https://plants.ces.ncsu.edu/plants/liquidambar-styraciflua/)
-- **Generalist tortrix and geometrid caterpillars** — dozens per tree; foliage is mildly resinous but accepted by polyphages. [Edge of the Woods nursery: sweetgum](https://edgeofthewoodsnursery.com/species-spotlight-sweet-gum)
-- **Honeybees & flies on extrafloral nectaries / sap** — tens of visitors; the small flowers are wind-pollinated but bees do drop in. [Grokipedia: Liquidambar styraciflua](https://grokipedia.com/page/Liquidambar_styraciflua)
-- **Granulate ambrosia beetle (Xylosandrus crassiusculus, Scolytinae)** — invasive in Europe; a handful to dozens of galleries in stressed trees. [UC IPM: granulate ambrosia beetle](https://ipm.ucanr.edu/Invasive-and-Exotic-Pests/Granulate-Ambrosia-Beetle/)
-- **Goldfinch & Siskin (Carduelis carduelis, Spinus spinus)** — flocks of 5–20 hammering open the spiky gumballs for the tiny seeds in winter. [Plant Native: sweetgum](https://plantnative.org/native-plants/sweetgum-liquidambar-styraciflua.htm)
-- **Greenfinch / House Sparrow (Chloris / Passer)** — small groups of 3–10 picking seeds from fallen gumballs. [Edge of the Woods nursery: sweetgum](https://edgeofthewoodsnursery.com/species-spotlight-sweet-gum)
-- **Squirrel (Sciurus spp.)** — 1–2 individuals nipping seed capsules; a known caching behavior on sweetgums. [Gardenia: Liquidambar styraciflua](https://www.gardenia.net/plant/liquidambar-styraciflua)
-- **Wood Pigeon / corvid roost (Columba palumbus, Corvus spp.)** — 1–5 birds using the tall, open crown as a city perch; the spiky fruit clusters discourage predators from below. [iNaturalist: Liquidambar styraciflua](https://www.inaturalist.org/taxa/49658-Liquidambar-styraciflua)
+- **Aphids (Aphidoidea, generalist colonisers)** — hundreds to low thousands on tender shoots in summer; no sweetgum-specialist aphid in Europe. [Gardenia: Liquidambar styraciflua](https://www.gardenia.net/plant/liquidambar-styraciflua) [pic](../../data/creature_pics/aphidoidea.jpg)
+- **Ants (Lasius, Formica spp.)** — colonies in the hundreds tending aphids for honeydew. [Gardenia: Liquidambar styraciflua](https://www.gardenia.net/plant/liquidambar-styraciflua) [pic](../../data/creature_pics/lasius.jpg)
+- **Spider mites (Tetranychidae)** — easily 10,000+ on a hot, dry urban tree. [NCSU: Liquidambar styraciflua](https://plants.ces.ncsu.edu/plants/liquidambar-styraciflua/) [pic](../../data/creature_pics/tetranychidae.jpg)
+- **Generalist tortrix and geometrid caterpillars** — dozens per tree; foliage is mildly resinous but accepted by polyphages. [Edge of the Woods nursery: sweetgum](https://edgeofthewoodsnursery.com/species-spotlight-sweet-gum) [pic](../../data/creature_pics/tortrix-geometrid.jpg)
+- **Honeybees & flies on extrafloral nectaries / sap** — tens of visitors; the small flowers are wind-pollinated but bees do drop in. [Grokipedia: Liquidambar styraciflua](https://grokipedia.com/page/Liquidambar_styraciflua) [pic](../../data/creature_pics/honeybees-flies-extrafloral.jpg)
+- **Granulate ambrosia beetle (Xylosandrus crassiusculus, Scolytinae)** — invasive in Europe; a handful to dozens of galleries in stressed trees. [UC IPM: granulate ambrosia beetle](https://ipm.ucanr.edu/Invasive-and-Exotic-Pests/Granulate-Ambrosia-Beetle/) [pic](../../data/creature_pics/xylosandrus-crassiusculus.jpg)
+- **Goldfinch & Siskin (Carduelis carduelis, Spinus spinus)** — flocks of 5–20 hammering open the spiky gumballs for the tiny seeds in winter. [Plant Native: sweetgum](https://plantnative.org/native-plants/sweetgum-liquidambar-styraciflua.htm) [pic](../../data/creature_pics/carduelis-carduelis.jpg)
+- **Greenfinch / House Sparrow (Chloris / Passer)** — small groups of 3–10 picking seeds from fallen gumballs. [Edge of the Woods nursery: sweetgum](https://edgeofthewoodsnursery.com/species-spotlight-sweet-gum) [pic](../../data/creature_pics/chloris.jpg)
+- **Squirrel (Sciurus spp.)** — 1–2 individuals nipping seed capsules; a known caching behavior on sweetgums. [Gardenia: Liquidambar styraciflua](https://www.gardenia.net/plant/liquidambar-styraciflua) [pic](../../data/creature_pics/sciurus.jpg)
+- **Wood Pigeon / corvid roost (Columba palumbus, Corvus spp.)** — 1–5 birds using the tall, open crown as a city perch; the spiky fruit clusters discourage predators from below. [iNaturalist: Liquidambar styraciflua](https://www.inaturalist.org/taxa/49658-Liquidambar-styraciflua) [pic](../../data/creature_pics/columba-palumbus.jpg)
 
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 46

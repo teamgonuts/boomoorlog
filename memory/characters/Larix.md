@@ -33,16 +33,16 @@ Only deciduous European conifer — soft annual needles plus tight seed cones su
 | Siskin & Redpoll (Spinus spinus, Acanthis) | 5–20 |
 | Goldcrest / Coal Tit (Regulus / Periparus) | 1 pair |
 
-- **Larch woolly adelgid (Adelges laricis, Adelgidae)** — woolly white tufts smother shoots; tens of thousands of individuals on a heavily infested tree. [Influentialpoints: Adelges laricis](http://influentialpoints.com/Gallery/Adelges_laricis_Larch_adelgid_Larch_woolly_aphid.htm)
-- **Larch casebearer moth (Coleophora laricella, Coleophoridae)** — needle-mining; thousands of cases on a mature tree in outbreak years. [Wikipedia: Coleophora laricella](https://en.wikipedia.org/wiki/Coleophora_laricella)
-- **Speckled larch aphid (Cinara laricis, Lachninae)** — large bark-feeding aphids; hundreds to thousands per tree in summer. [Influentialpoints: Cinara laricis](http://influentialpoints.com/Gallery/Cinara_laricis_speckled_larch_aphid.htm)
-- **Larch tortrix and cone moths (Cydia illutana, Zeiraphera)** — hundreds of larvae per tree, mining cone scales and shoots. [Britishwildlife wiki: European larch](https://britishwildlife.fandom.com/wiki/European_Larch)
-- **Spruce / larch budworm complex (Choristoneura, Tortricidae)** — tens to hundreds of caterpillars on the soft spring needles. [Illinois Wildflowers: European larch](http://www.illinoiswildflowers.info/trees/plants/eu_larch.htm)
-- **Ladybird beetles (Coccinellidae)** — dozens to hundreds tracking the adelgid blooms. [Tandfonline: coccinellid predators of larch woolly adelgid](https://www.tandfonline.com/doi/full/10.1080/24750263.2024.2367550)
-- **Larch longhorn (Tetropium gabrieli, Cerambycidae)** — a handful of larvae in declining trees; major secondary pest. [PMC: Tetropium gabrieli first record on Larix in Lithuania](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8538462/)
-- **Common Crossbill (Loxia curvirostra)** — 1–6 birds working cones in winter; bills evolved for conifer-seed extraction. [Wikipedia: Larix decidua](https://en.m.wikipedia.org/wiki/Larix_decidua)
-- **Siskin & Redpoll (Spinus spinus, Acanthis)** — small flocks of 5–20 stripping seeds from cones in late winter. [Big Nature: larch trees](https://bignature.ca/journal/larch-trees)
-- **Goldcrest / Coal Tit (Regulus / Periparus)** — 1 nesting pair common in mature larch; gleans adelgids and tiny caterpillars year-round. [Britishwildlife wiki: European larch](https://britishwildlife.fandom.com/wiki/European_Larch)
+- **Larch woolly adelgid (Adelges laricis, Adelgidae)** — woolly white tufts smother shoots; tens of thousands of individuals on a heavily infested tree. [Influentialpoints: Adelges laricis](http://influentialpoints.com/Gallery/Adelges_laricis_Larch_adelgid_Larch_woolly_aphid.htm) [pic](../../data/creature_pics/adelges-laricis.jpg)
+- **Larch casebearer moth (Coleophora laricella, Coleophoridae)** — needle-mining; thousands of cases on a mature tree in outbreak years. [Wikipedia: Coleophora laricella](https://en.wikipedia.org/wiki/Coleophora_laricella) [pic](../../data/creature_pics/coleophora-laricella.jpg)
+- **Speckled larch aphid (Cinara laricis, Lachninae)** — large bark-feeding aphids; hundreds to thousands per tree in summer. [Influentialpoints: Cinara laricis](http://influentialpoints.com/Gallery/Cinara_laricis_speckled_larch_aphid.htm) [pic](../../data/creature_pics/cinara-laricis.jpg)
+- **Larch tortrix and cone moths (Cydia illutana, Zeiraphera)** — hundreds of larvae per tree, mining cone scales and shoots. [Britishwildlife wiki: European larch](https://britishwildlife.fandom.com/wiki/European_Larch) [pic](../../data/creature_pics/cydia-illutana.jpg)
+- **Spruce / larch budworm complex (Choristoneura, Tortricidae)** — tens to hundreds of caterpillars on the soft spring needles. [Illinois Wildflowers: European larch](http://www.illinoiswildflowers.info/trees/plants/eu_larch.htm) [pic](../../data/creature_pics/choristoneura.jpg)
+- **Ladybird beetles (Coccinellidae)** — dozens to hundreds tracking the adelgid blooms. [Tandfonline: coccinellid predators of larch woolly adelgid](https://www.tandfonline.com/doi/full/10.1080/24750263.2024.2367550) [pic](../../data/creature_pics/coccinellidae.jpg)
+- **Larch longhorn (Tetropium gabrieli, Cerambycidae)** — a handful of larvae in declining trees; major secondary pest. [PMC: Tetropium gabrieli first record on Larix in Lithuania](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8538462/) [pic](../../data/creature_pics/tetropium-gabrieli.jpg)
+- **Common Crossbill (Loxia curvirostra)** — 1–6 birds working cones in winter; bills evolved for conifer-seed extraction. [Wikipedia: Larix decidua](https://en.m.wikipedia.org/wiki/Larix_decidua) [pic](../../data/creature_pics/loxia-curvirostra.jpg)
+- **Siskin & Redpoll (Spinus spinus, Acanthis)** — small flocks of 5–20 stripping seeds from cones in late winter. [Big Nature: larch trees](https://bignature.ca/journal/larch-trees) [pic](../../data/creature_pics/spinus-spinus.jpg)
+- **Goldcrest / Coal Tit (Regulus / Periparus)** — 1 nesting pair common in mature larch; gleans adelgids and tiny caterpillars year-round. [Britishwildlife wiki: European larch](https://britishwildlife.fandom.com/wiki/European_Larch) [pic](../../data/creature_pics/regulus.jpg)
 
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 60

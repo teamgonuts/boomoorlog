@@ -32,16 +32,16 @@ Cytisine-loaded legume — toxic to most vertebrates and many insects, so the as
 | Generalist tit pair (Cyanistes caeruleus / Parus major) | 1 pair |
 | Greenfinch / Goldfinch (Chloris / Carduelis) | 1–3 |
 
-- **Bumblebees (Bombus terrestris, B. pascuorum, B. hortorum)** — dozens to hundreds on a tree in full bloom; critical for early-spring colonies. [NCSU: Laburnum anagyroides](https://plants.ces.ncsu.edu/plants/laburnum-anagyroides/)
-- **Honeybees (Apis mellifera)** — dozens of foragers per tree in May. [NCSU: Laburnum anagyroides](https://plants.ces.ncsu.edu/plants/laburnum-anagyroides/)
-- **Solitary bees (Anthophora, Osmia spp.)** — tens of individuals; one of few suspended-flower legumes available so early. [Wikipedia: Laburnum anagyroides](https://en.wikipedia.org/wiki/Laburnum_anagyroides)
-- **Mining bees (Andrena spp.)** — small numbers; pollen is harvestable despite the cytisine. [Wikipedia: Laburnum anagyroides](https://en.wikipedia.org/wiki/Laburnum_anagyroides)
-- **Aphids (Aphidoidea, mainly broad-host species)** — hundreds on tender shoots; no laburnum-specialist aphid is established in NW Europe. [Wikipedia: Laburnum anagyroides](https://en.wikipedia.org/wiki/Laburnum_anagyroides)
-- **Leaf-mining flies / micro-moths** — a handful of mines per tree; the foliage is unpalatable to almost all macro-moth larvae due to the alkaloids. [Wikipedia: Laburnum anagyroides](https://en.wikipedia.org/wiki/Laburnum_anagyroides)
-- **Ants (Lasius niger and others)** — small colonies tending the aphids for honeydew; dozens to low hundreds in the canopy. [Wikipedia: Laburnum anagyroides](https://en.wikipedia.org/wiki/Laburnum_anagyroides)
-- **Hares & deer browsing (Lepus, Capreolus)** — unusual tolerance to cytisine; occasional individuals strip bark and shoots without harm. [Totally Wild UK: Laburnum identification](https://totallywilduk.co.uk/2023/12/13/laburnum-identification/)
-- **Generalist tit pair (Cyanistes caeruleus / Parus major)** — typically 1 nesting pair; the dense crown is good cover, and they ignore the toxic seeds. [NCSU: Laburnum anagyroides](https://plants.ces.ncsu.edu/plants/laburnum-anagyroides/)
-- **Greenfinch / Goldfinch (Chloris / Carduelis)** — 1–3 individuals occasionally probe the pods; most birds avoid the seeds (cytisine is bitter and toxic). [Wikipedia: Laburnum anagyroides](https://en.wikipedia.org/wiki/Laburnum_anagyroides)
+- **Bumblebees (Bombus terrestris, B. pascuorum, B. hortorum)** — dozens to hundreds on a tree in full bloom; critical for early-spring colonies. [NCSU: Laburnum anagyroides](https://plants.ces.ncsu.edu/plants/laburnum-anagyroides/) [pic](../../data/creature_pics/bombus-terrestris.jpg)
+- **Honeybees (Apis mellifera)** — dozens of foragers per tree in May. [NCSU: Laburnum anagyroides](https://plants.ces.ncsu.edu/plants/laburnum-anagyroides/) [pic](../../data/creature_pics/apis-mellifera.jpg)
+- **Solitary bees (Anthophora, Osmia spp.)** — tens of individuals; one of few suspended-flower legumes available so early. [Wikipedia: Laburnum anagyroides](https://en.wikipedia.org/wiki/Laburnum_anagyroides) [pic](../../data/creature_pics/anthophora.jpg)
+- **Mining bees (Andrena spp.)** — small numbers; pollen is harvestable despite the cytisine. [Wikipedia: Laburnum anagyroides](https://en.wikipedia.org/wiki/Laburnum_anagyroides) [pic](../../data/creature_pics/andrena.jpg)
+- **Aphids (Aphidoidea, mainly broad-host species)** — hundreds on tender shoots; no laburnum-specialist aphid is established in NW Europe. [Wikipedia: Laburnum anagyroides](https://en.wikipedia.org/wiki/Laburnum_anagyroides) [pic](../../data/creature_pics/aphidoidea.jpg)
+- **Leaf-mining flies / micro-moths** — a handful of mines per tree; the foliage is unpalatable to almost all macro-moth larvae due to the alkaloids. [Wikipedia: Laburnum anagyroides](https://en.wikipedia.org/wiki/Laburnum_anagyroides) [pic](../../data/creature_pics/leaf-mining-flies-micro-moths.jpg)
+- **Ants (Lasius niger and others)** — small colonies tending the aphids for honeydew; dozens to low hundreds in the canopy. [Wikipedia: Laburnum anagyroides](https://en.wikipedia.org/wiki/Laburnum_anagyroides) [pic](../../data/creature_pics/lasius-niger.jpg)
+- **Hares & deer browsing (Lepus, Capreolus)** — unusual tolerance to cytisine; occasional individuals strip bark and shoots without harm. [Totally Wild UK: Laburnum identification](https://totallywilduk.co.uk/2023/12/13/laburnum-identification/) [pic](../../data/creature_pics/lepus.jpg)
+- **Generalist tit pair (Cyanistes caeruleus / Parus major)** — typically 1 nesting pair; the dense crown is good cover, and they ignore the toxic seeds. [NCSU: Laburnum anagyroides](https://plants.ces.ncsu.edu/plants/laburnum-anagyroides/) [pic](../../data/creature_pics/cyanistes-caeruleus.jpg)
+- **Greenfinch / Goldfinch (Chloris / Carduelis)** — 1–3 individuals occasionally probe the pods; most birds avoid the seeds (cytisine is bitter and toxic). [Wikipedia: Laburnum anagyroides](https://en.wikipedia.org/wiki/Laburnum_anagyroides) [pic](../../data/creature_pics/chloris.jpg)
 
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 15

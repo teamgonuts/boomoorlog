@@ -32,16 +32,16 @@ Zelkova is a non-native Asian elm-relative recently planted as an elm substitute
 | Wood Pigeon (Columba palumbus) | 1–2 |
 | Grey Squirrel (Sciurus carolinensis) | 1 |
 
-- **Zelkova gall aphid (Paracolopha morrisoni, Aphididae)** — host-specific aphid; hundreds to low thousands per tree where established. [Grokipedia: Zelkova serrata](https://grokipedia.com/page/Zelkova_serrata)
+- **Zelkova gall aphid (Paracolopha morrisoni, Aphididae)** — host-specific aphid; hundreds to low thousands per tree where established. [Grokipedia: Zelkova serrata](https://grokipedia.com/page/Zelkova_serrata) [pic](../../data/creature_pics/paracolopha-morrisoni.jpg)
 - **Giant zelkova aphid (Stomaphis yanonis, Aphididae)** — large trunk-dwelling aphid tended by ants; tens to low hundreds per tree. [Grokipedia: Zelkova serrata](https://grokipedia.com/page/Zelkova_serrata)
-- **Bark-fissure mites & springtails (Acari + Collembola)** — the count winner as on any urban tree; easily 10,000+ per mature trunk. [Gardenia.net: Japanese Zelkova](https://www.gardenia.net/plant/zelkova-serrata-japanese-zelkova)
-- **Generalist elm-family moths (Geometridae)** — peppered moth and other broad-host caterpillars that adopt Zelkova as a secondary host; ~5–30 per tree. [Grokipedia: Zelkova serrata](https://grokipedia.com/page/Zelkova_serrata)
-- **Trachys yanoi-type leaf-mining buprestid beetles (Buprestidae)** — leaf-miners on Zelkova in its native range, occasionally reported on ornamental specimens; ~10–100 mines per tree where present. [Life cycle of Trachys yanoi (J. Insect Sci. / PMC)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5492049/)
-- **Black garden ant (Lasius niger)** — tending the trunk and gall aphids; one or two colonies, hundreds of trunk-running foragers. [Grokipedia: Zelkova serrata](https://grokipedia.com/page/Zelkova_serrata)
-- **Blue & Great Tits (Cyanistes caeruleus / Parus major)** — gleaning aphids and caterpillars; ~1–2 pairs foraging per mature tree. [Gardenia.net: Japanese Zelkova](https://www.gardenia.net/plant/zelkova-serrata-japanese-zelkova)
-- **Goldfinch & Greenfinch (Carduelis carduelis / Chloris chloris)** — small flocks taking the tiny drupe-like seeds in autumn; 5–20 birds per fruiting tree. [Grokipedia: Zelkova serrata](https://grokipedia.com/page/Zelkova_serrata)
-- **Wood Pigeon (Columba palumbus)** — nests and roosts in the distinctive vase-shaped crown; 1–2 birds per tree. [Gardenia.net: Japanese Zelkova](https://www.gardenia.net/plant/zelkova-serrata-japanese-zelkova)
-- **Grey Squirrel (Sciurus carolinensis)** — opportunistic drey-builder and bark gnawer in city parks; 1 per tree. [Gardenia.net: Japanese Zelkova](https://www.gardenia.net/plant/zelkova-serrata-japanese-zelkova)
+- **Bark-fissure mites & springtails (Acari + Collembola)** — the count winner as on any urban tree; easily 10,000+ per mature trunk. [Gardenia.net: Japanese Zelkova](https://www.gardenia.net/plant/zelkova-serrata-japanese-zelkova) [pic](../../data/creature_pics/acari.jpg)
+- **Generalist elm-family moths (Geometridae)** — peppered moth and other broad-host caterpillars that adopt Zelkova as a secondary host; ~5–30 per tree. [Grokipedia: Zelkova serrata](https://grokipedia.com/page/Zelkova_serrata) [pic](../../data/creature_pics/geometridae.jpg)
+- **Trachys yanoi-type leaf-mining buprestid beetles (Buprestidae)** — leaf-miners on Zelkova in its native range, occasionally reported on ornamental specimens; ~10–100 mines per tree where present. [Life cycle of Trachys yanoi (J. Insect Sci. / PMC)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5492049/) [pic](../../data/creature_pics/trachys-yanoi.jpg)
+- **Black garden ant (Lasius niger)** — tending the trunk and gall aphids; one or two colonies, hundreds of trunk-running foragers. [Grokipedia: Zelkova serrata](https://grokipedia.com/page/Zelkova_serrata) [pic](../../data/creature_pics/lasius-niger.jpg)
+- **Blue & Great Tits (Cyanistes caeruleus / Parus major)** — gleaning aphids and caterpillars; ~1–2 pairs foraging per mature tree. [Gardenia.net: Japanese Zelkova](https://www.gardenia.net/plant/zelkova-serrata-japanese-zelkova) [pic](../../data/creature_pics/cyanistes-caeruleus.jpg)
+- **Goldfinch & Greenfinch (Carduelis carduelis / Chloris chloris)** — small flocks taking the tiny drupe-like seeds in autumn; 5–20 birds per fruiting tree. [Grokipedia: Zelkova serrata](https://grokipedia.com/page/Zelkova_serrata) [pic](../../data/creature_pics/carduelis-carduelis.jpg)
+- **Wood Pigeon (Columba palumbus)** — nests and roosts in the distinctive vase-shaped crown; 1–2 birds per tree. [Gardenia.net: Japanese Zelkova](https://www.gardenia.net/plant/zelkova-serrata-japanese-zelkova) [pic](../../data/creature_pics/columba-palumbus.jpg)
+- **Grey Squirrel (Sciurus carolinensis)** — opportunistic drey-builder and bark gnawer in city parks; 1 per tree. [Gardenia.net: Japanese Zelkova](https://www.gardenia.net/plant/zelkova-serrata-japanese-zelkova) [pic](../../data/creature_pics/sciurus-carolinensis.jpg)
 
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 30

@@ -32,16 +32,16 @@ Katsura is an Asian living fossil with almost no European fauna of its own — m
 | Wood Pigeon and roosting passerines (Columba palumbus, Turdus merula) | 1–3 individuals |
 | Squirrels (Sciurus spp.) | 0–1 transient |
 
-- **Aphids (Aphidoidea, generalist spp.)** — hundreds per tree at peak; routinely listed as one of the few pests, controllable with soap. [NC Extension: Cercidiphyllum japonicum](https://plants.ces.ncsu.edu/plants/cercidiphyllum-japonicum/)
-- **Two-spotted spider mite (Tetranychus urticae) and relatives** — thousands per tree under hot dry conditions; listed minor pest. [UMN UFOR: Katsura](https://trees.umn.edu/katsura-cercidiphyllum-japonicum)
-- **Armoured scales (Diaspididae)** — dozens to low hundreds per tree on bark/twigs; listed minor pest. [UMN UFOR: Katsura](https://trees.umn.edu/katsura-cercidiphyllum-japonicum)
-- **Honeybees (Apis mellifera)** — handful per tree; flowers are small and wind-pollinated but bees do visit. [Morton Arboretum: Katsura](https://mortonarb.org/plant-and-protect/trees-and-plants/katsura-tree/)
-- **Generalist bumblebees (Bombus spp.)** — handful per tree on early-spring catkin-like flowers; listed as "used by insect pollinators." [Morton Arboretum: Katsura](https://mortonarb.org/plant-and-protect/trees-and-plants/katsura-tree/)
-- **Springtails and bark-dwelling Collembola (Collembola)** — many thousands per mature tree in the moist bark microhabitat katsura prefers; qualitative — no per-tree count in literature. [NC Extension: Cercidiphyllum japonicum](https://plants.ces.ncsu.edu/plants/cercidiphyllum-japonicum/)
-- **Spiders (Araneae, generalists)** — dozens per tree; standard urban-tree complement. [NC Extension: Cercidiphyllum japonicum](https://plants.ces.ncsu.edu/plants/cercidiphyllum-japonicum/)
-- **Tits (Cyanistes caeruleus / Parus major)** — 0–1 nesting pairs per mature urban katsura, gleaning aphids; cavities rare in healthy specimens. [Bat Conservation Trust: roosts in trees](https://www.bats.org.uk/about-bats/where-do-bats-live/bat-roosts/roosts-in-trees)
-- **Wood Pigeon and roosting passerines (Columba palumbus, Turdus merula)** — 1–3 individuals roosting in the broad spreading crown; structural use only. [Morton Arboretum: Katsura](https://mortonarb.org/plant-and-protect/trees-and-plants/katsura-tree/)
-- **Squirrels (Sciurus spp.)** — 0–1 transient per tree; not a food tree, occasional pass-through. [UMN UFOR: Katsura](https://trees.umn.edu/katsura-cercidiphyllum-japonicum)
+- **Aphids (Aphidoidea, generalist spp.)** — hundreds per tree at peak; routinely listed as one of the few pests, controllable with soap. [NC Extension: Cercidiphyllum japonicum](https://plants.ces.ncsu.edu/plants/cercidiphyllum-japonicum/) [pic](../../data/creature_pics/aphidoidea.jpg)
+- **Two-spotted spider mite (Tetranychus urticae) and relatives** — thousands per tree under hot dry conditions; listed minor pest. [UMN UFOR: Katsura](https://trees.umn.edu/katsura-cercidiphyllum-japonicum) [pic](../../data/creature_pics/tetranychus-urticae.jpg)
+- **Armoured scales (Diaspididae)** — dozens to low hundreds per tree on bark/twigs; listed minor pest. [UMN UFOR: Katsura](https://trees.umn.edu/katsura-cercidiphyllum-japonicum) [pic](../../data/creature_pics/diaspididae.png)
+- **Honeybees (Apis mellifera)** — handful per tree; flowers are small and wind-pollinated but bees do visit. [Morton Arboretum: Katsura](https://mortonarb.org/plant-and-protect/trees-and-plants/katsura-tree/) [pic](../../data/creature_pics/apis-mellifera.jpg)
+- **Generalist bumblebees (Bombus spp.)** — handful per tree on early-spring catkin-like flowers; listed as "used by insect pollinators." [Morton Arboretum: Katsura](https://mortonarb.org/plant-and-protect/trees-and-plants/katsura-tree/) [pic](../../data/creature_pics/bombus.jpg)
+- **Springtails and bark-dwelling Collembola (Collembola)** — many thousands per mature tree in the moist bark microhabitat katsura prefers; qualitative — no per-tree count in literature. [NC Extension: Cercidiphyllum japonicum](https://plants.ces.ncsu.edu/plants/cercidiphyllum-japonicum/) [pic](../../data/creature_pics/collembola.jpg)
+- **Spiders (Araneae, generalists)** — dozens per tree; standard urban-tree complement. [NC Extension: Cercidiphyllum japonicum](https://plants.ces.ncsu.edu/plants/cercidiphyllum-japonicum/) [pic](../../data/creature_pics/araneae.jpg)
+- **Tits (Cyanistes caeruleus / Parus major)** — 0–1 nesting pairs per mature urban katsura, gleaning aphids; cavities rare in healthy specimens. [Bat Conservation Trust: roosts in trees](https://www.bats.org.uk/about-bats/where-do-bats-live/bat-roosts/roosts-in-trees) [pic](../../data/creature_pics/cyanistes-caeruleus.jpg)
+- **Wood Pigeon and roosting passerines (Columba palumbus, Turdus merula)** — 1–3 individuals roosting in the broad spreading crown; structural use only. [Morton Arboretum: Katsura](https://mortonarb.org/plant-and-protect/trees-and-plants/katsura-tree/) [pic](../../data/creature_pics/columba-palumbus.jpg)
+- **Squirrels (Sciurus spp.)** — 0–1 transient per tree; not a food tree, occasional pass-through. [UMN UFOR: Katsura](https://trees.umn.edu/katsura-cercidiphyllum-japonicum) [pic](../../data/creature_pics/sciurus.jpg)
 
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 45
