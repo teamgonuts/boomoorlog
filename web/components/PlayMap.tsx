@@ -52,46 +52,8 @@ type TreePoint = {
 // Today's calendar year. Used to compute ages. Fine to refresh on a 1-yr cadence.
 const CURRENT_YEAR = new Date().getFullYear();
 
-// Translations for the Dutch open-data "standplaats" and protection fields, so
-// the hover tooltip reads cleanly to an English-speaking visitor. Anything not
-// listed falls back to the original Dutch (better than dropping it).
-const LOCATION_EN: Record<string, string> = {
-  "Gras- en kruidachtigen": "Grass / herbs",
-  "Elementenverharding": "Paved (blocks)",
-  "Bosplantsoen": "Woodland park",
-  "Groenobject": "Green area",
-  "Onverhard": "Unpaved",
-  "Heesters": "Shrubs",
-  "Verhardingsobject": "Hard paving",
-  "Planten": "Plants",
-  "Terreindeel": "Terrain section",
-  "Haag": "Hedge",
-  "Bodembedekkers": "Ground cover",
-  "Halfverharding": "Semi-paved",
-  "Asfaltverharding": "Asphalt",
-  "Waterobject": "Waterside",
-  "Struikrozen": "Rose shrubs",
-};
-
-const LOCATION_DETAIL_EN: Record<string, string> = {
-  "Gazon": "Lawn",
-  "Bomen en struikvormers": "Trees & shrubs",
-  "Tegels": "Tiles",
-  "Bloemrijk gras": "Flowering grass",
-  "Ruw gras": "Rough grass",
-  "Struikvormers": "Shrubs",
-  "Straatbaksteen": "Cobblestone",
-  "Vaste planten": "Perennials",
-  "Fijne sierheester": "Ornamental shrub",
-  "Betonstraatstenen": "Concrete pavers",
-  "Loofbos": "Deciduous wood",
-  "Lijnvormige haag": "Linear hedge",
-  "Bodembedekkende heesters": "Ground-cover shrubs",
-  "Grove sierheester": "Coarse ornamental shrub",
-  "Ruigte": "Wild growth",
-  "Klinkers": "Brick pavers",
-};
-
+// Translations for the Dutch open-data protection field. Anything not listed
+// falls back to the original Dutch (better than dropping it).
 const PROTECTION_EN: Record<string, string> = {
   "Monumentale boom": "Monumental tree",
   "Bijzondere boom": "Special tree",
@@ -130,13 +92,10 @@ function tooltipFor(t: TreePoint): string {
     lines.push(`<div class="ttl-stats">${stats.join(" · ")}</div>`);
   }
 
-  // Standplaats: where it stands. Translated from Dutch open-data terms.
-  const ctxParts: string[] = [];
-  if (t.location) ctxParts.push(en(LOCATION_EN, t.location));
-  if (t.location_detail)
-    ctxParts.push(en(LOCATION_DETAIL_EN, t.location_detail));
-  const context = ctxParts.map(escapeHtml).join(" · ");
-  if (context) lines.push(`<div class="ttl-ctx">${context}</div>`);
+  // Planted year — explicit and historical. Only shown when known.
+  if (t.planting_year != null && t.planting_year >= 1500 && t.planting_year <= CURRENT_YEAR + 1) {
+    lines.push(`<div class="ttl-ctx">Planted in ${t.planting_year}</div>`);
+  }
 
   // Protected status: rare (~1.6% of trees) so call it out.
   if (t.protection_status) {
