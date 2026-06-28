@@ -1,102 +1,108 @@
 import Link from "next/link";
 
-import { Sprite } from "@/components/Sprite";
-import {
-  ARCHETYPE_BLURBS,
-  ARCHETYPE_ORDER,
-  classifyGenera,
-  type ArchetypeBase,
-  type Classified,
-} from "@/lib/archetype";
+import { classifyGenera, type Classified } from "@/lib/archetype";
 import { supabase } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
+const STAT_BARS: { key: keyof Classified; label: string }[] = [
+  { key: "attack", label: "ATK" },
+  { key: "range", label: "RNG" },
+  { key: "health", label: "HP" },
+  { key: "attack_speed", label: "SPD" },
+  { key: "move_speed", label: "MOV" },
+];
+
 export default async function HomePage() {
-  const { data: genera, error } = await supabase
-    .from("genera")
-    .select("*")
-    .not("attack", "is", null);
+  const [{ data: allGenera, error }, { count: totalTrees }] = await Promise.all([
+    supabase.from("genera").select("*"),
+    supabase.from("trees").select("*", { count: "exact", head: true }),
+  ]);
 
   if (error) {
-    return <p className="p-12 text-red-600">Error: {error.message}</p>;
+    return <p style={{ padding: 48, color: "#ff6b6b" }}>Error: {error.message}</p>;
   }
 
-  const classified = classifyGenera(genera ?? []);
-  const byArchetype: Record<ArchetypeBase, Classified[]> = {
-    Bruiser: [],
-    Juggernaut: [],
-    Skirmisher: [],
-    Support: [],
-  };
-  for (const g of classified) byArchetype[g.archetype].push(g);
-  for (const list of Object.values(byArchetype)) {
-    list.sort((a, b) => b.tree_count - a.tree_count);
-  }
+  const totalGenera = (allGenera ?? []).length;
+
+  const cards = classifyGenera(allGenera ?? []).sort(
+    (a, b) => b.tree_count - a.tree_count,
+  );
 
   return (
-    <main className="min-h-screen p-8 md:p-12 max-w-6xl mx-auto">
-      <header className="mb-12">
-        <h1 className="text-5xl font-bold tracking-tight">🌳 Boomoorlog</h1>
-        <p className="mt-3 text-lg text-gray-700 max-w-2xl">
-          &ldquo;Tree war.&rdquo; Two Amsterdam ZIP codes battle tower-defense
-          style using the <em>real</em> trees that grow in each postcode as
-          combatants. {classified.length} genera fight in four archetypes.
+    <main>
+      <section className="hero">
+        <h1>The Tree Roster</h1>
+        <p>
+          Every fully stat-blocked genus in Amsterdam, ready to march. Hover any
+          card to see the stat bars. Click for the full dossier.
         </p>
-        <p className="mt-3">
-          <Link
-            href="/wiki/trees"
-            className="text-emerald-700 hover:underline"
-          >
-            Browse the full roster →
-          </Link>
-        </p>
-      </header>
+        <div className="hero-stats">
+          <div className="hstat">
+            <b>{(totalTrees ?? 0).toLocaleString()}</b>
+            <span>trees in Amsterdam</span>
+          </div>
+          <div className="hstat">
+            <b>{totalGenera}</b>
+            <span>genera in the city</span>
+          </div>
+          <div className="hstat">
+            <b>{cards.length}</b>
+            <span>playable archetypes</span>
+          </div>
+        </div>
+      </section>
 
-      {ARCHETYPE_ORDER.map((archetype) => {
-        const list = byArchetype[archetype];
-        if (list.length === 0) return null;
-        return (
-          <section key={archetype} className="mb-12">
-            <h2 className="text-2xl font-bold">{archetype}</h2>
-            <p className="mt-1 text-sm text-gray-600 max-w-2xl">
-              {ARCHETYPE_BLURBS[archetype]}
-            </p>
-            <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-              {list.map((g) => (
-                <GenusCard key={g.slug} g={g} />
-              ))}
-            </div>
-          </section>
-        );
-      })}
+      <div className="grid">
+        {cards.map((g) => (
+          <GenusCard key={g.slug} g={g} />
+        ))}
+      </div>
     </main>
   );
 }
 
 function GenusCard({ g }: { g: Classified }) {
   return (
-    <Link
-      href={`/wiki/trees/${g.slug}`}
-      className="block bg-white border border-stone-200 rounded p-3 hover:border-emerald-400 hover:shadow-sm transition"
-    >
-      <div className="flex items-start gap-3">
-        <Sprite slug={g.slug} size={48} />
-        <div className="min-w-0">
-          <div className="font-semibold italic truncate">
-            {g.latin_name}
-            {g.isLegendary && (
-              <span className="ml-1 text-amber-600" title="Legendary">
-                ★
+    <Link href={`/wiki/trees/${g.slug}`} className={`card rarity-${g.rarity}`}>
+      <div className="card-art">
+        {/* Plain <img>: pixel sprites bypass next/image optimization anyway */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="pixel"
+          src={`/sprites/${g.slug}.png`}
+          alt={`${g.slug} sprite`}
+        />
+      </div>
+      <div className="card-name">
+        {g.slug}
+        {g.isLegendary && (
+          <span style={{ color: "var(--rare)", marginLeft: 4 }}>★</span>
+        )}
+      </div>
+      <div className="card-common">{g.dutch_name ?? g.slug}</div>
+      <div className="card-foot">
+        <span className="cnt">🌳 {g.tree_count.toLocaleString()}</span>
+      </div>
+
+      <div className="card-stats">
+        <div className="cs-name">{g.slug}</div>
+        {STAT_BARS.map(({ key, label }) => {
+          const v = g[key] as number | null;
+          const pct = v != null ? Math.round(v * 10) : 0;
+          return (
+            <div className="cs-row" key={key as string}>
+              <span className="cs-l">{label}</span>
+              <span className="cs-t">
+                <span className="cs-f" style={{ width: `${pct}%` }} />
               </span>
-            )}
-          </div>
-          <div className="text-xs text-gray-600 truncate">
-            {g.dutch_name ?? "—"}
-          </div>
-          <div className="mt-1 text-xs text-gray-500 tabular-nums">
-            {g.tree_count.toLocaleString()} trees
-          </div>
+              <b>{v ?? "—"}</b>
+            </div>
+          );
+        })}
+        <div className="cs-power">
+          <span>POWER</span>
+          <b>{g.powerScore.toFixed(1)}</b>
         </div>
       </div>
     </Link>

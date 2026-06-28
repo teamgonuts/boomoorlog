@@ -25,6 +25,22 @@ export type Classified = Genus & {
   isLegendary: boolean;
   powerAxis: number;
   agilityAxis: number;
+  powerScore: number; // mean of the 5 stats × world-rarity multiplier, 1-10
+  rarity: RarityTier;
+};
+
+export type RarityTier = "common" | "notable" | "rare";
+
+export function rarityFor(mult: number): RarityTier {
+  if (mult >= 1.25) return "rare";
+  if (mult > 1.0) return "notable";
+  return "common";
+}
+
+export const RARITY_LABEL: Record<RarityTier, string> = {
+  common: "Common",
+  notable: "Uncommon",
+  rare: "Legendary",
 };
 
 export const ARCHETYPE_ORDER: ArchetypeBase[] = [
@@ -76,10 +92,16 @@ export function classifyGenera(genera: Genus[]): Classified[] {
     else if (g.powerAxis < pMed && g.agilityAxis >= aMed) archetype = "Skirmisher";
     else archetype = "Support";
 
+    const mult = Number(g.world_rarity_multiplier);
+    const meanStat =
+      (g.attack! + g.range! + g.health! + g.attack_speed! + g.move_speed!) / 5;
+    const powerScore = Math.round(meanStat * mult * 10) / 10;
     return {
       ...g,
       archetype,
-      isLegendary: Number(g.world_rarity_multiplier) >= 1.25,
+      isLegendary: mult >= 1.25,
+      powerScore,
+      rarity: rarityFor(mult),
     };
   });
 }
