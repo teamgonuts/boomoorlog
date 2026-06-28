@@ -24,6 +24,15 @@ const STAT_LABELS: {
   { key: "move_speed", label: "Movement" },
 ];
 
+const RECENT_WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
+
+function isRecent(promoted_at: string | null): boolean {
+  if (!promoted_at) return false;
+  const t = Date.parse(promoted_at);
+  if (Number.isNaN(t)) return false;
+  return Date.now() - t < RECENT_WINDOW_MS;
+}
+
 export default async function CreaturePage({ params }: { params: Params }) {
   const { slug } = await params;
 
@@ -37,11 +46,23 @@ export default async function CreaturePage({ params }: { params: Params }) {
     return notFound();
   }
 
-  // Pull the host-tree genera so we can show "lives on" with display names.
-  const { data: hostGenera } = await supabase
-    .from("genera")
-    .select("slug, latin_name, display_name, tree_count")
-    .in("slug", creature.tree_genera);
+  const isAuto = creature.source === "auto_observed";
+  const recent = isRecent(creature.promoted_at);
+
+  // Pull host-tree genera only when we have any — auto-promoted creatures
+  // have an empty tree_genera array and we'd otherwise issue a useless query.
+  const { data: hostGenera } =
+    creature.tree_genera && creature.tree_genera.length > 0
+      ? await supabase
+          .from("genera")
+          .select("slug, latin_name, display_name, tree_count")
+          .in("slug", creature.tree_genera)
+      : { data: [] as Array<{
+          slug: string;
+          latin_name: string;
+          display_name: string | null;
+          tree_count: number | null;
+        }> };
 
   const sortedHosts = (hostGenera ?? [])
     .slice()
@@ -72,28 +93,54 @@ export default async function CreaturePage({ params }: { params: Params }) {
             ) : null}
           </h1>
 
-          <p className="lead">
-            Found on {creature.tree_count} Amsterdam tree{" "}
-            {creature.tree_count === 1 ? "genus" : "genera"}.
-          </p>
+          {isAuto ? (
+            <>
+              <p className="lead">
+                Spotted in Amsterdam in the last 30 days.
+                {creature.taxon_group ? ` ${creature.taxon_group}.` : ""}
+              </p>
 
-          <h3>Lives on these trees</h3>
-          {sortedHosts.length === 0 ? (
-            <p style={{ opacity: 0.7 }}>No host trees recorded.</p>
+              <h3>From recent sightings</h3>
+              {creature.wikipedia_summary ? (
+                <p style={{ lineHeight: 1.6 }}>{creature.wikipedia_summary}</p>
+              ) : (
+                <p style={{ opacity: 0.7 }}>
+                  No Wikipedia summary available yet.
+                </p>
+              )}
+              <p style={{ marginTop: 12, fontSize: 14, opacity: 0.8 }}>
+                Seen {creature.observations_count} time
+                {creature.observations_count === 1 ? "" : "s"} in Amsterdam in
+                the last 30 days.{" "}
+                <Link href="/observations">See on map →</Link>
+              </p>
+            </>
           ) : (
-            <ul style={{ lineHeight: 1.8 }}>
-              {sortedHosts.map((g) => (
-                <li key={g.slug}>
-                  <Link href={`/wiki/trees/${g.slug}`}>
-                    <strong>{g.latin_name}</strong>
-                  </Link>
-                  {g.display_name ? ` — ${g.display_name}` : ""}
-                  <span style={{ opacity: 0.6, marginLeft: 8 }}>
-                    ({(g.tree_count ?? 0).toLocaleString()} trees)
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <>
+              <p className="lead">
+                Found on {creature.tree_count} Amsterdam tree{" "}
+                {creature.tree_count === 1 ? "genus" : "genera"}.
+              </p>
+
+              <h3>Lives on these trees</h3>
+              {sortedHosts.length === 0 ? (
+                <p style={{ opacity: 0.7 }}>No host trees recorded.</p>
+              ) : (
+                <ul style={{ lineHeight: 1.8 }}>
+                  {sortedHosts.map((g) => (
+                    <li key={g.slug}>
+                      <Link href={`/wiki/trees/${g.slug}`}>
+                        <strong>{g.latin_name}</strong>
+                      </Link>
+                      {g.display_name ? ` — ${g.display_name}` : ""}
+                      <span style={{ opacity: 0.6, marginLeft: 8 }}>
+                        ({(g.tree_count ?? 0).toLocaleString()} trees)
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </>
           )}
 
           <h3>Gallery</h3>
@@ -106,12 +153,16 @@ export default async function CreaturePage({ params }: { params: Params }) {
               </figure>
             )}
             <figure>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="pixel"
-                src={spriteSrc}
-                alt={`${creature.common_name} battle sprite`}
-              />
+              {creature.sprite_pending ? (
+                <div className="pixel pixel-pending">sprite pending</div>
+              ) : (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  className="pixel"
+                  src={spriteSrc}
+                  alt={`${creature.common_name} battle sprite`}
+                />
+              )}
               <figcaption>Battle sprite</figcaption>
             </figure>
           </div>
@@ -127,12 +178,16 @@ export default async function CreaturePage({ params }: { params: Params }) {
               </figure>
             )}
             <figure>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="pixel"
-                src={spriteSrc}
-                alt={`${creature.common_name} sprite`}
-              />
+              {creature.sprite_pending ? (
+                <div className="pixel pixel-pending">sprite pending</div>
+              ) : (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  className="pixel"
+                  src={spriteSrc}
+                  alt={`${creature.common_name} sprite`}
+                />
+              )}
               <figcaption>Sprite</figcaption>
             </figure>
           </div>
@@ -143,9 +198,14 @@ export default async function CreaturePage({ params }: { params: Params }) {
             </div>
           )}
           <div className="ib-badges">
-            {creature.form && (
-              <span className="badge">{formLabel(creature.form)}</span>
-            )}
+            {isAuto
+              ? creature.taxon_group && (
+                  <span className="badge">{creature.taxon_group}</span>
+                )
+              : creature.form && (
+                  <span className="badge">{formLabel(creature.form)}</span>
+                )}
+            {recent && <span className="badge star">Recently spotted</span>}
           </div>
 
           {hasStats ? (
@@ -173,10 +233,17 @@ export default async function CreaturePage({ params }: { params: Params }) {
             </div>
           )}
 
-          <div className="ib-count">
-            Found on {creature.tree_count} tree{" "}
-            {creature.tree_count === 1 ? "genus" : "genera"}
-          </div>
+          {isAuto ? (
+            <div className="ib-count">
+              {creature.observations_count} sighting
+              {creature.observations_count === 1 ? "" : "s"} in last 30 days
+            </div>
+          ) : (
+            <div className="ib-count">
+              Found on {creature.tree_count} tree{" "}
+              {creature.tree_count === 1 ? "genus" : "genera"}
+            </div>
+          )}
         </aside>
       </article>
     </main>

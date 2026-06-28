@@ -62,7 +62,7 @@ scripts.
   in, battle log out. Deterministic seeded RNG. No UI, no DOM, no DB inside it.
 - **Frontend:** deferred until the app skeleton milestone.
 
-Full delivery plan and rationale live in [`memory/ROADMAP.md`](memory/ROADMAP.md).
+Full delivery plan and rationale live in [`memory/TD_ROADMAP.md`](memory/TD_ROADMAP.md).
 
 ## Live app
 
@@ -74,4 +74,4 @@ the Next.js app under `web/` replaces it.
 
 M1–M4 done (wiki, database foundation, app skeleton, address → neighborhood map).
 M5 (board generation from OSM) is next. Track progress in
-[`memory/ROADMAP.md`](memory/ROADMAP.md).
+[`memory/TD_ROADMAP.md`](memory/TD_ROADMAP.md).

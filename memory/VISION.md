@@ -3,7 +3,7 @@
 > **Direction change (2026-06-28):** pivoted from "two ZIP codes battle, marching armies
 > clash" to "defend your own ~100m neighborhood against waves of spawns, classic
 > tower-defense." This reverses the *marching-armies* decision locked 2026-06-27. Delivery
-> plan lives in [ROADMAP.md](ROADMAP.md).
+> plan lives in [TD_ROADMAP.md](TD_ROADMAP.md).
 
 ## Concept
 

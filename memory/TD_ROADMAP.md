@@ -348,6 +348,128 @@ testable headless in Node, and the frontend stays swappable.
 Enter your address → board generates → waves attack → you defend → win/lose. First version
 that's "the game."
 
+### M11 — Living creature roster (auto-discover from observations) 🔲
+
+**Goal:** every species sighted enough to matter gets promoted from a raw row in
+`observations` to a real `creatures` entry, with a Wikipedia blurb, a photo, and a
+generated pixel sprite — appearing on the wiki the next time the page is rendered.
+Builds directly on the /observations data pipe (already live with ~12k obs).
+
+**Promotion rule (locked):** a species becomes a creature when it has **≥3 sightings
+in the last 30 days** AND isn't already a creature (by exact Latin or genus-token match
+to existing `creatures.latin_name`). Genus-rollup means `Bombus pascuorum` resolves to
+the existing `Bombus` creature without creating a new row.
+
+**Steps:**
+
+1. **Schema bump** — add to `creatures`:
+   - `source text not null default 'curated' check (source in ('curated','auto_observed'))`
+   - `promoted_at timestamptz` (null for curated, set at promotion time)
+   - `taxon_group text` (so we can show "Beetle"/"Moth"/"Bird" without a join)
+   - `wikipedia_summary text` (the M12-pending lore; Wikipedia REST API fills it now)
+   - `observations_count int` (denormalised 30-day count for "recently spotted" sort)
+
+2. **Match backfill** — one-shot SQL/script: link every existing observation to an
+   existing creature where the genus-token or exact-name match hits. Drops the
+   ~330 curated creatures into use immediately; everything else stays unmatched and
+   feeds the promotion queue.
+
+3. **Promotion job** (`promote_creatures.py`, runnable on demand): finds species
+   ≥3 obs / no creature yet, then per candidate:
+   - Pick best common_name (most-common across its observations).
+   - Find a usable photo: search iNat for a CC-BY/CC-BY-NC/CC0 photo of the species
+     (across ALL obs, not just our 30-day window) → fall back to iNat taxon default →
+     fall back to Wikipedia image → otherwise flag `sprite_pending: true` and skip
+     sprite for this run.
+   - Fetch Wikipedia summary (`/api/rest_v1/page/summary/{title}`, free, no key).
+   - Generate slug from Latin name; insert creature row with `source='auto_observed'`,
+     `promoted_at=now()`, taxon_group from the source obs.
+   - Generate sprite via the `creature-pixel-art` skill from the chosen photo.
+   - Update all matching observations to point at the new `creature_slug`.
+   - **Hard cap: 20 sprites per run** to bound cost/time.
+
+4. **Wiki updates** — on `/wiki/creatures`:
+   - "Recently spotted" badge on cards whose `promoted_at` is within 7 days.
+   - New sort option "Recently spotted" alongside the current alphabetical default.
+   - Auto-observed creatures get a lean detail page template: photo, taxonomy,
+     Wikipedia blurb, observations count + link to the /observations map filtered to
+     that species. Curated detail pages stay as-is (the M12 milestone unifies later).
+
+5. **Map & AreaPanel integration on `/play`** — without this, auto-promoted creatures
+   exist in the DB but never show up in-game:
+   - **Sprite/photo file placement** — promotion job must drop the generated sprite to
+     `web/public/creature_sprites/{slug}.png` AND a copy of the source photo to
+     `web/public/creature_photos/{slug}.{ext}` (the paths the existing
+     `PlayMap.tsx` + `AreaPanel.tsx` already expect). No frontend changes needed for
+     file references — only the file-write side.
+   - **AreaPanel filter widening** — currently `PlayClient.tsx:131` filters creatures
+     by `tree_genera` overlap with neighborhood trees. Auto-promoted creatures have
+     empty `tree_genera`, so they'd never appear. New rule (union):
+     a creature shows in the widget if **either** (a) its `tree_genera` overlap the
+     neighborhood (existing curated path), **or** (b) it has at least one observation
+     within the current map bounds. (b) needs a small spatial query — easy with the
+     `observations` GiST index already in place. Net result: curated creatures keep
+     their tree-based association; auto-promoted ones surface in any neighborhood
+     where they were actually seen, and nowhere else.
+   - **Flying-creature pool** — `creaturesForMap` in `/play/page.tsx` passes ALL
+     creatures to `PlayMap`, which randomly picks 5 to animate. Add a "has a usable
+     sprite + photo" guard at server-render time (skip creatures still in
+     `sprite_pending`) so we never animate a creature with a broken `<img>`.
+   - **The /observations live map already includes auto-promoted creatures by
+     definition** (they were promoted *from* observations), so no change needed there.
+
+**Out of scope (deferred):**
+- Daily cadence + cron → **M13**.
+- Defining what creature/tree page content *should* look like long-term → **M12**.
+- Stats (Attack/Range/Health) for auto-promoted creatures → wait on enemy mechanics.
+
+**Acceptance:** schema migration applied · backfill linked all matchable existing
+obs · `python promote_creatures.py` runs end-to-end on the current 12k obs and the
+new creatures show up on `/wiki/creatures` with badges and lean detail pages · the
+sprite cap is respected · no API rate-limit errors · **on `/play` a newly-promoted
+creature whose observations fall inside the visible map appears in the AreaPanel
+"Creatures" tab AND can be picked for the flying-creature animation** (with its
+sprite + photo rendering correctly from `/creature_sprites/` + `/creature_photos/`).
+
+### M12 — Finalise trees/creatures page content 🔲
+
+**Goal:** decide what a tree page and a creature page *should* contain end-to-end.
+The current curated creature pages have rich lore from `memory/characters/*.md`;
+auto-promoted creatures from M11 land with just a Wikipedia blurb. This milestone
+pins down the content spec so both tiers eventually converge (or stay deliberately
+different).
+
+**Open questions to resolve here:** what lore is required vs. optional · how rich
+should taxonomy/identification info be · do we show conservation status / native
+vs introduced · what relationship to trees do we surface (which trees they live on,
+which they damage) · how do auto-promoted and curated entries visually differ ·
+do creatures need stat blocks for the wiki even if the game doesn't show them yet.
+
+**Deliverable:** a content spec doc in `memory/` + a layout pass on the existing
+templates. No new auto-data pipelines.
+
+### M13 — Finalise scheduling 🔲
+
+**Goal:** the M11 promotion job runs automatically without me typing a command.
+
+**Scope:**
+- Daily 03:00 Europe/Amsterdam cron (using the `schedule` skill or a Supabase
+  scheduled function) that:
+  1. Incrementally fetches the last 24h of observations (`seed_observations.py --days 1`).
+  2. Runs the promotion job (`promote_creatures.py`).
+  3. Surfaces a summary on next session (new species count, new sprites generated,
+     any failures).
+- Manual `--run-now` flag preserved for ad-hoc invocation.
+- Failure handling: a single failed sprite or Wikipedia lookup shouldn't kill the
+  whole run; failures are logged and re-tried next day.
+
+**Out of scope:** anything beyond once-a-day cadence (no event-driven triggers, no
+realtime ingest).
+
+**Acceptance:** the daily run has succeeded autonomously for at least 3 consecutive
+days, with new creatures appearing on the wiki the morning after they cross the
+3-sighting threshold.
+
 ### M10+ — Later (the DB makes these cheap) 🔲  *(was M9+)*
 Neighborhood-vs-neighborhood competitive mode (the old zip-vs-zip North star, now an
 optional mode) · shareable results · user accounts · leaderboards / neighborhood rankings.
