@@ -29,21 +29,32 @@ for the full game design.
 | Path | What it is |
 |---|---|
 | `memory/` | Game-design source of truth + delivery plan — VISION, STATS, CHARACTERS, ROADMAP, per-genus notes. |
-| `data/` | Datasets: `amsterdam_trees.csv` (298k living trees), ZIP-matched trees, PC6 boundaries, sprites, tree photos. |
+| `data/` | Raw datasets — **offline pipeline inputs only** (see note below). |
+| `db/` | SQL migrations (`001_schema.sql`, `002_indexes.sql`, `003_backfill_genera.sql`). |
+| `pipeline/` | Shared pipeline modules (`stats.py` — single source of truth for per-genus stat derivation). |
 | `docs/` | Generated static character wiki (M1 output). |
-| `*.py` | Offline data pipeline — extract trees, derive ZIP codes, generate characters & sprites, build the wiki. |
+| `*.py` | Offline data pipeline — extract trees, derive ZIP codes, generate characters & sprites, seed the DB. |
 
 ## Data pipeline (Python scripts)
 
-These are offline tools that prep data and generate the wiki — they are **not** part
-of the runtime app.
+These are offline tools that prep data, derive stats, and seed the database — they
+are **not** part of the runtime app.
 
 | Script | Purpose |
 |---|---|
 | `extract_trees.py` | Pull living trees out of the raw Amsterdam dataset. |
-| `generate_characters.py` | Build per-genus character/stat blocks. |
+| `generate_characters.py` | Render `memory/CHARACTERS.md` from `pipeline/stats.py`. |
 | `generate_sprites.py` / `_v2.py` / `generate_pixel_sprites.py` | Produce genus sprites. |
 | `build_wiki.py` | Render the static character wiki into `docs/`. |
+| `seed_genera.py` | Load `genera` table in Supabase (uses `pipeline/stats.py`). |
+| `seed_trees.py` | Bulk-load `trees` table via `COPY` (298k rows). |
+
+## Data status (as of M2)
+
+The CSVs and GeoJSON in `data/` are **raw pipeline inputs** — fed into Postgres via
+the seed scripts. The runtime app reads only from the Supabase database; nothing in
+the app touches `data/*.csv` directly. If the source data changes, re-run the seed
+scripts.
 
 ## Architecture (planned)
 
