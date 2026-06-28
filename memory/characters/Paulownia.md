@@ -16,6 +16,20 @@ Blindingly fast, deceptively light, and gone before you can retaliate — Paulow
 ## Combat flavor
 Ultra-light wood means rapid-fire, low-mass strikes — a Skirmisher that darts in, lands a flurry, and retreats before the enemy can respond. Its coppicing ability could translate to a respawn or regeneration mechanic; its invasive spread suggests a lane-creep passive.
 
+## Living creatures
+Paulownia is an Asian ornamental with almost no co-evolved European fauna — its standout ecological feature in Amsterdam is a massive, fragrant nectar flush in May that pollinators raid opportunistically.
+
+- **Honeybees (Apis mellifera)** — 100s–1,000s foraging per tree during the ~2-week bloom; Paulownia is one of very few forestry trees that is insect-pollinated and yields a prized monofloral honey. [Wikipedia: Paulownia tomentosa](https://en.wikipedia.org/wiki/Paulownia_tomentosa)
+- **Bumblebees (Bombus terrestris, B. lapidarius, B. pascuorum)** — 10s–100s per tree at bloom; the deep tubular flowers fit large bumblebee tongues. [RHS: Plants for Pollinators](https://www.rhs.org.uk/plants/types/trees/for-wildlife)
+- **Solitary bees & hoverflies (Andrena, Osmia, Syrphidae)** — 10s per tree during bloom; secondary visitors mopping up nectar. [Wikipedia: Paulownia tomentosa](https://en.wikipedia.org/wiki/Paulownia_tomentosa)
+- **Generalist aphids (Aphis spp.)** — 100s–1,000s per tree at summer peak; no Paulownia specialist aphid is established in NW Europe. [Influential Points: Aphis gossypii](https://influentialpoints.com/Gallery/Aphis_gossypii_Cotton_aphid.htm)
+- **Spider mites (Tetranychus urticae)** — 1,000s per leaf surface in hot summers; common on the large, soft Paulownia leaves. [RHS: spider mites](https://www.rhs.org.uk/biodiversity/glasshouse-red-spider-mite)
+- **Springtails & oribatid mites (Collembola, Oribatida) in bark crevices** — 1,000s–10,000s per mature trunk; generic bark microfauna, not Paulownia-specific. [Britannica: springtails](https://www.britannica.com/animal/springtail)
+- **Generalist tortricid leaf-rollers (Tortricidae)** — handfuls of caterpillars per tree; no host-specific Lepidoptera recorded in Europe. [Vlinderstichting: nachtvlinders](https://www.vlinderstichting.nl/nachtvlinders/)
+- **Earwigs (Forficula auricularia)** — 10s sheltering by day under the loose-bark plates of older Paulownia trunks. [Buglife: common earwig](https://www.buglife.org.uk/bugs/bug-directory/common-earwig/)
+- **House sparrow & blue tit (Passer domesticus, Cyanistes caeruleus)** — 1–2 nesting pairs per cavity-bearing veteran tree; opportunistic users of the soft, easy-to-rot wood. [Sovon: huismus](https://www.sovon.nl/nl/soort/15910)
+- **Common pipistrelle (Pipistrellus pipistrellus)** — occasional roost (a few bats) in cavities or behind loose bark of older trees; not a strong association. [Vleermuis.net: pipistrelle](https://www.vleermuis.net/vleermuissoorten/gewone-dwergvleermuis)
+
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 25
 - lifespan_yr: 70

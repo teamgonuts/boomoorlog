@@ -16,6 +16,20 @@ The ancient ironsmith of Persia — so dense it sinks in water and shrugs off ax
 ## Combat flavor
 Its iron-hard timber means attacks land slow but crushing — every blow carries the weight of ancient Persian mountains. Its Legendary Support role could reflect a passive "ironclad aura" that hardens adjacent allies, echoing the tree's near-mythical reputation for indestructibility.
 
+## Living creatures
+Parrotia is a Hyrcanian-relic ornamental in Hamamelidaceae with essentially no co-evolved European fauna and a famously "pest-free" reputation — its ecological footprint is dominated by early-spring pollen for bees and generalist bark/canopy microfauna.
+
+- **Honeybees & early-flying bumblebees (Apis mellifera, Bombus terrestris queens)** — 10s per tree at late-winter bloom; one of the few NW-European-grown trees flowering before witch-hazels finish. [Pacific Horticulture: Persian ironwood](https://pacifichorticulture.org/articles/striving-for-diversity-persian-ironwood/)
+- **Generalist aphids (Aphidoidea)** — 100s per tree at summer peak; no Parrotia-specialist aphid is recorded in Europe. [Influential Points: Aphidoidea overview](https://influentialpoints.com/aphid_genera.htm)
+- **Spider mites (Tetranychus urticae)** — 100s–1,000s per leaf in dry urban summers; standard ornamental-tree mite, not Parrotia-specific. [RHS: spider mites](https://www.rhs.org.uk/biodiversity/glasshouse-red-spider-mite)
+- **Springtails & oribatid mites (Collembola, Oribatida) in the mosaic exfoliating bark** — 10,000s+ per mature trunk; the flaking bark creates abundant microcavities. [Britannica: springtails](https://www.britannica.com/animal/springtail)
+- **Bark-crevice pseudoscorpions (Pseudoscorpiones, e.g. Chthonius)** — 10s per mature trunk hunting Collembola and mites. [Buglife: pseudoscorpions](https://www.buglife.org.uk/bugs/bug-directory/pseudoscorpions/)
+- **Generalist tortricid & geometrid moths (Tortricidae, Geometridae)** — handfuls of caterpillars per tree; nothing host-specific recorded. [Vlinderstichting: nachtvlinders](https://www.vlinderstichting.nl/nachtvlinders/)
+- **Earwigs (Forficula auricularia)** — 10s sheltering by day under the loose bark plates. [Buglife: common earwig](https://www.buglife.org.uk/bugs/bug-directory/common-earwig/)
+- **Ladybirds & lacewings (Coccinellidae, Chrysopidae)** — 10s overwintering in bark crevices of a mature tree; standard urban-tree refuge. [Buglife: ladybirds](https://www.buglife.org.uk/bugs/bug-directory/ladybirds/)
+- **Blue & Great Tits (Cyanistes caeruleus / Parus major)** — 1 nesting pair where a cavity exists; canopy gleaned for aphids in summer. [BTO: Blue Tit](https://www.bto.org/understanding-birds/birdfacts/blue-tit)
+- **Blackbird (Turdus merula)** — 1 pair using the dense, low-branched canopy as a sheltered nest site. [BTO: Blackbird](https://www.bto.org/understanding-birds/birdfacts/blackbird)
+
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 15
 - lifespan_yr: 150

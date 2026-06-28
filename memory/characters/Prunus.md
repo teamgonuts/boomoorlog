@@ -16,6 +16,20 @@ Amsterdam's most beloved soldier — she shows up in absurd numbers every spring
 ## Combat flavor
 The most numerous unit on the board and versatile — medium-hard wood gives solid balanced attack speed, while cyanide-laced bark is a natural poison aura that damages melee attackers. Ornamental cherry's short lifespan trades longevity for sheer swarm numbers.
 
+## Living creatures
+Prunus is one of the most wildlife-loaded genera planted in NW Europe — wild cherry alone supports 200+ Lepidoptera species, and the spring bloom is a critical early-season nectar shock for pollinators.
+
+- **Aphids (cherry blackfly, Myzus cerasi)** — 10,000s per tree at peak; dense black colonies curl young leaves every May–June. [Woodland Trust: wild cherry](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/wild-cherry/)
+- **Mason bees, bumblebees & honeybees (Osmia, Bombus, Apis)** — 100s foraging per tree during the ~2-week bloom; ornamental cherries are a keystone urban pollinator resource. [RHS: cherries for wildlife](https://www.rhs.org.uk/plants/types/trees/for-wildlife)
+- **Bird-cherry ermine moth (Yponomeuta evonymella / Y. padella, Yponomeutidae)** — 100s–1000s of caterpillars in silk-webbed colonies that can shroud an entire small tree. [Butterfly Conservation: bird-cherry ermine](https://butterfly-conservation.org/moths/bird-cherry-ermine)
+- **Winter moth (Operophtera brumata, Geometridae)** — 100s of looper caterpillars per tree in spring; the staple food that times blue tit breeding. [RHS: winter moth](https://www.rhs.org.uk/biodiversity/winter-moth-caterpillars)
+- **Brimstone moth, buff-tip & short-cloaked (Opisthograptis luteolata, Phalera bucephala, Nola cucullatella)** — tens of caterpillars across the season. [Woodland Trust: wild cherry](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/wild-cherry/)
+- **Cherry bark tortrix & cherry fruit moth (Enarmonia formosana, Argyresthia pruniella)** — 10s of larvae inside bark and fruit. [Woodland Trust: wild cherry](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/wild-cherry/)
+- **Blackbird & song thrush (Turdus merula / T. philomelos)** — 1–3 nesting pairs across a row of mature cherries; gorge on the fruit drop in midsummer. [Woodland Trust: wild cherry](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/wild-cherry/)
+- **Wood mouse / yellow-necked mouse (Apodemus sylvaticus / A. flavicollis)** — 1–5 individuals working a single fruiting tree at night, caching stones. [Woodland Trust: wild cherry](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/wild-cherry/)
+- **Hazel dormouse (Muscardinus avellanarius)** — 1 pair where Prunus is part of mixed scrub; eats flowers in spring, fruit in autumn (rare in Amsterdam itself). [Woodland Trust: wild cherry](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/wild-cherry/)
+- **Badger (Meles meles)** — 1 sett visits ground beneath a fruiting Prunus serotina to hoover fallen cherries. [Woodland Trust: wild cherry](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/wild-cherry/)
+
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 33
 - lifespan_yr: 250

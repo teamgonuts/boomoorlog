@@ -16,6 +16,20 @@ The Bald Cypress is a 2,600-year-old swamp fortress — it stands in flooded gro
 ## Combat flavor
 Legendary durability translates directly to a near-unkillable tank role — the rot-resistant wood is a natural passive regen / damage-reduction trait. The pneumatophore knees could function as obstacle-terrain hazards placed around the Taxodium's base.
 
+## Living creatures
+Bald Cypress (Taxodium) is a non-native ornamental conifer in NW Europe — its evergreen-deciduous needles host a thin local insect community, but the dense pyramidal crown is useful cover for generalist urban birds and roosting bats.
+
+- **European fruit lecanium scale (Parthenolecanium corni, Coccidae)** — easily 50–500+ per tree on twigs and branches; conspicuous brown bumps. [Florida IPM key plant / key pests baldcypress](https://journals.flvc.org/edis/article/download/105352/120805)
+- **Beech blight aphid (Grylloprociphilus imbricator, Aphididae)** — colonies of dozens to low hundreds when present; recorded on Taxodium. [CABI Taxodium distichum datasheet](https://www.cabi.org/isc/datasheet/52620)
+- **Bald cypress leafroller (Archips goyerana, Tortricidae)** and related leafroller caterpillars — periodic outbreaks; ~10–100 larvae in normal years per mature tree. [K-State Extension bald cypress](https://blogs.k-state.edu/kansasbugs/tag/bald-cypress/)
+- **Springtails (Collembola)** in needle litter under the tree — easily 10,000+ per m² of leaf litter; the largest population by raw count. [Florida IPM key plant / key pests baldcypress](https://journals.flvc.org/edis/article/download/105352/120805)
+- **Bark mites & oribatid mites (Acari)** in fissured bark — thousands per tree; cryptic but ubiquitous. [CABI Taxodium distichum datasheet](https://www.cabi.org/isc/datasheet/52620)
+- **Black garden ant (Lasius niger, Formicidae)** — tending scales/aphids; one or two colonies, hundreds of foragers running the trunk. [Florida IPM key plant / key pests baldcypress](https://journals.flvc.org/edis/article/download/105352/120805)
+- **Wood Pigeon (Columba palumbus)** — frequent roost in the dense pyramidal crown; 1–4 birds per tree typical in Amsterdam parks. [EUFORGEN Taxodium distichum](https://www.euforgen.org/species/taxodium-distichum)
+- **Blue & Great Tits (Cyanistes caeruleus / Parus major)** — gleaning scale and aphid honeydew; ~1 pair foraging regularly. [EUFORGEN Taxodium distichum](https://www.euforgen.org/species/taxodium-distichum)
+- **Common Wood Mouse (Apodemus sylvaticus)** caching fallen seeds — 1–3 per tree in autumn, mostly nocturnal. [Wikipedia: Taxodium distichum](https://en.wikipedia.org/wiki/Taxodium_distichum)
+- **Common Pipistrelle (Pipistrellus pipistrellus)** roosting under loose bark plates on older specimens — occasional, but a single bat plus its prey haul is a big biomass spike. [EUFORGEN Taxodium distichum](https://www.euforgen.org/species/taxodium-distichum)
+
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 44
 - lifespan_yr: 2624

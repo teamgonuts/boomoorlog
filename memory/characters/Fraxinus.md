@@ -16,6 +16,19 @@ A hard-swinging workhorse forged into sports bats and tool handles, now swinging
 ## Combat flavor
 Dense, shock-absorbing wood means powerful, punishing blows; its fast growth feeds a large troop count, but the looming ash-dieback threat could translate to a "plague vulnerability" debuff. Signature ability candidate: **Resilient Swing** — absorbs incoming damage briefly before counter-striking harder.
 
+## Living creatures
+Ash supports ~68 specialist invertebrates (Kennedy & Southwood 1984) plus an unusually rich bark-lichen and cavity-using vertebrate community — but the whole web is being shaken by ash dieback.
+- **Aphids on ash (Prociphilus spp., Aphis fabae)** — ~1000s per tree on leaf-nest aphids forming distinctive curled-leaf colonies. [Prociphilus on Fraxinus](https://influentialpoints.com/Gallery/Prociphilus_bumeliae_and_prociphilus_fraxini_ash_leaf-nest_aphid.htm)
+- **Ash bark beetle (Hylesinus / Leperisinus fraxini)** — ~100s–1000s of galleries per dead/stressed tree; the dominant ash subcortical beetle in Europe. [Hylesinus fraxini](https://en.wikipedia.org/wiki/Hylesinus_fraxini)
+- **Ash weevil (Stereonychus fraxini)** — ~10–100 adults defoliating per tree in outbreak years. [Stereonychus on stressed ash](https://resjournals.onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2311.1994.tb00251.x)
+- **Moth caterpillars — coronet, brick, centre-barred sallow, privet hawk-moth (Lepidoptera)** — ~100s of larvae per mature tree across the season. [Woodland Trust ash](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/ash/)
+- **Lesser stag beetle (Dorcus parallelipipedus)** — ~1–5 adults emerging from rotten ash heartwood per veteran tree; ash is one of its top hosts. [Woodland Trust ash](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/ash/)
+- **High brown / silver-washed fritillary butterflies (Argynnis spp.)** — adults nectaring in ashy clearings, ~5–20 per tree on warm days. [Woodland Trust ash](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/ash/)
+- **Bullfinch (Pyrrhula pyrrhula)** — 1–5 birds per fruiting tree; ash keys are a known winter staple for bullfinches. [Woodland Trust ash](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/ash/)
+- **Tawny Owl, Redstart, Nuthatch, Woodpeckers (Strix aluco / Phoenicurus phoenicurus / Sitta / Dendrocopos)** — 1–2 cavity-nesting pairs per veteran tree; ash forms rot-cavities readily. [Woodland Trust ash](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/ash/)
+- **Lichens & bark mosses (Lobarion, Graphidion communities)** — ~30–100+ epiphytic lichen species per veteran ash; ash bark is famously lichen-rich because it's near-neutral pH. [Kew European ash](https://www.kew.org/plants/european-ash)
+- **Common Pipistrelle / brown long-eared bat (Pipistrellus / Plecotus auritus)** — 1–10 bats per cavity-bearing veteran ash; rot-pockets and split limbs are key roosts. [Fraxinus excelsior Wikipedia](https://en.wikipedia.org/wiki/Fraxinus_excelsior)
+
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 43
 - lifespan_yr: 250

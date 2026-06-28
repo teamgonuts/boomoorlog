@@ -16,6 +16,20 @@ A poisonous scholar-warrior with centuries of imperial pedigree, patient enough 
 ## Combat flavor
 Its hard, poison-laced wood makes it a skirmisher that poisons on hit — slow to deploy (long juvenile phase) but its cultural gravitas and cytisine payload give it an outsized threat for its size. Signature ability: a toxic retaliation proc whenever it is struck.
 
+## Living creatures
+A non-native East-Asian legume, Styphnolobium has almost no specialist European herbivores — its ecological value is concentrated in one window: a massive late-summer (Aug–Sep) nectar flow that draws bees when little else is in bloom, plus persistent pods that birds occasionally probe in winter.
+
+- **Honeybees (Apis mellifera)** — a mature pagoda in full bloom hums audibly with thousands of foraging honeybees per day; valued as a late-season nectar tree in NW European cities. [NC Extension Styphnolobium](https://plants.ces.ncsu.edu/plants/styphnolobium-japonicum/)
+- **Asian giant resin bee (Megachile sculpturalis)** — large invasive solitary bee, now widespread in Europe; Styphnolobium is one of its top pollen sources, dozens of individuals can work a single tree. [Asian giant resin bee Mallorca](https://www.tandfonline.com/doi/full/10.1080/00218839.2021.1874177)
+- **Bumblebees (Bombus terrestris, B. pascuorum)** — hundreds of late-season workers per tree, exploiting Styphnolobium's August nectar gap. [PFAF Styphnolobium](https://pfaf.org/user/Plant.aspx?LatinName=Styphnolobium+japonicum)
+- **Hoverflies (Syrphidae)** — hundreds of visits/day at bloom; pagoda functions as a late-summer pollinator refuel station. [NC Extension Styphnolobium](https://plants.ces.ncsu.edu/plants/styphnolobium-japonicum/)
+- **Aphids (Aphis spp.)** — soft-shoot colonies of hundreds to low thousands per tree in spring, with attendant ants and sooty mould. [Bugwoodwiki Styphnolobium](https://wiki.bugwood.org/Styphnolobium_japonicum)
+- **Cytisine-tolerant generalist caterpillars (qualitative)** — only a handful per tree; the tree's cytisine alkaloids exclude most Lepidoptera larvae, so it is essentially caterpillar-poor in Europe. [Grokipedia Styphnolobium](https://grokipedia.com/page/Styphnolobium_japonicum)
+- **Ants (Lasius niger, Formica spp.)** — thousands per tree tending the aphid colonies and patrolling extrafloral surfaces. [Bugwoodwiki Styphnolobium](https://wiki.bugwood.org/Styphnolobium_japonicum)
+- **Greenfinch & House Sparrow (Chloris chloris / Passer domesticus)** — small numbers (5–20) seen probing the persistent winter pods opportunistically; not a major food source. [NC Extension Styphnolobium](https://plants.ces.ncsu.edu/plants/styphnolobium-japonicum/)
+- **Cavity-nesting birds (Cyanistes, Parus, Passer)** — 1–2 nesting pairs per old urban specimen with rot cavities; valued as an Amsterdam street nesting tree. [Grokipedia Styphnolobium](https://grokipedia.com/page/Styphnolobium_japonicum)
+- **Roosting bats (Pipistrellus pipistrellus)** — occasional single bats in trunk cracks of veteran urban specimens; qualitative, no per-tree counts in literature. [Grokipedia Styphnolobium](https://grokipedia.com/page/Styphnolobium_japonicum)
+
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 30
 - lifespan_yr: 300

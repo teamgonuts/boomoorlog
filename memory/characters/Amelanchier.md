@@ -16,6 +16,20 @@ The unassuming keystone — small, pretty, and ecologically indispensable, feedi
 ## Combat flavor
 Don't let the small stature fool you — Amelanchier packs surprisingly hard wood (hardest in this roster by Janka), and its keystone ecology translates to a powerful "Rally the Wildlife" aura that amplifies surrounding allied units' effectiveness.
 
+## Living creatures
+Amelanchier punches well above its size as a wildlife multiplier — one of the earliest pollen sources in spring and a fruit-stop that draws 40+ bird species in early summer, all from a tree small enough to live in a hedgerow.
+
+- **Solitary mining bees (Andrena spp. / Andrenidae)** — dozens per tree at peak bloom; serviceberry is among the very first nectar/pollen sources for emerging Andrena queens in April. [Wisconsin Hort: Serviceberry](https://hort.extension.wisc.edu/articles/serviceberry-amelanchier-spp/)
+- **Bumblebees (Bombus terrestris / Apidae)** — dozens of foundress queens working the early flowers, critical for colony establishment. [Wisconsin Hort: Woody plants for bees](https://hort.extension.wisc.edu/articles/whats-all-the-buzz-woody-plants-for-bees-butterflies-and-other-bee-t-full-pollinators/)
+- **Honey bees (Apis mellifera)** — dozens to low hundreds at full bloom; brief but valuable for hives still recovering from winter. [EcoBeneficial: Serviceberry](https://www.ecobeneficial.com/ask_ecobeneficial/is-autumn-brilliance-serviceberry-a-good-pollinator-bird-plant/)
+- **Winter moth & mottled umber caterpillars (Operophtera brumata, Erannis defoliaria / Geometridae)** — typically 20–100 caterpillars per small tree in spring; the protein supply that fuels blue-tit nests. [Backyard Ecology: Serviceberry](https://www.backyardecology.net/serviceberry/)
+- **Brimstone moth & grey dagger caterpillars (Opisthograptis luteolata, Acronicta psi)** — a handful each per tree; both use Amelanchier alongside other Rosaceae. [Backyard Ecology: Serviceberry](https://www.backyardecology.net/serviceberry/)
+- **Aphids (Aphidoidea, incl. Dysaphis spp.)** — hundreds to low thousands per tree on new growth, especially on the rolled leaves that betray Dysaphis colonies. [Backyard Ecology: Serviceberry](https://www.backyardecology.net/serviceberry/)
+- **Blackbird (Turdus merula)** — 1–3 birds stripping fruit in late June; in Amsterdam gardens, Amelanchier berries vanish within days of ripening. [Canadian Wildlife Federation: Serviceberries](https://cwf-fcf.org/en/resources/encyclopedias/flora/serviceberries.html)
+- **Song Thrush & Mistle Thrush (Turdus philomelos / T. viscivorus)** — 1–2 birds per fruiting tree; thrushes are core seed-dispersers across the genus. [NPS: Serviceberry spotlight](https://www.nps.gov/articles/netn-species-spotlight-serviceberry.htm)
+- **Eurasian Blackcap (Sylvia atricapilla)** — 1–2 birds, plus passing warblers; serviceberry fruit is timed perfectly for migrant arrival. [NPS: Serviceberry spotlight](https://www.nps.gov/articles/netn-species-spotlight-serviceberry.htm)
+- **Blue & Great Tits (Cyanistes / Parus)** — 1 nesting pair where the tree is large enough to shelter a brood; chicks are fed almost entirely on the spring caterpillar crop. [RHS: Cater for caterpillars](https://www.rhs.org.uk/garden-inspiration/plants-we-love/cater-for-caterpillars-with-verbascum)
+
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 12
 - lifespan_yr: 50

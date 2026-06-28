@@ -17,6 +17,20 @@ An ancient, resin-soaked sentinel who has been standing guard for centuries and 
 ## Combat flavor
 Low wood density means Thuja is no powerhouse on individual strikes, but its legendary rot-resistance and extreme longevity give it exceptional staying power — the Bruiser that simply refuses to die. Thujone toxicity is a natural seed for a passive poison-aura ability.
 
+## Living creatures
+Arborvitae (Thuja) is a North American conifer with a thin specialist insect fauna in NW Europe — but the dense evergreen wall is prime winter cover for small passerines and a reliable nesting hedge.
+
+- **Cypress aphid (Cinara cupressi sensu lato, Aphididae)** — the #1 Thuja problem in NW Europe; colonies regularly 1,000–10,000+ per tree, blamed for over half of brown-patch dieback. [Hopes Grove Nurseries: Thuja pests & diseases](https://www.hopesgrovenurseries.co.uk/knowledge-base/thuja-pests-diseases/)
+- **Cypress tip moth / Arborvitae leafminer (Argyresthia spp., Argyresthiidae)** — needle-mining micromoth larvae; commonly hundreds per tree, browning the tips. [Hopes Grove Nurseries: Thuja pests & diseases](https://www.hopesgrovenurseries.co.uk/knowledge-base/thuja-pests-diseases/)
+- **Juniper scale (Carulaspis juniperi, Diaspididae)** — flat white scales smothering twigs; hundreds to thousands per infested tree. [University of Kentucky: Common insect pests of arborvitae](https://www.uky.edu/Ag/Entomology/treepestguide/arborvitae.html)
+- **Bagworm (Psychidae, e.g. Thyridopteryx, Psyche)** — distinctive silk-bag caterpillars; ~10–200 bags per tree in outbreak years. [Hopes Grove Nurseries: Thuja pests & diseases](https://www.hopesgrovenurseries.co.uk/knowledge-base/thuja-pests-diseases/)
+- **Arborvitae weevil (Phyllobius intrusus, Curculionidae)** — recently arrived in Europe; adults notch foliage edges; ~10–100 per tree where established. [The first European records of the arborvitae weevil Phyllobius intrusus (PDF)](http://www.entomologi.no/journals/nje/2010-2/pdf/nje-vol57-no2-odegaard-berggren.pdf)
+- **Spider mites (Tetranychidae, esp. spruce spider mite Oligonychus ununguis)** — micro-arachnids; tens of thousands per tree at peak; the highest raw count. [University of Kentucky: Common insect pests of arborvitae](https://www.uky.edu/Ag/Entomology/treepestguide/arborvitae.html)
+- **Black garden ant (Lasius niger)** — tending the cypress aphids for honeydew; one or two colonies, hundreds of foragers per trunk. [Hopes Grove Nurseries: Thuja pests & diseases](https://www.hopesgrovenurseries.co.uk/knowledge-base/thuja-pests-diseases/)
+- **Wood Pigeon & Collared Dove (Columba palumbus / Streptopelia decaocto)** — nest and roost in the dense evergreen interior; 1–2 nesting pairs per mature tree. [Leaves for Wildlife: Eastern White Cedar](https://www.leavesforwildlife.com/product-page/cedar-eastern-white-thuja-occidentalis)
+- **Goldcrest & Firecrest (Regulus regulus / R. ignicapilla)** — winter roost favourite in conifer hedges; can pack 5–20 birds into a single Thuja overnight. [Leaves for Wildlife: Eastern White Cedar](https://www.leavesforwildlife.com/product-page/cedar-eastern-white-thuja-occidentalis)
+- **Blackbird (Turdus merula)** — a classic Thuja-hedge nester in Dutch gardens; 1 pair per tree, low in the canopy. [Leaves for Wildlife: Eastern White Cedar](https://www.leavesforwildlife.com/product-page/cedar-eastern-white-thuja-occidentalis)
+
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 60
 - lifespan_yr: 400

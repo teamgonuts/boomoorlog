@@ -16,6 +16,20 @@ The scrappy nitrogen fixer of the waterfront — colonising devastated ground, e
 ## Combat flavor
 Short lifespan means Alnus is a fast, cheap-to-deploy frontline unit that enriches adjacent allies (nitrogen-fixing buff aura); its rot-resistant-when-wet wood suggests effectiveness in flooded terrain. Signature ability candidate: **Soil Enrichment** — passive aura that boosts growth speed of neighbouring tree units.
 
+## Living creatures
+Alnus is a true ecological keystone of NW European wetlands — host to 90+ phytophagous invertebrate species, the only winter food source for siskins and redpolls, and one of the most insect-rich trees relative to its biomass.
+
+- **Alder leaf beetle (Agelastica alni / Chrysomelidae)** — easily hundreds to low thousands per tree in outbreak years; iridescent blue beetles skeletonising foliage by mid-summer. [Wikipedia: Agelastica alni](https://en.wikipedia.org/wiki/Agelastica_alni)
+- **Alder aphids (Pterocallis alni / Aphididae)** — thousands per mature tree; dense colonies on leaf undersides driving the honeydew economy. [NatureSpot: Alder](https://www.naturespot.org/species/alder)
+- **Alder spittlebugs & psyllids (Aphrophora alni, Psylla alni)** — dozens to hundreds; the foam-flecked "cuckoo spit" on Alnus twigs in early summer is mostly Aphrophora. [NatureSpot: Alder](https://www.naturespot.org/species/alder)
+- **Frankia root nodule bacteria (Frankia alni / Frankiaceae)** — billions per root system; the actinobacterial symbiont fixing 130–320 kg N/ha/yr and effectively making Alnus a tree-shaped nitrogen pump. [Wikipedia: Alnus glutinosa](https://en.wikipedia.org/wiki/Alnus_glutinosa)
+- **Alder moths and tussocks (Acronicta alni, Eriogaster lanestris / Noctuidae, Lasiocampidae)** — a few dozen larvae per tree across the season; alder moth caterpillars are striking bird-dropping mimics. [Woodland Trust: Alder](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/alder/)
+- **Honey bees on early catkins (Apis mellifera)** — dozens at the male catkins in February–March, one of the very earliest pollen sources of the NW European year. [Woodland Trust: Alder](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/alder/)
+- **Eurasian Siskin (Spinus spinus)** — winter flocks of 10–50 per fruiting tree; alder cones are their staple cold-season food. [Woodland Trust: Alder](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/alder/)
+- **Lesser Redpoll (Acanthis cabaret)** — small flocks of 5–20 per tree, often mixed with siskins, prising seeds from the woody cones in winter. [Wildlife Trusts: Alder](https://www.wildlifetrusts.org/wildlife-explorer/trees-and-shrubs/alder)
+- **European Goldfinch (Carduelis carduelis)** — typically 2–10 birds per tree picking seed from the cones in autumn. [Lough Neagh Partnership: Alder](https://loughneaghpartnership.org/species-focus-alder/)
+- **Otter & water vole (Lutra lutra, Arvicola amphibius)** — 1 individual using submerged alder roots as bank-side cover; Amsterdam's canal alders are favoured otter resting sites where they recolonise. [Wildlife Trusts: Alder](https://www.wildlifetrusts.org/wildlife-explorer/trees-and-shrubs/alder)
+
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 40
 - lifespan_yr: 100

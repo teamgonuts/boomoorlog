@@ -16,6 +16,20 @@ A prickly, berry-bearing evergreen that shelters birds in its dense canopy throu
 ## Combat flavor
 A slow-growing but resilient defender with double-edged ecology: its dense spiny canopy is a natural barrier, while toxic red berries could function as a passive area-denial poison drop. The "spinier at the bottom" trait hints at a mechanic where its defense scales inversely with threat proximity.
 
+## Living creatures
+Evergreen dense canopy + winter berries = an unusually concentrated wildlife magnet for its size; specialist associates (holly leaf miner, Holly Blue) are tied to no other tree.
+
+- **Holly leaf miner (Phytomyza ilicis, Agromyzidae)** — typically 5–25% of leaves mined; a mature tree can carry several thousand mines simultaneously. [Wikipedia: Phytomyza ilicis](https://en.wikipedia.org/wiki/Phytomyza_ilicis)
+- **Holly Blue butterfly (Celastrina argiolus, Lycaenidae)** — 1–5 caterpillars per tree on flower buds in spring; holly is the primary spring host. [Woodland Trust holly](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/holly/)
+- **Holly tortrix and yellow-barred brindle moths (Rhopobota / Acasis)** — several dozen larvae per tree across the season. [Woodland Trust holly](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/holly/)
+- **Honeybees and solitary bees (Apis, Andrena spp.)** — dozens to low hundreds visit the small white flowers in May. [Woodland Trust holly](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/holly/)
+- **Parasitoid wasps of the leaf miner (Chalcidoidea, esp. Chrysocharis, Pleurotropis)** — hundreds per tree, tracking the miner population. [Edinburgh: holly leaf-miner and its parasites](https://era.ed.ac.uk/handle/1842/27748)
+- **Mistle Thrush (Turdus viscivorus)** — 1 individual often defends a berry-laden holly as a winter larder. [Wikipedia: Mistle thrush](https://en.wikipedia.org/wiki/Mistle_thrush)
+- **Blackbird, Song Thrush, Redwing, Fieldfare (Turdus spp.)** — 1–10 birds at a time stripping berries in midwinter. [BTO ID guide to berries](https://www.bto.org/learn/about-birds/behaviour/bird-behaviour-eating-berries-and-fruit/id-guide-berries)
+- **Blue & Great Tits (Cyanistes / Parus)** — leave characteristic V-tears in mined leaves; 1 nesting pair often uses the dense spiny canopy. [Field Studies Council holly leaf miner](https://www.field-studies-council.org/resources/14-16-biology/food-chains/holly-leaf-miner/)
+- **Wren / Dunnock / Robin (Troglodytes, Prunella, Erithacus)** — 1–2 nests in the spiny lower canopy; the prickly leaves deter predators. [Woodland Trust holly](https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/british-trees/a-z-of-british-trees/holly/)
+- **Woodpigeon (Columba palumbus)** — a few birds gulping whole berries; a major late-winter disperser. [BTO ID guide to berries](https://www.bto.org/learn/about-birds/behaviour/bird-behaviour-eating-berries-and-fruit/id-guide-berries)
+
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 25
 - lifespan_yr: 300

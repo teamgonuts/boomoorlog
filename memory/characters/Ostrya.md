@@ -16,6 +16,19 @@ The understory bruiser who never gets credit — tougher wood than oak, shruggin
 ## Combat flavor
 Dense wood means slow, powerful strikes that ignore light armour. The hop-like seed pods could inspire a "scatter shot" special — flinging clusters of hard nutlets to slow or distract enemy waves.
 
+## Living creatures
+Hop hornbeam (Ostrya carpinifolia) is a native European understory tree whose insect fauna overlaps heavily with its close cousin Carpinus — a respectable host with hop-like seed clusters that finches and small mammals exploit through winter.
+- **Leaf-mining micromoths (Gracillariidae, Stigmella spp. / Nepticulidae)** — hundreds of mines per tree per year; the dominant herbivore guild on Ostrya. [UK Fly Mines: Stigmella carpinella](https://www.ukflymines.co.uk/Moths/Stigmella_carpinella.php)
+- **Winter moth & geometrid caterpillars (Operophtera brumata, etc. / Geometridae)** — hundreds per tree in spring; shared with most NW European broadleaves. [RHS: Winter moth](https://www.rhs.org.uk/biodiversity/winter-moth-caterpillars)
+- **Gypsy moth caterpillars (Lymantria dispar / Erebidae)** — dozens to hundreds in outbreak years; a known Ostrya defoliator in southern Europe. [Grokipedia: Ostrya carpinifolia](https://grokipedia.com/page/Ostrya_carpinifolia)
+- **Aphids (Aphidoidea)** — colonies of hundreds to low thousands per tree; generalist Carpinus/Ostrya feeders. [Botanical Realm: European Hop-hornbeam](https://www.botanicalrealm.com/plant-identification/european-hop-hornbeam-ostrya-carpinifolia/)
+- **Honey bees & solitary bees (Apidae, Andrenidae)** — dozens visiting the catkins for early pollen; wind-pollinated but bee-supplemented. [Balkan Ecology Project: Ostrya](https://www.balkep.org/ostrya-carpinifolia---hop-hornbeam.html)
+- **Goldfinch & siskin (Carduelis carduelis, Spinus spinus / Fringillidae)** — small flocks of 3–15 working the hop-like seed clusters in autumn and winter. [Wildlife Trusts: Siskin](https://www.wildlifetrusts.org/wildlife-explorer/birds/finches-and-buntings/siskin)
+- **Blue & Great Tits (Cyanistes/Parus)** — 1–2 nesting pairs typical; glean caterpillars from the dense crown in spring. [EUFORGEN: Ostrya carpinifolia](https://www.euforgen.org/species/ostrya-carpinifolia)
+- **Wood mouse & bank vole (Apodemus sylvaticus, Myodes glareolus)** — single individuals per tree, regular visitors; cache the small nutlets. [Botanical Realm](https://www.botanicalrealm.com/plant-identification/european-hop-hornbeam-ostrya-carpinifolia/)
+- **White truffle (Tuber magnatum) mycorrhizal partner** — not strictly an animal but worth noting: Ostrya is a confirmed host for Europe's most prized truffle. [Balkan Ecology Project](https://www.balkep.org/ostrya-carpinifolia---hop-hornbeam.html)
+- **Roosting bats (Pipistrellus spp.) in old trunks** — occasional 1 individual in fissured veteran trees; qualitative, no per-tree count in literature. [EUFORGEN: Ostrya carpinifolia](https://www.euforgen.org/species/ostrya-carpinifolia)
+
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 20
 - lifespan_yr: 150

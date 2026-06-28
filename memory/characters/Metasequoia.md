@@ -16,6 +16,19 @@ A ghost from the Cretaceous who refused to go extinct, the Dawn Redwood charges 
 ## Combat flavor
 Ultra-light wood paradoxically pairs with legendary bulk (huge max height, ancient lineage) — a slow, titanic guardian with surprising rot-resistance as a passive shield trait. Its living-fossil status could fuel a "Time Warp" ability freezing an enemy's buffs.
 
+## Living creatures
+Dawn redwood (Metasequoia) is non-native to Europe with almost no co-evolved herbivores here — it stays famously pest-free. Most "tenants" are generalists using its dense feathery canopy as structure, not food.
+- **Aphids (Aphidoidea, generalist greenfly)** — hundreds to low thousands per tree in good years; generalist colonisers, no Metasequoia specialist in Europe. [Botanical Realm: Dawn redwood](https://www.botanicalrealm.com/plant-identification/dawn-redwoods-metasequoia/)
+- **Spider mites (Tetranychidae)** — uncountable on stressed, dry urban specimens; classic conifer pest opportunists. [Botanical Realm](https://www.botanicalrealm.com/plant-identification/dawn-redwoods-metasequoia/)
+- **Bark beetle Phloeosinus metasequoiae (Curculionidae: Scolytinae)** — China only; absent from Europe but the genus's only co-evolved herbivore worth naming. [PMC: Phloeosinus metasequoiae sp. nov.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11868798/)
+- **Cypress bark beetle (Phloeosinus aubei / Curculionidae)** — occasional dozens on stressed European trees; reported on related Cupressaceae and may probe dawn redwood. [PMC: Chemical ecology of Phloeosinus aubei](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12841671/)
+- **Springtails (Collembola) in bark crevices** — many thousands per tree; standard arboreal detritivores, not Metasequoia-specific. [Botanical Realm](https://www.botanicalrealm.com/plant-identification/dawn-redwoods-metasequoia/)
+- **Goldcrest (Regulus regulus / Regulidae)** — 1–3 individuals roosting in the dense canopy in winter; the bird most reliably found in tall conifers. [Birdfact: Goldcrest nesting](https://www.birdfact.com/birds/goldcrest/nesting)
+- **Coal tit (Periparus ater / Paridae)** — 1 nesting pair typical, plus winter foragers; classic conifer-canopy specialist. [Birdfact: Coal tit nesting](https://www.birdfact.com/birds/coal-tit/nesting)
+- **Wood pigeons & corvids (Columba/Corvus)** — 1–2 nests in older trees; use the tall structure for safe nest sites. [Botanical Realm](https://www.botanicalrealm.com/plant-identification/dawn-redwoods-metasequoia/)
+- **Grey squirrel (Sciurus carolinensis, where present)** — 1–2 individuals using the canopy for travel and drey-building. [Woodlands.co.uk: Dawn redwood](https://www.woodlands.co.uk/blog/flora-and-fauna/unusual-and-exotic-trees-the-dawn-redwood/)
+- **Roosting bats (Pipistrellus spp.) in older trunk fissures** — occasional 1 individual; qualitative, no per-tree count in literature. [Botanical Realm](https://www.botanicalrealm.com/plant-identification/dawn-redwoods-metasequoia/)
+
 ## Stat inputs (for central normalization — RAW numbers, do not normalize)
 - max_height_m: 51
 - lifespan_yr: 600
