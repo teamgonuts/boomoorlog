@@ -264,42 +264,64 @@ def form_moth(ramp, P):
 
 
 def form_bee(ramp, P):
-    """Side-view bee/wasp/fly: head right + striped abdomen left + wing arching
-    UP over the back. Body sits low in the canvas so the wing has room above."""
+    """Side-view bee/wasp/fly. Layout (left→right): fat striped abdomen, fuzzy
+    thorax, round head with big compound eye. A pale wing arches up over the
+    back. Stripes are classic pixel-art HORIZONTAL bands on the abdomen for
+    instant readability (anatomically each band wraps the body but flat-shaded
+    horizontal stripes are the convention that reads as "bee")."""
     g = _blank()
     s = P["size"]
-    # body lives in the LOWER half of the canvas so the wing sticks UP clearly
+    # body lives in the LOWER half so the wing has room above
     body_cy = CY + 4
+
+    # ---- abdomen ----
     ab_rx = max(5, int(round(7 * s * P["aspect"])))
-    ab_ry = max(2, int(round(3 * s / max(0.6, P["aspect"]))))
-    ab_cx = CX - 2
+    ab_ry = max(3, int(round(4 * s / max(0.6, P["aspect"]))))
+    ab_cx = CX - 4
     _fill_ellipse(g, ab_cx, body_cy, ab_rx, ab_ry, ramp, span=ab_rx)
-    # head/thorax (right side)
+    # horizontal stripes — paint 2 dark bands across the abdomen.
+    # bands are 1 row tall and span only abdomen-shaped pixels.
+    for stripe_dy in (-1, 1):
+        y = body_cy + stripe_dy
+        for x in range(WP):
+            if 0 <= y < HP and g[y][x] in (ramp["mid"], ramp["dark"], ramp["light"]):
+                g[y][x] = ramp["outline"]
+
+    # ---- thorax (middle — slightly higher) ----
     th_r = max(2, int(round(3 * s)))
     th_cx = ab_cx + ab_rx
     th_cy = body_cy - 1
     _fill_ellipse(g, th_cx, th_cy, th_r, th_r, ramp, span=th_r)
-    # eye
-    for dy in (-1, 0):
-        xx, yy = th_cx + th_r - 1, th_cy + dy
-        if 0 <= xx < WP and 0 <= yy < HP:
-            g[yy][xx] = ramp["outline"]
-    # WING — one big pale arched ellipse going up and back, drawn LAST so visible.
-    # Pale fill + dark outline so it reads even on a saturated body.
+
+    # ---- head (right) ----
+    hd_r = max(2, int(round(3 * s)))
+    hd_cx = th_cx + th_r + 1
+    hd_cy = th_cy + 1
+    _fill_ellipse(g, hd_cx, hd_cy, hd_r, hd_r, ramp, span=hd_r)
+
+    # ---- big black compound eye (2x2 block on the front of the head) ----
+    eye_x0 = hd_cx + hd_r - 2
+    for dy in range(2):
+        for dx in range(2):
+            xx, yy = eye_x0 + dx, hd_cy - 1 + dy
+            if 0 <= xx < WP and 0 <= yy < HP and g[yy][xx] is not None:
+                g[yy][xx] = ramp["outline"]
+
+    # ---- WING — pale arched ellipse, drawn LAST so visible on top ----
     wing_rx = max(7, int(round(9 * s)))
     wing_ry = max(3, int(round(5 * s)))
-    wing_cx = ab_cx + 1
-    wing_cy = body_cy - ab_ry - wing_ry + 2
+    wing_cx = ab_cx + 2
+    wing_cy = body_cy - ab_ry - wing_ry + 3
     for y in range(HP):
         for x in range(WP):
             d = ((x - wing_cx) / wing_rx) ** 2 + ((y - wing_cy) / wing_ry) ** 2
-            if d <= 1.0 and y <= body_cy - ab_ry:
-                # edge → dark, interior → very pale wing-membrane color
-                if d >= 0.7:
-                    g[y][x] = ramp["dark"]
+            if d <= 1.0 and y < body_cy - ab_ry + 1:
+                if d >= 0.78:
+                    g[y][x] = ramp["dark"]    # wing edge / veins
                 else:
-                    g[y][x] = ramp["light"]
-    # legs underneath
+                    g[y][x] = ramp["light"]   # pale membrane
+
+    # ---- legs underneath ----
     if P["legs"]:
         for k in (-3, 0, 3):
             xx, yy = ab_cx + k, body_cy + ab_ry
@@ -307,10 +329,11 @@ def form_bee(ramp, P):
                 g[yy][xx] = ramp["outline"]
             if 0 <= xx < WP and 0 <= yy + 1 < HP:
                 g[yy + 1][xx] = ramp["outline"]
-    # antennae
+
+    # ---- antennae (curl forward off the head) ----
     if P["antennae"]:
         for k in (1, 2):
-            xx, yy = th_cx + th_r - 2 + k, th_cy - th_r - k + 1
+            xx, yy = hd_cx + k, hd_cy - hd_r - k + 1
             if 0 <= xx < WP and 0 <= yy < HP:
                 g[yy][xx] = ramp["outline"]
     return g, ab_rx

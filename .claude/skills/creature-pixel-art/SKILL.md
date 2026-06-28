@@ -36,6 +36,13 @@ them distinct.
 
 ## Workflow
 
+> **CRITICAL: the photo is the source of truth — not the filename, the latin
+> name, or the bullet description in the character file.** Many creature pics
+> show the ADULT form of an insect whose bullet talks about the LARVA (or
+> vice versa). Always pick the `--form` from what you see in the image. A
+> grey moth at rest on bark is `--form moth` even if the file is named
+> `acronicta-aceris.jpg` and the bullet calls it a "caterpillar."
+
 1. **View the photo.** Open the input image with the Read tool. Never guess
    from the filename or the latin name. Look at five things:
    - **Body plan** → picks the `--form`.
@@ -128,9 +135,15 @@ them distinct.
 
 - **Sycamore aphid** — small pale-green sap-feeder:
   `--form bug --hue 110 --sat 50 --size 0.85 --aspect 1.1 --seed 1`
-- **Honey bee** — golden body with dark stripes:
-  `--form bee --hue 38 --sat 75 --aspect 1.3 --accent-hue 25 --accent 50 --accent-mode stripes --seed 2`
-- **Sycamore moth caterpillar** — yellow-orange "punk" larva with bristles:
+- **Honey bee** — golden body with bee-form built-in dark stripes (no
+  --accent needed — the bee form bakes stripes onto the abdomen):
+  `--form bee --hue 38 --sat 78 --aspect 1.3 --seed 2`
+- **Sycamore moth — ADULT** (Acronicta aceris) — pale grey moth at rest
+  with dark eye-spot wing markings (NOT a caterpillar — the photo shows
+  the adult resting on bark):
+  `--form moth --hue 30 --sat 12 --size 1.05 --accent-hue 0 --accent 12 --accent-mode spots --seed 3`
+- **Sycamore moth — LARVA** (only if the photo actually shows the
+  caterpillar) — yellow-orange "punk" with prominent tufts:
   `--form caterpillar --hue 45 --sat 65 --bristles --seed 3`
 - **Codling moth** — small brown moth:
   `--form moth --hue 28 --sat 45 --seed 4`
