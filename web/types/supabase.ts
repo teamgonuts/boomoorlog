@@ -101,6 +101,41 @@ export type Database = {
           },
         ];
       };
+      creatures: {
+        Row: {
+          slug: string;
+          common_name: string;
+          latin_name: string | null;
+          pic_file: string | null;
+          tree_count: number;
+          tree_genera: string[];
+          form: string | null;
+          // future-proof game stats — all nullable until populated.
+          attack: number | null;
+          range: number | null;
+          health: number | null;
+          attack_speed: number | null;
+          move_speed: number | null;
+          created_at: string;
+        };
+        Insert: {
+          slug: string;
+          common_name: string;
+          latin_name?: string | null;
+          pic_file?: string | null;
+          tree_count?: number;
+          tree_genera?: string[];
+          form?: string | null;
+          attack?: number | null;
+          range?: number | null;
+          health?: number | null;
+          attack_speed?: number | null;
+          move_speed?: number | null;
+          created_at?: string;
+        };
+        Update: Partial<Database["public"]["Tables"]["creatures"]["Insert"]>;
+        Relationships: [];
+      };
     };
     Views: Record<string, never>;
     Functions: {
@@ -112,9 +147,19 @@ export type Database = {
         };
         Returns: Database["public"]["Tables"]["trees"]["Row"][];
       };
+      trees_in_bbox: {
+        Args: {
+          lat_min: number;
+          lng_min: number;
+          lat_max: number;
+          lng_max: number;
+        };
+        Returns: Database["public"]["Tables"]["trees"]["Row"][];
+      };
     };
   };
 };
 
 export type Genus = Database["public"]["Tables"]["genera"]["Row"];
 export type Tree = Database["public"]["Tables"]["trees"]["Row"];
+export type Creature = Database["public"]["Tables"]["creatures"]["Row"];

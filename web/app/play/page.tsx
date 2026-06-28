@@ -13,22 +13,39 @@ import type { Genus, Tree } from "@/types/supabase";
 export const dynamic = "force-dynamic";
 
 const RADIUS_M = 250;
-// Supabase's PostgREST caps every request at 1000 rows. Page through it.
+// Bbox the map is going to show — slightly bigger than the auto-fit so corners
+// and a small pan margin are pre-loaded. fitBounds uses `radius * 2.2` as the
+// edge length; we query `radius * 2.4` to add a thin buffer.
+const VIEW_BBOX_HALF_SIDE_M = RADIUS_M * 1.2;
 const PAGE_SIZE = 1000;
-// Same key the AddressInput writes on the client.
 const COOKIE_NAME = "lastAddress";
 
-async function fetchAllTreesWithin(
-  lat: number,
-  lng: number,
-  radius_m: number,
-): Promise<Tree[]> {
+// Convert meters to lat/lng deltas at the given latitude. Good enough for
+// Amsterdam-sized bboxes — we're not crossing a pole.
+const METERS_PER_DEG_LAT = 111_320;
+function bboxAround(lat: number, lng: number, halfSideM: number) {
+  const dLat = halfSideM / METERS_PER_DEG_LAT;
+  const dLng = halfSideM / (METERS_PER_DEG_LAT * Math.cos((lat * Math.PI) / 180));
+  return {
+    lat_min: lat - dLat,
+    lng_min: lng - dLng,
+    lat_max: lat + dLat,
+    lng_max: lng + dLng,
+  };
+}
+
+async function fetchTreesInBbox(args: {
+  lat_min: number;
+  lng_min: number;
+  lat_max: number;
+  lng_max: number;
+}): Promise<Tree[]> {
   const out: Tree[] = [];
   for (let from = 0; ; from += PAGE_SIZE) {
     const { data, error } = await supabase
-      .rpc("trees_within_radius", { lat, lng, radius_m })
+      .rpc("trees_in_bbox", args)
       .range(from, from + PAGE_SIZE - 1);
-    if (error) throw new Error(`trees_within_radius: ${error.message}`);
+    if (error) throw new Error(`trees_in_bbox: ${error.message}`);
     if (!data || data.length === 0) break;
     out.push(...(data as unknown as Tree[]));
     if (data.length < PAGE_SIZE) break;
@@ -75,8 +92,9 @@ export default async function PlayPage({
     if (isGeocodeHit(geo)) {
       center = { lat: geo.lat, lng: geo.lng };
       resolvedAddress = geo.display_name;
+      const bbox = bboxAround(geo.lat, geo.lng, VIEW_BBOX_HALF_SIDE_M);
       const [treeList, gResp] = await Promise.all([
-        fetchAllTreesWithin(geo.lat, geo.lng, RADIUS_M),
+        fetchTreesInBbox(bbox),
         supabase.from("genera").select("*"),
       ]);
       trees = treeList;

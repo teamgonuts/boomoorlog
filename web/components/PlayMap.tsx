@@ -43,6 +43,55 @@ type TreePoint = {
 // Today's calendar year. Used to compute ages. Fine to refresh on a 1-yr cadence.
 const CURRENT_YEAR = new Date().getFullYear();
 
+// Translations for the Dutch open-data "standplaats" and protection fields, so
+// the hover tooltip reads cleanly to an English-speaking visitor. Anything not
+// listed falls back to the original Dutch (better than dropping it).
+const LOCATION_EN: Record<string, string> = {
+  "Gras- en kruidachtigen": "Grass / herbs",
+  "Elementenverharding": "Paved (blocks)",
+  "Bosplantsoen": "Woodland park",
+  "Groenobject": "Green area",
+  "Onverhard": "Unpaved",
+  "Heesters": "Shrubs",
+  "Verhardingsobject": "Hard paving",
+  "Planten": "Plants",
+  "Terreindeel": "Terrain section",
+  "Haag": "Hedge",
+  "Bodembedekkers": "Ground cover",
+  "Halfverharding": "Semi-paved",
+  "Asfaltverharding": "Asphalt",
+  "Waterobject": "Waterside",
+  "Struikrozen": "Rose shrubs",
+};
+
+const LOCATION_DETAIL_EN: Record<string, string> = {
+  "Gazon": "Lawn",
+  "Bomen en struikvormers": "Trees & shrubs",
+  "Tegels": "Tiles",
+  "Bloemrijk gras": "Flowering grass",
+  "Ruw gras": "Rough grass",
+  "Struikvormers": "Shrubs",
+  "Straatbaksteen": "Cobblestone",
+  "Vaste planten": "Perennials",
+  "Fijne sierheester": "Ornamental shrub",
+  "Betonstraatstenen": "Concrete pavers",
+  "Loofbos": "Deciduous wood",
+  "Lijnvormige haag": "Linear hedge",
+  "Bodembedekkende heesters": "Ground-cover shrubs",
+  "Grove sierheester": "Coarse ornamental shrub",
+  "Ruigte": "Wild growth",
+  "Klinkers": "Brick pavers",
+};
+
+const PROTECTION_EN: Record<string, string> = {
+  "Monumentale boom": "Monumental tree",
+  "Bijzondere boom": "Special tree",
+};
+
+function en(map: Record<string, string>, value: string): string {
+  return map[value] ?? value;
+}
+
 function escapeHtml(s: string): string {
   return s
     .replace(/&/g, "&amp;")
@@ -72,17 +121,20 @@ function tooltipFor(t: TreePoint): string {
     lines.push(`<div class="ttl-stats">${stats.join(" · ")}</div>`);
   }
 
-  // Standplaats: where it stands. e.g. "Groenobject · Tegels".
-  const context = [t.location, t.location_detail]
-    .filter((s): s is string => Boolean(s))
-    .map(escapeHtml)
-    .join(" · ");
+  // Standplaats: where it stands. Translated from Dutch open-data terms.
+  const ctxParts: string[] = [];
+  if (t.location) ctxParts.push(en(LOCATION_EN, t.location));
+  if (t.location_detail)
+    ctxParts.push(en(LOCATION_DETAIL_EN, t.location_detail));
+  const context = ctxParts.map(escapeHtml).join(" · ");
   if (context) lines.push(`<div class="ttl-ctx">${context}</div>`);
 
   // Protected status: rare (~1.6% of trees) so call it out.
   if (t.protection_status) {
     lines.push(
-      `<div class="ttl-protected">★ ${escapeHtml(t.protection_status)}</div>`,
+      `<div class="ttl-protected">★ ${escapeHtml(
+        en(PROTECTION_EN, t.protection_status),
+      )}</div>`,
     );
   }
 
@@ -133,8 +185,10 @@ export default function PlayMap({
       center: AMSTERDAM_CENTER,
       zoom: AMSTERDAM_ZOOM,
       scrollWheelZoom: true,
-      zoomControl: true,
+      // Default control sits top-left and clashes with our search bar.
+      zoomControl: false,
     });
+    L.control.zoom({ position: "bottomleft" }).addTo(map);
     L.tileLayer(
       "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
       {
@@ -168,16 +222,8 @@ export default function PlayMap({
       };
     }
 
-    // Radius circle (so the player sees the area they're defending).
-    L.circle([center.lat, center.lng], {
-      radius: radiusM,
-      color: "#e0a33a",
-      weight: 2,
-      fillColor: "#e0a33a",
-      fillOpacity: 0.05,
-    }).addTo(layer);
-
-    // Center pin (the user's address).
+    // Center pin (the user's address). No radius ring — the visible map IS
+    // the play area now.
     L.circleMarker([center.lat, center.lng], {
       radius: 6,
       color: "#c0463b",
@@ -199,11 +245,10 @@ export default function PlayMap({
       marker.addTo(layer);
     }
 
-    // Auto-zoom so all trees + radius are visible, then bias slightly closer.
-    // We use the radius circle's bounds because it always exists and is wider
-    // than any tree at the very edge of a small search.
+    // Auto-zoom to roughly cover the radius area. With the ring gone, the
+    // visible viewport is the play area; bbox is queried 1.2× wider for buffer.
     const bounds = L.latLng(center.lat, center.lng).toBounds(radiusM * 2.2);
-    map.fitBounds(bounds, { padding: [60, 60], maxZoom: 18, animate: false });
+    map.fitBounds(bounds, { padding: [40, 40], maxZoom: 18, animate: false });
 
     return () => {
       layer.remove();
