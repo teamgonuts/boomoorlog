@@ -15,9 +15,12 @@ const BASEMAP_URL =
 const BASEMAP_ATTR =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
 
-// Map opens centered on Amsterdam if no address has been searched.
+// Map opens centered on Amsterdam if no address has been searched. Zoom 15
+// is neighborhood-scale (a few hundred meters across) — wide enough to feel
+// like "you can see your area" without triggering the citywide-bbox slow
+// path on /api/trees.
 const AMSTERDAM_CENTER: [number, number] = [52.3676, 4.9041];
-const AMSTERDAM_ZOOM = 12;
+const AMSTERDAM_ZOOM = 15;
 
 // Today's calendar year. Used to compute ages. Fine to refresh on a 1-yr cadence.
 const CURRENT_YEAR = new Date().getFullYear();
@@ -408,9 +411,10 @@ export default function PlayMap({
 
     const centerKey = `${center.lat},${center.lng}`;
     if (lastFitCenterRef.current !== centerKey) {
-      // New address — auto-fit. `radius * 2.2` matches the prior look.
+      // New address — auto-fit. Leaflet's toBounds(N) makes a square of side
+      // N meters, so passing 2*R produces a ±R box around the address.
       const bounds = L.latLng(center.lat, center.lng).toBounds(
-        initialRadiusM * 2.2,
+        initialRadiusM * 2,
       );
       map.fitBounds(bounds, { padding: [40, 40], maxZoom: 18, animate: false });
       lastFitCenterRef.current = centerKey;

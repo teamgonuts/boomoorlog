@@ -166,6 +166,9 @@ export function AreaPanel({
                     alt=""
                     width={32}
                     height={32}
+                    onError={(e) => {
+                      e.currentTarget.style.visibility = "hidden";
+                    }}
                   />
                   <div className="area-body">
                     <div className="area-name">
@@ -194,6 +197,9 @@ export function AreaPanel({
                     alt=""
                     width={32}
                     height={32}
+                    onError={(e) => {
+                      e.currentTarget.style.visibility = "hidden";
+                    }}
                   />
                   <div className="area-body">
                     <div className="area-name area-name-creature">

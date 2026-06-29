@@ -71,10 +71,19 @@ export async function GET(req: Request) {
   });
 
   if (error) {
-    return NextResponse.json(
-      { error: `viewport_for_map: ${error.message}` },
-      { status: 500 },
-    );
+    // Most likely cause is the 10s statement_timeout on a citywide bbox.
+    // Log it server-side but degrade gracefully — return an empty viewport
+    // (200) so the client doesn't surface a dev-overlay error and the map
+    // just shows no markers until the user pans/zooms to a smaller area.
+    console.warn("viewport_for_map:", error.message, "bbox:", bbox);
+    const empty: ViewportTreesResponse = {
+      mode: "individual",
+      total: 0,
+      markers: [],
+      topGenera: [],
+      creatureSlugs: [],
+    };
+    return NextResponse.json(empty, { headers: CACHE_HEADERS });
   }
 
   // RPC returns JSONB which supabase-js parses to a plain object. Narrow
