@@ -1,0 +1,15 @@
+slug,latin_name,taxon_id,photo_url,photo_license,attribution,status,note
+cotula-coronopifolia,Cotula coronopifolia,58812,https://inaturalist-open-data.s3.amazonaws.com/photos/115578937/medium.jpg,cc-by-sa,"(c) SABENCIA Guillermo César Ruiz, some rights reserved (CC BY-SA)",ok,
+crambus-lathoniellus,Crambus lathoniellus,130102,https://inaturalist-open-data.s3.amazonaws.com/photos/294463366/medium.jpg,cc-by-nc,"(c) Michał Brzeziński, some rights reserved (CC BY-NC)",ok,
+crataerina-pallida,Crataerina pallida,498683,https://inaturalist-open-data.s3.amazonaws.com/photos/97089858/medium.jpg,cc-by-sa,"(c) Анатолий Озерной/Anatoly Ozernoy, some rights reserved (CC BY-SA)",ok,
+cremnops-desertor,Cremnops desertor,703067,https://inaturalist-open-data.s3.amazonaws.com/photos/138740088/medium.jpeg,cc-by-nc,"(c) Marie Lou Legrand, some rights reserved (CC BY-NC)",ok,
+crepis-biennis,Crepis biennis,161116,https://inaturalist-open-data.s3.amazonaws.com/photos/12725858/medium.jpeg,cc-by-sa,"(c) Enrico Blasutto, some rights reserved (CC BY-SA)",ok,
+crioceris-asparagi,Crioceris asparagi,127309,https://inaturalist-open-data.s3.amazonaws.com/photos/289059767/medium.jpeg,cc-by-nc,"(c) Mike Quinn, San Marcos, some rights reserved (CC BY-NC)",ok,
+criorhina-berberina,Criorhina berberina,1391873,https://inaturalist-open-data.s3.amazonaws.com/photos/875331/medium.jpg,cc-by-nc-sa,"(c) Walwyn, some rights reserved (CC BY-NC-SA)",ok,
+crocothemis-erythraea,Crocothemis erythraea,85030,https://inaturalist-open-data.s3.amazonaws.com/photos/539212346/medium.jpg,cc-by-nc,"(c) Erland Refling Nielsen, some rights reserved (CC BY-NC)",ok,
+crossocerus-annulipes,Crossocerus annulipes,774790,https://inaturalist-open-data.s3.amazonaws.com/photos/48098567/medium.jpg,cc-by-nc,"(c) Heather Holm, some rights reserved (CC BY-NC)",ok,
+crossocerus-binotatus,Crossocerus binotatus,931658,https://inaturalist-open-data.s3.amazonaws.com/photos/50123697/medium.jpg,cc-by-nc,"(c) Léo-Guy de Repentigny, some rights reserved (CC BY-NC)",ok,
+crossocerus-spec,Crossocerus spec.,197022,https://inaturalist-open-data.s3.amazonaws.com/photos/118483358/medium.jpg,cc-by-nc,"(c) Léo-Guy de Repentigny, some rights reserved (CC BY-NC)",ok,genus-level
+cryptinae-indet,Cryptinae indet.,360366,https://inaturalist-open-data.s3.amazonaws.com/photos/5624629/medium.jpg,cc-by,"(c) Steve Kerr, some rights reserved (CC BY)",ok,subfamily-level
+cryptocephalus-spec,Cryptocephalus spec.,69988,https://inaturalist-open-data.s3.amazonaws.com/photos/105321207/medium.jpg,cc-by,"(c) Justin Williams, some rights reserved (CC BY)",ok,genus-level
+cryptodiaporthe-populea,Cryptodiaporthe populea,1095586,https://inaturalist-open-data.s3.amazonaws.com/photos/610964070/medium.jpg,cc-by-nc,"(c) Pavel Šinkyřík, some rights reserved (CC BY-NC)",ok,synonym Plagiostoma populinum
