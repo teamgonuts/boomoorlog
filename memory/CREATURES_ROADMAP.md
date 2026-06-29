@@ -141,6 +141,51 @@ pass needs to:
 - 12 organisms are `rank='unmatched'`; these need manual matching (or are genuinely
   unresolvable — like "Generalist sap-feeders").
 
+### C3.D — Sprite production + admin QA tool *(post-photo-backfill, follow-up)*
+Surfaced 2026-06-29 after the photo-backfill pass. We now have photos for
+nearly every organism in the encyclopedia, but only ~360 have sprites
+(curated creatures from the original pipeline + ~55 stat-blocked trees).
+The other ~2,300 organisms are wiki-only — they don't render on the map.
+
+**Scope:**
+- **Bulk sprite generation.** For every organism with a photo but no sprite,
+  run the matching pixel-art skill (`tree-pixel-art` for category=tree,
+  `creature-pixel-art` for everything else). Output goes to
+  `data/sprites_pixel/<slug>.png` and `data/creature_sprites_pixel/<slug>.png`,
+  mirrored to `web/public/sprites/` and `web/public/creature_sprites/`.
+- **Per-category sprite count targets.** Plants (0/767), insects with photos
+  (~442 candidates), arachnids (~52 candidates), fungi (~15), molluscs (~10),
+  amphibians/reptiles (small but symbolic) all need sprite coverage to make
+  the encyclopedia feel comprehensive on the map.
+- **Quality bar.** The sprite must be recognisable as the species — colour
+  palette and silhouette match the photo. The pixel-art skill house style
+  (chunky pixels, dark outline, left-lit shading) stays consistent.
+- **Admin QA tool.** A new `/admin/sprites` page that lets you scroll
+  through organisms side-by-side: real photo vs. generated sprite, with
+  approve / reject / regenerate buttons. Rejected sprites queue for a
+  second pass with a different prompt seed. The admin tool gates publish
+  to `web/public/` until approved.
+- **Approval persistence.** A `sprite_approved boolean` column on
+  `organisms` (or a separate `sprite_reviews` table) records the QA state
+  so re-runs of the pipeline don't re-show approved sprites.
+- **Migration to set sprite_path.** Once approved, the sprite file lives
+  on disk and the migration sets `organisms.sprite_path` so the map
+  renderer picks it up.
+
+**Why this matters:** the user's quality bar — "I want everything to be
+recognizable" — means we can't just generate and ship blindly. The admin
+QA tool turns the long-tail sprite work into a manageable review queue
+rather than a "trust the AI" leap.
+
+**Dependencies:**
+- Photos must be backfilled first (C5 prerequisite — done in this round).
+- The pixel-art skills already exist and work; the new piece is the
+  orchestration + QA loop.
+
+**Not blocking:** can run in parallel with the alive-map work (C5–C11).
+Each newly-approved sprite immediately starts appearing on the map for
+its organism's category.
+
 ### C1.A — Unified wiki URL & layout *(post-Phase-B, follow-up)*
 Surfaced 2026-06-29 after Phase B (web refactor to `organisms`). The DB and the
 web data layer are unified, but the URL structure and page contents still split
@@ -224,6 +269,25 @@ seeded by the observation coordinate; sprites stay readable.
 - `flower-bobber` — bob between flowering tree sprites in season.
 - `urban-walker` — short paths along ground / pavements.
 - `none` / `idle-only` — handled in C6.
+
+**Open question — flocks / groups (dig into during this milestone):** many species
+are almost never solo in reality. Parakeets in Vondelpark fly in flocks; sparrows,
+starlings, long-tailed tits, coots with chicks, ducklings, etc. all travel in groups.
+A single parakeet sprite drifting alone reads wrong. Things to figure out here:
+- Add a `social_class` (or similar) tag on the organism — e.g. `solitary`, `pair`,
+  `small-group` (3–5), `flock` (6–15), `large-flock` (20+). Default per category,
+  override per species (parakeet → flock, robin → solitary, mallard → pair-or-family).
+- One observation → render N sprites clustered around the obs point, all sharing the
+  same `movement_class` path with small per-sprite offsets so the group moves
+  *together* but not in lockstep (V-formation, loose cloud, line of ducklings).
+- Performance budget: flocks multiply sprite count fast. Cap group size by zoom level
+  and viewport density; degrade large flocks to a single "flock" sprite when zoomed
+  out.
+- Keep the "honest whimsy" rule — group size should be representative, not inflated
+  for spectacle.
+
+Decide the lightest version of this that still makes parakeets feel like parakeets
+before locking the C9 path generators.
 
 ### C10 — Sound layer
 Click any creature → hear its real species call (xeno-canto; free; attribution
