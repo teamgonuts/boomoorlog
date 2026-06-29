@@ -73,7 +73,7 @@ insert into organisms (
     sprite_path, sprite_pending, form,
     photo_path,
     lore,
-    sources, tree_genera, observations_count,
+    sources, tree_genera, tree_count, observations_count,
     taxon_group, promoted_source, promoted_at,
     attack, range, health, attack_speed, move_speed,
     created_at
@@ -127,6 +127,7 @@ select
         else array['curated']::text[]
     end                                              as sources,
     c.tree_genera,
+    c.tree_count,
     c.observations_count,
     c.taxon_group,
     c.source                                         as promoted_source,
@@ -144,6 +145,7 @@ on conflict (slug) do update set
     lore               = coalesce(excluded.lore, organisms.lore),
     sources            = excluded.sources,
     tree_genera        = excluded.tree_genera,
+    tree_count         = excluded.tree_count,
     observations_count = excluded.observations_count,
     taxon_group        = excluded.taxon_group,
     promoted_source    = excluded.promoted_source,
