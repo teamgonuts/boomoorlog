@@ -1,0 +1,30 @@
+slug,category,habitat_classes,movement_classes,source,reason,photo_suggestion
+favonius-quercus,insect,tree-canopy,flower-bobber,override,Adults live almost entirely in oak canopy feeding on honeydew rather than visiting flowers.
+fomitopsis-betulina,fungus,tree-bark,none,default,Bracket fungus on birch bark; fungus category default applies exactly.
+forficula-auricularia,insect,tree-bark;ground-park,idle-only,override,Earwigs shelter under bark by day and forage on ground at night; not a flower-visitor.
+formica,insect,tree-canopy;ground-park,idle-only,override,Ants tend canopy aphids for honeydew and crawl too slowly to animate beyond idle.
+formica-rufa,insect,ground-park;tree-canopy,park-roamer;idle-only,override,Red wood ants are ground-dominant mound builders that also ascend pines to tend aphids.
+formicidae-e-g-lasius-niger,insect,tree-canopy,idle-only,override,Observed specifically in Liriodendron canopy feeding on aphid honeydew; not flower-visiting.
+frankia-alni,other,tree-rooted,none,override,Endosymbiotic root-nodule bacteria anchored to host Alnus root zone; nowhere else makes sense.
+fringilla-coelebs,bird,tree-canopy,tree-flitter,default,Classic small passerines in conifer canopy; default bird tags fit exactly.
+fringilla-coelebs-montifringilla,bird,tree-canopy;ground-park,tree-flitter;park-roamer,override,Chaffinch and Brambling demonstrably split time between beech canopy and ground seed-foraging.
+garrulus-glandarius,bird,tree-canopy;ground-park,tree-flitter;park-roamer,override,Jays forage in canopy for mast and descend to ground for caching; bimodal lifestyle needs both tags.
+geometridae,insect,tree-canopy,idle-only,override,Caterpillar life stage dominates; sedentary leaf-feeders on Acer/Picea/Tilia/Zelkova canopy.
+gilpinia-hercyniae,insect,tree-canopy,idle-only,override,Gregarious larval foliage-feeders on spruce; sessile on needles and not flower-visitors.
+glyphodes-pyloalis,insect,tree-canopy,idle-only,override,Larvae live inside silk webs on Morus foliage; entirely canopy-resident and sedentary.
+gracillariidae,insect,tree-canopy,idle-only,override,Leaf-mining larvae are immobile within Ostrya leaf tissue; strict canopy microhabitat.
+grylloprociphilus-imbricator,insect,tree-bark,idle-only,override,Colony forms on lower trunk bark surface of Taxodium/beech rather than in foliage.
+hammerschmidtia-ferruginea,insect,tree-bark;flower-visitor,idle-only;flower-bobber,override,Larvae breed in decaying Populus bark; adults flower-visit — dual habitat and movement needed.
+heterarthrus,insect,tree-canopy,idle-only,override,Leaf-mining sawfly larvae are sessile within Betula leaf tissue; canopy specialist.
+honeybees-flies-aphid-honeydew,insect,tree-canopy,flower-bobber,override,Insects collect aphid honeydew from Juglans foliage in canopy; not visiting flowers.
+honeybees-flies-extrafloral,insect,tree-canopy,flower-bobber,override,Bees and flies exploit Liquidambar extrafloral nectaries on stems and petioles in canopy.
+hylesinus-leperisinus-fraxini,insect,tree-bark,idle-only,override,Bark beetles bore and breed under Fraxinus bark; placement on tree bark surface is definitive.
+illinoia-liriodendri,insect,tree-canopy,idle-only,override,Sedentary phloem-feeding aphid on Liriodendron/Magnolia leaf undersides; not a flower-visitor.
+ips-typographus,insect,tree-bark,idle-only,override,Bark beetle lives under Picea bark; visible only as exit holes; strictly tree-bark.
+jadera-haematoloma,insect,ground-park,idle-only,override,Aggregates on fallen Koelreuteria seed pods at ground level under the tree.
+laothoe-populi,insect,tree-canopy,idle-only;sky-looper,override,Larvae feed in Populus canopy; adults roost cryptically in canopy by day and loop by night.
+lasioglossum,insect,flower-visitor;ground-park,flower-bobber;park-roamer,override,Flower-visiting adults also nest in park ground; secondary ground-park tag needed.
+lasius,insect,tree-canopy,idle-only,override,Ants exploit extrafloral nectaries on Ailanthus/Liquidambar stems within the canopy zone.
+lasius-niger,insect,ground-urban;ground-park,urban-walker;park-roamer,override,Black garden ant nests in pavement cracks and forages across urban and park surfaces; not canopy-tied.
+leaf-mining-flies-micro-moths,insect,tree-canopy,idle-only,override,Larval leaf-miners in Laburnum foliage are immobile within mine tissue; strict canopy placement.
+lepidoptera,insect,tree-canopy,idle-only,override,Caterpillars of four moth species cling motionlessly to Corylus/Fagus/Fraxinus/Nyssa foliage.
