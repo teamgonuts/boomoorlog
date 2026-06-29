@@ -54,7 +54,9 @@ export async function GET(req: Request) {
   if (!bbox) {
     return NextResponse.json({ error: "invalid bbox" }, { status: 400 });
   }
-  const maxPins = clampInt(url.searchParams.get("max_pins"), DEFAULT_MAX_PINS, 50, 2000);
+  // Lower bound matches the AdminPanel slider min (20) so a tester moving the
+  // slider to its lowest setting actually gets 20 markers back, not 50.
+  const maxPins = clampInt(url.searchParams.get("max_pins"), DEFAULT_MAX_PINS, 20, 2000);
   const cellsPerSide = clampInt(
     url.searchParams.get("cells_per_side"),
     DEFAULT_CELLS_PER_SIDE,

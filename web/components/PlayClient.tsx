@@ -77,14 +77,15 @@ export default function PlayClient(props: Props) {
   // and forwarded to PlayMap (creatureSlots, creatureSpeedMps).
   const [adminSettings, setAdminSettings] = useAdminSettings();
   const treeCapRef = useRef(adminSettings.treeCap);
-  useEffect(() => {
-    treeCapRef.current = adminSettings.treeCap;
-  }, [adminSettings.treeCap]);
 
   const abortRef = useRef<AbortController | null>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Remember the last viewport we fetched for so we can re-fire when the
+  // tree-cap slider moves (otherwise nothing happens until the user pans).
+  const lastBboxRef = useRef<Bbox | null>(null);
 
   const handleViewportChange = useCallback((bbox: Bbox) => {
+    lastBboxRef.current = bbox;
     setLoading(true);
     if (debounceRef.current) clearTimeout(debounceRef.current);
     debounceRef.current = setTimeout(() => {
@@ -97,10 +98,15 @@ export default function PlayClient(props: Props) {
         .join(",");
       // Read the live cap from ref so slider changes take effect on the next
       // viewport fetch without remounting the map or rebuilding the callback.
+      // cells_per_side scales with cap — the RPC produces one winner per grid
+      // cell, so a 10x10 grid (default) hard-caps the result at 100 regardless
+      // of max_pins. Use ceil(sqrt(cap)) to make the grid match.
       const cap = treeCapRef.current;
+      const cellsPerSide = Math.min(40, Math.max(4, Math.ceil(Math.sqrt(cap))));
       const url =
         `/api/trees?bbox=${encodeURIComponent(bboxStr)}` +
-        `&max_pins=${cap}`;
+        `&max_pins=${cap}` +
+        `&cells_per_side=${cellsPerSide}`;
       fetch(url, { signal: ac.signal })
         .then((r) => {
           if (!r.ok) throw new Error(`HTTP ${r.status}`);
@@ -126,6 +132,17 @@ export default function PlayClient(props: Props) {
       if (abortRef.current) abortRef.current.abort();
     };
   }, []);
+
+  // When the tree-cap slider moves, push the new value into the ref AND
+  // immediately re-fire the viewport fetch using the last-seen bbox. Without
+  // this, the change only takes effect on the next pan/zoom, which makes the
+  // slider feel broken.
+  useEffect(() => {
+    treeCapRef.current = adminSettings.treeCap;
+    if (lastBboxRef.current) {
+      handleViewportChange(lastBboxRef.current);
+    }
+  }, [adminSettings.treeCap, handleViewportChange]);
 
   // ---- Derive AreaPanel data ----
   const generaMetaBySlug = useMemo(
