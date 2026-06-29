@@ -124,6 +124,9 @@ export type Database = {
           // C1 milestone (migration 022) — points at organisms.slug; will replace
           // creature_slug once the web refactor is verified.
           organism_slug: string | null;
+          // C4 milestone (migration 023) — source-extensible bag for
+          // feed-specific fields (ring ID, capture method, audio URL, ...).
+          metadata: Record<string, unknown>;
           fetched_at: string;
         };
         Insert: Database["public"]["Tables"]["observations"]["Row"];

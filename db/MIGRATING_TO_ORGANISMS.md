@@ -14,6 +14,7 @@ review locally before anything destructive happens.
 | `db/020_organisms.sql` | Creates the `organisms` table + indexes + an `updated_at` trigger. No data movement. |
 | `db/021_organisms_populate.sql` | Copies `genera`, `creatures`, and observation-only species into `organisms`. Three idempotent `INSERT … ON CONFLICT` steps. |
 | `db/022_observations_organism_slug.sql` | Adds `observations.organism_slug` + index, back-fills from `creature_slug` + scientific-name slug derivation. |
+| `db/023_observations_open_source.sql` | Drops the narrow `source` CHECK constraint on `observations` and adds a generic `metadata jsonb` column so new location feeds (eBird, GBIF fungi, gemeente datasets, etc.) can be onboarded without schema changes. |
 | `web/types/supabase.ts` | Adds `Organism` + `OrganismCategory` types; adds `observations.organism_slug` field. |
 | `web/lib/organisms.ts` | Helper module (photo URL, sprite URL, dominant tag, category label). |
 
@@ -31,6 +32,7 @@ Supabase SQL editor). The DB URL is in `.env` / `web/.env.local`.
 psql "$DATABASE_URL" -f db/020_organisms.sql
 psql "$DATABASE_URL" -f db/021_organisms_populate.sql
 psql "$DATABASE_URL" -f db/022_observations_organism_slug.sql
+psql "$DATABASE_URL" -f db/023_observations_open_source.sql
 ```
 
 Each migration is wrapped in a transaction and is idempotent (re-runs are
