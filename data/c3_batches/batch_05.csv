@@ -1,0 +1,30 @@
+slug,common_name,latin_name,tree_genera,has_photo,tree_count
+favonius-quercus,Purple hairstreak butterfly,Favonius quercus,Quercus,true,1
+fomitopsis-betulina,Birch polypore & associated fungus gnats,Fomitopsis betulina + Mycetophilidae,Betula,true,1
+forficula-auricularia,Earwigs,Forficula auricularia,Parrotia;Paulownia;Pyrus,true,3
+formica,Wood ants & sugar-tending ants,"Formica, Lasius / Formicidae",Acer,true,1
+formica-rufa,Red wood ants,"Formica rufa group, incl. Scottish wood ant F. aquilonia",Pinus,true,1
+formicidae-e-g-lasius-niger,Honeydew-feeding ants,"Formicidae, e.g. Lasius niger",Liriodendron,true,1
+frankia-alni,Frankia root nodule bacteria,Frankia alni / Frankiaceae,Alnus,true,1
+fringilla-coelebs,Finches and small passerines,"Fringilla coelebs, Carduelis spp., Sylvia spp.",Chamaecyparis,true,1
+fringilla-coelebs-montifringilla,Chaffinch & Brambling,Fringilla coelebs / montifringilla,Fagus,true,1
+garrulus-glandarius,Eurasian Jay,Garrulus glandarius,Aesculus;Juglans;Pterocarya;Quercus,true,4
+geometridae,Maple-feeding moths,multiple Geometridae & Noctuidae,Acer;Picea;Tilia;Zelkova,true,4
+gilpinia-hercyniae,Spruce sawflies,"Gilpinia hercyniae, Pristiphora abietina, Diprionidae/Tenthredinidae",Picea,true,1
+glyphodes-pyloalis,Mulberry leaf-webber,Glyphodes pyloalis / Crambidae,Morus,true,1
+gracillariidae,Leaf-mining micromoths,"Gracillariidae, Stigmella spp. / Nepticulidae",Ostrya,true,1
+grylloprociphilus-imbricator,Beech blight aphid,"Grylloprociphilus imbricator, Aphididae",Taxodium,true,1
+hammerschmidtia-ferruginea,Aspen hoverfly,Hammerschmidtia ferruginea,Populus,true,1
+heterarthrus,Birch leaf-mining sawflies,"Heterarthrus, Fenusa / Tenthredinidae",Betula,true,1
+honeybees-flies-aphid-honeydew,Honeybees & flies on aphid honeydew,,Juglans,true,1
+honeybees-flies-extrafloral,Honeybees & flies on extrafloral nectaries / sap,,Liquidambar,true,1
+hylesinus-leperisinus-fraxini,Ash bark beetle,Hylesinus / Leperisinus fraxini,Fraxinus,true,1
+illinoia-liriodendri,Tulip-tree aphid,Illinoia liriodendri / Aphididae,Liriodendron;Magnolia,true,2
+ips-typographus,Eurasian spruce bark beetle,"Ips typographus, Scolytinae",Picea,true,1
+jadera-haematoloma,"Soapberry / ""goldenrain tree"" bug","Jadera haematoloma, Rhopalidae",Koelreuteria,true,1
+laothoe-populi,Poplar hawk moth,"Laothoe populi, Sphingidae",Populus,true,1
+lasioglossum,Halictid sweat bees,"Lasioglossum, Halictus spp.",Gleditsia,true,1
+lasius,Ants on extrafloral nectaries,"Lasius, Formica / Formicidae",Ailanthus;Liquidambar,true,2
+lasius-niger,Ants,Lasius niger and others,Laburnum;Styphnolobium;Taxodium;Thuja;Tilia;Zelkova,true,6
+leaf-mining-flies-micro-moths,Leaf-mining flies / micro-moths,,Laburnum,true,1
+lepidoptera,"Moth caterpillars — Nut-tree Tussock, Large Emerald, Barred Umber, Small White Wave",Lepidoptera,Corylus;Fagus;Fraxinus;Nyssa,true,4

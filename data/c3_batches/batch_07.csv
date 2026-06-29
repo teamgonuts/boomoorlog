@@ -1,0 +1,30 @@
+slug,common_name,latin_name,tree_genera,has_photo,tree_count
+obolodiplosis-robiniae,Black locust gall midge,Obolodiplosis robiniae,Robinia,true,1
+operophtera-brumata,Winter moth & mottled umber caterpillars,"Operophtera brumata, Erannis defoliaria / Geometridae",Amelanchier;Malus;Platanus;Prunus;Pyrus;Quercus,true,6
+operophtera-brumata-etc,Winter moth & geometrid caterpillars,"Operophtera brumata, etc. / Geometridae",Ostrya,true,1
+opisthograptis-luteolata,Brimstone moth & grey dagger caterpillars,"Opisthograptis luteolata, Acronicta psi",Amelanchier;Prunus,true,2
+orthosia,Orthosia moths,"Noctuidae — Common Quaker, Hebrew Character, etc.",Salix,true,1
+osmia,Mason and mining bees,"Osmia, Andrena spp.",Cercis;Prunus,true,2
+pachypsylla,Hackberry psyllids,"Pachypsylla spp., incl. P. celtidismamma, P. celtidisvesicula, P. celtidisgemma",Celtis,true,1
+panaphis-juglandis,Large walnut aphid,"Panaphis juglandis, Aphididae",Juglans,true,1
+paracolopha-morrisoni,Zelkova gall aphid,"Paracolopha morrisoni, Aphididae",Zelkova,true,1
+parectopa-robiniella,Robinia leafminer moths,"Parectopa robiniella, Macrosaccus robiniella",Robinia,true,1
+paridae-aegithalidae,"Blue & Great Tits, Long-tailed Tit",Paridae / Aegithalidae,Crataegus,true,1
+parthenolecanium-corni,European fruit lecanium scale,"Parthenolecanium corni, Coccidae",Taxodium,true,1
+parus-major,Great Tit / Blue Tit,Parus major / Cyanistes caeruleus,Juglans,true,1
+parus-pipistrellus,Cavity-nesting birds & roosting bats,"Parus, Pipistrellus",Pterocarya,true,1
+passer,House Sparrow / Great Tit,Passer / Parus,Koelreuteria,true,1
+passer-domesticus,Roosting birds,"House Sparrow Passer domesticus, Wood Pigeon Columba palumbus",Catalpa;Paulownia,true,2
+passer-domesticus-montanus,House Sparrow / Eurasian Tree Sparrow,Passer domesticus / montanus,Ginkgo,true,1
+pauesia-anatolica,Aphid parasitoid wasps,Pauesia anatolica and relatives,Cedrus,true,1
+periparus-ater,Coal Tit,Periparus ater,Cedrus;Chamaecyparis;Metasequoia;Picea;Pinus,true,5
+phloeosinus-aubei,Cypress bark beetle,Phloeosinus aubei / Curculionidae,Metasequoia,true,1
+phloeosinus-metasequoiae,Bark beetle Phloeosinus metasequoiae,Curculionidae: Scolytinae,Metasequoia,true,1
+phyllaphis-fagi,Woolly beech aphid,Phyllaphis fagi,Fagus,true,1
+phyllobius-intrusus,Arborvitae weevil,"Phyllobius intrusus, Curculionidae",Thuja,true,1
+phyllonorycter,Micro-moths and leaf miners,"Lepidoptera, e.g. Phyllonorycter spp.",Castanea,true,1
+phyllonorycter-esperella,Generalist micro-moths,Phyllonorycter esperella & similar / Gracillariidae,Carpinus,true,1
+phytomyza-ilicis,Holly leaf miner,"Phytomyza ilicis, Agromyzidae",Ilex,true,1
+phytophthora-lateralis,Phytophthora lateralis root pathogen,,Chamaecyparis,true,1
+phytoptus-avellanae-big-bud-mite,Gall mites,"Phytoptus avellanae, big bud mite",Corylus,true,1
+pica,Magpie / Carrion Crow,Pica / Corvus,Koelreuteria,true,1

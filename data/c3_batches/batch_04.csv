@@ -1,0 +1,30 @@
+slug,common_name,latin_name,tree_genera,has_photo,tree_count
+cyanistes-caeruleus,Blue & Great Tits,Cyanistes caeruleus / Parus major,Acer;Castanea;Catalpa;Celtis;Cercidiphyllum;Cercis;Gleditsia;Laburnum;Parrotia;Populus;Pyrus;Quercus;Taxodium;Taxus;Tilia;Ulmus;Zelkova,true,17
+cyanistes-caeruleus-parus-major,Blue & Great Tits,Cyanistes caeruleus / Parus major,Corylus,true,1
+cyanistes-parus,Blue & Great Tits,Cyanistes/Parus / Paridae,Liriodendron;Magnolia;Malus;Ostrya,true,4
+cydia-illutana,Larch tortrix and cone moths,"Cydia illutana, Zeiraphera",Larix,true,1
+cydia-pomonella,Codling moth,"Cydia pomonella, Tortricidae",Juglans;Malus;Pyrus,true,3
+cydia-splendana,Chestnut tortrix,Cydia splendana,Castanea,true,1
+cynipidae,Oak gall wasps,"Cynipidae, ~30+ spp. per tree",Quercus,true,1
+dasineura-pyri,Pear leaf-curling midge,Dasineura pyri,Pyrus,true,1
+dendrocopos-major,Great Spotted Woodpecker,Dendrocopos major,Betula;Cedrus,true,2
+dendrocopos-major-sitta-europaea,Great Spotted Woodpecker & Nuthatch,Dendrocopos major / Sitta europaea,Fagus,true,1
+diaspididae,Armoured scales and mealybugs,"Diaspididae, Pseudococcidae",Celtis;Cercidiphyllum,true,2
+diaspididae-pseudococcidae,Armored scales & mealybugs,"Diaspididae, Pseudococcidae",Nyssa,true,1
+diprion-pini,Pine sawflies,"Diprion pini, Neodiprion sertifer, Diprionidae",Pinus,true,1
+diptera-hymenoptera-coleoptera,Pollinators on Mayflower,"Diptera, Hymenoptera, Coleoptera",Crataegus,true,1
+dorcus-parallelipipedus,Lesser stag beetle,Dorcus parallelipipedus,Fraxinus,true,1
+drepanosiphum-platanoidis,Sycamore aphid,Drepanosiphum platanoidis / Aphididae,Acer,true,1
+dryocosmus-kuriphilus,Oriental chestnut gall wasp,Dryocosmus kuriphilus,Castanea,true,1
+dysaphis-plantaginea-aphis-pomi,Rosy apple aphid & green apple aphid,"Dysaphis plantaginea, Aphis pomi / Aphididae",Malus,true,1
+dysaphis-pyri,Pear & rosy apple aphids,"Dysaphis pyri, D. plantaginea",Pyrus,true,1
+dysaphis-sorbi,Aphids,"Aphidoidea — Dysaphis sorbi, Eriosoma spp.",Sorbus,true,1
+elasmostethus-interstinctus,Birch shieldbug,Elasmostethus interstinctus / Acanthosomatidae,Betula,true,1
+elatobium-abietinum,Spruce aphids,"Elatobium abietinum, Cinara pilicornis",Picea,true,1
+enarmonia-formosana,Cherry bark tortrix & cherry fruit moth,"Enarmonia formosana, Argyresthia pruniella",Prunus,true,1
+endromis-versicolora,Birch moths,"Geometridae & Notodontidae, incl. Endromis versicolora",Betula,true,1
+eriophyes,Gall mites,Eriophyes spp.,Crataegus,true,1
+eriophyes-tiliae,Lime nail gall mite,"Eriophyes tiliae, Eriophyidae",Tilia,true,1
+eucallipterus-tiliae,Lime aphid,"Eucallipterus tiliae, Aphididae",Tilia,true,1
+euceraphis-betulae,Silver birch aphid,Euceraphis betulae / Aphididae,Betula,true,1
+fascista-cercerisella,Redbud leaf-folder moth and Lepidoptera larvae,Fascista cercerisella and ~10–19 spp.,Cercis,true,1

@@ -1,0 +1,30 @@
+slug,common_name,latin_name,tree_genera,has_photo,tree_count
+picidae,Cavity-nesting birds & roosting bats,"Picidae, Pipistrellus / Vespertilionidae",Carpinus,true,1
+pipistrellus,Roosting bats,"Pipistrellus, Nyctalus / Vespertilionidae",Aesculus;Cedrus;Liriodendron;Metasequoia;Nyssa;Ostrya;Pyrus;Quercus;Robinia;Taxus;Tilia,true,11
+pipistrellus-pipistrellus,Common Pipistrelle,Pipistrellus pipistrellus,Acer;Ailanthus;Paulownia;Platanus;Populus;Styphnolobium,true,6
+pipistrellus-pipistrellus-nyctalus-noctula,Common Pipistrelle / Noctule,Pipistrellus pipistrellus / Nyctalus noctula,Fagus,true,1
+pipistrellus-plecotus-auritus,Common Pipistrelle / brown long-eared bat,Pipistrellus / Plecotus auritus,Fraxinus,true,1
+prociphilus-aphis-fabae,Aphids on ash,"Prociphilus spp., Aphis fabae",Fraxinus,true,1
+pseudococcidae,Mealybugs,Pseudococcidae,Catalpa,true,1
+pseudoscorpiones,Bark-crevice pseudoscorpions,"Pseudoscorpiones, e.g. Chthonius",Parrotia,true,1
+psittacula-krameri,Rose-ringed parakeet,Psittacula krameri,Platanus,true,1
+psocoptera,Bark-dwelling springtails & barklice,Psocoptera + Collembola,Taxus,true,1
+psychidae,Bagworm,"Psychidae, e.g. Thyridopteryx, Psyche",Thuja,true,1
+pterocallis-alni,Alder aphids,Pterocallis alni / Aphididae,Alnus,true,1
+pulvinaria-regalis,Aesculus scale,Pulvinaria regalis / Coccidae,Aesculus;Platanus,true,2
+pyrrhula-pyrrhula,Bullfinch,Pyrrhula pyrrhula,Fraxinus;Sorbus;Ulmus,true,3
+qualitative,Cytisine-tolerant generalist caterpillars,qualitative,Styphnolobium,false,1
+rattus-norvegicus,Brown rats,Rattus norvegicus,Ginkgo,true,1
+regulus,Goldcrest / Coal Tit,Regulus / Periparus,Larix,true,1
+regulus-ignicapilla,Firecrest,Regulus ignicapilla,Chamaecyparis,true,1
+regulus-regulus,Goldcrest,Regulus regulus,Cedrus;Chamaecyparis;Cupressocyparis;Metasequoia;Picea;Taxus;Thuja,true,7
+resseliella-craneiobia-corni,Dogwood gall midge,Resseliella / Craneiobia corni,Cornus,true,1
+rhagoletis-completa,Walnut husk fly,"Rhagoletis completa, Tephritidae",Juglans,true,1
+rhopobota,Holly tortrix and yellow-barred brindle moths,Rhopobota / Acasis,Ilex,true,1
+rhynchaenus-fagi,Beech leaf-mining weevil,Rhynchaenus fagi,Fagus,true,1
+roosting-garden-birds-in-winter,Roosting garden birds in winter,,Cupressocyparis,false,1
+satyrium-w-album,White-letter Hairstreak,"Satyrium w-album, Lycaenidae",Ulmus,true,1
+sciurus,Squirrels and bank voles,"Sciurus, Myodes glareolus",Castanea;Cedrus;Celtis;Cercidiphyllum;Chamaecyparis;Liquidambar;Nyssa;Taxus,true,8
+sciurus-carolinensis,Eurasian Grey Squirrel,Sciurus carolinensis,Acer;Aesculus;Carpinus;Liriodendron;Magnolia;Metasequoia;Platanus;Quercus;Ulmus;Zelkova,true,10
+sciurus-vulgaris,Eurasian red squirrel / introduced grey,Sciurus vulgaris / S. carolinensis,Juglans;Picea;Pinus;Pterocarya,true,4
+sciurus-vulgaris-s-carolinensis,Squirrels,Sciurus vulgaris / S. carolinensis,Ginkgo,true,1

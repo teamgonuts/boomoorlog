@@ -1,0 +1,30 @@
+slug,common_name,latin_name,tree_genera,has_photo,tree_count
+acanthis-cabaret,Lesser Redpoll,Acanthis cabaret,Alnus;Betula,true,2
+acanthosoma-haemorrhoidale,Hawthorn shieldbug,Acanthosoma haemorrhoidale,Crataegus,true,1
+acari,Sooty-mould-grazing mites,Acari,Liriodendron;Ulmus;Zelkova,true,3
+aceria,Hornbeam gall mites,Aceria / Eriophyidae,Carpinus,true,1
+aceria-celtis,Hackberry gall mite,Aceria celtis / Eriophyes spp.,Celtis,true,1
+aceria-pseudoplatini,Eriophyid gall mites,"Aceria pseudoplatini, A. eriobia / Eriophyidae",Acer,true,1
+acronicta-aceris,Sycamore moth caterpillar,Acronicta aceris / Noctuidae,Acer,true,1
+acronicta-alni,Alder moths and tussocks,"Acronicta alni, Eriogaster lanestris / Noctuidae, Lasiocampidae",Alnus,true,1
+aculus-mosoniensis,Ailanthus eriophyid mite,Aculus mosoniensis / Eriophyidae,Ailanthus,true,1
+adelges-abietis,Spruce gall adelgids,"Adelges abietis, A. viridis",Picea,true,1
+adelges-laricis,Larch woolly adelgid,"Adelges laricis, Adelgidae",Larix,true,1
+agelastica-alni,Alder leaf beetle,Agelastica alni / Chrysomelidae,Alnus,true,1
+agrilus-difficilis,Honey locust borer,"Agrilus difficilis, Buprestidae",Gleditsia,true,1
+aleurocanthus-spiniferus,Spiny whitefly,Aleurocanthus spiniferus / Aleyrodidae,Ailanthus,true,1
+andrena,Solitary mining bees,Andrena spp. / Andrenidae,Amelanchier;Koelreuteria;Laburnum;Paulownia;Salix;Sorbus,true,6
+anthonomus-pomorum,Apple blossom weevil,Anthonomus pomorum / Curculionidae,Malus,true,1
+anthophora,Solitary bees,"Anthophora, Osmia spp.",Laburnum,true,1
+apatura-iris,Purple Emperor & White Admiral,Apatura iris / Limenitis camilla,Salix,true,1
+aphidoidea,Generalist sap-feeders,"assorted Aphidoidea, Coccidae",Ailanthus;Amelanchier;Castanea;Catalpa;Celtis;Cercidiphyllum;Cercis;Koelreuteria;Laburnum;Liquidambar;Nyssa;Ostrya;Parrotia;Populus;Pterocarya,true,15
+aphidoidea-esp-corylobium-avellanae-myzocallis-coryli,Aphids,"Aphidoidea, esp. Corylobium avellanae, Myzocallis coryli",Corylus,true,1
+aphidoidea-esp-dysaphis-crataegi-ovatus-crataegarius,Aphids,"Aphidoidea, esp. Dysaphis crataegi, Ovatus crataegarius",Crataegus,true,1
+aphidoidea-generalist-greenfly,Aphids,"Aphidoidea, generalist greenfly",Metasequoia,true,1
+aphidoidea-incl-anoecia-corni,Aphids,"Aphidoidea, incl. Anoecia corni",Cornus,true,1
+aphidoidea-including-aphis-gossypii,Aphids,"Aphidoidea, including Aphis gossypii",Morus,true,1
+aphidoidea-occasional,Generalist aphids,"Aphidoidea, occasional",Ginkgo,true,1
+aphis,Generalist aphids,Aphis spp.,Paulownia;Styphnolobium,true,2
+aphrophora-alni,Alder spittlebugs & psyllids,"Aphrophora alni, Psylla alni",Alnus,true,1
+apidae,Honeybees & early bumblebees,Apidae,Corylus;Morus,true,2
+apidae-andrenidae,Honey bees & solitary bees,"Apidae, Andrenidae",Ostrya,true,1

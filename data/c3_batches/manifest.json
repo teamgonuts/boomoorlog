@@ -1,0 +1,82 @@
+{
+  "total": 319,
+  "batches": [
+    {
+      "index": 0,
+      "path": "data/c3_batches/batch_00.csv",
+      "count": 29,
+      "first": "acanthis-cabaret",
+      "last": "apidae-andrenidae"
+    },
+    {
+      "index": 1,
+      "path": "data/c3_batches/batch_01.csv",
+      "count": 29,
+      "first": "apiognomonia-veneta",
+      "last": "bruchidius-siliquastri"
+    },
+    {
+      "index": 2,
+      "path": "data/c3_batches/batch_02.csv",
+      "count": 29,
+      "first": "buprestidae",
+      "last": "cinara-cedri"
+    },
+    {
+      "index": 3,
+      "path": "data/c3_batches/batch_03.csv",
+      "count": 29,
+      "first": "cinara-cupressi",
+      "last": "cyanistes"
+    },
+    {
+      "index": 4,
+      "path": "data/c3_batches/batch_04.csv",
+      "count": 29,
+      "first": "cyanistes-caeruleus",
+      "last": "fascista-cercerisella"
+    },
+    {
+      "index": 5,
+      "path": "data/c3_batches/batch_05.csv",
+      "count": 29,
+      "first": "favonius-quercus",
+      "last": "lepidoptera"
+    },
+    {
+      "index": 6,
+      "path": "data/c3_batches/batch_06.csv",
+      "count": 29,
+      "first": "lepidoptera-incl-trichiura-crataegi-lackey-vapourer-light-emerald",
+      "last": "nymphalis-antiopa"
+    },
+    {
+      "index": 7,
+      "path": "data/c3_batches/batch_07.csv",
+      "count": 29,
+      "first": "obolodiplosis-robiniae",
+      "last": "pica"
+    },
+    {
+      "index": 8,
+      "path": "data/c3_batches/batch_08.csv",
+      "count": 29,
+      "first": "picidae",
+      "last": "sciurus-vulgaris-s-carolinensis"
+    },
+    {
+      "index": 9,
+      "path": "data/c3_batches/batch_09.csv",
+      "count": 29,
+      "first": "scolytus-scolytus",
+      "last": "trachys-yanoi"
+    },
+    {
+      "index": 10,
+      "path": "data/c3_batches/batch_10.csv",
+      "count": 29,
+      "first": "troglodytes",
+      "last": "zeuzera-pyrina"
+    }
+  ]
+}

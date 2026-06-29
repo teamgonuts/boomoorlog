@@ -1,0 +1,30 @@
+slug,common_name,latin_name,tree_genera,has_photo,tree_count
+cinara-cupressi,Cypress aphid,Cinara cupressi sensu lato,Chamaecyparis;Cupressocyparis;Thuja,true,3
+cinara-laricis,Speckled larch aphid,"Cinara laricis, Lachninae",Larix,true,1
+cinara-pinea,Giant conifer aphids,"Cinara pinea, C. pini",Pinus,true,1
+coccinella-septempunctata,Seven-spot ladybird (Coccinella septempunctata) + larvae,,Tilia,true,1
+coccinellidae,Ladybirds & lacewings,"Coccinellidae, Chrysopidae",Juglans;Larix;Magnolia;Parrotia,true,4
+coccothraustes-coccothraustes,Hawfinch,Coccothraustes coccothraustes,Carpinus,true,1
+coleophora-laricella,Larch casebearer moth,"Coleophora laricella, Coleophoridae",Larix,true,1
+coleophoridae,Case-bearer moth caterpillars,Coleophoridae,Cornus,true,1
+coleoptera-saproxylica,Hericium & beech wood-decay beetles,Coleoptera saproxylica,Fagus,true,1
+collembola,Springtails and bark-dwelling Collembola,Collembola,Cercidiphyllum;Metasequoia;Parrotia;Paulownia;Platanus;Populus;Quercus,true,7
+collembola-oribatida,Springtails & oribatid mites in litter,"Collembola, Oribatida",Fagus,true,1
+collembola-psocoptera,Bark-crevice springtails & psocids,"Collembola, Psocoptera",Ginkgo,true,1
+colocasia-coryli,Nut-tree tussock,Colocasia coryli / Noctuidae,Carpinus,true,1
+columba-corvus,Wood pigeons & corvids,Columba/Corvus,Metasequoia;Nyssa,true,2
+columba-palumbus,Wood Pigeon and roosting passerines,"Columba palumbus, Turdus merula",Cercidiphyllum;Chamaecyparis;Cornus;Ilex;Liquidambar;Taxodium;Thuja;Zelkova,true,8
+columba-palumbus-pica-pica-corvus-cornix,Wood Pigeon / Eurasian Magpie / Hooded Crow,Columba palumbus / Pica pica / Corvus cornix,Ginkgo,true,1
+columba-palumbus-streptopelia-decaocto,Wood Pigeon / Collared Dove,Columba palumbus / Streptopelia decaocto,Cupressocyparis,true,1
+corvus,Crow / magpie roost,"Corvus, Pica",Gleditsia,true,1
+corvus-corone,Carrion Crow / Hooded Crow,Corvus corone,Juglans,true,1
+corvus-frugilegus,Rooks & carrion crows,Corvus frugilegus / C. corone,Platanus,true,1
+corythucha-ciliata,Sycamore lace bug,"Corythucha ciliata, Tingidae",Platanus,true,1
+cosmia-diffinis,White-spotted Pinion moth,"Cosmia diffinis, Noctuidae",Ulmus,true,1
+cossus-cossus,Wood-boring beetles,"goat moth Cossus cossus, clearwing Synanthedon",Castanea;Salix,true,2
+cryptogams,Lichens & mosses on bark,cryptogams,Ginkgo,true,1
+curculio-elephas,Chestnut weevil,Curculio elephas,Castanea,true,1
+curculio-glandium,Acorn weevils,Curculio glandium / C. elephas,Quercus,true,1
+curculio-nucum,Nut weevil,Curculio nucum,Corylus,true,1
+curculionoidea,Willow weevils,Curculionoidea — ~100+ Salix-associated spp. across Europe,Salix,true,1
+cyanistes,Blue & Great Tits,Cyanistes / Parus,Aesculus;Amelanchier;Carpinus;Ilex;Robinia;Styphnolobium,true,6

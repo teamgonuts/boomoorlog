@@ -1,0 +1,30 @@
+slug,common_name,latin_name,tree_genera,has_photo,tree_count
+apiognomonia-veneta,Anthracnose fungus,"Apiognomonia veneta, asexual Discula platani",Platanus,true,1
+apis,Honey bees & bumblebees,Apis / Bombus,Acer;Gleditsia;Ilex,true,3
+apis-bombus,Honeybees & bumblebees,"Apis, Bombus",Pterocarya,true,1
+apis-mellifera,Honey bees,Apis mellifera,Aesculus;Ailanthus;Alnus;Amelanchier;Castanea;Catalpa;Cercidiphyllum;Cercis;Koelreuteria;Laburnum;Liriodendron;Magnolia;Nyssa;Parrotia;Paulownia;Pyrus;Robinia;Salix;Styphnolobium;Tilia,true,20
+apis-mellifera-andrena-spp,Honey bees & solitary bees,"Apis mellifera, Andrena spp. / Apidae+Andrenidae",Malus,true,1
+apodemus-myodes-sciurus,Wood mouse / Bank vole / Grey & Red Squirrel,"Apodemus, Myodes, Sciurus",Fagus,true,1
+apodemus-sylvaticus,Wood mouse / yellow-necked mouse,Apodemus sylvaticus / A. flavicollis,Prunus,true,1
+apodemus-sylvaticus-myodes-glareolus,Wood mouse / Bank vole,Apodemus sylvaticus / Myodes glareolus,Cornus;Crataegus;Ostrya,true,3
+apodemus-sylvaticus-myodes-glareolus-sciurus-vulgaris,Wood Mouse / Bank Vole / Red Squirrel,Apodemus sylvaticus / Myodes glareolus / Sciurus vulgaris,Corylus,true,1
+apoidea,Honeybees & solitary bees,Apoidea,Cornus,true,1
+appendiseta-robiniae,Locust aphid,Appendiseta robiniae,Robinia,true,1
+arachnida,Spiders & harvestmen,Arachnida,Ginkgo,true,1
+arachnida-isopoda,"Spiders, harvestmen, woodlice",Arachnida / Isopoda,Cupressocyparis,true,1
+araneae,Overwintering invertebrates in marcescent leaves,"mixed Araneae, Hemiptera, Coleoptera",Carpinus;Cercidiphyllum;Chamaecyparis,true,3
+araneidae,Generalist canopy spiders,"Araneidae, Theridiidae",Ailanthus,true,1
+argynnis,High brown / silver-washed fritillary butterflies,Argynnis spp.,Fraxinus,true,1
+argyresthia,Cypress tip moth,Argyresthia spp.,Cupressocyparis;Thuja,true,2
+argyresthia-conjugella,Apple fruit moth,Argyresthia conjugella,Sorbus,true,1
+asterocampa-celtis,Hackberry Emperor butterfly,Asterocampa celtis,Celtis,true,1
+atteva-aurea,Ailanthus webworm moth,Atteva aurea / Attevidae,Ailanthus,true,1
+barbastella-barbastellus,Barbastelle & Pipistrelle bats,Barbastella barbastellus / Pipistrellus spp.,Salix,true,1
+blepharidopterus-chlorionis,Honey locust plant bug,"Blepharidopterus chlorionis, Miridae",Gleditsia,true,1
+bombus,Bumblebees,"Bombus spp., both short- and long-tongued",Catalpa;Cercidiphyllum;Cercis;Liriodendron;Robinia,true,5
+bombus-terrestris,Bumblebees,Bombus terrestris / B. hortorum / Apidae,Aesculus;Amelanchier;Koelreuteria;Laburnum;Paulownia;Styphnolobium,true,6
+bombycilla,Cedar/Bohemian waxwings,Bombycilla spp.,Morus,true,1
+bombycilla-garrulus,Fruit-eating songbirds,"cedar waxwing equiv. — in Europe Bohemian Waxwing Bombycilla garrulus, Blackbird Turdus merula, Mistle Thrush",Celtis;Sorbus,true,2
+bombyx-mori,Silkworm,Bombyx mori / Bombycidae,Morus,true,1
+bradyrhizobium,Rhizobial root bacteria,Bradyrhizobium / Rhizobium nodules,Cercis,true,1
+bruchidius-siliquastri,Judas tree seed beetle,Bruchidius siliquastri,Cercis,true,1

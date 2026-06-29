@@ -1,0 +1,30 @@
+slug,common_name,latin_name,tree_genera,has_photo,tree_count
+troglodytes,Wren / Dunnock / Robin,"Troglodytes, Prunella, Erithacus",Ilex,true,1
+tuber-magnatum,White truffle (Tuber magnatum) mycorrhizal partner,,Ostrya,true,1
+tuberculatus,Oak aphids,Tuberculatus / Lachnus / Thelaxes spp.,Quercus,true,1
+tuberolachnus-salignus,Aphids,"Aphidoidea — Tuberolachnus salignus, Chaitophorus spp.",Salix,true,1
+turdus,"Song Thrush, Redwing, Fieldfare",Turdus spp.,Cornus;Ilex;Magnolia;Morus;Taxus,true,5
+turdus-iliacus-pilaris,Redwing & Fieldfare,Turdus iliacus / pilaris,Crataegus,true,1
+turdus-including-winter-migrants,Blackbirds & thrushes,"Turdus, including winter migrants",Nyssa,true,1
+turdus-merula,Blackbird,Turdus merula,Amelanchier;Cornus;Parrotia;Prunus;Sorbus;Thuja,true,6
+turdus-merula-t-philomelos,Blackbirds & thrushes,"Turdus merula, T. philomelos / Turdidae",Malus,true,1
+turdus-philomelos,Song Thrush & Mistle Thrush,Turdus philomelos / T. viscivorus,Amelanchier,true,1
+turdus-pilaris,Fieldfare & Redwing,Turdus pilaris / T. iliacus,Sorbus,true,1
+turdus-pilaris-t-iliacus,Fieldfare & redwing,"Turdus pilaris, T. iliacus",Malus,true,1
+turdus-viscivorus,Mistle Thrush,Turdus viscivorus,Ilex;Sorbus,true,2
+various-lepidoptera,"Eyed hawk-moth, pale tussock, green pug, Chinese character",various Lepidoptera,Malus,true,1
+various-mammals,"Mice, voles, foxes, badgers",various mammals,Malus,true,1
+venusia-cambrica,Larger Welsh wave & autumn green carpet moths,Venusia cambrica / Chloroclysta miata,Sorbus,true,1
+verticillium,Verticillium wilt-associated fungi,Verticillium spp.,Catalpa,true,1
+vespidae,Wasps (Vespidae) and hoverflies (Syrphidae),,Liriodendron;Morus,true,2
+vespula,Wasps,"Vespula spp., parasitoid wasps",Koelreuteria,true,1
+vulpes-vulpes,Frugivorous mammals,"Vulpes vulpes, Meles meles, Sus scrofa",Pyrus,true,1
+vulpes-vulpes-erinaceus-europaeus,Red Fox / Hedgehog,Vulpes vulpes / Erinaceus europaeus,Cupressocyparis,true,1
+winter-moth-tortrix-spp,Generalist caterpillars,"winter moth, tortrix spp.",Pterocarya,true,1
+wood-pigeon-magpie-carrion-crow,Wood pigeon / Magpie / Carrion crow,,Pterocarya,true,1
+xylocopa,Carpenter bees,Xylocopa spp.,Cercis;Platanus,true,2
+xylocopa-violacea,Violet carpenter bee,Xylocopa violacea,Catalpa,true,1
+xylosandrus-crassiusculus,Granulate ambrosia beetle,"Xylosandrus crassiusculus, Scolytinae",Liquidambar,true,1
+xylotrechus-chinensis,Asian longhorn mulberry pest,Xylotrechus chinensis / Cerambycidae,Morus,true,1
+yponomeuta-evonymella,Bird-cherry ermine moth,"Yponomeuta evonymella / Y. padella, Yponomeutidae",Prunus,true,1
+zeuzera-pyrina,"Wood leopard moth (Zeuzera pyrina, Cossidae) and figure of eight (Diloba caeruleocephala)",,Populus,true,1
