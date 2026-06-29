@@ -1,0 +1,31 @@
+slug,latin_name,common_name,category,family,genus,taxon_group,observations_count
+magnoliopsida,Magnoliopsida,Dicots,plant,,,Plantae,11
+oryctolagus-cuniculus,Oryctolagus cuniculus,European Rabbit,mammal,Leporidae,Oryctolagus,2,11
+phasianus-colchicus,Phasianus colchicus,Common Pheasant,bird,Phasianidae,Phasianus,1,11
+philoscia-muscorum,Philoscia muscorum,Common Striped Woodlouse,insect,Philosciidae,Philoscia,13,11
+pyrrhocoris-apterus,Pyrrhocoris apterus,Firebug,insect,Pyrrhocoridae,Pyrrhocoris,15,11
+rhinophora-lepida,Rhinophora lepida,,insect,Calliphoridae,Rhinophora,18,11
+textrix-denticulata,Textrix denticulata,Toothed Weaver,arachnid,Agelenidae,Textrix,13,11
+thereva-nobilitata,Thereva nobilitata,,insect,Therevidae,Thereva,18,11
+apterogenum-ypsillon,Apterogenum ypsillon,Dingy Shears,insect,Noctuidae,Apterogenum,8,10
+bufo-bufo,Bufo bufo,Common Toad,amphibian,Bufonidae,Bufo,3,10
+cepaea-nemoralis,Cepaea nemoralis,Brown-lipped Snail,mollusc,Helicidae,Cepaea,7,10
+cornus-sanguinea,Cornus sanguinea,Dogwood,plant,Cornaceae,Cornus,10,10
+dianthus-deltoides,Dianthus deltoides,Maiden Pink,plant,Caryophyllaceae,Dianthus,10,10
+enoplognatha-ovata-latimana,Enoplognatha ovata/latimana,,arachnid,Theridiidae,Enoplognatha,13,10
+eristalis-horticola,Eristalis horticola,Stripe-winged Drone Fly,insect,Syrphidae,Cheilosia,18,10
+heracleum-sphondylium,Heracleum sphondylium,Hogweed,plant,Apiaceae,Heracleum,10,10
+leptophyes-punctatissima,Leptophyes punctatissima,Speckled Bush-cricket,insect,Tettigoniidae,Leptophyes,14,10
+malva-moschata,Malva moschata,Musk-mallow,plant,Malvaceae,Malva,10,10
+medicago-lupulina,Medicago lupulina,Black Medick,plant,Fabaceae,Medicago,10,10
+panorpa-germanica,Panorpa germanica,German Scorpionfly,insect,Panorpidae,Panorpa,6,10
+phlomis-russeliana,Phlomis russeliana,Turkish Sage,plant,Lamiaceae,Phlomis,Plantae,10
+pisaura-mirabilis,Pisaura mirabilis,Nursery-web Spider,arachnid,Pisauridae,Pisaura,13,10
+platyedra-subcinerea,Platyedra subcinerea,,insect,Gelechiidae,Platyedra,8,10
+procambarus-clarkii,Procambarus clarkii,Red Swamp Crayfish,insect,Cambaridae,Procambarus,13,10
+schoenobius-gigantella,Schoenobius gigantella,,insect,Crambidae,Schoenobius,8,10
+silene-latifolia,Silene latifolia,White Campion,plant,Caryophyllaceae,Silene,10,10
+sonchus-asper,Sonchus asper,Prickly Sow-thistle,plant,Asteraceae,Sonchus,10,10
+sphaerophoria-scripta,Sphaerophoria scripta,Common Globetail,insect,Syrphidae,Sphaerophoria,18,10
+tragopogon-pratensis,Tragopogon pratensis,Goat's-beard,plant,Asteraceae,Tragopogon,10,10
+anas-platyrhynchos-domesticus,Anas platyrhynchos domesticus,Domestic Mallard,bird,Anatidae,Anas,Aves,9

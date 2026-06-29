@@ -1,0 +1,129 @@
+{
+  "total": 300,
+  "batch_size": 30,
+  "n_batches": 10,
+  "batches": [
+    {
+      "index": 0,
+      "path": "data/c3a_batches/batch_00.csv",
+      "status": "pending"
+    },
+    {
+      "index": 1,
+      "path": "data/c3a_batches/batch_01.csv",
+      "status": "pending"
+    },
+    {
+      "index": 2,
+      "path": "data/c3a_batches/batch_02.csv",
+      "status": "pending"
+    },
+    {
+      "index": 3,
+      "path": "data/c3a_batches/batch_03.csv",
+      "status": "pending"
+    },
+    {
+      "index": 4,
+      "path": "data/c3a_batches/batch_04.csv",
+      "status": "pending"
+    },
+    {
+      "index": 5,
+      "path": "data/c3a_batches/batch_05.csv",
+      "status": "pending"
+    },
+    {
+      "index": 6,
+      "path": "data/c3a_batches/batch_06.csv",
+      "status": "pending"
+    },
+    {
+      "index": 7,
+      "path": "data/c3a_batches/batch_07.csv",
+      "status": "pending"
+    },
+    {
+      "index": 8,
+      "path": "data/c3a_batches/batch_08.csv",
+      "status": "pending"
+    },
+    {
+      "index": 9,
+      "path": "data/c3a_batches/batch_09.csv",
+      "status": "pending"
+    }
+  ],
+  "manifest": [
+    {
+      "index": 0,
+      "path": "data/c3a_batches/batch_00.csv",
+      "count": 30,
+      "first": "noctua-pronuba",
+      "last": "harmonia-axyridis-f-succinea"
+    },
+    {
+      "index": 1,
+      "path": "data/c3a_batches/batch_01.csv",
+      "count": 30,
+      "first": "hoplodrina-octogenaria",
+      "last": "volucella-zonaria"
+    },
+    {
+      "index": 2,
+      "path": "data/c3a_batches/batch_02.csv",
+      "count": 30,
+      "first": "hofmannophila-pseudospretella",
+      "last": "opilio-canestrinii"
+    },
+    {
+      "index": 3,
+      "path": "data/c3a_batches/batch_03.csv",
+      "count": 30,
+      "first": "phoenicurus-ochruros",
+      "last": "lotus-corniculatus"
+    },
+    {
+      "index": 4,
+      "path": "data/c3a_batches/batch_04.csv",
+      "count": 30,
+      "first": "polistes-dominula",
+      "last": "otiorhynchus-sulcatus"
+    },
+    {
+      "index": 5,
+      "path": "data/c3a_batches/batch_05.csv",
+      "count": 30,
+      "first": "propylea-quatuordecimpunctata",
+      "last": "calamagrostis-epigejos"
+    },
+    {
+      "index": 6,
+      "path": "data/c3a_batches/batch_06.csv",
+      "count": 30,
+      "first": "chelostoma-rapunculi",
+      "last": "lotus-pedunculatus"
+    },
+    {
+      "index": 7,
+      "path": "data/c3a_batches/batch_07.csv",
+      "count": 30,
+      "first": "magnoliopsida",
+      "last": "anas-platyrhynchos-domesticus"
+    },
+    {
+      "index": 8,
+      "path": "data/c3a_batches/batch_08.csv",
+      "count": 30,
+      "first": "anas-platyrhynchos-f-domesticus",
+      "last": "rhaphigaster-nebulosa"
+    },
+    {
+      "index": 9,
+      "path": "data/c3a_batches/batch_09.csv",
+      "count": 30,
+      "first": "scoparia-ambigualis",
+      "last": "phragmites-australis"
+    }
+  ]
+}
