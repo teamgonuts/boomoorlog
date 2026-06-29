@@ -1,18 +1,18 @@
 /**
  * Small helpers for the creature wiki.
  *
- * The creatures table stores pic_file as a SOURCE path
- * ("data/creature_pics/foo.jpg"); web assets live under web/public/ as
- * /creature_photos/foo.jpg and /creature_sprites/foo.png. These helpers
- * translate between the two and provide friendly form labels.
+ * organisms.photo_path stores the same path the legacy creatures.pic_file
+ * column did ("data/creature_pics/foo.jpg"); web assets live under
+ * web/public/ as /creature_photos/foo.jpg and /creature_sprites/foo.png.
+ * These helpers translate between the two and provide friendly form labels.
  */
-import type { Creature } from "@/types/supabase";
+import type { Organism } from "@/types/supabase";
 
-/** Translate creatures.pic_file ("data/creature_pics/foo.jpg") to web URL.
- *  Returns null if the row has no pic_file (truly photoless creature). */
-export function creaturePhotoUrl(pic_file: string | null): string | null {
-  if (!pic_file) return null;
-  return pic_file.replace(/^data\/creature_pics\//, "/creature_photos/");
+/** Translate organisms.photo_path ("data/creature_pics/foo.jpg") to web URL.
+ *  Returns null if the row has no photo (truly photoless organism). */
+export function creaturePhotoUrl(photo_path: string | null): string | null {
+  if (!photo_path) return null;
+  return photo_path.replace(/^data\/creature_pics\//, "/creature_photos/");
 }
 
 /** Sprite URL is deterministic from slug — always PNG in /creature_sprites/. */
@@ -40,18 +40,23 @@ export function formLabel(form: string | null): string {
   return FORM_LABEL[form] ?? form;
 }
 
-/** Quick sortable shape used by the landing grid. */
-export type CreatureCard = Creature & {
+/** Quick sortable shape used by the landing grid.
+ *  Organism.common_name is nullable in the DB; CreatureCard normalises
+ *  it to a non-null string (falling back to latin_name) so the UI never
+ *  has to think about it. */
+export type CreatureCard = Omit<Organism, "common_name"> & {
+  common_name: string;
   photoUrl: string | null;
   spriteUrl: string;
   formLabel: string;
 };
 
-export function toCard(c: Creature): CreatureCard {
+export function toCard(o: Organism): CreatureCard {
   return {
-    ...c,
-    photoUrl: creaturePhotoUrl(c.pic_file),
-    spriteUrl: creatureSpriteUrl(c.slug),
-    formLabel: formLabel(c.form),
+    ...o,
+    common_name: o.common_name ?? o.latin_name,
+    photoUrl: creaturePhotoUrl(o.photo_path),
+    spriteUrl: creatureSpriteUrl(o.slug),
+    formLabel: formLabel(o.form),
   };
 }

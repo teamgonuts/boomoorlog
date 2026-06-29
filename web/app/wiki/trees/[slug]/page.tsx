@@ -8,34 +8,10 @@ import {
 } from "@/lib/archetype";
 import { parseLore } from "@/lib/lore";
 import { supabase } from "@/lib/supabase";
-import type { Genus, Organism } from "@/types/supabase";
 
 export const dynamic = "force-dynamic";
 
 type Params = Promise<{ slug: string }>;
-
-// Same shim as the homepage / list page — drops in step 9.
-function organismToGenus(o: Organism): Genus {
-  return {
-    slug: o.slug,
-    latin_name: o.latin_name,
-    dutch_name: o.dutch_name,
-    display_name: o.display_name,
-    attack: o.attack,
-    range: o.range,
-    health: o.health,
-    attack_speed: o.attack_speed,
-    move_speed: o.move_speed,
-    world_rarity_multiplier: o.world_rarity_multiplier,
-    avg_height_m: o.avg_height_m,
-    avg_diameter_cm: o.avg_diameter_cm,
-    personality: o.personality,
-    tree_count: o.tree_count,
-    sprite_path: o.sprite_path,
-    lore: o.lore,
-    created_at: o.created_at,
-  };
-}
 
 const STAT_LABELS: { key: "attack" | "range" | "health" | "attack_speed" | "move_speed"; label: string }[] = [
   { key: "attack", label: "Attack" },
@@ -77,8 +53,8 @@ export default async function GenusPage({ params }: { params: Params }) {
       .limit(48),
   ]);
 
-  const genus = genusResp.data ? organismToGenus(genusResp.data) : null;
-  const allStatBlocked = (allStatBlockedResp.data ?? []).map(organismToGenus);
+  const genus = genusResp.data;
+  const allStatBlocked = allStatBlockedResp.data ?? [];
   // Renaming on the wire: the cross-link query returns Organism rows but
   // only the three fields we render here, all shared with Creature.
   const creatures = (creaturesResp.data ?? []).map((o) => ({

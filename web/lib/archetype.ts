@@ -12,7 +12,7 @@
  * Mirrors the assignment logic in pipeline/stats.py — keep in sync.
  */
 
-import type { Genus } from "@/types/supabase";
+import type { Organism } from "@/types/supabase";
 
 export type ArchetypeBase =
   | "Bruiser"
@@ -20,7 +20,10 @@ export type ArchetypeBase =
   | "Skirmisher"
   | "Support";
 
-export type Classified = Genus & {
+// The classifier consumes the columns shared by trees and stat-blocked
+// creatures — both live on `organisms` now (Phase B step 9, 2026-06-29).
+// Caller still has to filter on category='tree' if they only want trees.
+export type Classified = Organism & {
   archetype: ArchetypeBase;
   isLegendary: boolean;
   powerAxis: number;
@@ -73,7 +76,7 @@ function median(xs: number[]): number {
   return sorted[Math.floor(sorted.length / 2)];
 }
 
-export function classifyGenera(genera: Genus[]): Classified[] {
+export function classifyGenera(genera: Organism[]): Classified[] {
   const usable = genera.filter(
     (g) =>
       g.attack != null &&

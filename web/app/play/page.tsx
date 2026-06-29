@@ -9,30 +9,6 @@ import PlayClient, {
 import { classifyGenera } from "@/lib/archetype";
 import { geocodeAmsterdam, isGeocodeHit } from "@/lib/geocode";
 import { supabase } from "@/lib/supabase";
-import type { Genus, Organism } from "@/types/supabase";
-
-// Same shim pattern as the wiki pages — drops in step 9.
-function organismToGenus(o: Organism): Genus {
-  return {
-    slug: o.slug,
-    latin_name: o.latin_name,
-    dutch_name: o.dutch_name,
-    display_name: o.display_name,
-    attack: o.attack,
-    range: o.range,
-    health: o.health,
-    attack_speed: o.attack_speed,
-    move_speed: o.move_speed,
-    world_rarity_multiplier: o.world_rarity_multiplier,
-    avg_height_m: o.avg_height_m,
-    avg_diameter_cm: o.avg_diameter_cm,
-    personality: o.personality,
-    tree_count: o.tree_count,
-    sprite_path: o.sprite_path,
-    lore: o.lore,
-    created_at: o.created_at,
-  };
-}
 
 // Geocode call → never cache the page.
 export const dynamic = "force-dynamic";
@@ -97,7 +73,7 @@ export default async function PlayPage({
       .neq("category", "tree")
       .range(0, 1999),
   ]);
-  const allGenera = (treesResp.data ?? []).map(organismToGenus);
+  const allGenera = treesResp.data ?? [];
   const allCreaturesRaw = creaturesResp.data ?? [];
 
   // dutch + rarity per slug for the area panel.

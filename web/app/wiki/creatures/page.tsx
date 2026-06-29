@@ -2,34 +2,8 @@ import Link from "next/link";
 
 import { FORM_LABEL, toCard } from "@/lib/creature";
 import { supabase } from "@/lib/supabase";
-import type { Creature, Organism } from "@/types/supabase";
 
 export const dynamic = "force-dynamic";
-
-// Adapter: Organism row → legacy Creature row. Drops in step 9.
-function organismToCreature(o: Organism): Creature {
-  return {
-    slug: o.slug,
-    common_name: o.common_name ?? o.latin_name,
-    latin_name: o.latin_name,
-    pic_file: o.photo_path,
-    tree_count: o.tree_count,
-    tree_genera: o.tree_genera,
-    form: o.form,
-    attack: o.attack,
-    range: o.range,
-    health: o.health,
-    attack_speed: o.attack_speed,
-    move_speed: o.move_speed,
-    created_at: o.created_at,
-    source: o.promoted_source ?? "curated",
-    promoted_at: o.promoted_at,
-    taxon_group: o.taxon_group,
-    wikipedia_summary: o.lore,
-    observations_count: o.observations_count,
-    sprite_pending: o.sprite_pending,
-  };
-}
 
 export const metadata = {
   title: "Creatures — Boomoorlog Wiki",
@@ -82,7 +56,7 @@ export default async function CreaturesPage({
     return <p style={{ padding: 48, color: "#ff6b6b" }}>Error: {error.message}</p>;
   }
 
-  const cards = (rows ?? []).map(organismToCreature).map(toCard);
+  const cards = (rows ?? []).map(toCard);
 
   // Counts per form for the filter chips (only show forms that exist).
   const formCounts = new Map<string, number>();

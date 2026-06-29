@@ -3,7 +3,6 @@ import Link from "next/link";
 import { classifyGenera, type Classified } from "@/lib/archetype";
 import { toCard } from "@/lib/creature";
 import { supabase } from "@/lib/supabase";
-import type { Creature, Genus, Organism } from "@/types/supabase";
 
 export const dynamic = "force-dynamic";
 
@@ -14,60 +13,6 @@ const STAT_BARS: { key: keyof Classified; label: string }[] = [
   { key: "attack_speed", label: "SPD" },
   { key: "move_speed", label: "MOV" },
 ];
-
-// Adapter: Organism rows have every Genus column plus more (taxonomy,
-// behavior, etc.). For the tree-roster homepage we only need the legacy
-// Genus shape; we pluck the matching columns and pass them through the
-// archetype classifier untouched. When the lib helpers themselves move
-// to the Organism type (Phase B step 9), this adapter goes away.
-function organismToGenus(o: Organism): Genus {
-  return {
-    slug: o.slug,
-    latin_name: o.latin_name,
-    dutch_name: o.dutch_name,
-    display_name: o.display_name,
-    attack: o.attack,
-    range: o.range,
-    health: o.health,
-    attack_speed: o.attack_speed,
-    move_speed: o.move_speed,
-    world_rarity_multiplier: o.world_rarity_multiplier,
-    avg_height_m: o.avg_height_m,
-    avg_diameter_cm: o.avg_diameter_cm,
-    personality: o.personality,
-    tree_count: o.tree_count,
-    sprite_path: o.sprite_path,
-    lore: o.lore,
-    created_at: o.created_at,
-  };
-}
-
-// The creature card helper expects the legacy Creature shape with
-// pic_file. Organism rows store the same value as photo_path; this
-// adapter bridges until creature.ts moves over in step 9.
-function organismToCreature(o: Organism): Creature {
-  return {
-    slug: o.slug,
-    common_name: o.common_name ?? o.latin_name,
-    latin_name: o.latin_name,
-    pic_file: o.photo_path,
-    tree_count: o.tree_count,
-    tree_genera: o.tree_genera,
-    form: o.form,
-    attack: o.attack,
-    range: o.range,
-    health: o.health,
-    attack_speed: o.attack_speed,
-    move_speed: o.move_speed,
-    created_at: o.created_at,
-    source: o.promoted_source ?? "curated",
-    promoted_at: o.promoted_at,
-    taxon_group: o.taxon_group,
-    wikipedia_summary: o.lore,
-    observations_count: o.observations_count,
-    sprite_pending: o.sprite_pending,
-  };
-}
 
 export default async function HomePage() {
   // Two filtered queries — supabase-js caps each .select at 1000 rows by
@@ -110,11 +55,11 @@ export default async function HomePage() {
 
   const totalGenera = treeOrganisms.length;
 
-  const cards = classifyGenera(treeOrganisms.map(organismToGenus)).sort(
+  const cards = classifyGenera(treeOrganisms).sort(
     (a, b) => b.tree_count - a.tree_count,
   );
 
-  const creatureCards = creatureOrganisms.map(organismToCreature).map(toCard);
+  const creatureCards = creatureOrganisms.map(toCard);
 
   return (
     <main>

@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import { classifyGenera } from "@/lib/archetype";
 import { supabase } from "@/lib/supabase";
-import type { Genus, Organism } from "@/types/supabase";
 
 export const dynamic = "force-dynamic";
 
@@ -11,31 +10,6 @@ export const metadata = {
   description:
     "All Amsterdam tree genera, ranked by power. Quick sortable table view.",
 };
-
-// Same adapter pattern as the homepage — shim Organism rows to the
-// legacy Genus shape so classifyGenera keeps working. Disappears in
-// step 9 when the helpers move to Organism natively.
-function organismToGenus(o: Organism): Genus {
-  return {
-    slug: o.slug,
-    latin_name: o.latin_name,
-    dutch_name: o.dutch_name,
-    display_name: o.display_name,
-    attack: o.attack,
-    range: o.range,
-    health: o.health,
-    attack_speed: o.attack_speed,
-    move_speed: o.move_speed,
-    world_rarity_multiplier: o.world_rarity_multiplier,
-    avg_height_m: o.avg_height_m,
-    avg_diameter_cm: o.avg_diameter_cm,
-    personality: o.personality,
-    tree_count: o.tree_count,
-    sprite_path: o.sprite_path,
-    lore: o.lore,
-    created_at: o.created_at,
-  };
-}
 
 export default async function TreesListPage() {
   const { data: organisms, error } = await supabase
@@ -48,7 +22,7 @@ export default async function TreesListPage() {
     return <p style={{ padding: 48, color: "#ff6b6b" }}>Error: {error.message}</p>;
   }
 
-  const rows = classifyGenera((organisms ?? []).map(organismToGenus)).sort(
+  const rows = classifyGenera(organisms ?? []).sort(
     (a, b) => b.powerScore - a.powerScore,
   );
 
