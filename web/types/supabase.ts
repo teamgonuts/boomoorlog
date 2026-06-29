@@ -127,6 +127,10 @@ export type Database = {
           // C4 milestone (migration 023) — source-extensible bag for
           // feed-specific fields (ring ID, capture method, audio URL, ...).
           metadata: Record<string, unknown>;
+          // C1+ (migration 024) — what taxonomic level this sighting was
+          // reported at. Used to resolve observations to organisms at the
+          // finest shared level (species, falling back up the chain).
+          rank: string | null;
           fetched_at: string;
         };
         Insert: Database["public"]["Tables"]["observations"]["Row"];
@@ -232,6 +236,19 @@ export type Database = {
           taxon_group: string | null;
           promoted_source: "curated" | "auto_observed" | null;
           promoted_at: string | null;
+          // Taxonomy (migration 024). Rank is the level THIS row is at:
+          // 'species' | 'genus' | 'family' | 'order' | 'class' | 'phylum'
+          // | 'kingdom' | 'compound' | 'unmatched' | null. The remaining
+          // columns are the full ancestry chain — populated by
+          // pipeline/enrich_taxonomy.py via GBIF.
+          rank: string | null;
+          kingdom: string | null;
+          phylum: string | null;
+          class_name: string | null;
+          order_name: string | null;
+          family: string | null;
+          genus: string | null;
+          species: string | null;
           // TD combat stats (legacy from genera + creatures).
           attack: number | null;
           range: number | null;

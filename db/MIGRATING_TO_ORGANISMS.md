@@ -15,6 +15,8 @@ review locally before anything destructive happens.
 | `db/021_organisms_populate.sql` | Copies `genera`, `creatures`, and observation-only species into `organisms`. Three idempotent `INSERT … ON CONFLICT` steps. |
 | `db/022_observations_organism_slug.sql` | Adds `observations.organism_slug` + index, back-fills from `creature_slug` + scientific-name slug derivation. |
 | `db/023_observations_open_source.sql` | Drops the narrow `source` CHECK constraint on `observations` and adds a generic `metadata jsonb` column so new location feeds (eBird, GBIF fungi, gemeente datasets, etc.) can be onboarded without schema changes. |
+| `db/024_organisms_taxonomy.sql` | Adds taxonomy columns to `organisms` (`rank`, `kingdom`, `phylum`, `class_name`, `order_name`, `family`, `genus`, `species`) and `observations.rank`. `class_name` / `order_name` instead of `class` / `order` because those are reserved SQL words. |
+| `db/025_organisms_taxonomy_backfill.sql` | Backfills taxonomy from `data/organisms_taxonomy.csv` (produced by `pipeline/enrich_taxonomy.py` from GBIF). Uses `\copy`; must run via `psql -f` from the repo root. |
 | `web/types/supabase.ts` | Adds `Organism` + `OrganismCategory` types; adds `observations.organism_slug` field. |
 | `web/lib/organisms.ts` | Helper module (photo URL, sprite URL, dominant tag, category label). |
 
@@ -33,6 +35,8 @@ psql "$DATABASE_URL" -f db/020_organisms.sql
 psql "$DATABASE_URL" -f db/021_organisms_populate.sql
 psql "$DATABASE_URL" -f db/022_observations_organism_slug.sql
 psql "$DATABASE_URL" -f db/023_observations_open_source.sql
+psql "$DATABASE_URL" -f db/024_organisms_taxonomy.sql
+psql "$DATABASE_URL" -f db/025_organisms_taxonomy_backfill.sql
 ```
 
 Each migration is wrapped in a transaction and is idempotent (re-runs are
