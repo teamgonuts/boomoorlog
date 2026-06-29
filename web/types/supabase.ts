@@ -359,6 +359,38 @@ export type Database = {
           total: number;
         }>;
       };
+      // C-perf (migration 027) — combined viewport RPC. Returns markers +
+      // top genera + creature_slugs in one JSONB, intersect-the-bbox-once.
+      viewport_for_map: {
+        Args: {
+          lat_min: number;
+          lng_min: number;
+          lat_max: number;
+          lng_max: number;
+          max_pins?: number;
+          cells_per_side?: number;
+          top_n?: number;
+        };
+        Returns: {
+          mode: "individual";
+          total: number;
+          markers: Array<{
+            id: number;
+            lat: number;
+            lng: number;
+            slug: string | null;
+            species: string | null;
+            height_m: number | null;
+            diameter_cm: number | null;
+            planting_year: number | null;
+            location: string | null;
+            location_detail: string | null;
+            protection_status: string | null;
+          }>;
+          topGenera: Array<{ slug: string; n: number }>;
+          creatureSlugs: string[];
+        };
+      };
     };
   };
 };
