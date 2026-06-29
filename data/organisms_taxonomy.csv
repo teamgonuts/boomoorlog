@@ -1,0 +1,320 @@
+slug,latin_name,query_name,rank,kingdom,phylum,class_name,order_name,family,genus,species,scientific_name,match_type,confidence
+acanthis-cabaret,Acanthis cabaret,Acanthis cabaret,species,Animalia,Chordata,Aves,Passeriformes,Fringillidae,Acanthis,flammea,"Acanthis cabaret (Müller & Pls, 1776)",EXACT,98
+acanthosoma-haemorrhoidale,Acanthosoma haemorrhoidale,Acanthosoma haemorrhoidale,species,Animalia,Arthropoda,Insecta,Hemiptera,Acanthosomatidae,Acanthosoma,haemorrhoidale,"Acanthosoma haemorrhoidale (Linnaeus, 1758)",EXACT,99
+acari,Acari,,unmatched,,,,,,,,,,
+aceria,Aceria / Eriophyidae,Aceria / Eriophyidae,genus,Animalia,Arthropoda,Arachnida,Trombidiformes,Eriophyidae,Aceria,,"Aceria Keifer, 1944",EXACT,94
+aceria-celtis,Aceria celtis / Eriophyes spp.,Aceria celtis / Eriophyes spp.,species,Animalia,Arthropoda,Arachnida,Trombidiformes,Eriophyidae,Aceria,celata,"Aceria celata Flechtmann, 2007",FUZZY,95
+aceria-pseudoplatini,"Aceria pseudoplatini, A. eriobia / Eriophyidae","Aceria pseudoplatini, A. eriobia / Eriophyidae",species,Animalia,Arthropoda,Arachnida,Trombidiformes,Eriophyidae,Aceria,pseudoplatani,"Aceria pseudoplatani (Corti, 1905)",HIGHERRANK,94
+acronicta-aceris,Acronicta aceris / Noctuidae,Acronicta aceris / Noctuidae,species,Animalia,Arthropoda,Insecta,Lepidoptera,Noctuidae,Acronicta,aceris,"Acronicta aceris (Linnaeus, 1758)",EXACT,97
+acronicta-alni,"Acronicta alni, Eriogaster lanestris / Noctuidae, Lasiocampidae","Acronicta alni, Eriogaster lanestris / Noctuidae, Lasiocampidae",species,Animalia,Arthropoda,Insecta,Lepidoptera,Noctuidae,Acronicta,alni,"Acronicta alni (Linnaeus, 1767)",HIGHERRANK,99
+aculus-mosoniensis,Aculus mosoniensis / Eriophyidae,Aculus mosoniensis / Eriophyidae,species,Animalia,Arthropoda,Arachnida,Trombidiformes,Eriophyidae,Aculus,mosoniensis,"Aculus mosoniensis (Ripka, 2014)",EXACT,99
+adelges-abietis,"Adelges abietis, A. viridis","Adelges abietis, A. viridis",species,Animalia,Arthropoda,Insecta,Hemiptera,Adelgidae,Adelges,abietis,"Adelges abietis (Linnaeus, 1758)",HIGHERRANK,99
+adelges-laricis,"Adelges laricis, Adelgidae","Adelges laricis, Adelgidae",genus,Animalia,Arthropoda,Insecta,Hemiptera,Adelgidae,Adelges,,"Adelges Vallot, 1836",HIGHERRANK,92
+agelastica-alni,Agelastica alni / Chrysomelidae,Agelastica alni / Chrysomelidae,species,Animalia,Arthropoda,Insecta,Coleoptera,Chrysomelidae,Agelastica,alni,"Agelastica alni (Linnaeus, 1758)",EXACT,99
+agrilus-difficilis,"Agrilus difficilis, Buprestidae","Agrilus difficilis, Buprestidae",species,Animalia,Arthropoda,Insecta,Coleoptera,Buprestidae,Agrilus,difficilis,"Agrilus difficilis Gory, 1841",EXACT,84
+aleurocanthus-spiniferus,Aleurocanthus spiniferus / Aleyrodidae,Aleurocanthus spiniferus / Aleyrodidae,species,Animalia,Arthropoda,Insecta,Hemiptera,Aleyrodidae,Aleurocanthus,spiniferus,"Aleurocanthus spiniferus (Quaintance, 1903)",EXACT,99
+andrena,Andrena spp. / Andrenidae,Andrena spp. / Andrenidae,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Andrena,,"Andrena Fabricius, 1775",HIGHERRANK,92
+anthonomus-pomorum,Anthonomus pomorum / Curculionidae,Anthonomus pomorum / Curculionidae,species,Animalia,Arthropoda,Insecta,Coleoptera,Curculionidae,Anthonomus,pomorum,"Anthonomus pomorum (C.Linnaeus, 1758)",EXACT,99
+anthophora,"Anthophora, Osmia spp.","Anthophora, Osmia spp.",kingdom,Animalia,,,,,,,Animalia,HIGHERRANK,92
+apatura-iris,Apatura iris / Limenitis camilla,Apatura iris / Limenitis camilla,species,Animalia,Arthropoda,Insecta,Lepidoptera,Nymphalidae,Apatura,iris,"Apatura iris (Linnaeus, 1758)",HIGHERRANK,99
+aphidoidea,"assorted Aphidoidea, Coccidae",Coccidae,family,Animalia,Arthropoda,Insecta,Hemiptera,Coccidae,,,Coccidae,EXACT,94
+aphidoidea-esp-corylobium-avellanae-myzocallis-coryli,"Aphidoidea, esp. Corylobium avellanae, Myzocallis coryli",Myzocallis coryli,species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Myzocallis,coryli,"Myzocallis coryli (Goeze, 1778)",EXACT,99
+aphidoidea-esp-dysaphis-crataegi-ovatus-crataegarius,"Aphidoidea, esp. Dysaphis crataegi, Ovatus crataegarius",Ovatus crataegarius,species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Ovatomyzus,crataegarius,"Ovatus crataegarius (Walker, 1850)",EXACT,97
+aphidoidea-generalist-greenfly,"Aphidoidea, generalist greenfly",,unmatched,,,,,,,,,,
+aphidoidea-incl-anoecia-corni,"Aphidoidea, incl. Anoecia corni",incl. Anoecia corni,unranked,Animalia,Arthropoda,Insecta,Hymenoptera,Eumenidae,Rhynchalastor,inca,"? inca de Saussure, 1870",HIGHERRANK,80
+aphidoidea-including-aphis-gossypii,"Aphidoidea, including Aphis gossypii",,unmatched,,,,,,,,,,
+aphidoidea-occasional,"Aphidoidea, occasional",,unmatched,,,,,,,,,,
+aphis,Aphis spp.,Aphis spp.,genus,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Aphis,,"Aphis Linnaeus, 1758",HIGHERRANK,92
+aphrophora-alni,"Aphrophora alni, Psylla alni","Aphrophora alni, Psylla alni",species,Animalia,Arthropoda,Insecta,Hemiptera,Aphrophoridae,Aphrophora,alni,"Aphrophora alni (Fallén, 1805)",HIGHERRANK,99
+apidae,Apidae,Apidae,family,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,,,Apidae,HIGHERRANK,92
+apidae-andrenidae,"Apidae, Andrenidae","Apidae, Andrenidae",family,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,,,Apidae,HIGHERRANK,92
+apiognomonia-veneta,"Apiognomonia veneta, asexual Discula platani","Apiognomonia veneta, asexual Discula platani",species,Fungi,Ascomycota,Sordariomycetes,Diaporthales,Gnomoniaceae,Apiognomonia,veneta,Apiognomonia veneta (Sacc. & Speg.) Höhn.,HIGHERRANK,99
+apis,Apis / Bombus,Apis / Bombus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Apis,,"Apis Linnaeus, 1758",HIGHERRANK,92
+apis-bombus,"Apis, Bombus","Apis, Bombus",genus,Animalia,,,,,Apis,,Apis,EXACT,91
+apis-mellifera,Apis mellifera,Apis mellifera,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Apis,mellifera,"Apis mellifera Linnaeus, 1758",EXACT,99
+apis-mellifera-andrena-spp,"Apis mellifera, Andrena spp. / Apidae+Andrenidae",,compound,,,,,,,,,,
+apodemus-myodes-sciurus,"Apodemus, Myodes, Sciurus",Apodemus,kingdom,Animalia,,,,,,,Animalia,HIGHERRANK,92
+apodemus-sylvaticus,Apodemus sylvaticus / A. flavicollis,Apodemus sylvaticus / A. flavicollis,species,Animalia,Chordata,Mammalia,Rodentia,Muridae,Apodemus,sylvaticus,"Apodemus sylvaticus (Linnaeus, 1758)",HIGHERRANK,99
+apodemus-sylvaticus-myodes-glareolus,Apodemus sylvaticus / Myodes glareolus,Apodemus sylvaticus / Myodes glareolus,species,Animalia,Chordata,Mammalia,Rodentia,Muridae,Apodemus,sylvaticus,"Apodemus sylvaticus (Linnaeus, 1758)",HIGHERRANK,99
+apodemus-sylvaticus-myodes-glareolus-sciurus-vulgaris,Apodemus sylvaticus / Myodes glareolus / Sciurus vulgaris,Apodemus sylvaticus / Myodes glareolus / Sciurus vulgaris,species,Animalia,Chordata,Mammalia,Rodentia,Muridae,Apodemus,sylvaticus,"Apodemus sylvaticus (Linnaeus, 1758)",HIGHERRANK,99
+apoidea,Apoidea,,unmatched,,,,,,,,,,
+appendiseta-robiniae,Appendiseta robiniae,Appendiseta robiniae,species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Appendiseta,robiniae,"Appendiseta robiniae (Gillette, 1907)",EXACT,99
+arachnida,Arachnida,Arachnida,class,Animalia,Arthropoda,Arachnida,,,,,Arachnida,EXACT,94
+arachnida-isopoda,Arachnida / Isopoda,Arachnida / Isopoda,class,Animalia,Arthropoda,Arachnida,,,,,Arachnida,EXACT,94
+araneae,"mixed Araneae, Hemiptera, Coleoptera",Hemiptera,order,Animalia,Arthropoda,Insecta,Hemiptera,,,,Hemiptera,EXACT,94
+araneidae,"Araneidae, Theridiidae","Araneidae, Theridiidae",family,Animalia,Arthropoda,Arachnida,Araneae,Araneidae,,,Araneidae,EXACT,94
+argynnis,Argynnis spp.,Argynnis spp.,genus,Animalia,Arthropoda,Insecta,Lepidoptera,Nymphalidae,Argynnis,,"Argynnis Fabricius, 1807",HIGHERRANK,92
+argyresthia,Argyresthia spp.,Argyresthia spp.,genus,Animalia,Arthropoda,Insecta,Lepidoptera,Argyresthiidae,Argyresthia,,"Argyresthia Hübner, 1825",HIGHERRANK,94
+argyresthia-conjugella,Argyresthia conjugella,Argyresthia conjugella,species,Animalia,Arthropoda,Insecta,Lepidoptera,Argyresthiidae,Argyresthia,conjugella,"Argyresthia conjugella Zeller, 1839",EXACT,99
+asterocampa-celtis,Asterocampa celtis,Asterocampa celtis,species,Animalia,Arthropoda,Insecta,Lepidoptera,Nymphalidae,Asterocampa,celtis,"Asterocampa celtis (Boisduval & Le Conte, 1833)",EXACT,99
+atteva-aurea,Atteva aurea / Attevidae,Atteva aurea / Attevidae,species,Animalia,Arthropoda,Insecta,Lepidoptera,Attevidae,Atteva,punctella,"Atteva aurea Fitch, 1856",EXACT,98
+barbastella-barbastellus,Barbastella barbastellus / Pipistrellus spp.,Barbastella barbastellus / Pipistrellus spp.,species,Animalia,Chordata,Mammalia,Chiroptera,Vespertilionidae,Barbastella,barbastellus,"Barbastella barbastellus (Schreber, 1774)",EXACT,99
+blepharidopterus-chlorionis,"Blepharidopterus chlorionis, Miridae","Blepharidopterus chlorionis, Miridae",species,Animalia,Arthropoda,Insecta,Hemiptera,Miridae,Blepharidopterus,chlorionis,"Blepharidopterus chlorionis (Say, 1832)",EXACT,99
+bombus,"Bombus spp., both short- and long-tongued",,compound,,,,,,,,,,
+bombus-terrestris,Bombus terrestris / B. hortorum / Apidae,Bombus terrestris / B. hortorum / Apidae,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,terrestris,"Bombus terrestris (Linnaeus, 1758)",HIGHERRANK,99
+bombycilla,Bombycilla spp.,Bombycilla spp.,genus,Animalia,Chordata,Aves,Passeriformes,Bombycillidae,Bombycilla,,"Bombycilla Vieillot, 1808",HIGHERRANK,94
+bombycilla-garrulus,"cedar waxwing equiv. — in Europe Bohemian Waxwing Bombycilla garrulus, Blackbird Turdus merula, Mistle Thrush",,unmatched,,,,,,,,,,
+bombyx-mori,Bombyx mori / Bombycidae,Bombyx mori / Bombycidae,species,Animalia,Arthropoda,Insecta,Lepidoptera,Bombycidae,Bombyx,mori,"Bombyx mori Linnaeus, 1758",EXACT,98
+bradyrhizobium,Bradyrhizobium / Rhizobium nodules,Bradyrhizobium / Rhizobium nodules,genus,Bacteria,Proteobacteria,Alphaproteobacteria,Rhizobiales,Xanthobacteraceae,Bradyrhizobium,,"Bradyrhizobium Jordan, 1982",HIGHERRANK,92
+bruchidius-siliquastri,Bruchidius siliquastri,Bruchidius siliquastri,species,Animalia,Arthropoda,Insecta,Coleoptera,Chrysomelidae,Bruchidius,siliquastri,"Bruchidius siliquastri Delobel, 2007",EXACT,99
+buprestidae,"Buprestidae, Cerambycidae larvae","Buprestidae, Cerambycidae larvae",family,Animalia,Arthropoda,Insecta,Coleoptera,Buprestidae,,,Buprestidae,EXACT,94
+cacopsylla-pyri,Cacopsylla pyri / C. pyricola,Cacopsylla pyri / C. pyricola,species,Animalia,Arthropoda,Insecta,Hemiptera,Psyllidae,Cacopsylla,pyri,"Cacopsylla pyri (Linnaeus, 1758)",HIGHERRANK,99
+callipterinella,"Callipterinella, Symydobius / Aphidoidea",Callipterinella,genus,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Callipterinella,,"Callipterinella Van der Goot, 1913",EXACT,92
+cameraria-ohridella,Cameraria ohridella / Gracillariidae,Cameraria ohridella / Gracillariidae,species,Animalia,Arthropoda,Insecta,Lepidoptera,Gracillariidae,Cameraria,ohridella,"Cameraria ohridella Deschka & Dimić, 1986",EXACT,99
+capreolus-capreolus,Capreolus capreolus,Capreolus capreolus,species,Animalia,Chordata,Mammalia,Artiodactyla,Cervidae,Capreolus,capreolus,"Capreolus capreolus (Linnaeus, 1758)",EXACT,99
+carduelis,"Carduelis, Passer",Carduelis,genus,Animalia,Chordata,Aves,Passeriformes,Fringillidae,Carduelis,,"Carduelis Brisson, 1760",EXACT,94
+carduelis-carduelis,Carduelis carduelis,Carduelis carduelis,species,Animalia,Chordata,Aves,Passeriformes,Fringillidae,Carduelis,carduelis,"Carduelis carduelis (Linnaeus, 1758)",EXACT,99
+carduelis-carduelis-spinus-spinus,"Carduelis carduelis, Spinus spinus / Fringillidae","Carduelis carduelis, Spinus spinus / Fringillidae",species,Animalia,Chordata,Aves,Passeriformes,Fringillidae,Carduelis,carduelis,"Carduelis carduelis (Linnaeus, 1758)",HIGHERRANK,99
+carulaspis,"Carulaspis spp., spider mites",Carulaspis spp.,genus,Animalia,Arthropoda,Insecta,Hemiptera,Diaspididae,Carulaspis,,"Carulaspis McGillivray, 1921",HIGHERRANK,94
+carulaspis-juniper-scale,"Carulaspis spp., juniper scale",Carulaspis spp.,genus,Animalia,Arthropoda,Insecta,Hemiptera,Diaspididae,Carulaspis,,"Carulaspis McGillivray, 1921",HIGHERRANK,94
+carulaspis-juniperi,"Carulaspis juniperi, Diaspididae","Carulaspis juniperi, Diaspididae",species,Animalia,Arthropoda,Insecta,Hemiptera,Diaspididae,Carulaspis,juniperi,"Carulaspis juniperi (Bouché, 1851)",EXACT,99
+cecidophyopsis-psilaspis,"Cecidophyopsis psilaspis, Eriophyidae","Cecidophyopsis psilaspis, Eriophyidae",species,Animalia,Arthropoda,Arachnida,Trombidiformes,Eriophyidae,Cecidophyopsis,psilaspis,"Cecidophyopsis psilaspis (Nalepa, 1893)",EXACT,99
+cedrobium-laportei,Cedrobium laportei,Cedrobium laportei,species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Cinara,laportei,"Cedrobium laportei Remaudière, 1954",EXACT,98
+celastrina-argiolus,"Celastrina argiolus, Lycaenidae","Celastrina argiolus, Lycaenidae",species,Animalia,Arthropoda,Insecta,Lepidoptera,Lycaenidae,Celastrina,argiolus,"Celastrina argiolus (Linnaeus, 1758)",EXACT,99
+cerambycidae,"Cerambycidae, in declining trees",Cerambycidae,family,Animalia,Arthropoda,Insecta,Coleoptera,Cerambycidae,,,Cerambycidae,EXACT,94
+ceratomia-catalpae,Ceratomia catalpae,Ceratomia catalpae,species,Animalia,Arthropoda,Insecta,Lepidoptera,Sphingidae,Ceratomia,catalpae,Ceratomia catalpae Boisduval,EXACT,99
+certhia-familiaris,Certhia familiaris,Certhia familiaris,species,Animalia,Chordata,Aves,Passeriformes,Certhiidae,Certhia,familiaris,"Certhia familiaris Linnaeus, 1758",EXACT,99
+certhia-sitta,"Treecreeper, Nuthatch — Certhia / Sitta",Sitta,genus,Animalia,Chordata,Aves,Passeriformes,Sittidae,Sitta,,"Sitta Linnaeus, 1758",HIGHERRANK,92
+cerura,"Cerura/Furcula, Notodontidae","Cerura/Furcula, Notodontidae",genus,Animalia,Arthropoda,Insecta,Lepidoptera,Notodontidae,Cerura,,"Cerura Schrank, 1802",EXACT,94
+cetonia-aurata,Cetonia aurata / Scarabaeidae,Cetonia aurata / Scarabaeidae,species,Animalia,Arthropoda,Insecta,Coleoptera,Scarabaeidae,Cetonia,aurata,"Cetonia aurata (Linnaeus, 1758)",EXACT,99
+chalcidoidea,"Chalcidoidea, esp. Chrysocharis, Pleurotropis",Pleurotropis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Eulophidae,Pediobius,,"Pleurotropis Forster, 1856",EXACT,94
+chionaspis-gleditsiae,Chionaspis gleditsiae and others,,compound,,,,,,,,,,
+chloris,Chloris / Carduelis,Carduelis,genus,Animalia,Chordata,Aves,Passeriformes,Fringillidae,Carduelis,,"Carduelis Brisson, 1760",EXACT,94
+chloris-chloris,Chloris chloris / Passer domesticus,Passer domesticus,species,Animalia,Chordata,Aves,Passeriformes,Passeridae,Passer,domesticus,"Passer domesticus (Linnaeus, 1758)",EXACT,99
+chloris-chloris-prunella-modularis-troglodytes-troglodytes-erithacus-rubecula,Chloris chloris / Prunella modularis / Troglodytes troglodytes / Erithacus rubecula,Prunella modularis,species,Animalia,Chordata,Aves,Passeriformes,Prunellidae,Prunella,modularis,"Prunella modularis (Linnaeus, 1758)",EXACT,99
+choristoneura,"Choristoneura, Tortricidae",Choristoneura,genus,Animalia,Arthropoda,Insecta,Lepidoptera,Tortricidae,Choristoneura,,"Choristoneura Lederer, 1859",EXACT,92
+chromaphis-juglandicola,"Chromaphis juglandicola, Aphididae","Chromaphis juglandicola, Aphididae",species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Chromaphis,juglandicola,"Chromaphis juglandicola (Kaltenbach, 1843)",EXACT,99
+chrysomela-populi,"Chrysomela populi, C. tremula","Chrysomela populi, C. tremula",species,Animalia,Arthropoda,Insecta,Coleoptera,Chrysomelidae,Chrysomela,populi,"Chrysomela populi Linnaeus, 1758",HIGHERRANK,99
+cinara-cedri,Cinara cedri,Cinara cedri,species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Cinara,cedri,"Cinara cedri Mimeur, 1936",EXACT,99
+cinara-cupressi,Cinara cupressi sensu lato,Cinara cupressi sensu lato,species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Cinara,cupressi,"Cinara cupressi (Buckton, 1881)",EXACT,99
+cinara-laricis,"Cinara laricis, Lachninae","Cinara laricis, Lachninae",species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Cinara,laricis,"Cinara laricis (Börner, 1942)",EXACT,98
+cinara-pinea,"Cinara pinea, C. pini","Cinara pinea, C. pini",species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Cinara,pineum,"Cinara pineum (Mordvilko, 1895)",HIGHERRANK,95
+coccinella-septempunctata,,,compound,,,,,,,,,,
+coccinellidae,"Coccinellidae, Chrysopidae","Coccinellidae, Chrysopidae",family,Animalia,Arthropoda,Insecta,Coleoptera,Coccinellidae,,,Coccinellidae,EXACT,94
+coccothraustes-coccothraustes,Coccothraustes coccothraustes,Coccothraustes coccothraustes,species,Animalia,Chordata,Aves,Passeriformes,Fringillidae,Coccothraustes,coccothraustes,"Coccothraustes coccothraustes (Linnaeus, 1758)",EXACT,99
+coleophora-laricella,"Coleophora laricella, Coleophoridae","Coleophora laricella, Coleophoridae",species,Animalia,Arthropoda,Insecta,Lepidoptera,Coleophoridae,Coleophora,laricella,"Coleophora laricella (Hübner, 1817)",EXACT,99
+coleophoridae,Coleophoridae,Coleophoridae,family,Animalia,Arthropoda,Insecta,Lepidoptera,Coleophoridae,,,Coleophoridae,EXACT,94
+coleoptera-saproxylica,Coleoptera saproxylica,Coleoptera saproxylica,order,Animalia,Arthropoda,Insecta,Coleoptera,,,,Coleoptera,HIGHERRANK,94
+collembola,Collembola,Collembola,class,Animalia,Arthropoda,Collembola,,,,,Collembola,EXACT,94
+collembola-oribatida,"Collembola, Oribatida","Collembola, Oribatida",class,Animalia,Arthropoda,Collembola,,,,,Collembola,EXACT,94
+collembola-psocoptera,"Collembola, Psocoptera","Collembola, Psocoptera",class,Animalia,Arthropoda,Collembola,,,,,Collembola,EXACT,94
+colocasia-coryli,Colocasia coryli / Noctuidae,Colocasia coryli / Noctuidae,species,Animalia,Arthropoda,Insecta,Lepidoptera,Noctuidae,Colocasia,coryli,"Colocasia coryli (Linnaeus, 1758)",EXACT,99
+columba-corvus,Columba/Corvus,Columba/Corvus,kingdom,Animalia,,,,,,,Animalia,HIGHERRANK,92
+columba-palumbus,"Columba palumbus, Turdus merula","Columba palumbus, Turdus merula",species,Animalia,Chordata,Aves,Columbiformes,Columbidae,Columba,palumbus,"Columba palumbus Linnaeus, 1758",HIGHERRANK,99
+columba-palumbus-pica-pica-corvus-cornix,Columba palumbus / Pica pica / Corvus cornix,Columba palumbus / Pica pica / Corvus cornix,species,Animalia,Chordata,Aves,Columbiformes,Columbidae,Columba,palumbus,"Columba palumbus Linnaeus, 1758",HIGHERRANK,99
+columba-palumbus-streptopelia-decaocto,Columba palumbus / Streptopelia decaocto,Columba palumbus / Streptopelia decaocto,species,Animalia,Chordata,Aves,Columbiformes,Columbidae,Columba,palumbus,"Columba palumbus Linnaeus, 1758",HIGHERRANK,99
+corvus,"Corvus, Pica",Corvus,genus,Animalia,Chordata,Aves,Passeriformes,Corvidae,Corvus,,"Corvus Linnaeus, 1758",HIGHERRANK,92
+corvus-corone,Corvus corone,Corvus corone,species,Animalia,Chordata,Aves,Passeriformes,Corvidae,Corvus,corone,"Corvus corone Linnaeus, 1758",EXACT,99
+corvus-frugilegus,Corvus frugilegus / C. corone,Corvus frugilegus / C. corone,species,Animalia,Chordata,Aves,Passeriformes,Corvidae,Corvus,frugilegus,"Corvus frugilegus Linnaeus, 1758",HIGHERRANK,99
+corythucha-ciliata,"Corythucha ciliata, Tingidae","Corythucha ciliata, Tingidae",species,Animalia,Arthropoda,Insecta,Hemiptera,Tingidae,Corythucha,ciliata,"Corythucha ciliata (Say, 1832)",EXACT,99
+cosmia-diffinis,"Cosmia diffinis, Noctuidae","Cosmia diffinis, Noctuidae",species,Animalia,Arthropoda,Insecta,Lepidoptera,Noctuidae,Cosmia,diffinis,"Cosmia diffinis (Linnaeus, 1767)",EXACT,99
+cossus-cossus,"goat moth Cossus cossus, clearwing Synanthedon",Cossus,genus,Animalia,Arthropoda,Insecta,Lepidoptera,Cossidae,Cossus,,"Cossus Fabricius, 1794",EXACT,92
+cryptogams,cryptogams,,unmatched,,,,,,,,,,
+curculio-elephas,Curculio elephas,Curculio elephas,species,Animalia,Arthropoda,Insecta,Coleoptera,Curculionidae,Curculio,elephas,"Curculio elephas J.C.Fabricius, 1781",EXACT,98
+curculio-glandium,Curculio glandium / C. elephas,Curculio glandium / C. elephas,species,Animalia,Arthropoda,Insecta,Coleoptera,Curculionidae,Curculio,glandium,"Curculio glandium T.Marsham, 1802",HIGHERRANK,99
+curculio-nucum,Curculio nucum,Curculio nucum,species,Animalia,Arthropoda,Insecta,Coleoptera,Curculionidae,Curculio,nucum,"Curculio nucum C.Linnaeus, 1758",EXACT,97
+curculionoidea,Curculionoidea — ~100+ Salix-associated spp. across Europe,,compound,,,,,,,,,,
+cyanistes,Cyanistes / Parus,Cyanistes / Parus,genus,Animalia,Chordata,Aves,Passeriformes,Paridae,Cyanistes,,"Cyanistes Kaup, 1829",EXACT,94
+cyanistes-caeruleus,Cyanistes caeruleus / Parus major,Cyanistes caeruleus / Parus major,species,Animalia,Chordata,Aves,Passeriformes,Paridae,Cyanistes,caeruleus,"Cyanistes caeruleus (Linnaeus, 1758)",HIGHERRANK,99
+cyanistes-caeruleus-parus-major,Cyanistes caeruleus / Parus major,Cyanistes caeruleus / Parus major,species,Animalia,Chordata,Aves,Passeriformes,Paridae,Cyanistes,caeruleus,"Cyanistes caeruleus (Linnaeus, 1758)",HIGHERRANK,99
+cyanistes-parus,Cyanistes/Parus / Paridae,Cyanistes/Parus / Paridae,genus,Animalia,Chordata,Aves,Passeriformes,Paridae,Cyanistes,,"Cyanistes Kaup, 1829",EXACT,94
+cydia-illutana,"Cydia illutana, Zeiraphera","Cydia illutana, Zeiraphera",species,Animalia,Arthropoda,Insecta,Lepidoptera,Tortricidae,Cydia,illutana,"Cydia illutana (Herrich-Schäffer, 1851)",EXACT,99
+cydia-pomonella,"Cydia pomonella, Tortricidae","Cydia pomonella, Tortricidae",species,Animalia,Arthropoda,Insecta,Lepidoptera,Tortricidae,Cydia,pomonella,"Cydia pomonella (Linnaeus, 1758)",EXACT,99
+cydia-splendana,Cydia splendana,Cydia splendana,species,Animalia,Arthropoda,Insecta,Lepidoptera,Tortricidae,Cydia,splendana,"Cydia splendana (Hübner, 1796-1799)",EXACT,99
+cynipidae,"Cynipidae, ~30+ spp. per tree",,compound,,,,,,,,,,
+dasineura-pyri,Dasineura pyri,Dasineura pyri,species,Animalia,Arthropoda,Insecta,Diptera,Cecidomyiidae,Dasineura,pyri,"Dasineura pyri (Bouché, 1847)",EXACT,99
+dendrocopos-major,Dendrocopos major,Dendrocopos major,species,Animalia,Chordata,Aves,Piciformes,Picidae,Dendrocopos,major,"Dendrocopos major (Linnaeus, 1758)",EXACT,99
+dendrocopos-major-sitta-europaea,Dendrocopos major / Sitta europaea,Dendrocopos major / Sitta europaea,species,Animalia,Chordata,Aves,Piciformes,Picidae,Dendrocopos,major,"Dendrocopos major (Linnaeus, 1758)",HIGHERRANK,99
+diaspididae,"Diaspididae, Pseudococcidae","Diaspididae, Pseudococcidae",family,Animalia,Arthropoda,Insecta,Hemiptera,Diaspididae,,,Diaspididae,EXACT,94
+diaspididae-pseudococcidae,"Diaspididae, Pseudococcidae","Diaspididae, Pseudococcidae",family,Animalia,Arthropoda,Insecta,Hemiptera,Diaspididae,,,Diaspididae,EXACT,94
+diprion-pini,"Diprion pini, Neodiprion sertifer, Diprionidae","Diprion pini, Neodiprion sertifer, Diprionidae",species,Animalia,Arthropoda,Insecta,Hymenoptera,Diprionidae,Diprion,pini,"Diprion pini (Linnaeus, 1758)",HIGHERRANK,99
+diptera-hymenoptera-coleoptera,"Diptera, Hymenoptera, Coleoptera","Diptera, Hymenoptera, Coleoptera",order,Animalia,Arthropoda,Insecta,Diptera,,,,Diptera,EXACT,94
+dorcus-parallelipipedus,Dorcus parallelipipedus,Dorcus parallelipipedus,species,Animalia,Arthropoda,Insecta,Coleoptera,Lucanidae,Dorcus,parallelipipedus,"Dorcus parallelipipedus (Linnaeus, 1758)",EXACT,99
+drepanosiphum-platanoidis,Drepanosiphum platanoidis / Aphididae,Drepanosiphum platanoidis / Aphididae,species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Drepanosiphum,platanoidis,"Drepanosiphum platanoidis (Schrank, 1801)",EXACT,99
+dryocosmus-kuriphilus,Dryocosmus kuriphilus,Dryocosmus kuriphilus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Cynipidae,Dryocosmus,kuriphilus,"Dryocosmus kuriphilus Yasumatsu, 1951",EXACT,99
+dysaphis-plantaginea-aphis-pomi,"Dysaphis plantaginea, Aphis pomi / Aphididae","Dysaphis plantaginea, Aphis pomi / Aphididae",species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Dysaphis,plantaginea,"Dysaphis plantaginea (Passerini, 1860)",HIGHERRANK,99
+dysaphis-pyri,"Dysaphis pyri, D. plantaginea","Dysaphis pyri, D. plantaginea",species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Dysaphis,pyri,"Dysaphis pyri (Boyer de Fonscolombe, 1841)",HIGHERRANK,99
+dysaphis-sorbi,"Aphidoidea — Dysaphis sorbi, Eriosoma spp.",Eriosoma spp.,genus,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Eriosoma,,"Eriosoma Leach, 1818",HIGHERRANK,92
+elasmostethus-interstinctus,Elasmostethus interstinctus / Acanthosomatidae,Elasmostethus interstinctus / Acanthosomatidae,species,Animalia,Arthropoda,Insecta,Hemiptera,Acanthosomatidae,Elasmostethus,interstinctus,"Elasmostethus interstinctus (Linnaeus, 1758)",EXACT,99
+elatobium-abietinum,"Elatobium abietinum, Cinara pilicornis","Elatobium abietinum, Cinara pilicornis",species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Elatobium,abietinum,"Elatobium abietinum (Walker, 1849)",HIGHERRANK,99
+enarmonia-formosana,"Enarmonia formosana, Argyresthia pruniella","Enarmonia formosana, Argyresthia pruniella",species,Animalia,Arthropoda,Insecta,Lepidoptera,Tortricidae,Enarmonia,formosana,"Enarmonia formosana (Scopoli, 1763)",HIGHERRANK,99
+endromis-versicolora,"Geometridae & Notodontidae, incl. Endromis versicolora",,compound,,,,,,,,,,
+eriophyes,Eriophyes spp.,Eriophyes spp.,genus,Animalia,Arthropoda,Arachnida,Trombidiformes,Eriophyidae,Eriophyes,,"Eriophyes C.Th.von Siebold, 1851",HIGHERRANK,94
+eriophyes-tiliae,"Eriophyes tiliae, Eriophyidae","Eriophyes tiliae, Eriophyidae",species,Animalia,Arthropoda,Arachnida,Trombidiformes,Eriophyidae,Eriophyes,tiliae,"Eriophyes tiliae (H.A.Pagenstecher, 1857)",EXACT,99
+eucallipterus-tiliae,"Eucallipterus tiliae, Aphididae","Eucallipterus tiliae, Aphididae",species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Eucallipterus,tiliae,"Eucallipterus tiliae (Linnaeus, 1758)",EXACT,99
+euceraphis-betulae,Euceraphis betulae / Aphididae,Euceraphis betulae / Aphididae,species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Euceraphis,betulae,"Euceraphis betulae (Koch, 1855)",EXACT,98
+fascista-cercerisella,Fascista cercerisella and ~10–19 spp.,,compound,,,,,,,,,,
+favonius-quercus,Favonius quercus,Favonius quercus,species,Animalia,Arthropoda,Insecta,Lepidoptera,Lycaenidae,Quercusia,quercus,"Favonius quercus (Linnaeus, 1758)",EXACT,98
+fomitopsis-betulina,Fomitopsis betulina + Mycetophilidae,,compound,,,,,,,,,,
+forficula-auricularia,Forficula auricularia,Forficula auricularia,species,Animalia,Arthropoda,Insecta,Dermaptera,Forficulidae,Forficula,auricularia,"Forficula auricularia Linnaeus, 1758",EXACT,99
+formica,"Formica, Lasius / Formicidae","Formica, Lasius / Formicidae",genus,Animalia,,,,,Formica,,Formica,EXACT,91
+formica-rufa,"Formica rufa group, incl. Scottish wood ant F. aquilonia","Formica rufa group, incl. Scottish wood ant F. aquilonia",genus,Animalia,Arthropoda,Insecta,Hymenoptera,Formicidae,Formica,,"Formica Linnaeus, 1758",HIGHERRANK,92
+formicidae-e-g-lasius-niger,"Formicidae, e.g. Lasius niger","Formicidae, e.g. Lasius niger",family,Animalia,Arthropoda,Insecta,Hymenoptera,Formicidae,,,Formicidae,EXACT,93
+frankia-alni,Frankia alni / Frankiaceae,Frankia alni / Frankiaceae,species,Bacteria,Actinobacteriota,Actinomycetia,Mycobacteriales,Frankiaceae,Frankia,alni,"Frankia alni (Woronin, 1866) Von Tubeuf, 1895",EXACT,97
+fringilla-coelebs,"Fringilla coelebs, Carduelis spp., Sylvia spp.","Fringilla coelebs, Carduelis spp., Sylvia spp.",species,Animalia,Chordata,Aves,Passeriformes,Fringillidae,Fringilla,coelebs,"Fringilla coelebs Linnaeus, 1758",HIGHERRANK,99
+fringilla-coelebs-montifringilla,Fringilla coelebs / montifringilla,Fringilla coelebs / montifringilla,species,Animalia,Chordata,Aves,Passeriformes,Fringillidae,Fringilla,coelebs,"Fringilla coelebs Linnaeus, 1758",HIGHERRANK,99
+garrulus-glandarius,Garrulus glandarius,Garrulus glandarius,species,Animalia,Chordata,Aves,Passeriformes,Corvidae,Garrulus,glandarius,"Garrulus glandarius (Linnaeus, 1758)",EXACT,99
+geometridae,multiple Geometridae & Noctuidae,,compound,,,,,,,,,,
+gilpinia-hercyniae,"Gilpinia hercyniae, Pristiphora abietina, Diprionidae/Tenthredinidae","Gilpinia hercyniae, Pristiphora abietina, Diprionidae/Tenthredinidae",species,Animalia,Arthropoda,Insecta,Hymenoptera,Diprionidae,Gilpinia,hercyniae,"Gilpinia hercyniae (Hartig, 1837)",HIGHERRANK,99
+glyphodes-pyloalis,Glyphodes pyloalis / Crambidae,Glyphodes pyloalis / Crambidae,species,Animalia,Arthropoda,Insecta,Lepidoptera,Crambidae,Glyphodes,pyloalis,"Glyphodes pyloalis Walker, 1859",EXACT,99
+gracillariidae,"Gracillariidae, Stigmella spp. / Nepticulidae","Gracillariidae, Stigmella spp. / Nepticulidae",family,Animalia,Arthropoda,Insecta,Lepidoptera,Gracillariidae,,,Gracillariidae,HIGHERRANK,92
+grylloprociphilus-imbricator,"Grylloprociphilus imbricator, Aphididae","Grylloprociphilus imbricator, Aphididae",species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Grylloprociphilus,imbricator,"Grylloprociphilus imbricator (Fitch, 1851)",EXACT,99
+hammerschmidtia-ferruginea,Hammerschmidtia ferruginea,Hammerschmidtia ferruginea,species,Animalia,Arthropoda,Insecta,Diptera,Syrphidae,Hammerschmidtia,ferruginea,"Hammerschmidtia ferruginea (Fallén, 1817)",EXACT,99
+heterarthrus,"Heterarthrus, Fenusa / Tenthredinidae",Tenthredinidae,family,Animalia,Arthropoda,Insecta,Hymenoptera,Tenthredinidae,,,Tenthredinidae,EXACT,94
+honeybees-flies-aphid-honeydew,,,compound,,,,,,,,,,
+honeybees-flies-extrafloral,,,compound,,,,,,,,,,
+hylesinus-leperisinus-fraxini,Hylesinus / Leperisinus fraxini,Hylesinus / Leperisinus fraxini,genus,Animalia,Arthropoda,Insecta,Coleoptera,Curculionidae,Hylesinus,,"Hylesinus J.C.Fabricius, 1802",EXACT,94
+illinoia-liriodendri,Illinoia liriodendri / Aphididae,Illinoia liriodendri / Aphididae,species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Illinoia,liriodendri,"Illinoia liriodendri (Monell, 1879)",EXACT,99
+ips-typographus,"Ips typographus, Scolytinae","Ips typographus, Scolytinae",species,Animalia,Arthropoda,Insecta,Coleoptera,Curculionidae,Ips,typographus,"Ips typographus (C.Linnaeus, 1758)",EXACT,99
+jadera-haematoloma,"Jadera haematoloma, Rhopalidae","Jadera haematoloma, Rhopalidae",species,Animalia,Arthropoda,Insecta,Hemiptera,Rhopalidae,Jadera,haematoloma,"Jadera haematoloma (Herrich-Schäffer, 1847)",EXACT,99
+laothoe-populi,"Laothoe populi, Sphingidae","Laothoe populi, Sphingidae",species,Animalia,Arthropoda,Insecta,Lepidoptera,Sphingidae,Laothoe,populi,"Laothoe populi Linnaeus, 1758",EXACT,84
+lasioglossum,"Lasioglossum, Halictus spp.","Lasioglossum, Halictus spp.",genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,,"Lasioglossum Curtis, 1833",HIGHERRANK,92
+lasius,"Lasius, Formica / Formicidae",Formicidae,family,Animalia,Arthropoda,Insecta,Hymenoptera,Formicidae,,,Formicidae,EXACT,94
+lasius-niger,Lasius niger and others,,compound,,,,,,,,,,
+leaf-mining-flies-micro-moths,,,compound,,,,,,,,,,
+lepidoptera,Lepidoptera,Lepidoptera,order,Animalia,Arthropoda,Insecta,Lepidoptera,,,,Lepidoptera,EXACT,94
+lepidoptera-incl-trichiura-crataegi-lackey-vapourer-light-emerald,"Lepidoptera, incl. Trichiura crataegi, lackey, vapourer, light emerald","Lepidoptera, incl. Trichiura crataegi, lackey, vapourer, light emerald",order,Animalia,Arthropoda,Insecta,Lepidoptera,,,,Lepidoptera,EXACT,94
+lepidoptera-rare,"Lepidoptera, rare","Lepidoptera, rare",order,Animalia,Arthropoda,Insecta,Lepidoptera,,,,Lepidoptera,EXACT,94
+lepus,"Lepus, Capreolus",Lepus,genus,Animalia,Chordata,Mammalia,Lagomorpha,Leporidae,Lepus,,"Lepus Linnaeus, 1758",HIGHERRANK,92
+lobarion-graphidion-communities,"Lobarion, Graphidion communities","Lobarion, Graphidion communities",genus,Fungi,,,,,Lobarion,,Lobarion,EXACT,94
+lochmaea-crataegi,Lochmaea crataegi,Lochmaea crataegi,species,Animalia,Arthropoda,Insecta,Coleoptera,Chrysomelidae,Lochmaea,crataegi,"Lochmaea crataegi (Forster, 1771)",EXACT,99
+loxia-curvirostra,Loxia curvirostra,Loxia curvirostra,species,Animalia,Chordata,Aves,Passeriformes,Fringillidae,Loxia,curvirostra,"Loxia curvirostra Linnaeus, 1758",EXACT,99
+lutra-lutra,"Lutra lutra, Arvicola amphibius","Lutra lutra, Arvicola amphibius",species,Animalia,Chordata,Mammalia,Carnivora,Mustelidae,Lutra,lutra,"Lutra lutra (Linnaeus, 1758)",HIGHERRANK,99
+lycorma-delicatula,Lycorma delicatula / Fulgoridae,Lycorma delicatula / Fulgoridae,species,Animalia,Arthropoda,Insecta,Hemiptera,Fulgoridae,Lycorma,delicatula,"Lycorma delicatula (White, 1845)",EXACT,99
+lymantria-dispar,Lymantria dispar / Erebidae,Lymantria dispar / Erebidae,species,Animalia,Arthropoda,Insecta,Lepidoptera,Erebidae,Lymantria,dispar,"Lymantria dispar Linnaeus, 1758",EXACT,99
+macroglossum-stellatarum,"Sphingidae, e.g. Macroglossum stellatarum","Sphingidae, e.g. Macroglossum stellatarum",family,Animalia,Arthropoda,Insecta,Lepidoptera,Sphingidae,,,Sphingidae,EXACT,94
+macropsis-fumipennis,Macropsis fumipennis,Macropsis fumipennis,species,Animalia,Arthropoda,Insecta,Hemiptera,Cicadellidae,Macropsis,fumipennis,"Macropsis fumipennis (Gillette & Baker, 1895)",EXACT,99
+malacosoma-disstria,"Malacosoma disstria, native range only","Malacosoma disstria, native range only",species,Animalia,Arthropoda,Insecta,Lepidoptera,Lasiocampidae,Malacosoma,disstria,Malacosoma disstria Hübner,HIGHERRANK,99
+malacosoma-neustria,Malacosoma neustria,Malacosoma neustria,species,Animalia,Arthropoda,Insecta,Lepidoptera,Lasiocampidae,Malacosoma,neustria,"Malacosoma neustria (Linnaeus, 1758)",EXACT,99
+martes-martes,Martes martes,Martes martes,species,Animalia,Chordata,Mammalia,Carnivora,Mustelidae,Martes,martes,"Martes martes (Linnaeus, 1758)",EXACT,99
+megabruchidius-dorsalis,"Megabruchidius dorsalis, Bruchinae","Megabruchidius dorsalis, Bruchinae",species,Animalia,Arthropoda,Insecta,Coleoptera,Chrysomelidae,Megabruchidius,dorsalis,"Megabruchidius dorsalis (Fåhraeus, 1839)",EXACT,99
+megachile,Megachile spp.,Megachile spp.,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,,"Megachile Latreille, 1802",HIGHERRANK,92
+megachile-sculpturalis,Megachile sculpturalis,Megachile sculpturalis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,sculpturalis,"Megachile sculpturalis Smith, 1853",EXACT,99
+meles-meles,Meles meles,Meles meles,species,Animalia,Chordata,Mammalia,Carnivora,Mustelidae,Meles,meles,"Meles meles (Linnaeus, 1758)",EXACT,99
+mesostigmata,"Mesostigmata, e.g. Trichouropoda, Dendrolaelaps","Mesostigmata, e.g. Trichouropoda, Dendrolaelaps",order,Animalia,Arthropoda,Arachnida,Mesostigmata,,,,Mesostigmata,EXACT,94
+mimas-tiliae,"Mimas tiliae, Sphingidae","Mimas tiliae, Sphingidae",species,Animalia,Arthropoda,Insecta,Lepidoptera,Sphingidae,Mimas,tiliae,"Mimas tiliae Linnaeus, 1758",EXACT,84
+muscardinus-avellanarius,Muscardinus avellanarius,Muscardinus avellanarius,species,Animalia,Chordata,Mammalia,Rodentia,Gliridae,Muscardinus,avellanarius,"Muscardinus avellanarius (Linnaeus, 1758)",EXACT,99
+myzocallis-carpini,Myzocallis carpini / Aphididae,Myzocallis carpini / Aphididae,species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Myzocallis,carpini,"Myzocallis carpini (Koch, 1855)",EXACT,99
+myzus-cerasi,"cherry blackfly, Myzus cerasi",Myzus cerasi,species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Myzus,cerasi,"Myzus cerasi (Fabricius, 1775)",EXACT,99
+nematinae,Nematinae / Pontania gallers,,unmatched,,,,,,,,,,
+nematus-tibialis,Nematus tibialis,Nematus tibialis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Tenthredinidae,Nematus,tibialis,"Nematus tibialis Newman, 1837",EXACT,99
+neolecanium-cornuparvum,Neolecanium cornuparvum / Coccidae,Neolecanium cornuparvum / Coccidae,species,Animalia,Arthropoda,Insecta,Hemiptera,Coccidae,Neolecanium,cornuparvum,"Neolecanium cornuparvum (Thro, 1903)",EXACT,97
+nyctalus,"Nyctalus, Myotis spp.","Nyctalus, Myotis spp.",genus,Animalia,Chordata,Mammalia,Chiroptera,Vespertilionidae,Nyctalus,,"Nyctalus Bowditch, 1825",HIGHERRANK,94
+nyctalus-noctula,Nyctalus noctula,Nyctalus noctula,species,Animalia,Chordata,Mammalia,Chiroptera,Vespertilionidae,Nyctalus,noctula,"Nyctalus noctula (Schreber, 1774)",EXACT,99
+nymphalis-antiopa,Nymphalis antiopa,Nymphalis antiopa,species,Animalia,Arthropoda,Insecta,Lepidoptera,Nymphalidae,Nymphalis,antiopa,"Nymphalis antiopa (Linnaeus, 1758)",EXACT,99
+obolodiplosis-robiniae,Obolodiplosis robiniae,Obolodiplosis robiniae,species,Animalia,Arthropoda,Insecta,Diptera,Cecidomyiidae,Obolodiplosis,robiniae,"Obolodiplosis robiniae (Haldeman, 1847)",EXACT,99
+operophtera-brumata,"Operophtera brumata, Erannis defoliaria / Geometridae","Operophtera brumata, Erannis defoliaria / Geometridae",species,Animalia,Arthropoda,Insecta,Lepidoptera,Geometridae,Operophtera,brumata,"Operophtera brumata (Linnaeus, 1758)",HIGHERRANK,99
+operophtera-brumata-etc,"Operophtera brumata, etc. / Geometridae","Operophtera brumata, etc. / Geometridae",species,Animalia,Arthropoda,Insecta,Lepidoptera,Geometridae,Operophtera,brumata,"Operophtera brumata (Linnaeus, 1758)",EXACT,99
+opisthograptis-luteolata,"Opisthograptis luteolata, Acronicta psi","Opisthograptis luteolata, Acronicta psi",species,Animalia,Arthropoda,Insecta,Lepidoptera,Geometridae,Opisthograptis,luteolata,"Opisthograptis luteolata (Linnaeus, 1758)",HIGHERRANK,97
+orthosia,"Noctuidae — Common Quaker, Hebrew Character, etc.","Noctuidae — Common Quaker, Hebrew Character, etc.",family,Animalia,Arthropoda,Insecta,Lepidoptera,Noctuidae,,,Noctuidae,EXACT,94
+osmia,"Osmia, Andrena spp.",Andrena spp.,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Andrena,,"Andrena Fabricius, 1775",HIGHERRANK,92
+pachypsylla,"Pachypsylla spp., incl. P. celtidismamma, P. celtidisvesicula, P. celtidisgemma","Pachypsylla spp., incl. P. celtidismamma, P. celtidisvesicula, P. celtidisgemma",species,Animalia,Arthropoda,Insecta,Hemiptera,Aphalaridae,Pachypsylla,celtidismamma,"Pachypsylla celtidismamma (Riley, 1881)",HIGHERRANK,97
+panaphis-juglandis,"Panaphis juglandis, Aphididae","Panaphis juglandis, Aphididae",species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Panaphis,juglandis,"Panaphis juglandis (Goeze, 1778)",EXACT,99
+paracolopha-morrisoni,"Paracolopha morrisoni, Aphididae","Paracolopha morrisoni, Aphididae",species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Paracolopha,morrisoni,"Paracolopha morrisoni (Baker, 1919)",EXACT,99
+parectopa-robiniella,"Parectopa robiniella, Macrosaccus robiniella","Parectopa robiniella, Macrosaccus robiniella",species,Animalia,Arthropoda,Insecta,Lepidoptera,Gracillariidae,Parectopa,robiniella,"Parectopa robiniella Clemens, 1863",HIGHERRANK,99
+paridae-aegithalidae,Paridae / Aegithalidae,Paridae / Aegithalidae,family,Animalia,Chordata,Aves,Passeriformes,Paridae,,,Paridae,EXACT,94
+parthenolecanium-corni,"Parthenolecanium corni, Coccidae","Parthenolecanium corni, Coccidae",species,Animalia,Arthropoda,Insecta,Hemiptera,Coccidae,Parthenolecanium,corni,"Parthenolecanium corni (Bouché, 1844)",EXACT,99
+parus-major,Parus major / Cyanistes caeruleus,Parus major / Cyanistes caeruleus,species,Animalia,Chordata,Aves,Passeriformes,Paridae,Parus,major,"Parus major Linnaeus, 1758",HIGHERRANK,99
+parus-pipistrellus,"Parus, Pipistrellus",Parus,genus,Animalia,Chordata,Aves,Passeriformes,Paridae,Parus,,"Parus Linnaeus, 1758",EXACT,92
+passer,Passer / Parus,Passer / Parus,phylum,Animalia,Chordata,,,,,,Chordata,HIGHERRANK,92
+passer-domesticus,"House Sparrow Passer domesticus, Wood Pigeon Columba palumbus",,unmatched,,,,,,,,,,
+passer-domesticus-montanus,Passer domesticus / montanus,Passer domesticus / montanus,species,Animalia,Chordata,Aves,Passeriformes,Passeridae,Passer,domesticus,"Passer domesticus (Linnaeus, 1758)",HIGHERRANK,99
+pauesia-anatolica,Pauesia anatolica and relatives,,compound,,,,,,,,,,
+periparus-ater,Periparus ater,Periparus ater,species,Animalia,Chordata,Aves,Passeriformes,Paridae,Periparus,ater,"Periparus ater (Linnaeus, 1758)",EXACT,99
+phloeosinus-aubei,Phloeosinus aubei / Curculionidae,Phloeosinus aubei / Curculionidae,species,Animalia,Arthropoda,Insecta,Coleoptera,Curculionidae,Hylesinus,aubei,"Phloeosinus aubei (Perris, 1855)",EXACT,98
+phloeosinus-metasequoiae,Curculionidae: Scolytinae,Curculionidae: Scolytinae,family,Animalia,Arthropoda,Insecta,Coleoptera,Curculionidae,,,Curculionidae,EXACT,94
+phyllaphis-fagi,Phyllaphis fagi,Phyllaphis fagi,species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Phyllaphis,fagi,"Phyllaphis fagi (Linnaeus, 1761)",EXACT,99
+phyllobius-intrusus,"Phyllobius intrusus, Curculionidae","Phyllobius intrusus, Curculionidae",species,Animalia,Arthropoda,Insecta,Coleoptera,Curculionidae,Parascythopus,intrusus,"Phyllobius intrusus Kôno, 1948",EXACT,83
+phyllonorycter,"Lepidoptera, e.g. Phyllonorycter spp.","Lepidoptera, e.g. Phyllonorycter spp.",order,Animalia,Arthropoda,Insecta,Lepidoptera,,,,Lepidoptera,HIGHERRANK,94
+phyllonorycter-esperella,Phyllonorycter esperella & similar / Gracillariidae,,compound,,,,,,,,,,
+phytomyza-ilicis,"Phytomyza ilicis, Agromyzidae","Phytomyza ilicis, Agromyzidae",genus,Animalia,Arthropoda,Insecta,Diptera,Agromyzidae,Phytomyza,,"Phytomyza Fallén, 1810",HIGHERRANK,94
+phytophthora-lateralis,,,compound,,,,,,,,,,
+phytoptus-avellanae-big-bud-mite,"Phytoptus avellanae, big bud mite","Phytoptus avellanae, big bud mite",species,Animalia,Arthropoda,Arachnida,Trombidiformes,Phytoptidae,Phytoptus,avellanae,"Phytoptus avellanae Nalepa, 1889",HIGHERRANK,99
+pica,Pica / Corvus,Pica / Corvus,phylum,Animalia,Chordata,,,,,,Chordata,HIGHERRANK,92
+picidae,"Picidae, Pipistrellus / Vespertilionidae","Picidae, Pipistrellus / Vespertilionidae",family,Animalia,Chordata,Aves,Piciformes,Picidae,,,Picidae,EXACT,94
+pipistrellus,"Pipistrellus, Nyctalus / Vespertilionidae",Vespertilionidae,family,Animalia,Chordata,Mammalia,Chiroptera,Vespertilionidae,,,Vespertilionidae,EXACT,94
+pipistrellus-pipistrellus,Pipistrellus pipistrellus,Pipistrellus pipistrellus,species,Animalia,Chordata,Mammalia,Chiroptera,Vespertilionidae,Pipistrellus,pipistrellus,"Pipistrellus pipistrellus (Schreber, 1774)",EXACT,99
+pipistrellus-pipistrellus-nyctalus-noctula,Pipistrellus pipistrellus / Nyctalus noctula,Pipistrellus pipistrellus / Nyctalus noctula,species,Animalia,Chordata,Mammalia,Chiroptera,Vespertilionidae,Pipistrellus,pipistrellus,"Pipistrellus pipistrellus (Schreber, 1774)",HIGHERRANK,99
+pipistrellus-plecotus-auritus,Pipistrellus / Plecotus auritus,Pipistrellus / Plecotus auritus,kingdom,Animalia,,,,,,,Animalia,HIGHERRANK,92
+prociphilus-aphis-fabae,"Prociphilus spp., Aphis fabae",Prociphilus spp.,genus,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Prociphilus,,"Prociphilus Koch, 1857",HIGHERRANK,92
+pseudococcidae,Pseudococcidae,Pseudococcidae,family,Animalia,Arthropoda,Insecta,Hemiptera,Pseudococcidae,,,Pseudococcidae,EXACT,94
+pseudoscorpiones,"Pseudoscorpiones, e.g. Chthonius","Pseudoscorpiones, e.g. Chthonius",order,Animalia,Arthropoda,Arachnida,Pseudoscorpiones,,,,Pseudoscorpiones,EXACT,94
+psittacula-krameri,Psittacula krameri,Psittacula krameri,species,Animalia,Chordata,Aves,Psittaciformes,Psittacidae,Psittacula,krameri,"Psittacula krameri (Scopoli, 1769)",EXACT,99
+psocoptera,Psocoptera + Collembola,,compound,,,,,,,,,,
+psychidae,"Psychidae, e.g. Thyridopteryx, Psyche","Psychidae, e.g. Thyridopteryx, Psyche",family,Animalia,Arthropoda,Insecta,Lepidoptera,Psychidae,,,Psychidae,EXACT,94
+pterocallis-alni,Pterocallis alni / Aphididae,Pterocallis alni / Aphididae,species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Pterocallis,alni,"Pterocallis alni (De Geer, 1773)",EXACT,99
+pulvinaria-regalis,Pulvinaria regalis / Coccidae,Pulvinaria regalis / Coccidae,species,Animalia,Arthropoda,Insecta,Hemiptera,Coccidae,Pulvinaria,regalis,"Pulvinaria regalis Canard, 1968",EXACT,99
+pyrrhula-pyrrhula,Pyrrhula pyrrhula,Pyrrhula pyrrhula,species,Animalia,Chordata,Aves,Passeriformes,Fringillidae,Pyrrhula,pyrrhula,"Pyrrhula pyrrhula (Linnaeus, 1758)",EXACT,99
+qualitative,qualitative,,unmatched,,,,,,,,,,
+rattus-norvegicus,Rattus norvegicus,Rattus norvegicus,species,Animalia,Chordata,Mammalia,Rodentia,Muridae,Rattus,norvegicus,"Rattus norvegicus (Berkenhout, 1769)",EXACT,99
+regulus,Regulus / Periparus,Regulus / Periparus,kingdom,Animalia,,,,,,,Animalia,HIGHERRANK,92
+regulus-ignicapilla,Regulus ignicapilla,Regulus ignicapilla,species,Animalia,Chordata,Aves,Passeriformes,Regulidae,Regulus,ignicapilla,"Regulus ignicapilla (Temminck, 1820)",EXACT,99
+regulus-regulus,Regulus regulus,Regulus regulus,species,Animalia,Chordata,Aves,Passeriformes,Regulidae,Regulus,regulus,"Regulus regulus (Linnaeus, 1758)",EXACT,99
+resseliella-craneiobia-corni,Resseliella / Craneiobia corni,Resseliella / Craneiobia corni,genus,Animalia,Arthropoda,Insecta,Diptera,Cecidomyiidae,Resseliella,,"Resseliella Seitner, 1906",EXACT,94
+rhagoletis-completa,"Rhagoletis completa, Tephritidae","Rhagoletis completa, Tephritidae",species,Animalia,Arthropoda,Insecta,Diptera,Tephritidae,Rhagoletis,completa,"Rhagoletis completa Cresson, 1929",EXACT,84
+rhopobota,Rhopobota / Acasis,Rhopobota / Acasis,genus,Animalia,Arthropoda,Insecta,Lepidoptera,Tortricidae,Rhopobota,,"Rhopobota Lederer, 1859",EXACT,94
+rhynchaenus-fagi,Rhynchaenus fagi,Rhynchaenus fagi,species,Animalia,Arthropoda,Insecta,Coleoptera,Curculionidae,Rhynchaenus,fagi,Rhynchaenus fagi,EXACT,97
+roosting-garden-birds-in-winter,,,compound,,,,,,,,,,
+satyrium-w-album,"Satyrium w-album, Lycaenidae","Satyrium w-album, Lycaenidae",species,Animalia,Arthropoda,Insecta,Lepidoptera,Lycaenidae,Satyrium,w-album,"Satyrium w-album (Knoch, 1782)",EXACT,99
+sciurus,"Sciurus, Myodes glareolus",Sciurus,phylum,Animalia,Chordata,,,,,,Chordata,HIGHERRANK,92
+sciurus-carolinensis,Sciurus carolinensis,Sciurus carolinensis,species,Animalia,Chordata,Mammalia,Rodentia,Sciuridae,Sciurus,carolinensis,"Sciurus carolinensis Gmelin, 1788",EXACT,99
+sciurus-vulgaris,Sciurus vulgaris / S. carolinensis,Sciurus vulgaris / S. carolinensis,species,Animalia,Chordata,Mammalia,Rodentia,Sciuridae,Sciurus,vulgaris,"Sciurus vulgaris Linnaeus, 1758",HIGHERRANK,99
+sciurus-vulgaris-s-carolinensis,Sciurus vulgaris / S. carolinensis,Sciurus vulgaris / S. carolinensis,species,Animalia,Chordata,Mammalia,Rodentia,Sciuridae,Sciurus,vulgaris,"Sciurus vulgaris Linnaeus, 1758",HIGHERRANK,99
+scolytus-scolytus,"Scolytus scolytus, S. multistriatus, Curculionidae: Scolytinae","Scolytus scolytus, S. multistriatus, Curculionidae: Scolytinae",species,Animalia,Arthropoda,Insecta,Coleoptera,Curculionidae,Scolytus,scolytus,"Scolytus scolytus (J.C.Fabricius, 1775)",HIGHERRANK,99
+sesia-apiformis,"Sesia apiformis, Sesiidae","Sesia apiformis, Sesiidae",species,Animalia,Arthropoda,Insecta,Lepidoptera,Sesiidae,Sesia,apiformis,"Sesia apiformis (Clerck, 1759)",EXACT,97
+sitta-europaea-dendrocopos-major,Sitta europaea / Dendrocopos major,Sitta europaea / Dendrocopos major,species,Animalia,Chordata,Aves,Passeriformes,Sittidae,Sitta,europaea,"Sitta europaea Linnaeus, 1758",HIGHERRANK,99
+small-mammals,small mammals,,unmatched,,,,,,,,,,
+smerinthus-ocellata,Smerinthus ocellata / Cerura vinula,Smerinthus ocellata / Cerura vinula,species,Animalia,Arthropoda,Insecta,Lepidoptera,Sphingidae,Smerinthus,ocellata,"Smerinthus ocellata Linnaeus, 1758",HIGHERRANK,97
+sphinx-pinastri,"Sphinx pinastri, Sphingidae","Sphinx pinastri, Sphingidae",species,Animalia,Arthropoda,Insecta,Lepidoptera,Sphingidae,Sphinx,pinastri,"Sphinx pinastri Linnaeus, 1758",EXACT,84
+spinus-spinus,Spinus spinus,Spinus spinus,species,Animalia,Chordata,Aves,Passeriformes,Fringillidae,Spinus,spinus,"Spinus spinus (Linnaeus, 1758)",EXACT,99
+stereonychus-fraxini,Stereonychus fraxini,Stereonychus fraxini,species,Animalia,Arthropoda,Insecta,Coleoptera,Curculionidae,Stereonychus,fraxini,"Stereonychus fraxini (C.DeGeer, 1775)",EXACT,99
+stigmella-microtheriella,Stigmella microtheriella / Nepticulidae,Stigmella microtheriella / Nepticulidae,species,Animalia,Arthropoda,Insecta,Lepidoptera,Nepticulidae,Stigmella,microtheriella,"Stigmella microtheriella (Stainton, 1854) Fletcher et al., 1945",EXACT,97
+stomaphis-yanonis-aphididae,"Stomaphis yanonis, Aphididae","Stomaphis yanonis, Aphididae",species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Stomaphis,yanonis,"Stomaphis yanonis Takahashi, 1918",EXACT,84
+strix-aluco-phoenicurus-phoenicurus-sitta-dendrocopos,Strix aluco / Phoenicurus phoenicurus / Sitta / Dendrocopos,Strix aluco / Phoenicurus phoenicurus / Sitta / Dendrocopos,species,Animalia,Chordata,Aves,Strigiformes,Strigidae,Strix,aluco,"Strix aluco Linnaeus, 1758",HIGHERRANK,99
+sturnus-vulgaris,Sturnus vulgaris / Sturnidae,Sturnus vulgaris / Sturnidae,species,Animalia,Chordata,Aves,Passeriformes,Sturnidae,Sturnus,vulgaris,"Sturnus vulgaris Linnaeus, 1758",EXACT,99
+sus-scrofa,Sus scrofa,Sus scrofa,species,Animalia,Chordata,Mammalia,Artiodactyla,Suidae,Sus,scrofa,"Sus scrofa Linnaeus, 1758",EXACT,99
+sylvia-atricapilla,Sylvia atricapilla,Sylvia atricapilla,species,Animalia,Chordata,Aves,Passeriformes,Sylviidae,Sylvia,atricapilla,"Sylvia atricapilla (Linnaeus, 1758)",EXACT,99
+syrphidae,"Syrphidae, Chrysopidae","Syrphidae, Chrysopidae",family,Animalia,Arthropoda,Insecta,Diptera,Syrphidae,,,Syrphidae,EXACT,94
+taxomyia-taxi,"Taxomyia taxi, Cecidomyiidae","Taxomyia taxi, Cecidomyiidae",species,Animalia,Arthropoda,Insecta,Diptera,Cecidomyiidae,Taxomyia,taxi,"Taxomyia taxi (Inchbald, 1861)",EXACT,99
+tenthredinidae,Tenthredinidae,Tenthredinidae,family,Animalia,Arthropoda,Insecta,Hymenoptera,Tenthredinidae,,,Tenthredinidae,EXACT,94
+tenthredinidae-e-g-croesus-septentrionalis,"Tenthredinidae, e.g. Croesus septentrionalis","Tenthredinidae, e.g. Croesus septentrionalis",family,Animalia,Arthropoda,Insecta,Hymenoptera,Tenthredinidae,,,Tenthredinidae,EXACT,94
+tetranychidae,Tetranychidae,Tetranychidae,family,Animalia,Arthropoda,Arachnida,Trombidiformes,Tetranychidae,,,Tetranychidae,EXACT,94
+tetranychus-urticae,,,compound,,,,,,,,,,
+tetropium-gabrieli,"Tetropium gabrieli, Cerambycidae","Tetropium gabrieli, Cerambycidae",species,Animalia,Arthropoda,Insecta,Coleoptera,Cerambycidae,Tetropium,gabrieli,"Tetropium gabrieli Weise, 1905",EXACT,84
+thaumetopoea-pityocampa,"Thaumetopoea pityocampa, Notodontidae","Thaumetopoea pityocampa, Notodontidae",species,Animalia,Arthropoda,Insecta,Lepidoptera,Notodontidae,Thaumetopoea,pityocampa,"Thaumetopoea pityocampa (Denis & Schiffermüller) , 1776",EXACT,99
+thelephoraceae,"Thelephoraceae, Trichophaea spp.","Thelephoraceae, Trichophaea spp.",family,Fungi,Basidiomycota,Agaricomycetes,Thelephorales,Thelephoraceae,,,Thelephoraceae,HIGHERRANK,94
+tinocallis-platani,"Tinocallis platani, Eriosoma spp., Aphididae","Tinocallis platani, Eriosoma spp., Aphididae",species,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Tinocallis,platani,"Tinocallis platani (Kaltenbach, 1843)",EXACT,99
+tomicus-piniperda,"Tomicus piniperda, Scolytinae","Tomicus piniperda, Scolytinae",species,Animalia,Arthropoda,Insecta,Coleoptera,Curculionidae,Tomicus,piniperda,"Tomicus piniperda (C.Linnaeus, 1758)",EXACT,99
+tortricidae,"Tortricidae, Geometridae","Tortricidae, Geometridae",family,Animalia,Arthropoda,Insecta,Lepidoptera,Tortricidae,,,Tortricidae,EXACT,94
+tortrix-geometrid,,,compound,,,,,,,,,,
+toumeyella-liriodendri,Toumeyella liriodendri / Coccidae,Toumeyella liriodendri / Coccidae,species,Animalia,Arthropoda,Insecta,Hemiptera,Coccidae,Toumeyella,liriodendri,"Toumeyella liriodendri (Gmelin, 1790)",EXACT,97
+trachys-yanoi,Buprestidae,Buprestidae,family,Animalia,Arthropoda,Insecta,Coleoptera,Buprestidae,,,Buprestidae,EXACT,94
+troglodytes,"Troglodytes, Prunella, Erithacus",Troglodytes,phylum,Animalia,Chordata,,,,,,Chordata,HIGHERRANK,92
+tuber-magnatum,,,compound,,,,,,,,,,
+tuberculatus,Tuberculatus / Lachnus / Thelaxes spp.,Tuberculatus / Lachnus / Thelaxes spp.,genus,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Tuberculatus,,"Tuberculatus Mordvilko, 1894",HIGHERRANK,94
+tuberolachnus-salignus,"Aphidoidea — Tuberolachnus salignus, Chaitophorus spp.",Chaitophorus spp.,genus,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,Chaitophorus,,"Chaitophorus Koch, 1854",HIGHERRANK,94
+turdus,Turdus spp.,Turdus spp.,genus,Animalia,Chordata,Aves,Passeriformes,Turdidae,Turdus,,"Turdus Linnaeus, 1758",HIGHERRANK,92
+turdus-iliacus-pilaris,Turdus iliacus / pilaris,Turdus iliacus / pilaris,species,Animalia,Chordata,Aves,Passeriformes,Turdidae,Turdus,iliacus,"Turdus iliacus Linnaeus, 1758",HIGHERRANK,99
+turdus-including-winter-migrants,"Turdus, including winter migrants","Turdus, including winter migrants",genus,Animalia,Chordata,Aves,Passeriformes,Turdidae,Turdus,,"Turdus Linnaeus, 1758",HIGHERRANK,92
+turdus-merula,Turdus merula,Turdus merula,species,Animalia,Chordata,Aves,Passeriformes,Turdidae,Turdus,merula,"Turdus merula Linnaeus, 1758",EXACT,99
+turdus-merula-t-philomelos,"Turdus merula, T. philomelos / Turdidae","Turdus merula, T. philomelos / Turdidae",species,Animalia,Chordata,Aves,Passeriformes,Turdidae,Turdus,merula,"Turdus merula Linnaeus, 1758",HIGHERRANK,99
+turdus-philomelos,Turdus philomelos / T. viscivorus,Turdus philomelos / T. viscivorus,species,Animalia,Chordata,Aves,Passeriformes,Turdidae,Turdus,philomelos,"Turdus philomelos C.L.Brehm, 1831",HIGHERRANK,99
+turdus-pilaris,Turdus pilaris / T. iliacus,Turdus pilaris / T. iliacus,species,Animalia,Chordata,Aves,Passeriformes,Turdidae,Turdus,pilaris,"Turdus pilaris Linnaeus, 1758",HIGHERRANK,99
+turdus-pilaris-t-iliacus,"Turdus pilaris, T. iliacus","Turdus pilaris, T. iliacus",species,Animalia,Chordata,Aves,Passeriformes,Turdidae,Turdus,pilaris,"Turdus pilaris Linnaeus, 1758",HIGHERRANK,99
+turdus-viscivorus,Turdus viscivorus,Turdus viscivorus,species,Animalia,Chordata,Aves,Passeriformes,Turdidae,Turdus,viscivorus,"Turdus viscivorus Linnaeus, 1758",EXACT,99
+various-lepidoptera,various Lepidoptera,Lepidoptera,order,Animalia,Arthropoda,Insecta,Lepidoptera,,,,Lepidoptera,EXACT,94
+various-mammals,various mammals,,unmatched,,,,,,,,,,
+venusia-cambrica,Venusia cambrica / Chloroclysta miata,Venusia cambrica / Chloroclysta miata,species,Animalia,Arthropoda,Insecta,Lepidoptera,Geometridae,Venusia,cambrica,"Venusia cambrica Curtis, 1839",HIGHERRANK,99
+verticillium,Verticillium spp.,Verticillium spp.,genus,Fungi,Ascomycota,Sordariomycetes,Glomerellales,Plectosphaerellaceae,Verticillium,,"Verticillium Nees, 1816",HIGHERRANK,94
+vespidae,,,compound,,,,,,,,,,
+vespula,"Vespula spp., parasitoid wasps",Vespula spp.,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Vespidae,Vespula,,"Vespula Thomson, 1869",HIGHERRANK,92
+vulpes-vulpes,"Vulpes vulpes, Meles meles, Sus scrofa","Vulpes vulpes, Meles meles, Sus scrofa",species,Animalia,Chordata,Mammalia,Carnivora,Canidae,Vulpes,vulpes,"Vulpes vulpes (Linnaeus, 1758)",HIGHERRANK,99
+vulpes-vulpes-erinaceus-europaeus,Vulpes vulpes / Erinaceus europaeus,Vulpes vulpes / Erinaceus europaeus,species,Animalia,Chordata,Mammalia,Carnivora,Canidae,Vulpes,vulpes,"Vulpes vulpes (Linnaeus, 1758)",HIGHERRANK,99
+winter-moth-tortrix-spp,"winter moth, tortrix spp.",tortrix spp.,genus,Animalia,Arthropoda,Insecta,Lepidoptera,Tortricidae,Tortrix,,"Tortrix Linnaeus, 1758",HIGHERRANK,92
+wood-pigeon-magpie-carrion-crow,,,compound,,,,,,,,,,
+xylocopa,Xylocopa spp.,Xylocopa spp.,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,,"Xylocopa Latreille, 1802",HIGHERRANK,92
+xylocopa-violacea,Xylocopa violacea,Xylocopa violacea,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,violacea,"Xylocopa violacea (Linnaeus, 1758)",EXACT,99
+xylosandrus-crassiusculus,"Xylosandrus crassiusculus, Scolytinae","Xylosandrus crassiusculus, Scolytinae",species,Animalia,Arthropoda,Insecta,Coleoptera,Curculionidae,Xylosandrus,crassiusculus,"Xylosandrus crassiusculus Wood, 1982",EXACT,82
+xylotrechus-chinensis,Xylotrechus chinensis / Cerambycidae,Xylotrechus chinensis / Cerambycidae,species,Animalia,Arthropoda,Insecta,Coleoptera,Cerambycidae,Xylotrechus,chinensis,"Xylotrechus chinensis (Chevrolat, 1852)",EXACT,97
+yponomeuta-evonymella,"Yponomeuta evonymella / Y. padella, Yponomeutidae","Yponomeuta evonymella / Y. padella, Yponomeutidae",species,Animalia,Arthropoda,Insecta,Lepidoptera,Yponomeutidae,Yponomeuta,evonymella,"Yponomeuta evonymella (Linnaeus, 1758)",HIGHERRANK,97
+zeuzera-pyrina,,,compound,,,,,,,,,,
