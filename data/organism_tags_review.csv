@@ -1,0 +1,4 @@
+slug,rule,detail,category,habitat_classes,movement_classes,rank,class_name,latin_name
+bradyrhizobium,R1,movement=none but category=other,other,ground-park,none,genus,Alphaproteobacteria,Bradyrhizobium / Rhizobium nodules
+frankia-alni,R1,movement=none but category=other,other,tree-rooted,none,species,Actinomycetia,Frankia alni / Frankiaceae
+lutra-lutra,R3,water-body habitat but category=mammal,mammal,water-edge;water-body,water-edge-stalker;water-drifter,species,Mammalia,"Lutra lutra, Arvicola amphibius"
