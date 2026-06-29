@@ -5,8 +5,9 @@ export const dynamic = "force-dynamic";
 
 export default async function TestPage() {
   const { count, error } = await supabase
-    .from("genera")
-    .select("*", { count: "exact", head: true });
+    .from("organisms")
+    .select("*", { count: "exact", head: true })
+    .eq("category", "tree");
 
   return (
     <main className="min-h-screen p-12 font-mono">
@@ -15,7 +16,7 @@ export default async function TestPage() {
         <p className="text-red-600">Error: {error.message}</p>
       ) : (
         <p>
-          <span className="font-bold">{count}</span> genera rows in the
+          <span className="font-bold">{count}</span> tree organisms in the
           database.
         </p>
       )}
