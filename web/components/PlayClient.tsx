@@ -38,6 +38,10 @@ export type CreatureForMap = {
   common_name: string;
   latin_name: string | null;
   photo_url: string | null;
+  /** ISO date of the most recent observation of this species — drives the
+   *  "Last spotted X ago" line on hover. Null when we have no observations
+   *  on file (e.g. curated but never sighted). */
+  last_observed_on: string | null;
 };
 
 type Props = {
@@ -49,6 +53,9 @@ type Props = {
   generaMeta: GenusMeta[];
   allCreatures: AllCreatureForFilter[];
   creaturesForMap: CreatureForMap[];
+  /** Tree genus slugs that have a /photos/<slug>.jpg file on disk. PlayMap
+   *  uses it to gate the photo block on the tree hover tooltip. */
+  treePhotoSlugs: string[];
 };
 
 // Wait this long after the last moveend/zoomend before firing a fetch. Long
@@ -186,6 +193,10 @@ export default function PlayClient(props: Props) {
   }, [data, props.allCreatures]);
 
   const markers = data?.markers ?? [];
+  const treePhotoSlugs = useMemo(
+    () => new Set(props.treePhotoSlugs),
+    [props.treePhotoSlugs],
+  );
 
   return (
     <main className="play-page">
@@ -194,6 +205,7 @@ export default function PlayClient(props: Props) {
           center={props.center}
           initialRadiusM={props.initialRadiusM}
           creatures={props.creaturesForMap}
+          treePhotoSlugs={treePhotoSlugs}
           markers={markers}
           onViewportChange={handleViewportChange}
           creatureSlots={adminSettings.creatureSlots}

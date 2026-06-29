@@ -66,10 +66,15 @@ function escapeHtml(s: string): string {
 // Single source of truth lives in lib/trees-api.ts (also used by /api/trees).
 export type Marker = ViewportMarker;
 
-function tooltipForIndividual(t: Marker): string {
-  const lines: string[] = [];
+function treePhotoBlock(slug: string | null, photoSlugs: Set<string>): string {
+  if (!slug || !photoSlugs.has(slug)) return "";
+  return `<div class="ttl-photo"><img src="/photos/${encodeURIComponent(slug)}.jpg" alt="" loading="lazy" /></div>`;
+}
+
+function tooltipForIndividual(t: Marker, photoSlugs: Set<string>): string {
+  const body: string[] = [];
   const title = t.species ?? t.slug ?? "Unknown tree";
-  lines.push(`<div class="ttl-h">${escapeHtml(title)}</div>`);
+  body.push(`<div class="ttl-h">${escapeHtml(title)}</div>`);
 
   const stats: string[] = [];
   if (t.height_m != null) stats.push(`${t.height_m} m`);
@@ -79,7 +84,7 @@ function tooltipForIndividual(t: Marker): string {
     if (age >= 0 && age < 400) stats.push(`${age} yrs`);
   }
   if (stats.length > 0) {
-    lines.push(`<div class="ttl-stats">${stats.join(" · ")}</div>`);
+    body.push(`<div class="ttl-stats">${stats.join(" · ")}</div>`);
   }
 
   if (
@@ -87,29 +92,30 @@ function tooltipForIndividual(t: Marker): string {
     t.planting_year >= 1500 &&
     t.planting_year <= CURRENT_YEAR + 1
   ) {
-    lines.push(`<div class="ttl-ctx">Planted in ${t.planting_year}</div>`);
+    body.push(`<div class="ttl-ctx">Planted in ${t.planting_year}</div>`);
   }
 
   if (t.protection_status) {
-    lines.push(
+    body.push(
       `<div class="ttl-protected">★ ${escapeHtml(
         en(PROTECTION_EN, t.protection_status),
       )}</div>`,
     );
   }
 
-  return lines.join("");
+  return treePhotoBlock(t.slug, photoSlugs) + `<div class="ttl-body">${body.join("")}</div>`;
 }
 
-function tooltipForCluster(m: Marker): string {
+function tooltipForCluster(m: Marker, photoSlugs: Set<string>): string {
   const slug = m.slug ?? "mixed";
-  return (
+  const body =
     `<div class="ttl-h">${escapeHtml(slug)}</div>` +
-    `<div class="ttl-stats">${m.n.toLocaleString()} trees · click to zoom</div>`
-  );
+    `<div class="ttl-stats">${m.n.toLocaleString()} trees · click to zoom</div>`;
+  return treePhotoBlock(m.slug, photoSlugs) + `<div class="ttl-body">${body}</div>`;
 }
 
 const SPRITE_ICON_CACHE = new Map<string, L.Icon>();
+const EMPTY_SLUG_SET: Set<string> = new Set();
 
 function iconForIndividual(slug: string | null): L.Icon | L.DivIcon {
   if (!slug) {
@@ -155,7 +161,34 @@ type CreatureForMap = {
   common_name: string;
   latin_name: string | null;
   photo_url: string | null;
+  /** ISO date (YYYY-MM-DD) of the most recent observation of this species,
+   *  or null if we have no observations on file. Drives the "Last spotted X
+   *  ago" line in the hover tooltip. */
+  last_observed_on: string | null;
 };
+
+/**
+ * Format an ISO observation date as a human-friendly "X ago" line. Returns
+ * null when the date is missing or invalid so callers can skip the line.
+ * Granularity is day-level because observations only store `observed_on date`.
+ */
+function formatLastSeen(observedOn: string | null): string | null {
+  if (!observedOn) return null;
+  const obs = new Date(observedOn + "T00:00:00Z").getTime();
+  if (!Number.isFinite(obs)) return null;
+  const now = Date.now();
+  const days = Math.floor((now - obs) / 86_400_000);
+  if (days < 0) return "Spotted today";
+  if (days === 0) return "Last spotted today";
+  if (days === 1) return "Last spotted yesterday";
+  if (days < 30) return `Last spotted ${days} days ago`;
+  const weeks = Math.floor(days / 7);
+  if (weeks < 9) return `Last spotted ${weeks} weeks ago`;
+  const months = Math.floor(days / 30);
+  if (months < 24) return `Last spotted ${months} ${months === 1 ? "month" : "months"} ago`;
+  const years = Math.floor(days / 365);
+  return `Last spotted ${years} ${years === 1 ? "year" : "years"} ago`;
+}
 
 function escapeForAttr(s: string): string {
   return s.replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -214,10 +247,15 @@ function startCreatureFlight(
   const latinLine = creature.latin_name
     ? `<div class="creature-tip-latin">${escapeForAttr(creature.latin_name)}</div>`
     : "";
+  const lastSeen = formatLastSeen(creature.last_observed_on);
+  const lastSeenLine = lastSeen
+    ? `<div class="creature-tip-lastseen">${escapeForAttr(lastSeen)}</div>`
+    : "";
   marker.bindTooltip(
     photoBlock +
       `<div class="creature-tip-name">${escapeForAttr(creature.common_name)}</div>` +
-      latinLine,
+      latinLine +
+      lastSeenLine,
     { direction: "top", className: "creature-tip", offset: [0, -8], sticky: true },
   );
 
@@ -298,6 +336,7 @@ export default function PlayMap({
   initialRadiusM,
   markers,
   creatures,
+  treePhotoSlugs,
   onViewportChange,
   creatureSlots,
   creatureSpeedMps,
@@ -308,6 +347,11 @@ export default function PlayMap({
   initialRadiusM: number;
   markers: Marker[];
   creatures?: CreatureForMap[];
+  /** Genus slugs that have a photo on disk at /photos/<slug>.jpg. Used to
+   *  decide whether to include a photo block in the tree hover tooltip — we
+   *  only have ~55 of these, so most clusters/markers gracefully render
+   *  text-only. */
+  treePhotoSlugs?: Set<string>;
   onViewportChange?: (bbox: Bbox, zoom: number) => void;
   /** Admin-panel override: force a specific creature-slot count instead of
    *  scaling with viewport area. Undefined keeps the viewport-area heuristic. */
@@ -315,6 +359,7 @@ export default function PlayMap({
   /** Admin-panel override: creature flight speed in m/s. */
   creatureSpeedMps?: number;
 }) {
+  const photoSlugSet = treePhotoSlugs ?? EMPTY_SLUG_SET;
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<L.Map | null>(null);
   const addressLayerRef = useRef<L.LayerGroup | null>(null);
@@ -459,7 +504,9 @@ export default function PlayMap({
         bubblingMouseEvents: false,
       });
       const tip =
-        m.mode === "cluster" ? tooltipForCluster(m) : tooltipForIndividual(m);
+        m.mode === "cluster"
+          ? tooltipForCluster(m, photoSlugSet)
+          : tooltipForIndividual(m, photoSlugSet);
       marker.bindTooltip(tip, {
         direction: "top",
         className: "tree-tip",
@@ -488,7 +535,7 @@ export default function PlayMap({
     // marker centroids for both modes is fine; cluster centroids are still
     // "where trees are".
     flyPointsRef.current = markers.map((m) => ({ lat: m.lat, lng: m.lng }));
-  }, [markers]);
+  }, [markers, photoSlugSet]);
 
   // ---- Creatures: spawn N slots, each respawns on completion ----
   // Depends on `markers` so the loop fully resets on every map change (pan or
