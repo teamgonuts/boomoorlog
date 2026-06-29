@@ -1,0 +1,168 @@
+slug,latin_name,query_name,rank,kingdom,phylum,class_name,order_name,family,genus,species,scientific_name,match_type,confidence
+Abelia,Abelia,Abelia,genus,Plantae,Tracheophyta,Magnoliopsida,Dipsacales,Caprifoliaceae,Abelia,,Abelia R.Br.,EXACT,96
+Abies,Abies,Abies,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Pinaceae,Abies,,Abies Mill.,EXACT,95
+Acer,Acer,Acer,genus,Plantae,Tracheophyta,Magnoliopsida,Sapindales,Sapindaceae,Acer,,Acer L.,HIGHERRANK,95
+Aesculus,Aesculus,Aesculus,genus,Plantae,Tracheophyta,Magnoliopsida,Sapindales,Sapindaceae,Aesculus,,Aesculus L.,HIGHERRANK,95
+Ailanthus,Ailanthus,Ailanthus,genus,Plantae,Tracheophyta,Magnoliopsida,Sapindales,Simaroubaceae,Ailanthus,,Ailanthus Desf.,EXACT,96
+Albizia,Albizia,Albizia,class,Plantae,Tracheophyta,Magnoliopsida,,,Albizia,,Magnoliopsida,HIGHERRANK,95
+Alnus,Alnus,Alnus,genus,Plantae,Tracheophyta,Magnoliopsida,Fagales,Betulaceae,Alnus,,Alnus Mill.,EXACT,95
+Amelanchier,Amelanchier,Amelanchier,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rosaceae,Amelanchier,,Amelanchier Medik.,EXACT,96
+Aralia,Aralia,Aralia,genus,Plantae,Tracheophyta,Magnoliopsida,Apiales,Araliaceae,Aralia,,Aralia L.,HIGHERRANK,95
+Araucaria,Araucaria,Araucaria,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Araucariaceae,Araucaria,,Araucaria Juss.,EXACT,96
+Arbutus,Arbutus,Arbutus,genus,Plantae,Tracheophyta,Magnoliopsida,Ericales,Ericaceae,Arbutus,,Arbutus L.,HIGHERRANK,95
+Asimina,Asimina,Asimina,genus,Plantae,Tracheophyta,Magnoliopsida,Magnoliales,Annonaceae,Asimina,,Asimina Adans.,HIGHERRANK,95
+Berberis,Berberis,Berberis,genus,Plantae,Tracheophyta,Magnoliopsida,Ranunculales,Berberidaceae,Berberis,,Berberis L.,EXACT,96
+Betula,Betula,Betula,genus,Plantae,Tracheophyta,Magnoliopsida,Fagales,Betulaceae,Betula,,Betula L.,HIGHERRANK,95
+Broussonetia,Broussonetia,Broussonetia,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Moraceae,Broussonetia,,Broussonetia Vent.,EXACT,95
+Buxus,Buxus,Buxus,genus,Plantae,Tracheophyta,Magnoliopsida,Buxales,Buxaceae,Buxus,,Buxus L.,EXACT,96
+Calocedrus,Calocedrus,Calocedrus,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Cupressaceae,Calocedrus,,Calocedrus Kurz,EXACT,96
+Carpinus,Carpinus,Carpinus,genus,Plantae,Tracheophyta,Magnoliopsida,Fagales,Betulaceae,Carpinus,,Carpinus L.,EXACT,96
+Carya,Carya,Carya,genus,Plantae,Tracheophyta,Magnoliopsida,Fagales,Juglandaceae,Carya,,Carya Nutt.,EXACT,96
+Castanea,Castanea,Castanea,genus,Plantae,Tracheophyta,Magnoliopsida,Fagales,Fagaceae,Castanea,,Castanea Mill.,EXACT,96
+Catalpa,Catalpa,Catalpa,genus,Plantae,Tracheophyta,Magnoliopsida,Lamiales,Bignoniaceae,Catalpa,,Catalpa Scop.,EXACT,96
+Cedrus,Cedrus,Cedrus,phylum,Plantae,Tracheophyta,,,,Cedrus,,Tracheophyta,HIGHERRANK,95
+Celtis,Celtis,Celtis,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Cannabaceae,Celtis,,Celtis L.,EXACT,96
+Cephalotaxus,Cephalotaxus,Cephalotaxus,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Cephalotaxaceae,Cephalotaxus,,Cephalotaxus Siebold & Zucc. ex Endl.,EXACT,95
+Cercidiphyllum,Cercidiphyllum,Cercidiphyllum,genus,Plantae,Tracheophyta,Magnoliopsida,Saxifragales,Cercidiphyllaceae,Cercidiphyllum,,Cercidiphyllum Siebold & Zucc.,EXACT,96
+Cercis,Cercis,Cercis,genus,Plantae,Tracheophyta,Magnoliopsida,Fabales,Fabaceae,Cercis,,Cercis L.,EXACT,96
+Chaenomeles,Chaenomeles,Chaenomeles,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rosaceae,Chaenomeles,,Chaenomeles Lindl.,EXACT,95
+Chamaecyparis,Chamaecyparis,Chamaecyparis,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Cupressaceae,Chamaecyparis,,Chamaecyparis Spach,EXACT,96
+Chimonanthus,Chimonanthus,Chimonanthus,genus,Plantae,Tracheophyta,Magnoliopsida,Laurales,Calycanthaceae,Chimonanthus,,Chimonanthus Lindl.,EXACT,96
+Chionanthus,Chionanthus,Chionanthus,genus,Plantae,Tracheophyta,Magnoliopsida,Lamiales,Oleaceae,Chionanthus,,Chionanthus Royen,EXACT,95
+Chitalpa,Chitalpa,Chitalpa,genus,Plantae,Tracheophyta,Magnoliopsida,Lamiales,Bignoniaceae,Chitalpa,,× Chitalpa T.S.Elias & Wisura,EXACT,96
+Choisya,Choisya,Choisya,genus,Plantae,Tracheophyta,Magnoliopsida,Sapindales,Rutaceae,Choisya,,Choisya Kunth,EXACT,96
+Cladrastis,Cladrastis,Cladrastis,genus,Plantae,Tracheophyta,Magnoliopsida,Fabales,Fabaceae,Cladrastis,,Cladrastis Raf.,EXACT,96
+Clerodendrum,Clerodendrum,Clerodendrum,genus,Plantae,Tracheophyta,Magnoliopsida,Lamiales,Lamiaceae,Clerodendrum,,Clerodendrum L.,EXACT,96
+Clethra,Clethra,Clethra,genus,Plantae,Tracheophyta,Magnoliopsida,Ericales,Clethraceae,Clethra,,Clethra L.,EXACT,96
+Cornus,Cornus,Cornus,genus,Plantae,Tracheophyta,Magnoliopsida,Cornales,Cornaceae,Cornus,,Cornus L.,EXACT,96
+Corylopsis,Corylopsis,Corylopsis,genus,Plantae,Tracheophyta,Magnoliopsida,Saxifragales,Hamamelidaceae,Corylopsis,,Corylopsis Siebold & Zucc.,EXACT,96
+Corylus,Corylus,Corylus,genus,Plantae,Tracheophyta,Magnoliopsida,Fagales,Betulaceae,Corylus,,Corylus L.,EXACT,96
+Cotinus,Cotinus,Cotinus,genus,Plantae,Tracheophyta,Magnoliopsida,Sapindales,Anacardiaceae,Cotinus,,Cotinus Mill.,EXACT,95
+Cotoneaster,Cotoneaster,Cotoneaster,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rosaceae,Cotoneaster,,Cotoneaster Medik.,EXACT,95
+Crataegus,Crataegus,Crataegus,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rosaceae,Crataegus,,Crataegus L.,EXACT,96
+Crataemespilus,Crataemespilus,Crataemespilus,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rosaceae,Crataemespilus,,Crataemespilus E.G.Camus,EXACT,96
+Cryptomeria,Cryptomeria,Cryptomeria,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Cupressaceae,Cryptomeria,,Cryptomeria D.Don,EXACT,96
+Cudrania,Cudrania,Cudrania,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Moraceae,Maclura,,Cudrania Trécul,EXACT,96
+Cunninghamia,Cunninghamia,Cunninghamia,phylum,Plantae,Tracheophyta,,,,Cunninghamia,,Tracheophyta,HIGHERRANK,95
+Cupressocyparis,Cupressocyparis,Cupressocyparis,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Cupressaceae,Cupressocyparis,,× Cupressocyparis Dallim.,EXACT,94
+Cupressus,Cupressus,Cupressus,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Cupressaceae,Cupressus,,Cupressus L.,EXACT,95
+Cyclocarya,Cyclocarya,Cyclocarya,genus,Plantae,Tracheophyta,Magnoliopsida,Fagales,Juglandaceae,Cyclocarya,,Cyclocarya Iljinsk.,EXACT,96
+Cydonia,Cydonia,Cydonia,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rosaceae,Cydonia,,Cydonia Tourn. ex Mill,EXACT,96
+Davidia,Davidia,Davidia,genus,Plantae,Tracheophyta,Magnoliopsida,Cornales,Nyssaceae,Davidia,,Davidia Baill.,EXACT,96
+Diospyros,Diospyros,Diospyros,genus,Plantae,Tracheophyta,Magnoliopsida,Ericales,Ebenaceae,Diospyros,,Diospyros L.,EXACT,96
+Dipelta,Dipelta,Dipelta,genus,Plantae,Tracheophyta,Magnoliopsida,Dipsacales,Caprifoliaceae,Dipelta,,Dipelta Maxim.,EXACT,95
+Elaeagnus,Elaeagnus,Elaeagnus,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Elaeagnaceae,Elaeagnus,,Elaeagnus L.,EXACT,95
+Emmenopterys,Emmenopterys,Emmenopterys,genus,Plantae,Tracheophyta,Magnoliopsida,Gentianales,Rubiaceae,Emmenopterys,,Emmenopterys Oliv.,EXACT,96
+Eriobotrya,Eriobotrya,Eriobotrya,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rosaceae,Rhaphiolepis,,Eriobotrya Lindl.,EXACT,96
+Eucommia,Eucommia,Eucommia,genus,Plantae,Tracheophyta,Magnoliopsida,Garryales,Eucommiaceae,Eucommia,,Eucommia Oliv.,EXACT,96
+Euonymus,Euonymus,Euonymus,genus,Plantae,Tracheophyta,Magnoliopsida,Celastrales,Celastraceae,Euonymus,,Euonymus L.,EXACT,96
+Fagus,Fagus,Fagus,genus,Plantae,Tracheophyta,Magnoliopsida,Fagales,Fagaceae,Fagus,,Fagus L.,EXACT,96
+Ficus,Ficus,Ficus,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Moraceae,Ficus,,Ficus L.,HIGHERRANK,95
+Firmiana,Firmiana,Firmiana,genus,Plantae,Tracheophyta,Magnoliopsida,Malvales,Malvaceae,Firmiana,,Firmiana Marsili,EXACT,96
+Fothergilla,Fothergilla,Fothergilla,genus,Plantae,Tracheophyta,Magnoliopsida,Saxifragales,Hamamelidaceae,Fothergilla,,Fothergilla L.,EXACT,95
+Frangula,Frangula,Frangula,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rhamnaceae,Frangula,,Frangula Mill.,EXACT,95
+Fraxinus,Fraxinus,Fraxinus,genus,Plantae,Tracheophyta,Magnoliopsida,Lamiales,Oleaceae,Fraxinus,,Fraxinus Tourn. ex L.,EXACT,96
+Ginkgo,Ginkgo,Ginkgo,genus,Plantae,Tracheophyta,Ginkgoopsida,Ginkgoales,Ginkgoaceae,Ginkgo,,Ginkgo L.,EXACT,96
+Gleditsia,Gleditsia,Gleditsia,genus,Plantae,Tracheophyta,Magnoliopsida,Fabales,Fabaceae,Gleditsia,,Gleditsia L.,EXACT,95
+Glyptostrobus,Glyptostrobus,Glyptostrobus,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Cupressaceae,Glyptostrobus,,Glyptostrobus Endl.,EXACT,96
+Gymnocladus,Gymnocladus,Gymnocladus,genus,Plantae,Tracheophyta,Magnoliopsida,Fabales,Fabaceae,Gymnocladus,,Gymnocladus Lam.,EXACT,96
+Halesia,Halesia,Halesia,genus,Plantae,Tracheophyta,Magnoliopsida,Ericales,Styracaceae,Halesia,,Halesia Ellis ex L.,EXACT,95
+Hamamelis,Hamamelis,Hamamelis,genus,Plantae,Tracheophyta,Magnoliopsida,Saxifragales,Hamamelidaceae,Hamamelis,,Hamamelis L.,EXACT,95
+Heptacodium,Heptacodium,Heptacodium,genus,Plantae,Tracheophyta,Magnoliopsida,Dipsacales,Caprifoliaceae,Heptacodium,,Heptacodium Rehder,EXACT,96
+Hibiscus,Hibiscus,Hibiscus,genus,Plantae,Tracheophyta,Magnoliopsida,Malvales,Malvaceae,Hibiscus,,Hibiscus L.,EXACT,95
+Hippophae,Hippophae,Hippophae,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Elaeagnaceae,Hippophae,,Hippophae L.,EXACT,96
+Hydrangea,Hydrangea,Hydrangea,genus,Plantae,Tracheophyta,Magnoliopsida,Cornales,Hydrangeaceae,Hydrangea,,Hydrangea Gronov. ex L.,EXACT,95
+Idesia,Idesia,Idesia,genus,Plantae,Tracheophyta,Magnoliopsida,Malpighiales,Salicaceae,Idesia,,Idesia Maxim.,EXACT,95
+Ilex,Ilex,Ilex,genus,Plantae,Tracheophyta,Magnoliopsida,Aquifoliales,Aquifoliaceae,Ilex,,Ilex L.L.,EXACT,95
+Itea,Itea,Itea,genus,Plantae,Tracheophyta,Magnoliopsida,Saxifragales,Iteaceae,Itea,,Itea L.,EXACT,96
+Juglans,Juglans,Juglans,genus,Plantae,Tracheophyta,Magnoliopsida,Fagales,Juglandaceae,Juglans,,Juglans L.,EXACT,96
+Juniperus,Juniperus,Juniperus,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Cupressaceae,Juniperus,,Juniperus L.,EXACT,96
+Kalopanax,Kalopanax,Kalopanax,genus,Plantae,Tracheophyta,Magnoliopsida,Apiales,Araliaceae,Kalopanax,,Kalopanax Miq.,EXACT,96
+Koelreuteria,Koelreuteria,Koelreuteria,genus,Plantae,Tracheophyta,Magnoliopsida,Sapindales,Sapindaceae,Koelreuteria,,Koelreuteria Laxm.,EXACT,95
+Kolkwitzia,Kolkwitzia,Kolkwitzia,genus,Plantae,Tracheophyta,Magnoliopsida,Dipsacales,Caprifoliaceae,Kolkwitzia,,Kolkwitzia Graebn.,EXACT,96
+Laburnum,Laburnum,Laburnum,genus,Plantae,Tracheophyta,Magnoliopsida,Fabales,Fabaceae,Laburnum,,Laburnum Fabr.,EXACT,95
+Lagerstroemia,Lagerstroemia,Lagerstroemia,genus,Plantae,Tracheophyta,Magnoliopsida,Myrtales,Lythraceae,Lagerstroemia,,Lagerstroemia L.,EXACT,96
+Larix,Larix,Larix,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Pinaceae,Larix,,Larix Mill.,EXACT,95
+Leucothoe,Leucothoe,Leucothoe,phylum,Plantae,Tracheophyta,,,,Leucothoe,,Tracheophyta,HIGHERRANK,95
+Leycesteria,Leycesteria,Leycesteria,genus,Plantae,Tracheophyta,Magnoliopsida,Dipsacales,Caprifoliaceae,Leycesteria,,Leycesteria Wall.,EXACT,96
+Ligustrum,Ligustrum,Ligustrum,genus,Plantae,Tracheophyta,Magnoliopsida,Lamiales,Oleaceae,Ligustrum,,Ligustrum L.,EXACT,96
+Liquidambar,Liquidambar,Liquidambar,genus,Plantae,Tracheophyta,Magnoliopsida,Saxifragales,Altingiaceae,Liquidambar,,Liquidambar L.,EXACT,96
+Liriodendron,Liriodendron,Liriodendron,genus,Plantae,Tracheophyta,Magnoliopsida,Magnoliales,Magnoliaceae,Liriodendron,,Liriodendron L.,EXACT,96
+Maackia,Maackia,Maackia,genus,Plantae,Tracheophyta,Magnoliopsida,Fabales,Fabaceae,Maackia,,Maackia Rupr.,EXACT,96
+Magnolia,Magnolia,Magnolia,genus,Plantae,Tracheophyta,Magnoliopsida,Magnoliales,Magnoliaceae,Magnolia,,Magnolia Plum. ex L.,EXACT,96
+Mahonia,Mahonia,Mahonia,genus,Plantae,Tracheophyta,Magnoliopsida,Ranunculales,Berberidaceae,Mahonia,,Mahonia Nutt.,EXACT,96
+Malus,Malus,Malus,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rosaceae,Malus,,Malus Mill.,EXACT,96
+Meliosma,Meliosma,Meliosma,genus,Plantae,Tracheophyta,Magnoliopsida,Proteales,Sabiaceae,Meliosma,,Meliosma Blume,EXACT,96
+Mespilus,Mespilus,Mespilus,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rosaceae,Mespilus,,Mespilus L.,EXACT,95
+Metasequoia,Metasequoia,Metasequoia,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Cupressaceae,Metasequoia,,Metasequoia Hu & W.C.Cheng,EXACT,95
+Morus,Morus,Morus,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Moraceae,Morus,,Morus L.,EXACT,96
+Nandina,Nandina,Nandina,genus,Plantae,Tracheophyta,Magnoliopsida,Ranunculales,Berberidaceae,Nandina,,Nandina Thunb.,EXACT,96
+Nothofagus,Nothofagus,Nothofagus,genus,Plantae,Tracheophyta,Magnoliopsida,Fagales,Nothofagaceae,Nothofagus,,Nothofagus Blume,EXACT,96
+Nyssa,Nyssa,Nyssa,genus,Plantae,Tracheophyta,Magnoliopsida,Cornales,Nyssaceae,Nyssa,,Nyssa Gronov. ex L.,EXACT,96
+Oemleria,Oemleria,Oemleria,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rosaceae,Oemleria,,Oemleria Rchb.,EXACT,96
+Olea,Olea,Olea,genus,Plantae,Tracheophyta,Magnoliopsida,Lamiales,Oleaceae,Olea,,Olea L.,EXACT,96
+Osmanthus,Osmanthus,Osmanthus,genus,Plantae,Tracheophyta,Magnoliopsida,Lamiales,Oleaceae,Osmanthus,,Osmanthus Lour.,EXACT,96
+Ostrya,Ostrya,Ostrya,genus,Plantae,Tracheophyta,Magnoliopsida,Fagales,Betulaceae,Ostrya,,Ostrya Scop.,EXACT,95
+Parrotia,Parrotia,Parrotia,genus,Plantae,Tracheophyta,Magnoliopsida,Saxifragales,Hamamelidaceae,Parrotia,,Parrotia C.A.Mey.,EXACT,95
+Parrotiopsis,Parrotiopsis,Parrotiopsis,genus,Plantae,Tracheophyta,Magnoliopsida,Saxifragales,Hamamelidaceae,Parrotiopsis,,Parrotiopsis C.K.Schneid.,EXACT,96
+Paulownia,Paulownia,Paulownia,genus,Plantae,Tracheophyta,Magnoliopsida,Lamiales,Paulowniaceae,Paulownia,,Paulownia Siebold & Zucc.,EXACT,96
+Phellodendron,Phellodendron,Phellodendron,genus,Plantae,Tracheophyta,Magnoliopsida,Sapindales,Rutaceae,Phellodendron,,Phellodendron Rupr.,EXACT,96
+Photinia,Photinia,Photinia,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rosaceae,Photinia,,Photinia Lindl.,EXACT,95
+Physocarpus,Physocarpus,Physocarpus,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rosaceae,Physocarpus,,Physocarpus (Cambess.) Maxim.,EXACT,95
+Picea,Picea,Picea,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Pinaceae,Picea,,Picea A.Dietr.,EXACT,95
+Picrasma,Picrasma,Picrasma,genus,Plantae,Tracheophyta,Magnoliopsida,Sapindales,Simaroubaceae,Picrasma,,Picrasma Blume,EXACT,95
+Pinus,Pinus,Pinus,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Pinaceae,Pinus,,Pinus L.,EXACT,96
+Planera,Planera,Planera,phylum,Plantae,Tracheophyta,,,,Planera,,Tracheophyta,HIGHERRANK,95
+Platanus,Platanus,Platanus,genus,Plantae,Tracheophyta,Magnoliopsida,Proteales,Platanaceae,Platanus,,Platanus L.,EXACT,95
+Platycladus,Platycladus,Platycladus,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Cupressaceae,Platycladus,,Platycladus Spach,EXACT,96
+Podocarpus,Podocarpus,Podocarpus,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Podocarpaceae,Podocarpus,,Podocarpus L'Hér. ex Pers.,EXACT,95
+Poncirus,Poncirus,Poncirus,genus,Plantae,Tracheophyta,Magnoliopsida,Sapindales,Rutaceae,Citrus,,Poncirus Raf.,EXACT,96
+Populus,Populus,Populus,genus,Plantae,Tracheophyta,Magnoliopsida,Malpighiales,Salicaceae,Populus,,Populus L.,EXACT,96
+Prunus,Prunus,Prunus,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rosaceae,Prunus,,Prunus L.,HIGHERRANK,95
+Pseudolarix,Pseudolarix,Pseudolarix,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Pinaceae,Pseudolarix,,Pseudolarix Gordon & Glend.,EXACT,96
+Pseudopanax,Pseudopanax,Pseudopanax,genus,Plantae,Tracheophyta,Magnoliopsida,Apiales,Araliaceae,Pseudopanax,,Pseudopanax K.Koch,EXACT,95
+Pseudotsuga,Pseudotsuga,Pseudotsuga,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Pinaceae,Pseudotsuga,,Pseudotsuga Carrière,EXACT,96
+Ptelea,Ptelea,Ptelea,genus,Plantae,Tracheophyta,Magnoliopsida,Sapindales,Rutaceae,Ptelea,,Ptelea L.,EXACT,96
+Pterocarya,Pterocarya,Pterocarya,genus,Plantae,Tracheophyta,Magnoliopsida,Fagales,Juglandaceae,Pterocarya,,Pterocarya Kunth,EXACT,95
+Pterostyrax,Pterostyrax,Pterostyrax,genus,Plantae,Tracheophyta,Magnoliopsida,Ericales,Styracaceae,Pterostyrax,,Pterostyrax Siebold & Zucc.,EXACT,96
+Pyrus,Pyrus,Pyrus,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rosaceae,Pyrus,,Pyrus L.,EXACT,96
+Quercus,Quercus,Quercus,genus,Plantae,Tracheophyta,Magnoliopsida,Fagales,Fagaceae,Quercus,,Quercus L.,EXACT,96
+Rhamnus,Rhamnus,Rhamnus,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rhamnaceae,Rhamnus,,Rhamnus L.,EXACT,96
+Rhododendron,Rhododendron,Rhododendron,genus,Plantae,Tracheophyta,Magnoliopsida,Ericales,Ericaceae,Rhododendron,,Rhododendron L.,HIGHERRANK,95
+Rhus,Rhus,Rhus,genus,Plantae,Tracheophyta,Magnoliopsida,Sapindales,Anacardiaceae,Rhus,,Rhus L.,EXACT,96
+Robinia,Robinia,Robinia,genus,Plantae,Tracheophyta,Magnoliopsida,Fabales,Fabaceae,Robinia,,Robinia L.,EXACT,96
+Rosa,Rosa,Rosa,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rosaceae,Rosa,,Rosa L.,EXACT,95
+Salix,Salix,Salix,genus,Plantae,Tracheophyta,Magnoliopsida,Malpighiales,Salicaceae,Salix,,Salix L.,EXACT,95
+Sambucus,Sambucus,Sambucus,genus,Plantae,Tracheophyta,Magnoliopsida,Dipsacales,Viburnaceae,Sambucus,,Sambucus L.,EXACT,96
+Sarcococca,Sarcococca,Sarcococca,genus,Plantae,Tracheophyta,Magnoliopsida,Buxales,Buxaceae,Sarcococca,,Sarcococca Lindl.,EXACT,96
+Sassafras,Sassafras,Sassafras,genus,Plantae,Tracheophyta,Magnoliopsida,Laurales,Lauraceae,Sassafras,,Sassafras J.Presl,EXACT,95
+Sciadopitys,Sciadopitys,Sciadopitys,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Sciadopityaceae,Sciadopitys,,Sciadopitys Siebold & Zucc.,EXACT,96
+Sequoia,Sequoia,Sequoia,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Cupressaceae,Sequoia,,Sequoia Endl.,EXACT,96
+Sequoiadendron,Sequoiadendron,Sequoiadendron,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Cupressaceae,Sequoiadendron,,Sequoiadendron J.Buchholz,EXACT,96
+Skimmia,Skimmia,Skimmia,genus,Plantae,Tracheophyta,Magnoliopsida,Sapindales,Rutaceae,Skimmia,,Skimmia Thunb.,EXACT,96
+Sorbus,Sorbus,Sorbus,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rosaceae,Sorbus,,Sorbus L.,EXACT,96
+Staphylea,Staphylea,Staphylea,genus,Plantae,Tracheophyta,Magnoliopsida,Crossosomatales,Staphyleaceae,Staphylea,,Staphylea L.,EXACT,96
+Stewartia,Stewartia,Stewartia,genus,Plantae,Tracheophyta,Magnoliopsida,Ericales,Theaceae,Stewartia,,Stewartia L.,EXACT,95
+Styphnolobium,Styphnolobium,Styphnolobium,genus,Plantae,Tracheophyta,Magnoliopsida,Fabales,Fabaceae,Styphnolobium,,Styphnolobium Schott,EXACT,95
+Styrax,Styrax,Styrax,genus,Plantae,Tracheophyta,Magnoliopsida,Ericales,Styracaceae,Styrax,,Styrax L.,EXACT,96
+Sycoparrotia,Sycoparrotia,Sycoparrotia,genus,Plantae,Tracheophyta,Magnoliopsida,Saxifragales,Hamamelidaceae,Sycoparrotia,,× Sycoparrotia P.K.Endress & Anliker,EXACT,96
+Symplocos,Symplocos,Symplocos,genus,Plantae,Tracheophyta,Magnoliopsida,Ericales,Symplocaceae,Symplocos,,Symplocos Jacq.,EXACT,96
+Syringa,Syringa,Syringa,genus,Plantae,Tracheophyta,Magnoliopsida,Lamiales,Oleaceae,Syringa,,Syringa L.,EXACT,95
+Tamarix,Tamarix,Tamarix,genus,Plantae,Tracheophyta,Magnoliopsida,Caryophyllales,Tamaricaceae,Tamarix,,Tamarix L.,EXACT,96
+Taxodium,Taxodium,Taxodium,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Cupressaceae,Taxodium,,Taxodium Rich.,EXACT,96
+Taxus,Taxus,Taxus,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Taxaceae,Taxus,,Taxus L.,EXACT,96
+Tetracentron,Tetracentron,Tetracentron,genus,Plantae,Tracheophyta,Magnoliopsida,Trochodendrales,Trochodendraceae,Tetracentron,,Tetracentron Oliv.,EXACT,96
+Tetradium,Tetradium,Tetradium,genus,Plantae,Tracheophyta,Magnoliopsida,Sapindales,Rutaceae,Tetradium,,Tetradium Lour.,EXACT,95
+Thuja,Thuja,Thuja,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Cupressaceae,Thuja,,Thuja L.,EXACT,96
+Thujopsis,Thujopsis,Thujopsis,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Cupressaceae,Thujopsis,,Thujopsis Siebold & Zucc. ex Endl.,EXACT,95
+Tilia,Tilia,Tilia,genus,Plantae,Tracheophyta,Magnoliopsida,Malvales,Malvaceae,Tilia,,Tilia L.,EXACT,96
+Toona,Toona,Toona,genus,Plantae,Tracheophyta,Magnoliopsida,Sapindales,Meliaceae,Toona,,Toona (Endl.) M.Roem.,EXACT,96
+Torreya,Torreya,Torreya,phylum,Plantae,Tracheophyta,,,,Torreya,,Tracheophyta,HIGHERRANK,95
+Trachycarpus,Trachycarpus,Trachycarpus,genus,Plantae,Tracheophyta,Liliopsida,Arecales,Arecaceae,Trachycarpus,,Trachycarpus H.Wendl.,EXACT,96
+Tsuga,Tsuga,Tsuga,genus,Plantae,Tracheophyta,Pinopsida,Pinales,Pinaceae,Tsuga,,Tsuga (Endl.) Carrière,EXACT,96
+Ulmus,Ulmus,Ulmus,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Ulmaceae,Ulmus,,Ulmus L.,EXACT,95
+Viburnum,Viburnum,Viburnum,genus,Plantae,Tracheophyta,Magnoliopsida,Dipsacales,Viburnaceae,Viburnum,,Viburnum L.,EXACT,96
+Weigela,Weigela,Weigela,genus,Plantae,Tracheophyta,Magnoliopsida,Dipsacales,Caprifoliaceae,Weigela,,Weigela Thunb.,EXACT,95
+Zanthoxylum,Zanthoxylum,Zanthoxylum,genus,Plantae,Tracheophyta,Magnoliopsida,Sapindales,Rutaceae,Zanthoxylum,,Zanthoxylum L.,EXACT,96
+Zelkova,Zelkova,Zelkova,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Ulmaceae,Zelkova,,Zelkova Spach,EXACT,96
+Ziziphus,Ziziphus,Ziziphus,genus,Plantae,Tracheophyta,Magnoliopsida,Rosales,Rhamnaceae,Ziziphus,,Ziziphus Mill.,EXACT,96
