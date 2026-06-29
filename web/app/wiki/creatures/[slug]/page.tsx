@@ -36,26 +36,51 @@ function isRecent(promoted_at: string | null): boolean {
 export default async function CreaturePage({ params }: { params: Params }) {
   const { slug } = await params;
 
-  const { data: creature } = await supabase
-    .from("creatures")
+  const { data: organism } = await supabase
+    .from("organisms")
     .select("*")
+    .neq("category", "tree")
     .eq("slug", slug)
     .maybeSingle();
 
-  if (!creature) {
+  if (!organism) {
     return notFound();
   }
+
+  // Project to the legacy `creature` shape for the rest of the template.
+  // Drops in step 9 along with the lib/creature.ts conversion.
+  const creature = {
+    slug: organism.slug,
+    common_name: organism.common_name ?? organism.latin_name,
+    latin_name: organism.latin_name,
+    pic_file: organism.photo_path,
+    tree_count: organism.tree_count,
+    tree_genera: organism.tree_genera,
+    form: organism.form,
+    attack: organism.attack,
+    range: organism.range,
+    health: organism.health,
+    attack_speed: organism.attack_speed,
+    move_speed: organism.move_speed,
+    source: organism.promoted_source ?? "curated",
+    promoted_at: organism.promoted_at,
+    taxon_group: organism.taxon_group,
+    wikipedia_summary: organism.lore,
+    observations_count: organism.observations_count,
+    sprite_pending: organism.sprite_pending,
+  };
 
   const isAuto = creature.source === "auto_observed";
   const recent = isRecent(creature.promoted_at);
 
-  // Pull host-tree genera only when we have any — auto-promoted creatures
+  // Pull host-tree organisms only when we have any — auto-promoted creatures
   // have an empty tree_genera array and we'd otherwise issue a useless query.
   const { data: hostGenera } =
     creature.tree_genera && creature.tree_genera.length > 0
       ? await supabase
-          .from("genera")
+          .from("organisms")
           .select("slug, latin_name, display_name, tree_count")
+          .eq("category", "tree")
           .in("slug", creature.tree_genera)
       : { data: [] as Array<{
           slug: string;
