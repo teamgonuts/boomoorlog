@@ -1,0 +1,28 @@
+slug,latin_name,taxon_id,photo_url,photo_license,attribution,status,note
+pediasia-contaminella,Pediasia contaminella,322382,https://inaturalist-open-data.s3.amazonaws.com/photos/395582/medium.jpg,cc-by-nc-sa,"(c) Marcello Consolo, some rights reserved (CC BY-NC-SA)",ok,
+pediopsis-tiliae,Pediopsis tiliae,227350,https://inaturalist-open-data.s3.amazonaws.com/photos/26946609/medium.jpg,cc-by-nc,"(c) Nikolai Vladimirov, some rights reserved (CC BY-NC)",ok,
+pelosia-obtusa,Pelosia obtusa,483381,https://inaturalist-open-data.s3.amazonaws.com/photos/216535409/medium.jpg,cc-by-nc,"(c) Michał Brzeziński, some rights reserved (CC BY-NC)",ok,
+peribalus-strictus,Peribalus strictus,491461,https://inaturalist-open-data.s3.amazonaws.com/photos/32970271/medium.jpeg,cc-by-nc,"(c) Lupoli Roland, some rights reserved (CC BY-NC)",ok,
+peribatodes-secundaria,Peribatodes secundaria,324190,https://inaturalist-open-data.s3.amazonaws.com/photos/52141986/medium.jpg,cc-by-nc,"(c) Paolo Mazzei, some rights reserved (CC BY-NC)",ok,
+periclista-spec,Periclista spec.,359137,https://inaturalist-open-data.s3.amazonaws.com/photos/120751315/medium.jpeg,cc-by-nc,"(c) Stefan, some rights reserved (CC BY-NC)",ok,genus-level
+peripsychoda-auriculata,Peripsychoda auriculata,1005447,https://inaturalist-open-data.s3.amazonaws.com/photos/171063422/medium.jpeg,cc-by-nc,"(c) Marie Lou Legrand, some rights reserved (CC BY-NC)",ok,
+peripsychoda-spec,Peripsychoda spec.,922435,https://inaturalist-open-data.s3.amazonaws.com/photos/487288075/medium.jpeg,cc-by-nc,"(c) Federico Biguzzi, some rights reserved (CC BY-NC)",ok,genus-level; used alt obs photo
+perizoma-alchemillata,Perizoma alchemillata,201403,https://inaturalist-open-data.s3.amazonaws.com/photos/47815226/medium.jpg,cc-by-nc,"(c) ALLEMAND Guillaume, some rights reserved (CC BY-NC)",ok,
+perizoma-flavofasciata,Perizoma flavofasciata,460199,https://inaturalist-open-data.s3.amazonaws.com/photos/1699598/medium.jpg,cc-by-nc-sa,"(c) Wildlife in a Dorset garden, some rights reserved (CC BY-NC-SA)",ok,
+perovskia-abrotanoides,Perovskia abrotanoides,941722,https://inaturalist-open-data.s3.amazonaws.com/photos/40101992/medium.jpeg,cc-by-nc,"(c) Jennifer Chandler, some rights reserved (CC BY-NC)",ok,
+perovskia-abrotanoides-x-perovskia-atriplicifolia,Perovskia abrotanoides x Perovskia atriplicifolia,,,,,"skip","no open-licensed recognisable photo found for hybrid"
+perovskia-spec,Perovskia spec.,133401,https://inaturalist-open-data.s3.amazonaws.com/photos/40101992/medium.jpeg,cc-by-nc,"(c) Jennifer Chandler, some rights reserved (CC BY-NC)",ok,genus-level; reused Salvia abrotanoides photo
+persicaria-amphibia,Persicaria amphibia,78450,https://inaturalist-open-data.s3.amazonaws.com/photos/61212580/medium.jpeg,cc-by-nc,"(c) erik_p, some rights reserved (CC BY-NC)",ok,
+persicaria-lapathifolia,Persicaria lapathifolia,63886,https://inaturalist-open-data.s3.amazonaws.com/photos/157824424/medium.jpg,cc-by,"(c) Sandy Wolkenberg, some rights reserved (CC BY)",ok,
+petrorhagia-saxifraga,Petrorhagia saxifraga,60017,https://inaturalist-open-data.s3.amazonaws.com/photos/141005771/medium.jpg,cc-by-nc,"(c) Alenka Mihoric, some rights reserved (CC BY-NC)",ok,
+petunia-x-punctata-p-axillaris-x-p-integrifolia,"Petunia x punctata (P. axillaris x P. integrifolia)",170914,https://inaturalist-open-data.s3.amazonaws.com/photos/80463110/medium.jpg,cc-by-nc,"(c) sorte_muld, some rights reserved (CC BY-NC)",ok,used Petunia x atkinsiana (closest hybrid taxon)
+phania-funesta,Phania funesta,467342,https://inaturalist-open-data.s3.amazonaws.com/photos/2042806/medium.jpg,cc-by,"(c) Janet Graham, some rights reserved (CC BY)",ok,
+philereme-transversata,Philereme transversata,483308,https://inaturalist-open-data.s3.amazonaws.com/photos/688368199/medium.jpg,cc0,"no rights reserved",ok,used obs photo (default had no open license)
+philonicus-albiceps,Philonicus albiceps,154653,https://inaturalist-open-data.s3.amazonaws.com/photos/142565706/medium.jpg,cc-by-nc-nd,"(c) Ralph Martin, some rights reserved (CC BY-NC-ND)",ok,
+philopedon-plagiatum,Philopedon plagiatum,455997,https://inaturalist-open-data.s3.amazonaws.com/photos/64939363/medium.jpg,cc-by-nc,"(c) Kevin Gielen, some rights reserved (CC BY-NC)",ok,
+phoridae-indet,Phoridae indet.,55351,https://inaturalist-open-data.s3.amazonaws.com/photos/235461958/medium.jpg,cc-by,"(c) Justin Williams, some rights reserved (CC BY)",ok,family-level
+photedes-minima,Photedes minima,469888,https://inaturalist-open-data.s3.amazonaws.com/photos/2159840/medium.jpg,cc-by,"(c) Donald Hobern, some rights reserved (CC BY)",ok,
+phragmataecia-castaneae,Phragmataecia castaneae,362858,https://inaturalist-open-data.s3.amazonaws.com/photos/134885730/medium.jpg,cc-by-nc,"(c) Michał Brzeziński, some rights reserved (CC BY-NC)",ok,
+phycita-roborella,Phycita roborella,465844,https://inaturalist-open-data.s3.amazonaws.com/photos/47028827/medium.jpeg,cc-by-nc-sa,"(c) Suso Tizón, some rights reserved (CC BY-NC-SA)",ok,
+phyllocnistis-xenia,Phyllocnistis xenia,787978,https://inaturalist-open-data.s3.amazonaws.com/photos/430532289/medium.jpeg,cc-by-nc,"(c) Federico Biguzzi, some rights reserved (CC BY-NC)",ok,leaf mine shown; used obs photo (default had no open license)
+phyllocoptes-eupadi,Phyllocoptes eupadi,547280,https://inaturalist-open-data.s3.amazonaws.com/photos/72660175/medium.jpeg,cc-by-nc,"(c) Bernd Bäumler, some rights reserved (CC BY-NC)",ok,gall symptom shown

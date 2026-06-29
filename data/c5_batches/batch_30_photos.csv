@@ -1,3 +1,24 @@
 slug,latin_name,taxon_id,photo_url,photo_license,attribution,status,note
 volvariella-gloiocephala,Volvariella gloiocephala,348720,https://inaturalist-open-data.s3.amazonaws.com/photos/334775607/medium.jpg,cc-by-nc,"(c) maricel patino, some rights reserved (CC BY-NC)",ok,
 xysticus-ulmi,Xysticus ulmi,496641,https://inaturalist-open-data.s3.amazonaws.com/photos/331936906/medium.jpg,cc-by-nc,"(c) Tobias Bauer, some rights reserved (CC BY-NC)",ok,
+ypsolopha-dentella,Ypsolopha dentella,207523,https://inaturalist-open-data.s3.amazonaws.com/photos/86451592/medium.jpg,cc-by,"(c) brendanboyd, some rights reserved (CC BY)",ok,
+ypsolopha-scabrella,Ypsolopha scabrella,362642,https://inaturalist-open-data.s3.amazonaws.com/photos/27976505/medium.jpg,cc-by-nc,"(c) Nikolai Vladimirov, some rights reserved (CC BY-NC)",ok,
+abia-nitens,Abia nitens,1404272,https://inaturalist-open-data.s3.amazonaws.com/photos/6110203/medium.jpg,cc-by-nc-nd,"(c) Bernard Ruelle, some rights reserved (CC BY-NC-ND)",ok,
+acanthus-hungaricus,Acanthus hungaricus,782674,https://inaturalist-open-data.s3.amazonaws.com/photos/46274816/medium.jpeg,cc-by-nc,"(c) Tassos Sakoulis, some rights reserved (CC BY-NC)",ok,
+acanthus-spec,Acanthus spec.,70046,https://inaturalist-open-data.s3.amazonaws.com/photos/153849884/medium.jpg,cc-by-nc,"(c) markusgmeiner, some rights reserved (CC BY-NC)",ok,genus-level photo
+acer-negundo,Acer negundo,47726,https://inaturalist-open-data.s3.amazonaws.com/photos/229714369/medium.jpg,cc-by-nc,"(c) thewindcriesmary, some rights reserved (CC BY-NC)",ok,
+acer-platanoides,Acer platanoides,54763,https://inaturalist-open-data.s3.amazonaws.com/photos/87307303/medium.jpeg,cc-by-nc,"(c) tauntonguy02780, some rights reserved (CC BY-NC)",ok,
+acer-pseudoplatanus-f-aureovariegatum,Acer pseudoplatanus f. aureovariegatum,119791,https://inaturalist-open-data.s3.amazonaws.com/photos/81357328/medium.jpg,cc-by,"(c) Dan Scali, some rights reserved (CC BY)",ok,species-level photo (no cultivar match)
+acer-saccharinum,Acer saccharinum,54762,https://inaturalist-open-data.s3.amazonaws.com/photos/135565/medium.jpg,cc0,no rights reserved,ok,
+achillea-millefolium-cultivar,Achillea millefolium (cultivar),52821,https://inaturalist-open-data.s3.amazonaws.com/photos/4902/medium.jpg,cc-by-nc-nd,"(c) Steve Guttman, some rights reserved (CC BY-NC-ND)",ok,species-level photo
+acleris-bergmanniana,Acleris bergmanniana,174133,https://inaturalist-open-data.s3.amazonaws.com/photos/235798220/medium.jpeg,cc-by-nc,"(c) cossus, some rights reserved (CC BY-NC)",ok,
+acleris-ferrugana,Acleris ferrugana,417042,https://inaturalist-open-data.s3.amazonaws.com/photos/32369800/medium.jpg,cc-by-nc,"(c) Philip Sansum, some rights reserved (CC BY-NC)",ok,
+acleris-logiana,Acleris logiana,212338,https://inaturalist-open-data.s3.amazonaws.com/photos/243028330/medium.jpg,cc-by-nc,"(c) jkt, some rights reserved (CC BY-NC)",ok,
+acleris-variegana,Acleris variegana,212354,https://inaturalist-open-data.s3.amazonaws.com/photos/99311624/medium.jpg,cc-by-nc,"(c) Heiner Ziegler, some rights reserved (CC BY-NC)",ok,
+acrobasis-advenella,Acrobasis advenella,324912,https://inaturalist-open-data.s3.amazonaws.com/photos/4858503/medium.jpg,cc-by,"(c) Jerzy Strzelecki, some rights reserved (CC BY)",ok,
+acrolepiopsis-assectella,Acrolepiopsis assectella,317685,https://inaturalist-open-data.s3.amazonaws.com/photos/582000715/medium.jpg,cc-by-nc,"(c) Andrey Ponomarev, some rights reserved (CC BY-NC)",ok,
+acronicta-rumicis,Acronicta rumicis,55623,https://inaturalist-open-data.s3.amazonaws.com/photos/306890283/medium.jpg,cc-by-nc,"(c) Michał Brzeziński, some rights reserved (CC BY-NC)",ok,
+aculus-tetanothrix,Aculus tetanothrix,469076,https://inaturalist-open-data.s3.amazonaws.com/photos/1379750/medium.jpg,cc-by-nc,"(c) Bob Hislop, some rights reserved (CC BY-NC)",ok,SEM microscopy image
+adiantum-venustum,Adiantum venustum,487748,https://inaturalist-open-data.s3.amazonaws.com/photos/52864264/medium.jpg,cc0,no rights reserved,ok,
+aegopinella-nitidula,Aegopinella nitidula,172142,https://inaturalist-open-data.s3.amazonaws.com/photos/484995951/medium.jpg,cc-by-sa,"(c) Gilles San Martin, some rights reserved (CC BY-SA)",ok,
+aelia-acuminata,Aelia acuminata,326884,https://inaturalist-open-data.s3.amazonaws.com/photos/65160544/medium.jpeg,cc-by-nc,"(c) Felix Riegel, some rights reserved (CC BY-NC)",ok,
