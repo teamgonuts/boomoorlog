@@ -1,9 +1,15 @@
-# Project Vision — Boomoorlog ("Tree War")
+# Tower Defense Vision — PARKED
 
+> **Status (2026-06-29): PARKED.** This was the original concept for the project. The
+> repo's primary product is now [**Creatures AMS**](CREATURES_VISION.md) — a living
+> pixel-art map of Amsterdam's plants and wildlife. Tower Defense is preserved here for
+> reference and possible revival; no active development happens on it while Creatures AMS
+> is shipping. If revived, the delivery plan lives in
+> [TOWER_DEFENSE_ROADMAP.md](TOWER_DEFENSE_ROADMAP.md).
+>
 > **Direction change (2026-06-28):** pivoted from "two ZIP codes battle, marching armies
 > clash" to "defend your own ~100m neighborhood against waves of spawns, classic
-> tower-defense." This reverses the *marching-armies* decision locked 2026-06-27. Delivery
-> plan lives in [TD_ROADMAP.md](TD_ROADMAP.md).
+> tower-defense." This reverses the *marching-armies* decision locked 2026-06-27.
 
 ## Concept
 

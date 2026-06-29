@@ -288,7 +288,7 @@ on the fly with the two raw inputs is cheap and keeps tuning easy.
 |---|---|
 | PostGIS extension | Trees already carry `postcode6`/`postcode4`. Spatial queries aren't needed yet. Add when M4 wants "radius around a point" or "draw the boundary polygon." |
 | `postcodes` table with boundary geometries | Same reason — no boundary work needed yet. The 315 MB PC6 GeoJSON stays offline. |
-| Separate `species` table | One genus = one stat block (locked in VISION.md). Species variation (`Tilia americana` vs `Tilia cordata`) is preserved on `trees.species_full` for filtering/curiosity, but doesn't drive stats. |
+| Separate `species` table | One genus = one stat block (locked in TOWER_DEFENSE_VISION.md). Species variation (`Tilia americana` vs `Tilia cordata`) is preserved on `trees.species_full` for filtering/curiosity, but doesn't drive stats. Note: this schema predates the C8 unification milestone (see CREATURES_ROADMAP.md) and will be revised when the unified `organisms` model lands. |
 | Per-tree custom stats | Stats live on `genera`, not `trees`. Trees contribute *count* and *aggregate properties* (avg height in a ZIP, etc.) — not individual stat blocks. |
 | `users` / `battles` tables | Not until M9. M2 is just the source-of-truth seed. |
 | Indexes on game-stat columns (`attack`, `health`, etc.) | Genera is 56 rows. A full table scan is faster than an index lookup. Indexes only matter on `trees`. |

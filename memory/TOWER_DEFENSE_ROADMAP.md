@@ -1,11 +1,16 @@
-# Boomoorlog — Roadmap & Plan of Attack
+# Tower Defense Roadmap — PARKED
 
-> Living document. This is the source of truth for **what we're building and in what
-> order**. Update it as milestones complete or decisions change. Game-design decisions
-> still live in `memory/` (VISION.md, STATS.md, CHARACTERS.md); this file is about
-> **delivery and architecture**.
+> **Status (2026-06-29): PARKED.** The repo's primary product is now
+> [**Creatures AMS**](CREATURES_VISION.md) — delivery plan in
+> [CREATURES_ROADMAP.md](CREATURES_ROADMAP.md). The TD roadmap below is preserved for
+> reference and possible revival; no active TD development is happening. M1–M4 were
+> completed before parking; the wiki / database / address map / sprite pipeline they
+> produced are reused by Creatures AMS.
 >
-> Last updated: 2026-06-28
+> Game-design decisions for TD still live in this folder: `TOWER_DEFENSE_VISION.md`,
+> `STATS.md`, `CHARACTERS.md`.
+>
+> Last updated: 2026-06-29 (PARKED) — content below dated 2026-06-28.
 
 ---
 
@@ -18,12 +23,13 @@ trees are your **defensive towers**. Classic tower-defense, generated from open 
 Built on a real **database source of truth** (not CSVs, not baked into HTML), structured
 to scale toward real users over time.
 
-See `memory/VISION.md` for the full game concept.
+See `memory/TOWER_DEFENSE_VISION.md` for the full game concept.
 
 > **Direction change (2026-06-28):** pivoted from "two ZIP codes battle, marching armies
 > clash" to "defend your 1km neighborhood against spawns, classic TD." This reverses the
-> *marching-armies* decision locked in VISION.md on 2026-06-27 and revives PostGIS + adds
-> OSM geometry (see below). VISION.md still describes the old model and needs a follow-up
+> *marching-armies* decision locked in TOWER_DEFENSE_VISION.md on 2026-06-27 and revives
+> PostGIS + adds OSM geometry (see below). TOWER_DEFENSE_VISION.md still describes the
+> old model and needs a follow-up
 > rewrite.
 
 ---

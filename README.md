@@ -1,77 +1,73 @@
-# Boomoorlog 🌳⚔️
+# Creatures AMS 🌳🐦🍄
 
-**"Tree War"** — a web app where two Amsterdam ZIP codes battle each other
-auto-battler style, using the **real trees** that grow in each postcode as the
-combatants.
+A single-purpose website that makes **Amsterdam locals fall in love with the wildlife on
+their own street.** Open the page and a pixel-art map of the city is already alive —
+real trees in their real places, real animals in their real habitats, real sightings
+from this week — and clicking anything opens a beautiful little dossier about it.
 
-You enter your ZIP code and an opponent's ZIP code. The app pulls every real tree
-in each area from the Amsterdam open-data trees dataset, builds an army from them,
-and runs an automated marching-army battle. ZIPs in → watch the fight → winner out.
-No in-match clicking.
+Not a game. Not a tower defense. An ambient, whimsical, *truthful* window into the
+living city, grounded entirely in real open data.
 
-## How it works
+See [`memory/CREATURES_VISION.md`](memory/CREATURES_VISION.md) for the full concept and
+[`memory/CREATURES_ROADMAP.md`](memory/CREATURES_ROADMAP.md) for the delivery plan
+(phases C1–C19).
 
-- **Real data only.** The count, species mix, age, and size of trees in a ZIP code
-  determine that side's army. A leafy old neighborhood feels different from a sparse
-  new one.
-- **Characters = tree genera.** One stat block per genus (~50 archetypes), not per
-  individual tree. Rarity comes from real frequency — common street trees vs.
-  long-tail exotics (Sequoia, Ginkgo, Araucaria).
-- **Stats from the data.** Size axis (height, trunk diameter) drives Range, Attack,
-  and Health; vigor (growth rate) drives Movement; researched wood density drives
-  Attack speed.
+## Data sources
 
-See [`memory/VISION.md`](memory/VISION.md) and [`memory/STATS.md`](memory/STATS.md)
-for the full game design.
+- **Amsterdam open trees** — DSO `bomen` / `stamgegevens` (~298k living trees).
+- **iNaturalist** + **Waarneming.nl** — live creature observations (refreshed regularly).
+- **OSM** — roads, canals, parks, buildings (habitat polygons for realistic placement).
+- **KNMI** — live weather (Phase 1 weather mirror).
+- **xeno-canto** — bird & creature sounds (Phase 1 sound layer).
+- More to come as the unified encyclopedia takes shape (Phase 2).
 
 ## Repo layout
 
 | Path | What it is |
 |---|---|
-| `memory/` | Game-design source of truth + delivery plan — VISION, STATS, CHARACTERS, ROADMAP, per-genus notes. |
+| `memory/` | Design source of truth — vision, roadmap, stats, per-genus research. |
 | `data/` | Raw datasets — **offline pipeline inputs only** (see note below). |
-| `db/` | SQL migrations (`001_schema.sql`, `002_indexes.sql`, `003_backfill_genera.sql`, `004_postgis.sql`, `005_trees_within.sql`). |
-| `pipeline/` | Shared pipeline modules (`stats.py` — single source of truth for per-genus stat derivation). |
-| `web/` | Next.js app (the runtime — wiki + `/play`). Reads from Supabase. |
-| `*.py` | Offline data pipeline — extract trees, derive ZIP codes, generate characters & sprites, seed the DB. |
+| `db/` | SQL migrations. |
+| `pipeline/` | Shared pipeline modules. |
+| `web/` | Next.js app (the runtime — wiki + `/play` live map). Reads from Supabase. |
+| `*.py` | Offline data pipeline — extract trees, fetch observations, generate sprites, seed the DB. |
 
 ## Data pipeline (Python scripts)
 
-These are offline tools that prep data, derive stats, and seed the database — they
-are **not** part of the runtime app.
+Offline tools that prep data, derive metadata, and seed the database — they are **not**
+part of the runtime app.
 
 | Script | Purpose |
 |---|---|
 | `extract_trees.py` | Pull living trees out of the raw Amsterdam dataset. |
-| `generate_characters.py` | Render `memory/CHARACTERS.md` from `pipeline/stats.py`. |
-| `generate_sprites.py` / `_v2.py` / `generate_pixel_sprites.py` | Produce genus sprites. |
-| `seed_genera.py` | Load `genera` table in Supabase (uses `pipeline/stats.py`). |
-| `seed_trees.py` | Bulk-load `trees` table via `COPY` (298k rows). |
+| `extract_creatures.py` | Build the curated creature roster. |
+| `fetch_observations.py` / `seed_observations.py` | Pull iNat + Waarneming observations into Supabase. |
+| `generate_pixel_sprites.py` | Produce pixel-art sprites for trees and creatures. |
+| `promote_creatures.py` / `backfill_creature_matches.py` | Curate observations into the creature roster. |
+| `seed_genera.py` / `seed_trees.py` / `seed_creatures.py` | Load Supabase tables. |
 
-## Data status (as of M2)
+## Architecture (current)
 
-The CSVs and GeoJSON in `data/` are **raw pipeline inputs** — fed into Postgres via
-the seed scripts. The runtime app reads only from the Supabase database; nothing in
-the app touches `data/*.csv` directly. If the source data changes, re-run the seed
-scripts.
+- **Database** — Postgres + PostGIS on Supabase. Source of truth (not CSVs).
+- **Runtime** — Next.js (`web/`), client-side viewport-driven map (Leaflet + CARTO
+  Voyager basemap), Supabase as backend.
+- **Pipelines** — Python scripts produce data + sprites offline; the runtime never reads
+  raw CSVs.
 
-## Architecture (planned)
-
-- **Database:** Postgres + PostGIS on Supabase as the source of truth (not CSVs).
-- **Engine:** a pure, headless, framework-agnostic TypeScript module — armies + seed
-  in, battle log out. Deterministic seeded RNG. No UI, no DOM, no DB inside it.
-- **Frontend:** deferred until the app skeleton milestone.
-
-Full delivery plan and rationale live in [`memory/TD_ROADMAP.md`](memory/TD_ROADMAP.md).
+The original repo direction was a tower-defense game; large parts of the infra
+(Supabase, geocoding, sprite pipeline, `/play` map code) were built for that and are
+reused by Creatures AMS. Tower Defense is now parked — see
+[`memory/TOWER_DEFENSE_VISION.md`](memory/TOWER_DEFENSE_VISION.md) and
+[`memory/TOWER_DEFENSE_ROADMAP.md`](memory/TOWER_DEFENSE_ROADMAP.md).
 
 ## Live app
 
-The runtime app (wiki + `/play` neighborhood map) is deployed at
-**https://boomoorlog.vercel.app**. The old static `docs/` wiki was removed in M3 —
-the Next.js app under `web/` replaces it.
+Currently deployed at **https://boomoorlog.vercel.app** (custom `creatures-ams.io`
+domain coming in C14).
 
 ## Status
 
-M1–M4 done (wiki, database foundation, app skeleton, address → neighborhood map).
-M5 (board generation from OSM) is next. Track progress in
-[`memory/TD_ROADMAP.md`](memory/TD_ROADMAP.md).
+Foundation work done (database, app skeleton, address → neighborhood map, sprite
+pipeline for trees + creatures, live iNat/Waarneming feed). Phase 1 of the Creatures
+roadmap — "the map comes alive" — is the active workstream. Track in
+[`memory/CREATURES_ROADMAP.md`](memory/CREATURES_ROADMAP.md).
