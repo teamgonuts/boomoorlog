@@ -803,6 +803,27 @@
     "status": "ACCEPTED",
     "usageKey": 2493118
   },
+  "Acrocephalus|class=Aves": {
+    "canonicalName": "Acrocephalus",
+    "class": "Aves",
+    "classKey": 212,
+    "confidence": 98,
+    "family": "Acrocephalidae",
+    "familyKey": 6101019,
+    "genus": "Acrocephalus",
+    "genusKey": 2493112,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "EXACT",
+    "order": "Passeriformes",
+    "orderKey": 729,
+    "phylum": "Chordata",
+    "phylumKey": 44,
+    "rank": "GENUS",
+    "scientificName": "Acrocephalus J.A.Naumann & J.F.Naumann, 1811",
+    "status": "ACCEPTED",
+    "usageKey": 2493112
+  },
   "Acrolepiopsis assectella": {
     "acceptedUsageKey": 1829533,
     "canonicalName": "Acrolepiopsis assectella",
@@ -920,6 +941,12 @@
     "usageKey": 1782672
   },
   "Actinopterygii": {
+    "confidence": 100,
+    "matchType": "NONE",
+    "note": "No match because of too little confidence",
+    "synonym": false
+  },
+  "Actinopterygii|class=Actinopterygii": {
     "confidence": 100,
     "matchType": "NONE",
     "note": "No match because of too little confidence",
@@ -1788,6 +1815,27 @@
     "matchType": "NONE",
     "note": "Multiple equal matches for Agrilus",
     "synonym": false
+  },
+  "Agrilus|class=Insecta": {
+    "canonicalName": "Agrilus",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 97,
+    "family": "Buprestidae",
+    "familyKey": 3789,
+    "genus": "Agrilus",
+    "genusKey": 1049531,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "order": "Coleoptera",
+    "orderKey": 1470,
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "GENUS",
+    "scientificName": "Agrilus Curtis, 1825",
+    "status": "ACCEPTED",
+    "usageKey": 1049531
   },
   "Agrimonia eupatoria": {
     "canonicalName": "Agrimonia eupatoria",
@@ -3537,6 +3585,17 @@
     "matchType": "NONE",
     "synonym": false
   },
+  "Angiospermae|kingdom=Plantae": {
+    "canonicalName": "Plantae",
+    "confidence": 99,
+    "kingdom": "Plantae",
+    "kingdomKey": 6,
+    "matchType": "HIGHERRANK",
+    "rank": "KINGDOM",
+    "scientificName": "Plantae",
+    "status": "ACCEPTED",
+    "usageKey": 6
+  },
   "Anisantha madritensis": {
     "acceptedUsageKey": 2703721,
     "canonicalName": "Anisantha madritensis",
@@ -3700,6 +3759,19 @@
     "matchType": "NONE",
     "note": "No match because of too little confidence",
     "synonym": false
+  },
+  "Anodontini|phylum=Mollusca": {
+    "canonicalName": "Mollusca",
+    "confidence": 100,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Mollusca",
+    "phylumKey": 52,
+    "rank": "PHYLUM",
+    "scientificName": "Mollusca",
+    "status": "ACCEPTED",
+    "usageKey": 52
   },
   "Anoecia": {
     "canonicalName": "Anoecia",
@@ -3924,6 +3996,17 @@
     "matchType": "NONE",
     "note": "Multiple equal matches for Anthemideae",
     "synonym": false
+  },
+  "Anthemideae|kingdom=Plantae": {
+    "canonicalName": "Plantae",
+    "confidence": 99,
+    "kingdom": "Plantae",
+    "kingdomKey": 6,
+    "matchType": "HIGHERRANK",
+    "rank": "KINGDOM",
+    "scientificName": "Plantae",
+    "status": "ACCEPTED",
+    "usageKey": 6
   },
   "Anthemis tinctoria": {
     "acceptedUsageKey": 7066062,
@@ -4441,11 +4524,50 @@
     "note": "No match because of too little confidence",
     "synonym": false
   },
+  "Aphidiinae|class=Insecta": {
+    "acceptedUsageKey": 6910,
+    "canonicalName": "Aphidiidae",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 90,
+    "family": "Braconidae",
+    "familyKey": 6910,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "FUZZY",
+    "order": "Hymenoptera",
+    "orderKey": 1457,
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "FAMILY",
+    "scientificName": "Aphidiidae",
+    "status": "SYNONYM",
+    "usageKey": 4675977
+  },
   "Aphidinae": {
     "confidence": 100,
     "matchType": "NONE",
     "note": "No match because of too little confidence",
     "synonym": false
+  },
+  "Aphidinae|class=Insecta": {
+    "canonicalName": "Aphididae",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 88,
+    "family": "Aphididae",
+    "familyKey": 3042,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "FUZZY",
+    "order": "Hemiptera",
+    "orderKey": 809,
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "FAMILY",
+    "scientificName": "Aphididae",
+    "status": "ACCEPTED",
+    "usageKey": 3042
   },
   "Aphidoidea": {
     "confidence": 100,
@@ -4850,6 +4972,21 @@
     "matchType": "NONE",
     "synonym": false
   },
+  "Apocrita|class=Insecta": {
+    "canonicalName": "Insecta",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 100,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "CLASS",
+    "scientificName": "Insecta",
+    "status": "ACCEPTED",
+    "usageKey": 216
+  },
   "Apodemus": {
     "canonicalName": "Animalia",
     "confidence": 92,
@@ -5086,6 +5223,27 @@
     "note": "Multiple equal matches for Aquarius",
     "synonym": false
   },
+  "Aquarius|class=Insecta": {
+    "canonicalName": "Aquarius",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 98,
+    "family": "Gerridae",
+    "familyKey": 7881,
+    "genus": "Aquarius",
+    "genusKey": 2020415,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "EXACT",
+    "order": "Hemiptera",
+    "orderKey": 809,
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "GENUS",
+    "scientificName": "Aquarius Schellenberg, 1800",
+    "status": "ACCEPTED",
+    "usageKey": 2020415
+  },
   "Aquilegia vulgaris": {
     "canonicalName": "Aquilegia vulgaris",
     "class": "Magnoliopsida",
@@ -5227,11 +5385,41 @@
     "note": "No match because of too little confidence",
     "synonym": false
   },
+  "Araneoidea|class=Arachnida": {
+    "canonicalName": "Arachnida",
+    "class": "Arachnida",
+    "classKey": 367,
+    "confidence": 100,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "CLASS",
+    "scientificName": "Arachnida",
+    "status": "ACCEPTED",
+    "usageKey": 367
+  },
   "Araneomorphae": {
     "confidence": 100,
     "matchType": "NONE",
     "note": "No match because of too little confidence",
     "synonym": false
+  },
+  "Araneomorphae|class=Arachnida": {
+    "canonicalName": "Arachnida",
+    "class": "Arachnida",
+    "classKey": 367,
+    "confidence": 100,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "CLASS",
+    "scientificName": "Arachnida",
+    "status": "ACCEPTED",
+    "usageKey": 367
   },
   "Araneus diadematus": {
     "canonicalName": "Araneus diadematus",
@@ -7425,6 +7613,21 @@
     "matchType": "NONE",
     "synonym": false
   },
+  "Bibionomorpha|class=Insecta": {
+    "canonicalName": "Insecta",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 100,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "CLASS",
+    "scientificName": "Insecta",
+    "status": "ACCEPTED",
+    "usageKey": 216
+  },
   "Bidens frondosa": {
     "canonicalName": "Bidens frondosa",
     "class": "Magnoliopsida",
@@ -7906,6 +8109,21 @@
     "note": "No match because of too little confidence",
     "synonym": false
   },
+  "Brachycera|class=Insecta": {
+    "canonicalName": "Insecta",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 88,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "CLASS",
+    "scientificName": "Insecta",
+    "status": "ACCEPTED",
+    "usageKey": 216
+  },
   "Brachypodium sylvaticum": {
     "canonicalName": "Brachypodium sylvaticum",
     "class": "Liliopsida",
@@ -8084,6 +8302,17 @@
     "confidence": 100,
     "matchType": "NONE",
     "synonym": false
+  },
+  "Brassiceae|kingdom=Plantae": {
+    "canonicalName": "Plantae",
+    "confidence": 99,
+    "kingdom": "Plantae",
+    "kingdomKey": 6,
+    "matchType": "HIGHERRANK",
+    "rank": "KINGDOM",
+    "scientificName": "Plantae",
+    "status": "ACCEPTED",
+    "usageKey": 6
   },
   "Brevicoryne brassicae": {
     "canonicalName": "Brevicoryne brassicae",
@@ -9020,6 +9249,21 @@
     "note": "Multiple equal matches for Calyptratae",
     "synonym": false
   },
+  "Calyptratae|class=Insecta": {
+    "canonicalName": "Insecta",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 100,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "CLASS",
+    "scientificName": "Insecta",
+    "status": "ACCEPTED",
+    "usageKey": 216
+  },
   "Calystegia": {
     "canonicalName": "Calystegia",
     "class": "Magnoliopsida",
@@ -9253,6 +9497,27 @@
     "speciesKey": 5412014,
     "status": "ACCEPTED",
     "usageKey": 5412014
+  },
+  "Campanula|kingdom=Plantae": {
+    "canonicalName": "Campanula",
+    "class": "Magnoliopsida",
+    "classKey": 220,
+    "confidence": 95,
+    "family": "Campanulaceae",
+    "familyKey": 8801,
+    "genus": "Campanula",
+    "genusKey": 3161935,
+    "kingdom": "Plantae",
+    "kingdomKey": 6,
+    "matchType": "EXACT",
+    "order": "Asterales",
+    "orderKey": 414,
+    "phylum": "Tracheophyta",
+    "phylumKey": 7707728,
+    "rank": "GENUS",
+    "scientificName": "Campanula L.",
+    "status": "ACCEPTED",
+    "usageKey": 3161935
   },
   "Campsis": {
     "canonicalName": "Campsis",
@@ -9739,10 +10004,32 @@
     "matchType": "NONE",
     "synonym": false
   },
+  "Carduinae|kingdom=Plantae": {
+    "canonicalName": "Plantae",
+    "confidence": 99,
+    "kingdom": "Plantae",
+    "kingdomKey": 6,
+    "matchType": "HIGHERRANK",
+    "rank": "KINGDOM",
+    "scientificName": "Plantae",
+    "status": "ACCEPTED",
+    "usageKey": 6
+  },
   "Carduoideae": {
     "confidence": 100,
     "matchType": "NONE",
     "synonym": false
+  },
+  "Carduoideae|kingdom=Plantae": {
+    "canonicalName": "Plantae",
+    "confidence": 99,
+    "kingdom": "Plantae",
+    "kingdomKey": 6,
+    "matchType": "HIGHERRANK",
+    "rank": "KINGDOM",
+    "scientificName": "Plantae",
+    "status": "ACCEPTED",
+    "usageKey": 6
   },
   "Carduus crispus": {
     "canonicalName": "Carduus crispus",
@@ -12228,6 +12515,17 @@
     "matchType": "NONE",
     "synonym": false
   },
+  "Cichorieae|kingdom=Plantae": {
+    "canonicalName": "Plantae",
+    "confidence": 99,
+    "kingdom": "Plantae",
+    "kingdomKey": 6,
+    "matchType": "HIGHERRANK",
+    "rank": "KINGDOM",
+    "scientificName": "Plantae",
+    "status": "ACCEPTED",
+    "usageKey": 6
+  },
   "Cichorium intybus": {
     "canonicalName": "Cichorium intybus",
     "class": "Magnoliopsida",
@@ -13110,6 +13408,27 @@
     "matchType": "NONE",
     "note": "No match because of too little confidence",
     "synonym": false
+  },
+  "Coccinellini|class=Insecta": {
+    "canonicalName": "Coccinellina",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 87,
+    "family": "Coccinellidae",
+    "familyKey": 7782,
+    "genus": "Coccinellina",
+    "genusKey": 4741579,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "FUZZY",
+    "order": "Coleoptera",
+    "orderKey": 1470,
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "GENUS",
+    "scientificName": "Coccinellina Timberlake, 1943",
+    "status": "DOUBTFUL",
+    "usageKey": 4741579
   },
   "Coccoidea": {
     "canonicalName": "Coccoidea",
@@ -14960,6 +15279,27 @@
     "status": "ACCEPTED",
     "usageKey": 5403304
   },
+  "Crepis|kingdom=Plantae": {
+    "canonicalName": "Crepis",
+    "class": "Magnoliopsida",
+    "classKey": 220,
+    "confidence": 96,
+    "family": "Asteraceae",
+    "familyKey": 3065,
+    "genus": "Crepis",
+    "genusKey": 3143303,
+    "kingdom": "Plantae",
+    "kingdomKey": 6,
+    "matchType": "EXACT",
+    "order": "Asterales",
+    "orderKey": 414,
+    "phylum": "Tracheophyta",
+    "phylumKey": 7707728,
+    "rank": "GENUS",
+    "scientificName": "Crepis L.",
+    "status": "ACCEPTED",
+    "usageKey": 3143303
+  },
   "Crinum": {
     "canonicalName": "Crinum",
     "class": "Liliopsida",
@@ -15391,6 +15731,21 @@
     "matchType": "NONE",
     "note": "No match because of too little confidence",
     "synonym": false
+  },
+  "Cucujiformia|class=Insecta": {
+    "canonicalName": "Insecta",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 100,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "CLASS",
+    "scientificName": "Insecta",
+    "status": "ACCEPTED",
+    "usageKey": 216
   },
   "Cucullia chamomillae": {
     "canonicalName": "Cucullia chamomillae",
@@ -16757,6 +17112,19 @@
     "confidence": 100,
     "matchType": "NONE",
     "synonym": false
+  },
+  "Deirochelyinae|class=Reptilia": {
+    "canonicalName": "Chordata",
+    "confidence": 92,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Chordata",
+    "phylumKey": 44,
+    "rank": "PHYLUM",
+    "scientificName": "Chordata",
+    "status": "ACCEPTED",
+    "usageKey": 44
   },
   "Delia platura": {
     "canonicalName": "Delia platura",
@@ -19472,6 +19840,21 @@
     "matchType": "NONE",
     "synonym": false
   },
+  "Entelegynae|class=Arachnida": {
+    "canonicalName": "Arachnida",
+    "class": "Arachnida",
+    "classKey": 367,
+    "confidence": 100,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "CLASS",
+    "scientificName": "Arachnida",
+    "status": "ACCEPTED",
+    "usageKey": 367
+  },
   "Entomophthora muscae": {
     "canonicalName": "Entomophthora muscae",
     "class": "Entomophthoromycetes",
@@ -19886,6 +20269,27 @@
     "note": "Multiple equal matches for Erica",
     "synonym": false
   },
+  "Erica|kingdom=Plantae": {
+    "canonicalName": "Erica",
+    "class": "Magnoliopsida",
+    "classKey": 220,
+    "confidence": 95,
+    "family": "Ericaceae",
+    "familyKey": 2505,
+    "genus": "Erica",
+    "genusKey": 2882780,
+    "kingdom": "Plantae",
+    "kingdomKey": 6,
+    "matchType": "HIGHERRANK",
+    "order": "Ericales",
+    "orderKey": 1353,
+    "phylum": "Tracheophyta",
+    "phylumKey": 7707728,
+    "rank": "GENUS",
+    "scientificName": "Erica L.",
+    "status": "ACCEPTED",
+    "usageKey": 2882780
+  },
   "Erigeron annuus": {
     "canonicalName": "Erigeron annuus",
     "class": "Magnoliopsida",
@@ -20006,6 +20410,27 @@
     "speciesKey": 2137716,
     "status": "ACCEPTED",
     "usageKey": 2137716
+  },
+  "Erigone|class=Arachnida": {
+    "canonicalName": "Erigone",
+    "class": "Arachnida",
+    "classKey": 367,
+    "confidence": 98,
+    "family": "Linyphiidae",
+    "familyKey": 3415,
+    "genus": "Erigone",
+    "genusKey": 2137613,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "EXACT",
+    "order": "Araneae",
+    "orderKey": 1496,
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "GENUS",
+    "scientificName": "Erigone Audouin, 1826",
+    "status": "ACCEPTED",
+    "usageKey": 2137613
   },
   "Eriobotrya japonica": {
     "acceptedUsageKey": 10786206,
@@ -24484,11 +24909,52 @@
     "status": "ACCEPTED",
     "usageKey": 1043118
   },
+  "Harmonia|class=Insecta": {
+    "canonicalName": "Harmonia",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 97,
+    "family": "Coccinellidae",
+    "familyKey": 7782,
+    "genus": "Harmonia",
+    "genusKey": 1043111,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "EXACT",
+    "order": "Coleoptera",
+    "orderKey": 1470,
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "GENUS",
+    "scientificName": "Harmonia Mulsant, 1846",
+    "status": "ACCEPTED",
+    "usageKey": 1043111
+  },
   "Harpalinae": {
     "confidence": 100,
     "matchType": "NONE",
     "note": "No match because of too little confidence",
     "synonym": false
+  },
+  "Harpalinae|class=Insecta": {
+    "acceptedUsageKey": 3792,
+    "canonicalName": "Harpalidae",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 90,
+    "family": "Carabidae",
+    "familyKey": 3792,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "FUZZY",
+    "order": "Coleoptera",
+    "orderKey": 1470,
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "FAMILY",
+    "scientificName": "Harpalidae",
+    "status": "SYNONYM",
+    "usageKey": 4720397
   },
   "Harpalus affinis": {
     "canonicalName": "Harpalus affinis",
@@ -24786,6 +25252,21 @@
     "confidence": 100,
     "matchType": "NONE",
     "synonym": false
+  },
+  "Heliconiini|class=Insecta": {
+    "canonicalName": "Insecta",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 100,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "CLASS",
+    "scientificName": "Insecta",
+    "status": "ACCEPTED",
+    "usageKey": 216
   },
   "Heliconius charithonia": {
     "canonicalName": "Heliconius charithonia",
@@ -27235,6 +27716,21 @@
     "matchType": "NONE",
     "synonym": false
   },
+  "Idiocerini|class=Insecta": {
+    "canonicalName": "Insecta",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 100,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "CLASS",
+    "scientificName": "Insecta",
+    "status": "ACCEPTED",
+    "usageKey": 216
+  },
   "Ilex aquifolium": {
     "canonicalName": "Ilex aquifolium",
     "class": "Magnoliopsida",
@@ -27520,6 +28016,21 @@
     "confidence": 100,
     "matchType": "NONE",
     "synonym": false
+  },
+  "Isoaeschna isoceles|class=Insecta": {
+    "canonicalName": "Insecta",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 100,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "CLASS",
+    "scientificName": "Insecta",
+    "status": "ACCEPTED",
+    "usageKey": 216
   },
   "Issus coleoptratus": {
     "canonicalName": "Issus coleoptratus",
@@ -28332,6 +28843,21 @@
     "confidence": 100,
     "matchType": "NONE",
     "synonym": false
+  },
+  "Larentiinae|class=Insecta": {
+    "canonicalName": "Insecta",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 100,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "CLASS",
+    "scientificName": "Insecta",
+    "status": "ACCEPTED",
+    "usageKey": 216
   },
   "Laridae indet.": {
     "canonicalName": "Laridae",
@@ -29454,6 +29980,12 @@
     "note": "No match because of too little confidence",
     "synonym": false
   },
+  "Leuciscinae|class=Actinopterygii": {
+    "confidence": 100,
+    "matchType": "NONE",
+    "note": "No match because of too little confidence",
+    "synonym": false
+  },
   "Leucoagaricus leucothites": {
     "canonicalName": "Leucoagaricus leucothites",
     "class": "Agaricomycetes",
@@ -29890,6 +30422,27 @@
     "speciesKey": 5415020,
     "status": "ACCEPTED",
     "usageKey": 5415020
+  },
+  "Linaria|kingdom=Plantae": {
+    "canonicalName": "Linaria",
+    "class": "Magnoliopsida",
+    "classKey": 220,
+    "confidence": 95,
+    "family": "Plantaginaceae",
+    "familyKey": 2420,
+    "genus": "Linaria",
+    "genusKey": 3172168,
+    "kingdom": "Plantae",
+    "kingdomKey": 6,
+    "matchType": "HIGHERRANK",
+    "order": "Lamiales",
+    "orderKey": 408,
+    "phylum": "Tracheophyta",
+    "phylumKey": 7707728,
+    "rank": "GENUS",
+    "scientificName": "Linaria Mill.",
+    "status": "ACCEPTED",
+    "usageKey": 3172168
   },
   "Lindenius albilabris": {
     "canonicalName": "Lindenius albilabris",
@@ -30558,6 +31111,27 @@
     "note": "Multiple equal matches for Lucilia",
     "synonym": false
   },
+  "Lucilia|class=Insecta": {
+    "canonicalName": "Lucilia",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 97,
+    "family": "Calliphoridae",
+    "familyKey": 3335,
+    "genus": "Lucilia",
+    "genusKey": 1502875,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "order": "Diptera",
+    "orderKey": 811,
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "GENUS",
+    "scientificName": "Lucilia Robineau-Desvoidy, 1830",
+    "status": "ACCEPTED",
+    "usageKey": 1502875
+  },
   "Lumbricidae indet.": {
     "canonicalName": "Lumbricidae",
     "class": "Clitellata",
@@ -31213,6 +31787,21 @@
     "matchType": "NONE",
     "note": "Multiple equal matches for Macrosiphini",
     "synonym": false
+  },
+  "Macrosiphini|class=Insecta": {
+    "canonicalName": "Insecta",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 100,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "CLASS",
+    "scientificName": "Insecta",
+    "status": "ACCEPTED",
+    "usageKey": 216
   },
   "Macrosiphum euphorbiae": {
     "canonicalName": "Macrosiphum euphorbiae",
@@ -32240,6 +32829,27 @@
     "status": "ACCEPTED",
     "usageKey": 5014
   },
+  "Melaleuca|kingdom=Plantae": {
+    "canonicalName": "Melaleuca",
+    "class": "Magnoliopsida",
+    "classKey": 220,
+    "confidence": 96,
+    "family": "Myrtaceae",
+    "familyKey": 5014,
+    "genus": "Melaleuca",
+    "genusKey": 3175449,
+    "kingdom": "Plantae",
+    "kingdomKey": 6,
+    "matchType": "EXACT",
+    "order": "Myrtales",
+    "orderKey": 690,
+    "phylum": "Tracheophyta",
+    "phylumKey": 7707728,
+    "rank": "GENUS",
+    "scientificName": "Melaleuca L.",
+    "status": "ACCEPTED",
+    "usageKey": 3175449
+  },
   "Melanoleuca verrucipes": {
     "canonicalName": "Melanoleuca verrucipes",
     "class": "Agaricomycetes",
@@ -32777,6 +33387,17 @@
     "confidence": 100,
     "matchType": "NONE",
     "synonym": false
+  },
+  "Micacei|kingdom=Fungi": {
+    "canonicalName": "Fungi",
+    "confidence": 99,
+    "kingdom": "Fungi",
+    "kingdomKey": 5,
+    "matchType": "HIGHERRANK",
+    "rank": "KINGDOM",
+    "scientificName": "Fungi",
+    "status": "ACCEPTED",
+    "usageKey": 5
   },
   "Microchrysa polita": {
     "canonicalName": "Microchrysa polita",
@@ -33388,6 +34009,21 @@
     "note": "No match because of too little confidence",
     "synonym": false
   },
+  "Murinae|class=Mammalia": {
+    "canonicalName": "Mammalia",
+    "class": "Mammalia",
+    "classKey": 359,
+    "confidence": 88,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Chordata",
+    "phylumKey": 44,
+    "rank": "CLASS",
+    "scientificName": "Mammalia",
+    "status": "ACCEPTED",
+    "usageKey": 359
+  },
   "Mus": {
     "canonicalName": "Animalia",
     "confidence": 92,
@@ -33515,6 +34151,28 @@
     "matchType": "NONE",
     "note": "No match because of too little confidence",
     "synonym": false
+  },
+  "Muscoidea|class=Insecta": {
+    "acceptedUsageKey": 1391788,
+    "canonicalName": "Muscidea",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 88,
+    "family": "Pteromalidae",
+    "familyKey": 9447,
+    "genus": "Moranila",
+    "genusKey": 1391788,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "FUZZY",
+    "order": "Hymenoptera",
+    "orderKey": 1457,
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "GENUS",
+    "scientificName": "Muscidea Girault, 1915",
+    "status": "SYNONYM",
+    "usageKey": 6927996
   },
   "Mustelidae indet.": {
     "canonicalName": "Mustelidae",
@@ -45766,6 +46424,27 @@
     "note": "Multiple equal matches for Salix",
     "synonym": false
   },
+  "Salix|kingdom=Plantae": {
+    "canonicalName": "Salix",
+    "class": "Magnoliopsida",
+    "classKey": 220,
+    "confidence": 95,
+    "family": "Salicaceae",
+    "familyKey": 6664,
+    "genus": "Salix",
+    "genusKey": 3039576,
+    "kingdom": "Plantae",
+    "kingdomKey": 6,
+    "matchType": "EXACT",
+    "order": "Malpighiales",
+    "orderKey": 1414,
+    "phylum": "Tracheophyta",
+    "phylumKey": 7707728,
+    "rank": "GENUS",
+    "scientificName": "Salix L.",
+    "status": "ACCEPTED",
+    "usageKey": 3039576
+  },
   "Salticus scenicus": {
     "canonicalName": "Salticus scenicus",
     "class": "Arachnida",
@@ -47613,6 +48292,27 @@
     "status": "ACCEPTED",
     "usageKey": 9172281
   },
+  "Silene|kingdom=Plantae": {
+    "canonicalName": "Silene",
+    "class": "Magnoliopsida",
+    "classKey": 220,
+    "confidence": 95,
+    "family": "Caryophyllaceae",
+    "familyKey": 2518,
+    "genus": "Silene",
+    "genusKey": 3085897,
+    "kingdom": "Plantae",
+    "kingdomKey": 6,
+    "matchType": "HIGHERRANK",
+    "order": "Caryophyllales",
+    "orderKey": 422,
+    "phylum": "Tracheophyta",
+    "phylumKey": 7707728,
+    "rank": "GENUS",
+    "scientificName": "Silene L.",
+    "status": "ACCEPTED",
+    "usageKey": 3085897
+  },
   "Silis ruficollis": {
     "acceptedUsageKey": 4429533,
     "canonicalName": "Silis ruficollis",
@@ -49118,6 +49818,26 @@
     "note": "No match because of too little confidence",
     "synonym": false
   },
+  "Sterninae|class=Aves": {
+    "acceptedUsageKey": 9316,
+    "canonicalName": "Sternidae",
+    "class": "Aves",
+    "classKey": 212,
+    "confidence": 90,
+    "family": "Laridae",
+    "familyKey": 9316,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "FUZZY",
+    "order": "Charadriiformes",
+    "orderKey": 7192402,
+    "phylum": "Chordata",
+    "phylumKey": 44,
+    "rank": "FAMILY",
+    "scientificName": "Sternidae",
+    "status": "SYNONYM",
+    "usageKey": 3242555
+  },
   "Stevenia deceptoria": {
     "canonicalName": "Stevenia deceptoria",
     "class": "Insecta",
@@ -49870,6 +50590,21 @@
     "confidence": 100,
     "matchType": "NONE",
     "synonym": false
+  },
+  "Syrphini|class=Insecta": {
+    "canonicalName": "Insecta",
+    "class": "Insecta",
+    "classKey": 216,
+    "confidence": 100,
+    "kingdom": "Animalia",
+    "kingdomKey": 1,
+    "matchType": "HIGHERRANK",
+    "phylum": "Arthropoda",
+    "phylumKey": 54,
+    "rank": "CLASS",
+    "scientificName": "Insecta",
+    "status": "ACCEPTED",
+    "usageKey": 216
   },
   "Syrphus ribesii": {
     "canonicalName": "Syrphus ribesii",
@@ -52010,6 +52745,17 @@
     "confidence": 100,
     "matchType": "NONE",
     "synonym": false
+  },
+  "Trifolieae|kingdom=Plantae": {
+    "canonicalName": "Plantae",
+    "confidence": 99,
+    "kingdom": "Plantae",
+    "kingdomKey": 6,
+    "matchType": "HIGHERRANK",
+    "rank": "KINGDOM",
+    "scientificName": "Plantae",
+    "status": "ACCEPTED",
+    "usageKey": 6
   },
   "Trifolium arvense": {
     "canonicalName": "Trifolium arvense",

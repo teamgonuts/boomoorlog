@@ -1,0 +1,92 @@
+slug,latin_name,query_name,rank,kingdom,phylum,class_name,order_name,family,genus,species,scientific_name,match_type,confidence
+acanthus-spec,Acanthus spec.,,unmatched,,,,,,,,,,
+acari,Acari,,unmatched,,,,,,,,,,
+acrocephalus,Acrocephalus,Acrocephalus,genus,Animalia,Chordata,Aves,Passeriformes,Acrocephalidae,Acrocephalus,,"Acrocephalus J.A.Naumann & J.F.Naumann, 1811",EXACT,98
+actinopterygii,Actinopterygii,,unmatched,,,,,,,,,,
+agrilus,Agrilus,Agrilus,genus,Animalia,Arthropoda,Insecta,Coleoptera,Buprestidae,Agrilus,,"Agrilus Curtis, 1825",HIGHERRANK,97
+agrilus-spec,Agrilus spec.,,unmatched,,,,,,,,,,
+amara-spec,Amara spec.,,unmatched,,,,,,,,,,
+angiospermae,Angiospermae,Angiospermae,kingdom,Plantae,,,,,,,Plantae,HIGHERRANK,99
+anodontini,Anodontini,Anodontini,phylum,Animalia,Mollusca,,,,,,Mollusca,HIGHERRANK,100
+anomaloninae-indet,Anomaloninae indet.,,unmatched,,,,,,,,,,
+anthemideae,Anthemideae,Anthemideae,kingdom,Plantae,,,,,,,Plantae,HIGHERRANK,99
+aphidiinae,Aphidiinae,Aphidiinae,family,Animalia,Arthropoda,Insecta,Hymenoptera,Braconidae,,,Aphidiidae,FUZZY,90
+aphidinae,Aphidinae,Aphidinae,family,Animalia,Arthropoda,Insecta,Hemiptera,Aphididae,,,Aphididae,FUZZY,88
+aphidoidea-generalist-greenfly,"Aphidoidea, generalist greenfly",,unmatched,,,,,,,,,,
+aphidoidea-including-aphis-gossypii,"Aphidoidea, including Aphis gossypii",,unmatched,,,,,,,,,,
+aphidoidea-occasional,"Aphidoidea, occasional",,unmatched,,,,,,,,,,
+aplocera-spec,Aplocera spec.,,unmatched,,,,,,,,,,
+apocrita,Apocrita,Apocrita,class,Animalia,Arthropoda,Insecta,,,,,Insecta,HIGHERRANK,100
+apoidea,Apoidea,,unmatched,,,,,,,,,,
+aquarius,Aquarius,Aquarius,genus,Animalia,Arthropoda,Insecta,Hemiptera,Gerridae,Aquarius,,"Aquarius Schellenberg, 1800",EXACT,98
+araneoidea,Araneoidea,Araneoidea,class,Animalia,Arthropoda,Arachnida,,,,,Arachnida,HIGHERRANK,100
+araneomorphae,Araneomorphae,Araneomorphae,class,Animalia,Arthropoda,Arachnida,,,,,Arachnida,HIGHERRANK,100
+arum-spec,Arum spec.,,unmatched,,,,,,,,,,
+auchenorrhyncha-indet,Auchenorrhyncha indet.,,unmatched,,,,,,,,,,
+bibionomorpha,Bibionomorpha,Bibionomorpha,class,Animalia,Arthropoda,Insecta,,,,,Insecta,HIGHERRANK,100
+bombycilla-garrulus,"cedar waxwing equiv. — in Europe Bohemian Waxwing Bombycilla garrulus, Blackbird Turdus merula, Mistle Thrush",,unmatched,,,,,,,,,,
+brachycera,Brachycera,Brachycera,class,Animalia,Arthropoda,Insecta,,,,,Insecta,HIGHERRANK,88
+brachycera-indet,Brachycera indet.,,unmatched,,,,,,,,,,
+brassiceae,Brassiceae,Brassiceae,kingdom,Plantae,,,,,,,Plantae,HIGHERRANK,99
+calyptratae,Calyptratae,Calyptratae,class,Animalia,Arthropoda,Insecta,,,,,Insecta,HIGHERRANK,100
+campanula,Campanula,Campanula,genus,Plantae,Tracheophyta,Magnoliopsida,Asterales,Campanulaceae,Campanula,,Campanula L.,EXACT,95
+carduinae,Carduinae,Carduinae,kingdom,Plantae,,,,,,,Plantae,HIGHERRANK,99
+carduoideae,Carduoideae,Carduoideae,kingdom,Plantae,,,,,,,Plantae,HIGHERRANK,99
+cepaea-spec,Cepaea spec.,,unmatched,,,,,,,,,,
+chrysis-ignita-gr,Chrysis ignita-gr.,,unmatched,,,,,,,,,,
+cichorieae,Cichorieae,Cichorieae,kingdom,Plantae,,,,,,,Plantae,HIGHERRANK,99
+coccinellini,Coccinellini,Coccinellini,genus,Animalia,Arthropoda,Insecta,Coleoptera,Coccinellidae,Coccinellina,,"Coccinellina Timberlake, 1943",FUZZY,87
+coleophora-spec,Coleophora spec.,,unmatched,,,,,,,,,,
+conocephalus-spec,Conocephalus spec.,,unmatched,,,,,,,,,,
+crepis,Crepis,Crepis,genus,Plantae,Tracheophyta,Magnoliopsida,Asterales,Asteraceae,Crepis,,Crepis L.,EXACT,96
+cryptinae-indet,Cryptinae indet.,,unmatched,,,,,,,,,,
+cryptogams,cryptogams,,unmatched,,,,,,,,,,
+cucujiformia,Cucujiformia,Cucujiformia,class,Animalia,Arthropoda,Insecta,,,,,Insecta,HIGHERRANK,100
+deirochelyinae,Deirochelyinae,Deirochelyinae,phylum,Animalia,Chordata,,,,,,Chordata,HIGHERRANK,92
+diplazontinae-indet,Diplazontinae indet.,,unmatched,,,,,,,,,,
+entelegynae,Entelegynae,Entelegynae,class,Animalia,Arthropoda,Arachnida,,,,,Arachnida,HIGHERRANK,100
+erica,Erica,Erica,genus,Plantae,Tracheophyta,Magnoliopsida,Ericales,Ericaceae,Erica,,Erica L.,HIGHERRANK,95
+erigone,Erigone,Erigone,genus,Animalia,Arthropoda,Arachnida,Araneae,Linyphiidae,Erigone,,"Erigone Audouin, 1826",EXACT,98
+fuchsia-spec,Fuchsia spec.,,unmatched,,,,,,,,,,
+galeopsis-spec,Galeopsis spec.,,unmatched,,,,,,,,,,
+gomphocerinae-indet,Gomphocerinae indet.,,unmatched,,,,,,,,,,
+harmonia,Harmonia,Harmonia,genus,Animalia,Arthropoda,Insecta,Coleoptera,Coccinellidae,Harmonia,,"Harmonia Mulsant, 1846",EXACT,97
+harpalinae,Harpalinae,Harpalinae,family,Animalia,Arthropoda,Insecta,Coleoptera,Carabidae,,,Harpalidae,FUZZY,90
+heliconiini,Heliconiini,Heliconiini,class,Animalia,Arthropoda,Insecta,,,,,Insecta,HIGHERRANK,100
+ichneumoninae-indet,Ichneumoninae indet.,,unmatched,,,,,,,,,,
+idiocerini,Idiocerini,Idiocerini,class,Animalia,Arthropoda,Insecta,,,,,Insecta,HIGHERRANK,100
+isoaeschna-isoceles,Isoaeschna isoceles,Isoaeschna isoceles,class,Animalia,Arthropoda,Insecta,,,,,Insecta,HIGHERRANK,100
+larentiinae,Larentiinae,Larentiinae,class,Animalia,Arthropoda,Insecta,,,,,Insecta,HIGHERRANK,100
+leuciscinae,Leuciscinae,,unmatched,,,,,,,,,,
+linaria,Linaria,Linaria,genus,Plantae,Tracheophyta,Magnoliopsida,Lamiales,Plantaginaceae,Linaria,,Linaria Mill.,HIGHERRANK,95
+lotus-spec,Lotus spec.,,unmatched,,,,,,,,,,
+lucilia,Lucilia,Lucilia,genus,Animalia,Arthropoda,Insecta,Diptera,Calliphoridae,Lucilia,,"Lucilia Robineau-Desvoidy, 1830",HIGHERRANK,97
+lucilia-spec,Lucilia spec.,,unmatched,,,,,,,,,,
+macrosiphini,Macrosiphini,Macrosiphini,class,Animalia,Arthropoda,Insecta,,,,,Insecta,HIGHERRANK,100
+malachiinae-indet,Malachiinae indet.,,unmatched,,,,,,,,,,
+melaleuca,Melaleuca,Melaleuca,genus,Plantae,Tracheophyta,Magnoliopsida,Myrtales,Myrtaceae,Melaleuca,,Melaleuca L.,EXACT,96
+melanotus-spec,Melanotus spec.,,unmatched,,,,,,,,,,
+micacei,Micacei,Micacei,kingdom,Fungi,,,,,,,Fungi,HIGHERRANK,99
+microgastrinae-indet,Microgastrinae indet.,,unmatched,,,,,,,,,,
+microlepidoptera-indet,Microlepidoptera indet.,,unmatched,,,,,,,,,,
+murinae,Murinae,Murinae,class,Animalia,Chordata,Mammalia,,,,,Mammalia,HIGHERRANK,88
+muscoidea,Muscoidea,Muscoidea,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Pteromalidae,Moranila,,"Muscidea Girault, 1915",FUZZY,88
+nematinae,Nematinae / Pontania gallers,,unmatched,,,,,,,,,,
+passer-domesticus,"House Sparrow Passer domesticus, Wood Pigeon Columba palumbus",,unmatched,,,,,,,,,,
+pimplinae-indet,Pimplinae indet.,,unmatched,,,,,,,,,,
+polypodium-spec,Polypodium spec.,,unmatched,,,,,,,,,,
+qualitative,qualitative,,unmatched,,,,,,,,,,
+salix,Salix,Salix,genus,Plantae,Tracheophyta,Magnoliopsida,Malpighiales,Salicaceae,Salix,,Salix L.,EXACT,95
+salix-alba,Salix alba,,unmatched,,,,,,,,,,
+salix-spec,Salix spec.,,unmatched,,,,,,,,,,
+scymninae-indet,Scymninae indet.,,unmatched,,,,,,,,,,
+silene,Silene,Silene,genus,Plantae,Tracheophyta,Magnoliopsida,Caryophyllales,Caryophyllaceae,Silene,,Silene L.,HIGHERRANK,95
+small-mammals,small mammals,,unmatched,,,,,,,,,,
+sphaeroderma-spec,Sphaeroderma spec.,,unmatched,,,,,,,,,,
+sterninae,Sterninae,Sterninae,family,Animalia,Chordata,Aves,Charadriiformes,Laridae,,,Sternidae,FUZZY,90
+syrphini,Syrphini,Syrphini,class,Animalia,Arthropoda,Insecta,,,,,Insecta,HIGHERRANK,100
+trifolieae,Trifolieae,Trifolieae,kingdom,Plantae,,,,,,,Plantae,HIGHERRANK,99
+typhlocybinae-indet,Typhlocybinae indet.,,unmatched,,,,,,,,,,
+ulmus-spec,Ulmus spec.,,unmatched,,,,,,,,,,
+various-mammals,various mammals,,unmatched,,,,,,,,,,
+vespinae-indet,Vespinae indet.,,unmatched,,,,,,,,,,
