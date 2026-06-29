@@ -841,6 +841,43 @@ main {
   font-size: 12px;
 }
 
+/* Floating "Loading…" pill, top-center of the map. Stays out of the way of
+   the search overlay (top-left) and area panel (top-right). */
+.play-loading {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px 7px 12px;
+  background: rgba(20, 22, 27, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  color: var(--ink);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+.play-loading-spinner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-top-color: var(--gold);
+  animation: play-loading-spin 0.7s linear infinite;
+}
+@keyframes play-loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* ---- /play area panel: searchable Trees + Creatures in this neighborhood ---- */
 
 .area-panel {

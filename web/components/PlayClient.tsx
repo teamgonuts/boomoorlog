@@ -66,11 +66,16 @@ const VIEWPORT_DEBOUNCE_MS = 180;
  */
 export default function PlayClient(props: Props) {
   const [data, setData] = useState<ViewportTreesResponse | null>(null);
+  // True from the moment the user starts moving the map until the matching
+  // /api/trees response lands. Drives the floating "Loading…" pill so the
+  // user knows pan/zoom is being honored even before pins refresh.
+  const [loading, setLoading] = useState(false);
 
   const abortRef = useRef<AbortController | null>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleViewportChange = useCallback((bbox: Bbox) => {
+    setLoading(true);
     if (debounceRef.current) clearTimeout(debounceRef.current);
     debounceRef.current = setTimeout(() => {
       if (abortRef.current) abortRef.current.abort();
@@ -88,10 +93,12 @@ export default function PlayClient(props: Props) {
         .then((json) => {
           if (ac.signal.aborted) return;
           setData(json);
+          setLoading(false);
         })
         .catch((err: unknown) => {
           if (err instanceof DOMException && err.name === "AbortError") return;
           console.error("/api/trees", err);
+          setLoading(false);
         });
     }, VIEWPORT_DEBOUNCE_MS);
   }, []);
@@ -165,6 +172,15 @@ export default function PlayClient(props: Props) {
             <p className="play-error-mini">{props.geocodeError}</p>
           )}
         </div>
+
+        {/* Floating loading indicator, top-center. Visible whenever a new
+            /api/trees request is in flight after pan/zoom. */}
+        {loading && (
+          <div className="play-loading" role="status" aria-live="polite">
+            <span className="play-loading-spinner" aria-hidden="true" />
+            <span>Loading…</span>
+          </div>
+        )}
 
         {/* Area panel — hides cleanly until the first viewport response lands. */}
         {(areaTrees.length > 0 || areaCreatures.length > 0) && (
