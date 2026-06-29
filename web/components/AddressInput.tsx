@@ -3,10 +3,6 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-const COOKIE_NAME = "lastAddress";
-// 1 year — long enough that returning users don't lose their last search.
-const COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
-
 type Hit = {
   lat: number;
   lng: number;
@@ -30,16 +26,6 @@ export function AddressInput({ defaultValue = "" }: { defaultValue?: string }) {
   const [active, setActive] = useState(-1);
   const abortRef = useRef<AbortController | null>(null);
   const timerRef = useRef<number | null>(null);
-
-  // Remember successful searches so a returning visitor lands on their last
-  // neighborhood instead of an empty map. Server reads this cookie in /play.
-  useEffect(() => {
-    if (defaultValue) {
-      document.cookie =
-        `${COOKIE_NAME}=${encodeURIComponent(defaultValue)}; ` +
-        `path=/; max-age=${COOKIE_MAX_AGE}; SameSite=Lax`;
-    }
-  }, [defaultValue]);
 
   // Debounced suggestion fetch.
   useEffect(() => {

@@ -174,6 +174,7 @@ function startCreatureFlight(
   layer: L.LayerGroup,
   creature: CreatureForMap,
   pointsRef: { current: FlyPoint[] },
+  speedMps: number,
   onComplete: () => void,
 ): () => void {
   const points = pointsRef.current;
@@ -182,7 +183,7 @@ function startCreatureFlight(
     return () => {};
   }
 
-  const SPEED_MPS = 6;
+  const SPEED_MPS = speedMps;
   const PERCH_MS = 500;
   const MIN_DURATION_MS = 800;
 
@@ -298,6 +299,8 @@ export default function PlayMap({
   markers,
   creatures,
   onViewportChange,
+  creatureSlots,
+  creatureSpeedMps,
 }: {
   center: { lat: number; lng: number } | null;
   /** Half-side of the initial fitBounds box, in meters. Only used the first
@@ -306,6 +309,11 @@ export default function PlayMap({
   markers: Marker[];
   creatures?: CreatureForMap[];
   onViewportChange?: (bbox: Bbox, zoom: number) => void;
+  /** Admin-panel override: force a specific creature-slot count instead of
+   *  scaling with viewport area. Undefined keeps the viewport-area heuristic. */
+  creatureSlots?: number;
+  /** Admin-panel override: creature flight speed in m/s. */
+  creatureSpeedMps?: number;
 }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<L.Map | null>(null);
@@ -493,9 +501,19 @@ export default function PlayMap({
     if (pool.length === 0) return;
 
     const map = mapRef.current;
-    const NUM_CREATURE_SLOTS = map
-      ? slotsForBounds(map.getBounds())
-      : CREATURE_MIN_SLOTS;
+    // Admin override wins if provided (including 0 to disable creatures
+    // entirely). Falls back to the viewport-area heuristic otherwise.
+    const NUM_CREATURE_SLOTS =
+      typeof creatureSlots === "number"
+        ? creatureSlots
+        : map
+          ? slotsForBounds(map.getBounds())
+          : CREATURE_MIN_SLOTS;
+    if (NUM_CREATURE_SLOTS <= 0) return;
+    const speed =
+      typeof creatureSpeedMps === "number" && creatureSpeedMps > 0
+        ? creatureSpeedMps
+        : 6;
     const slotStops: Array<(() => void) | null> = Array(NUM_CREATURE_SLOTS).fill(null);
     let mounted = true;
 
@@ -508,7 +526,7 @@ export default function PlayMap({
         return;
       }
       const c = pool[Math.floor(Math.random() * pool.length)];
-      slotStops[slot] = startCreatureFlight(creatureLayer, c, flyPointsRef, () =>
+      slotStops[slot] = startCreatureFlight(creatureLayer, c, flyPointsRef, speed, () =>
         spawnSlot(slot),
       );
     };
@@ -519,7 +537,7 @@ export default function PlayMap({
       slotStops.forEach((stop) => stop?.());
       creatureLayer.clearLayers();
     };
-  }, [creatures, markers]);
+  }, [creatures, markers, creatureSlots, creatureSpeedMps]);
 
   return <div ref={containerRef} className="play-map" />;
 }

@@ -1,6 +1,3 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
-
 import PlayClient, {
   type AllCreatureForFilter,
   type CreatureForMap,
@@ -18,7 +15,6 @@ export const dynamic = "force-dynamic";
 // around the address. 250 keeps the neighborhood readable without falling
 // into the citywide-bbox slow path.
 const INITIAL_RADIUS_M = 250;
-const COOKIE_NAME = "lastAddress";
 
 export const metadata = {
   title: "Play — Boomoorlog",
@@ -36,17 +32,10 @@ export default async function PlayPage({
   const { q } = await searchParams;
   const address = (q ?? "").trim();
 
-  // No address in URL? Auto-load the last successful search if we have one.
-  if (!address) {
-    const cookieStore = await cookies();
-    const last = cookieStore.get(COOKIE_NAME)?.value;
-    if (last) {
-      redirect(`/play?q=${encodeURIComponent(last)}`);
-    }
-  }
-
   // Geocode when we have an address; the bbox query and rendering happen
-  // client-side in PlayClient now (viewport-driven).
+  // client-side in PlayClient now (viewport-driven). With no address, the
+  // map opens at the Amsterdam-center default (PlayMap.AMSTERDAM_CENTER /
+  // AMSTERDAM_ZOOM) and /api/trees fetches markers for THAT viewport.
   let center: { lat: number; lng: number } | null = null;
   let resolvedAddress: string | null = null;
   let geocodeError: string | null = null;

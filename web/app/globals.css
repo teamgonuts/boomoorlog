@@ -947,6 +947,108 @@ main {
 .area-collapsed-handle:hover {
   background: rgba(20, 22, 27, 1);
 }
+
+/* Admin / dev panel — small floating settings drawer. Positioned bottom-left
+   above the Leaflet zoom controls so it never collides with the area panel
+   (which lives top-right). Closed by default. Tester-only; hidden behind a
+   feature flag pre-launch. */
+.admin-collapsed-handle {
+  position: absolute;
+  bottom: 96px;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 22, 27, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  cursor: pointer;
+  z-index: 500;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55);
+  transition: background 0.12s ease;
+}
+.admin-collapsed-handle:hover {
+  background: rgba(20, 22, 27, 1);
+}
+.admin-panel {
+  position: absolute;
+  bottom: 96px;
+  left: 16px;
+  width: 260px;
+  background: rgba(20, 22, 27, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  z-index: 500;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55);
+  padding: 0;
+  font-size: 13px;
+}
+.admin-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.admin-panel-title {
+  font-family: var(--font-display, inherit);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: var(--dim);
+}
+.admin-panel-close {
+  background: transparent;
+  border: none;
+  color: var(--dim);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+  transition: color 0.12s ease;
+}
+.admin-panel-close:hover {
+  color: var(--ink);
+}
+.admin-panel-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.admin-slider-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.admin-slider-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin-slider-label {
+  color: var(--ink);
+}
+.admin-slider-value {
+  font-family: var(--font-display, monospace);
+  color: var(--gold, #d4a843);
+  font-weight: 600;
+  min-width: 2.5em;
+  text-align: right;
+}
+.admin-slider {
+  width: 100%;
+  accent-color: var(--gold, #d4a843);
+  cursor: pointer;
+}
 .area-tab {
   background: transparent;
   border: none;

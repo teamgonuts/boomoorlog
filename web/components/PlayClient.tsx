@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { AddressInput } from "@/components/AddressInput";
+import { AdminPanel, useAdminSettings } from "@/components/AdminPanel";
 import { AreaPanel, type AreaCreature, type AreaTree } from "@/components/AreaPanel";
 import type { Bbox } from "@/components/PlayMap";
 import type { ViewportTreesResponse } from "@/lib/trees-api";
@@ -71,6 +72,15 @@ export default function PlayClient(props: Props) {
   // user knows pan/zoom is being honored even before pins refresh.
   const [loading, setLoading] = useState(false);
 
+  // Admin/dev sliders — see AdminPanel.tsx. Hydrates from localStorage so a
+  // tester's tuning survives a refresh. Read by the /api/trees fetch (treeCap)
+  // and forwarded to PlayMap (creatureSlots, creatureSpeedMps).
+  const [adminSettings, setAdminSettings] = useAdminSettings();
+  const treeCapRef = useRef(adminSettings.treeCap);
+  useEffect(() => {
+    treeCapRef.current = adminSettings.treeCap;
+  }, [adminSettings.treeCap]);
+
   const abortRef = useRef<AbortController | null>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -85,7 +95,13 @@ export default function PlayClient(props: Props) {
       const bboxStr = [bbox.lat_min, bbox.lng_min, bbox.lat_max, bbox.lng_max]
         .map((n) => n.toFixed(6))
         .join(",");
-      fetch(`/api/trees?bbox=${encodeURIComponent(bboxStr)}`, { signal: ac.signal })
+      // Read the live cap from ref so slider changes take effect on the next
+      // viewport fetch without remounting the map or rebuilding the callback.
+      const cap = treeCapRef.current;
+      const url =
+        `/api/trees?bbox=${encodeURIComponent(bboxStr)}` +
+        `&max_pins=${cap}`;
+      fetch(url, { signal: ac.signal })
         .then((r) => {
           if (!r.ok) throw new Error(`HTTP ${r.status}`);
           return r.json() as Promise<ViewportTreesResponse>;
@@ -163,6 +179,8 @@ export default function PlayClient(props: Props) {
           creatures={props.creaturesForMap}
           markers={markers}
           onViewportChange={handleViewportChange}
+          creatureSlots={adminSettings.creatureSlots}
+          creatureSpeedMps={adminSettings.creatureSpeedMps}
         />
 
         {/* Floating search panel, top-left of the map. */}
@@ -172,6 +190,10 @@ export default function PlayClient(props: Props) {
             <p className="play-error-mini">{props.geocodeError}</p>
           )}
         </div>
+
+        {/* Admin/dev controls — closed by default, sits to the left of the
+            area-panel collapsed handle. */}
+        <AdminPanel settings={adminSettings} onChange={setAdminSettings} />
 
         {/* Floating loading indicator, top-center. Visible whenever a new
             /api/trees request is in flight after pan/zoom. */}
