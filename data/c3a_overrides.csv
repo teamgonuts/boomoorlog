@@ -1,0 +1,301 @@
+slug,category,habitat_classes,movement_classes,source,reason,photo_suggestion
+noctua-pronuba,insect,ground-park;tree-bark,idle-only,override,Noctuid moth rests motionless on leaf litter and bark by day; not a flower visitor.,
+fulica-atra,bird,water-surface;ground-park,water-drifter;park-roamer,override,Coot lives on water but genuinely grazes on bank lawns — taxonomy example species.,
+ardea-cinerea,bird,water-edge,water-edge-stalker;idle-only,override,Wading predator alternates slow patrol along banks with long motionless waiting; taxonomy example species.,
+vanessa-atalanta,insect,flower-visitor,flower-bobber,default,Red Admiral is a dedicated nectar feeder at flowers throughout its season.,
+larus-fuscus,bird,anywhere;water-surface,sky-looper;urban-walker,override,Large urban-generalist gull that soars aerially and forages on pavements and waterfronts.,
+chrysoteuchia-culmella,insect,ground-park,idle-only,override,Grass-specialist crambid moth rests cryptically on grass stems by day; does not visit flowers.,
+idaea-aversata,insect,tree-bark;ground-park,idle-only,override,Geometrid moth rests motionless on bark and leaf litter by day; purely nocturnal flier.,
+phylloscopus-collybita,bird,tree-canopy,tree-flitter,default,Classic leaf-warbler foraging exclusively in tree canopy with constant short hops.,
+alopochen-aegyptiaca,bird,water-surface;ground-park,water-drifter;park-roamer,override,Egyptian Goose alternates between swimming on open water and grazing on park lawns.,
+vanessa-cardui,insect,flower-visitor,flower-bobber,default,Painted Lady is a migrant nectar feeder visiting flowers across Amsterdam parks.,
+harmonia-axyridis,insect,tree-canopy,idle-only,override,Aphid-predating ladybird that climbs slowly through tree canopy foliage; not a flower visitor.,
+coloeus-monedula,bird,wall-and-roof;anywhere,tree-flitter;urban-walker,override,Jackdaw nests in building cavities and forages across all urban substrates.,
+apus-apus,bird,sky-only,sky-looper,override,Common Swift is entirely aerial; cannot perch and never lands except at nest cavity.,
+pieris-brassicae,insect,flower-visitor,flower-bobber,default,Large White is an active nectar feeder moving between flowers throughout the season.,
+podiceps-cristatus,bird,water-body;water-surface,water-drifter;idle-only,override,Diving grebe forages under water (water-body dominant) and rests motionless on the surface.,
+episyrphus-balteatus,insect,flower-visitor,flower-bobber,default,Marmalade Hoverfly is an iconic flower visitor; named in the taxonomy as the example.,
+clepsis-consimilana,insect,tree-canopy,idle-only,override,Tortricid leaf-roller that rests in tree canopy by day; purely nocturnal and not a flower visitor.,
+echium-vulgare,plant,ground-park,none,default,Non-aquatic vascular plant rooted in dry disturbed ground; plant default fits.,
+eristalis-tenax,insect,flower-visitor,flower-bobber,default,Common Drone Fly is an abundant flower-visiting hoverfly; adult ecology drives the tag.,
+gallinula-chloropus,bird,water-edge;ground-park,water-edge-stalker;park-roamer,override,Moorhen patrols vegetated water margins and ventures onto adjacent park lawns.,
+haematopus-ostralegus,bird,water-edge;ground-urban,water-edge-stalker;urban-walker,override,Oystercatcher patrols canal banks and frequently uses paved waterfronts and flat rooftops.,
+mimela-junii,insect,ground-park,idle-only,override,Scarab beetle with soil-dwelling larvae in park lawns; adult rests on ground by day.,
+heriades-truncorum,insect,flower-visitor,flower-bobber,default,Composite-specialist solitary bee; adult observable behaviour is entirely flower-visiting.,
+pieris-rapae,insect,flower-visitor,flower-bobber,default,Small White is an abundant multi-generation nectar feeder across Amsterdam parks.,
+anas-platyrhynchos,bird,water-surface;ground-urban,water-drifter;urban-walker,override,Mallard drifts on canals and walks onto pavements to beg; taxonomy example species.,
+serica-brunna,insect,ground-park,idle-only,override,Brown Chafer with multi-year soil larval stage; adult hides in ground litter by day.,
+agrotis-exclamationis,insect,ground-park,idle-only,override,Cutworm moth rests on leaf litter and soil by day; flies only after dark.,
+autographa-gamma,insect,flower-visitor,flower-bobber,override,Silver Y genuinely visits flowers in daylight unlike most noctuids; tags match default values but for specific biological reasons.,
+chroicocephalus-ridibundus,bird,water-surface;anywhere,water-drifter;sky-looper,override,Black-headed Gull loafs on open water and is a true urban generalist that also soars aerially.,
+harmonia-axyridis-f-succinea,insect,tree-canopy,idle-only,override,Same ecology as nominate Harlequin Ladybird; aphid predator in tree canopy not a flower visitor.,
+hoplodrina-octogenaria,insect,tree-bark;ground-park,idle-only,override,Nocturnal noctuid; rests motionless on bark by day — flower-visitor default does not apply,
+sterna-hirundo,bird,sky-only;water-surface,sky-looper;water-drifter,override,Aerial fishing bird; spends almost all visible time over open water — tree-canopy default does not apply,
+tyria-jacobaeae,insect,flower-visitor;ground-park,flower-bobber;idle-only,default,,
+acrocephalus-scirpaceus,bird,water-edge;tree-canopy,tree-flitter;idle-only,override,Strictly reedbed bird; tree-canopy default is incorrect — water-edge dominates,
+caradrina-morpheus,insect,tree-bark;ground-park,idle-only,override,Nocturnal noctuid; rests on bark/walls by day — flower-visitor default does not apply,
+larus-argentatus,bird,anywhere;wall-and-roof,sky-looper;urban-walker,override,Roof-nesting urban generalist gull; soars and street-forages — tree-canopy default does not apply,
+ciconia-ciconia,bird,ground-park;water-edge,park-roamer;water-edge-stalker,override,Large open-country forager; not a canopy bird — tree-canopy default does not apply,
+polygonia-c-album,insect,flower-visitor;tree-canopy,flower-bobber;idle-only,default,,
+cichorium-intybus,plant,ground-urban;ground-park,none,override,Pioneer of roadsides and urban disturbed ground — ground-urban dominant over default ground-park,
+achillea-millefolium,plant,ground-park,none,default,,
+issus-coleoptratus,insect,tree-bark;tree-canopy,idle-only,override,Bark/stem sap-sucker relying on camouflage; not a flower visitor — flower-visitor default does not apply,
+orthetrum-cancellatum,insect,water-edge;water-surface,idle-only;sky-looper,override,Aquatic dragonfly; perches at water edge and patrols over water — flower-visitor default does not apply,
+adalia-bipunctata,insect,tree-canopy;tree-bark,idle-only;tree-flitter,override,Aphid predator in tree canopy and bark; not a flower visitor — flower-visitor default does not apply,
+dactylorhiza-praetermissa,plant,water-edge;ground-park,none,override,Marsh orchid of damp water margins — water-edge dominant over default ground-park,
+securigera-varia,plant,ground-park,none,default,,
+senecio-inaequidens,plant,ground-urban;ground-park,none,override,Invasive pioneer of railway/road infrastructure — ground-urban dominant over default ground-park,
+malva-sylvestris,plant,ground-urban;ground-park,none,override,Ruderal of pavement bases and wasteland — ground-urban dominant over default ground-park,
+plutella-xylostella,insect,ground-park;ground-urban,idle-only,override,Brassica-leaf specialist resting on foliage; not a flower visitor — flower-visitor default does not apply,
+silene-dioica,plant,ground-park,none,default,,
+agrotis-clavis,insect,ground-park;tree-bark,idle-only,override,Ground-resting cutworm noctuid; not a flower visitor — flower-visitor default does not apply,
+ischnura-elegans,insect,water-edge;water-surface,idle-only;sky-looper,override,Aquatic damselfly perching on waterside stems; not a flower visitor — flower-visitor default does not apply,
+pasiphila-rectangulata,insect,tree-canopy;tree-bark,idle-only,override,Rosaceous tree canopy moth; larvae feed on apple/hawthorn flowers — flower-visitor default does not apply,
+pieris-napi,insect,flower-visitor;ground-park,flower-bobber;idle-only,default,,
+carduus-crispus,plant,ground-park,none,default,,
+geranium-pratense,plant,ground-park,none,default,,
+aphomia-sociella,insect,ground-park;tree-canopy,idle-only,override,Nest parasite of bumblebees in ground; adults rest in vegetation — flower-visitor default does not apply,
+cirsium-arvense,plant,ground-park,none,default,,
+daucus-carota,plant,ground-park,none,default,,
+hedya-nubiferana,insect,tree-canopy;tree-bark,idle-only,override,Rosaceous tree canopy tortrix moth; leaf-roller and bud-borer — flower-visitor default does not apply,
+volucella-zonaria,insect,flower-visitor;ground-park,flower-bobber;sky-looper,default,,
+hofmannophila-pseudospretella,insect,ground-urban,idle-only,override,Synanthropic indoor moth; rests motionless on walls/ceilings; no flower association,Adult resting flat on a pale wall or ceiling indoors
+alcedo-atthis,bird,water-edge;water-body,water-edge-stalker;idle-only,override,Obligate canal/river bird; perches over water and dives; no canopy use,Perched on post or branch low over canal water
+celypha-lacunana,insect,ground-park,idle-only,override,Tortrix moth with ground-herb larvae; adult rests by day on low vegetation; not a flower visitor,Adult at rest on a dock or dandelion leaf
+certhia-brachydactyla,bird,tree-bark,idle-only;tree-flitter,override,Entirely bark-dependent; spirals up trunks; tree-bark is the taxonomy example species for this habitat,Creeping up the bark of a large park tree
+circaea-lutetiana,plant,ground-park,none,default,Shade-loving ground herb of damp soil under tree canopy; no override needed,Plant in dappled shade under large trees
+crassa-unitella,insect,ground-urban,idle-only,override,Dead-wood/bark-debris moth closely related to Brown House Moth; urban resting adult; no flower visit,Adult resting on dead timber or wooden structure
+palomena-prasina,insect,ground-park;tree-canopy,idle-only,override,Sap-sucking shieldbug; sits motionless on leaves; not a flower visitor,Vivid green adult on a broad leaf in park vegetation
+papaver-rhoeas,plant,ground-park,none,default,Annual ruderal herb of disturbed soils; rooted; no override needed,Dense patch of scarlet flowers on a park-edge verge
+verbascum-phlomoides,plant,ground-park,none,default,Biennial of dry sandy disturbed soils; rooted; no override needed,Tall spike of orange-yellow flowers on a sandy embankment
+anania-hortulata,insect,ground-park,idle-only,override,Nettle-feeding crambid moth; adult rests on nettle leaves by day; not a flower visitor,Adult at rest on nettle leaf with wings flat
+anser-anser,bird,water-surface;ground-park,water-drifter;park-roamer,override,Large grazing goose; dual water-surface drifting and ground-park grazing; wrong as default tree-canopy bird,Flock grazing on park lawn with canal visible behind
+cantharis-livida,insect,ground-park;flower-visitor,idle-only;flower-bobber,override,Soldier beetle; adult genuinely feeds on flowers but also rests on foliage; ground-park dominant for broader ecology,Adult on umbellifer flower head in summer
+eudonia-delunella,insect,wall-and-roof,idle-only,override,Wall-specialist crambid; larvae feed on wall mosses; adult rests on same mossy walls; no flower association,Adult resting on moss-covered old brick wall
+megachile-spec,insect,flower-visitor,flower-bobber;sky-looper,default,Leafcutter bee; obligate flower visitor carrying pollen on abdomen; default fits perfectly,Female on flower with pollen load visible on scopa
+tettigonia-viridissima,insect,ground-park;tree-canopy,idle-only,override,Large predatory bush-cricket; sits motionless in vegetation and low branches; not a flower visitor,Large adult on a nettle or bramble leaf in park margin
+anomala-dubia,insect,ground-park,idle-only;flower-bobber,override,Sandy-soil scarab; larvae in soil; adult visits rose-family flowers but also rests; ground-park dominant,Adult on Rosa flower or resting on sandy soil edge
+aythya-fuligula,bird,water-surface;water-body,water-drifter;idle-only,override,Diving duck; spends time on water surface and dives to bottom; completely wrong as canopy bird,Male in eclipse or breeding plumage floating on Amsterdam canal
+brassica-nigra,plant,ground-park,none,default,Annual archaeophyte of disturbed river margins; rooted herb; no override needed,Tall stand in flower on canal bank or disturbed ground
+chrysopilus-asiliformis,insect,ground-park,idle-only,override,Predatory snipefly; perches head-down on low vegetation waiting for prey; not a flower visitor,Adult perching on leaf with head-down posture in damp park margin
+crepis-capillaris,plant,ground-park,none,default,Annual/biennial of mown grassland and park lawns; rooted; no override needed,Rosette and yellow flowers in short park grassland
+jacobaea-vulgaris-subsp-dunensis,plant,ground-park,none,default,Perennial ragwort of dry sandy soils and park edges; rooted herb; no override needed,Flowering plant on sandy embankment or park verge
+medicago-sativa,plant,ground-park,none,default,Perennial legume of dry roadsides and park margins; rooted herb; no override needed,Purple-blue flowers on dry road verge or railway bank
+psittacula-eupatria,bird,tree-canopy;wall-and-roof,tree-flitter;idle-only,override,Large parakeet; canopy dweller with cavity nesting; wall-and-roof secondary for nest sites; not an aquatic or ground bird,Perched prominently in tree canopy or at nest hole
+celypha-striana,insect,ground-park,idle-only,override,Root-feeding tortrix moth of park grassland; adult rests on grass stems by day; not a flower visitor,Adult at rest on dry grass stem in short sward
+ichneumon-xanthorius,insect,ground-park;flower-visitor,idle-only;flower-bobber,override,Parasitoid wasp; hunts in low park vegetation; adult feeds on umbellifer nectar; ground-park dominant over canopy,Adult on umbellifer flower head in park margin
+maniola-jurtina,insect,flower-visitor;ground-park,flower-bobber;idle-only,default,Common grassland butterfly; nectars on open flowers; larvae on grasses; default fits well with ground-park secondary,Adult nectaring on knapweed or bramble in park
+melilotus-albus,plant,ground-park,none,default,Biennial legume of disturbed ground; rooted herb; no override needed,Tall white-flowered stand on waste ground or park margin
+oecetis-ochracea,insect,water-edge,idle-only,override,Aquatic caddisfly; larvae in canals/ponds; adults rest on bankside vegetation by day; not a flower visitor,Adult at rest on waterside vegetation near Amsterdam canal
+oedemera-lurida-virescens,insect,flower-visitor,flower-bobber;idle-only,default,Obligate pollen-feeder on open flowers; default fits perfectly; shiny metallic green,Adult feeding on pollen on umbellifer or composite flower
+opilio-canestrinii,arachnid,ground-urban;ground-park,idle-only,override,Invasive synanthropic harvestman; strongly urban; ground-urban dominant over arachnid default of anywhere,Harvestman on low urban vegetation or fence post in Amsterdam garden
+phoenicurus-ochruros,bird,"[wall-and-roof, ground-urban]","[urban-walker, idle-only]",override,Urban specialist that nests on buildings and forages on paved ground; tree-canopy default is wrong.,Male perched on a rooftop or chimney pot showing rufous tail.
+pterocarya-fraxinifolia,tree,[tree-rooted],[none],override,Biologically a large tree (Juglandaceae); taxon_group 10 is a GBIF artefact — category corrected to tree.,Full tree in park showing pendulous fruit chains.
+araneus-diadematus,arachnid,"[tree-canopy, ground-park]",[idle-only],override,Builds orb-webs in shrubs and tree branches; tree-canopy more precise than default anywhere.,Large female in centre of dewy orb-web between branches.
+convolvulus-sepium,plant,[ground-park],[none],default,Roots in vegetated soil even while climbing; ground-park placement fits.,Large white trumpet flower with pink stripes.
+cucullia-scrophulariae,insect,[ground-park],[idle-only],override,Nocturnal moth; rests motionless by day on vegetation — flower-visitor and flower-bobber are wrong.,Larva (striped yellow-black-white) on figwort or mullein stem.
+marpissa-muscosa,arachnid,"[tree-bark, wall-and-roof]",[idle-only],override,Flat-bodied salticid specialized for wooden posts and tree bark; anywhere default too vague.,Spider on weathered fence post or oak bark in full sun.
+mystacides-longicornis,insect,"[water-edge, water-body]","[water-edge-stalker, idle-only]",override,Aquatic caddisfly; larva in water-body habitat and adult rests at water-edge — flower-visitor default wrong.,Adult caddisfly resting on waterside vegetation near a canal.
+phalacrocorax-carbo,bird,"[water-edge, water-body]","[water-edge-stalker, idle-only]",override,Water bird; dives in canals and dries wings on jetties — tree-canopy default entirely wrong.,Bird in wing-drying pose on canal wall or jetty post.
+philodromus-spec,arachnid,"[tree-bark, tree-canopy]",[idle-only],override,Arboreal hunting spider on bark and foliage; anywhere default undersells bark-and-leaf preference.,Spider on tree bark or leaf surface.
+polycarpon-tetraphyllum,plant,[ground-urban],[none],override,Grows in pavement cracks and warm urban surfaces; not a park-lawn plant.,Tiny plant in pavement crack near tram tracks.
+polydrusus-formosus,insect,[tree-canopy],[idle-only],override,Leaf-feeding weevil on deciduous tree foliage; flower-visitor default wrong for a bark-and-leaf beetle.,Metallic green weevil on fresh alder or willow leaf.
+alcea-rosea,plant,"[ground-urban, ground-park]",[none],override,Amsterdam populations mostly at base of canal walls and sunny facades; ground-urban dominant.,Tall plant with pink flowers growing at base of brick canal-house wall.
+artemisia-vulgaris,plant,"[ground-urban, ground-park]",[none],override,Classic nitrophilous ruderal of disturbed built-up ground and road verges.,Grey-green aromatic foliage on a railway verge or building site margin.
+chenopodium-album,plant,"[ground-urban, ground-park]",[none],override,Nitrophilous annual of bare disturbed ground and building sites; not established park turf.,Mealy-leafed plant on a rubble edge or allotment margin.
+hypochaeris-radicata,plant,[ground-park],[none],default,Established park-lawn perennial; ground-park default fits accurately.,Branched yellow dandelion-like flowers in short park sward.
+idaea-seriata,insect,"[ground-park, wall-and-roof]",[idle-only],override,Resting moth on lichen-covered walls and bark; flower-visitor default wrong.,Pale dusty moth resting flat on lichen-covered stone or bark.
+lapsana-communis,plant,[ground-park],[none],default,Shaded park-soil annual; ground-park default fits.,Small pale-yellow flowerheads on slender stems under park trees.
+potentilla-indica,plant,[ground-park],[none],default,Mat-forming park-lawn creeper; ground-park default fits.,Low rosette with yellow flower and red strawberry-like fruit in park lawn.
+salticus-scenicus,arachnid,"[wall-and-roof, ground-urban]",[idle-only],override,Obligate urban-wall hunter; taxonomy doc explicitly names it as wall-and-roof example.,Zebra-patterned spider on sunlit exterior wall or window frame.
+aegithalos-caudatus,bird,[tree-canopy],[tree-flitter],default,Small acrobatic canopy bird moving in family parties; default fits perfectly.,Fluffy long-tailed bird clinging to thin branch.
+centaurea-jacea,plant,[ground-park],[none],default,Park meadow and verge perennial; ground-park default fits.,Purple knapweed flowerhead in meadow-edge grasses.
+idaea-fuscovenosa,insect,"[ground-park, tree-bark]",[idle-only],override,Tiny resting moth on bark and dead wood; flower-visitor default wrong.,Pale moth resting with wings flat on bark or dead wood.
+jacobaea-vulgaris,plant,[ground-park],[none],default,Park-margin biennial on open grassland; ground-park default fits.,Bright yellow daisy clusters on branched stems in unmown verge.
+lythrum-salicaria,plant,"[water-edge, ground-park]",[none],override,Obligate waterside plant; ground-park default is too dry — water-edge is biologically correct.,Tall magenta spikes along canal margin in late summer.
+meconema-spec,insect,[tree-canopy],[idle-only],override,Tree-canopy predatory bush-cricket; rests motionless by day in broadleaved canopy — flower-visitor default wrong.,Pale-green bush-cricket on oak or lime leaf at night.
+axylia-putris,insect,"[ground-park, tree-bark]",[idle-only],override,Bark-resting noctuid moth; default flower-visitor wrong — larvae on low herbs and adults rest on bark.,Orange-brown moth resting against bark or dry grass stem.
+camptogramma-bilineata,insect,"[ground-park, ground-urban]",[idle-only],override,Wall-and-vegetation resting geometrid moth; flower-visitor default wrong.,Yellow-banded moth resting flat on a wall or fence.
+crambus-pascuella,insect,[ground-park],[idle-only],override,Grass moth resting on grass stems in park lawns; flower-visitor default wrong.,Head-down cigar-winged moth on grass stem.
+falco-peregrinus,bird,"[wall-and-roof, sky-only]","[sky-looper, idle-only]",override,Nests on tall buildings; hunts over open city sky — tree-canopy default wrong for an urban raptor.,Bird perched on a church tower ledge or in steep stoop over cityscape.
+lotus-corniculatus,plant,[ground-park],[none],default,Short-grass park and verge perennial; ground-park default fits.,Yellow-and-orange flowers with claw-shaped seed pods in dry park turf.
+polistes-dominula,insect,flower-visitor;ground-park,flower-bobber;urban-walker,override,Paper wasps forage on flowers for nectar but also hunt prey at ground level on stems and vegetation,Wasp on open flower or building paper nest on stem
+porcellio-scaber,insect,ground-park;tree-bark,idle-only,override,Terrestrial isopod sheltering under leaf litter and loose bark; movement below renderer threshold,Woodlouse on damp soil under a log or loose bark
+stachys-sylvatica,plant,ground-park,none,default,Non-tree vascular plant rooted in shaded park soil; default fits,Hedge Woundwort flowering spike in dappled park shade
+vicia-cracca,plant,ground-park,none,default,Climbing legume rooted in vegetated ground; default fits,Tufted Vetch clambering over park vegetation in flower
+yponomeuta-spec,insect,tree-canopy;tree-bark,idle-only;flower-bobber,override,Larvae in silk tents on trees; adults nocturnal and rest motionless on bark/foliage,Silk tent on bird-cherry branch or adult moth at rest on bark
+aegopodium-podagraria,plant,ground-park,none,default,Rhizomatous perennial in shaded park ground; default fits,Ground-elder umbel flowers in park understorey
+chorthippus-brunneus,insect,ground-park,idle-only;park-roamer,override,Ground-dwelling grass-feeding grasshopper; no flower association; rests and hops on short turf,Field Grasshopper on bare earth or low grass stem
+clepsis-dumicolana,insect,tree-canopy;ground-park,idle-only,override,Larvae in rolled leaves on shrubs/trees; adults rest motionlessly on foliage; not a flower visitor,Adult moth at rest on leaf surface or rolled leaf shelter
+deraeocoris-ruber,insect,tree-canopy;ground-park,idle-only;flower-bobber,override,Predatory mirid patrolling stems and flower heads; ambush posture dominates over active flower bobbing,Red Bug on nettle or willowherb stem
+eupeodes-corollae,insect,flower-visitor;tree-canopy,flower-bobber;sky-looper,override,Hoverfly is a true flower visitor but also migrant with long transit flights; larvae in tree aphid colonies,Hoverfly hovering at umbellifer flower head
+hemithea-aestivaria,insect,tree-canopy;ground-park,idle-only,override,Adult rests spread-winged on leaves by day; larvae on broadleaf trees; not a flower visitor,Common Emerald moth pressed flat on green leaf
+heracleum-mantegazzianum,plant,ground-park;water-edge,none,override,Invasive plant preferring canal banks and water-adjacent disturbed ground as well as park margins,Giant Hogweed flower plate with insects on canal bank
+mycelis-muralis,plant,wall-and-roof;ground-park,none,override,Specialist wall coloniser; wall-and-roof is the characteristic and dominant habitat,Wall Lettuce growing from old brick wall mortar
+oligia-spec,insect,ground-park;tree-canopy,idle-only,override,Larvae bore into grass stems at ground level; adults rest flat on bark/stems; no flower association,Oligia moth resting on bark or grass stem
+pararge-aegeria,insect,tree-canopy;ground-park,tree-flitter;idle-only,override,Shade butterfly patrolling sun-flecks between trees; territorial sorties between perches on foliage,Speckled Wood in sun-fleck on leaf or territorial spiral flight
+peribatodes-rhomboidaria,insect,tree-bark;tree-canopy,idle-only,override,Adult rests cryptically on bark by day; bark-resting is the observed behaviour; larvae on tree foliage,Willow Beauty moth on rough tree bark
+rhagonycha-fulva,insect,flower-visitor;ground-park,flower-bobber;idle-only,override,Default flower-visitor fits adults; idle-only added for long resting periods; larvae in soil,Soldier Beetle pair on hogweed or cow parsley flower
+rumex-obtusifolius,plant,ground-park;ground-urban,none,override,True generalist of vegetated and paved/disturbed ground; ground-urban secondary genuine,Broad-leaved Dock leaves and rusty seed spikes on verge
+verbascum-nigrum,plant,ground-urban;ground-park,none,override,Prefers dry disturbed urban substrates over managed park lawn; ground-urban dominant,Dark Mullein flowering spike on dry road margin or gravel
+aeshna-isoceles,insect,water-edge;water-body,sky-looper;idle-only,override,Aquatic dragonfly: larvae in water-body; adults patrol water-edge; sustained aerial flight and perching,Green-eyed Hawker patrolling over reed-fringed pond
+berteroa-incana,plant,ground-urban;ground-park,none,override,Pioneer of dry disturbed urban ground (rail margins, gravel) rather than managed park
+chironomidae-indet,insect,water-edge;water-body,sky-looper;idle-only,override,Aquatic insect: larvae in water-body sediment; adult swarms over water-edge; aerial mating swarm,Midge swarm over canal at dusk or larvae in sediment
+closterotomus-trivialis,insect,flower-visitor;tree-canopy,flower-bobber;idle-only,override,Plant bug found on flower heads of herbs; default flower-visitor partially fits with idle-only secondary,Plant bug on composite or umbellifer flower head
+geum-urbanum,plant,ground-park,none,default,Shaded park-margin perennial; default fits,Wood Avens flowers in dappled park understorey
+harmonia-axyridis-f-spectabilis,insect,tree-canopy;flower-visitor,tree-flitter;idle-only,override,Aphid-hunting ladybird moving through canopy; also aggregates on flowers in late summer before overwintering,Harlequin Ladybird on tree leaf or flower head
+lagria-spec,insect,flower-visitor;ground-park,flower-bobber;idle-only,override,Adults feed on pollen on flower heads; larvae in soil/leaf litter; long resting periods on stems,Lagria beetle on umbellifer or composite flower
+mythimna-impura,insect,ground-park;water-edge,idle-only,override,Grass/reed-feeding moth resting on stems; associated with damp grassland and reed-bed margins,Smoky Wainscot moth on grass stem or at light trap
+oedemera-nobilis,insect,flower-visitor;ground-park,flower-bobber;idle-only,override,Default flower-visitor fits well; adults spend nearly all time on pollen-rich flowers; larvae in dead stems,Swollen-thighed Beetle on daisy or buttercup flower
+oenothera-spec,plant,ground-urban;ground-park,none,override,Naturalised on disturbed sandy/gravelly urban substrates; ground-urban dominant over managed park,Evening primrose on rail embankment or gravel roadside at dusk
+otiorhynchus-sulcatus,insect,ground-park;tree-canopy,idle-only;park-roamer,override,Flightless nocturnal weevil; larvae in soil; adults hide in ground by day and crawl to feed at night,Black Vine Weevil on soil or notched leaf margin at night
+propylea-quatuordecimpunctata,insect,tree-canopy;flower-visitor,tree-flitter;idle-only,override,Aphid-hunting ladybird primarily found in tree/shrub foliage; flower-visitor secondary for warm-season foraging on umbellifers,Close-up on leaf showing chequered yellow-black pattern; aphid colony in background
+psyllobora-vigintiduopunctata,insect,flower-visitor;ground-park,flower-bobber;idle-only,override,Mildew-feeding ladybird forages on low herbaceous plants not tree canopy; ground-park secondary for low vegetation habitat,Tiny yellow-black spotted beetle on low flower head or herb leaf
+riparia-riparia,bird,sky-only;water-edge,sky-looper;idle-only,override,Aerial insectivore hunting over water; nests in sandy water-edge banks; no tree association,Sand martin in flight over open water or perched at nest hole in bank
+sicus-ferrugineus,insect,flower-visitor,flower-bobber;idle-only,default,Conopid fly; adults feed on umbellifer nectar while parasitising bumblebees; default flower-visitor fits well,Reddish bee-fly perched on white umbellifer flower head
+sphaerophoria-spec,insect,flower-visitor,flower-bobber;idle-only,default,Hoverfly genus; adults hover over and visit a wide range of flowers; default flower-visitor/flower-bobber perfect fit,Slender yellow-black hoverfly hovering over or perched on flower
+stachys-palustris,plant,water-edge;ground-park,none,override,Marsh plant strongly associated with canal banks and ditch edges; water-edge more accurate than default ground-park dominant,Pink whorled flower spike growing at Amsterdam canal bank margin
+acer-pseudoplatanus,tree,tree-rooted,none,override,Biologically a tree (Sapindaceae) despite taxon_group 10 in GBIF; category corrected to tree with tree-rooted placement,Full sycamore tree in park or street with palmate leaves and winged samara fruits
+altica-spec,insect,ground-park;water-edge,idle-only,override,Leaf-feeding flea beetle associated with willowherb on damp ground and canal banks; not a flower visitor; sits motionless between jumps,Metallic blue flea beetle on leaf showing shot-hole feeding damage
+andrena-bicolor,insect,flower-visitor;ground-park,flower-bobber;idle-only,override,Solitary bee; flower-visitor dominant for foraging; ground-park secondary for bare-soil nesting activity visible to observers,Small mining bee entering or emerging from ground nest hole in bare soil
+anthrax-anthrax,insect,ground-park;flower-visitor,idle-only;flower-bobber,override,Cleptoparasite of soil-nesting bees; basks on warm bare ground (idle-only dominant); secondary flower visits; ground-park dominant habitat,Black hairy bee-fly basking flat on warm sandy soil or stone
+coenagrion-puella,insect,water-edge;water-surface,idle-only;flower-bobber,override,Aquatic insect (damselfly); adults perch on waterside vegetation and make short sallies; entirely water-edge associated,Powder-blue and black damselfly perched on reed stem at Amsterdam canal
+cygnus-olor,bird,water-surface;water-edge,water-drifter;idle-only,override,Iconic canal bird; drifts on water; rests on bank near nest; exact match to BEHAVIOR_TAXONOMY.md canonical example,Mute swan drifting on Amsterdam canal with arched neck
+gasteruption-spec,insect,flower-visitor,flower-bobber;idle-only,default,Parasitoid wasp; adults reliable umbellifer flower visitors; default flower-visitor/flower-bobber fits well,Slender long-necked wasp with curved abdomen on white umbellifer flower
+geranium-robertianum,plant,ground-park;tree-bark,none,override,Grows in shaded ground at base of walls and tree roots; tree-bark/wall-base secondary captures its characteristic niche,Small pink flowers and strongly scented leaves at base of old wall or tree roots
+hypericum-perforatum,plant,ground-park,none,default,Open sunny dry grassland and park-margin plant; default ground-park/none correct,Yellow five-petalled flowers on upright stem; translucent leaf glands visible when backlit
+idaea-rusticata,insect,wall-and-roof;ground-park,idle-only,override,Day-resting geometrid pressed against warm masonry and bark; wall-and-roof dominant; ground-park secondary for larval foodplants; no adult feeding,Pale straw moth resting flat against old Amsterdam brick wall
+limnephilus-marmoratus,insect,water-edge;water-body,idle-only,override,Caddisfly; larvae aquatic in canals (water-body); adults rest at water-edge; no flower-visiting; flower-visitor default wrong,Caddisfly adult resting on waterside vegetation or stone near Amsterdam canal
+linaria-vulgaris,plant,ground-park;ground-urban,none,override,Colonises both park margins and pavement/railway edges; ground-urban secondary is biologically accurate,Yellow snapdragon-like flowers on dry roadside bank or pavement edge
+lomaspilis-marginata,insect,tree-canopy;tree-bark,idle-only,override,Willow/poplar canopy moth; larvae feed on Salix/Populus; adults rest on leaves and bark; no flower visiting,White moth with dark border resting on willow leaf at canal bank
+mareca-strepera,bird,water-surface;water-edge,water-drifter;idle-only,override,Dabbling duck entirely water-associated; drifts and dabbles; rests on bank; no pavement begging unlike Mallard,Gadwall pair on Amsterdam canal; male grey-brown with black rear
+nephrotoma-quadrifaria,insect,ground-park,idle-only,override,Large patterned cranefly resting on low vegetation; larvae in moist park soil; does not visit flowers; flower-visitor default wrong,Yellow-and-black banded cranefly resting on park vegetation with drooping legs
+pentatoma-rufipes,insect,tree-canopy;tree-bark,idle-only,override,Tree-feeding shieldbug on broadleaved canopy (oak/alder/hazel); overwinters under bark; no flower visiting,Bronze-green shieldbug with red-orange legs on oak leaf
+sisymbrium-officinale,plant,ground-urban;ground-park,none,override,Strongly urban weed of pavement cracks and building bases; ground-urban more accurate as dominant than default ground-park,Tall wiry plant with small yellow flowers and erect seed pods at Amsterdam pavement edge
+zygaena-filipendulae,insect,flower-visitor;ground-park,flower-bobber;idle-only,override,Day-flying flower-visiting moth; ground-park secondary for larval grassland habitat on Bird's-foot Trefoil; explicit flower-bobber fits this conspicuous visitor,Metallic green moth with six crimson spots feeding on thistle or Knautia flower
+acleris-forsskaleana,insect,tree-canopy,idle-only,override,Maple leaf-rolling tortrix; entire life cycle in Acer canopy; rests cryptically on leaves and bark; no flower visiting,Small pale moth resting on maple leaf or bark surface
+andrena-flavipes,insect,flower-visitor;ground-park,flower-bobber;idle-only,override,Abundant mining bee with visible soil nesting aggregations in parks; dual flower-visitor + ground-park ecology prominent in observations,Yellow-legged mining bee at bare-soil nest entrance in sunny park path edge
+anthomyiidae-indet,insect,ground-park;flower-visitor,idle-only;flower-bobber,override,Root-fly family with soil/plant larval ecology; ground-park dominant over default flower-visitor to reflect family-level ground biology,Small greyish fly resting on low park vegetation
+anthriscus-sylvestris,plant,ground-park;water-edge,none,override,Common on both park margins and canal banks; water-edge secondary is biologically significant in Amsterdam context,Dense white umbellifer stands along Amsterdam canal bank in spring
+apamea-monoglypha,insect,ground-park,idle-only,override,Grass-root noctuid moth; entirely ground/park associated; nocturnal; no flower visiting; rests on bark by day,Dark brown variably patterned moth resting against bark or wooden post
+calamagrostis-epigejos,plant,ground-park;water-edge,none,override,Robust grass of park margins and railway banks; water-edge secondary for drier canal embankments; wind-pollinated not flower-visitor,Tall feathery purple-tinged grass panicles on Amsterdam railway embankment or park edge
+chelostoma-rapunculi,insect,flower-visitor,flower-bobber,default,,Chelostoma rapunculi on Campanula flower head
+chorthippus-biguttulus-group,insect,ground-park,idle-only,override,Grasshopper; ground-dwelling orthopteran not a flower visitor,Chorthippus grasshopper on grass stem in park
+coreus-marginatus,insect,ground-park,idle-only,override,Seed-sucker on Rumex; not a flower forager; cryptic and slow-moving,Dock Bug on Rumex seed head
+cornu-aspersum,mollusc,ground-park,idle-only,default,,Garden Snail on soil or leaf litter in park
+crambus-perlella,insect,ground-park,idle-only,override,Grass-resting moth; cryptic daytime rest on grass stems; not a flower visitor,Crambus perlella resting on grass stem
+dipsacus-pilosus,plant,ground-park,none,default,,Small Teasel in shaded park margin
+ditula-angustiorana,insect,tree-canopy,idle-only,override,Leaf-rolling tortrix; rests on foliage or bark; not a flower forager,Red-barred Tortrix resting on leaf
+epilobium-hirsutum,plant,water-edge,none,override,Obligate wetland herb of canal banks and ditch margins,Great Willowherb flowering at canal edge
+galium-verum,plant,ground-park,none,default,,Lady's Bedstraw on dry sunny grassland
+glechoma-hederacea,plant,ground-park,none,default,,Ground-ivy mat in shaded park ground
+hordeum-murinum,plant,ground-urban,none,override,Urban pavement-crack annual; characteristic of streets and wall bases,Wall Barley in pavement crack
+megachile-willughbiella,insect,flower-visitor,flower-bobber,default,,Megachile willughbiella foraging on flower
+mormo-maura,insect,tree-bark,idle-only,override,Large noctuid; daytime roost pressed flat on bark with cryptic patterning,Old Lady moth resting on tree bark
+motacilla-alba,bird,ground-urban;water-edge,urban-walker;water-edge-stalker,override,Ground-urban forager on pavements and rooftops; secondary water-edge canal bank forager,White Wagtail walking on pavement near canal
+plantago-lanceolata,plant,ground-park,none,default,,Ribwort Plantain in park lawn
+sambucus-nigra,plant,ground-park,none,default,,Elder shrub at park edge in flower
+sarcophaga-spec,insect,ground-urban,urban-walker,override,Carrion/urban fly; walks short distances on pavements and walls; not a flower forager,Flesh fly on sunlit pavement or wall
+sonchus-oleraceus,plant,ground-urban,none,override,Ruderal annual of pavement cracks and wall bases; primarily urban ground,Smooth Sow-thistle in pavement crack
+urtica-dioica,plant,ground-park,none,default,,Common Nettle patch in park margin
+acentria-ephemerella,insect,water-surface,idle-only,override,Semi-aquatic moth; larvae submerged; adults skim or rest on water surface,Water Veneer moth on water surface
+chloromyia-formosa,insect,flower-visitor,flower-bobber,default,,Broad Centurion soldier fly on umbellifer flower
+cirsium-vulgare,plant,ground-park,none,default,,Spear Thistle in rough park grassland
+crocallis-elinguaria,insect,tree-bark,idle-only,override,Geometrid moth; daytime rest motionless on bark in leaf-mimicking posture,Scalloped Oak moth resting on bark
+eupatorium-cannabinum,plant,water-edge,none,override,Obligate wet-habitat tall herb of canal banks and pond margins,Hemp-agrimony flowering at canal bank
+graphosoma-italicum,insect,flower-visitor,idle-only,override,Seed-feeder on Apiaceae umbels; found on flower heads but stationary not bobbing,Striped Shield Bug on umbellifer flower head
+gymnoscelis-rufifasciata,insect,tree-canopy,idle-only,override,Geometrid moth; cryptic daytime rest on foliage or bark; not a flower visitor,Double-striped Pug moth resting on leaf
+hirundo-rustica,bird,sky-only,sky-looper,override,Aerial insectivore; almost never perches in open; sweeps low over canals and parks,Barn Swallow in flight over canal
+hylaeus-communis,insect,flower-visitor,flower-bobber,default,,Common Yellow-face Bee on flower
+leucanthemum-vulgare,plant,ground-park,none,default,,Oxeye Daisy in park meadow area
+lotus-pedunculatus,plant,water-edge,none,override,Wet-habitat species of canal banks and marshy margins; not dry grassland,Greater Bird's-foot-trefoil at water margin
+magnoliopsida,plant,ground-park,none,default,Broad class placeholder — plant default fits as the safest representative assignment.,A mixed herbaceous verge with visible dicot forbs in an Amsterdam park
+oryctolagus-cuniculus,mammal,ground-park,park-roamer,default,Mammal defaults fit exactly — ground-dwelling grazer in vegetated park space.,Rabbit grazing on open lawn in Vondelpark or Amsterdamse Bos
+phasianus-colchicus,bird,ground-park,park-roamer,override,Ground bird never found in canopy; park-roamer matches its slow foraging stride.,Pheasant walking through long grass in a park clearing
+philoscia-muscorum,other,ground-park,idle-only,override,Terrestrial isopod (crustacean not insect); category overridden to other; ground-park matches damp litter habitat; movement negligible so idle-only.,Woodlouse on damp leaf litter or under a log
+pyrrhocoris-apterus,insect,ground-park,idle-only,override,Seed-feeding ground insect; clusters motionlessly at base of linden trees — flower-visitor and flower-bobber both wrong.,Dense cluster of firebugs at the base of a linden trunk on bare soil
+rhinophora-lepida,insect,ground-park,flower-bobber,override,Adult flower visitor on umbellifers in park habitats; larva parasitoid of woodlice; ground-park preferred over flower-visitor as dominant since adults are seen low on vegetation.,Adult fly on an umbellifer flower head in a park margin
+textrix-denticulata,arachnid,wall-and-roof,idle-only,override,Funnel-web spider of masonry and stone walls; wall-and-roof overrides anywhere; web-anchored so idle-only applies.,Funnel web in a crevice of a canal wall or old building stonework
+thereva-nobilitata,insect,ground-park,idle-only,override,Adults bask on bare ground and do not feed at flowers; larvae predatory in soil — flower-visitor and flower-bobber both wrong.,Stiletto fly basking on bare sandy soil in a sunny park clearing
+apterogenum-ypsillon,insect,ground-park,idle-only,override,Nocturnal moth resting cryptically by day on low vegetation or ground; caterpillars feed on ground-level plants — flower-visitor and flower-bobber wrong.,Adult moth resting on a plantain leaf or grass stem at ground level
+bufo-bufo,amphibian,water-edge;ground-park,water-edge-stalker;park-roamer,override,Genuinely dual-habitat — breeds at water-edge but terrestrial for most of the year; movement alternates between water patrol and park wandering.,Common Toad at the edge of a Vondelpark pond or on a damp path at night
+cepaea-nemoralis,mollusc,ground-park,idle-only,default,Mollusc defaults fit — land snail on vegetated damp ground; movement below animation threshold.,Brown-lipped Snail on leaf litter or a damp stone in a park
+cornus-sanguinea,plant,ground-park,none,default,Shrub not tree; plant default (ground-park none) fits.,Dogwood shrub with red stems in winter or white flower clusters in spring
+dianthus-deltoides,plant,ground-park,none,default,Ground-level forb of dry sunny grassland; plant default fits.,Maiden Pink flowering on a dry sunny park verge
+enoplognatha-ovata-latimana,arachnid,flower-visitor,idle-only,override,Lives in webs on flower heads and seed heads in summer; flower-visitor overrides anywhere; web-anchored so idle-only.,Small spider in a tangle web on a thistle or umbellifer flower head
+eristalis-horticola,insect,flower-visitor,flower-bobber,default,Hoverfly adult is a flower visitor; insect defaults apply exactly.,Stripe-winged Drone Fly on a hogweed or thistle flower head
+heracleum-sphondylium,plant,ground-park,none,default,Ground-level umbellifer; plant default fits.,Hogweed plant in full bloom along a canal bank or park edge
+leptophyes-punctatissima,insect,tree-canopy,idle-only,override,Wingless bush-cricket lives in shrub and low tree foliage; flower-visitor and flower-bobber both wrong; tree-canopy and idle-only match its leaf-surface lifestyle.,Speckled Bush-cricket on a leaf in a hedgerow or low shrub canopy
+malva-moschata,plant,ground-park,none,default,Ground-level perennial herb of grassy verges; plant default fits.,Musk-mallow in flower on a park verge or meadow planting
+medicago-lupulina,plant,ground-park,none,default,Low-growing legume of disturbed park soils; plant default fits.,Black Medick in flower on a lawn or path edge
+panorpa-germanica,insect,ground-park,idle-only,override,Carrion/fruit scavenger of shaded damp hedgerows; not a flower visitor; rests on low vegetation — flower-visitor and flower-bobber wrong.,Scorpionfly perched on a nettle or bramble leaf in shade
+phlomis-russeliana,plant,ground-park,none,default,Ornamental ground-level perennial planted in park borders; plant default fits.,Turkish Sage with whorled yellow flowers in a park border planting
+pisaura-mirabilis,arachnid,ground-park,idle-only,override,Hunting spider of tall grass and low park vegetation; ground-park overrides anywhere; sits still between hunts so idle-only applies.,Nursery-web Spider on tall grass with egg sac
+platyedra-subcinerea,insect,ground-park,idle-only,override,Gelechiid moth; larvae in Malvaceae seed capsules; adults nocturnal and day-resting on low vegetation — flower-visitor and flower-bobber wrong.,Micro-moth resting on a mallow leaf or stem
+procambarus-clarkii,other,water-body;water-edge,water-drifter;idle-only,override,Freshwater crayfish not insect — GBIF taxon group incorrect; category overridden to other; lives submerged in canals (water-body dominant) and emerges onto bank at night (water-edge secondary).,Red Swamp Crayfish in a shallow Amsterdam canal or on a canal bank at dusk
+schoenobius-gigantella,insect,water-edge,idle-only,override,Reed-stem borer; entire lifecycle in reedbed; adults rest on reed stems by day — flower-visitor and flower-bobber both wrong; water-edge and idle-only correct.,Moth resting on a Phragmites reed stem at a canal margin
+silene-latifolia,plant,ground-park,none,default,Ground-level forb of disturbed ground and park margins; plant default fits.,White Campion in flower on a disturbed bank or road verge
+sonchus-asper,plant,ground-urban;ground-park,none,override,Abundant pavement-crack and wall-base weed throughout inner Amsterdam as well as parks — ground-urban is the dominant habitat override; ground-park is genuine secondary.,Prickly Sow-thistle growing from a pavement crack on an Amsterdam street
+sphaerophoria-scripta,insect,flower-visitor,flower-bobber,default,Common hoverfly; avid flower visitor throughout season; insect defaults apply exactly.,Common Globetail hovering over an umbellifer or composite flower head
+tragopogon-pratensis,plant,ground-park,none,default,Ground-level grassland composite; plant default fits.,Goat's-beard seed clock or yellow flower head in a park meadow
+anas-platyrhynchos-domesticus,bird,water-surface;ground-urban,water-drifter;urban-walker,override,Semi-feral urban duck; drifts on canal water (dominant) but wades onto pavements to beg — multi-habitat like wild mallard but even more ground-urban biased.,Domestic Mallard waddling on a pavement or drifting on an inner-city canal
+anas-platyrhynchos-f-domesticus,bird,water-surface;ground-urban,water-drifter;urban-walker,override,Domestic duck behaves like mallard — drifts on water and forages on pavements; dual habitat and movement match the mallard multi-class template.,Duck on Amsterdam canal water with other waterfowl
+ancylis-achatana,insect,tree-canopy,idle-only,override,Tortricid leaf-roller moth resting on hawthorn or rosaceous tree foliage; not a flower visitor; default overridden to tree-canopy + idle-only.,Adult moth resting on hawthorn leaf with wings flat
+anthidium-manicatum,insect,flower-visitor,flower-bobber,default,Solitary bee that actively visits flowers for pollen and nectar; default fits.,Wool carder bee on lavender or woundwort flower
+anthomyia-procellaris,insect,ground-park,idle-only,override,Anthomyiid fly associated with decaying organic matter in vegetated ground; not a flower visitor; rests on low vegetation.,Small dark fly basking on leaf in shaded park area
+bellis-perennis,plant,ground-park,none,default,Common lawn daisy of park turf; default fits.,Dense daisy lawn in Amsterdam park in spring
+caltha-palustris,plant,water-edge,none,override,Obligate wetland plant of ditch and canal margins; must be placed at water-edge not ground-park.,Marsh-marigold flowering at Amsterdam canal edge in April
+chrysolina-americana,insect,ground-park,idle-only,override,Leaf beetle that clings to rosemary and lavender shrubs in parks; not a flower visitor; sedentary plant-feeder.,Metallic rosemary beetle on lavender stem
+chrysopilus-cristatus,insect,water-edge;ground-park,idle-only,override,Rhagionid snipefly preferring damp canal-edge and humid vegetated margins; rests motionless on leaves; dominant habitat is water-edge.,Black snipefly resting on leaf near canal bank
+dasypoda-hirtipes,insect,ground-park,idle-only,override,Ground-nesting mining bee; spends most observed time at nest entrance in sandy soil; flower-visitor default misses the defining ground-nesting behaviour.,Pantaloon bee at burrow entrance in sandy park soil with fan of excavated sand
+diplotaxis-tenuifolia,plant,ground-urban,none,override,Perennial wall-rocket of pavement cracks and rubble; urban weed not a park plant; default ground-park overridden to ground-urban.,Wall-rocket growing in Amsterdam pavement crack
+epipactis-helleborine,plant,ground-park,none,default,Woodland orchid adapted to shaded park ground; ground-park default fits.,Broad-leaved helleborine in flower under park trees
+erigeron-canadensis,plant,ground-urban,none,override,Canadian fleabane is a pavement-crack and rubble-ground coloniser; ground-urban overrides default ground-park.,Canadian fleabane in Amsterdam pavement crack
+fraxinus-excelsior,tree,tree-rooted,none,override,Ash is a tree not a plant; GBIF batch category wrong; override category to tree with tree-rooted placement.,Full ash tree crown in Amsterdam park or street
+geranium-molle,plant,ground-park,none,default,Common lawn crane's-bill of park turf and path edges; default fits.,Dove's-foot crane's-bill flowers in short grass
+hedya-salicella,insect,tree-canopy,idle-only,override,Tortricid moth associated with willows and alders; rests on bark and foliage; not a flower visitor; tree-canopy + idle-only.,White-patterned moth resting on willow leaf
+heterocera-indet,insect,ground-park,idle-only,override,Unidentified moth; most moths rest on low vegetation or bark in parks; ground-park + idle-only is the safest broad assignment without species identification.,Unidentified moth at rest on leaf in park vegetation
+holcus-lanatus,plant,ground-park,none,default,Perennial grass of park lawns and verges; default fits.,Yorkshire-fog grass flower heads in Amsterdam park
+impatiens-glandulifera,plant,water-edge,none,override,Obligate riparian invasive forming tall stands at canal and ditch margins; water-edge overrides default ground-park.,Himalayan balsam colony on Amsterdam canal bank
+malva-sylvestris-cultivar,plant,ground-park,none,default,Ornamental mallow cultivar in park beds and borders; default ground-park fits.,Common mallow cultivar in flower in park planting
+merodon-equestris,insect,flower-visitor,flower-bobber,default,Hoverfly that visits flowers for nectar as adult; default flower-visitor and flower-bobber fit.,Narcissus bulb fly on spring flower showing bumblebee mimicry
+neoitamus-cyanurus,insect,ground-park,idle-only,override,Predatory robber fly that perches motionless on low vegetation and posts in open park areas; not a flower visitor; ambush hunter.,Common awl robber fly perching on bare twig in sunny park clearing
+nuphar-lutea,plant,water-surface,none,override,Obligate aquatic plant with floating leaves; must be placed on water-surface not ground-park.,Yellow water-lily floating on Amsterdam canal or park pond
+nycticorax-nycticorax,bird,water-edge,idle-only;water-edge-stalker,override,Nocturnal heron that roosts motionless by day at water edges; idle-only dominates for daytime sprite; water-edge-stalker secondary for dusk animation; default tree-canopy/tree-flitter does not apply.,Night heron hunched on Amsterdam canal railing at dusk
+oenothera-x-fallax-o-biennis-x-o-glazioviana,plant,ground-urban,none,override,Hybrid evening-primrose of dry disturbed urban ground and roadsides; ground-urban overrides default ground-park.,Evening-primrose colony on Amsterdam waste ground or roadside
+panorpa-vulgaris,insect,ground-park,idle-only,override,Scorpionfly scavenging in shaded shrubby park habitat; not a flower visitor; sits motionless on vegetation; ground-park + idle-only correct.,Common scorpionfly resting on leaf in park shrub showing upturned abdomen
+papaver-somniferum,plant,ground-park,none,default,Self-seeding ornamental poppy naturalised in parks and on waste ground; ground-park default fits.,Opium poppy flowers in Amsterdam park border
+phleum-pratense,plant,ground-park,none,default,Timothy grass of park lawns and verges; default fits.,Timothy grass cylindrical flower heads in park meadow strip
+pilosella-aurantiaca,plant,ground-park,none,default,Orange hawkweed naturalised on park lawns; default fits.,Fox-and-cubs orange flowers in Amsterdam park lawn
+potentilla-anserina,plant,ground-park,none,default,Silverweed of damp compacted path edges and park margins; ground-park default fits.,Silverweed with silver leaves and yellow flowers on Amsterdam park path edge
+rhaphigaster-nebulosa,insect,tree-canopy,idle-only,override,Tree-feeding shieldbug living on lime and elm foliage; not a flower visitor; sits motionless on leaves; default flower-visitor overridden to tree-canopy + idle-only.,Mottled shieldbug on lime or elm leaf in Amsterdam park
+scoparia-ambigualis,insect,tree-bark;ground-park,idle-only,override,Crambid moth resting on bark/moss; larvae feed on mosses on tree trunks — flower-visitor default inapplicable,Adult resting flat on mossy bark or old stone wall
+tanacetum-vulgare,plant,ground-park,none,default,,Flowering plant with yellow button-heads in rough park grassland
+valeriana-officinalis,plant,ground-park;water-edge,none,override,Amsterdam observations concentrate along canal margins and ditch banks — water-edge added as secondary,Tall plant in flower at canal bank or damp park corner
+vicia-villosa,plant,ground-park,none,default,,Scrambling plant with purple-white flowers on park verge or roadside
+agriphila-straminella,insect,ground-park,idle-only,override,Grass-root moth resting in turf; does not visit flowers — insect default inapplicable,Adult resting among grass stems with wings folded
+anthemis-tinctoria,plant,ground-park,none,default,,Bright yellow daisy-like flowers on dry disturbed ground
+auplopus-carbonarius,insect,flower-visitor;wall-and-roof,flower-bobber;urban-walker,override,Spider-hunting wasp: adults visit flowers but also forage on ground and nest in wall crevices,Female wasp running on pavement or inspecting wall crevice
+borkhausenia-nefrax,insect,tree-bark;ground-park,idle-only,override,Oecophorid moth associated with dead wood and bark detritus; rests motionless on bark — flower default inapplicable,Adult at rest on bark or dead wood surface
+catoptria-verellus,insect,ground-park,idle-only,override,Grass moth resting among turf; larvae in grass roots — flower-visitor default inapplicable,Adult resting in short grass or on bare sandy ground
+centaurea-cyanus,plant,ground-park,none,default,,Cobalt-blue flowers in wildflower meadow or park planting
+chelidonium-majus,plant,ground-urban;ground-park,none,override,Strong preference for wall bases and built-up disturbed ground — ground-urban dominant,Plant with yellow flowers at base of brick wall or on rubble ground
+closterotomus-norwegicus,insect,ground-park;flower-visitor,idle-only;flower-bobber,override,Mirid plant bug on herbaceous vegetation; moves between stems but is a piercing feeder not a pollinator,Bug on nettle or thistle stem
+colletes-spec,insect,flower-visitor;ground-park,flower-bobber;sky-looper,override,Solitary mining bee: flower-visitor default fits for foraging; ground-park added for soil-nesting behaviour,Bee on composite flower or entering soil burrow
+convolvulus-arvensis,plant,ground-urban;ground-park,none,override,Strong urban ruderal of pavements and rubble — ground-urban dominant,Pink/white funnel flowers scrambling through pavement fence or rubble
+crataegus-monogyna,plant,ground-park,none,default,,Shrubby hawthorn in park hedgerow with white blossom or red haws
+curruca-communis,bird,tree-canopy;ground-park,tree-flitter;idle-only,override,Scrub warbler: perches in low trees/shrubs (tree-canopy) but forages near ground; sings from exposed perch (idle-only secondary),Male singing from top of shrub or flitting through hedgerow
+digitalis-purpurea,plant,ground-park,none,default,,Tall spike of purple tubular flowers in park woodland edge
+emmelina-monodactyla,insect,ground-park;ground-urban,idle-only,override,Plume moth resting on bindweed stems and fences; strongly associated with urban weed habitats,Adult at rest in characteristic T-shape on fence post or stem
+eudonia-lacustrata,insect,tree-bark;wall-and-roof,idle-only,override,Crambid moth with moss-feeding larvae; rests on mossy bark and old walls — flower default inapplicable,Adult resting on mossy bark or damp wall
+eurydema-oleracea,insect,ground-park;ground-urban,idle-only,override,Shieldbug on brassicaceous plants at ground level; slow-moving and often stationary,Bright patterned bug on hedge mustard or cabbage leaf
+gonocerus-acuteangulatus,insect,tree-canopy;ground-park,idle-only,override,Squash bug associated with box and woody shrubs; sits motionless on shrub stems,Bug on box (Buxus) or hawthorn stem
+heterogaster-urticae,insect,ground-park;ground-urban,idle-only,override,Nettle ground bug on nettle seeds at base of plant; minimal movement,Clustered bugs on nettle stems or fallen seed heads
+impatiens-parviflora,plant,ground-park,none,default,,Small pale yellow flowers in shaded park understory or canal bank
+lactuca-serriola,plant,ground-urban;ground-park,none,override,Classic urban ruderal of roadsides and rubble — ground-urban dominant,Tall plant with yellow flowerheads on roadside or building edge
+leucania-obsoleta,insect,water-edge;ground-park,idle-only,override,Reed-stem boring moth; tightly associated with Phragmites reedbeds at water margins,Cryptic adult resting on reed stem at canal margin
+mononychus-punctumalbum,insect,water-edge;ground-park,idle-only,override,Iris-specialist weevil; larvae inside Yellow Iris seed capsules at water margins,Small weevil on Yellow Iris leaf or seed pod at canal edge
+nephopterix-angustella,insect,tree-canopy;ground-park,idle-only,override,Pyralid moth with larvae in spindle berries; rests on shrub foliage,Adult at rest on spindle (Euonymus) foliage or bark
+pentaglottis-sempervirens,plant,ground-urban;ground-park,none,override,Persistent garden escape at wall bases and pavement edges throughout Amsterdam — ground-urban dominant,Blue borage-like flowers at base of urban wall or fence
+philaenus-spumarius,insect,ground-park;flower-visitor,idle-only,override,Froghopper on wide range of herbs; adults sit motionless on plant stems and flower heads,Cuckoo-spit foam on grass stem or adult on flower head
+phragmites-australis,plant,water-edge;water-body,none,override,Tall waterside grass of reedbeds; roots in submerged sediment — water-edge dominant not ground-park,Dense reedbed stand at canal margin with seed plumes

@@ -6,52 +6,52 @@
     {
       "index": 0,
       "path": "data/c3a_batches/batch_00.csv",
-      "status": "pending"
+      "status": "done"
     },
     {
       "index": 1,
       "path": "data/c3a_batches/batch_01.csv",
-      "status": "pending"
+      "status": "done"
     },
     {
       "index": 2,
       "path": "data/c3a_batches/batch_02.csv",
-      "status": "pending"
+      "status": "done"
     },
     {
       "index": 3,
       "path": "data/c3a_batches/batch_03.csv",
-      "status": "pending"
+      "status": "done"
     },
     {
       "index": 4,
       "path": "data/c3a_batches/batch_04.csv",
-      "status": "pending"
+      "status": "done"
     },
     {
       "index": 5,
       "path": "data/c3a_batches/batch_05.csv",
-      "status": "pending"
+      "status": "done"
     },
     {
       "index": 6,
       "path": "data/c3a_batches/batch_06.csv",
-      "status": "pending"
+      "status": "done"
     },
     {
       "index": 7,
       "path": "data/c3a_batches/batch_07.csv",
-      "status": "pending"
+      "status": "done"
     },
     {
       "index": 8,
       "path": "data/c3a_batches/batch_08.csv",
-      "status": "pending"
+      "status": "done"
     },
     {
       "index": 9,
       "path": "data/c3a_batches/batch_09.csv",
-      "status": "pending"
+      "status": "done"
     }
   ],
   "manifest": [

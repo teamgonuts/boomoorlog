@@ -1,0 +1,31 @@
+slug,category,habitat_classes,movement_classes,source,reason,photo_suggestion
+chelostoma-rapunculi,insect,flower-visitor,flower-bobber,default,,Chelostoma rapunculi on Campanula flower head
+chorthippus-biguttulus-group,insect,ground-park,idle-only,override,Grasshopper; ground-dwelling orthopteran not a flower visitor,Chorthippus grasshopper on grass stem in park
+coreus-marginatus,insect,ground-park,idle-only,override,Seed-sucker on Rumex; not a flower forager; cryptic and slow-moving,Dock Bug on Rumex seed head
+cornu-aspersum,mollusc,ground-park,idle-only,default,,Garden Snail on soil or leaf litter in park
+crambus-perlella,insect,ground-park,idle-only,override,Grass-resting moth; cryptic daytime rest on grass stems; not a flower visitor,Crambus perlella resting on grass stem
+dipsacus-pilosus,plant,ground-park,none,default,,Small Teasel in shaded park margin
+ditula-angustiorana,insect,tree-canopy,idle-only,override,Leaf-rolling tortrix; rests on foliage or bark; not a flower forager,Red-barred Tortrix resting on leaf
+epilobium-hirsutum,plant,water-edge,none,override,Obligate wetland herb of canal banks and ditch margins,Great Willowherb flowering at canal edge
+galium-verum,plant,ground-park,none,default,,Lady's Bedstraw on dry sunny grassland
+glechoma-hederacea,plant,ground-park,none,default,,Ground-ivy mat in shaded park ground
+hordeum-murinum,plant,ground-urban,none,override,Urban pavement-crack annual; characteristic of streets and wall bases,Wall Barley in pavement crack
+megachile-willughbiella,insect,flower-visitor,flower-bobber,default,,Megachile willughbiella foraging on flower
+mormo-maura,insect,tree-bark,idle-only,override,Large noctuid; daytime roost pressed flat on bark with cryptic patterning,Old Lady moth resting on tree bark
+motacilla-alba,bird,ground-urban;water-edge,urban-walker;water-edge-stalker,override,Ground-urban forager on pavements and rooftops; secondary water-edge canal bank forager,White Wagtail walking on pavement near canal
+plantago-lanceolata,plant,ground-park,none,default,,Ribwort Plantain in park lawn
+sambucus-nigra,plant,ground-park,none,default,,Elder shrub at park edge in flower
+sarcophaga-spec,insect,ground-urban,urban-walker,override,Carrion/urban fly; walks short distances on pavements and walls; not a flower forager,Flesh fly on sunlit pavement or wall
+sonchus-oleraceus,plant,ground-urban,none,override,Ruderal annual of pavement cracks and wall bases; primarily urban ground,Smooth Sow-thistle in pavement crack
+urtica-dioica,plant,ground-park,none,default,,Common Nettle patch in park margin
+acentria-ephemerella,insect,water-surface,idle-only,override,Semi-aquatic moth; larvae submerged; adults skim or rest on water surface,Water Veneer moth on water surface
+chloromyia-formosa,insect,flower-visitor,flower-bobber,default,,Broad Centurion soldier fly on umbellifer flower
+cirsium-vulgare,plant,ground-park,none,default,,Spear Thistle in rough park grassland
+crocallis-elinguaria,insect,tree-bark,idle-only,override,Geometrid moth; daytime rest motionless on bark in leaf-mimicking posture,Scalloped Oak moth resting on bark
+eupatorium-cannabinum,plant,water-edge,none,override,Obligate wet-habitat tall herb of canal banks and pond margins,Hemp-agrimony flowering at canal bank
+graphosoma-italicum,insect,flower-visitor,idle-only,override,Seed-feeder on Apiaceae umbels; found on flower heads but stationary not bobbing,Striped Shield Bug on umbellifer flower head
+gymnoscelis-rufifasciata,insect,tree-canopy,idle-only,override,Geometrid moth; cryptic daytime rest on foliage or bark; not a flower visitor,Double-striped Pug moth resting on leaf
+hirundo-rustica,bird,sky-only,sky-looper,override,Aerial insectivore; almost never perches in open; sweeps low over canals and parks,Barn Swallow in flight over canal
+hylaeus-communis,insect,flower-visitor,flower-bobber,default,,Common Yellow-face Bee on flower
+leucanthemum-vulgare,plant,ground-park,none,default,,Oxeye Daisy in park meadow area
+lotus-pedunculatus,plant,water-edge,none,override,Wet-habitat species of canal banks and marshy margins; not dry grassland,Greater Bird's-foot-trefoil at water margin

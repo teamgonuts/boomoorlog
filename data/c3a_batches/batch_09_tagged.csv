@@ -1,0 +1,31 @@
+slug,category,habitat_classes,movement_classes,source,reason,photo_suggestion
+scoparia-ambigualis,insect,tree-bark;ground-park,idle-only,override,Crambid moth resting on bark/moss; larvae feed on mosses on tree trunks — flower-visitor default inapplicable,Adult resting flat on mossy bark or old stone wall
+tanacetum-vulgare,plant,ground-park,none,default,,Flowering plant with yellow button-heads in rough park grassland
+valeriana-officinalis,plant,ground-park;water-edge,none,override,Amsterdam observations concentrate along canal margins and ditch banks — water-edge added as secondary,Tall plant in flower at canal bank or damp park corner
+vicia-villosa,plant,ground-park,none,default,,Scrambling plant with purple-white flowers on park verge or roadside
+agriphila-straminella,insect,ground-park,idle-only,override,Grass-root moth resting in turf; does not visit flowers — insect default inapplicable,Adult resting among grass stems with wings folded
+anthemis-tinctoria,plant,ground-park,none,default,,Bright yellow daisy-like flowers on dry disturbed ground
+auplopus-carbonarius,insect,flower-visitor;wall-and-roof,flower-bobber;urban-walker,override,Spider-hunting wasp: adults visit flowers but also forage on ground and nest in wall crevices,Female wasp running on pavement or inspecting wall crevice
+borkhausenia-nefrax,insect,tree-bark;ground-park,idle-only,override,Oecophorid moth associated with dead wood and bark detritus; rests motionless on bark — flower default inapplicable,Adult at rest on bark or dead wood surface
+catoptria-verellus,insect,ground-park,idle-only,override,Grass moth resting among turf; larvae in grass roots — flower-visitor default inapplicable,Adult resting in short grass or on bare sandy ground
+centaurea-cyanus,plant,ground-park,none,default,,Cobalt-blue flowers in wildflower meadow or park planting
+chelidonium-majus,plant,ground-urban;ground-park,none,override,Strong preference for wall bases and built-up disturbed ground — ground-urban dominant,Plant with yellow flowers at base of brick wall or on rubble ground
+closterotomus-norwegicus,insect,ground-park;flower-visitor,idle-only;flower-bobber,override,Mirid plant bug on herbaceous vegetation; moves between stems but is a piercing feeder not a pollinator,Bug on nettle or thistle stem
+colletes-spec,insect,flower-visitor;ground-park,flower-bobber;sky-looper,override,Solitary mining bee: flower-visitor default fits for foraging; ground-park added for soil-nesting behaviour,Bee on composite flower or entering soil burrow
+convolvulus-arvensis,plant,ground-urban;ground-park,none,override,Strong urban ruderal of pavements and rubble — ground-urban dominant,Pink/white funnel flowers scrambling through pavement fence or rubble
+crataegus-monogyna,plant,ground-park,none,default,,Shrubby hawthorn in park hedgerow with white blossom or red haws
+curruca-communis,bird,tree-canopy;ground-park,tree-flitter;idle-only,override,Scrub warbler: perches in low trees/shrubs (tree-canopy) but forages near ground; sings from exposed perch (idle-only secondary),Male singing from top of shrub or flitting through hedgerow
+digitalis-purpurea,plant,ground-park,none,default,,Tall spike of purple tubular flowers in park woodland edge
+emmelina-monodactyla,insect,ground-park;ground-urban,idle-only,override,Plume moth resting on bindweed stems and fences; strongly associated with urban weed habitats,Adult at rest in characteristic T-shape on fence post or stem
+eudonia-lacustrata,insect,tree-bark;wall-and-roof,idle-only,override,Crambid moth with moss-feeding larvae; rests on mossy bark and old walls — flower default inapplicable,Adult resting on mossy bark or damp wall
+eurydema-oleracea,insect,ground-park;ground-urban,idle-only,override,Shieldbug on brassicaceous plants at ground level; slow-moving and often stationary,Bright patterned bug on hedge mustard or cabbage leaf
+gonocerus-acuteangulatus,insect,tree-canopy;ground-park,idle-only,override,Squash bug associated with box and woody shrubs; sits motionless on shrub stems,Bug on box (Buxus) or hawthorn stem
+heterogaster-urticae,insect,ground-park;ground-urban,idle-only,override,Nettle ground bug on nettle seeds at base of plant; minimal movement,Clustered bugs on nettle stems or fallen seed heads
+impatiens-parviflora,plant,ground-park,none,default,,Small pale yellow flowers in shaded park understory or canal bank
+lactuca-serriola,plant,ground-urban;ground-park,none,override,Classic urban ruderal of roadsides and rubble — ground-urban dominant,Tall plant with yellow flowerheads on roadside or building edge
+leucania-obsoleta,insect,water-edge;ground-park,idle-only,override,Reed-stem boring moth; tightly associated with Phragmites reedbeds at water margins,Cryptic adult resting on reed stem at canal margin
+mononychus-punctumalbum,insect,water-edge;ground-park,idle-only,override,Iris-specialist weevil; larvae inside Yellow Iris seed capsules at water margins,Small weevil on Yellow Iris leaf or seed pod at canal edge
+nephopterix-angustella,insect,tree-canopy;ground-park,idle-only,override,Pyralid moth with larvae in spindle berries; rests on shrub foliage,Adult at rest on spindle (Euonymus) foliage or bark
+pentaglottis-sempervirens,plant,ground-urban;ground-park,none,override,Persistent garden escape at wall bases and pavement edges throughout Amsterdam — ground-urban dominant,Blue borage-like flowers at base of urban wall or fence
+philaenus-spumarius,insect,ground-park;flower-visitor,idle-only,override,Froghopper on wide range of herbs; adults sit motionless on plant stems and flower heads,Cuckoo-spit foam on grass stem or adult on flower head
+phragmites-australis,plant,water-edge;water-body,none,override,Tall waterside grass of reedbeds; roots in submerged sediment — water-edge dominant not ground-park,Dense reedbed stand at canal margin with seed plumes
