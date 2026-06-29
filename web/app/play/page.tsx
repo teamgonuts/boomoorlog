@@ -9,6 +9,30 @@ import PlayClient, {
 import { classifyGenera } from "@/lib/archetype";
 import { geocodeAmsterdam, isGeocodeHit } from "@/lib/geocode";
 import { supabase } from "@/lib/supabase";
+import type { Genus, Organism } from "@/types/supabase";
+
+// Same shim pattern as the wiki pages — drops in step 9.
+function organismToGenus(o: Organism): Genus {
+  return {
+    slug: o.slug,
+    latin_name: o.latin_name,
+    dutch_name: o.dutch_name,
+    display_name: o.display_name,
+    attack: o.attack,
+    range: o.range,
+    health: o.health,
+    attack_speed: o.attack_speed,
+    move_speed: o.move_speed,
+    world_rarity_multiplier: o.world_rarity_multiplier,
+    avg_height_m: o.avg_height_m,
+    avg_diameter_cm: o.avg_diameter_cm,
+    personality: o.personality,
+    tree_count: o.tree_count,
+    sprite_path: o.sprite_path,
+    lore: o.lore,
+    created_at: o.created_at,
+  };
+}
 
 // Geocode call → never cache the page.
 export const dynamic = "force-dynamic";
@@ -61,16 +85,19 @@ export default async function PlayPage({
   }
 
   // Static metadata — same for every viewport, fetched once and handed to
-  // the client. Cheap (genera ≈ 167 rows, creatures ≈ 50 rows).
-  const [gResp, creaturesResp] = await Promise.all([
-    supabase.from("genera").select("*"),
+  // the client. Two filtered queries against organisms (was: genera +
+  // creatures tables). Cheap: ~167 trees + ~360 creatures.
+  const [treesResp, creaturesResp] = await Promise.all([
+    supabase.from("organisms").select("*").eq("category", "tree"),
     supabase
-      .from("creatures")
+      .from("organisms")
       .select(
-        "slug, common_name, latin_name, pic_file, tree_genera, sprite_pending",
-      ),
+        "slug, common_name, latin_name, photo_path, tree_genera, sprite_pending",
+      )
+      .neq("category", "tree")
+      .range(0, 1999),
   ]);
-  const allGenera = gResp.data ?? [];
+  const allGenera = (treesResp.data ?? []).map(organismToGenus);
   const allCreaturesRaw = creaturesResp.data ?? [];
 
   // dutch + rarity per slug for the area panel.
@@ -82,27 +109,28 @@ export default async function PlayPage({
     rarity: c.rarity,
   }));
 
-  // `pic_file` is the original pipeline path (e.g. `data/creature_pics/foo.jpg`);
-  // we mirror those files at `web/public/creature_photos/`, so swap the prefix
+  // `photo_path` is the canonical photo location (legacy creatures.pic_file
+  // values were copied across in migration 021 unchanged). We mirror the
+  // pipeline tree at `web/public/creature_photos/`, so swap the prefix
   // (preserving the original extension — most are .jpg, a few .png, one .jpeg).
   //
   // Skip rows with `sprite_pending` (auto-promoted creatures whose pixel-art
   // sprite hasn't been generated yet — rendering them would yield a broken
-  // <img>). Also require a non-null pic_file so we never queue a flier with no
-  // photo to show.
+  // <img>). Also require a non-null photo_path so we never queue a flier with
+  // no photo to show.
   const creaturesForMap: CreatureForMap[] = allCreaturesRaw
-    .filter((c) => c.pic_file && !c.sprite_pending)
+    .filter((c) => c.photo_path && !c.sprite_pending)
     .map((c) => ({
       slug: c.slug,
-      common_name: c.common_name,
+      common_name: c.common_name ?? c.latin_name,
       latin_name: c.latin_name,
-      photo_url: "/creature_photos/" + c.pic_file!.split("/").pop(),
+      photo_url: "/creature_photos/" + c.photo_path!.split("/").pop(),
     }));
 
   // Light shape for the area-panel filter (tree_genera overlap).
   const allCreatures: AllCreatureForFilter[] = allCreaturesRaw.map((c) => ({
     slug: c.slug,
-    common_name: c.common_name,
+    common_name: c.common_name ?? c.latin_name,
     latin_name: c.latin_name,
     tree_genera: c.tree_genera,
   }));
