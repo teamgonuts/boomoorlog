@@ -1,0 +1,320 @@
+slug,common_name,latin_name,tree_genera,has_photo,tree_count
+acanthis-cabaret,Lesser Redpoll,Acanthis cabaret,Alnus;Betula,true,2
+acanthosoma-haemorrhoidale,Hawthorn shieldbug,Acanthosoma haemorrhoidale,Crataegus,true,1
+acari,Sooty-mould-grazing mites,Acari,Liriodendron;Ulmus;Zelkova,true,3
+aceria,Hornbeam gall mites,Aceria / Eriophyidae,Carpinus,true,1
+aceria-celtis,Hackberry gall mite,Aceria celtis / Eriophyes spp.,Celtis,true,1
+aceria-pseudoplatini,Eriophyid gall mites,"Aceria pseudoplatini, A. eriobia / Eriophyidae",Acer,true,1
+acronicta-aceris,Sycamore moth caterpillar,Acronicta aceris / Noctuidae,Acer,true,1
+acronicta-alni,Alder moths and tussocks,"Acronicta alni, Eriogaster lanestris / Noctuidae, Lasiocampidae",Alnus,true,1
+aculus-mosoniensis,Ailanthus eriophyid mite,Aculus mosoniensis / Eriophyidae,Ailanthus,true,1
+adelges-abietis,Spruce gall adelgids,"Adelges abietis, A. viridis",Picea,true,1
+adelges-laricis,Larch woolly adelgid,"Adelges laricis, Adelgidae",Larix,true,1
+agelastica-alni,Alder leaf beetle,Agelastica alni / Chrysomelidae,Alnus,true,1
+agrilus-difficilis,Honey locust borer,"Agrilus difficilis, Buprestidae",Gleditsia,true,1
+aleurocanthus-spiniferus,Spiny whitefly,Aleurocanthus spiniferus / Aleyrodidae,Ailanthus,true,1
+andrena,Solitary mining bees,Andrena spp. / Andrenidae,Amelanchier;Koelreuteria;Laburnum;Paulownia;Salix;Sorbus,true,6
+anthonomus-pomorum,Apple blossom weevil,Anthonomus pomorum / Curculionidae,Malus,true,1
+anthophora,Solitary bees,"Anthophora, Osmia spp.",Laburnum,true,1
+apatura-iris,Purple Emperor & White Admiral,Apatura iris / Limenitis camilla,Salix,true,1
+aphidoidea,Generalist sap-feeders,"assorted Aphidoidea, Coccidae",Ailanthus;Amelanchier;Castanea;Catalpa;Celtis;Cercidiphyllum;Cercis;Koelreuteria;Laburnum;Liquidambar;Nyssa;Ostrya;Parrotia;Populus;Pterocarya,true,15
+aphidoidea-esp-corylobium-avellanae-myzocallis-coryli,Aphids,"Aphidoidea, esp. Corylobium avellanae, Myzocallis coryli",Corylus,true,1
+aphidoidea-esp-dysaphis-crataegi-ovatus-crataegarius,Aphids,"Aphidoidea, esp. Dysaphis crataegi, Ovatus crataegarius",Crataegus,true,1
+aphidoidea-generalist-greenfly,Aphids,"Aphidoidea, generalist greenfly",Metasequoia,true,1
+aphidoidea-incl-anoecia-corni,Aphids,"Aphidoidea, incl. Anoecia corni",Cornus,true,1
+aphidoidea-including-aphis-gossypii,Aphids,"Aphidoidea, including Aphis gossypii",Morus,true,1
+aphidoidea-occasional,Generalist aphids,"Aphidoidea, occasional",Ginkgo,true,1
+aphis,Generalist aphids,Aphis spp.,Paulownia;Styphnolobium,true,2
+aphrophora-alni,Alder spittlebugs & psyllids,"Aphrophora alni, Psylla alni",Alnus,true,1
+apidae,Honeybees & early bumblebees,Apidae,Corylus;Morus,true,2
+apidae-andrenidae,Honey bees & solitary bees,"Apidae, Andrenidae",Ostrya,true,1
+apiognomonia-veneta,Anthracnose fungus,"Apiognomonia veneta, asexual Discula platani",Platanus,true,1
+apis,Honey bees & bumblebees,Apis / Bombus,Acer;Gleditsia;Ilex,true,3
+apis-bombus,Honeybees & bumblebees,"Apis, Bombus",Pterocarya,true,1
+apis-mellifera,Honey bees,Apis mellifera,Aesculus;Ailanthus;Alnus;Amelanchier;Castanea;Catalpa;Cercidiphyllum;Cercis;Koelreuteria;Laburnum;Liriodendron;Magnolia;Nyssa;Parrotia;Paulownia;Pyrus;Robinia;Salix;Styphnolobium;Tilia,true,20
+apis-mellifera-andrena-spp,Honey bees & solitary bees,"Apis mellifera, Andrena spp. / Apidae+Andrenidae",Malus,true,1
+apodemus-myodes-sciurus,Wood mouse / Bank vole / Grey & Red Squirrel,"Apodemus, Myodes, Sciurus",Fagus,true,1
+apodemus-sylvaticus,Wood mouse / yellow-necked mouse,Apodemus sylvaticus / A. flavicollis,Prunus,true,1
+apodemus-sylvaticus-myodes-glareolus,Wood mouse / Bank vole,Apodemus sylvaticus / Myodes glareolus,Cornus;Crataegus;Ostrya,true,3
+apodemus-sylvaticus-myodes-glareolus-sciurus-vulgaris,Wood Mouse / Bank Vole / Red Squirrel,Apodemus sylvaticus / Myodes glareolus / Sciurus vulgaris,Corylus,true,1
+apoidea,Honeybees & solitary bees,Apoidea,Cornus,true,1
+appendiseta-robiniae,Locust aphid,Appendiseta robiniae,Robinia,true,1
+arachnida,Spiders & harvestmen,Arachnida,Ginkgo,true,1
+arachnida-isopoda,"Spiders, harvestmen, woodlice",Arachnida / Isopoda,Cupressocyparis,true,1
+araneae,Overwintering invertebrates in marcescent leaves,"mixed Araneae, Hemiptera, Coleoptera",Carpinus;Cercidiphyllum;Chamaecyparis,true,3
+araneidae,Generalist canopy spiders,"Araneidae, Theridiidae",Ailanthus,true,1
+argynnis,High brown / silver-washed fritillary butterflies,Argynnis spp.,Fraxinus,true,1
+argyresthia,Cypress tip moth,Argyresthia spp.,Cupressocyparis;Thuja,true,2
+argyresthia-conjugella,Apple fruit moth,Argyresthia conjugella,Sorbus,true,1
+asterocampa-celtis,Hackberry Emperor butterfly,Asterocampa celtis,Celtis,true,1
+atteva-aurea,Ailanthus webworm moth,Atteva aurea / Attevidae,Ailanthus,true,1
+barbastella-barbastellus,Barbastelle & Pipistrelle bats,Barbastella barbastellus / Pipistrellus spp.,Salix,true,1
+blepharidopterus-chlorionis,Honey locust plant bug,"Blepharidopterus chlorionis, Miridae",Gleditsia,true,1
+bombus,Bumblebees,"Bombus spp., both short- and long-tongued",Catalpa;Cercidiphyllum;Cercis;Liriodendron;Robinia,true,5
+bombus-terrestris,Bumblebees,Bombus terrestris / B. hortorum / Apidae,Aesculus;Amelanchier;Koelreuteria;Laburnum;Paulownia;Styphnolobium,true,6
+bombycilla,Cedar/Bohemian waxwings,Bombycilla spp.,Morus,true,1
+bombycilla-garrulus,Fruit-eating songbirds,"cedar waxwing equiv. — in Europe Bohemian Waxwing Bombycilla garrulus, Blackbird Turdus merula, Mistle Thrush",Celtis;Sorbus,true,2
+bombyx-mori,Silkworm,Bombyx mori / Bombycidae,Morus,true,1
+bradyrhizobium,Rhizobial root bacteria,Bradyrhizobium / Rhizobium nodules,Cercis,true,1
+bruchidius-siliquastri,Judas tree seed beetle,Bruchidius siliquastri,Cercis,true,1
+buprestidae,Wood-boring beetles,"Buprestidae, Cerambycidae larvae",Celtis,true,1
+cacopsylla-pyri,Pear psylla,Cacopsylla pyri / C. pyricola,Pyrus,true,1
+callipterinella,Other birch aphids,"Callipterinella, Symydobius / Aphidoidea",Betula,true,1
+cameraria-ohridella,Horse-chestnut leaf miner,Cameraria ohridella / Gracillariidae,Aesculus,true,1
+capreolus-capreolus,Roe deer browsing,Capreolus capreolus,Pterocarya,true,1
+carduelis,Opportunistic city birds,"Carduelis, Passer",Ailanthus,true,1
+carduelis-carduelis,European Goldfinch,Carduelis carduelis,Alnus;Liquidambar;Ulmus;Zelkova,true,4
+carduelis-carduelis-spinus-spinus,Goldfinch & siskin,"Carduelis carduelis, Spinus spinus / Fringillidae",Ostrya,true,1
+carulaspis,Juniper / cypress scales and mites,"Carulaspis spp., spider mites",Chamaecyparis,true,1
+carulaspis-juniper-scale,Scale insects,"Carulaspis spp., juniper scale",Cupressocyparis,true,1
+carulaspis-juniperi,Juniper scale,"Carulaspis juniperi, Diaspididae",Thuja,true,1
+cecidophyopsis-psilaspis,Yew big-bud mite,"Cecidophyopsis psilaspis, Eriophyidae",Taxus,true,1
+cedrobium-laportei,Cedar woolly aphid,Cedrobium laportei,Cedrus,false,1
+celastrina-argiolus,Holly Blue butterfly,"Celastrina argiolus, Lycaenidae",Ilex,true,1
+cerambycidae,Wood-boring beetles & longhorns,"Cerambycidae, in declining trees",Aesculus,true,1
+ceratomia-catalpae,Catalpa sphinx,Ceratomia catalpae,Catalpa,true,1
+certhia-familiaris,Treecreeper,Certhia familiaris,Cedrus;Taxus,true,2
+certhia-sitta,Bark-foraging birds,"Treecreeper, Nuthatch — Certhia / Sitta",Pterocarya,true,1
+cerura,Puss moth & sallow kitten,"Cerura/Furcula, Notodontidae",Populus,true,1
+cetonia-aurata,Rose chafers,Cetonia aurata / Scarabaeidae,Magnolia,true,1
+chalcidoidea,Parasitoid wasps of the leaf miner,"Chalcidoidea, esp. Chrysocharis, Pleurotropis",Ilex;Magnolia,true,2
+chionaspis-gleditsiae,Armored scale,Chionaspis gleditsiae and others,Gleditsia,true,1
+chloris,Greenfinch / Goldfinch,Chloris / Carduelis,Laburnum;Liquidambar,true,2
+chloris-chloris,Greenfinch & House Sparrow,Chloris chloris / Passer domesticus,Styphnolobium,true,1
+chloris-chloris-prunella-modularis-troglodytes-troglodytes-erithacus-rubecula,Greenfinch / Dunnock / Wren / Robin,Chloris chloris / Prunella modularis / Troglodytes troglodytes / Erithacus rubecula,Cupressocyparis,true,1
+choristoneura,Spruce / larch budworm complex,"Choristoneura, Tortricidae",Larix,true,1
+chromaphis-juglandicola,Small walnut aphid,"Chromaphis juglandicola, Aphididae",Juglans,true,1
+chrysomela-populi,Poplar leaf beetles,"Chrysomela populi, C. tremula",Populus,true,1
+cinara-cedri,Cedar aphid,Cinara cedri,Cedrus,true,1
+cinara-cupressi,Cypress aphid,Cinara cupressi sensu lato,Chamaecyparis;Cupressocyparis;Thuja,true,3
+cinara-laricis,Speckled larch aphid,"Cinara laricis, Lachninae",Larix,true,1
+cinara-pinea,Giant conifer aphids,"Cinara pinea, C. pini",Pinus,true,1
+coccinella-septempunctata,Seven-spot ladybird (Coccinella septempunctata) + larvae,,Tilia,true,1
+coccinellidae,Ladybirds & lacewings,"Coccinellidae, Chrysopidae",Juglans;Larix;Magnolia;Parrotia,true,4
+coccothraustes-coccothraustes,Hawfinch,Coccothraustes coccothraustes,Carpinus,true,1
+coleophora-laricella,Larch casebearer moth,"Coleophora laricella, Coleophoridae",Larix,true,1
+coleophoridae,Case-bearer moth caterpillars,Coleophoridae,Cornus,true,1
+coleoptera-saproxylica,Hericium & beech wood-decay beetles,Coleoptera saproxylica,Fagus,true,1
+collembola,Springtails and bark-dwelling Collembola,Collembola,Cercidiphyllum;Metasequoia;Parrotia;Paulownia;Platanus;Populus;Quercus,true,7
+collembola-oribatida,Springtails & oribatid mites in litter,"Collembola, Oribatida",Fagus,true,1
+collembola-psocoptera,Bark-crevice springtails & psocids,"Collembola, Psocoptera",Ginkgo,true,1
+colocasia-coryli,Nut-tree tussock,Colocasia coryli / Noctuidae,Carpinus,true,1
+columba-corvus,Wood pigeons & corvids,Columba/Corvus,Metasequoia;Nyssa,true,2
+columba-palumbus,Wood Pigeon and roosting passerines,"Columba palumbus, Turdus merula",Cercidiphyllum;Chamaecyparis;Cornus;Ilex;Liquidambar;Taxodium;Thuja;Zelkova,true,8
+columba-palumbus-pica-pica-corvus-cornix,Wood Pigeon / Eurasian Magpie / Hooded Crow,Columba palumbus / Pica pica / Corvus cornix,Ginkgo,true,1
+columba-palumbus-streptopelia-decaocto,Wood Pigeon / Collared Dove,Columba palumbus / Streptopelia decaocto,Cupressocyparis,true,1
+corvus,Crow / magpie roost,"Corvus, Pica",Gleditsia,true,1
+corvus-corone,Carrion Crow / Hooded Crow,Corvus corone,Juglans,true,1
+corvus-frugilegus,Rooks & carrion crows,Corvus frugilegus / C. corone,Platanus,true,1
+corythucha-ciliata,Sycamore lace bug,"Corythucha ciliata, Tingidae",Platanus,true,1
+cosmia-diffinis,White-spotted Pinion moth,"Cosmia diffinis, Noctuidae",Ulmus,true,1
+cossus-cossus,Wood-boring beetles,"goat moth Cossus cossus, clearwing Synanthedon",Castanea;Salix,true,2
+cryptogams,Lichens & mosses on bark,cryptogams,Ginkgo,true,1
+curculio-elephas,Chestnut weevil,Curculio elephas,Castanea,true,1
+curculio-glandium,Acorn weevils,Curculio glandium / C. elephas,Quercus,true,1
+curculio-nucum,Nut weevil,Curculio nucum,Corylus,true,1
+curculionoidea,Willow weevils,Curculionoidea — ~100+ Salix-associated spp. across Europe,Salix,true,1
+cyanistes,Blue & Great Tits,Cyanistes / Parus,Aesculus;Amelanchier;Carpinus;Ilex;Robinia;Styphnolobium,true,6
+cyanistes-caeruleus,Blue & Great Tits,Cyanistes caeruleus / Parus major,Acer;Castanea;Catalpa;Celtis;Cercidiphyllum;Cercis;Gleditsia;Laburnum;Parrotia;Populus;Pyrus;Quercus;Taxodium;Taxus;Tilia;Ulmus;Zelkova,true,17
+cyanistes-caeruleus-parus-major,Blue & Great Tits,Cyanistes caeruleus / Parus major,Corylus,true,1
+cyanistes-parus,Blue & Great Tits,Cyanistes/Parus / Paridae,Liriodendron;Magnolia;Malus;Ostrya,true,4
+cydia-illutana,Larch tortrix and cone moths,"Cydia illutana, Zeiraphera",Larix,true,1
+cydia-pomonella,Codling moth,"Cydia pomonella, Tortricidae",Juglans;Malus;Pyrus,true,3
+cydia-splendana,Chestnut tortrix,Cydia splendana,Castanea,true,1
+cynipidae,Oak gall wasps,"Cynipidae, ~30+ spp. per tree",Quercus,true,1
+dasineura-pyri,Pear leaf-curling midge,Dasineura pyri,Pyrus,true,1
+dendrocopos-major,Great Spotted Woodpecker,Dendrocopos major,Betula;Cedrus,true,2
+dendrocopos-major-sitta-europaea,Great Spotted Woodpecker & Nuthatch,Dendrocopos major / Sitta europaea,Fagus,true,1
+diaspididae,Armoured scales and mealybugs,"Diaspididae, Pseudococcidae",Celtis;Cercidiphyllum,true,2
+diaspididae-pseudococcidae,Armored scales & mealybugs,"Diaspididae, Pseudococcidae",Nyssa,true,1
+diprion-pini,Pine sawflies,"Diprion pini, Neodiprion sertifer, Diprionidae",Pinus,true,1
+diptera-hymenoptera-coleoptera,Pollinators on Mayflower,"Diptera, Hymenoptera, Coleoptera",Crataegus,true,1
+dorcus-parallelipipedus,Lesser stag beetle,Dorcus parallelipipedus,Fraxinus,true,1
+drepanosiphum-platanoidis,Sycamore aphid,Drepanosiphum platanoidis / Aphididae,Acer,true,1
+dryocosmus-kuriphilus,Oriental chestnut gall wasp,Dryocosmus kuriphilus,Castanea,true,1
+dysaphis-plantaginea-aphis-pomi,Rosy apple aphid & green apple aphid,"Dysaphis plantaginea, Aphis pomi / Aphididae",Malus,true,1
+dysaphis-pyri,Pear & rosy apple aphids,"Dysaphis pyri, D. plantaginea",Pyrus,true,1
+dysaphis-sorbi,Aphids,"Aphidoidea — Dysaphis sorbi, Eriosoma spp.",Sorbus,true,1
+elasmostethus-interstinctus,Birch shieldbug,Elasmostethus interstinctus / Acanthosomatidae,Betula,true,1
+elatobium-abietinum,Spruce aphids,"Elatobium abietinum, Cinara pilicornis",Picea,true,1
+enarmonia-formosana,Cherry bark tortrix & cherry fruit moth,"Enarmonia formosana, Argyresthia pruniella",Prunus,true,1
+endromis-versicolora,Birch moths,"Geometridae & Notodontidae, incl. Endromis versicolora",Betula,true,1
+eriophyes,Gall mites,Eriophyes spp.,Crataegus,true,1
+eriophyes-tiliae,Lime nail gall mite,"Eriophyes tiliae, Eriophyidae",Tilia,true,1
+eucallipterus-tiliae,Lime aphid,"Eucallipterus tiliae, Aphididae",Tilia,true,1
+euceraphis-betulae,Silver birch aphid,Euceraphis betulae / Aphididae,Betula,true,1
+fascista-cercerisella,Redbud leaf-folder moth and Lepidoptera larvae,Fascista cercerisella and ~10–19 spp.,Cercis,true,1
+favonius-quercus,Purple hairstreak butterfly,Favonius quercus,Quercus,true,1
+fomitopsis-betulina,Birch polypore & associated fungus gnats,Fomitopsis betulina + Mycetophilidae,Betula,true,1
+forficula-auricularia,Earwigs,Forficula auricularia,Parrotia;Paulownia;Pyrus,true,3
+formica,Wood ants & sugar-tending ants,"Formica, Lasius / Formicidae",Acer,true,1
+formica-rufa,Red wood ants,"Formica rufa group, incl. Scottish wood ant F. aquilonia",Pinus,true,1
+formicidae-e-g-lasius-niger,Honeydew-feeding ants,"Formicidae, e.g. Lasius niger",Liriodendron,true,1
+frankia-alni,Frankia root nodule bacteria,Frankia alni / Frankiaceae,Alnus,true,1
+fringilla-coelebs,Finches and small passerines,"Fringilla coelebs, Carduelis spp., Sylvia spp.",Chamaecyparis,true,1
+fringilla-coelebs-montifringilla,Chaffinch & Brambling,Fringilla coelebs / montifringilla,Fagus,true,1
+garrulus-glandarius,Eurasian Jay,Garrulus glandarius,Aesculus;Juglans;Pterocarya;Quercus,true,4
+geometridae,Maple-feeding moths,multiple Geometridae & Noctuidae,Acer;Picea;Tilia;Zelkova,true,4
+gilpinia-hercyniae,Spruce sawflies,"Gilpinia hercyniae, Pristiphora abietina, Diprionidae/Tenthredinidae",Picea,true,1
+glyphodes-pyloalis,Mulberry leaf-webber,Glyphodes pyloalis / Crambidae,Morus,true,1
+gracillariidae,Leaf-mining micromoths,"Gracillariidae, Stigmella spp. / Nepticulidae",Ostrya,true,1
+grylloprociphilus-imbricator,Beech blight aphid,"Grylloprociphilus imbricator, Aphididae",Taxodium,true,1
+hammerschmidtia-ferruginea,Aspen hoverfly,Hammerschmidtia ferruginea,Populus,true,1
+heterarthrus,Birch leaf-mining sawflies,"Heterarthrus, Fenusa / Tenthredinidae",Betula,true,1
+honeybees-flies-aphid-honeydew,Honeybees & flies on aphid honeydew,,Juglans,true,1
+honeybees-flies-extrafloral,Honeybees & flies on extrafloral nectaries / sap,,Liquidambar,true,1
+hylesinus-leperisinus-fraxini,Ash bark beetle,Hylesinus / Leperisinus fraxini,Fraxinus,true,1
+illinoia-liriodendri,Tulip-tree aphid,Illinoia liriodendri / Aphididae,Liriodendron;Magnolia,true,2
+ips-typographus,Eurasian spruce bark beetle,"Ips typographus, Scolytinae",Picea,true,1
+jadera-haematoloma,"Soapberry / ""goldenrain tree"" bug","Jadera haematoloma, Rhopalidae",Koelreuteria,true,1
+laothoe-populi,Poplar hawk moth,"Laothoe populi, Sphingidae",Populus,true,1
+lasioglossum,Halictid sweat bees,"Lasioglossum, Halictus spp.",Gleditsia,true,1
+lasius,Ants on extrafloral nectaries,"Lasius, Formica / Formicidae",Ailanthus;Liquidambar,true,2
+lasius-niger,Ants,Lasius niger and others,Laburnum;Styphnolobium;Taxodium;Thuja;Tilia;Zelkova,true,6
+leaf-mining-flies-micro-moths,Leaf-mining flies / micro-moths,,Laburnum,true,1
+lepidoptera,"Moth caterpillars — Nut-tree Tussock, Large Emerald, Barred Umber, Small White Wave",Lepidoptera,Corylus;Fagus;Fraxinus;Nyssa,true,4
+lepidoptera-incl-trichiura-crataegi-lackey-vapourer-light-emerald,Hawthorn moth caterpillars,"Lepidoptera, incl. Trichiura crataegi, lackey, vapourer, light emerald",Crataegus,true,1
+lepidoptera-rare,Loopers / generalist caterpillars,"Lepidoptera, rare",Ginkgo,true,1
+lepus,Hares & deer browsing,"Lepus, Capreolus",Laburnum,true,1
+lobarion-graphidion-communities,Lichens & bark mosses,"Lobarion, Graphidion communities",Fraxinus,true,1
+lochmaea-crataegi,Hawthorn leaf beetle,Lochmaea crataegi,Crataegus,true,1
+loxia-curvirostra,Common Crossbill,Loxia curvirostra,Larix;Pinus,true,2
+lutra-lutra,Otter & water vole,"Lutra lutra, Arvicola amphibius",Alnus,true,1
+lycorma-delicatula,Spotted lanternfly,Lycorma delicatula / Fulgoridae,Ailanthus,true,1
+lymantria-dispar,Gypsy moth caterpillars,Lymantria dispar / Erebidae,Ostrya,true,1
+macroglossum-stellatarum,Night-flying hawkmoths,"Sphingidae, e.g. Macroglossum stellatarum",Catalpa,true,1
+macropsis-fumipennis,Honey locust leafhopper,Macropsis fumipennis,Gleditsia,true,1
+malacosoma-disstria,Forest tent caterpillar,"Malacosoma disstria, native range only",Nyssa,true,1
+malacosoma-neustria,Lackey moth,Malacosoma neustria,Cornus,true,1
+martes-martes,Pine marten,Martes martes,Pinus;Sorbus,true,2
+megabruchidius-dorsalis,Asian honey-locust seed beetle,"Megabruchidius dorsalis, Bruchinae",Gleditsia,true,1
+megachile,Leafcutter bees,Megachile spp.,Cercis,true,1
+megachile-sculpturalis,Asian giant resin bee,Megachile sculpturalis,Styphnolobium,true,1
+meles-meles,Badger,Meles meles,Prunus,true,1
+mesostigmata,Phoretic mites on Ips typographus,"Mesostigmata, e.g. Trichouropoda, Dendrolaelaps",Picea,true,1
+mimas-tiliae,Lime hawk-moth,"Mimas tiliae, Sphingidae",Tilia,true,1
+muscardinus-avellanarius,Hazel Dormouse,Muscardinus avellanarius,Corylus;Crataegus;Prunus,true,3
+myzocallis-carpini,Hornbeam aphids,Myzocallis carpini / Aphididae,Carpinus,true,1
+myzus-cerasi,Aphids,"cherry blackfly, Myzus cerasi",Prunus,true,1
+nematinae,Sawflies,Nematinae / Pontania gallers,Salix,true,1
+nematus-tibialis,Locust sawfly,Nematus tibialis,Robinia,true,1
+neolecanium-cornuparvum,Magnolia scale,Neolecanium cornuparvum / Coccidae,Magnolia,false,1
+nyctalus,Roosting bats,"Nyctalus, Myotis spp.",Castanea,true,1
+nyctalus-noctula,Noctule Bat,Nyctalus noctula,Betula,true,1
+nymphalis-antiopa,Mourning Cloak / Camberwell Beauty,Nymphalis antiopa,Celtis,true,1
+obolodiplosis-robiniae,Black locust gall midge,Obolodiplosis robiniae,Robinia,true,1
+operophtera-brumata,Winter moth & mottled umber caterpillars,"Operophtera brumata, Erannis defoliaria / Geometridae",Amelanchier;Malus;Platanus;Prunus;Pyrus;Quercus,true,6
+operophtera-brumata-etc,Winter moth & geometrid caterpillars,"Operophtera brumata, etc. / Geometridae",Ostrya,true,1
+opisthograptis-luteolata,Brimstone moth & grey dagger caterpillars,"Opisthograptis luteolata, Acronicta psi",Amelanchier;Prunus,true,2
+orthosia,Orthosia moths,"Noctuidae — Common Quaker, Hebrew Character, etc.",Salix,true,1
+osmia,Mason and mining bees,"Osmia, Andrena spp.",Cercis;Prunus,true,2
+pachypsylla,Hackberry psyllids,"Pachypsylla spp., incl. P. celtidismamma, P. celtidisvesicula, P. celtidisgemma",Celtis,true,1
+panaphis-juglandis,Large walnut aphid,"Panaphis juglandis, Aphididae",Juglans,true,1
+paracolopha-morrisoni,Zelkova gall aphid,"Paracolopha morrisoni, Aphididae",Zelkova,true,1
+parectopa-robiniella,Robinia leafminer moths,"Parectopa robiniella, Macrosaccus robiniella",Robinia,true,1
+paridae-aegithalidae,"Blue & Great Tits, Long-tailed Tit",Paridae / Aegithalidae,Crataegus,true,1
+parthenolecanium-corni,European fruit lecanium scale,"Parthenolecanium corni, Coccidae",Taxodium,true,1
+parus-major,Great Tit / Blue Tit,Parus major / Cyanistes caeruleus,Juglans,true,1
+parus-pipistrellus,Cavity-nesting birds & roosting bats,"Parus, Pipistrellus",Pterocarya,true,1
+passer,House Sparrow / Great Tit,Passer / Parus,Koelreuteria,true,1
+passer-domesticus,Roosting birds,"House Sparrow Passer domesticus, Wood Pigeon Columba palumbus",Catalpa;Paulownia,true,2
+passer-domesticus-montanus,House Sparrow / Eurasian Tree Sparrow,Passer domesticus / montanus,Ginkgo,true,1
+pauesia-anatolica,Aphid parasitoid wasps,Pauesia anatolica and relatives,Cedrus,true,1
+periparus-ater,Coal Tit,Periparus ater,Cedrus;Chamaecyparis;Metasequoia;Picea;Pinus,true,5
+phloeosinus-aubei,Cypress bark beetle,Phloeosinus aubei / Curculionidae,Metasequoia,true,1
+phloeosinus-metasequoiae,Bark beetle Phloeosinus metasequoiae,Curculionidae: Scolytinae,Metasequoia,true,1
+phyllaphis-fagi,Woolly beech aphid,Phyllaphis fagi,Fagus,true,1
+phyllobius-intrusus,Arborvitae weevil,"Phyllobius intrusus, Curculionidae",Thuja,true,1
+phyllonorycter,Micro-moths and leaf miners,"Lepidoptera, e.g. Phyllonorycter spp.",Castanea,true,1
+phyllonorycter-esperella,Generalist micro-moths,Phyllonorycter esperella & similar / Gracillariidae,Carpinus,true,1
+phytomyza-ilicis,Holly leaf miner,"Phytomyza ilicis, Agromyzidae",Ilex,true,1
+phytophthora-lateralis,Phytophthora lateralis root pathogen,,Chamaecyparis,true,1
+phytoptus-avellanae-big-bud-mite,Gall mites,"Phytoptus avellanae, big bud mite",Corylus,true,1
+pica,Magpie / Carrion Crow,Pica / Corvus,Koelreuteria,true,1
+picidae,Cavity-nesting birds & roosting bats,"Picidae, Pipistrellus / Vespertilionidae",Carpinus,true,1
+pipistrellus,Roosting bats,"Pipistrellus, Nyctalus / Vespertilionidae",Aesculus;Cedrus;Liriodendron;Metasequoia;Nyssa;Ostrya;Pyrus;Quercus;Robinia;Taxus;Tilia,true,11
+pipistrellus-pipistrellus,Common Pipistrelle,Pipistrellus pipistrellus,Acer;Ailanthus;Paulownia;Platanus;Populus;Styphnolobium,true,6
+pipistrellus-pipistrellus-nyctalus-noctula,Common Pipistrelle / Noctule,Pipistrellus pipistrellus / Nyctalus noctula,Fagus,true,1
+pipistrellus-plecotus-auritus,Common Pipistrelle / brown long-eared bat,Pipistrellus / Plecotus auritus,Fraxinus,true,1
+prociphilus-aphis-fabae,Aphids on ash,"Prociphilus spp., Aphis fabae",Fraxinus,true,1
+pseudococcidae,Mealybugs,Pseudococcidae,Catalpa,true,1
+pseudoscorpiones,Bark-crevice pseudoscorpions,"Pseudoscorpiones, e.g. Chthonius",Parrotia,true,1
+psittacula-krameri,Rose-ringed parakeet,Psittacula krameri,Platanus,true,1
+psocoptera,Bark-dwelling springtails & barklice,Psocoptera + Collembola,Taxus,true,1
+psychidae,Bagworm,"Psychidae, e.g. Thyridopteryx, Psyche",Thuja,true,1
+pterocallis-alni,Alder aphids,Pterocallis alni / Aphididae,Alnus,true,1
+pulvinaria-regalis,Aesculus scale,Pulvinaria regalis / Coccidae,Aesculus;Platanus,true,2
+pyrrhula-pyrrhula,Bullfinch,Pyrrhula pyrrhula,Fraxinus;Sorbus;Ulmus,true,3
+qualitative,Cytisine-tolerant generalist caterpillars,qualitative,Styphnolobium,false,1
+rattus-norvegicus,Brown rats,Rattus norvegicus,Ginkgo,true,1
+regulus,Goldcrest / Coal Tit,Regulus / Periparus,Larix,true,1
+regulus-ignicapilla,Firecrest,Regulus ignicapilla,Chamaecyparis,true,1
+regulus-regulus,Goldcrest,Regulus regulus,Cedrus;Chamaecyparis;Cupressocyparis;Metasequoia;Picea;Taxus;Thuja,true,7
+resseliella-craneiobia-corni,Dogwood gall midge,Resseliella / Craneiobia corni,Cornus,true,1
+rhagoletis-completa,Walnut husk fly,"Rhagoletis completa, Tephritidae",Juglans,true,1
+rhopobota,Holly tortrix and yellow-barred brindle moths,Rhopobota / Acasis,Ilex,true,1
+rhynchaenus-fagi,Beech leaf-mining weevil,Rhynchaenus fagi,Fagus,true,1
+roosting-garden-birds-in-winter,Roosting garden birds in winter,,Cupressocyparis,false,1
+satyrium-w-album,White-letter Hairstreak,"Satyrium w-album, Lycaenidae",Ulmus,true,1
+sciurus,Squirrels and bank voles,"Sciurus, Myodes glareolus",Castanea;Cedrus;Celtis;Cercidiphyllum;Chamaecyparis;Liquidambar;Nyssa;Taxus,true,8
+sciurus-carolinensis,Eurasian Grey Squirrel,Sciurus carolinensis,Acer;Aesculus;Carpinus;Liriodendron;Magnolia;Metasequoia;Platanus;Quercus;Ulmus;Zelkova,true,10
+sciurus-vulgaris,Eurasian red squirrel / introduced grey,Sciurus vulgaris / S. carolinensis,Juglans;Picea;Pinus;Pterocarya,true,4
+sciurus-vulgaris-s-carolinensis,Squirrels,Sciurus vulgaris / S. carolinensis,Ginkgo,true,1
+scolytus-scolytus,Elm bark beetles,"Scolytus scolytus, S. multistriatus, Curculionidae: Scolytinae",Ulmus,true,1
+sesia-apiformis,Hornet moth,"Sesia apiformis, Sesiidae",Populus,true,1
+sitta-europaea-dendrocopos-major,Nuthatch & Great Spotted Woodpecker,Sitta europaea / Dendrocopos major,Corylus,true,1
+small-mammals,"Foxes, squirrels, mice",small mammals,Morus,true,1
+smerinthus-ocellata,Eyed Hawk-moth & Puss Moth caterpillars,Smerinthus ocellata / Cerura vinula,Salix,true,1
+sphinx-pinastri,Pine hawk-moth,"Sphinx pinastri, Sphingidae",Pinus,true,1
+spinus-spinus,Eurasian Siskin,Spinus spinus,Alnus;Betula;Larix;Picea,true,4
+stereonychus-fraxini,Ash weevil,Stereonychus fraxini,Fraxinus,true,1
+stigmella-microtheriella,Hazel leaf-miner moth,Stigmella microtheriella / Nepticulidae,Carpinus,true,1
+stomaphis-yanonis-aphididae,Giant zelkova aphid,"Stomaphis yanonis, Aphididae",Zelkova,false,1
+strix-aluco-phoenicurus-phoenicurus-sitta-dendrocopos,"Tawny Owl, Redstart, Nuthatch, Woodpeckers",Strix aluco / Phoenicurus phoenicurus / Sitta / Dendrocopos,Fraxinus,true,1
+sturnus-vulgaris,European starling,Sturnus vulgaris / Sturnidae,Morus;Nyssa,true,2
+sus-scrofa,Wild boar,Sus scrofa,Fagus;Robinia,true,2
+sylvia-atricapilla,Eurasian Blackcap,Sylvia atricapilla,Amelanchier,true,1
+syrphidae,Hoverflies & lacewings,"Syrphidae, Chrysopidae",Acer;Aesculus;Koelreuteria;Magnolia;Styphnolobium;Tilia,true,6
+taxomyia-taxi,Yew gall midge,"Taxomyia taxi, Cecidomyiidae",Taxus,true,1
+tenthredinidae,Green dogwood sawfly & related sawflies,Tenthredinidae,Cornus,true,1
+tenthredinidae-e-g-croesus-septentrionalis,Hazel sawflies,"Tenthredinidae, e.g. Croesus septentrionalis",Corylus,true,1
+tetranychidae,Spider mites,Tetranychidae,Cupressocyparis;Ginkgo;Gleditsia;Koelreuteria;Liquidambar;Metasequoia;Pterocarya;Thuja,true,8
+tetranychus-urticae,Two-spotted spider mite (Tetranychus urticae) and relatives,,Cercidiphyllum;Parrotia;Paulownia;Robinia,true,4
+tetropium-gabrieli,Larch longhorn,"Tetropium gabrieli, Cerambycidae",Larix,true,1
+thaumetopoea-pityocampa,Pine processionary moth,"Thaumetopoea pityocampa, Notodontidae",Pinus,true,1
+thelephoraceae,Ectomycorrhizal fungi,"Thelephoraceae, Trichophaea spp.",Cedrus,true,1
+tinocallis-platani,Elm leaf aphid,"Tinocallis platani, Eriosoma spp., Aphididae",Ulmus,true,1
+tomicus-piniperda,Pine bark beetle,"Tomicus piniperda, Scolytinae",Pinus,true,1
+tortricidae,Generalist tortricid & geometrid moths,"Tortricidae, Geometridae",Parrotia;Paulownia,true,2
+tortrix-geometrid,Generalist tortrix and geometrid caterpillars,,Liquidambar,true,1
+toumeyella-liriodendri,Tulip-tree scale,Toumeyella liriodendri / Coccidae,Liriodendron,true,1
+trachys-yanoi,Trachys yanoi-type leaf-mining buprestid beetles,Buprestidae,Zelkova,true,1
+troglodytes,Wren / Dunnock / Robin,"Troglodytes, Prunella, Erithacus",Ilex,true,1
+tuber-magnatum,White truffle (Tuber magnatum) mycorrhizal partner,,Ostrya,true,1
+tuberculatus,Oak aphids,Tuberculatus / Lachnus / Thelaxes spp.,Quercus,true,1
+tuberolachnus-salignus,Aphids,"Aphidoidea — Tuberolachnus salignus, Chaitophorus spp.",Salix,true,1
+turdus,"Song Thrush, Redwing, Fieldfare",Turdus spp.,Cornus;Ilex;Magnolia;Morus;Taxus,true,5
+turdus-iliacus-pilaris,Redwing & Fieldfare,Turdus iliacus / pilaris,Crataegus,true,1
+turdus-including-winter-migrants,Blackbirds & thrushes,"Turdus, including winter migrants",Nyssa,true,1
+turdus-merula,Blackbird,Turdus merula,Amelanchier;Cornus;Parrotia;Prunus;Sorbus;Thuja,true,6
+turdus-merula-t-philomelos,Blackbirds & thrushes,"Turdus merula, T. philomelos / Turdidae",Malus,true,1
+turdus-philomelos,Song Thrush & Mistle Thrush,Turdus philomelos / T. viscivorus,Amelanchier,true,1
+turdus-pilaris,Fieldfare & Redwing,Turdus pilaris / T. iliacus,Sorbus,true,1
+turdus-pilaris-t-iliacus,Fieldfare & redwing,"Turdus pilaris, T. iliacus",Malus,true,1
+turdus-viscivorus,Mistle Thrush,Turdus viscivorus,Ilex;Sorbus,true,2
+various-lepidoptera,"Eyed hawk-moth, pale tussock, green pug, Chinese character",various Lepidoptera,Malus,true,1
+various-mammals,"Mice, voles, foxes, badgers",various mammals,Malus,true,1
+venusia-cambrica,Larger Welsh wave & autumn green carpet moths,Venusia cambrica / Chloroclysta miata,Sorbus,true,1
+verticillium,Verticillium wilt-associated fungi,Verticillium spp.,Catalpa,true,1
+vespidae,Wasps (Vespidae) and hoverflies (Syrphidae),,Liriodendron;Morus,true,2
+vespula,Wasps,"Vespula spp., parasitoid wasps",Koelreuteria,true,1
+vulpes-vulpes,Frugivorous mammals,"Vulpes vulpes, Meles meles, Sus scrofa",Pyrus,true,1
+vulpes-vulpes-erinaceus-europaeus,Red Fox / Hedgehog,Vulpes vulpes / Erinaceus europaeus,Cupressocyparis,true,1
+winter-moth-tortrix-spp,Generalist caterpillars,"winter moth, tortrix spp.",Pterocarya,true,1
+wood-pigeon-magpie-carrion-crow,Wood pigeon / Magpie / Carrion crow,,Pterocarya,true,1
+xylocopa,Carpenter bees,Xylocopa spp.,Cercis;Platanus,true,2
+xylocopa-violacea,Violet carpenter bee,Xylocopa violacea,Catalpa,true,1
+xylosandrus-crassiusculus,Granulate ambrosia beetle,"Xylosandrus crassiusculus, Scolytinae",Liquidambar,true,1
+xylotrechus-chinensis,Asian longhorn mulberry pest,Xylotrechus chinensis / Cerambycidae,Morus,true,1
+yponomeuta-evonymella,Bird-cherry ermine moth,"Yponomeuta evonymella / Y. padella, Yponomeutidae",Prunus,true,1
+zeuzera-pyrina,"Wood leopard moth (Zeuzera pyrina, Cossidae) and figure of eight (Diloba caeruleocephala)",,Populus,true,1
