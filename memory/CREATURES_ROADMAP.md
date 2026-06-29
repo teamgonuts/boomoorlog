@@ -118,6 +118,29 @@ SQL; then a per-organism research pass overrides where biology warrants.
 - Onboard 1–2 new sources as proof — candidates: eBird (richer bird data), GBIF fungi
   for Amsterdam, a citizen-science fungi feed, NDFF where licensing allows.
 
+### C3.A — Long-tail labeling pass *(post-C1, follow-up)*
+Surfaced 2026-06-29 after applying the first migration round. The C3 labeling pass
+covered the 319 curated organisms in `data/creatures.csv`. After migration 021 ran,
+**2,197 long-tail observation-only species** landed in `organisms` with empty
+`habitat_classes` / `movement_classes` and a fallback `category='other'`. They need:
+- A second C3-style labeling pass (same parallel-batch shape, sonnet agents) to
+  assign habitat + movement tags + per-organism markdown.
+- A category cleanup so `'other'` becomes a proper biological category from GBIF.
+- These rows have no sprite yet — they remain hidden from the map, but they're in
+  the encyclopedia and need wiki-ready prose.
+Tagged in roadmap so it's not forgotten; not a hard blocker for the alive map (the
+2,197 species aren't sprite-rendered today anyway).
+
+### C3.B — GBIF taxonomy QA pass *(post-C1, follow-up)*
+The GBIF auto-match in `pipeline/enrich_taxonomy.py` produced a small number of
+false hits where the Latin name collides with a higher-rank taxon. Example caught:
+`pica` matched to `rank='phylum'` because Pica is also a phylum name. A short QA
+pass needs to:
+- Walk every `organisms` row with `rank IN ('phylum','kingdom','class')` and verify.
+- Fix mismatches by re-querying GBIF with a more specific name (e.g. "Pica pica").
+- 12 organisms are `rank='unmatched'`; these need manual matching (or are genuinely
+  unresolvable — like "Generalist sap-feeders").
+
 ---
 
 ## Phase 2 — The map comes alive
