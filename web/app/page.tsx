@@ -3,6 +3,7 @@ import Link from "next/link";
 import { classifyGenera, type Classified } from "@/lib/archetype";
 import { toCard } from "@/lib/creature";
 import { supabase } from "@/lib/supabase";
+import type { Creature, Genus, Organism } from "@/types/supabase";
 
 export const dynamic = "force-dynamic";
 
@@ -14,32 +15,106 @@ const STAT_BARS: { key: keyof Classified; label: string }[] = [
   { key: "move_speed", label: "MOV" },
 ];
 
+// Adapter: Organism rows have every Genus column plus more (taxonomy,
+// behavior, etc.). For the tree-roster homepage we only need the legacy
+// Genus shape; we pluck the matching columns and pass them through the
+// archetype classifier untouched. When the lib helpers themselves move
+// to the Organism type (Phase B step 9), this adapter goes away.
+function organismToGenus(o: Organism): Genus {
+  return {
+    slug: o.slug,
+    latin_name: o.latin_name,
+    dutch_name: o.dutch_name,
+    display_name: o.display_name,
+    attack: o.attack,
+    range: o.range,
+    health: o.health,
+    attack_speed: o.attack_speed,
+    move_speed: o.move_speed,
+    world_rarity_multiplier: o.world_rarity_multiplier,
+    avg_height_m: o.avg_height_m,
+    avg_diameter_cm: o.avg_diameter_cm,
+    personality: o.personality,
+    tree_count: o.tree_count,
+    sprite_path: o.sprite_path,
+    lore: o.lore,
+    created_at: o.created_at,
+  };
+}
+
+// The creature card helper expects the legacy Creature shape with
+// pic_file. Organism rows store the same value as photo_path; this
+// adapter bridges until creature.ts moves over in step 9.
+function organismToCreature(o: Organism): Creature {
+  return {
+    slug: o.slug,
+    common_name: o.common_name ?? o.latin_name,
+    latin_name: o.latin_name,
+    pic_file: o.photo_path,
+    tree_count: o.tree_count,
+    tree_genera: o.tree_genera,
+    form: o.form,
+    attack: o.attack,
+    range: o.range,
+    health: o.health,
+    attack_speed: o.attack_speed,
+    move_speed: o.move_speed,
+    created_at: o.created_at,
+    source: o.promoted_source ?? "curated",
+    promoted_at: o.promoted_at,
+    taxon_group: o.taxon_group,
+    wikipedia_summary: o.lore,
+    observations_count: o.observations_count,
+    sprite_pending: o.sprite_pending,
+  };
+}
+
 export default async function HomePage() {
+  // Two filtered queries — supabase-js caps each .select at 1000 rows by
+  // default, and the master organisms table now has 2.7k rows. Filtering
+  // by category server-side both fits comfortably under the cap and pushes
+  // the work onto Postgres indexes (organisms_category_idx).
   const [
-    { data: allGenera, error },
-    { count: totalTrees },
-    { data: creaturesRaw, count: totalCreatures },
+    treesResp,
+    creaturesResp,
+    treesCount,
+    creatureTotal,
   ] = await Promise.all([
-    supabase.from("genera").select("*"),
-    supabase.from("trees").select("*", { count: "exact", head: true }),
+    supabase.from("organisms").select("*").eq("category", "tree"),
     supabase
-      .from("creatures")
-      .select("*", { count: "exact" })
+      .from("organisms")
+      .select("*")
+      .neq("category", "tree")
+      .not("sprite_path", "is", null)
+      .eq("sprite_pending", false)
       .order("tree_count", { ascending: false })
       .limit(24),
+    supabase.from("trees").select("*", { count: "exact", head: true }),
+    supabase
+      .from("organisms")
+      .select("*", { count: "exact", head: true })
+      .neq("category", "tree"),
   ]);
 
-  if (error) {
-    return <p style={{ padding: 48, color: "#ff6b6b" }}>Error: {error.message}</p>;
+  if (treesResp.error) {
+    return <p style={{ padding: 48, color: "#ff6b6b" }}>Error: {treesResp.error.message}</p>;
+  }
+  if (creaturesResp.error) {
+    return <p style={{ padding: 48, color: "#ff6b6b" }}>Error: {creaturesResp.error.message}</p>;
   }
 
-  const totalGenera = (allGenera ?? []).length;
+  const treeOrganisms = treesResp.data ?? [];
+  const creatureOrganisms = creaturesResp.data ?? [];
+  const totalTrees = treesCount.count ?? 0;
+  const totalCreatures = creatureTotal.count ?? 0;
 
-  const cards = classifyGenera(allGenera ?? []).sort(
+  const totalGenera = treeOrganisms.length;
+
+  const cards = classifyGenera(treeOrganisms.map(organismToGenus)).sort(
     (a, b) => b.tree_count - a.tree_count,
   );
 
-  const creatureCards = (creaturesRaw ?? []).map(toCard);
+  const creatureCards = creatureOrganisms.map(organismToCreature).map(toCard);
 
   return (
     <main>
@@ -51,7 +126,7 @@ export default async function HomePage() {
         </p>
         <div className="hero-stats">
           <div className="hstat">
-            <b>{(totalTrees ?? 0).toLocaleString()}</b>
+            <b>{totalTrees.toLocaleString()}</b>
             <span>trees in Amsterdam</span>
           </div>
           <div className="hstat">
@@ -77,7 +152,7 @@ export default async function HomePage() {
           Every animal, insect, fungus, and lichen that lives in the Amsterdam
           trees — deduped across the tree roster. Top {creatureCards.length}{" "}
           most widespread shown below.{" "}
-          <Link href="/wiki/creatures">See all {totalCreatures ?? 0} →</Link>
+          <Link href="/wiki/creatures">See all {totalCreatures} →</Link>
         </p>
       </section>
 
