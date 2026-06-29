@@ -395,8 +395,12 @@ export type Database = {
   };
 };
 
+/** @deprecated Use Organism instead. The genera table still exists for
+ *  back-compat with the seed pipeline but no web reader touches it. */
 export type Genus = Database["public"]["Tables"]["genera"]["Row"];
 export type Tree = Database["public"]["Tables"]["trees"]["Row"];
+/** @deprecated Use Organism (filtered on category != 'tree') instead.
+ *  Same back-compat story as Genus. */
 export type Creature = Database["public"]["Tables"]["creatures"]["Row"];
 export type Observation = Database["public"]["Tables"]["observations"]["Row"];
 export type Organism = Database["public"]["Tables"]["organisms"]["Row"];
