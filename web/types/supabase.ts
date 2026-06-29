@@ -121,6 +121,9 @@ export type Database = {
           photo_license: string | null;
           permalink: string | null;
           creature_slug: string | null;
+          // C1 milestone (migration 022) — points at organisms.slug; will replace
+          // creature_slug once the web refactor is verified.
+          organism_slug: string | null;
           fetched_at: string;
         };
         Insert: Database["public"]["Tables"]["observations"]["Row"];
@@ -181,6 +184,99 @@ export type Database = {
           sprite_pending?: boolean;
         };
         Update: Partial<Database["public"]["Tables"]["creatures"]["Insert"]>;
+        Relationships: [];
+      };
+      // C1 (Creatures AMS roadmap) — unified master list. Supersedes
+      // `genera` + `creatures` over time; both still exist during the
+      // transition. See db/MIGRATING_TO_ORGANISMS.md.
+      organisms: {
+        Row: {
+          slug: string;
+          latin_name: string;
+          common_name: string | null;
+          dutch_name: string | null;
+          display_name: string | null;
+          category:
+            | "tree"
+            | "bird"
+            | "mammal"
+            | "insect"
+            | "arachnid"
+            | "mollusc"
+            | "amphibian"
+            | "reptile"
+            | "fish"
+            | "fungus"
+            | "lichen"
+            | "plant"
+            | "other";
+          // Multi-valued; dominant tag is index 0. Empty = unlabeled (the C3
+          // labeling pass fills these in).
+          habitat_classes: string[];
+          movement_classes: string[];
+          sprite_path: string | null;
+          sprite_pending: boolean;
+          form: string | null;
+          photo_path: string | null;
+          photo_license: string | null;
+          photo_source: string | null;
+          lore: string | null;
+          personality: string | null;
+          sources: string[];
+          observations_count: number;
+          tree_count: number;
+          tree_genera: string[];
+          taxon_group: string | null;
+          promoted_source: "curated" | "auto_observed" | null;
+          promoted_at: string | null;
+          // TD combat stats (legacy from genera + creatures).
+          attack: number | null;
+          range: number | null;
+          health: number | null;
+          attack_speed: number | null;
+          move_speed: number | null;
+          world_rarity_multiplier: number;
+          avg_height_m: number | null;
+          avg_diameter_cm: number | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          slug: string;
+          latin_name: string;
+          common_name?: string | null;
+          dutch_name?: string | null;
+          display_name?: string | null;
+          category: Database["public"]["Tables"]["organisms"]["Row"]["category"];
+          habitat_classes?: string[];
+          movement_classes?: string[];
+          sprite_path?: string | null;
+          sprite_pending?: boolean;
+          form?: string | null;
+          photo_path?: string | null;
+          photo_license?: string | null;
+          photo_source?: string | null;
+          lore?: string | null;
+          personality?: string | null;
+          sources?: string[];
+          observations_count?: number;
+          tree_count?: number;
+          tree_genera?: string[];
+          taxon_group?: string | null;
+          promoted_source?: "curated" | "auto_observed" | null;
+          promoted_at?: string | null;
+          attack?: number | null;
+          range?: number | null;
+          health?: number | null;
+          attack_speed?: number | null;
+          move_speed?: number | null;
+          world_rarity_multiplier?: number;
+          avg_height_m?: number | null;
+          avg_diameter_cm?: number | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database["public"]["Tables"]["organisms"]["Insert"]>;
         Relationships: [];
       };
     };
@@ -251,3 +347,5 @@ export type Genus = Database["public"]["Tables"]["genera"]["Row"];
 export type Tree = Database["public"]["Tables"]["trees"]["Row"];
 export type Creature = Database["public"]["Tables"]["creatures"]["Row"];
 export type Observation = Database["public"]["Tables"]["observations"]["Row"];
+export type Organism = Database["public"]["Tables"]["organisms"]["Row"];
+export type OrganismCategory = Organism["category"];
