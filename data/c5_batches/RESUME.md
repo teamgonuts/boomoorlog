@@ -66,11 +66,17 @@ For each organism in the batch:
    recognisable from this image alone?
 4. If yes → cp /tmp/<slug>.jpg data/organism_photos/<slug>.jpg, record
    status=ok.
-5. If no → WebFetch
-   `https://api.inaturalist.org/v1/taxa/<taxon_id>/photos?per_page=5`,
-   pick the next-best photo from the results, download it, inspect.
-   Repeat at most 2 alternates. If none meet the bar, record
-   status=no_good_photo.
+5. If no → WebFetch alternates. The `/v1/taxa/<id>/photos` endpoint
+   returns 404 in practice; use the observations endpoint instead:
+   `https://api.inaturalist.org/v1/observations?taxon_id=<id>&photos=true&per_page=5&order=desc&order_by=votes`
+   Pick a photo from `results[*].photos[*].url` (replace `square` with
+   `medium` in the URL if needed). Try at most 2 alternates. If none
+   meet the bar, record status=no_good_photo.
+   Also: reject default photos under ~30 KB on disk — they're often
+   broken thumbnails.
+   Also: when the initial `q=<latin>` returns a higher-rank taxon
+   (e.g. "q=Buteo buteo" returning Buteoninae), search again with
+   `q=<genus> <species>` and pick the species-rank result.
 
 Output `data/c5_batches/batch_NN_photos.csv` with header:
 slug,latin_name,taxon_id,photo_url,photo_license,attribution,status,note
