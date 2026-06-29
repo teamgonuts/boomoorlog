@@ -141,6 +141,34 @@ pass needs to:
 - 12 organisms are `rank='unmatched'`; these need manual matching (or are genuinely
   unresolvable — like "Generalist sap-feeders").
 
+### C1.A — Unified wiki URL & layout *(post-Phase-B, follow-up)*
+Surfaced 2026-06-29 after Phase B (web refactor to `organisms`). The DB and the
+web data layer are unified, but the URL structure and page contents still split
+by `/wiki/trees/*` vs `/wiki/creatures/*` — an artefact of the pre-unification
+era. This follow-up brings the UX in line with the data model.
+
+**Scope:**
+- **URL collapse.** One route handles every organism: `/wiki/<slug>` (currently
+  `/wiki/trees/<slug>` and `/wiki/creatures/<slug>`). Old routes 301 to the new
+  shape so external links keep working.
+- **Listing pages.** `/wiki` becomes the encyclopedia landing page with
+  category-filter chips (trees, birds, mammals, insects, fungi, …); the
+  existing `/wiki/trees` and `/wiki/creatures` become category-filter shortcuts.
+- **Consistent page contents.** Tree wiki pages have "Combat flavor",
+  "Real-world facts", "Living creatures on this tree". Creature pages have
+  different sections. Pick one layout — hero, identification, where you'll find
+  it, taxonomy, related organisms, gallery, sources — that gracefully handles
+  every category. Move category-specific sections to opt-in blocks.
+- **Cross-links.** Tree → creature lists become organism → organism via the
+  `tree_genera` array (which is already there). Same for creature → tree.
+- **Navigation.** Top nav's "TREES" / "CREATURES" links become one
+  "Encyclopedia" entry (or stay as filter shortcuts). The encyclopedia,
+  map (`/play`), and observations are the three primary surfaces.
+
+**Why it's not blocking C5+:** the alive-map work doesn't touch the wiki
+surface. But this should happen **before** C14 (Living dossier) so the dossier
+redesign builds on the unified URL/layout instead of papering over the split.
+
 ---
 
 ## Phase 2 — The map comes alive
