@@ -23,13 +23,16 @@ create temp table tmp_c5 (
 
 \copy tmp_c5 from 'data/c5_photos.csv' with (format csv, header true);
 
+-- Accept any status that starts with 'ok' — sub-agents have emitted
+-- 'ok_no_open_license' for visually-good but rights-reserved photos
+-- (the file is still saved; license metadata flags it for review).
 update organisms o
    set photo_path    = 'data/organism_photos/' || t.slug || '.jpg',
        photo_license = nullif(t.photo_license, ''),
        photo_source  = 'inat'
   from tmp_c5 t
  where o.slug = t.slug
-   and t.status = 'ok'
+   and t.status like 'ok%'
    and (o.photo_path is null or o.photo_path = '');
 
 commit;
