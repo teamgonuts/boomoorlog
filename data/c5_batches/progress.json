@@ -1,0 +1,753 @@
+{
+  "total": 1543,
+  "batch_size": 25,
+  "n_batches": 62,
+  "batches": [
+    {
+      "index": 0,
+      "path": "data/c5_batches/batch_00.csv",
+      "status": "pending"
+    },
+    {
+      "index": 1,
+      "path": "data/c5_batches/batch_01.csv",
+      "status": "pending"
+    },
+    {
+      "index": 2,
+      "path": "data/c5_batches/batch_02.csv",
+      "status": "pending"
+    },
+    {
+      "index": 3,
+      "path": "data/c5_batches/batch_03.csv",
+      "status": "pending"
+    },
+    {
+      "index": 4,
+      "path": "data/c5_batches/batch_04.csv",
+      "status": "pending"
+    },
+    {
+      "index": 5,
+      "path": "data/c5_batches/batch_05.csv",
+      "status": "pending"
+    },
+    {
+      "index": 6,
+      "path": "data/c5_batches/batch_06.csv",
+      "status": "pending"
+    },
+    {
+      "index": 7,
+      "path": "data/c5_batches/batch_07.csv",
+      "status": "pending"
+    },
+    {
+      "index": 8,
+      "path": "data/c5_batches/batch_08.csv",
+      "status": "pending"
+    },
+    {
+      "index": 9,
+      "path": "data/c5_batches/batch_09.csv",
+      "status": "pending"
+    },
+    {
+      "index": 10,
+      "path": "data/c5_batches/batch_10.csv",
+      "status": "pending"
+    },
+    {
+      "index": 11,
+      "path": "data/c5_batches/batch_11.csv",
+      "status": "pending"
+    },
+    {
+      "index": 12,
+      "path": "data/c5_batches/batch_12.csv",
+      "status": "pending"
+    },
+    {
+      "index": 13,
+      "path": "data/c5_batches/batch_13.csv",
+      "status": "pending"
+    },
+    {
+      "index": 14,
+      "path": "data/c5_batches/batch_14.csv",
+      "status": "pending"
+    },
+    {
+      "index": 15,
+      "path": "data/c5_batches/batch_15.csv",
+      "status": "pending"
+    },
+    {
+      "index": 16,
+      "path": "data/c5_batches/batch_16.csv",
+      "status": "pending"
+    },
+    {
+      "index": 17,
+      "path": "data/c5_batches/batch_17.csv",
+      "status": "pending"
+    },
+    {
+      "index": 18,
+      "path": "data/c5_batches/batch_18.csv",
+      "status": "pending"
+    },
+    {
+      "index": 19,
+      "path": "data/c5_batches/batch_19.csv",
+      "status": "pending"
+    },
+    {
+      "index": 20,
+      "path": "data/c5_batches/batch_20.csv",
+      "status": "pending"
+    },
+    {
+      "index": 21,
+      "path": "data/c5_batches/batch_21.csv",
+      "status": "pending"
+    },
+    {
+      "index": 22,
+      "path": "data/c5_batches/batch_22.csv",
+      "status": "pending"
+    },
+    {
+      "index": 23,
+      "path": "data/c5_batches/batch_23.csv",
+      "status": "pending"
+    },
+    {
+      "index": 24,
+      "path": "data/c5_batches/batch_24.csv",
+      "status": "pending"
+    },
+    {
+      "index": 25,
+      "path": "data/c5_batches/batch_25.csv",
+      "status": "pending"
+    },
+    {
+      "index": 26,
+      "path": "data/c5_batches/batch_26.csv",
+      "status": "pending"
+    },
+    {
+      "index": 27,
+      "path": "data/c5_batches/batch_27.csv",
+      "status": "pending"
+    },
+    {
+      "index": 28,
+      "path": "data/c5_batches/batch_28.csv",
+      "status": "pending"
+    },
+    {
+      "index": 29,
+      "path": "data/c5_batches/batch_29.csv",
+      "status": "pending"
+    },
+    {
+      "index": 30,
+      "path": "data/c5_batches/batch_30.csv",
+      "status": "pending"
+    },
+    {
+      "index": 31,
+      "path": "data/c5_batches/batch_31.csv",
+      "status": "pending"
+    },
+    {
+      "index": 32,
+      "path": "data/c5_batches/batch_32.csv",
+      "status": "pending"
+    },
+    {
+      "index": 33,
+      "path": "data/c5_batches/batch_33.csv",
+      "status": "pending"
+    },
+    {
+      "index": 34,
+      "path": "data/c5_batches/batch_34.csv",
+      "status": "pending"
+    },
+    {
+      "index": 35,
+      "path": "data/c5_batches/batch_35.csv",
+      "status": "pending"
+    },
+    {
+      "index": 36,
+      "path": "data/c5_batches/batch_36.csv",
+      "status": "pending"
+    },
+    {
+      "index": 37,
+      "path": "data/c5_batches/batch_37.csv",
+      "status": "pending"
+    },
+    {
+      "index": 38,
+      "path": "data/c5_batches/batch_38.csv",
+      "status": "pending"
+    },
+    {
+      "index": 39,
+      "path": "data/c5_batches/batch_39.csv",
+      "status": "pending"
+    },
+    {
+      "index": 40,
+      "path": "data/c5_batches/batch_40.csv",
+      "status": "pending"
+    },
+    {
+      "index": 41,
+      "path": "data/c5_batches/batch_41.csv",
+      "status": "pending"
+    },
+    {
+      "index": 42,
+      "path": "data/c5_batches/batch_42.csv",
+      "status": "pending"
+    },
+    {
+      "index": 43,
+      "path": "data/c5_batches/batch_43.csv",
+      "status": "pending"
+    },
+    {
+      "index": 44,
+      "path": "data/c5_batches/batch_44.csv",
+      "status": "pending"
+    },
+    {
+      "index": 45,
+      "path": "data/c5_batches/batch_45.csv",
+      "status": "pending"
+    },
+    {
+      "index": 46,
+      "path": "data/c5_batches/batch_46.csv",
+      "status": "pending"
+    },
+    {
+      "index": 47,
+      "path": "data/c5_batches/batch_47.csv",
+      "status": "pending"
+    },
+    {
+      "index": 48,
+      "path": "data/c5_batches/batch_48.csv",
+      "status": "pending"
+    },
+    {
+      "index": 49,
+      "path": "data/c5_batches/batch_49.csv",
+      "status": "pending"
+    },
+    {
+      "index": 50,
+      "path": "data/c5_batches/batch_50.csv",
+      "status": "pending"
+    },
+    {
+      "index": 51,
+      "path": "data/c5_batches/batch_51.csv",
+      "status": "pending"
+    },
+    {
+      "index": 52,
+      "path": "data/c5_batches/batch_52.csv",
+      "status": "pending"
+    },
+    {
+      "index": 53,
+      "path": "data/c5_batches/batch_53.csv",
+      "status": "pending"
+    },
+    {
+      "index": 54,
+      "path": "data/c5_batches/batch_54.csv",
+      "status": "pending"
+    },
+    {
+      "index": 55,
+      "path": "data/c5_batches/batch_55.csv",
+      "status": "pending"
+    },
+    {
+      "index": 56,
+      "path": "data/c5_batches/batch_56.csv",
+      "status": "pending"
+    },
+    {
+      "index": 57,
+      "path": "data/c5_batches/batch_57.csv",
+      "status": "pending"
+    },
+    {
+      "index": 58,
+      "path": "data/c5_batches/batch_58.csv",
+      "status": "pending"
+    },
+    {
+      "index": 59,
+      "path": "data/c5_batches/batch_59.csv",
+      "status": "pending"
+    },
+    {
+      "index": 60,
+      "path": "data/c5_batches/batch_60.csv",
+      "status": "pending"
+    },
+    {
+      "index": 61,
+      "path": "data/c5_batches/batch_61.csv",
+      "status": "pending"
+    }
+  ],
+  "manifest": [
+    {
+      "index": 0,
+      "path": "data/c5_batches/batch_00.csv",
+      "count": 25,
+      "first": "harmonia-axyridis-f-succinea",
+      "last": "artemisia-vulgaris"
+    },
+    {
+      "index": 1,
+      "path": "data/c5_batches/batch_01.csv",
+      "count": 25,
+      "first": "idaea-seriata",
+      "last": "gasteruption-spec"
+    },
+    {
+      "index": 2,
+      "path": "data/c5_batches/batch_02.csv",
+      "count": 25,
+      "first": "idaea-rusticata",
+      "last": "hylaeus-communis"
+    },
+    {
+      "index": 3,
+      "path": "data/c5_batches/batch_03.csv",
+      "count": 25,
+      "first": "pyrrhocoris-apterus",
+      "last": "heterocera-indet"
+    },
+    {
+      "index": 4,
+      "path": "data/c5_batches/batch_04.csv",
+      "count": 25,
+      "first": "malva-sylvestris-cultivar",
+      "last": "rumex-crispus"
+    },
+    {
+      "index": 5,
+      "path": "data/c5_batches/batch_05.csv",
+      "count": 25,
+      "first": "tripleurospermum-maritimum-matricaria-chamomilla",
+      "last": "lysimachia-punctata"
+    },
+    {
+      "index": 6,
+      "path": "data/c5_batches/batch_06.csv",
+      "count": 25,
+      "first": "noctua-comes",
+      "last": "eristalis-intricaria"
+    },
+    {
+      "index": 7,
+      "path": "data/c5_batches/batch_07.csv",
+      "count": 25,
+      "first": "eumenes-spec",
+      "last": "tritomegas-bicolor"
+    },
+    {
+      "index": 8,
+      "path": "data/c5_batches/batch_08.csv",
+      "count": 25,
+      "first": "accipiter-nisus",
+      "last": "demeijerea-rufipes"
+    },
+    {
+      "index": 9,
+      "path": "data/c5_batches/batch_09.csv",
+      "count": 25,
+      "first": "dianthus-giganteus",
+      "last": "noctua-fimbriata"
+    },
+    {
+      "index": 10,
+      "path": "data/c5_batches/batch_10.csv",
+      "count": 25,
+      "first": "notocelia-uddmanniana",
+      "last": "anisantha-sterilis"
+    },
+    {
+      "index": 11,
+      "path": "data/c5_batches/batch_11.csv",
+      "count": 25,
+      "first": "anobiidae-indet",
+      "last": "erodium-cicutarium"
+    },
+    {
+      "index": 12,
+      "path": "data/c5_batches/batch_12.csv",
+      "count": 25,
+      "first": "eucosma-cana",
+      "last": "pimplinae-indet"
+    },
+    {
+      "index": 13,
+      "path": "data/c5_batches/batch_13.csv",
+      "count": 25,
+      "first": "planuncus-tingitanus-s-l",
+      "last": "sympetrum-striolatum"
+    },
+    {
+      "index": 14,
+      "path": "data/c5_batches/batch_14.csv",
+      "count": 25,
+      "first": "tenthredo-scrophulariae",
+      "last": "bolboschoenus-maritimus"
+    },
+    {
+      "index": 15,
+      "path": "data/c5_batches/batch_15.csv",
+      "count": 25,
+      "first": "braconidae-indet",
+      "last": "elateridae-indet"
+    },
+    {
+      "index": 16,
+      "path": "data/c5_batches/batch_16.csv",
+      "count": 25,
+      "first": "emberiza-schoeniclus",
+      "last": "hypsopygia-costalis"
+    },
+    {
+      "index": 17,
+      "path": "data/c5_batches/batch_17.csv",
+      "count": 25,
+      "first": "julidae-indet",
+      "last": "pelophylax-spec"
+    },
+    {
+      "index": 18,
+      "path": "data/c5_batches/batch_18.csv",
+      "count": 25,
+      "first": "persicaria-amplexicaulis",
+      "last": "staphylinidae-indet"
+    },
+    {
+      "index": 19,
+      "path": "data/c5_batches/batch_19.csv",
+      "count": 25,
+      "first": "steatoda-grossa",
+      "last": "agrimonia-procera"
+    },
+    {
+      "index": 20,
+      "path": "data/c5_batches/batch_20.csv",
+      "count": 25,
+      "first": "agromyza-reptans-pseudoreptans",
+      "last": "beris-vallata"
+    },
+    {
+      "index": 21,
+      "path": "data/c5_batches/batch_21.csv",
+      "count": 25,
+      "first": "betonica-officinalis",
+      "last": "crabro-cribrarius"
+    },
+    {
+      "index": 22,
+      "path": "data/c5_batches/batch_22.csv",
+      "count": 25,
+      "first": "craniophora-ligustri",
+      "last": "epilobium-parviflorum"
+    },
+    {
+      "index": 23,
+      "path": "data/c5_batches/batch_23.csv",
+      "count": 25,
+      "first": "eristalis-similis",
+      "last": "harmonia-quadripunctata"
+    },
+    {
+      "index": 24,
+      "path": "data/c5_batches/batch_24.csv",
+      "count": 25,
+      "first": "harpella-forficella",
+      "last": "lathyrus-pratensis"
+    },
+    {
+      "index": 25,
+      "path": "data/c5_batches/batch_25.csv",
+      "count": 25,
+      "first": "leccinum-scabrum-sl-incl-cyaneobasileucum-melaneum-schistophilum-variicolor",
+      "last": "nacerdes-melanura"
+    },
+    {
+      "index": 26,
+      "path": "data/c5_batches/batch_26.csv",
+      "count": 25,
+      "first": "nemotelus-pantherinus",
+      "last": "philadelphus-spec"
+    },
+    {
+      "index": 27,
+      "path": "data/c5_batches/batch_27.csv",
+      "count": 25,
+      "first": "philereme-vetulata",
+      "last": "rhogogaster-spec"
+    },
+    {
+      "index": 28,
+      "path": "data/c5_batches/batch_28.csv",
+      "count": 25,
+      "first": "rilaena-triangularis",
+      "last": "symmorphus-spec"
+    },
+    {
+      "index": 29,
+      "path": "data/c5_batches/batch_29.csv",
+      "count": 25,
+      "first": "synanthedon-formicaeformis",
+      "last": "vitula-biviella"
+    },
+    {
+      "index": 30,
+      "path": "data/c5_batches/batch_30.csv",
+      "count": 25,
+      "first": "volvariella-gloiocephala",
+      "last": "aesculus-parviflora"
+    },
+    {
+      "index": 31,
+      "path": "data/c5_batches/batch_31.csv",
+      "count": 25,
+      "first": "aeshnidae-indet",
+      "last": "anania-crocealis"
+    },
+    {
+      "index": 32,
+      "path": "data/c5_batches/batch_32.csv",
+      "count": 25,
+      "first": "anarsia-innoxiella",
+      "last": "archanara-dissoluta"
+    },
+    {
+      "index": 33,
+      "path": "data/c5_batches/batch_33.csv",
+      "count": 25,
+      "first": "archips-crataegana",
+      "last": "auchenorrhyncha-indet"
+    },
+    {
+      "index": 34,
+      "path": "data/c5_batches/batch_34.csv",
+      "count": 25,
+      "first": "aulagromyza-hendeliana",
+      "last": "briza-maxima"
+    },
+    {
+      "index": 35,
+      "path": "data/c5_batches/batch_35.csv",
+      "count": 25,
+      "first": "bromus-racemosus",
+      "last": "celypha-siderana"
+    },
+    {
+      "index": 36,
+      "path": "data/c5_batches/batch_36.csv",
+      "count": 25,
+      "first": "ceraleptus-lividus",
+      "last": "clinopodium-vulgare"
+    },
+    {
+      "index": 37,
+      "path": "data/c5_batches/batch_37.csv",
+      "count": 25,
+      "first": "clivina-fossor",
+      "last": "cotoneaster-spec"
+    },
+    {
+      "index": 38,
+      "path": "data/c5_batches/batch_38.csv",
+      "count": 25,
+      "first": "cotula-coronopifolia",
+      "last": "dacrymyces-stillatus"
+    },
+    {
+      "index": 39,
+      "path": "data/c5_batches/batch_39.csv",
+      "count": 25,
+      "first": "daldinia-concentrica",
+      "last": "dicyphus-globulifer"
+    },
+    {
+      "index": 40,
+      "path": "data/c5_batches/batch_40.csv",
+      "count": 25,
+      "first": "dilophus-febrilis",
+      "last": "epinotia-immundana"
+    },
+    {
+      "index": 41,
+      "path": "data/c5_batches/batch_41.csv",
+      "count": 25,
+      "first": "epinotia-nisella",
+      "last": "eupithecia-pulchellata-linariata"
+    },
+    {
+      "index": 42,
+      "path": "data/c5_batches/batch_42.csv",
+      "count": 25,
+      "first": "euplexia-lucipara",
+      "last": "gelis-spec"
+    },
+    {
+      "index": 43,
+      "path": "data/c5_batches/batch_43.csv",
+      "count": 25,
+      "first": "geranium-dissectum",
+      "last": "helleborus-argutifolius"
+    },
+    {
+      "index": 44,
+      "path": "data/c5_batches/batch_44.csv",
+      "count": 25,
+      "first": "hemerocallis-fulva",
+      "last": "hylaeus-nigritus"
+    },
+    {
+      "index": 45,
+      "path": "data/c5_batches/batch_45.csv",
+      "count": 25,
+      "first": "hypericum-hirsutum",
+      "last": "lauritrioza-alacris"
+    },
+    {
+      "index": 46,
+      "path": "data/c5_batches/batch_46.csv",
+      "count": 25,
+      "first": "leccinum-duriusculum",
+      "last": "linyphia-hortensis"
+    },
+    {
+      "index": 47,
+      "path": "data/c5_batches/batch_47.csv",
+      "count": 25,
+      "first": "lipandra-polysperma",
+      "last": "melica-transsilvanica"
+    },
+    {
+      "index": 48,
+      "path": "data/c5_batches/batch_48.csv",
+      "count": 25,
+      "first": "meligramma-triangulifera",
+      "last": "myosotis-sylvatica"
+    },
+    {
+      "index": 49,
+      "path": "data/c5_batches/batch_49.csv",
+      "count": 25,
+      "first": "mythimna-pallens",
+      "last": "oenothera-deflexa"
+    },
+    {
+      "index": 50,
+      "path": "data/c5_batches/batch_50.csv",
+      "count": 25,
+      "first": "oligia-latruncula",
+      "last": "oxybasis-glauca"
+    },
+    {
+      "index": 51,
+      "path": "data/c5_batches/batch_51.csv",
+      "count": 25,
+      "first": "oxybasis-rubra",
+      "last": "pediopsis-tiliae"
+    },
+    {
+      "index": 52,
+      "path": "data/c5_batches/batch_52.csv",
+      "count": 25,
+      "first": "pelophylax-kl-esculentus",
+      "last": "phyllocnistis-xenia"
+    },
+    {
+      "index": 53,
+      "path": "data/c5_batches/batch_53.csv",
+      "count": 25,
+      "first": "phyllocoptes-eupadi",
+      "last": "plectosphaerella-alismatis"
+    },
+    {
+      "index": 54,
+      "path": "data/c5_batches/batch_54.csv",
+      "count": 25,
+      "first": "pneumia-nubila-trivialis",
+      "last": "puccinia-allii"
+    },
+    {
+      "index": 55,
+      "path": "data/c5_batches/batch_55.csv",
+      "count": 25,
+      "first": "pyrus-communis",
+      "last": "salvia-viridis"
+    },
+    {
+      "index": 56,
+      "path": "data/c5_batches/batch_56.csv",
+      "count": 25,
+      "first": "sambucus-nigra-laciniata",
+      "last": "siproeta-epaphus"
+    },
+    {
+      "index": 57,
+      "path": "data/c5_batches/batch_57.csv",
+      "count": 25,
+      "first": "sisymbrium-orientale",
+      "last": "swammerdamia-pyrella"
+    },
+    {
+      "index": 58,
+      "path": "data/c5_batches/batch_58.csv",
+      "count": 25,
+      "first": "symmorphus-crassicornis",
+      "last": "thinornis-dubius"
+    },
+    {
+      "index": 59,
+      "path": "data/c5_batches/batch_59.csv",
+      "count": 25,
+      "first": "thlaspi-arvense",
+      "last": "turritella-socordia"
+    },
+    {
+      "index": 60,
+      "path": "data/c5_batches/batch_60.csv",
+      "count": 25,
+      "first": "typha-angustifolia",
+      "last": "xestia-c-nigrum"
+    },
+    {
+      "index": 61,
+      "path": "data/c5_batches/batch_61.csv",
+      "count": 18,
+      "first": "xestia-xanthographa",
+      "last": "stomaphis-yanonis-aphididae"
+    }
+  ]
+}
