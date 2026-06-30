@@ -182,6 +182,46 @@ rather than a "trust the AI" leap.
 - The pixel-art skills already exist and work; the new piece is the
   orchestration + QA loop.
 
+**Sub-steps (2026-06-30):**
+
+1. **C3.D.1 — Sprite form library expansion.** Current sprite-art skills
+   ship 18 forms (8 tree silhouettes + 10 creature body-plans). The new
+   organism mix needs 12 more forms before any bulk render can cover the
+   long tail:
+
+   | New form | Covers | Notes |
+   |---|---|---|
+   | `plant` (flower / grass / rosette sub-modes) | ~656 plant organisms | Biggest single gap |
+   | `mushroom` (cap on stipe) | ~25 gilled mushrooms + boletes | Distinct from existing `fungus` form (which handles brackets + lichens) |
+   | `water-bird` | ducks, coots, geese, swans (~30) | Side view on waterline |
+   | `wading-bird` | herons, storks, kingfisher (~10) | Long legs + dagger bill |
+   | `mollusc` (snail / slug sub-modes) | ~26 | Shell or no-shell |
+   | `fish` | carp, perch, rudd (~5+) | Side-view fusiform |
+   | `amphibian` | toads, frogs, newts (~7) | Squat side view |
+   | `reptile` (lizard / turtle sub-modes) | wall lizard, pond slider (~3) | Will grow |
+   | `raptor` | peregrine, buzzard, kestrel (~5) | Sky-view broad wings |
+   | `gull` | gulls, terns (~5) | Long-winged side glide |
+   | `large-mammal` | roe deer, wild boar (~5) | Deer/boar proportions |
+   | `aquatic-mammal` | otter, water vole (~5) | Side view, waterline visible |
+
+   Each new form is a ~30-line Python function modelled on the existing
+   ones in `.claude/skills/{tree,creature}-pixel-art/scripts/`.
+
+2. **C3.D.2 — `/sprites` library QA page.** Hidden Next.js page (route
+   `/sprites`, not linked from nav) showing one sample sprite per form +
+   2–3 photo-vs-sprite comparisons. Used to lock the form quality bar
+   before bulk render. Each form section has a stable label / ID so
+   reviewer feedback can be precise (e.g. "the `bee` sprite stripes are
+   too thick"). Built before bulk render so we don't waste cycles
+   generating thousands of bad sprites.
+
+3. **C3.D.3 — Bulk render pass.** Once forms are approved, run the
+   matching skill against every organism with a photo but no sprite.
+
+4. **C3.D.4 — Per-organism admin QA tool** (the original C3.D scope).
+   `/admin/sprites` paged review queue; approve / reject / regenerate
+   per organism; `organisms.sprite_approved` persists state.
+
 **Not blocking:** can run in parallel with the alive-map work (C5–C11).
 Each newly-approved sprite immediately starts appearing on the map for
 its organism's category.
