@@ -15,7 +15,7 @@ All output as upscaled PNGs (nearest-neighbor) into data/sprites_pixel/.
 from pathlib import Path
 from PIL import Image
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 PICS = ROOT / "data" / "tree_pics"
 OUT = ROOT / "data" / "sprites_pixel"
 

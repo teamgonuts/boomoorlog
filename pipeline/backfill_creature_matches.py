@@ -23,7 +23,7 @@ from pathlib import Path
 import psycopg2
 from psycopg2.extras import execute_batch
 
-REPO = Path(__file__).resolve().parent
+REPO = Path(__file__).resolve().parents[1]
 
 
 def load_env(path: Path = REPO / ".env") -> dict:

@@ -37,7 +37,7 @@ from urllib.parse import urlencode
 import psycopg2
 from PIL import Image
 
-REPO = Path(__file__).resolve().parent
+REPO = Path(__file__).resolve().parents[1]
 PHOTO_DIR_WEB = REPO / "web" / "public" / "creature_photos"
 PHOTO_DIR_DATA = REPO / "data" / "creature_pics"
 

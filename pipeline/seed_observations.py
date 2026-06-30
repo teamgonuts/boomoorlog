@@ -26,7 +26,7 @@ from psycopg2.extras import execute_values
 
 from fetch_observations import fetch_inat, fetch_waarneming
 
-REPO = Path(__file__).resolve().parent
+REPO = Path(__file__).resolve().parents[1]
 
 
 def load_env(path: Path = REPO / ".env") -> dict:

@@ -28,23 +28,23 @@ See [`memory/CREATURES_VISION.md`](memory/CREATURES_VISION.md) for the full conc
 | `memory/` | Design source of truth — vision, roadmap, stats, per-genus research. |
 | `data/` | Raw datasets — **offline pipeline inputs only** (see note below). |
 | `db/` | SQL migrations. |
-| `pipeline/` | Shared pipeline modules. |
+| `pipeline/` | All offline Python — extract / fetch / generate / promote / seed scripts, plus the C3/C4/C5 milestone pipelines. |
 | `web/` | Next.js app (the runtime — wiki + `/play` live map). Reads from Supabase. |
-| `*.py` | Offline data pipeline — extract trees, fetch observations, generate sprites, seed the DB. |
 
-## Data pipeline (Python scripts)
+## Data pipeline (Python scripts in `pipeline/`)
 
 Offline tools that prep data, derive metadata, and seed the database — they are **not**
-part of the runtime app.
+part of the runtime app. Run from the repo root, e.g. `python3 pipeline/extract_trees.py`.
 
 | Script | Purpose |
 |---|---|
-| `extract_trees.py` | Pull living trees out of the raw Amsterdam dataset. |
-| `extract_creatures.py` | Build the curated creature roster. |
-| `fetch_observations.py` / `seed_observations.py` | Pull iNat + Waarneming observations into Supabase. |
-| `generate_pixel_sprites.py` | Produce pixel-art sprites for trees and creatures. |
-| `promote_creatures.py` / `backfill_creature_matches.py` | Curate observations into the creature roster. |
-| `seed_genera.py` / `seed_trees.py` / `seed_creatures.py` | Load Supabase tables. |
+| `pipeline/extract_trees.py` | Pull living trees out of the raw Amsterdam dataset. |
+| `pipeline/extract_creatures.py` | Build the curated creature roster. |
+| `pipeline/fetch_observations.py` / `pipeline/seed_observations.py` | Pull iNat + Waarneming observations into Supabase. |
+| `pipeline/generate_pixel_sprites.py` | Produce pixel-art sprites for trees and creatures. |
+| `pipeline/promote_creatures.py` / `pipeline/backfill_creature_matches.py` | Curate observations into the creature roster. |
+| `pipeline/seed_genera.py` / `pipeline/seed_trees.py` / `pipeline/seed_creatures.py` | Load Supabase tables. |
+| `pipeline/c3*_*.py` / `pipeline/c4_*.py` / `pipeline/c5_*.py` | Milestone-specific batch builders, GBIF/iNat enrichment, aggregators (C3 labeling, C3.A long-tail, C3.B GBIF QA, C3.C trees, C4 common names, C5 photo backfill). |
 
 ## Architecture (current)
 

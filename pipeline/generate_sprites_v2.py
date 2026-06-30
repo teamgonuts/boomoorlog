@@ -23,7 +23,7 @@ from generate_sprites import (
     parse_roster, RARITY_STYLE, poly, W, H,
 )
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 PICS = ROOT / "data" / "tree_pics"
 OUT_DIR = ROOT / "data" / "sprites"
 

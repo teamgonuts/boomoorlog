@@ -20,7 +20,7 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 CHARACTERS_MD = ROOT / "memory" / "CHARACTERS.md"
 OUT_DIR = ROOT / "data" / "sprites"
 

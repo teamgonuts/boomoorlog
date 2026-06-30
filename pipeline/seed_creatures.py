@@ -16,7 +16,7 @@ from pathlib import Path
 import psycopg2
 from psycopg2.extras import execute_values
 
-REPO = Path(__file__).resolve().parent
+REPO = Path(__file__).resolve().parents[1]
 CSV_PATH = REPO / "data" / "creatures.csv"
 
 

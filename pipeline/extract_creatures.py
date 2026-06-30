@@ -22,7 +22,7 @@ import csv
 import re
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent
+REPO = Path(__file__).resolve().parents[1]
 CHARS_DIR = REPO / "memory" / "characters"
 OUT = REPO / "data" / "creatures.csv"
 
