@@ -3,7 +3,7 @@
 > Living document. The source of truth for **what we ship** and **in what order** to get
 > [Creatures AMS](CREATURES_VISION.md) production-ready.
 >
-> Last updated: 2026-06-29
+> Last updated: 2026-07-01
 
 ---
 
@@ -184,39 +184,50 @@ rather than a "trust the AI" leap.
 
 **Sub-steps (2026-06-30):**
 
-1. **C3.D.1 — Sprite form library expansion.** Current sprite-art skills
-   ship 18 forms (8 tree silhouettes + 10 creature body-plans). The new
-   organism mix needs 12 more forms before any bulk render can cover the
-   long tail:
+1. **C3.D.1 — Sprite form library expansion. ✅ DONE (2026-07-01).**
+   Landed 14 new creature body-plans on top of the existing 10:
 
-   | New form | Covers | Notes |
+   | New form | Covers | Status |
    |---|---|---|
-   | `plant` (flower / grass / rosette sub-modes) | ~656 plant organisms | Biggest single gap |
-   | `mushroom` (cap on stipe) | ~25 gilled mushrooms + boletes | Distinct from existing `fungus` form (which handles brackets + lichens) |
-   | `water-bird` | ducks, coots, geese, swans (~30) | Side view on waterline |
-   | `wading-bird` | herons, storks, kingfisher (~10) | Long legs + dagger bill |
-   | `mollusc` (snail / slug sub-modes) | ~26 | Shell or no-shell |
-   | `fish` | carp, perch, rudd (~5+) | Side-view fusiform |
-   | `amphibian` | toads, frogs, newts (~7) | Squat side view |
-   | `reptile` (lizard / turtle sub-modes) | wall lizard, pond slider (~3) | Will grow |
-   | `raptor` | peregrine, buzzard, kestrel (~5) | Sky-view broad wings |
-   | `gull` | gulls, terns (~5) | Long-winged side glide |
-   | `large-mammal` | roe deer, wild boar (~5) | Deer/boar proportions |
-   | `aquatic-mammal` | otter, water vole (~5) | Side view, waterline visible |
+   | `reptile` (lizard / turtle sub-modes via `--aspect`) | wall lizard, pond slider (~3) | ✅ |
+   | `fish` | carp, perch, rudd (~5+) | ✅ |
+   | `amphibian` | toads, frogs, newts (~7) | ✅ |
+   | `large-mammal` | roe deer, wild boar, fox, badger (~5–7) | ✅ |
+   | `aquatic-mammal` | otter, water vole, muskrat, coypu (~5) | ✅ |
+   | `water-bird` | ducks, coots, geese, swans, grebes (~25–30) | ✅ |
+   | `wading-bird` | herons, storks, spoonbill, cormorant, lapwing (~8–10) | ✅ |
+   | `raptor` | falcons, buzzards, sparrowhawks, owls (~10–12) | ✅ |
+   | `gull` | gulls + terns (~6–8) | ✅ |
+   | `mollusc` (snail / slug sub-modes via `--aspect`) | ~25 | ✅ |
+   | `dragonfly` | Odonata (~19) | ✅ |
+   | `mushroom` (cap on stipe) | Agaricus, Boletus, Coprinus, Leccinum (~25) | ✅ Distinct from existing `fungus` (brackets/lichens only) |
+   | `grasshopper` | Orthoptera (~14) | ✅ |
+   | `lagomorph` | rabbits, hares (~3) | ✅ |
 
-   Each new form is a ~30-line Python function modelled on the existing
-   ones in `.claude/skills/{tree,creature}-pixel-art/scripts/`.
+   **Deferred: `plant` form.** ~656 plant organisms is the single biggest
+   gap, but needs 7+ sub-modes (flower / grass / rosette / umbel / spike /
+   shrub / vine) to be honest — a whole batch on its own. Prioritized the
+   iconic-species forms above per user direction (2026-07-01). Plants land
+   in a later C3.D.1 continuation batch.
 
-2. **C3.D.2 — `/sprites` library QA page.** Hidden Next.js page (route
-   `/sprites`, not linked from nav) showing one sample sprite per form +
-   2–3 photo-vs-sprite comparisons. Used to lock the form quality bar
-   before bulk render. Each form section has a stable label / ID so
-   reviewer feedback can be precise (e.g. "the `bee` sprite stripes are
-   too thick"). Built before bulk render so we don't waste cycles
-   generating thousands of bad sprites.
+   Each new form is a ~30–80-line Python function in
+   `.claude/skills/creature-pixel-art/scripts/render_creature_sprite.py`.
+   Registered in the `FORMS` dict; argparse auto-picks up new names.
 
-3. **C3.D.3 — Bulk render pass.** Once forms are approved, run the
-   matching skill against every organism with a photo but no sprite.
+2. **C3.D.2 — `/sprites` library QA page. ✅ DONE (2026-07-01).** Hidden
+   `/sprites` route (unlinked from nav, `robots: noindex,nofollow`).
+   Layout: **sprite on the left, form metadata in the middle, real-organism
+   photos on the right** — so a reviewer sees at a glance which species get
+   grouped into each sprite form. Photos come from
+   `web/public/creature_photos/` (older curated set) plus a
+   `/organism_photos/[slug]` route handler that streams from
+   `data/organism_photos/` (kept outside `web/public/` so Turbopack doesn't
+   try to bundle 1.5k photos). Every form has a stable anchor id
+   (`#new-reptile`, `#creature-bee`) for precise feedback.
+
+3. **C3.D.3 — Bulk render pass.** Once C3.D.1 is fully complete
+   (including plants) and QA'd on the /sprites page, run the matching
+   skill against every organism with a photo but no sprite.
 
 4. **C3.D.4 — Per-organism admin QA tool** (the original C3.D scope).
    `/admin/sprites` paged review queue; approve / reject / regenerate
