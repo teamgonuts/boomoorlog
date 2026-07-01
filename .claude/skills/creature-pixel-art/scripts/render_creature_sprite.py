@@ -342,23 +342,81 @@ def form_bee(ramp, P):
 
 
 def form_spider(ramp, P):
-    """Round body + 8 legs radiating."""
+    """Top-down spider — small central body + 8 LONG, JOINTED legs. The
+    identity is the legs, so the body is deliberately small and the legs
+    are drawn with a clear knee bend (out-and-up, then down-and-out to
+    a foot dot) so it reads as a spider at a glance and not as a bug.
+
+    Layout per side (4 legs each side):
+      leg 1 — steep-up forward   (front pair, splayed forward)
+      leg 2 — mid-up forward
+      leg 3 — mid-up back
+      leg 4 — steep-up back      (back pair, splayed backward)
+    """
     g = _blank()
     s = P["size"]
-    r = max(3, int(round(4 * s)))
-    _fill_ellipse(g, CX, CY, r, r, ramp, span=r)
-    # 8 angled legs, 4 each side, going diagonally
-    leg_len = max(4, int(round(7 * s)))
-    angles_left = (-150, -170, 170, 150)
-    angles_right = (-30, -10, 10, 30)
-    for deg in (*angles_left, *angles_right):
-        rad = math.radians(deg)
-        for step in range(1, leg_len + 1):
-            xx = int(round(CX + math.cos(rad) * (r + step)))
-            yy = int(round(CY + math.sin(rad) * (r + step)))
-            if 0 <= xx < WP and 0 <= yy < HP and g[yy][xx] is None:
-                g[yy][xx] = ramp["outline"] if step > 1 else ramp["dark"]
-    return g, r + leg_len // 2
+    # Small round body — cephalothorax + abdomen suggested as one blob
+    body_r = max(2, int(round(3 * s)))
+    _fill_ellipse(g, CX, CY, body_r, body_r, ramp, span=body_r)
+    # tiny darker abdomen suggestion in the back half
+    for dx in range(-1, 2):
+        yy = CY + 1
+        xx = CX + dx
+        if 0 <= xx < WP and 0 <= yy < HP and g[yy][xx] is not None:
+            g[yy][xx] = ramp["dark"]
+
+    # Eight jointed legs. Each leg has:
+    #   shoulder attachment at body edge
+    #   femur: 3 pixels going OUT and UP (up = smaller y) to the knee
+    #   tibia: 3 pixels going OUT and DOWN back to foot level
+    #   foot: dot at the end
+    #
+    # This makes each leg 6 pixels of visible stroke — much longer than
+    # the earlier single-diagonal — with a clear knee bend that reads
+    # unambiguously as a spider leg.
+    def _draw_leg(shoulder_x, shoulder_y, dx_dir, dy_shoulder,
+                  femur_up_steps, knee_dx_offset, tibia_down_steps):
+        # Femur: from shoulder, out (dx_dir) and up
+        x, y = shoulder_x, shoulder_y + dy_shoulder
+        for k in range(1, femur_up_steps + 1):
+            x = shoulder_x + dx_dir * k
+            # subtle upward angle: y decreases every 2 steps
+            y = shoulder_y + dy_shoulder - (k // 2 if femur_up_steps >= 3 else k // 2)
+            if 0 <= x < WP and 0 <= y < HP and g[y][x] is None:
+                g[y][x] = ramp["dark"] if k == 1 else ramp["outline"]
+        knee_x, knee_y = x + dx_dir * knee_dx_offset, y
+        # Tibia: from knee, out further and back down
+        for k in range(1, tibia_down_steps + 1):
+            tx = knee_x + dx_dir * k
+            ty = knee_y + k // 2
+            if 0 <= tx < WP and 0 <= ty < HP and g[ty][tx] is None:
+                g[ty][tx] = ramp["outline"]
+            # foot dot at the end
+            if k == tibia_down_steps and 0 <= tx < WP and 0 <= ty + 1 < HP:
+                g[ty + 1][tx] = ramp["outline"]
+
+    # 4 legs per side. Vary shoulder y and femur length so the legs fan
+    # out at different angles and don't overlap.
+    left_shoulder = CX - body_r
+    right_shoulder = CX + body_r
+    # Params tuned for 32x24 grid at size=1.0
+    # (shoulder_dy, femur_len, knee_offset, tibia_len)
+    leg_specs = [
+        (-1, 3, 1, 3),   # front-most (most forward-up)
+        (0,  3, 1, 3),   # mid-front
+        (0,  3, 1, 3),   # mid-back
+        (1,  3, 1, 3),   # back-most
+    ]
+    # LEFT legs (dx_dir = -1)
+    for i, (dy_sh, femur, knee_off, tibia) in enumerate(leg_specs):
+        # slight y-offset per leg so they don't stack
+        y_off = dy_sh + (i - 1)
+        _draw_leg(left_shoulder, CY, -1, y_off, femur, knee_off, tibia)
+    # RIGHT legs (dx_dir = +1)
+    for i, (dy_sh, femur, knee_off, tibia) in enumerate(leg_specs):
+        y_off = dy_sh + (i - 1)
+        _draw_leg(right_shoulder, CY, +1, y_off, femur, knee_off, tibia)
+    return g, body_r + 8
 
 
 def form_bird(ramp, P):
@@ -519,59 +577,59 @@ def form_bat(ramp, P):
 
 
 def form_fungus(ramp, P):
-    """Organic blob with lobed edges — covers bracket fungi, lichens, mycorrhizae,
-    bacterial-nodule clusters. Two modes via --aspect:
-      aspect >= 1.0 → BRACKET fungus (half-dome jutting from a "trunk" on the
-        right edge, classic Fomitopsis silhouette)
-      aspect <  1.0 → LICHEN/cluster (irregular crusty patch, lobed everywhere)"""
+    """Right-side-up top-down view of a lichen / crust / bracket-cluster patch.
+    Both modes read as an irregular lobed growth seen from above (as it will
+    appear on the map) — no sideways trunk anchor.
+
+    Two modes via --aspect:
+      aspect >= 1.0 → BRACKET / SHELF cluster (thicker, more solid dome
+                       with a subtle "growth ring" arc across the middle).
+      aspect <  1.0 → LICHEN / CRUST (thin lobed patch with speckled
+                       texture and small holes to suggest crustose growth).
+    """
     g = _blank()
     s = P["size"]
     seed = P["seed"]
+    rx = max(7, int(round(10 * s)))
+    ry = max(5, int(round(7 * s)))
     if P["aspect"] >= 1.0:
-        # Bracket fungus: half-circle attached to trunk on the right edge.
-        # Trunk = ramp["outline"] vertical bar at the right side.
-        rx = max(8, int(round(11 * s)))
-        ry = max(5, int(round(7 * s)))
-        cy = CY + 1
-        anchor_x = WP - 4  # anchor on right side (the "trunk")
+        # BRACKET / SHELF cluster — right-side-up, thicker, more lobed at
+        # edges. Drawn as a lobed dome oval centred vertically.
         for y in range(HP):
             for x in range(WP):
-                if x > anchor_x:
-                    continue   # trunk side, stays empty/becomes trunk
-                if ((x - anchor_x) / rx) ** 2 + ((y - cy) / ry) ** 2 <= 1.0:
-                    g[y][x] = shade(x, anchor_x - rx // 2, rx, ramp)
-        # carve a curved underside lip (subtle dark band on the lower edge)
-        for x in range(WP):
-            for y in range(HP - 1, -1, -1):
-                if g[y][x] is not None:
-                    if y + 1 < HP and g[y + 1][x] is None:
-                        # bottom edge: paint with a brighter "lip"
-                        g[y][x] = ramp["light"]
-                    break
-        # trunk strip
+                dx, dy = x - CX, y - CY
+                ang = math.atan2(dy, dx)
+                wobble = 0.85 + 0.14 * math.sin(ang * 3 + seed)
+                if (dx / rx) ** 2 + (dy / ry) ** 2 <= wobble:
+                    g[y][x] = shade(x, CX, rx, ramp)
+        # subtle growth-ring arc across the middle (a slightly darker
+        # concentric line)
+        ring_r = max(3, int(round(5 * s)))
         for y in range(HP):
-            for tx in range(anchor_x + 1, min(WP, anchor_x + 4)):
-                g[y][tx] = ramp["outline"] if tx == anchor_x + 1 else ramp["dark"]
-        # speckled texture across the cap
+            for x in range(WP):
+                dx, dy = x - CX, y - CY
+                if g[y][x] is None:
+                    continue
+                d = math.hypot(dx, dy)
+                if abs(d - ring_r) < 0.6:
+                    g[y][x] = ramp["dark"]
+        # a few darker speckles
         for y in range(HP):
             for x in range(WP):
                 if g[y][x] in (ramp["mid"], ramp["dark"]):
-                    if _hash(x, y, seed + 23) < 0.06:
+                    if _hash(x, y, seed + 23) < 0.05:
                         g[y][x] = ramp["light"]
-        span = rx
     else:
-        # Lichen / cluster: irregular lobed patch centered, no trunk
-        rx = max(7, int(round(10 * s)))
-        ry = max(5, int(round(7 * s)))
+        # LICHEN / CRUST — right-side-up irregular lobed patch, more
+        # wobble around the edge, plus internal texture holes/spots.
         for y in range(HP):
             for x in range(WP):
-                # lobed ellipse: radius wobbles with angle
                 dx, dy = x - CX, y - CY
                 ang = math.atan2(dy, dx)
                 wobble = 0.78 + 0.30 * math.sin(ang * 4 + seed)
                 if (dx / rx) ** 2 + (dy / ry) ** 2 <= wobble:
                     g[y][x] = shade(x, CX, rx, ramp)
-        # carve a few internal gaps for crusty texture
+        # crusty texture — darker specks + small holes
         for y in range(HP):
             for x in range(WP):
                 if g[y][x] is None:
@@ -579,9 +637,8 @@ def form_fungus(ramp, P):
                 if _hash(x, y, seed + 91) < 0.10:
                     g[y][x] = ramp["dark"]
                 elif _hash(x, y, seed + 137) < 0.04:
-                    g[y][x] = None  # tiny holes
-        span = rx
-    return g, span
+                    g[y][x] = None  # tiny holes suggesting crustose lichen
+    return g, rx
 
 
 def form_reptile(ramp, P):
@@ -1482,6 +1539,61 @@ def form_lagomorph(ramp, P):
     return g, body_rx + 2
 
 
+def form_rodent(ramp, P):
+    """Side-view small rodent — mouse / rat / vole. Distinct from `mammal`
+    (squirrel-style) because the tail is LONG, THIN, and NON-BUSHY — the
+    classic rat/mouse tail is the identity. Also has visibly big ears
+    (mice + rats have prominent round ears vs. squirrel's tufted ones).
+    """
+    g = _blank()
+    s = P["size"]
+    # SMALL body — smaller than the squirrel-style `mammal` form
+    body_rx = max(4, int(round(5 * s)))
+    body_ry = max(2, int(round(3 * s)))
+    body_cx = CX - 3
+    body_cy = CY + 3
+    _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
+    # head — small oval on the right, slightly lifted
+    head_r = max(2, int(round(2 * s)))
+    head_cx = body_cx + body_rx
+    head_cy = body_cy - 1
+    _fill_ellipse(g, head_cx, head_cy, head_r + 1, head_r, ramp, span=head_r)
+    # BIG ROUND EARS — mice + rats have very visible round ears
+    for sign in (-1, +1):
+        ear_x = head_cx + sign
+        ear_y = head_cy - head_r
+        if 0 <= ear_x < WP and 0 <= ear_y < HP:
+            g[ear_y][ear_x] = ramp["outline"]
+        # ear top pixel
+        if 0 <= ear_x < WP and 0 <= ear_y - 1 < HP:
+            g[ear_y - 1][ear_x] = ramp["dark"]
+    # eye
+    if 0 <= head_cx + 1 < WP and 0 <= head_cy < HP:
+        g[head_cy][head_cx + 1] = ramp["outline"]
+    # nose (small dot forward of head)
+    if 0 <= head_cx + head_r + 1 < WP and 0 <= head_cy + 1 < HP:
+        g[head_cy + 1][head_cx + head_r + 1] = ramp["outline"]
+    # 2 short legs underneath
+    foot_y = body_cy + body_ry
+    for dx_off in (-body_rx + 2, body_rx - 3):
+        for k in range(1, 2):
+            xx, yy = body_cx + dx_off, foot_y + k - 1
+            if 0 <= xx < WP and 0 <= yy < HP:
+                g[yy][xx] = ramp["outline"]
+    # LONG THIN NON-BUSHY TAIL — the identity. Trails off the back-left,
+    # curves slightly, drawn as a single-pixel stroke to convey "thin".
+    tail_len = max(9, int(round(12 * s)))
+    for k in range(1, tail_len + 1):
+        # subtle curl: goes back-left, drooping down slightly, then curving up
+        xx = body_cx - body_rx - k + 1
+        # parabolic droop
+        t = k / tail_len
+        yy = body_cy + int(round(3 * s * (2 * t - t * t))) - 1
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["outline"] if k > 2 else ramp["dark"]
+    return g, body_rx + 3
+
+
 FORMS = {
     "bug": form_bug,
     "beetle": form_beetle,
@@ -1508,6 +1620,8 @@ FORMS = {
     "mushroom": form_mushroom,
     "grasshopper": form_grasshopper,
     "lagomorph": form_lagomorph,
+    # New forms (2026-07-01) — C3.D.1 feedback batch 2
+    "rodent": form_rodent,
 }
 
 

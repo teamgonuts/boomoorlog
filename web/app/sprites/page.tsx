@@ -65,24 +65,30 @@ function photoUrl(slug: string): string | null {
 // --------------------------------------------------------------------------- //
 const NEW_FORMS: FormEntry[] = [
   {
-    id: "new-reptile",
-    label: "reptile",
-    sprites: [
-      { src: "/sprites/library/new/reptile-lizard.png", caption: "lizard (--aspect ≥1)" },
-      { src: "/sprites/library/new/reptile-turtle.png", caption: "turtle (--aspect <1)" },
-    ],
-    count: "~3 organisms today (will grow)",
-    desc: "Two sub-modes via --aspect: ≥1 lizard (splayed legs + tail), <1 turtle (dome shell in accent colour).",
+    id: "new-lizard",
+    label: "lizard",
+    sprites: [{ src: "/sprites/library/new/reptile-lizard.png" }],
+    count: "~2 organisms today (will grow)",
+    desc: "Top-down elongated body, 4 splayed legs, long tail. Rendered via form=reptile with --aspect ≥ 1.",
+    examples: [],
+    photoNote: "No lizard photos on disk yet — Podarcis, Zootoca, Lacerta, Anguis are all in the DB but weren't captured by the photo backfill. Added to the fish/reptile/lagomorph photo-backfill follow-up.",
+  },
+  {
+    id: "new-turtle",
+    label: "turtle",
+    sprites: [{ src: "/sprites/library/new/reptile-turtle.png" }],
+    count: "~1 organism today (will grow)",
+    desc: "Top-down shell dome in a contrasting accent colour + 4 leg nubs. Rendered via form=reptile with --aspect < 1.",
     examples: ["trachemys-scripta-scripta"],
-    subModes: ["lizard (Podarcis, Zootoca, Lacerta, Anguis)", "turtle (Trachemys, Emys)"],
   },
   {
     id: "new-fish",
     label: "fish",
     sprites: [{ src: "/sprites/library/new/fish.png" }],
-    count: "~5+ organisms (photos pending C5 backfill)",
-    desc: "Side-view fusiform body + fin (carp, perch, rudd, pike, bream, eel).",
+    count: "6 organisms in DB (no photos on disk — see follow-up)",
+    desc: "Side-view fusiform body + fin (Cyprinus, Scardinius, Squalius, Leucaspius, Oncorhynchus, plus Cypriniformes at order rank).",
     examples: [],
+    photoNote: "Fish species are labeled in the DB but the recent photo backfill (internal pipeline name `c5_*`, unrelated to roadmap C5) returned no captures for any of them. Tracked as a fish-photo follow-up — should not block the alive-map / creature-movement work.",
   },
   {
     id: "new-amphibian",
@@ -141,16 +147,20 @@ const NEW_FORMS: FormEntry[] = [
     examples: ["larus-fuscus", "larus-argentatus", "chroicocephalus-ridibundus", "sterna-hirundo"],
   },
   {
-    id: "new-mollusc",
-    label: "mollusc",
-    sprites: [
-      { src: "/sprites/library/new/mollusc-snail.png", caption: "snail (--aspect <1)" },
-      { src: "/sprites/library/new/mollusc-slug.png", caption: "slug (--aspect ≥1)" },
-    ],
-    count: "~25 organisms",
-    desc: "Two sub-modes via --aspect: <1 snail (eyestalks + accent-colour spiral shell), ≥1 slug (elongated, no shell, eyestalks).",
-    examples: ["helix-pomatia", "cepaea-spec", "arion-rufus-vulgaris", "limax-maximus", "deroceras-reticulatum", "oxychilus-draparnaudi", "trochulus-hispidus"],
-    subModes: ["snail — shell visible", "slug — elongated, no shell"],
+    id: "new-snail",
+    label: "snail",
+    sprites: [{ src: "/sprites/library/new/mollusc-snail.png" }],
+    count: "~15 organisms",
+    desc: "Small foot below + big spiral shell in an accent colour above + 2 tall eyestalks with eye-dot tips. Rendered via form=mollusc with --aspect < 1.",
+    examples: ["helix-pomatia", "cepaea-spec", "oxychilus-draparnaudi", "trochulus-hispidus"],
+  },
+  {
+    id: "new-slug",
+    label: "slug",
+    sprites: [{ src: "/sprites/library/new/mollusc-slug.png" }],
+    count: "~10 organisms",
+    desc: "Elongated fleshy body, no shell, 2 tall eyestalks with eye-dot tips. Rendered via form=mollusc with --aspect ≥ 1.",
+    examples: ["arion-rufus-vulgaris", "limax-maximus", "deroceras-reticulatum"],
   },
   {
     id: "new-dragonfly",
@@ -183,6 +193,14 @@ const NEW_FORMS: FormEntry[] = [
     count: "~3 organisms",
     desc: "Rabbit / hare — mammal body plus two tall separated ears (Oryctolagus, Lepus).",
     examples: ["lepus"],
+  },
+  {
+    id: "new-rodent",
+    label: "rodent",
+    sprites: [{ src: "/sprites/library/new/rodent.png" }],
+    count: "~10+ organisms (Mus, Rattus, Apodemus, Microtus, Myodes, Muscardinus)",
+    desc: "Side-view small rodent — the identity is the LONG THIN NON-BUSHY tail plus prominent round ears. Distinct from the existing `mammal` form which is squirrel-shaped (bushy tail).",
+    examples: ["muscardinus-avellanarius"],
   },
 ];
 
@@ -266,10 +284,10 @@ const CREATURE_FORMS: FormEntry[] = [
   {
     id: "creature-fungus",
     label: "fungus",
-    sprites: [{ src: "/creature_sprites/fomitopsis-betulina.png" }],
-    count: "many (brackets, crust, lichen)",
-    desc: "Bracket / lichen / mycorrhizal cluster. Two modes via --aspect: ≥1 bracket, <1 crust/lichen.",
-    examples: ["fomitopsis-betulina"],
+    sprites: [{ src: "/sprites/library/new/fungus-lichen.png" }],
+    count: "many (lichens, crust, brackets, mycorrhizae)",
+    desc: "Right-side-up (top-down) lobed patch — represents lichens, crusts, and shelf/bracket clusters as they appear on the map. Two modes via --aspect: ≥1 bracket cluster (with growth ring), <1 crust/lichen (lobed + speckled + tiny holes). Distinct from the `mushroom` form (cap-on-stipe agarics/boletes).",
+    examples: ["xanthoria-parietina", "xanthoria-calcicola", "physcia-adscendens", "physcia-caesia", "flavoparmelia-soredians", "ramalina-farinacea", "cladonia-coniocraea", "candelariella-vitellina", "lepraria-incana"],
   },
 ];
 

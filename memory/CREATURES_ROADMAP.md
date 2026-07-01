@@ -210,6 +210,34 @@ rather than a "trust the AI" leap.
    iconic-species forms above per user direction (2026-07-01). Plants land
    in a later C3.D.1 continuation batch.
 
+   **Feedback batch 2 (2026-07-01) — additional forms + form fixes:**
+   - `rodent` form added — small body + big round ears + LONG THIN
+     non-bushy tail. Covers Mus, Rattus, Apodemus, Microtus, Myodes,
+     Muscardinus. Split off from `mammal` (which stays squirrel-shaped
+     with a bushy tail).
+   - `spider` legs redrawn as long jointed strokes with a clear knee
+     bend + foot dot, so spider reads as spider not as a bug.
+   - `fungus` form redrawn RIGHT-SIDE UP (top-down lobed patch) instead
+     of the sideways bracket-on-trunk view. Both sub-modes now read as
+     lichen / crust / shelf clusters seen from above.
+   - Turtle and snail shells now use a CONTRASTING accent-hue ramp
+     (`build_ramp(hue + offset, ...)`) so the shell visually separates
+     from the body.
+   - Reptile switched from side-view to TOP-DOWN with 4 splayed legs.
+   - Gull switched to the iconic M-shape spread-wings silhouette so it
+     reads at any saturation.
+   - Bee proportions tightened (abdomen shrunk to match thorax).
+
+   **Follow-up — fish photo backfill (2026-07-01).** The recent photo
+   backfill (internal pipeline name `c5_*`, unrelated to roadmap C5)
+   returned no captures for any of the 6 fish species labeled in the
+   DB (`cyprinus-carpio`, `leucaspius-delineatus`,
+   `oncorhynchus-mykiss`, `scardinius-erythrophthalmus`,
+   `squalius-cephalus`, `cypriniformes`). Same gap for lizards
+   (Podarcis / Zootoca / Lacerta / Anguis) and lagomorphs
+   (Oryctolagus / Lepus). Track as a targeted photo-backfill pass —
+   should NOT block the alive-map / creature-movement work in Phase 2.
+
    Each new form is a ~30–80-line Python function in
    `.claude/skills/creature-pixel-art/scripts/render_creature_sprite.py`.
    Registered in the `FORMS` dict; argparse auto-picks up new names.
