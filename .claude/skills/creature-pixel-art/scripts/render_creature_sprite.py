@@ -727,37 +727,30 @@ def form_reptile(ramp, P):
         body_rx = shell_r + 1
         body_ry = shell_r // 2
         _fill_ellipse(g, cx, cy + 1, body_rx, body_ry, ramp, span=body_rx)
-        # 4 legs poking out at the diagonals — drawn as 2x2 blocks so they
-        # visibly stick out from under the shell (was: 1-pixel nubs, too subtle)
-        for (dx_off, dy_off) in ((-shell_r, +1), (+shell_r, +1),
-                                  (-shell_r + 1, -2), (+shell_r - 1, -2)):
+        # 4 legs poking out at 4 CORNERS of the shell (not middle), so the
+        # head + tail have clear rows to project out from in the middle.
+        # Top-of-shell legs go UP-and-OUT; bottom legs go DOWN-and-OUT.
+        leg_specs = [
+            # (dx_from_center, dy_from_center, dx_direction, dy_direction)
+            (-shell_r + 1, -shell_r + 2, -1, -1),   # back-top    ↖
+            (+shell_r - 1, -shell_r + 2, +1, -1),   # front-top   ↗
+            (-shell_r + 1, +shell_r - 2, -1, +1),   # back-bottom ↙
+            (+shell_r - 1, +shell_r - 2, +1, +1),   # front-bottom↘
+        ]
+        for (dx_off, dy_off, dx_dir, dy_dir) in leg_specs:
             lx = cx + dx_off
             ly = cy + dy_off
-            sign = 1 if dx_off > 0 else -1
-            # 2-pixel-wide leg extending out
+            # 2-pixel leg extending diagonally out
             for k in range(0, 3):
-                xx = lx + sign * k
-                for dy in (0, 1):
-                    yy = ly + dy
-                    if 0 <= xx < WP and 0 <= yy < HP:
-                        if k == 2 or dy == 1:
-                            g[yy][xx] = ramp["outline"]
-                        else:
-                            g[yy][xx] = ramp["dark"]
-        # HEAD — poking out on the right
-        head_cx = cx + shell_r
-        head_cy = cy
-        for dx in (0, 1, 2):
-            xx = head_cx + dx
-            if 0 <= xx < WP and 0 <= head_cy < HP:
-                g[head_cy][xx] = ramp["mid"] if dx == 0 else ramp["dark"]
-        # eye
-        if 0 <= head_cx + 2 < WP and 0 <= head_cy - 1 < HP:
-            g[head_cy - 1][head_cx + 2] = ramp["outline"]
-        # TAIL nub on the left
-        if 0 <= cx - shell_r - 1 < WP and 0 <= cy < HP:
-            g[cy][cx - shell_r - 1] = ramp["outline"]
-        # SHELL — round dome in shell_ramp colours, overwrites body top
+                xx = lx + dx_dir * k
+                yy = ly + dy_dir * (k // 2 + 1) if k > 0 else ly
+                if 0 <= xx < WP and 0 <= yy < HP:
+                    if k == 2:
+                        g[yy][xx] = ramp["outline"]
+                    else:
+                        g[yy][xx] = ramp["dark"]
+        # SHELL — round dome in shell_ramp colours (drawn BEFORE head/tail
+        # so those aren't overwritten by the shell fill).
         for y in range(HP):
             for x in range(WP):
                 dist2 = ((x - cx) / shell_r) ** 2 + ((y - cy) / shell_r) ** 2
@@ -767,7 +760,6 @@ def form_reptile(ramp, P):
                     else:
                         g[y][x] = shade(x, cx, shell_r, shell_ramp)
         # SCUTE PATTERN — hexagonal-ish plates on the shell
-        # Draw 5-6 dark spots to suggest scutes
         seed = P.get("seed", 0)
         scute_positions = [
             (0, -1), (-2, 0), (+2, 0), (0, +1), (-3, -2), (+3, -2),
@@ -782,7 +774,40 @@ def form_reptile(ramp, P):
         hi_y = cy - shell_r // 2
         if 0 <= hi_x < WP and 0 <= hi_y < HP and g[hi_y][hi_x] is not None:
             g[hi_y][hi_x] = shell_ramp["light"]
-        return g, shell_r + 2
+
+        # HEAD — poking OUT of the right side of the shell, in a 3px-wide
+        # 3px-tall block so it clearly reads as a head from a distance.
+        # Drawn AFTER the shell so the shell doesn't cover it. The middle
+        # row overlaps with the shell rim so it feels attached, not floating.
+        neck_x = cx + shell_r
+        head_cx = cx + shell_r + 1
+        head_cy = cy
+        # Neck (attaches head to shell)
+        for dy in (-1, 0, 1):
+            if 0 <= neck_x < WP and 0 <= head_cy + dy < HP:
+                g[head_cy + dy][neck_x] = ramp["dark"]
+        # Head block (3x3)
+        for dx in range(0, 3):
+            for dy in (-1, 0, 1):
+                xx = head_cx + dx
+                yy = head_cy + dy
+                if 0 <= xx < WP and 0 <= yy < HP:
+                    is_edge = (dx == 2 or dy == -1 or dy == 1)
+                    g[yy][xx] = ramp["outline"] if is_edge else ramp["mid"]
+        # Eye — dark dot near the front-top of the head
+        if 0 <= head_cx + 1 < WP and 0 <= head_cy - 1 < HP:
+            g[head_cy - 1][head_cx + 1] = ramp["outline"]
+
+        # TAIL — small pointed nub poking out of the LEFT side of the shell,
+        # drawn AFTER the shell. Two dark pixels tapering to a single tip.
+        tail_x0 = cx - shell_r
+        if 0 <= tail_x0 < WP and 0 <= cy < HP:
+            g[cy][tail_x0] = ramp["dark"]
+        if 0 <= tail_x0 - 1 < WP and 0 <= cy < HP:
+            g[cy][tail_x0 - 1] = ramp["dark"]
+        if 0 <= tail_x0 - 2 < WP and 0 <= cy < HP:
+            g[cy][tail_x0 - 2] = ramp["outline"]
+        return g, shell_r + 3
 
 
 def form_fish(ramp, P):
