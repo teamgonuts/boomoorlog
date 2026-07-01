@@ -1,14 +1,21 @@
 slug,form,hue,aspect,sat,tail,head_stripe,status,note
 abia-nitens,bee,100.9,1.00,55,thin,False,ok,
 abraxas-grossulariata,moth,104.7,1.00,55,thin,False,ok,
+acanthis-cabaret,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+acanthosoma-haemorrhoidale,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 acanthus-hungaricus,,,,,,,no_form,plantae/magnoliopsida/lamiales
 acanthus-spec,,,,,,,no_form,-/-/-
+acari,,,,,,,no_form,
+accipiter-nisus,raptor,,1.00,40,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 acentria-ephemerella,moth,27.4,1.00,55,thin,False,ok,
 acer-negundo,,,,,,,no_form,plantae/magnoliopsida/sapindales
 acer-platanoides,,,,,,,no_form,plantae/magnoliopsida/sapindales
 acer-pseudoplatanus-f-aureovariegatum,,,,,,,no_form,plantae/magnoliopsida/sapindales
 acer-saccharinum,,,,,,,no_form,plantae/magnoliopsida/sapindales
+aceria,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+aceria-celtis,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 aceria-pseudoplatani,,,,,,,no_taxonomy,
+aceria-pseudoplatini,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 achillea-millefolium-cultivar,,,,,,,no_form,plantae/magnoliopsida/asterales
 achillea-ptarmica,,,,,,,no_form,plantae/magnoliopsida/asterales
 acleris-bergmanniana,moth,101.3,1.00,55,thin,False,ok,
@@ -21,13 +28,20 @@ acleris-variegana,moth,32.2,1.00,55,thin,False,ok,
 acrobasis-advenella,moth,18.7,1.00,55,thin,False,ok,
 acrobasis-repandana,moth,26.8,1.00,55,thin,False,ok,
 acrocephalus-schoenobaenus,bird,70.3,1.00,55,thin,False,ok,
+acrocephalus-scirpaceus,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 acrolepiopsis-assectella,moth,96.5,1.00,55,thin,False,ok,
+acronicta-aceris,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+acronicta-alni,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 acronicta-leporina,moth,55.8,1.00,55,thin,False,ok,
 acronicta-psi,,,,,,,no_taxonomy,
 acronicta-rumicis,moth,58.4,1.00,55,thin,False,ok,
+aculus-mosoniensis,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 aculus-tetanothrix,spider,0.0,1.00,35,thin,False,ok,
 adaina-microdactyla,moth,22.7,1.00,55,thin,False,ok,
+adalia-bipunctata,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 adalia-decempunctata,beetle,30.0,1.00,55,thin,False,ok,
+adelges-abietis,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+adelges-laricis,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 adelphocoris-lineolatus,bug,92.6,1.00,45,thin,False,ok,
 adiantum-venustum,,,,,,,no_form,plantae/polypodiopsida/polypodiales
 adrastus-pallens,beetle,76.5,1.00,55,thin,False,ok,
@@ -40,7 +54,9 @@ aeshna-isoceles,dragonfly,36.7,1.00,55,thin,False,ok,
 aeshnidae-indet,dragonfly,41.1,1.00,55,thin,False,ok,
 agaricales,mushroom,23.4,1.00,35,thin,False,ok,
 agaricus-augustus,mushroom,36.0,1.00,35,thin,False,ok,
+agaricus-bitorquis,mushroom,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 agaricus-spec,mushroom,26.7,1.00,35,thin,False,ok,
+agelastica-alni,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 agelena-labyrinthica,spider,25.7,1.00,35,thin,False,ok,
 aglais-io,moth,73.2,1.00,55,thin,False,ok,
 aglais-urticae,moth,18.9,1.00,55,thin,False,ok,
@@ -50,6 +66,7 @@ agonopterix-heracliana-ciliella,moth,39.4,1.00,55,thin,False,ok,
 agonopterix-nervosa,moth,107.1,1.00,55,thin,False,ok,
 agonopterix-propinquella,moth,25.5,1.00,55,thin,False,ok,
 agraylea-spec,bug,32.7,1.00,40,thin,False,ok,
+agrilus-difficilis,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 agrilus-spec,,,,,,,no_form,-/-/-
 agrimonia-procera,,,,,,,no_form,plantae/magnoliopsida/rosales
 agrimonia-spec,,,,,,,no_form,plantae/magnoliopsida/rosales
@@ -58,11 +75,13 @@ agriphila-geniculea,moth,27.3,1.00,55,thin,False,ok,
 agriphila-inquinatella,moth,98.2,1.00,55,thin,False,ok,
 agrochola-lunosa,moth,68.0,1.00,55,thin,False,ok,
 agrocybe-dura,mushroom,64.2,1.00,35,thin,False,ok,
+agrocybe-praecox,mushroom,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 agromyza-flaviceps,bee,110.0,1.00,55,thin,False,ok,
 agromyza-reptans-pseudoreptans,bee,76.2,1.00,55,thin,False,ok,
 agrostemma-githago,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 agrostis-spec,,,,,,,no_form,plantae/liliopsida/poales
 agrotis-clavis,moth,54.7,1.00,55,thin,False,ok,
+agrotis-exclamationis,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 agrotis-segetum,moth,53.1,1.00,55,thin,False,ok,
 agrypnus-murinus,beetle,91.2,1.00,55,thin,False,ok,
 ailanthus-altissima,,,,,,,no_form,plantae/magnoliopsida/sapindales
@@ -71,9 +90,11 @@ alauda-arvensis,bird,50.0,1.00,55,thin,False,ok,
 alcedo-atthis,bird,37.1,1.00,55,thin,False,ok,
 alcis-repandata,moth,20.5,1.00,55,thin,False,ok,
 aleiodes-spec,bee,24.0,1.00,55,thin,False,ok,
+aleurocanthus-spiniferus,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 alisma-plantago-aquatica,,,,,,,no_form,plantae/liliopsida/alismatales
 alkekengi-officinarum,,,,,,,no_form,plantae/magnoliopsida/solanales
 allium-spec,,,,,,,no_form,plantae/liliopsida/asparagales
+alopochen-aegyptiaca,water-bird,,1.00,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 althaea-officinalis,,,,,,,no_form,plantae/magnoliopsida/malvales
 altica-spec,beetle,207.5,1.00,55,thin,False,ok,
 amara-apricaria,beetle,5.2,1.00,55,thin,False,ok,
@@ -88,6 +109,7 @@ anacampsis-blattariella,moth,0.0,1.00,55,thin,False,ok,
 anania-coronata,moth,28.5,1.00,55,thin,False,ok,
 anania-crocealis,moth,41.3,1.00,55,thin,False,ok,
 anarsia-innoxiella,moth,85.7,1.00,55,thin,False,ok,
+anas-platyrhynchos,water-bird,,1.00,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 anas-platyrhynchos-f-domesticus,water-bird,57.4,1.00,30,thin,False,ok,
 anax-imperator,dragonfly,66.8,1.00,55,thin,False,ok,
 anax-parthenope,dragonfly,60.0,1.00,55,thin,False,ok,
@@ -96,6 +118,7 @@ ancistrocerus-spec,,,,,,,no_form,animalia/-/-
 ancistrocerus-trifasciatus,bee,65.9,1.00,55,thin,False,ok,
 ancylis-achatana,moth,31.2,1.00,55,thin,False,ok,
 ancylis-unguicella,moth,73.8,1.00,55,thin,False,ok,
+andrena,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 andrena-dorsata,bee,18.9,1.00,55,thin,False,ok,
 andrena-flavipes,bee,95.3,1.00,55,thin,False,ok,
 andrena-minutula-gr,bee,37.1,1.00,55,thin,False,ok,
@@ -117,30 +140,61 @@ anthidium-manicatum,bee,72.3,1.00,55,thin,False,ok,
 anthocomus-fasciatus,beetle,65.4,1.00,55,thin,False,ok,
 anthomyia-procellaris,bee,79.1,1.00,55,thin,False,ok,
 anthomyiidae-indet,bee,30.0,1.00,55,thin,False,ok,
+anthonomus-pomorum,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 anthonomus-rubi,beetle,77.4,1.00,55,thin,False,ok,
 anthophila-fabriciana,moth,91.3,1.00,55,thin,False,ok,
 anthophila-indet,moth,75.8,1.00,55,thin,False,ok,
+anthophora,,,,,,,no_form,
 anthrenus-pimpinellae,beetle,50.0,1.00,55,thin,False,ok,
 anthyllis-vulneraria,,,,,,,no_form,plantae/magnoliopsida/fabales
 antirrhinum-majus,,,,,,,no_form,plantae/magnoliopsida/lamiales
 anyphaena-accentuata,spider,26.7,1.00,35,thin,False,ok,
 apamea-lithoxylaea,moth,25.2,1.00,55,thin,False,ok,
 apamea-monoglypha,moth,30.6,1.00,55,thin,False,ok,
+apatura-iris,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 aphididae,,,,,,,no_taxonomy,
+aphidoidea,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+aphidoidea-esp-corylobium-avellanae-myzocallis-coryli,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+aphidoidea-esp-dysaphis-crataegi-ovatus-crataegarius,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+aphidoidea-generalist-greenfly,,,,,,,no_form,
+aphidoidea-incl-anoecia-corni,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+aphidoidea-including-aphis-gossypii,,,,,,,no_form,
+aphidoidea-occasional,,,,,,,no_form,
+aphis,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 aphis-jacobaeae,bug,68.4,1.00,45,thin,False,ok,
 aphis-sambuci,bug,53.6,1.00,45,thin,False,ok,
 aphomia-sociella,moth,23.6,1.00,55,thin,False,ok,
 aphrodes-spec,bug,35.0,1.00,45,thin,False,ok,
+aphrophora-alni,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+apidae,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+apidae-andrenidae,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+apiognomonia-veneta,fungus,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+apis,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+apis-bombus,,,,,,,no_form,
+apis-mellifera,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+apis-mellifera-andrena-spp,,,,,,,no_form,
 apium-graveolens,,,,,,,no_form,plantae/magnoliopsida/apiales
 aplocera-spec,,,,,,,no_form,-/-/-
+apodemus-myodes-sciurus,,,,,,,no_form,
+apodemus-sylvaticus,rodent,,1.00,40,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+apodemus-sylvaticus-myodes-glareolus,rodent,,1.00,40,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+apodemus-sylvaticus-myodes-glareolus-sciurus-vulgaris,rodent,,1.00,40,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+apoidea,,,,,,,no_form,
 apolygus-lucorum,bug,92.8,1.00,45,thin,False,ok,
 apomyelois-bistriatella,moth,30.0,1.00,55,thin,False,ok,
+appendiseta-robiniae,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 aproceros-leucopoda,bee,76.1,1.00,55,thin,False,ok,
 apterogenum-ypsillon,moth,62.8,1.00,55,thin,False,ok,
+apus-apus,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 aquilegia-vulgaris,,,,,,,no_form,plantae/magnoliopsida/ranunculales
 aquilegia-vulgaris-cultivar,,,,,,,no_form,plantae/magnoliopsida/ranunculales
+arachnida,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+arachnida-isopoda,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 aradus-brenskei,bug,23.6,1.00,45,thin,False,ok,
+araneae,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 araneae-indet,spider,200.0,1.00,35,thin,False,ok,
+araneidae,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+araneus-diadematus,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 araneus-spec,spider,67.5,1.00,35,thin,False,ok,
 araniella-spec,spider,32.4,1.00,35,thin,False,ok,
 araschnia-levana,moth,38.7,1.00,55,thin,False,ok,
@@ -152,14 +206,18 @@ archips-rosana,moth,98.8,1.00,55,thin,False,ok,
 archips-xylosteana,moth,29.7,1.00,55,thin,False,ok,
 arctium-lappa,,,,,,,no_form,plantae/magnoliopsida/asterales
 arctium-spec,,,,,,,no_form,plantae/magnoliopsida/asterales
+ardea-cinerea,wading-bird,,1.00,15,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 arenaria-leptoclados-arenaria-serpyllifolia,,,,,,,no_form,-/-/-
 arenostola-phragmitidis,moth,40.9,1.00,55,thin,False,ok,
 arge-cyanocrocea,bee,79.0,1.00,55,thin,False,ok,
 arge-pagana,bee,55.4,1.00,55,thin,False,ok,
 argogorytes-mystaceus,bee,143.6,1.00,55,thin,False,ok,
+argynnis,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 argynnis-paphia,moth,35.1,1.00,55,thin,False,ok,
+argyresthia,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 argyresthia-albistria,moth,34.0,1.00,55,thin,False,ok,
 argyresthia-brockeella,moth,80.2,1.00,55,thin,False,ok,
+argyresthia-conjugella,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 argyresthia-goedartella,moth,88.8,1.00,55,thin,False,ok,
 argyresthia-pygmaeella,moth,42.4,1.00,55,thin,False,ok,
 argyresthia-retinella,moth,84.3,1.00,55,thin,False,ok,
@@ -167,6 +225,7 @@ argyrotaenia-ljungiana,moth,78.3,1.00,55,thin,False,ok,
 arianta-arbustorum,mollusc,35.4,0.90,55,thin,False,ok,
 aricia-agestis,moth,86.0,1.00,55,thin,False,ok,
 arion,mollusc,29.5,1.20,55,thin,False,ok,
+arion-rufus-vulgaris,mollusc,,1.20,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 arion-vulgaris,mollusc,60.0,1.20,55,thin,False,ok,
 aristolochia-clematitis,,,,,,,no_form,plantae/magnoliopsida/piperales
 aristotelia-ericinella,moth,67.6,1.00,55,thin,False,ok,
@@ -178,11 +237,13 @@ artemisia-vulgaris,,,,,,,no_form,plantae/magnoliopsida/asterales
 arum-italicum,,,,,,,no_form,plantae/liliopsida/alismatales
 arum-spec,,,,,,,no_form,-/-/-
 ascobolus-brantophilus,fungus,57.9,1.00,35,thin,False,ok,
+asio-otus,raptor,,1.00,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 asparagus-officinalis,,,,,,,no_form,plantae/liliopsida/asparagales
 asplenium-ruta-muraria,,,,,,,no_form,plantae/polypodiopsida/polypodiales
 asplenium-scolopendrium,,,,,,,no_form,plantae/polypodiopsida/polypodiales
 assara-terebrella,moth,84.0,1.00,55,thin,False,ok,
 astacidae-cambaridae-parastacidae-indet,,,,,,,no_form,animalia/malacostraca/decapoda
+asterocampa-celtis,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 astrantia-major,,,,,,,no_form,plantae/magnoliopsida/apiales
 astur-gentilis,raptor,0.0,1.00,40,thin,False,ok,
 athalia-rosae,bee,97.7,1.00,55,thin,False,ok,
@@ -190,18 +251,22 @@ athalia-spec,bee,65.7,1.00,55,thin,False,ok,
 athene-noctua,raptor,38.6,1.00,30,thin,False,ok,
 athyrium-filix-femina,,,,,,,no_form,plantae/polypodiopsida/polypodiales
 atractotomus-mali,bug,20.0,1.00,45,thin,False,ok,
+atteva-aurea,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 atyaephyra-desmarestii,,,,,,,no_form,animalia/malacostraca/decapoda
 auchenorrhyncha-indet,,,,,,,no_form,-/-/-
 aulagromyza-hendeliana,bee,64.8,1.00,55,thin,False,ok,
 auplopus-carbonarius,bee,32.3,1.00,55,thin,False,ok,
 auricularia-mesenterica,fungus,101.1,1.00,35,thin,False,ok,
+autographa-gamma,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 avena-barbata,,,,,,,no_form,plantae/liliopsida/poales
 avena-fatua,,,,,,,no_form,plantae/liliopsida/poales
 aves-indet-feather,bird,101.1,1.00,55,thin,False,ok,
 axylia-putris,moth,45.9,1.00,55,thin,False,ok,
+aythya-ferina,water-bird,,1.00,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 baccha-elongata,bee,79.6,1.00,55,thin,False,ok,
 ballota-nigra,,,,,,,no_form,plantae/magnoliopsida/lamiales
 ballus-chalybeius,spider,206.8,1.00,35,thin,False,ok,
+barbastella-barbastellus,bat,,1.00,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 bathyphantes-gracilis,spider,55.2,1.00,35,thin,False,ok,
 batia-lunaris,moth,24.3,1.00,55,thin,False,ok,
 beosus-maritimus,bug,18.0,1.00,45,thin,False,ok,
@@ -217,11 +282,17 @@ biston-betularia,,,,,,,no_taxonomy,
 bjerkandera-adusta,fungus,330.0,1.00,35,thin,False,ok,
 blackstonia-perfoliata,,,,,,,no_form,plantae/magnoliopsida/gentianales
 bledius-spec,beetle,9.8,1.00,55,thin,False,ok,
+blepharidopterus-chlorionis,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 blepharipa-pratensis,bee,86.8,1.00,55,thin,False,ok,
 bolboschoenus-laticarpus,,,,,,,no_form,plantae/liliopsida/poales
 bolboschoenus-maritimus,,,,,,,no_form,plantae/liliopsida/poales
 boletus-erythropus,mushroom,29.6,1.00,35,thin,False,ok,
 boletus-luridus,mushroom,36.4,1.00,35,thin,False,ok,
+bombus,,,,,,,no_form,
+bombus-terrestris,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+bombycilla,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+bombycilla-garrulus,,,,,,,no_form,
+bombyx-mori,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 borago-officinalis,,,,,,,no_form,plantae/magnoliopsida/boraginales
 borkhausenia-fuscescens,moth,112.2,1.00,55,thin,False,ok,
 borkhausenia-nefrax,moth,31.0,1.00,55,thin,False,ok,
@@ -229,6 +300,8 @@ brachmia-blandella,moth,82.5,1.00,55,thin,False,ok,
 brachycera-indet,,,,,,,no_form,-/-/-
 brachypodium-sylvaticum,,,,,,,no_form,plantae/liliopsida/poales
 braconidae-indet,bee,27.8,1.00,55,thin,False,ok,
+bradyrhizobium,,,,,,,no_form,
+branta-canadensis,water-bird,,1.00,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 brassica-napus,,,,,,,no_form,plantae/magnoliopsida/brassicales
 brassica-nigra,,,,,,,no_form,plantae/magnoliopsida/brassicales
 brassicaceae-indet,,,,,,,no_form,plantae/magnoliopsida/brassicales
@@ -236,19 +309,25 @@ brevicoryne-brassicae,bug,30.6,1.00,45,thin,False,ok,
 briza-maxima,,,,,,,no_form,plantae/liliopsida/poales
 bromus-racemosus,,,,,,,no_form,plantae/liliopsida/poales
 bromus-sitchensis,,,,,,,no_form,plantae/liliopsida/poales
+bruchidius-siliquastri,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 bryotropha-basaltinella,moth,0.0,1.00,55,thin,False,ok,
 bucculatrix-cidarella,moth,91.4,1.00,55,thin,False,ok,
+bufo-bufo,amphibian,,0.75,50,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 bunias-orientalis,,,,,,,no_form,plantae/magnoliopsida/brassicales
+buprestidae,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+buteo-buteo,raptor,,1.00,40,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 butomus-umbellatus,,,,,,,no_form,plantae/liliopsida/alismatales
 byturus-spec,beetle,33.0,1.00,55,thin,False,ok,
 cabera-pusaria,moth,104.2,1.00,55,thin,False,ok,
 cacoecimorpha-pronubana,moth,25.2,1.00,55,thin,False,ok,
+cacopsylla-pyri,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 calamotropha-paludella,moth,43.3,1.00,55,thin,False,ok,
 calendula-officinalis,,,,,,,no_form,plantae/magnoliopsida/asterales
 calliphora-spec,bee,66.7,1.00,55,thin,False,ok,
 calliphora-vicina,bee,81.8,1.00,55,thin,False,ok,
 calliphoridae,,,,,,,no_taxonomy,
 calliphoridae-indet,bee,79.5,1.00,55,thin,False,ok,
+callipterinella,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 calocybe-gambosa,mushroom,18.8,1.00,35,thin,False,ok,
 calopteryx-splendens,dragonfly,76.7,1.00,55,thin,False,ok,
 caloptilia-cuculipennella,moth,57.8,1.00,55,thin,False,ok,
@@ -258,6 +337,7 @@ caloptilia-spec,moth,25.0,1.00,55,thin,False,ok,
 caloptilia-stigmatella,moth,86.8,1.00,55,thin,False,ok,
 caltha-palustris,,,,,,,no_form,plantae/magnoliopsida/ranunculales
 calvia-quatuordecimguttata,beetle,40.0,1.00,55,thin,False,ok,
+cameraria-ohridella,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 campanula-persicifolia,,,,,,,no_form,plantae/magnoliopsida/asterales
 campanula-portenschlagiana,,,,,,,no_form,plantae/magnoliopsida/asterales
 campanula-rapunculoides,,,,,,,no_form,plantae/magnoliopsida/asterales
@@ -269,11 +349,16 @@ candelariella-vitellina,fungus,30.0,1.00,35,thin,False,ok,
 candolleomyces-candolleanus,mushroom,92.9,1.00,35,thin,False,ok,
 cantharis-fusca,beetle,95.4,1.00,55,thin,False,ok,
 cantharis-spec,,,,,,,no_form,animalia/-/-
+capreolus-capreolus,large-mammal,,1.25,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 capsella-bursa-pastoris,,,,,,,no_form,plantae/magnoliopsida/brassicales
 carabidae-indet,beetle,27.9,1.00,55,thin,False,ok,
 caradrina-clavipalpis,moth,35.4,1.00,55,thin,False,ok,
 caradrina-kadenii,moth,42.7,1.00,55,thin,False,ok,
+caradrina-morpheus,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 cardamine-flexuosa,,,,,,,no_form,plantae/magnoliopsida/brassicales
+carduelis,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+carduelis-carduelis,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+carduelis-carduelis-spinus-spinus,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 carduus-nutans,,,,,,,no_form,plantae/magnoliopsida/asterales
 carex-hirta,,,,,,,no_form,plantae/liliopsida/poales
 carex-leporina,,,,,,,no_form,plantae/liliopsida/poales
@@ -282,6 +367,9 @@ carex-spicata,,,,,,,no_form,plantae/liliopsida/poales
 carex-sylvatica,,,,,,,no_form,plantae/liliopsida/poales
 carpatolechia-fugitivella,moth,69.0,1.00,55,thin,False,ok,
 carpocoris-spec,bug,70.6,1.00,45,thin,False,ok,
+carulaspis,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+carulaspis-juniper-scale,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+carulaspis-juniperi,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 caryocolum-fischerella,moth,82.6,1.00,55,thin,False,ok,
 cassida-rubiginosa,beetle,81.1,1.00,55,thin,False,ok,
 castanea-sativa,,,,,,,no_form,plantae/magnoliopsida/fagales
@@ -290,25 +378,35 @@ cataclysta-lemnata,moth,43.7,1.00,55,thin,False,ok,
 catapodium-rigidum,,,,,,,no_form,plantae/liliopsida/poales
 catocala-fraxini,moth,33.1,1.00,55,thin,False,ok,
 catoptria-verellus,moth,26.9,1.00,55,thin,False,ok,
+cecidophyopsis-psilaspis,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 cedrobium-laportei,bug,0.0,1.00,45,thin,False,ok,
+celastrina-argiolus,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 celypha-lacunana,moth,111.5,1.00,55,thin,False,ok,
 celypha-siderana,moth,73.8,1.00,55,thin,False,ok,
 celypha-striana,moth,21.8,1.00,55,thin,False,ok,
 centaurea-cyanus-cultivar,,,,,,,no_form,plantae/magnoliopsida/asterales
 centaurium-erythraea,,,,,,,no_form,plantae/magnoliopsida/gentianales
 cepaea-hortensis,mollusc,24.5,0.90,55,thin,False,ok,
+cepaea-nemoralis,mollusc,,0.90,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 cepaea-spec,,,,,,,no_form,-/-/-
 cephalaria-gigantea,,,,,,,no_form,plantae/magnoliopsida/dipsacales
 ceraleptus-lividus,bug,95.3,1.00,45,thin,False,ok,
+cerambycidae,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 cerastium-fontanum,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 cerastium-glomeratum,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
+ceratomia-catalpae,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 ceratopogonidae-indet,bee,116.0,1.00,55,thin,False,ok,
 ceratostigma-plumbaginoides,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 cernuella-virgata,mollusc,37.9,0.90,55,thin,False,ok,
+certhia-familiaris,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+certhia-sitta,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+cerura,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+cetonia-aurata,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 cettia-cetti,bird,76.4,1.00,55,thin,False,ok,
 chaenorhinum-minus,,,,,,,no_form,plantae/magnoliopsida/lamiales
 chaenorhinum-origanifolium,,,,,,,no_form,plantae/magnoliopsida/lamiales
 chaerophyllum-bulbosum,,,,,,,no_form,plantae/magnoliopsida/apiales
+chalcidoidea,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 chamaenerion-angustifolium,,,,,,,no_form,plantae/magnoliopsida/myrtales
 chaoborus-spec,bee,78.9,1.00,55,thin,False,ok,
 cheilosia-illustrata,bee,73.8,1.00,55,thin,False,ok,
@@ -317,33 +415,51 @@ chelostoma-rapunculi,bee,258.6,1.00,55,thin,False,ok,
 chenopodiastrum-murale,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 chenopodium-ficifolium,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 chilo-phragmitella,moth,52.1,1.00,55,thin,False,ok,
+chionaspis-gleditsiae,,,,,,,no_form,
 chironomidae-indet,bee,30.0,1.00,55,thin,False,ok,
 chirosia-betuleti,bee,104.7,1.00,55,thin,False,ok,
+chloris,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+chloris-chloris,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+chloris-chloris-prunella-modularis-troglodytes-troglodytes-erithacus-rubecula,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 chloroclystis-v-ata,moth,32.6,1.00,55,thin,False,ok,
 chlorophyllum-rhacodes,mushroom,100.5,1.00,35,thin,False,ok,
 choreutis-nemorana,moth,53.1,1.00,55,thin,False,ok,
+choristoneura,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 chorthippus,grasshopper,80.0,1.00,50,thin,False,ok,
 chorthippus-albomarginatus,grasshopper,38.8,1.00,50,thin,False,ok,
 chorthippus-biguttulus,grasshopper,21.4,1.00,50,thin,False,ok,
 chorthippus-biguttulus-group,grasshopper,96.0,1.00,50,thin,False,ok,
+chorthippus-brunneus,grasshopper,,1.00,50,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 chorthippus-dorsatus,grasshopper,82.1,1.00,50,thin,False,ok,
+chroicocephalus-ridibundus,gull,,1.00,12,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+chromaphis-juglandicola,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 chromatomyia-primulae,bee,169.7,1.00,55,thin,False,ok,
 chromatomyia-spinaciae,bee,123.3,1.00,55,thin,False,ok,
 chromatomyia-syngenesiae,bee,200.0,1.00,55,thin,False,ok,
 chrysis-ignita-gr,,,,,,,no_form,-/-/-
 chrysochraon-dispar,grasshopper,90.0,1.00,50,thin,False,ok,
 chrysolina-coerulans,beetle,69.5,1.00,55,thin,False,ok,
+chrysomela-populi,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 chrysoperla-carnea-s-l,bug,107.3,1.00,40,thin,False,ok,
 chrysopidae,,,,,,,no_taxonomy,
 chrysops-relictus,bee,120.0,1.00,55,thin,False,ok,
+chrysoteuchia-culmella,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 chrysotus-spec,bee,77.1,1.00,55,thin,False,ok,
 chyromyidae-indet,bee,88.7,1.00,55,thin,False,ok,
+ciconia-ciconia,wading-bird,,1.00,15,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 cidaria-fulvata,moth,83.5,1.00,55,thin,False,ok,
+cinara-cedri,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+cinara-cupressi,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+cinara-laricis,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+cinara-pinea,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+circus-aeruginosus,raptor,,1.00,40,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 cirsium-palustre,,,,,,,no_form,plantae/magnoliopsida/asterales
 cirsium-vulgare,,,,,,,no_form,plantae/magnoliopsida/asterales
 cladonia-coniocraea,fungus,123.9,0.85,35,thin,False,ok,
 claytonia-perfoliata,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 clematis-vitalba,,,,,,,no_form,plantae/magnoliopsida/ranunculales
+clepsis-consimilana,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+clethrionomys-glareolus,rodent,,1.00,40,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 clinopodium-vulgare,,,,,,,no_form,plantae/magnoliopsida/lamiales
 clivina-fossor,beetle,30.0,1.00,55,thin,False,ok,
 cloeon-dipterum,bug,75.7,1.00,40,thin,False,ok,
@@ -355,18 +471,34 @@ cnephaeus-serotinus,bat,28.2,1.00,30,thin,False,ok,
 cnephasia-spec,moth,33.8,1.00,55,thin,False,ok,
 cnephasia-stephensiana,moth,36.6,1.00,55,thin,False,ok,
 coccidae,,,,,,,no_taxonomy,
+coccinella-septempunctata,,,,,,,no_form,
+coccinellidae,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+coccothraustes-coccothraustes,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 cochylidia-rupicola,moth,105.0,1.00,55,thin,False,ok,
 coelioxys-elongatus,bee,355.4,1.00,55,thin,False,ok,
 coelioxys-spec,bee,39.3,1.00,55,thin,False,ok,
+coenagrion-puella,dragonfly,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 coenagrion-pulchellum,dragonfly,59.1,1.00,55,thin,False,ok,
 coenagrion-spec,dragonfly,40.3,1.00,55,thin,False,ok,
 coenosia-spec,bee,240.0,1.00,55,thin,False,ok,
 coleophora-discordella,moth,91.2,1.00,55,thin,False,ok,
+coleophora-laricella,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 coleophora-spec,,,,,,,no_form,-/-/-
+coleophoridae,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+coleoptera-saproxylica,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+collembola,,,,,,,no_form,
+collembola-oribatida,,,,,,,no_form,
+collembola-psocoptera,,,,,,,no_form,
 colletes-daviesanus-fodiens-similis,bee,54.6,1.00,55,thin,False,ok,
 colletes-fodiens,bee,52.3,1.00,55,thin,False,ok,
 colletes-spec,bee,46.2,1.00,55,thin,False,ok,
+colocasia-coryli,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+coloeus-monedula,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 colomerus-vitis,spider,106.5,1.00,35,thin,False,ok,
+columba-corvus,,,,,,,no_form,
+columba-palumbus,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+columba-palumbus-pica-pica-corvus-cornix,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+columba-palumbus-streptopelia-decaocto,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 coniopterygidae-indet,bug,84.6,1.00,40,thin,False,ok,
 coniopteryx-spec,bug,40.5,1.00,40,thin,False,ok,
 conocephalus-fuscus,grasshopper,47.3,1.00,50,thin,False,ok,
@@ -379,16 +511,24 @@ coprinellus-micaceus,mushroom,83.1,1.00,35,thin,False,ok,
 coprinellus-micaceus-sl-incl-pallidissimus-saccharinus-truncorum,mushroom,28.8,1.00,35,thin,False,ok,
 coprinopsis-atramentaria,mushroom,24.0,1.00,35,thin,False,ok,
 coprinopsis-lagopus,mushroom,33.5,1.00,35,thin,False,ok,
+coprinus-comatus,mushroom,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 coprinus-spec,mushroom,91.1,1.00,35,thin,False,ok,
 coranus-spec,bug,28.5,1.00,45,thin,False,ok,
 cordylepherus-viridis,beetle,91.4,1.00,55,thin,False,ok,
 coreus-marginatus,bug,103.9,1.00,45,thin,False,ok,
 corispermum-pallasii,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 corixidae-indet,bug,37.6,1.00,45,thin,False,ok,
+cornu-aspersum,mollusc,,0.90,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 cornus-spec,,,,,,,no_form,plantae/magnoliopsida/cornales
+corvus,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+corvus-corone,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+corvus-frugilegus,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+corythucha-ciliata,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+cosmia-diffinis,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 cosmia-pyralina,moth,43.6,1.00,55,thin,False,ok,
 cosmia-trapezina,moth,23.4,1.00,55,thin,False,ok,
 cosmos-bipinnatus,,,,,,,no_form,plantae/magnoliopsida/asterales
+cossus-cossus,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 cotinus-coggygria,,,,,,,no_form,plantae/magnoliopsida/sapindales
 cotoneaster-coriaceus,,,,,,,no_form,plantae/magnoliopsida/rosales
 cotoneaster-spec,,,,,,,no_form,plantae/magnoliopsida/rosales
@@ -417,6 +557,7 @@ crossocerus-spec,bee,90.0,1.00,55,thin,False,ok,
 cryptinae-indet,,,,,,,no_form,-/-/-
 cryptocephalus-spec,beetle,27.3,1.00,55,thin,False,ok,
 cryptodiaporthe-populea,fungus,17.4,1.00,35,thin,False,ok,
+cryptogams,,,,,,,no_form,
 cryptomyzus-ribis,bug,92.5,1.00,45,thin,False,ok,
 cryptosphaeria-eunomia,fungus,20.8,1.00,35,thin,False,ok,
 ctenolepisma-longicaudatum,bug,19.1,1.00,40,thin,False,ok,
@@ -427,18 +568,32 @@ cucullia-scrophulariae,moth,50.5,1.00,55,thin,False,ok,
 cuculus-canorus,bird,60.0,1.00,55,thin,False,ok,
 culex-pipiens-torrentium,bee,23.0,1.00,55,thin,False,ok,
 culicidae-indet,bee,19.3,1.00,55,thin,False,ok,
+curculio-elephas,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+curculio-glandium,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+curculio-nucum,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 curculionidae-scolytinae,,,,,,,no_taxonomy,
+curculionoidea,,,,,,,no_form,
 curruca-curruca,bird,50.5,1.00,55,thin,False,ok,
+cyanistes,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+cyanistes-caeruleus,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+cyanistes-caeruleus-parus-major,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+cyanistes-parus,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 cybister-lateralimarginalis,beetle,32.3,1.00,55,thin,False,ok,
 cydalima-perspectalis,moth,57.9,1.00,55,thin,False,ok,
+cydia-illutana,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+cydia-pomonella,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+cydia-splendana,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 cylindroiulus-caeruleocinctus,,,,,,,no_form,animalia/diplopoda/julida
 cymbalaria-muralis,,,,,,,no_form,plantae/magnoliopsida/lamiales
 cynara-cardunculus,,,,,,,no_form,plantae/magnoliopsida/asterales
 cynara-scolymus,,,,,,,no_form,plantae/magnoliopsida/asterales
+cynipidae,,,,,,,no_form,
 cynips-divisa,bee,93.2,1.00,55,thin,False,ok,
 cynoglossum-officinale,,,,,,,no_form,plantae/magnoliopsida/boraginales
 cynosurus-echinatus,,,,,,,no_form,plantae/liliopsida/poales
 cyphostethus-tristriatus,bug,25.5,1.00,45,thin,False,ok,
+cypriniformes,fish,,1.20,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+cyprinus-carpio,fish,,1.20,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 daboecia-cantabrica,,,,,,,no_form,plantae/magnoliopsida/ericales
 dacrymyces-stillatus,fungus,42.4,1.00,35,thin,False,ok,
 daldinia-concentrica,fungus,13.1,1.00,35,thin,False,ok,
@@ -447,6 +602,7 @@ dasineura-acrophila,bee,77.0,1.00,55,thin,False,ok,
 dasineura-aparines,bee,86.8,1.00,55,thin,False,ok,
 dasineura-gleditchiae,bee,54.2,1.00,55,thin,False,ok,
 dasineura-plicatrix,bee,42.2,1.00,55,thin,False,ok,
+dasineura-pyri,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 dasineura-urticae,bee,83.3,1.00,55,thin,False,ok,
 dasypoda-hirtipes,bee,38.5,1.00,55,thin,False,ok,
 dasytes-spec,beetle,210.0,1.00,55,thin,False,ok,
@@ -460,6 +616,8 @@ delichon-urbicum,bird,213.3,1.00,55,thin,False,ok,
 delphinium-staphisagria,,,,,,,no_form,plantae/magnoliopsida/ranunculales
 deltote-pygarga,moth,57.3,1.00,55,thin,False,ok,
 demeijerea-rufipes,bee,19.5,1.00,55,thin,False,ok,
+dendrocopos-major,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+dendrocopos-major-sitta-europaea,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 depressaria-radiella,moth,18.4,1.00,55,thin,False,ok,
 deraeocoris-trifasciatus,bug,107.7,1.00,45,thin,False,ok,
 derephysia-foliacea,bug,32.0,1.00,45,thin,False,ok,
@@ -470,6 +628,8 @@ diachrysia-chrysitis,moth,91.5,1.00,55,thin,False,ok,
 dianthus-armeria,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 dianthus-giganteus,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 dianthus-spec-cultivar,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
+diaspididae,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+diaspididae-pseudococcidae,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 dichetophora-obliterata,bee,72.7,1.00,55,thin,False,ok,
 dichomeris-marginella,moth,23.3,1.00,55,thin,False,ok,
 dichrooscytus-intermedius,bug,207.8,1.00,45,thin,False,ok,
@@ -487,8 +647,10 @@ dioctria-hyalipennis,bee,67.1,1.00,55,thin,False,ok,
 dioctria-linearis,bee,97.3,1.00,55,thin,False,ok,
 diplazontinae-indet,,,,,,,no_form,-/-/-
 diplotaxis-tenuifolia,,,,,,,no_form,plantae/magnoliopsida/brassicales
+diprion-pini,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 dipsacus-fullonum,,,,,,,no_form,plantae/magnoliopsida/dipsacales
 dipsacus-pilosus,,,,,,,no_form,plantae/magnoliopsida/dipsacales
+diptera-hymenoptera-coleoptera,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 ditula-angustiorana,moth,27.4,1.00,55,thin,False,ok,
 dolerus-spec,bee,40.0,1.00,55,thin,False,ok,
 dolichomitus-complex,bee,46.5,1.00,55,thin,False,ok,
@@ -500,9 +662,15 @@ dolycoris-baccarum,bug,47.5,1.00,45,thin,False,ok,
 donacaula-forficella,moth,134.8,1.00,55,thin,False,ok,
 donacia-clavipes,beetle,79.8,1.00,55,thin,False,ok,
 donacia-semicuprea,beetle,77.0,1.00,55,thin,False,ok,
+dorcus-parallelipipedus,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 drepana-falcataria,moth,76.0,1.00,55,thin,False,ok,
+drepanosiphum-platanoidis,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 drosera-rotundifolia,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 dryas-iulia,moth,105.0,1.00,55,thin,False,ok,
+dryocosmus-kuriphilus,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+dysaphis-plantaginea-aphis-pomi,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+dysaphis-pyri,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+dysaphis-sorbi,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 dysmachus-trigonus,bee,71.1,1.00,55,thin,False,ok,
 dysstroma-truncata,moth,40.0,1.00,55,thin,False,ok,
 eccopisa-effractella,moth,78.9,1.00,55,thin,False,ok,
@@ -520,14 +688,18 @@ edwardsiana-geometrica,bug,43.8,1.00,45,thin,False,ok,
 eilema-complana,moth,72.5,1.00,55,thin,False,ok,
 eilema-depressa,moth,72.6,1.00,55,thin,False,ok,
 elachista-canapennella,moth,75.8,1.00,55,thin,False,ok,
+elasmostethus-interstinctus,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 elasmucha-grisea,bug,116.8,1.00,45,thin,False,ok,
 elateridae-indet,beetle,75.6,1.00,55,thin,False,ok,
+elatobium-abietinum,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 elymus-repens,,,,,,,no_form,plantae/liliopsida/poales
 emberiza-schoeniclus,bird,213.1,1.00,55,thin,False,ok,
 emmelina-monodactyla,moth,28.9,1.00,55,thin,False,ok,
 empis-livida,bee,70.9,1.00,55,thin,False,ok,
 empoasca-spec,bug,26.7,1.00,45,thin,False,ok,
+enarmonia-formosana,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 encyrtidae-indet,bee,66.7,1.00,55,thin,False,ok,
+endromis-versicolora,,,,,,,no_form,
 endrosis-sarcitrella,moth,25.4,1.00,55,thin,False,ok,
 enicospilus-ramidulus,bee,25.5,1.00,55,thin,False,ok,
 enicospilus-spec,bee,25.8,1.00,55,thin,False,ok,
@@ -547,6 +719,7 @@ epinotia-immundana,moth,93.3,1.00,55,thin,False,ok,
 epinotia-nisella,moth,34.8,1.00,55,thin,False,ok,
 epinotia-tenerana,moth,54.5,1.00,55,thin,False,ok,
 epipactis-helleborine,,,,,,,no_form,plantae/liliopsida/asparagales
+episyrphus-balteatus,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 erannis-defoliaria,,,,,,,no_taxonomy,
 eratigena-spec,spider,30.0,1.00,35,thin,False,ok,
 erigeron-annuus,,,,,,,no_form,plantae/magnoliopsida/asterales
@@ -554,7 +727,9 @@ erigeron-karvinskianus,,,,,,,no_form,plantae/magnoliopsida/asterales
 erigeron-sumatrensis,,,,,,,no_form,plantae/magnoliopsida/asterales
 erigone-dentipalpis,spider,22.0,1.00,35,thin,False,ok,
 eriocampa-ovata,bee,76.5,1.00,55,thin,False,ok,
+eriophyes,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 eriophyes-inangulis,spider,116.4,1.00,35,thin,False,ok,
+eriophyes-tiliae,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 eristalis-arbustorum-abusiva,bee,28.3,1.00,55,thin,False,ok,
 eristalis-horticola,bee,95.7,1.00,55,thin,False,ok,
 eristalis-intricaria,bee,93.9,1.00,55,thin,False,ok,
@@ -562,6 +737,7 @@ eristalis-nemorum,bee,67.9,1.00,55,thin,False,ok,
 eristalis-pertinax,bee,85.2,1.00,55,thin,False,ok,
 eristalis-similis,bee,80.6,1.00,55,thin,False,ok,
 eristalis-spec,bee,68.1,1.00,55,thin,False,ok,
+eristalis-tenax,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 erodium-cicutarium,,,,,,,no_form,plantae/magnoliopsida/geraniales
 erodium-trifolium,,,,,,,no_form,plantae/magnoliopsida/geraniales
 eruca-vesicaria,,,,,,,no_form,plantae/magnoliopsida/brassicales
@@ -574,6 +750,8 @@ eschscholzia-californica,,,,,,,no_form,plantae/magnoliopsida/ranunculales
 ethmia-bipunctella,moth,77.4,1.00,55,thin,False,ok,
 ethmia-quadrillella,moth,35.8,1.00,55,thin,False,ok,
 ethmia-terminella,moth,195.7,1.00,55,thin,False,ok,
+eucallipterus-tiliae,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+euceraphis-betulae,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 eucosma-campoliliana,moth,2.5,1.00,55,thin,False,ok,
 eucosma-cana,moth,41.7,1.00,55,thin,False,ok,
 eudemis-porphyrana,moth,106.7,1.00,55,thin,False,ok,
@@ -616,33 +794,49 @@ exephanes-ischioxanthus,bee,91.5,1.00,55,thin,False,ok,
 exetastes-adpressorius,bee,135.0,1.00,55,thin,False,ok,
 fagopyrum-esculentum,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 falco-subbuteo,raptor,6.0,1.00,40,thin,False,ok,
+falco-tinnunculus,raptor,,1.00,40,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 fallopia-convolvulus,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 fallopia-japonica,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 fallopia-japonica-fallopia-sachalinensis-fallopia-x-bohemica,,,,,,,no_form,-/-/-
+fascista-cercerisella,,,,,,,no_form,
+favonius-quercus,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 felis-catus,large-mammal,32.3,0.95,40,thin,False,ok,
 filipendula-ulmaria,,,,,,,no_form,plantae/magnoliopsida/rosales
 flavoparmelia-caperata,fungus,21.7,0.85,35,thin,False,ok,
+flavoparmelia-soredians,fungus,,0.85,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 foeniculum-vulgare,,,,,,,no_form,plantae/magnoliopsida/apiales
+fomitopsis-betulina,,,,,,,no_form,
 fomoria-septembrella,moth,69.7,1.00,55,thin,False,ok,
 forcipomyia-paludis,bee,76.2,1.00,55,thin,False,ok,
+forficula-auricularia,bug,,1.00,40,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 forficula-auricularia-gr,bug,83.7,1.00,40,thin,False,ok,
+formica,,,,,,,no_form,
+formica-rufa,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+formicidae-e-g-lasius-niger,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+frankia-alni,,,,,,,no_form,
 fringilla,,,,,,,no_taxonomy,
+fringilla-coelebs,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+fringilla-coelebs-montifringilla,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 fuchsia-spec,,,,,,,no_form,-/-/-
+fulica-atra,water-bird,,1.00,20,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 fungi-indet,fungus,32.7,1.00,35,thin,False,ok,
 galega-officinalis,,,,,,,no_form,plantae/magnoliopsida/fabales
 galeopsis-spec,,,,,,,no_form,-/-/-
 galeopsis-tetrahit,,,,,,,no_form,plantae/magnoliopsida/lamiales
+gallinula-chloropus,water-bird,,1.00,20,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 gambrus-carnifex,bee,90.7,1.00,55,thin,False,ok,
 gammarus-tigrinus,,,,,,,no_form,animalia/malacostraca/amphipoda
 gandaritis-pyraliata,moth,35.2,1.00,55,thin,False,ok,
 ganoderma-adspersum,fungus,20.3,1.00,35,thin,False,ok,
 ganoderma-lipsiense,fungus,105.7,1.00,35,thin,False,ok,
 ganoderma-resinaceum,fungus,12.0,1.00,35,thin,False,ok,
+garrulus-glandarius,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 gasteruption-spec,bee,38.7,1.00,55,thin,False,ok,
 gastrolepta-anthracina,bee,92.7,1.00,55,thin,False,ok,
 gastrophysa-viridula,beetle,51.6,1.00,55,thin,False,ok,
 gelechiidae-indet,moth,25.2,1.00,55,thin,False,ok,
 gelis-spec,bee,65.1,1.00,55,thin,False,ok,
+geometridae,,,,,,,no_form,
 geranium-dissectum,,,,,,,no_form,plantae/magnoliopsida/geraniales
 geranium-endressii,,,,,,,no_form,plantae/magnoliopsida/geraniales
 geranium-nodosum,,,,,,,no_form,plantae/magnoliopsida/geraniales
@@ -654,8 +848,10 @@ geranium-pyrenaicum,,,,,,,no_form,plantae/magnoliopsida/geraniales
 geranium-spec,,,,,,,no_form,plantae/magnoliopsida/geraniales
 gerridae-indet,bug,32.6,1.00,45,thin,False,ok,
 gillmeria-ochrodactyla,moth,31.7,1.00,55,thin,False,ok,
+gilpinia-hercyniae,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 glebionis-segetum,,,,,,,no_form,plantae/magnoliopsida/asterales
 gleditsia-triacanthos,,,,,,,no_form,plantae/magnoliopsida/fabales
+glyphodes-pyloalis,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 glyphotaelius-pellucidus,bug,24.7,1.00,40,thin,False,ok,
 gnaphalium-luteoalbum,,,,,,,no_form,plantae/magnoliopsida/asterales
 gomphocerinae-indet,,,,,,,no_form,-/-/-
@@ -665,10 +861,12 @@ gonocerus-acuteangulatus,bug,65.2,1.00,45,thin,False,ok,
 gonyodiscus-rotundatus,mollusc,22.9,0.90,55,thin,False,ok,
 gorytes-laticinctus,bee,74.8,1.00,55,thin,False,ok,
 gracillaria-syringella,moth,94.0,1.00,55,thin,False,ok,
+gracillariidae,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 graphocephala-fennahi,bug,57.2,1.00,45,thin,False,ok,
 grapholita-janthinana,moth,75.9,1.00,55,thin,False,ok,
 grapholita-lobarzewskii,moth,35.5,1.00,55,thin,False,ok,
 graphosoma-italicum,bug,77.4,1.00,45,thin,False,ok,
+grylloprociphilus-imbricator,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 grypocoris-sexguttatus,bug,15.7,1.00,45,thin,False,ok,
 gymnoscelis-rufifasciata,moth,25.6,1.00,55,thin,False,ok,
 gymnosporangium-clavariiforme,fungus,34.5,1.00,35,thin,False,ok,
@@ -676,9 +874,12 @@ gypsonoma-dealbana,moth,79.2,1.00,55,thin,False,ok,
 gypsonoma-sociana,moth,80.9,1.00,55,thin,False,ok,
 habrosyne-pyritoides,moth,67.7,1.00,55,thin,False,ok,
 hadena-compta,moth,38.8,1.00,55,thin,False,ok,
+haematopus-ostralegus,gull,,1.00,15,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 halictus-tumulorum,bee,49.5,1.00,55,thin,False,ok,
 halyomorpha-halys,bug,15.0,1.00,45,thin,False,ok,
 halyzia-sedecimguttata,beetle,22.8,1.00,55,thin,False,ok,
+hammerschmidtia-ferruginea,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+harmonia-axyridis,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 harmonia-axyridis-f-conspicua,beetle,22.3,1.00,55,thin,False,ok,
 harmonia-axyridis-f-spectabilis,beetle,22.3,1.00,55,thin,False,ok,
 harmonia-axyridis-f-succinea,beetle,22.3,1.00,55,thin,False,ok,
@@ -698,6 +899,7 @@ heleomyzidae-indet,bee,69.1,1.00,55,thin,False,ok,
 helicoverpa-armigera,moth,64.3,1.00,55,thin,False,ok,
 helina-spec,bee,27.4,1.00,55,thin,False,ok,
 heliophanus-spec,spider,76.0,1.00,35,thin,False,ok,
+helix-pomatia,mollusc,,0.90,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 helleborus-argutifolius,,,,,,,no_form,plantae/magnoliopsida/ranunculales
 hemerocallis-fulva,,,,,,,no_form,plantae/liliopsida/asparagales
 hemithea-aestivaria,moth,49.2,1.00,55,thin,False,ok,
@@ -705,10 +907,12 @@ hepialus-humuli,moth,92.0,1.00,55,thin,False,ok,
 heptatoma-pellucens,bee,110.3,1.00,55,thin,False,ok,
 hercostomus-nigriplantis,bee,29.1,1.00,55,thin,False,ok,
 hercostomus-rusticus,bee,36.6,1.00,55,thin,False,ok,
+heriades-truncorum,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 hericium-cirrhatum,mushroom,53.3,1.00,35,thin,False,ok,
 herminia-tarsicrinalis,moth,61.5,1.00,55,thin,False,ok,
 herminia-tarsipennalis,moth,56.6,1.00,55,thin,False,ok,
 herniaria-glabra,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
+heterarthrus,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 heterocera-indet,moth,87.5,1.00,55,thin,False,ok,
 heterocerus-spec,beetle,29.6,1.00,55,thin,False,ok,
 heteroptera-indet,bee,37.0,1.00,55,thin,False,ok,
@@ -724,8 +928,11 @@ holcus-mollis,,,,,,,no_form,plantae/liliopsida/poales
 holocnemus-pluchei,spider,260.0,1.00,35,thin,False,ok,
 holopyga-generosa,bee,71.9,1.00,55,thin,False,ok,
 homoeosoma-sinuella,moth,45.5,1.00,55,thin,False,ok,
+honeybees-flies-aphid-honeydew,,,,,,,no_form,
+honeybees-flies-extrafloral,,,,,,,no_form,
 hoplitis-leucomelana,bee,65.6,1.00,55,thin,False,ok,
 hoplodrina-ambigua,moth,46.9,1.00,55,thin,False,ok,
+hoplodrina-octogenaria,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 hordeum-murinum-subsp-murinum,,,,,,,no_form,plantae/liliopsida/poales
 hordeum-secalinum,,,,,,,no_form,plantae/liliopsida/poales
 hordeum-vulgare,,,,,,,no_form,plantae/liliopsida/poales
@@ -741,6 +948,7 @@ hylaeus-gibbus-gr,bee,42.6,1.00,55,thin,False,ok,
 hylaeus-hyalinatus,bee,50.9,1.00,55,thin,False,ok,
 hylaeus-nigritus,bee,61.7,1.00,55,thin,False,ok,
 hylaeus-spec,bee,62.2,1.00,55,thin,False,ok,
+hylesinus-leperisinus-fraxini,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 hypericum-androsaemum-hypericum-hircinum-hypericum-x-inodorum,,,,,,,no_form,-/-/-
 hypericum-hirsutum,,,,,,,no_form,plantae/magnoliopsida/malpighiales
 hypericum-spec,,,,,,,no_form,plantae/magnoliopsida/malpighiales
@@ -760,6 +968,7 @@ ichneumonidae-indet,bee,32.2,1.00,55,thin,False,ok,
 ichneumoninae-indet,,,,,,,no_form,-/-/-
 ichthyaetus-melanocephalus,gull,82.5,1.00,12,thin,False,ok,
 icius-spec,spider,79.8,1.00,35,thin,False,ok,
+idaea-aversata,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 idaea-biselata,moth,77.8,1.00,55,thin,False,ok,
 idaea-dimidiata,moth,64.0,1.00,55,thin,False,ok,
 idaea-fuscovenosa,moth,65.3,1.00,55,thin,False,ok,
@@ -769,15 +978,20 @@ idaea-straminata,moth,64.6,1.00,55,thin,False,ok,
 idaea-subsericeata,moth,35.0,1.00,55,thin,False,ok,
 ilex-aquifolium,,,,,,,no_form,plantae/magnoliopsida/aquifoliales
 ilisia-maculata,bee,43.6,1.00,55,thin,False,ok,
+illinoia-liriodendri,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 inonotus-hispidus,fungus,68.6,1.00,35,thin,False,ok,
 inula-helenium,,,,,,,no_form,plantae/magnoliopsida/asterales
 inula-helenium-inula-racemosa,,,,,,,no_form,-/-/-
 ipimorpha-subtusa,moth,39.1,1.00,55,thin,False,ok,
+ips-typographus,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 isatis-tinctoria,,,,,,,no_form,plantae/magnoliopsida/brassicales
+ischnura-elegans,dragonfly,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+issus-coleoptratus,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 ixodes-ricinus,spider,99.8,1.00,35,thin,False,ok,
 jacobaea-spec,,,,,,,no_form,plantae/magnoliopsida/asterales
 jacobaea-vulgaris-subsp-dunensis,,,,,,,no_form,plantae/magnoliopsida/asterales
 jacobaea-vulgaris-subsp-vulgaris,,,,,,,no_form,plantae/magnoliopsida/asterales
+jadera-haematoloma,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 juglans-regia,,,,,,,no_form,plantae/magnoliopsida/fagales
 julidae-indet,,,,,,,no_form,animalia/diplopoda/julida
 juncus-bufonius,,,,,,,no_form,plantae/liliopsida/poales
@@ -801,7 +1015,13 @@ lamiastrum-galeobdolon-subsp-argentatum,,,,,,,no_form,plantae/magnoliopsida/lami
 lamium-album,,,,,,,no_form,plantae/magnoliopsida/lamiales
 lamium-maculatum,,,,,,,no_form,plantae/magnoliopsida/lamiales
 lamium-purpureum,,,,,,,no_form,plantae/magnoliopsida/lamiales
+laothoe-populi,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 laridae-indet,gull,66.7,1.00,12,thin,False,ok,
+larus-argentatus,gull,,1.00,12,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+larus-fuscus,gull,,1.00,12,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+lasioglossum,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+lasius,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+lasius-niger,,,,,,,no_form,
 laspeyria-flexula,moth,41.6,1.00,55,thin,False,ok,
 lateroligia-ophiogramma,moth,27.6,1.00,55,thin,False,ok,
 lathronympha-strigana,moth,104.8,1.00,55,thin,False,ok,
@@ -810,6 +1030,7 @@ lathyrus-pratensis,,,,,,,no_form,plantae/magnoliopsida/fabales
 lathyrus-sylvestris,,,,,,,no_form,plantae/magnoliopsida/fabales
 lauritrioza-alacris,bug,76.9,1.00,45,thin,False,ok,
 lauxaniidae-indet,bee,94.4,1.00,55,thin,False,ok,
+leaf-mining-flies-micro-moths,,,,,,,no_form,
 leccinum-duriusculum,mushroom,107.2,1.00,35,thin,False,ok,
 leccinum-scabrum-sl-incl-cyaneobasileucum-melaneum-schistophilum-variicolor,mushroom,50.8,1.00,35,thin,False,ok,
 lecidella-elaeochroma,fungus,46.7,0.85,35,thin,False,ok,
@@ -823,18 +1044,25 @@ lepidium-densiflorum,,,,,,,no_form,plantae/magnoliopsida/brassicales
 lepidium-latifolium,,,,,,,no_form,plantae/magnoliopsida/brassicales
 lepidium-ruderale,,,,,,,no_form,plantae/magnoliopsida/brassicales
 lepidium-virginicum,,,,,,,no_form,plantae/magnoliopsida/brassicales
+lepidoptera,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+lepidoptera-incl-trichiura-crataegi-lackey-vapourer-light-emerald,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+lepidoptera-rare,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 lepraria-incana,fungus,0.0,0.85,35,thin,False,ok,
 lepthyphantes-minutus,spider,25.9,1.00,35,thin,False,ok,
 leptoceridae-indet,bug,166.7,1.00,40,thin,False,ok,
 leptocerus-tineiformis,bug,66.2,1.00,40,thin,False,ok,
 leptoglossus-occidentalis,bug,24.0,1.00,45,thin,False,ok,
+leptophyes-punctatissima,grasshopper,,1.00,50,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 leptura-quadrifasciata,beetle,85.4,1.00,55,thin,False,ok,
+lepus,lagomorph,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 leucania-obsoleta,moth,67.7,1.00,55,thin,False,ok,
+leucaspius-delineatus,fish,,1.20,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 leucoagaricus-leucothites,mushroom,75.0,1.00,35,thin,False,ok,
 leucoma-salicis,moth,216.5,1.00,55,thin,False,ok,
 leucospilapteryx-omissella,moth,2.3,1.00,55,thin,False,ok,
 leycesteria-formosa,,,,,,,no_form,plantae/magnoliopsida/dipsacales
 libellula-depressa,dragonfly,73.2,1.00,55,thin,False,ok,
+limax-maximus,mollusc,,1.20,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 limnaecia-phragmitella,moth,25.9,1.00,55,thin,False,ok,
 limnephilus-flavicornis,bug,43.2,1.00,40,thin,False,ok,
 limnephilus-lunatus,bug,23.3,1.00,40,thin,False,ok,
@@ -855,8 +1083,11 @@ liophloeus-tessulatus,beetle,37.7,1.00,55,thin,False,ok,
 lipandra-polysperma,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 liposthenes-glechomae,bee,87.4,1.00,55,thin,False,ok,
 liriomyza-strigata,bee,80.4,1.00,55,thin,False,ok,
+lissotriton-vulgaris,amphibian,,1.25,50,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 lithobius-spec,,,,,,,no_form,animalia/chilopoda/lithobiomorpha
+lobarion-graphidion-communities,fungus,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 lobularia-maritima,,,,,,,no_form,plantae/magnoliopsida/brassicales
+lochmaea-crataegi,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 locustella-luscinioides,bird,63.3,1.00,55,thin,False,ok,
 lolium-perenne,,,,,,,no_form,plantae/liliopsida/poales
 lomaspilis-marginata,moth,57.9,1.00,55,thin,False,ok,
@@ -864,16 +1095,20 @@ lomographa-bimaculata,moth,58.4,1.00,55,thin,False,ok,
 lonchaeidae-indet,bee,65.2,1.00,55,thin,False,ok,
 lonicera-periclymenum,,,,,,,no_form,plantae/magnoliopsida/dipsacales
 lotus-spec,,,,,,,no_form,-/-/-
+loxia-curvirostra,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 lozotaeniodes-formosana,moth,26.7,1.00,55,thin,False,ok,
 lucilia-spec,,,,,,,no_form,-/-/-
 lumbricidae-indet,,,,,,,no_form,animalia/clitellata/crassiclitellata
 lunularia-cruciata,,,,,,,no_form,plantae/marchantiopsida/lunulariales
 lupinus-polyphyllus,,,,,,,no_form,plantae/magnoliopsida/fabales
 luscinia-svecica,bird,65.7,1.00,55,thin,False,ok,
+lutra-lutra,aquatic-mammal,,1.00,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 lycaena-phlaeas,moth,26.5,1.00,55,thin,False,ok,
 lycophotia-porphyrea,moth,58.5,1.00,55,thin,False,ok,
+lycorma-delicatula,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 lygocoris-pabulinus,bug,36.7,1.00,45,thin,False,ok,
 lygus-spec,,,,,,,no_form,animalia/-/-
+lymantria-dispar,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 lymnaea-stagnalis,mollusc,72.9,0.90,55,thin,False,ok,
 lysimachia-nummularia,,,,,,,no_form,plantae/magnoliopsida/ericales
 lysimachia-punctata,,,,,,,no_form,plantae/magnoliopsida/ericales
@@ -881,12 +1116,16 @@ lysimachia-vulgaris,,,,,,,no_form,plantae/magnoliopsida/ericales
 macaroeris-nidicolens,spider,29.5,1.00,35,thin,False,ok,
 macrocentrus-spec,bee,27.0,1.00,55,thin,False,ok,
 macrochilo-cribrumalis,moth,53.3,1.00,55,thin,False,ok,
+macroglossum-stellatarum,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 macrophya-montana,bee,72.9,1.00,55,thin,False,ok,
 macropis-europaea,bee,19.0,1.00,55,thin,False,ok,
+macropsis-fumipennis,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 macropsis-spec,,,,,,,no_form,animalia/-/-
 macrosteles-cristatus,bug,40.0,1.00,45,thin,False,ok,
 malachiinae-indet,,,,,,,no_form,-/-/-
 malachius-bipustulatus,beetle,15.0,1.00,55,thin,False,ok,
+malacosoma-disstria,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+malacosoma-neustria,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 malus-x-domestica,,,,,,,no_form,plantae/magnoliopsida/rosales
 malva-alcea,,,,,,,no_form,plantae/magnoliopsida/malvales
 malva-alcea-malva-moschata,,,,,,,no_form,-/-/-
@@ -894,14 +1133,19 @@ malva-sylvestris-cultivar,,,,,,,no_form,plantae/magnoliopsida/malvales
 malvaceae-indet,,,,,,,no_form,plantae/magnoliopsida/malvales
 mammalia-indet,,,,,,,no_form,animalia/mammalia/-
 marchantia-polymorpha,,,,,,,no_form,plantae/marchantiopsida/marchantiales
+marpissa-muscosa,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+martes-martes,large-mammal,,0.55,15,none,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 matricaria-discoidea,,,,,,,no_form,plantae/magnoliopsida/asterales
 meconema,grasshopper,86.8,1.00,50,thin,False,ok,
 meconema-meridionale,grasshopper,72.6,1.00,50,thin,False,ok,
 meconema-spec,grasshopper,98.0,1.00,50,thin,False,ok,
 medicago-lupulina,,,,,,,no_form,plantae/magnoliopsida/fabales
 medicago-x-varia-m-falcata-x-m-sativa,,,,,,,no_form,plantae/magnoliopsida/fabales
+megabruchidius-dorsalis,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+megachile,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 megachile-centuncularis,bee,265.0,1.00,55,thin,False,ok,
 megachile-ericetorum,bee,267.5,1.00,55,thin,False,ok,
+megachile-sculpturalis,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 megachile-spec,bee,283.8,1.00,55,thin,False,ok,
 megachile-versicolor,bee,61.8,1.00,55,thin,False,ok,
 megachile-willughbiella,bee,79.1,1.00,55,thin,False,ok,
@@ -909,6 +1153,7 @@ megalocoleus-molliculus,bug,39.6,1.00,45,thin,False,ok,
 melanoleuca-verrucipes,mushroom,20.0,1.00,35,thin,False,ok,
 melanostoma-scalare,bee,76.6,1.00,55,thin,False,ok,
 melanotus-spec,,,,,,,no_form,-/-/-
+meles-meles,large-mammal,,0.55,15,none,True,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 melica-transsilvanica,,,,,,,no_form,plantae/liliopsida/poales
 meligramma-triangulifera,bee,86.1,1.00,55,thin,False,ok,
 melilotus-altissimus-melilotus-officinalis,,,,,,,no_form,-/-/-
@@ -919,6 +1164,7 @@ mellinus-arvensis,bee,27.7,1.00,55,thin,False,ok,
 melolontha-melolontha,beetle,30.0,1.00,55,thin,False,ok,
 mentha-x-rotundifolia-m-longifolia-x-m-suaveolens,,,,,,,no_form,plantae/magnoliopsida/lamiales
 meromyza-spec,bee,58.3,1.00,55,thin,False,ok,
+mesostigmata,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 mespilus-germanica,,,,,,,no_form,plantae/magnoliopsida/rosales
 metalampra-italica,moth,32.4,1.00,55,thin,False,ok,
 metasequoia-glyptostroboides,,,,,,,no_form,plantae/pinopsida/pinales
@@ -929,6 +1175,8 @@ microlinyphia-pusilla,spider,202.5,1.00,35,thin,False,ok,
 micromus-variegatus,bug,85.3,1.00,40,thin,False,ok,
 micropeza-corrigiolata,bee,88.7,1.00,55,thin,False,ok,
 mikiola-fagi,bee,105.8,1.00,55,thin,False,ok,
+mimas-tiliae,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+mimela-junii,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 mimulus-guttatus,,,,,,,no_form,plantae/magnoliopsida/lamiales
 mintho-rufiventris,bee,39.2,1.00,55,thin,False,ok,
 mirabilis-jalapa,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
@@ -946,10 +1194,12 @@ mordellistena-spec,beetle,20.0,1.00,55,thin,False,ok,
 mormo-maura,moth,40.4,1.00,55,thin,False,ok,
 morus-alba,,,,,,,no_form,plantae/magnoliopsida/rosales
 musca-autumnalis,bee,75.0,1.00,55,thin,False,ok,
+muscardinus-avellanarius,rodent,,1.00,40,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 muscicapa-striata,bird,343.9,1.00,55,thin,False,ok,
 muscidae-indet,bee,53.8,1.00,55,thin,False,ok,
 mustelidae-indet,large-mammal,125.7,0.55,15,none,False,ok,
 myiopsitta-monachus,bird,70.6,1.00,55,thin,False,ok,
+myocastor-coypus,rodent,,1.00,40,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 myosotis-arvensis,,,,,,,no_form,plantae/magnoliopsida/boraginales
 myosotis-laxa,,,,,,,no_form,plantae/magnoliopsida/boraginales
 myosotis-sylvatica,,,,,,,no_form,plantae/magnoliopsida/boraginales
@@ -960,10 +1210,14 @@ mythimna-albipuncta,moth,30.0,1.00,55,thin,False,ok,
 mythimna-impura,moth,73.3,1.00,55,thin,False,ok,
 mythimna-pallens,moth,31.3,1.00,55,thin,False,ok,
 mythimna-straminea,moth,50.2,1.00,55,thin,False,ok,
+myzocallis-carpini,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+myzus-cerasi,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 nabis-spec,bug,96.1,1.00,45,thin,False,ok,
 nacerdes-melanura,beetle,31.4,1.00,55,thin,False,ok,
 nassella-tenuissima,,,,,,,no_form,plantae/liliopsida/poales
 nemapogon-spec,moth,24.7,1.00,55,thin,False,ok,
+nematinae,,,,,,,no_form,
+nematus-tibialis,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 nemesia-melissifolia,,,,,,,no_form,plantae/magnoliopsida/lamiales
 nemotelus-pantherinus,bee,34.4,1.00,55,thin,False,ok,
 neoascia-spec,bee,22.3,1.00,55,thin,False,ok,
@@ -985,6 +1239,7 @@ nicotiana-sylvestris,,,,,,,no_form,plantae/magnoliopsida/solanales
 nigella-damascena,,,,,,,no_form,plantae/magnoliopsida/ranunculales
 noctua-comes,moth,15.0,1.00,55,thin,False,ok,
 noctua-fimbriata,moth,33.9,1.00,55,thin,False,ok,
+noctua-pronuba,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 nomada-flava,bee,62.5,1.00,55,thin,False,ok,
 nomada-flavoguttata,bee,28.0,1.00,55,thin,False,ok,
 nomada-fucata,bee,37.9,1.00,55,thin,False,ok,
@@ -996,7 +1251,10 @@ notonecta-spec,bug,24.9,1.00,45,thin,False,ok,
 notostira-elongata,bug,86.4,1.00,45,thin,False,ok,
 notoxus-monoceros,beetle,17.2,1.00,55,thin,False,ok,
 nuctenea-umbratica,spider,23.1,1.00,35,thin,False,ok,
+nyctalus,bat,,1.00,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+nyctalus-noctula,bat,,1.00,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 nycticorax-nycticorax,wading-bird,24.9,1.00,15,thin,False,ok,
+nymphalis-antiopa,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 obolodiplosis-robiniae,bee,139.6,1.00,55,thin,False,ok,
 obrium-cantharinum,beetle,66.2,1.00,55,thin,False,ok,
 ochlodes-sylvanus,moth,98.2,1.00,55,thin,False,ok,
@@ -1016,12 +1274,17 @@ oligia-spec,moth,30.0,1.00,55,thin,False,ok,
 oligia-strigilis,moth,30.0,1.00,55,thin,False,ok,
 oncopsis-spec,bug,20.0,1.00,45,thin,False,ok,
 oncorhynchus-mykiss,fish,77.0,1.20,45,thin,False,ok,
+ondatra-zibethicus,rodent,,1.00,40,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 ononis-spinosa,,,,,,,no_form,plantae/magnoliopsida/fabales
 ononis-spinosa-subsp-procurrens,,,,,,,no_form,plantae/magnoliopsida/fabales
 onopordum-acanthium-agg,,,,,,,no_form,plantae/magnoliopsida/asterales
 onopordum-x-beckianum-o-acanthium-x-o-illyricum,,,,,,,no_form,plantae/magnoliopsida/asterales
+operophtera-brumata,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+operophtera-brumata-etc,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 ophonus-rufibarbis,beetle,34.3,1.00,55,thin,False,ok,
+opilio-canestrinii,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 opiliones-indet,spider,97.2,1.00,35,thin,False,ok,
+opisthograptis-luteolata,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 opomyza-germinationis-petrei,bee,202.5,1.00,55,thin,False,ok,
 orchesella-villosa,,,,,,,no_form,animalia/collembola/entomobryomorpha
 orchestes-rusci,beetle,78.0,1.00,55,thin,False,ok,
@@ -1031,10 +1294,14 @@ origanum-vulgare,,,,,,,no_form,plantae/magnoliopsida/lamiales
 ornithogalum-umbellatum,,,,,,,no_form,plantae/liliopsida/asparagales
 orobanche-hederae,,,,,,,no_form,plantae/magnoliopsida/lamiales
 orobanche-purpurea,,,,,,,no_form,plantae/magnoliopsida/lamiales
+orthetrum-cancellatum,dragonfly,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 orthonotus-rufifrons,bug,100.0,1.00,45,thin,False,ok,
 orthops-basalis,bug,85.2,1.00,45,thin,False,ok,
+orthosia,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 orthotrichia-costalis,bug,150.0,1.00,40,thin,False,ok,
 orthotylus-marginalis,bug,68.3,1.00,45,thin,False,ok,
+oryctolagus-cuniculus,lagomorph,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+osmia,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 ostrya-carpinifolia,,,,,,,no_form,plantae/magnoliopsida/fagales
 otiorhynchus-aurifer,beetle,36.4,1.00,55,thin,False,ok,
 otiorhynchus-rugosostriatus,beetle,15.0,1.00,55,thin,False,ok,
@@ -1050,6 +1317,7 @@ oxybelus-uniglumis,bee,77.6,1.00,55,thin,False,ok,
 oxychilus-draparnaudi,mollusc,45.0,0.90,55,thin,False,ok,
 oxythyrea-funesta,beetle,92.3,1.00,55,thin,False,ok,
 pachygaster-leachii,bee,77.0,1.00,55,thin,False,ok,
+pachypsylla,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 pacifastacus-leniusculus,,,,,,,no_form,animalia/malacostraca/decapoda
 palloptera-muliebris,bee,24.4,1.00,55,thin,False,ok,
 palloptera-ustulata,bee,75.3,1.00,55,thin,False,ok,
@@ -1057,6 +1325,7 @@ pammene-fasciana,moth,13.6,1.00,55,thin,False,ok,
 pammene-regiana,moth,92.4,1.00,55,thin,False,ok,
 pamphilius-inanitus,bee,100.4,1.00,55,thin,False,ok,
 panaeolina-foenisecii,mushroom,79.7,1.00,35,thin,False,ok,
+panaphis-juglandis,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 pandemis-cerasana,moth,37.4,1.00,55,thin,False,ok,
 pandemis-heparana,moth,27.8,1.00,55,thin,False,ok,
 panicum-miliaceum,,,,,,,no_form,plantae/liliopsida/poales
@@ -1078,19 +1347,29 @@ parasteatoda-tepidariorum,spider,10.4,1.00,35,thin,False,ok,
 parastichtis-suspecta,moth,69.6,1.00,55,thin,False,ok,
 paraswammerdamia-nebulella,moth,147.3,1.00,55,thin,False,ok,
 pardosa-spec,spider,33.0,1.00,35,thin,False,ok,
+parectopa-robiniella,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 parentucellia-viscosa,,,,,,,no_form,plantae/magnoliopsida/lamiales
 parhelophilus-spec,bee,29.0,1.00,55,thin,False,ok,
+paridae-aegithalidae,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 parietaria-judaica,,,,,,,no_form,plantae/magnoliopsida/rosales
 parietaria-officinalis,,,,,,,no_form,plantae/magnoliopsida/rosales
 parthenolecanium-corni,bug,74.5,1.00,45,thin,False,ok,
+parus-major,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+parus-pipistrellus,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 pasiphila-debiliata,moth,210.0,1.00,55,thin,False,ok,
 pasiphila-rectangulata,moth,62.3,1.00,55,thin,False,ok,
 passaloecus-corniger,bee,34.9,1.00,55,thin,False,ok,
 passaloecus-spec,bee,91.6,1.00,55,thin,False,ok,
+passer,,,,,,,no_form,
+passer-domesticus,,,,,,,no_form,
+passer-domesticus-montanus,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 pastinaca-sativa,,,,,,,no_form,plantae/magnoliopsida/apiales
+pauesia-anatolica,,,,,,,no_form,
 pechipogo-plumigeralis,moth,26.7,1.00,55,thin,False,ok,
 pediasia-contaminella,moth,41.1,1.00,55,thin,False,ok,
 pediopsis-tiliae,bug,86.9,1.00,45,thin,False,ok,
+pelophylax,amphibian,,0.95,50,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+pelophylax-esculentus,amphibian,,0.95,50,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 pelophylax-kl-esculentus,amphibian,64.2,0.95,50,thin,False,ok,
 pelophylax-spec,amphibian,96.2,0.95,50,thin,False,ok,
 pelosia-obtusa,moth,58.8,1.00,55,thin,False,ok,
@@ -1099,6 +1378,7 @@ peribalus-strictus,bug,74.7,1.00,45,thin,False,ok,
 peribatodes-rhomboidaria,moth,30.9,1.00,55,thin,False,ok,
 peribatodes-secundaria,moth,66.4,1.00,55,thin,False,ok,
 periclista-spec,bee,19.7,1.00,55,thin,False,ok,
+periparus-ater,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 periplaneta-australasiae,bug,16.0,1.00,40,thin,False,ok,
 peripsychoda-auriculata,bee,35.2,1.00,55,thin,False,ok,
 peripsychoda-spec,bee,44.1,1.00,55,thin,False,ok,
@@ -1129,6 +1409,8 @@ philodromus-spec,spider,51.2,1.00,35,thin,False,ok,
 philonicus-albiceps,bee,57.5,1.00,55,thin,False,ok,
 philopedon-plagiatum,beetle,33.3,1.00,55,thin,False,ok,
 philosepedon-spec,bee,16.3,1.00,55,thin,False,ok,
+phloeosinus-aubei,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+phloeosinus-metasequoiae,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 phlogophora-meticulosa,moth,49.6,1.00,55,thin,False,ok,
 phoenicurus-ochruros,bird,207.6,1.00,55,thin,False,ok,
 pholcus-phalangioides,spider,27.2,1.00,35,thin,False,ok,
@@ -1139,15 +1421,21 @@ phragmatobia-fuliginosa,moth,56.5,1.00,55,thin,False,ok,
 phycita-roborella,moth,11.5,1.00,55,thin,False,ok,
 phycitodes-binaevella,moth,44.0,1.00,55,thin,False,ok,
 phycitodes-spec,moth,23.6,1.00,55,thin,False,ok,
+phyllaphis-fagi,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+phyllobius-intrusus,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 phyllocnistis-xenia,moth,93.1,1.00,55,thin,False,ok,
 phyllocoptes-eupadi,spider,80.5,1.00,35,thin,False,ok,
+phyllonorycter,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 phyllonorycter-comparella,moth,206.7,1.00,55,thin,False,ok,
+phyllonorycter-esperella,,,,,,,no_form,
 phyllonorycter-lautella,moth,155.5,1.00,55,thin,False,ok,
 phyllonorycter-muelleriella,moth,20.9,1.00,55,thin,False,ok,
 phyllonorycter-platani,moth,77.8,1.00,55,thin,False,ok,
 phyllonorycter-quinqueguttella,moth,15.8,1.00,55,thin,False,ok,
+phylloscopus-collybita,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 phyllosticta-cruenta,fungus,101.0,1.00,35,thin,False,ok,
 phymatocera-aterrima,bee,65.9,1.00,55,thin,False,ok,
+physcia-adscendens,fungus,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 physcia-caesia,fungus,27.7,1.00,35,thin,False,ok,
 physconia-grisea,fungus,204.0,1.00,35,thin,False,ok,
 physella-acuta,mollusc,35.4,0.90,55,thin,False,ok,
@@ -1161,7 +1449,12 @@ phytomyza-senecionis,bee,95.2,1.00,55,thin,False,ok,
 phytomyza-spondylii-pastinacae,,,,,,,no_form,-/-/-
 phytophthora-lateralis,,,,,,,no_form,-/-/-
 phytoptus-abnormis,spider,95.6,1.00,35,thin,False,ok,
+phytoptus-avellanae-big-bud-mite,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+pica,,,,,,,no_form,
+picidae,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+pieris-brassicae,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 pieris-mannii,moth,23.8,1.00,55,thin,False,ok,
+pieris-rapae,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 pieris-rapae-napi,moth,78.3,1.00,55,thin,False,ok,
 pieris-rapae-rapae,moth,78.3,1.00,55,thin,False,ok,
 piezodorus-lituratus,bug,66.0,1.00,45,thin,False,ok,
@@ -1169,6 +1462,10 @@ pimpinella-major,,,,,,,no_form,plantae/magnoliopsida/apiales
 pimpla-rufipes,bee,70.8,1.00,55,thin,False,ok,
 pimplinae-indet,,,,,,,no_form,-/-/-
 piniphila-bifasciana,moth,23.0,1.00,55,thin,False,ok,
+pipistrellus,bat,,1.00,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+pipistrellus-pipistrellus,bat,,1.00,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+pipistrellus-pipistrellus-nyctalus-noctula,bat,,1.00,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+pipistrellus-plecotus-auritus,,,,,,,no_form,
 pipunculidae-indet,bee,214.3,1.00,55,thin,False,ok,
 piratula-latitans,spider,17.3,1.00,35,thin,False,ok,
 pisaura-mirabilis,spider,65.8,1.00,35,thin,False,ok,
@@ -1178,6 +1475,7 @@ plagiognathus-chrysanthemi,bug,306.7,1.00,45,thin,False,ok,
 plagiosterna-aenea,beetle,81.1,1.00,55,thin,False,ok,
 plantago-coronopus,,,,,,,no_form,plantae/magnoliopsida/lamiales
 planuncus-tingitanus-s-l,bug,24.6,1.00,40,thin,False,ok,
+platalea-leucorodia,wading-bird,,1.00,15,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 platanus-x-hispanica-p-occidentalis-x-p-orientalis,,,,,,,no_form,plantae/magnoliopsida/proteales
 platycheirus-albimanus,bee,90.0,1.00,55,thin,False,ok,
 platyedra-subcinerea,moth,29.4,1.00,55,thin,False,ok,
@@ -1190,9 +1488,11 @@ poa-annua,,,,,,,no_form,plantae/liliopsida/poales
 poa-compressa,,,,,,,no_form,plantae/liliopsida/poales
 poa-trivialis,,,,,,,no_form,plantae/liliopsida/poales
 poaceae-indet,,,,,,,no_form,plantae/liliopsida/poales
+podiceps-cristatus,water-bird,,1.00,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 polistes-dominula,bee,27.3,1.00,55,thin,False,ok,
 pollenia-spec,bee,117.0,1.00,55,thin,False,ok,
 polycarpon-tetraphyllum,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
+polygonia-c-album,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 polygonum-aviculare,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 polyommatus-icarus,moth,47.6,1.00,55,thin,False,ok,
 polypodium-interjectum-polypodium-vulgare,,,,,,,no_form,-/-/-
@@ -1216,16 +1516,24 @@ potentilla-reptans,,,,,,,no_form,plantae/magnoliopsida/rosales
 prays-fraxinella,moth,39.8,1.00,55,thin,False,ok,
 prays-ruficeps,moth,45.0,1.00,55,thin,False,ok,
 pristiphora-pallidiventris,bee,36.9,1.00,55,thin,False,ok,
+prociphilus-aphis-fabae,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 proteroiulus-fuscus,,,,,,,no_form,animalia/diplopoda/julida
 protomyces-macrosporus,fungus,79.1,1.00,35,thin,False,ok,
 protoparmeliopsis-muralis,fungus,50.9,0.85,35,thin,False,ok,
 prunus-avium,,,,,,,no_form,plantae/magnoliopsida/rosales
 prunus-spinosa,,,,,,,no_form,plantae/magnoliopsida/rosales
+pseudemys-concinna,reptile,,0.85,50,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+pseudococcidae,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 pseudofumaria-lutea,,,,,,,no_form,plantae/magnoliopsida/ranunculales
 pseudoips-prasinana,moth,61.6,1.00,55,thin,False,ok,
+pseudoscorpiones,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 pseudovadonia-livida,beetle,75.8,1.00,55,thin,False,ok,
 psittacula,bird,27.1,1.00,55,thin,False,ok,
+psittacula-krameri,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+psocoptera,,,,,,,no_form,
+psychidae,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 psyllopsis-spec,bug,31.6,1.00,45,thin,False,ok,
+pterocallis-alni,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 pterophorus-pentadactyla,moth,109.2,1.00,55,thin,False,ok,
 pterostichus-niger,beetle,15.7,1.00,55,thin,False,ok,
 pterostichus-spec,beetle,30.7,1.00,55,thin,False,ok,
@@ -1235,25 +1543,34 @@ ptychoptera-contaminata,bee,20.0,1.00,55,thin,False,ok,
 puccinia-aegopodii,fungus,82.1,1.00,35,thin,False,ok,
 puccinia-allii,fungus,70.8,1.00,35,thin,False,ok,
 pulicaria-dysenterica,,,,,,,no_form,plantae/magnoliopsida/asterales
+pulvinaria-regalis,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 punctelia-borreri,fungus,90.0,0.85,35,thin,False,ok,
 pyralis-farinalis,moth,62.8,1.00,55,thin,False,ok,
 pyrausta-aurata,moth,65.6,1.00,55,thin,False,ok,
 pyrrhalta-viburni,beetle,81.2,1.00,55,thin,False,ok,
 pyrrhocoris-apterus,bug,90.5,1.00,45,thin,False,ok,
 pyrrhosoma-nymphula,dragonfly,78.9,1.00,55,thin,False,ok,
+pyrrhula-pyrrhula,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 pyrus-communis,,,,,,,no_form,plantae/magnoliopsida/rosales
 quercus-ilex,,,,,,,no_form,plantae/magnoliopsida/fagales
 rabdophaga-rosaria,bee,94.7,1.00,55,thin,False,ok,
 rallus-aquaticus,water-bird,25.0,1.00,20,thin,False,ok,
 ramalina-farinacea,fungus,72.0,0.85,35,thin,False,ok,
+rana-temporaria,amphibian,,0.95,50,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 ranunculus-lanuginosus,,,,,,,no_form,plantae/magnoliopsida/ranunculales
 ranunculus-repens,,,,,,,no_form,plantae/magnoliopsida/ranunculales
 raphanus-spec,,,,,,,no_form,plantae/magnoliopsida/brassicales
+rattus-norvegicus,rodent,,1.00,40,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+regulus,,,,,,,no_form,
+regulus-ignicapilla,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+regulus-regulus,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 reseda-lutea,,,,,,,no_form,plantae/magnoliopsida/brassicales
 reseda-luteola,,,,,,,no_form,plantae/magnoliopsida/brassicales
+resseliella-craneiobia-corni,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 rhadinoceraea-micans,bee,145.5,1.00,55,thin,False,ok,
 rhagio-tringarius,bee,70.0,1.00,55,thin,False,ok,
 rhagoletis-alternata,bee,88.1,1.00,55,thin,False,ok,
+rhagoletis-completa,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 rhantus-suturalis,beetle,17.1,1.00,55,thin,False,ok,
 rhaphigaster-nebulosa,bug,101.1,1.00,45,thin,False,ok,
 rhaphium-spec,,,,,,,no_form,animalia/-/-
@@ -1263,6 +1580,8 @@ rhinophora-lepida,bee,142.5,1.00,55,thin,False,ok,
 rhogogaster-spec,bee,75.0,1.00,55,thin,False,ok,
 rhogogaster-viridis-s-l,bee,101.1,1.00,55,thin,False,ok,
 rhopalus-subrufus,bug,73.4,1.00,45,thin,False,ok,
+rhopobota,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+rhynchaenus-fagi,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 ribes-nigrum,,,,,,,no_form,plantae/magnoliopsida/saxifragales
 rilaena-triangularis,spider,84.7,1.00,35,thin,False,ok,
 riparia-riparia,bird,85.2,1.00,55,thin,False,ok,
@@ -1291,6 +1610,7 @@ rumex-spec,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 sagina-procumbens,,,,,,,no_form,plantae/magnoliopsida/caryophyllales
 salix-cinerea,,,,,,,no_form,plantae/magnoliopsida/malpighiales
 salix-spec,,,,,,,no_form,-/-/-
+salticus-scenicus,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 salvia-argentea,,,,,,,no_form,plantae/magnoliopsida/lamiales
 salvia-pratensis,,,,,,,no_form,plantae/magnoliopsida/lamiales
 salvia-viridis,,,,,,,no_form,plantae/magnoliopsida/lamiales
@@ -1300,18 +1620,25 @@ santolina-chamaecyparissus,,,,,,,no_form,plantae/magnoliopsida/asterales
 sapygina-decemguttata,bee,34.2,1.00,55,thin,False,ok,
 sarcophaga-spec,bee,76.7,1.00,55,thin,False,ok,
 sarcophagidae-indet,bee,11.3,1.00,55,thin,False,ok,
+satyrium-w-album,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 sawadaea-bicornis,fungus,89.6,1.00,35,thin,False,ok,
 scabiosa-columbaria,,,,,,,no_form,plantae/magnoliopsida/dipsacales
 scaeva-pyrastri,bee,81.2,1.00,55,thin,False,ok,
 scaeva-selenitica,bee,83.8,1.00,55,thin,False,ok,
+scardinius-erythrophthalmus,fish,,1.20,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 schedonorus-giganteus,,,,,,,no_form,plantae/liliopsida/poales
 schoenobius-gigantella,moth,35.5,1.00,55,thin,False,ok,
 sciapus-platypterus,bee,88.5,1.00,55,thin,False,ok,
 sciapus-spec,bee,107.4,1.00,55,thin,False,ok,
 sciaridae-indet,bee,30.0,1.00,55,thin,False,ok,
 sciota-rhenella,moth,0.0,1.00,55,thin,False,ok,
+sciurus,,,,,,,no_form,
+sciurus-carolinensis,mammal,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+sciurus-vulgaris,mammal,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+sciurus-vulgaris-s-carolinensis,mammal,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 scoliopteryx-libatrix,moth,34.3,1.00,55,thin,False,ok,
 scolopostethus-decoratus,bug,187.0,1.00,45,thin,False,ok,
+scolytus-scolytus,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 scoparia-ambigualis,moth,30.0,1.00,55,thin,False,ok,
 scoparia-basistrigalis,moth,34.3,1.00,55,thin,False,ok,
 scoparia-basistrigalis-ambigualis,moth,217.5,1.00,55,thin,False,ok,
@@ -1338,6 +1665,8 @@ seioptera-vibrans,bee,97.4,1.00,55,thin,False,ok,
 sempervivum-tectorum,,,,,,,no_form,plantae/magnoliopsida/saxifragales
 senecio-sarracenicus,,,,,,,no_form,plantae/magnoliopsida/asterales
 sepsis-spec,bee,84.6,1.00,55,thin,False,ok,
+serica-brunna,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+sesia-apiformis,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 setaria-viridis,,,,,,,no_form,plantae/liliopsida/poales
 sideridis-turbida,moth,51.0,1.00,55,thin,False,ok,
 silene,,,,,,,no_form,-/-/-
@@ -1349,6 +1678,9 @@ siproeta-epaphus,moth,100.9,1.00,55,thin,False,ok,
 sisymbrium-officinale,,,,,,,no_form,plantae/magnoliopsida/brassicales
 sisymbrium-orientale,,,,,,,no_form,plantae/magnoliopsida/brassicales
 sisyra-nigra,bug,68.4,1.00,40,thin,False,ok,
+sitta-europaea-dendrocopos-major,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+small-mammals,,,,,,,no_form,
+smerinthus-ocellata,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 smerinthus-ocellatus,moth,85.5,1.00,55,thin,False,ok,
 smyrnium-perfoliatum,,,,,,,no_form,plantae/magnoliopsida/apiales
 solanum-nigrum,,,,,,,no_form,plantae/magnoliopsida/solanales
@@ -1368,9 +1700,11 @@ sphaerophoria-spec,bee,80.4,1.00,55,thin,False,ok,
 sphecodes-albilabris,bee,34.9,1.00,55,thin,False,ok,
 sphecodes-spec,bee,62.7,1.00,55,thin,False,ok,
 sphinx-ligustri,moth,64.9,1.00,55,thin,False,ok,
+sphinx-pinastri,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 spilosoma-lubricipeda,moth,42.9,1.00,55,thin,False,ok,
 spilosoma-lutea,moth,167.3,1.00,55,thin,False,ok,
 spilosoma-urticae,moth,228.0,1.00,55,thin,False,ok,
+spinus-spinus,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 splanchnonema-platani,fungus,89.1,1.00,35,thin,False,ok,
 squalius-cephalus,fish,54.0,1.20,45,thin,False,ok,
 stachys-palustris,,,,,,,no_form,plantae/magnoliopsida/lamiales
@@ -1389,20 +1723,27 @@ stenodema-laevigata,bug,91.7,1.00,45,thin,False,ok,
 stenolophus-mixtus,beetle,29.5,1.00,55,thin,False,ok,
 stenopelmus-rufinasus,beetle,27.3,1.00,55,thin,False,ok,
 stenotus-binotatus,bug,97.6,1.00,45,thin,False,ok,
+stereonychus-fraxini,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+sterna-hirundo,gull,,1.00,12,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 stevenia-deceptoria,bee,31.6,1.00,55,thin,False,ok,
 stictoleptura-rubra,beetle,62.3,1.00,55,thin,False,ok,
+stigmella-microtheriella,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 stomaphis-yanonis,,,,,,,no_taxonomy,
 stomaphis-yanonis-aphididae,bug,36.0,1.00,45,thin,False,ok,
 streptopelia-decaocto,,,,,,,no_taxonomy,
 stricticollis-tobias,beetle,31.4,1.00,55,thin,False,ok,
+strix-aluco-phoenicurus-phoenicurus-sitta-dendrocopos,raptor,,1.00,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 stropharia-rugosoannulata,mushroom,111.4,1.00,35,thin,False,ok,
+sturnus-vulgaris,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 subacronicta-megacephala,moth,10.9,1.00,55,thin,False,ok,
 succinea-putris,mollusc,161.2,0.90,55,thin,False,ok,
 succisa-pratensis,,,,,,,no_form,plantae/magnoliopsida/dipsacales
 suillia-spec,bee,106.7,1.00,55,thin,False,ok,
+sus-scrofa,large-mammal,,1.25,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 swammerdamia-paraswammerdamia-spec,moth,33.3,1.00,55,thin,False,ok,
 swammerdamia-pyrella,moth,21.7,1.00,55,thin,False,ok,
 sylvia,,,,,,,no_taxonomy,
+sylvia-atricapilla,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 sylvia-borin,bird,33.5,1.00,55,thin,False,ok,
 sylvicola-spec,,,,,,,no_form,animalia/-/-
 symmorphus-bifasciatus,bee,37.1,1.00,55,thin,False,ok,
@@ -1417,6 +1758,7 @@ synageles-spec,spider,28.8,1.00,35,thin,False,ok,
 synanthedon-formicaeformis,moth,93.4,1.00,55,thin,False,ok,
 synanthedon-tipuliformis,moth,94.9,1.00,55,thin,False,ok,
 syritta-pipiens,bee,32.1,1.00,55,thin,False,ok,
+syrphidae,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 syrphus-ribesii,bee,92.3,1.00,55,thin,False,ok,
 syrphus-spec,bee,38.2,1.00,55,thin,False,ok,
 tabanus-autumnalis,bee,63.3,1.00,55,thin,False,ok,
@@ -1433,6 +1775,8 @@ taxomyia-taxi,bee,83.5,1.00,55,thin,False,ok,
 tegenaria-parietina,spider,42.4,1.00,35,thin,False,ok,
 tegenaria-spec,spider,37.9,1.00,35,thin,False,ok,
 teleiodes-vulgella,moth,73.3,1.00,55,thin,False,ok,
+tenthredinidae,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+tenthredinidae-e-g-croesus-septentrionalis,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 tenthredo-scrophulariae,bee,81.2,1.00,55,thin,False,ok,
 tenthredo-spec,bee,49.7,1.00,55,thin,False,ok,
 tephritis-bardanae,bee,103.3,1.00,55,thin,False,ok,
@@ -1442,15 +1786,22 @@ tethea-or,,,,,,,no_form,animalia/-/-
 tetragnatha-spec,spider,85.9,1.00,35,thin,False,ok,
 tetramorium-caespitum,bee,18.1,1.00,55,thin,False,ok,
 tetraneura-ulmi,bug,72.9,1.00,45,thin,False,ok,
+tetranychidae,spider,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+tetranychus-urticae,,,,,,,no_form,
 tetrix-spec,grasshopper,209.6,1.00,50,thin,False,ok,
+tetropium-gabrieli,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+tettigonia-viridissima,grasshopper,,1.00,50,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 textrix-denticulata,spider,24.0,1.00,35,thin,False,ok,
 thaumatomyia-spec,bee,65.7,1.00,55,thin,False,ok,
+thaumetopoea-pityocampa,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 theba-pisana,mollusc,73.4,0.90,55,thin,False,ok,
 thelaira-nigripes,bee,71.8,1.00,55,thin,False,ok,
+thelephoraceae,fungus,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 thera-britannica-variata,moth,38.9,1.00,55,thin,False,ok,
 thera-obeliscata,moth,42.0,1.00,55,thin,False,ok,
 thereva-cinifera,bee,127.3,1.00,55,thin,False,ok,
 thereva-nobilitata,bee,62.9,1.00,55,thin,False,ok,
+theridiidae,,,,,,,no_taxonomy,
 thinornis-dubius,wading-bird,39.2,1.00,30,thin,False,ok,
 thlaspi-arvense,,,,,,,no_form,plantae/magnoliopsida/brassicales
 thumatha-senex,moth,74.8,1.00,55,thin,False,ok,
@@ -1461,6 +1812,7 @@ tilia-tomentosa,,,,,,,no_form,plantae/magnoliopsida/malvales
 tillus-elongatus,beetle,15.0,1.00,55,thin,False,ok,
 tinea-pellionella,moth,28.1,1.00,55,thin,False,ok,
 tineola-bisselliella,moth,42.7,1.00,55,thin,False,ok,
+tinocallis-platani,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 tinodes-waeneri,bug,27.8,1.00,40,thin,False,ok,
 tiphia-minuta,bee,60.0,1.00,55,thin,False,ok,
 tipula-fascipennis,bee,62.5,1.00,55,thin,False,ok,
@@ -1468,11 +1820,18 @@ tipula-lunata,bee,46.6,1.00,55,thin,False,ok,
 tipula-paludosa-oleracea,bee,90.6,1.00,55,thin,False,ok,
 tipulidae-indet,bee,115.4,1.00,55,thin,False,ok,
 tischeria-ekebladella,moth,27.8,1.00,55,thin,False,ok,
+tomicus-piniperda,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 torilis-japonica,,,,,,,no_form,plantae/magnoliopsida/apiales
 torilis-nodosa,,,,,,,no_form,plantae/magnoliopsida/apiales
+tortricidae,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+tortrix-geometrid,,,,,,,no_form,
 tortrix-viridana,moth,97.1,1.00,55,thin,False,ok,
 torymus-spec,bee,104.0,1.00,55,thin,False,ok,
+toumeyella-liriodendri,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 trachea-atriplicis,moth,54.8,1.00,55,thin,False,ok,
+trachemys-scripta,reptile,,0.85,50,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+trachemys-scripta-scripta,reptile,,0.85,50,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+trachys-yanoi,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 tragopogon-dubius,,,,,,,no_form,plantae/magnoliopsida/asterales
 tragopogon-pratensis,,,,,,,no_form,plantae/magnoliopsida/asterales
 tragopogon-pratensis-subsp-orientalis,,,,,,,no_form,plantae/magnoliopsida/asterales
@@ -1494,21 +1853,41 @@ triteleia-laxa,,,,,,,no_form,plantae/liliopsida/asparagales
 triticum-aestivum,,,,,,,no_form,plantae/liliopsida/poales
 tritomegas-bicolor,bug,69.5,1.00,45,thin,False,ok,
 trochulus-hispidus,mollusc,80.6,0.90,55,thin,False,ok,
+troglodytes,,,,,,,no_form,
 trogoderma-angustum,beetle,97.7,1.00,55,thin,False,ok,
 trombidiidae-indet,spider,34.3,1.00,35,thin,False,ok,
 tropaeolum-majus,,,,,,,no_form,plantae/magnoliopsida/brassicales
 trupanea-stellata,bee,83.0,1.00,55,thin,False,ok,
 trypoxylon-spec,bee,34.3,1.00,55,thin,False,ok,
+tuber-magnatum,,,,,,,no_form,
+tuberculatus,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+tuberolachnus-salignus,bug,,1.00,45,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+turdus,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+turdus-iliacus-pilaris,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+turdus-including-winter-migrants,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+turdus-merula,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+turdus-merula-t-philomelos,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+turdus-philomelos,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+turdus-pilaris,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+turdus-pilaris-t-iliacus,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+turdus-viscivorus,bird,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 turritella-socordia,mollusc,33.9,0.90,55,thin,False,ok,
 tussilago-farfara,,,,,,,no_form,plantae/magnoliopsida/asterales
 typha-angustifolia,,,,,,,no_form,plantae/liliopsida/poales
 typha-latifolia,,,,,,,no_form,plantae/liliopsida/poales
 typhlocybinae-indet,,,,,,,no_form,-/-/-
+tyria-jacobaeae,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 ulmus-spec,,,,,,,no_form,-/-/-
 uloborus-plumipes,spider,34.3,1.00,35,thin,False,ok,
 umbilicus-rupestris,,,,,,,no_form,plantae/magnoliopsida/saxifragales
 unio-tumidus,,,,,,,no_form,animalia/bivalvia/unionida
 urophora-cardui,bee,83.8,1.00,55,thin,False,ok,
+vanellus-vanellus,wading-bird,,1.00,30,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+vanessa-atalanta,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+vanessa-cardui,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+various-lepidoptera,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+various-mammals,,,,,,,no_form,
+venusia-cambrica,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 verbascum-blattaria,,,,,,,no_form,plantae/magnoliopsida/lamiales
 verbascum-spec,,,,,,,no_form,plantae/magnoliopsida/lamiales
 verbascum-speciosum,,,,,,,no_form,plantae/magnoliopsida/lamiales
@@ -1524,11 +1903,14 @@ veronica-filiformis,,,,,,,no_form,plantae/magnoliopsida/lamiales
 veronica-longifolia,,,,,,,no_form,plantae/magnoliopsida/lamiales
 veronica-persica,,,,,,,no_form,plantae/magnoliopsida/lamiales
 veronicastrum-virginicum,,,,,,,no_form,plantae/magnoliopsida/lamiales
+verticillium,fungus,,1.00,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 vespa-crabro,bee,41.7,1.00,55,thin,False,ok,
 vespa-velutina,bee,24.8,1.00,55,thin,False,ok,
 vespa-velutina-nigrithorax,bee,234.7,1.00,55,thin,False,ok,
 vespertilionidae,,,,,,,no_taxonomy,
+vespidae,,,,,,,no_form,
 vespinae-indet,,,,,,,no_form,-/-/-
+vespula,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 vespula-spec,bee,74.2,1.00,55,thin,False,ok,
 vespula-vulgaris,bee,82.7,1.00,55,thin,False,ok,
 viburnum-opulus,,,,,,,no_form,plantae/magnoliopsida/dipsacales
@@ -1538,11 +1920,16 @@ vicia-villosa,,,,,,,no_form,plantae/magnoliopsida/fabales
 vitula-biviella,moth,29.1,1.00,55,thin,False,ok,
 volucella-bombylans,bee,91.1,1.00,55,thin,False,ok,
 volvariella-gloiocephala,mushroom,33.3,1.00,35,thin,False,ok,
+vulpes-vulpes,large-mammal,,0.95,55,bushy,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+vulpes-vulpes-erinaceus-europaeus,large-mammal,,0.95,55,bushy,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 vulpia-myuros,,,,,,,no_form,plantae/liliopsida/poales
+winter-moth-tortrix-spp,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+wood-pigeon-magpie-carrion-crow,,,,,,,no_form,
 xanthorhoe-ferrugata-spadicearia,moth,50.2,1.00,55,thin,False,ok,
 xanthorhoe-fluctuata,moth,73.8,1.00,55,thin,False,ok,
 xanthoria,fungus,44.1,0.85,35,thin,False,ok,
 xanthoria-calcicola,fungus,35.1,0.85,35,thin,False,ok,
+xanthoria-parietina,fungus,,0.85,35,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 xanthostigma-xanthostigma,bug,95.7,1.00,40,thin,False,ok,
 xerocomus-chrysenteron-sl-incl-bubalinus-cisalpinus-declivitatum-porosporus,mushroom,80.0,1.00,35,thin,False,ok,
 xeroplexa-intersecta,mollusc,27.4,0.90,55,thin,False,ok,
@@ -1553,15 +1940,21 @@ xiphydria-camelus,bee,68.2,1.00,55,thin,False,ok,
 xiphydria-prolongata,bee,35.6,1.00,55,thin,False,ok,
 xorides-alpestris,bee,0.0,1.00,55,thin,False,ok,
 xylaria-polymorpha,fungus,41.2,1.00,35,thin,False,ok,
+xylocopa,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+xylocopa-violacea,bee,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
+xylosandrus-crassiusculus,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 xylota-segnis,bee,84.9,1.00,55,thin,False,ok,
 xylota-sylvarum,bee,79.7,1.00,55,thin,False,ok,
+xylotrechus-chinensis,beetle,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 xysticus-spec,spider,97.5,1.00,35,thin,False,ok,
 xysticus-ulmi,spider,352.1,1.00,35,thin,False,ok,
+yponomeuta-evonymella,moth,,1.00,55,thin,False,labeled_preexisting,sprite was rendered earlier; form applied here for gallery grouping
 yponomeuta-malinellus,moth,90.0,1.00,55,thin,False,ok,
 yponomeuta-plumbella,moth,24.6,1.00,55,thin,False,ok,
 yponomeuta-spec,moth,60.0,1.00,55,thin,False,ok,
 ypsolopha-dentella,moth,25.0,1.00,55,thin,False,ok,
 ypsolopha-scabrella,moth,85.9,1.00,55,thin,False,ok,
+zeuzera-pyrina,,,,,,,no_form,
 zimmermannia-longicaudella-atrifrontella,moth,33.3,1.00,55,thin,False,ok,
 zonitoides-nitidus,mollusc,36.5,0.90,55,thin,False,ok,
 zoropsis-spinimana,spider,24.0,1.00,35,thin,False,ok,
