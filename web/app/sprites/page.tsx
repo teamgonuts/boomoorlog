@@ -1,18 +1,23 @@
 /**
  * /sprites — Sprite library QA page (admin-only, NOT linked from nav).
  *
- * Purpose: show one sample sprite per existing form so a reviewer can
- * judge whether the form library is fit for the bulk-render pass. Also
- * lists the 12 proposed new forms that don't yet have implementations,
- * so the reviewer can see the coverage gap at a glance.
+ * Layout: SPRITE on the LEFT, real-photo examples on the RIGHT. Purpose:
+ * quickly see which organisms get grouped into each sprite form so the
+ * reviewer can judge whether the form is a good visual match for the
+ * range of species it will represent.
  *
- * Use: send feedback by form-id (every section has a stable anchor —
- * #tree-conifer, #creature-bird, #new-mushroom, etc.) so individual
- * form notes are unambiguous.
+ * Sections:
+ *   1. New forms (14) — priority QA section (2026-06-30 C3.D.1 batch).
+ *   2. Existing creature forms (10).
+ *   3. Existing tree forms (8).
  *
- * Hidden from nav by design — this is internal QA tooling. Will be
- * gated behind an env flag (or removed) before public launch.
+ * Every form has a stable anchor id (e.g. #new-reptile, #creature-bird)
+ * so feedback can be referenced unambiguously.
+ *
+ * Hidden from nav by design.
  */
+import fs from "node:fs";
+import path from "node:path";
 
 export const metadata = {
   title: "Sprite library (admin) — Creatures AMS",
@@ -20,236 +25,384 @@ export const metadata = {
   robots: "noindex,nofollow",
 };
 
-type TreeForm = {
+type FormEntry = {
   id: string;
   label: string;
-  slug: string;
+  spriteSrc: string;
+  count: string;
   desc: string;
-};
-
-type CreatureForm = {
-  id: string;
-  label: string;
-  slug: string;
-  ext?: "jpg" | "jpeg" | "png";
-  desc: string;
-};
-
-type NewForm = {
-  id: string;
-  label: string;
-  unlocks: string;
-  desc: string;
+  examples: string[];
   subModes?: string[];
 };
 
-const TREE_FORMS: TreeForm[] = [
-  { id: "tree-conifer",   label: "conifer",   slug: "Pinus",        desc: "Triangular evergreen cone (pine, spruce, fir, larch, dawn redwood)." },
-  { id: "tree-round",     label: "round",     slug: "Quercus",      desc: "Rounded dome / lollipop (oak, maple, linden, beech, magnolia)." },
-  { id: "tree-egg",       label: "egg",       slug: "Liquidambar",  desc: "Upright oval / teardrop (young plane, hornbeam, sweetgum)." },
-  { id: "tree-columnar",  label: "columnar",  slug: "Populus",      desc: "Tall and narrow column (Lombardy poplar, fastigiate trees, Italian cypress)." },
-  { id: "tree-spreading", label: "spreading", slug: "Platanus",     desc: "Broad crown on a clear trunk (mature plane, acacia, honey locust)." },
-  { id: "tree-umbrella",  label: "umbrella",  slug: "Cedrus",       desc: "Flat tabletop high on a long trunk (old cedar, old Scots pine, stone pine)." },
-  { id: "tree-vase",      label: "vase",      slug: "Ulmus",        desc: "Narrow at the base, fanning out and up (elm, zelkova)." },
-  { id: "tree-weeping",   label: "weeping",   slug: "Salix",        desc: "Foliage drapes down toward the ground (weeping willow, weeping birch)." },
+// --------------------------------------------------------------------------- //
+// Photo resolver: server-side lookup at render time.
+//   - /creature_photos/*  → static files in web/public/creature_photos/
+//   - /organism_photos/*  → dynamic route handler (app/organism_photos/[slug])
+//     that streams from data/organism_photos/ (kept outside web/ so Turbopack
+//     doesn't try to bundle 1.5k photos).
+// --------------------------------------------------------------------------- //
+const CREATURE_PHOTOS_DIR = path.join(process.cwd(), "public", "creature_photos");
+const ORGANISM_PHOTOS_DIR = path.join(process.cwd(), "..", "data", "organism_photos");
+
+function photoUrl(slug: string): string | null {
+  for (const ext of ["jpg", "jpeg", "png"] as const) {
+    if (fs.existsSync(path.join(CREATURE_PHOTOS_DIR, `${slug}.${ext}`))) {
+      return `/creature_photos/${slug}.${ext}`;
+    }
+    if (fs.existsSync(path.join(ORGANISM_PHOTOS_DIR, `${slug}.${ext}`))) {
+      return `/organism_photos/${slug}.${ext}`;
+    }
+  }
+  return null;
+}
+
+// --------------------------------------------------------------------------- //
+// New forms (C3.D.1) — the priority QA section
+// --------------------------------------------------------------------------- //
+const NEW_FORMS: FormEntry[] = [
+  {
+    id: "new-reptile",
+    label: "reptile",
+    spriteSrc: "/sprites/library/new/reptile-lizard.png",
+    count: "~3 organisms today (will grow)",
+    desc: "Two sub-modes via --aspect: ≥1 lizard (4 short legs + tail), <1 turtle (shell dome).",
+    examples: ["trachemys-scripta-scripta"],
+    subModes: ["lizard (Podarcis, Zootoca, Lacerta, Anguis)", "turtle (Trachemys, Emys)"],
+  },
+  {
+    id: "new-fish",
+    label: "fish",
+    spriteSrc: "/sprites/library/new/fish.png",
+    count: "~5+ organisms (photos pending C5 backfill)",
+    desc: "Side-view fusiform body + fin (carp, perch, rudd, pike, bream, eel).",
+    examples: [],
+  },
+  {
+    id: "new-amphibian",
+    label: "amphibian",
+    spriteSrc: "/sprites/library/new/amphibian.png",
+    count: "~7 organisms",
+    desc: "Squat side view, frog / toad / newt posture (Bufo, Pelophylax, Lissotriton, Triturus).",
+    examples: ["bufo-bufo"],
+  },
+  {
+    id: "new-large-mammal",
+    label: "large-mammal",
+    spriteSrc: "/sprites/library/new/large-mammal.png",
+    count: "~5–7 organisms",
+    desc: "Tall 4-legged side view — deer / boar / fox / badger proportions (Capreolus, Sus, Vulpes, Meles, Cervus).",
+    examples: ["capreolus-capreolus", "sus-scrofa", "vulpes-vulpes", "meles-meles"],
+  },
+  {
+    id: "new-aquatic-mammal",
+    label: "aquatic-mammal",
+    spriteSrc: "/sprites/library/new/aquatic-mammal.png",
+    count: "~5 organisms",
+    desc: "Otter / muskrat / coypu / water-vole side view — elongated waterline mammal (Lutra, Ondatra, Myocastor, Arvicola, Castor).",
+    examples: ["lutra-lutra", "ondatra-zibethicus", "myocastor-coypus"],
+  },
+  {
+    id: "new-water-bird",
+    label: "water-bird",
+    spriteSrc: "/sprites/library/new/water-bird.png",
+    count: "~25–30 organisms",
+    desc: "Duck / coot / goose / grebe on waterline (Anas, Fulica, Cygnus, Aythya, Podiceps, Anser, Gallinula, Aix).",
+    examples: ["anas-platyrhynchos", "fulica-atra", "podiceps-cristatus", "gallinula-chloropus", "branta-canadensis", "alopochen-aegyptiaca", "aythya-ferina"],
+  },
+  {
+    id: "new-wading-bird",
+    label: "wading-bird",
+    spriteSrc: "/sprites/library/new/wading-bird.png",
+    count: "~8–10 organisms",
+    desc: "Long-legged wader: heron / stork / spoonbill / cormorant / lapwing (Ardea, Ciconia, Platalea, Egretta, Phalacrocorax).",
+    examples: ["ardea-cinerea", "ciconia-ciconia", "platalea-leucorodia", "vanellus-vanellus"],
+  },
+  {
+    id: "new-raptor",
+    label: "raptor",
+    spriteSrc: "/sprites/library/new/raptor.png",
+    count: "~10–12 organisms",
+    desc: "Broad wings spread, top-down or side (Buteo, Falco, Accipiter, Circus, Milvus, plus owls Strix / Asio / Tyto).",
+    examples: ["buteo-buteo", "accipiter-nisus", "circus-aeruginosus", "falco-tinnunculus", "asio-otus"],
+  },
+  {
+    id: "new-gull",
+    label: "gull",
+    spriteSrc: "/sprites/library/new/gull.png",
+    count: "~6–8 organisms",
+    desc: "Long-winged side-glide (Larus, Chroicocephalus, Sterna, Hydrocoloeus).",
+    examples: ["larus-fuscus", "larus-argentatus", "chroicocephalus-ridibundus", "sterna-hirundo"],
+  },
+  {
+    id: "new-mollusc",
+    label: "mollusc",
+    spriteSrc: "/sprites/library/new/mollusc-snail.png",
+    count: "~25 organisms",
+    desc: "Two sub-modes via --aspect: <1 snail (visible shell — Cornu, Cepaea, Helix), ≥1 slug (no shell — Arion, Limax, Deroceras).",
+    examples: ["helix-pomatia", "cepaea-spec", "arion-rufus-vulgaris", "limax-maximus", "deroceras-reticulatum", "oxychilus-draparnaudi", "trochulus-hispidus"],
+    subModes: ["snail — shell visible", "slug — elongated, no shell"],
+  },
+  {
+    id: "new-dragonfly",
+    label: "dragonfly",
+    spriteSrc: "/sprites/library/new/dragonfly.png",
+    count: "~19 organisms",
+    desc: "Four spread wings, long slender abdomen — dragonflies + damselflies (Aeshna, Anax, Sympetrum, Calopteryx, Libellula, Ischnura, Coenagrion).",
+    examples: ["orthetrum-cancellatum", "aeshna-cyanea", "anax-imperator", "sympetrum-striolatum", "calopteryx-splendens", "libellula-depressa"],
+  },
+  {
+    id: "new-mushroom",
+    label: "mushroom",
+    spriteSrc: "/sprites/library/new/mushroom.png",
+    count: "~25 organisms",
+    desc: "Cap-on-stipe agarics + boletes (Agaricus, Coprinus, Boletus, Leccinum, Chlorophyllum, Macrolepiota). Distinct from the existing `fungus` form (brackets / lichen crusts only).",
+    examples: ["agaricus-bitorquis", "agaricus-augustus", "boletus-erythropus", "boletus-luridus", "chlorophyllum-rhacodes", "leccinum-scabrum-sl-incl-cyaneobasileucum-melaneum-schistophilum-variicolor"],
+  },
+  {
+    id: "new-grasshopper",
+    label: "grasshopper",
+    spriteSrc: "/sprites/library/new/grasshopper.png",
+    count: "~14 organisms",
+    desc: "Side view with prominent bent hind leg (femur + tibia Z-shape) — grasshoppers, crickets, katydids (Chorthippus, Tettigonia, Pholidoptera, Roeseliana, Metrioptera).",
+    examples: ["chorthippus-biguttulus", "chorthippus-albomarginatus"],
+  },
+  {
+    id: "new-lagomorph",
+    label: "lagomorph",
+    spriteSrc: "/sprites/library/new/lagomorph.png",
+    count: "~3 organisms",
+    desc: "Rabbit / hare — mammal body plus two tall separated ears (Oryctolagus, Lepus).",
+    examples: ["lepus"],
+  },
 ];
 
-const CREATURE_FORMS: CreatureForm[] = [
-  { id: "creature-bug",         label: "bug",         slug: "aphidoidea",                desc: "Tiny oval body, no wings, maybe legs + antennae (aphid, scale, mealybug, mite)." },
-  { id: "creature-beetle",      label: "beetle",      slug: "coccinella-septempunctata", desc: "Hard oval shell with a central elytra seam (ladybird, weevil, longhorn, dor beetle)." },
-  { id: "creature-caterpillar", label: "caterpillar", slug: "cossus-cossus",             desc: "Horizontal segmented worm (sycamore moth larva, hawk-moth caterpillar, processionary)." },
-  { id: "creature-moth",        label: "moth",        slug: "noctua-pronuba",            desc: "Symmetric spread wings, top-down (codling moth, hawk moth, butterfly)." },
-  { id: "creature-bee",         label: "bee",         slug: "apis-mellifera",            desc: "Side-view fat body, wings arching up (honey bee, bumblebee, wasp, hoverfly, fly)." },
-  { id: "creature-spider",      label: "spider",      slug: "araneidae",                 desc: "Round body with 8 legs radiating (garden spider, harvestman)." },
-  { id: "creature-bird",        label: "bird",        slug: "cyanistes-caeruleus",       desc: "Passerine perched — body, head, tail, eye (tit, robin, finch, sparrow, blackbird)." },
-  { id: "creature-mammal",      label: "mammal",      slug: "sciurus-vulgaris",          desc: "Side-view 4-legged body with head + tail (squirrel, dormouse, mouse, marten, hedgehog)." },
-  { id: "creature-bat",         label: "bat",         slug: "pipistrellus-pipistrellus", desc: "Small body, wings arched up-and-out, scalloped membrane (pipistrelle, noctule, barbastelle)." },
-  { id: "creature-fungus",      label: "fungus",      slug: "fomitopsis-betulina",       desc: "Bracket / lichen / mycorrhizal cluster (Fomitopsis, Lobarion, Bradyrhizobium). Two modes via --aspect: ≥1 = bracket, <1 = crust/lichen." },
+// --------------------------------------------------------------------------- //
+// Existing creature forms (already tagged in DB / rendered against roster)
+// --------------------------------------------------------------------------- //
+const CREATURE_FORMS: FormEntry[] = [
+  {
+    id: "creature-bug",
+    label: "bug",
+    spriteSrc: "/creature_sprites/aphidoidea.png",
+    count: "many (default for hemiptera / mites)",
+    desc: "Tiny oval body, no wings (aphid, scale, mealybug, mite).",
+    examples: ["aphidoidea", "aphididae", "acari"],
+  },
+  {
+    id: "creature-beetle",
+    label: "beetle",
+    spriteSrc: "/creature_sprites/coccinella-septempunctata.png",
+    count: "many (default for coleoptera)",
+    desc: "Hard oval shell with elytra seam (ladybirds, weevils, longhorns).",
+    examples: ["coccinella-septempunctata", "adalia-bipunctata", "agelastica-alni"],
+  },
+  {
+    id: "creature-caterpillar",
+    label: "caterpillar",
+    spriteSrc: "/creature_sprites/cossus-cossus.png",
+    count: "many (lepidoptera larvae)",
+    desc: "Horizontal segmented worm.",
+    examples: ["cossus-cossus", "acronicta-aceris", "acronicta-alni"],
+  },
+  {
+    id: "creature-moth",
+    label: "moth",
+    spriteSrc: "/creature_sprites/noctua-pronuba.png",
+    count: "many (default for lepidoptera adults)",
+    desc: "Symmetric spread wings, top-down (moths, butterflies).",
+    examples: ["noctua-pronuba", "apatura-iris", "abraxas-grossulariata", "acronicta-psi"],
+  },
+  {
+    id: "creature-bee",
+    label: "bee",
+    spriteSrc: "/creature_sprites/apis-mellifera.png",
+    count: "many (hymenoptera + diptera)",
+    desc: "Side-view fat body with arched wings (bees, wasps, flies, hoverflies).",
+    examples: ["apis-mellifera", "andrena", "anthophora"],
+  },
+  {
+    id: "creature-spider",
+    label: "spider",
+    spriteSrc: "/creature_sprites/araneidae.png",
+    count: "many (arachnida)",
+    desc: "Round body with 8 legs radiating.",
+    examples: ["araneidae"],
+  },
+  {
+    id: "creature-bird",
+    label: "bird",
+    spriteSrc: "/creature_sprites/cyanistes-caeruleus.png",
+    count: "many (default for passerines)",
+    desc: "Perched passerine — body, head, tail, eye (tits, robins, finches, blackbirds).",
+    examples: ["cyanistes-caeruleus", "acanthis-cabaret", "acrocephalus-scirpaceus"],
+  },
+  {
+    id: "creature-mammal",
+    label: "mammal",
+    spriteSrc: "/creature_sprites/sciurus-vulgaris.png",
+    count: "many (default for small mammals)",
+    desc: "Side-view 4-legged small mammal (squirrel, mouse, marten, hedgehog).",
+    examples: ["sciurus-vulgaris"],
+  },
+  {
+    id: "creature-bat",
+    label: "bat",
+    spriteSrc: "/creature_sprites/pipistrellus-pipistrellus.png",
+    count: "~10 organisms (chiroptera)",
+    desc: "Small body with scalloped wing membrane arched up.",
+    examples: ["pipistrellus-pipistrellus"],
+  },
+  {
+    id: "creature-fungus",
+    label: "fungus",
+    spriteSrc: "/creature_sprites/fomitopsis-betulina.png",
+    count: "many (brackets, crust, lichen)",
+    desc: "Bracket / lichen / mycorrhizal cluster. Two modes via --aspect: ≥1 bracket, <1 crust/lichen.",
+    examples: ["fomitopsis-betulina"],
+  },
 ];
 
-// Two existing forms get the photo+sprite comparison treatment.
-const TREE_COMPARISONS = ["Quercus"];                    // round form
-const CREATURE_COMPARISONS = ["cyanistes-caeruleus", "pipistrellus-pipistrellus"]; // bird, bat
-
-const NEW_FORMS: NewForm[] = [
-  { id: "new-plant",          label: "plant",          unlocks: "~656 organisms (biggest gap)", desc: "Non-tree vascular plants. Three sub-modes recommended.", subModes: ["flower (visible bloom — daisy, poppy, mallow)", "grass (vertical blade-clump)", "rosette (ground-hugging — plantain, dandelion)"] },
-  { id: "new-mushroom",       label: "mushroom",       unlocks: "~25 organisms",                desc: "Iconic cap-on-stipe — gilled mushrooms and boletes (Agaricus, Coprinus, Chlorophyllum, Boletus, Leccinum, Volvariella). Distinct from the existing `fungus` form, which only does brackets and lichen-crusts." },
-  { id: "new-water-bird",     label: "water-bird",     unlocks: "~30 organisms",                desc: "Side view on waterline (ducks, coots, geese, swans)." },
-  { id: "new-wading-bird",    label: "wading-bird",    unlocks: "~10 organisms",                desc: "Long legs + long neck + dagger bill (grey heron, white stork, kingfisher variant)." },
-  { id: "new-mollusc",        label: "mollusc",        unlocks: "~26 organisms",                desc: "Snail or slug. Two sub-modes.", subModes: ["snail (visible shell — Cornu, Cepaea, Helix)", "slug (no shell — Arion, Limax)"] },
-  { id: "new-fish",           label: "fish",           unlocks: "~5+ organisms",                desc: "Side-view fusiform body + fin (carp, perch, rudd)." },
-  { id: "new-amphibian",      label: "amphibian",      unlocks: "7 organisms",                  desc: "Squat side view, frog or toad posture; newt variant with tail (Bufo, Pelophylax, Lissotriton)." },
-  { id: "new-reptile",        label: "reptile",        unlocks: "3 today, will grow",           desc: "Two sub-modes.", subModes: ["lizard (4 short legs + tail — wall lizard)", "turtle (shell + head + flippers — pond slider)"] },
-  { id: "new-raptor",         label: "raptor",         unlocks: "~5 organisms",                 desc: "Broad wings spread, sky view (peregrine, buzzard, kestrel). Visually distinct from the perched-passerine `bird` form." },
-  { id: "new-gull",           label: "gull",           unlocks: "~5 organisms",                 desc: "Long-winged side-glide (lesser black-backed, herring, common tern)." },
-  { id: "new-large-mammal",   label: "large-mammal",   unlocks: "~5 organisms",                 desc: "Tall side view — deer/boar proportions (Capreolus, Sus scrofa)." },
-  { id: "new-aquatic-mammal", label: "aquatic-mammal", unlocks: "~5 organisms",                 desc: "Otter / water-vole side view, waterline visible (Lutra, Arvicola)." },
+// --------------------------------------------------------------------------- //
+// Existing tree forms
+// --------------------------------------------------------------------------- //
+const TREE_FORMS: FormEntry[] = [
+  { id: "tree-conifer",   label: "conifer",   spriteSrc: "/sprites/Pinus.png",       count: "~30 genera", desc: "Triangular evergreen cone (pine, spruce, fir, larch).", examples: ["Pinus", "Picea", "Larix"] },
+  { id: "tree-round",     label: "round",     spriteSrc: "/sprites/Quercus.png",     count: "many",       desc: "Rounded dome (oak, maple, linden, beech).", examples: ["Quercus", "Acer", "Tilia"] },
+  { id: "tree-egg",       label: "egg",       spriteSrc: "/sprites/Liquidambar.png", count: "~15",        desc: "Upright oval (young plane, hornbeam, sweetgum).", examples: ["Liquidambar", "Carpinus"] },
+  { id: "tree-columnar",  label: "columnar",  spriteSrc: "/sprites/Populus.png",     count: "~10",        desc: "Tall narrow column (Lombardy poplar, Italian cypress).", examples: ["Populus"] },
+  { id: "tree-spreading", label: "spreading", spriteSrc: "/sprites/Platanus.png",    count: "~10",        desc: "Broad crown on clear trunk (mature plane, acacia).", examples: ["Platanus", "Robinia"] },
+  { id: "tree-umbrella",  label: "umbrella",  spriteSrc: "/sprites/Cedrus.png",      count: "~5",         desc: "Flat tabletop high on long trunk (old cedar).", examples: ["Cedrus"] },
+  { id: "tree-vase",      label: "vase",      spriteSrc: "/sprites/Ulmus.png",       count: "~5",         desc: "Narrow at base, fanning out (elm, zelkova).", examples: ["Ulmus"] },
+  { id: "tree-weeping",   label: "weeping",   spriteSrc: "/sprites/Salix.png",       count: "~3",         desc: "Foliage drapes down (weeping willow, weeping birch).", examples: ["Salix"] },
 ];
 
+// --------------------------------------------------------------------------- //
+// Row component
+// --------------------------------------------------------------------------- //
+function FormRow({ form, kind }: { form: FormEntry; kind: "new" | "creature" | "tree" }) {
+  // For tree examples, use tree sprites as thumbnails (no photos available)
+  const isTree = kind === "tree";
+  const photos = form.examples
+    .map((slug) => ({ slug, url: isTree ? `/sprites/${slug}.png` : photoUrl(slug) }))
+    .filter((p): p is { slug: string; url: string } => p.url !== null);
+
+  return (
+    <article id={form.id} className={`sl-row sl-row-${kind}`}>
+      <div className="sl-row-sprite">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img className="pixel" src={form.spriteSrc} alt={`${form.label} sprite`} />
+      </div>
+      <div className="sl-row-meta">
+        <div className="sl-row-head">
+          <code className="sl-form-name">{form.label}</code>
+          <span className="sl-form-count">{form.count}</span>
+        </div>
+        <p className="sl-form-desc">{form.desc}</p>
+        {form.subModes && (
+          <ul className="sl-submodes">
+            {form.subModes.map((m) => (
+              <li key={m}>{m}</li>
+            ))}
+          </ul>
+        )}
+        <div className="sl-form-anchor">
+          <code>#{form.id}</code>
+        </div>
+      </div>
+      <div className="sl-row-photos">
+        {photos.length === 0 && (
+          <div className="sl-no-photos">no photos on disk yet — pending C5 backfill for this category</div>
+        )}
+        {photos.map((p) => (
+          <figure key={p.slug} className={`sl-photo${isTree ? " sl-photo-sprite" : ""}`}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className={isTree ? "pixel" : ""}
+              src={p.url}
+              alt={p.slug}
+              loading="lazy"
+            />
+            <figcaption>{p.slug}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </article>
+  );
+}
+
+// --------------------------------------------------------------------------- //
+// Page
+// --------------------------------------------------------------------------- //
 export default function SpriteLibraryPage() {
   return (
     <main className="sprite-library">
       <header className="sl-hero">
         <h1>Sprite library</h1>
         <p className="sl-sub">
-          Hidden admin page (unlinked from nav). One sample per form so you
-          can judge whether the existing sprite forms cover the encyclopedia
-          well enough to start the bulk render. Each form has a stable
-          anchor — leave feedback per form id (e.g. <code>#creature-bee</code>,{" "}
-          <code>#new-plant</code>).
+          Hidden admin QA page. Each row: <b>sprite on the left</b> — the pixel
+          form we render. Middle: form name, expected count, description.
+          <b> Real photos on the right</b> — examples of the organisms that will
+          use this sprite, so you can see the grouping. Reference forms by
+          anchor: <code>#new-reptile</code>, <code>#creature-bee</code>.
         </p>
         <p className="sl-counts">
-          <b>{TREE_FORMS.length}</b> existing tree forms ·{" "}
+          <b>{NEW_FORMS.length}</b> new forms (C3.D.1 batch) ·{" "}
           <b>{CREATURE_FORMS.length}</b> existing creature forms ·{" "}
-          <b>{NEW_FORMS.length}</b> proposed new forms (pending implementation)
+          <b>{TREE_FORMS.length}</b> existing tree forms
         </p>
       </header>
 
       <section>
-        <h2>Existing tree forms ({TREE_FORMS.length})</h2>
+        <h2>
+          New forms ({NEW_FORMS.length})
+          <span className="sl-tag-new">2026-06-30 batch — QA gate</span>
+        </h2>
         <p className="sl-note">
-          Examples below pull from <code>data/sprites_pixel/&lt;genus&gt;.png</code>{" "}
-          (served at <code>/sprites/&lt;genus&gt;.png</code>).
+          14 new forms just landed. Photos are drawn from{" "}
+          <code>/creature_photos/</code> (older curated set) and{" "}
+          <code>/organism_photos/</code> (C5 backfill). Some categories don&apos;t
+          have photos on disk yet — those are called out per row.
         </p>
-        <div className="sl-grid">
-          {TREE_FORMS.map((f) => (
-            <article key={f.id} id={f.id} className="sl-card">
-              <div className="sl-card-art">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="pixel" src={`/sprites/${f.slug}.png`} alt={`${f.label} example: ${f.slug}`} />
-              </div>
-              <div className="sl-card-meta">
-                <span className="sl-id">{f.id}</span>
-                <h3>
-                  <code>{f.label}</code>{" "}
-                  <span className="sl-eg">→ {f.slug}</span>
-                </h3>
-                <p>{f.desc}</p>
-              </div>
-            </article>
+        <div className="sl-rows">
+          {NEW_FORMS.map((f) => (
+            <FormRow key={f.id} form={f} kind="new" />
           ))}
         </div>
-      </section>
-
-      <section>
-        <h2>Tree comparison: photo ↔ sprite</h2>
-        {TREE_COMPARISONS.map((slug) => {
-          const f = TREE_FORMS.find((t) => t.slug === slug);
-          return (
-            <div key={slug} id={`compare-tree-${slug}`} className="sl-compare">
-              <div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`/photos/${slug}.jpg`} alt={`${slug} photo`} />
-                <div className="sl-caption">Photo: {slug}</div>
-              </div>
-              <div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="pixel" src={`/sprites/${slug}.png`} alt={`${slug} sprite`} />
-                <div className="sl-caption">
-                  Sprite: <code>{f?.label}</code> form
-                </div>
-              </div>
-            </div>
-          );
-        })}
       </section>
 
       <section>
         <h2>Existing creature forms ({CREATURE_FORMS.length})</h2>
         <p className="sl-note">
-          Examples below pull from <code>data/creature_sprites_pixel/&lt;slug&gt;.png</code>{" "}
-          (served at <code>/creature_sprites/&lt;slug&gt;.png</code>).
+          Already tagged on the current roster and rendered against ~2,300+
+          organisms.
         </p>
-        <div className="sl-grid">
+        <div className="sl-rows">
           {CREATURE_FORMS.map((f) => (
-            <article key={f.id} id={f.id} className="sl-card">
-              <div className="sl-card-art">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="pixel" src={`/creature_sprites/${f.slug}.png`} alt={`${f.label} example: ${f.slug}`} />
-              </div>
-              <div className="sl-card-meta">
-                <span className="sl-id">{f.id}</span>
-                <h3>
-                  <code>{f.label}</code>{" "}
-                  <span className="sl-eg">→ {f.slug}</span>
-                </h3>
-                <p>{f.desc}</p>
-              </div>
-            </article>
+            <FormRow key={f.id} form={f} kind="creature" />
           ))}
         </div>
       </section>
 
       <section>
-        <h2>Creature comparisons: photo ↔ sprite</h2>
-        {CREATURE_COMPARISONS.map((slug) => {
-          const f = CREATURE_FORMS.find((c) => c.slug === slug);
-          const ext = f?.ext ?? "jpg";
-          return (
-            <div key={slug} id={`compare-creature-${slug}`} className="sl-compare">
-              <div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`/creature_photos/${slug}.${ext}`} alt={`${slug} photo`} />
-                <div className="sl-caption">Photo: {slug}</div>
-              </div>
-              <div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="pixel" src={`/creature_sprites/${slug}.png`} alt={`${slug} sprite`} />
-                <div className="sl-caption">
-                  Sprite: <code>{f?.label}</code> form
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </section>
-
-      <section>
-        <h2>
-          Proposed new forms ({NEW_FORMS.length})
-          <span className="sl-tag-pending">pending implementation</span>
-        </h2>
+        <h2>Existing tree forms ({TREE_FORMS.length})</h2>
         <p className="sl-note">
-          These would close the coverage gap for plants, mushrooms (cap-on-stipe),
-          water-birds, waders, raptors, gulls, molluscs, fish, amphibians,
-          reptiles, large mammals, aquatic mammals. Each is roughly a 30-line
-          Python function in the relevant sprite skill. No sprite rendered yet —
-          this is the QA gate before implementation.
+          Trees don&apos;t have organism photos on disk — the right column
+          shows genus sprites instead.
         </p>
-        <div className="sl-grid">
-          {NEW_FORMS.map((f) => (
-            <article key={f.id} id={f.id} className="sl-card sl-card-pending">
-              <div className="sl-card-art sl-card-art-placeholder">
-                <span>not yet implemented</span>
-              </div>
-              <div className="sl-card-meta">
-                <span className="sl-id">{f.id}</span>
-                <h3>
-                  <code>{f.label}</code>{" "}
-                  <span className="sl-eg">— {f.unlocks}</span>
-                </h3>
-                <p>{f.desc}</p>
-                {f.subModes && (
-                  <ul className="sl-submodes">
-                    {f.subModes.map((m) => (
-                      <li key={m}>{m}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </article>
+        <div className="sl-rows">
+          {TREE_FORMS.map((f) => (
+            <FormRow key={f.id} form={f} kind="tree" />
           ))}
         </div>
       </section>
 
       <footer className="sl-footer">
         <p>
-          Feedback protocol: reference forms by their <code>#id</code> anchors
-          (e.g. <code>#creature-bee</code>, <code>#new-mushroom</code>). When
-          satisfied with the existing-form set, the bulk render (C3.D.3) can
-          start against the ~2,300 photo-having organisms without a sprite.
-          The 12 new forms (C3.D.1) need implementation before they can
-          contribute.
+          Feedback protocol: reference forms by <code>#id</code> anchors
+          (e.g. <code>#new-water-bird</code>, <code>#creature-bee</code>).
+          When the new-form batch reads well against its photo groupings,
+          the bulk render pass (C3.D.3) can proceed.
         </p>
       </footer>
     </main>

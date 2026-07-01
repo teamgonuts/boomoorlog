@@ -582,6 +582,785 @@ def form_fungus(ramp, P):
     return g, span
 
 
+def form_reptile(ramp, P):
+    """Reptile side view. Two modes via --aspect:
+        aspect >= 1.0 → LIZARD (elongated body low to ground, 4 short legs, long tail).
+        aspect <  1.0 → TURTLE (dome shell centre, tiny head + stumpy legs poking out)."""
+    g = _blank()
+    s = P["size"]
+    if P["aspect"] >= 1.0:
+        # LIZARD — body low, elongated, tail longer than body
+        body_rx = max(6, int(round(8 * s)))
+        body_ry = max(2, int(round(3 * s)))
+        body_cx = CX - 3
+        body_cy = CY + 3
+        _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
+        # head — small oval on the right
+        head_r = max(2, int(round(2 * s)))
+        head_cx = body_cx + body_rx
+        head_cy = body_cy - 1
+        _fill_ellipse(g, head_cx, head_cy, head_r + 1, head_r, ramp, span=head_r)
+        # eye
+        if 0 <= head_cx + head_r < WP and 0 <= head_cy - 1 < HP:
+            g[head_cy - 1][head_cx + head_r] = ramp["outline"]
+        # tail — thin taper off the LEFT going down-left
+        for k in range(1, max(6, int(round(11 * s))) + 1):
+            xx = body_cx - body_rx - k
+            yy = body_cy + k // 3
+            if 0 <= xx < WP and 0 <= yy < HP:
+                g[yy][xx] = ramp["dark"] if k < 3 else ramp["outline"]
+        # 4 short legs sticking down
+        foot_y = body_cy + body_ry
+        for dx_off in (-body_rx + 2, body_rx - 3):
+            for k in range(1, 3):
+                xx, yy = body_cx + dx_off, foot_y + k - 1
+                if 0 <= xx < WP and 0 <= yy < HP:
+                    g[yy][xx] = ramp["outline"]
+        return g, body_rx + 2
+    else:
+        # TURTLE — dome shell dominates, tiny head + legs poke out
+        shell_rx = max(7, int(round(10 * s)))
+        shell_ry = max(4, int(round(6 * s)))
+        cx = CX - 1
+        cy = CY + 1
+        # shell as half-ellipse (top half only)
+        for y in range(HP):
+            for x in range(WP):
+                if y > cy:
+                    continue
+                if ((x - cx) / shell_rx) ** 2 + ((y - cy) / shell_ry) ** 2 <= 1.0:
+                    g[y][x] = shade(x, cx, shell_rx, ramp)
+        # shell rim (dark under-line)
+        for x in range(cx - shell_rx, cx + shell_rx + 1):
+            if 0 <= x < WP and 0 <= cy < HP and g[cy][x] is not None:
+                g[cy][x] = ramp["outline"]
+        # scute pattern — 3 dark spots on the shell top
+        seed = P.get("seed", 0)
+        for k in range(4):
+            sx = cx - shell_rx + (k + 1) * (shell_rx // 2) + int(_hash(k, 0, seed) * 2) - 1
+            sy = cy - int(shell_ry * 0.55)
+            if 0 <= sx < WP and 0 <= sy < HP and g[sy][sx] is not None:
+                g[sy][sx] = ramp["dark"]
+        # head — small oval poking out right
+        head_cx = cx + shell_rx
+        head_cy = cy
+        if 0 <= head_cx < WP and 0 <= head_cy < HP:
+            g[head_cy][head_cx] = ramp["mid"]
+        if 0 <= head_cx + 1 < WP and 0 <= head_cy < HP:
+            g[head_cy][head_cx + 1] = ramp["dark"]
+        if 0 <= head_cx + 1 < WP and 0 <= head_cy - 1 < HP:
+            g[head_cy - 1][head_cx + 1] = ramp["outline"]  # eye
+        # 4 stumpy leg nubs
+        for dx_off, sign in ((-shell_rx + 2, -1), (shell_rx - 3, 1)):
+            xx = cx + dx_off
+            yy = cy + 1
+            if 0 <= xx < WP and 0 <= yy < HP:
+                g[yy][xx] = ramp["outline"]
+        # tail nub off the left
+        if 0 <= cx - shell_rx - 1 < WP and 0 <= cy < HP:
+            g[cy][cx - shell_rx - 1] = ramp["outline"]
+        return g, shell_rx
+
+
+def form_fish(ramp, P):
+    """Side-view fusiform fish — body ellipse, tail fin left, dorsal fin top, eye + gill."""
+    g = _blank()
+    s = P["size"]
+    body_rx = max(7, int(round(10 * s * P["aspect"])))
+    body_ry = max(3, int(round(4 * s / max(0.7, P["aspect"]))))
+    body_cx = CX - 1
+    body_cy = CY + 1
+    _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
+    # tail fin — triangle on the left
+    tail_root_x = body_cx - body_rx
+    tail_len = max(3, int(round(5 * s)))
+    for k in range(1, tail_len + 1):
+        h = k * 2
+        for dy in range(-h, h + 1):
+            xx = tail_root_x - k
+            yy = body_cy + dy
+            if 0 <= xx < WP and 0 <= yy < HP and abs(dy) <= h - (k - 1):
+                if abs(dy) == h - (k - 1) or k == tail_len:
+                    g[yy][xx] = ramp["outline"]
+                elif g[yy][xx] is None:
+                    g[yy][xx] = shade(xx, body_cx, body_rx + tail_len, ramp)
+    # dorsal fin — triangle up on top-middle
+    dorsal_h = max(2, int(round(3 * s)))
+    for k in range(1, dorsal_h + 1):
+        for dx in range(-2 - k // 2, 3 + k // 2):
+            xx = body_cx + dx
+            yy = body_cy - body_ry - k
+            if 0 <= xx < WP and 0 <= yy < HP:
+                is_edge = (k == dorsal_h or dx == -2 - k // 2 or dx == 2 + k // 2)
+                g[yy][xx] = ramp["outline"] if is_edge else ramp["dark"]
+    # eye dot near front (right side)
+    eye_x = body_cx + body_rx - 2
+    eye_y = body_cy - 1
+    if 0 <= eye_x < WP and 0 <= eye_y < HP:
+        g[eye_y][eye_x] = ramp["outline"]
+    # gill line — vertical dark line behind the head
+    gill_x = body_cx + body_rx - 4
+    for dy in range(-body_ry + 1, body_ry):
+        yy = body_cy + dy
+        if 0 <= gill_x < WP and 0 <= yy < HP and g[yy][gill_x] is not None:
+            g[yy][gill_x] = ramp["dark"]
+    # small mouth dot at front
+    mouth_x = body_cx + body_rx - 1
+    if 0 <= mouth_x < WP and 0 <= body_cy + 1 < HP:
+        g[body_cy + 1][mouth_x] = ramp["outline"]
+    return g, body_rx + tail_len // 2
+
+
+def form_amphibian(ramp, P):
+    """Squat frog/toad — round body, tucked bent-jump legs, small head, big eye, no tail."""
+    g = _blank()
+    s = P["size"]
+    body_rx = max(6, int(round(8 * s)))
+    body_ry = max(4, int(round(5 * s)))
+    body_cx = CX
+    body_cy = CY + 2
+    _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
+    # head bump — a smaller ellipse tucked on the top of the body
+    head_r = max(2, int(round(3 * s)))
+    head_cx = body_cx + body_rx - head_r - 1
+    head_cy = body_cy - body_ry + 1
+    _fill_ellipse(g, head_cx, head_cy, head_r + 1, head_r, ramp, span=head_r)
+    # big eye on top of head — bulging eye is the signature
+    eye_cx = head_cx + 1
+    eye_cy = head_cy - 1
+    for dx, dy in ((0, 0), (1, 0), (0, -1), (1, -1)):
+        xx, yy = eye_cx + dx, eye_cy + dy
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["outline"] if (dx + dy) % 2 == 0 else ramp["dark"]
+    # bent hind leg (folded, ready to jump) — showing as a Z-shape on the back-left
+    knee_x = body_cx - body_rx + 1
+    knee_y = body_cy + body_ry - 1
+    # thigh
+    for k in range(1, 4):
+        xx = knee_x + k - 1
+        yy = knee_y - k
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["outline"]
+    # shin going down-left
+    for k in range(1, 3):
+        xx = knee_x - k + 1
+        yy = knee_y + k
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["outline"]
+    # front leg — small dab under the head
+    front_x = head_cx - 1
+    front_y = body_cy + body_ry
+    for k in range(2):
+        xx = front_x + k
+        yy = front_y + k
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["outline"]
+    # nostrils / spot on the crown
+    if 0 <= head_cx + head_r < WP and 0 <= head_cy < HP:
+        g[head_cy][head_cx + head_r] = ramp["dark"]
+    return g, body_rx
+
+
+def form_large_mammal(ramp, P):
+    """Larger side-view mammal — deer / boar proportions. Longer body + longer legs +
+    longer neck lifting head high. No bushy tail (thin or absent)."""
+    g = _blank()
+    s = P["size"]
+    body_rx = max(7, int(round(10 * s)))
+    body_ry = max(3, int(round(4 * s)))
+    body_cx = CX - 3
+    body_cy = CY + 1
+    _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
+    # neck rising up-right from the shoulder
+    neck_base_x = body_cx + body_rx - 2
+    neck_top_x = neck_base_x + 2
+    neck_top_y = body_cy - body_ry - 2
+    for k in range(0, 4):
+        xx = neck_base_x + (k // 2)
+        yy = body_cy - body_ry - k
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["dark"] if k in (0, 1) else ramp["outline"]
+        if k >= 1 and 0 <= xx + 1 < WP and 0 <= yy < HP:
+            g[yy][xx + 1] = ramp["mid"]
+    # head — small oval at the top of the neck
+    head_r = max(2, int(round(2 * s)))
+    head_cx = neck_top_x + head_r
+    head_cy = neck_top_y
+    _fill_ellipse(g, head_cx, head_cy, head_r + 1, head_r, ramp, span=head_r)
+    # ears (2 upright)
+    for sign in (-1, 1):
+        xx, yy = head_cx + sign, head_cy - head_r - 1
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["dark"]
+    # eye
+    if 0 <= head_cx + 1 < WP and 0 <= head_cy < HP:
+        g[head_cy][head_cx + 1] = ramp["outline"]
+    # 4 long legs (front pair + back pair, each 4 px tall)
+    leg_top_y = body_cy + body_ry - 1
+    leg_bot_y = HP - 1
+    for dx_off in (-body_rx + 2, -body_rx + 4, body_rx - 4, body_rx - 2):
+        xx = body_cx + dx_off
+        for yy in range(leg_top_y, leg_bot_y + 1):
+            if 0 <= xx < WP and 0 <= yy < HP:
+                g[yy][xx] = ramp["outline"] if yy == leg_bot_y else ramp["dark"]
+    # short tail nub off the back
+    tail_x = body_cx - body_rx
+    if 0 <= tail_x < WP and 0 <= body_cy < HP:
+        g[body_cy][tail_x] = ramp["outline"]
+    return g, body_rx + 2
+
+
+def form_aquatic_mammal(ramp, P):
+    """Sleek elongated otter / water-vole with visible waterline below.
+    Body low and long, head right, small ears, thick tail extending back-left."""
+    g = _blank()
+    s = P["size"]
+    body_rx = max(8, int(round(11 * s)))
+    body_ry = max(2, int(round(3 * s)))
+    body_cx = CX - 2
+    body_cy = CY + 1
+    _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
+    # head — small oval on the right, slightly raised
+    head_r = max(2, int(round(3 * s)))
+    head_cx = body_cx + body_rx - 1
+    head_cy = body_cy - 1
+    _fill_ellipse(g, head_cx, head_cy, head_r + 1, head_r, ramp, span=head_r)
+    # ears — small round nubs
+    for sign in (-1, 1):
+        xx, yy = head_cx + sign, head_cy - head_r
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["dark"]
+    # eye + nose
+    if 0 <= head_cx + head_r < WP and 0 <= head_cy < HP:
+        g[head_cy][head_cx + head_r] = ramp["outline"]
+    if 0 <= head_cx + 1 < WP and 0 <= head_cy - 1 < HP:
+        g[head_cy - 1][head_cx + 1] = ramp["outline"]
+    # thick tapered tail off the LEFT
+    tail_len = max(5, int(round(8 * s)))
+    for k in range(1, tail_len + 1):
+        xx = body_cx - body_rx - k + 1
+        yy = body_cy + (k // 4)
+        thickness = max(0, body_ry - k // 3)
+        for dy in range(-thickness, thickness + 1):
+            yy2 = yy + dy
+            if 0 <= xx < WP and 0 <= yy2 < HP:
+                if abs(dy) == thickness or k == tail_len:
+                    g[yy2][xx] = ramp["outline"]
+                elif g[yy2][xx] is None:
+                    g[yy2][xx] = shade(xx, body_cx, body_rx + tail_len, ramp)
+    # waterline: dashed horizontal line under the body
+    waterline_y = min(HP - 1, body_cy + body_ry + 1)
+    for x in range(WP):
+        if 0 <= waterline_y < HP and g[waterline_y][x] is None:
+            if x % 3 != 2:
+                g[waterline_y][x] = ramp["dark"]
+    return g, body_rx + 2
+
+
+def form_water_bird(ramp, P):
+    """Side-view duck / coot / goose sitting on the water.
+    Round body, arched neck up to head, bill. No visible legs (underwater).
+    Waterline dashes cross the body's underside."""
+    g = _blank()
+    s = P["size"]
+    body_rx = max(7, int(round(9 * s * P["aspect"])))
+    body_ry = max(3, int(round(4 * s)))
+    body_cx = CX - 2
+    body_cy = CY + 2
+    _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
+    # neck rising up-right from shoulder to the head (clear vertical/diag stack)
+    neck_base_x = body_cx + body_rx - 2
+    neck_h = max(3, int(round(3 * s)))
+    for k in range(0, neck_h):
+        xx = neck_base_x + k // 2 + 1
+        yy = body_cy - body_ry - k
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["dark"]
+        if 0 <= xx + 1 < WP and 0 <= yy < HP:
+            g[yy][xx + 1] = ramp["mid"]
+    # head — clearly raised above body
+    head_r = max(2, int(round(2 * s)))
+    head_cx = neck_base_x + neck_h // 2 + 2
+    head_cy = body_cy - body_ry - neck_h + 1
+    _fill_ellipse(g, head_cx, head_cy, head_r + 1, head_r, ramp, span=head_r)
+    # bill — long dark rectangle sticking forward-right (unmistakable duck bill)
+    bill_len = max(3, int(round(4 * s)))
+    for k in range(1, bill_len + 1):
+        xx = head_cx + head_r + k
+        # upper edge of bill
+        if 0 <= xx < WP and 0 <= head_cy < HP:
+            g[head_cy][xx] = ramp["outline"]
+        # lower edge of bill (thicker at base, tapers)
+        if k <= bill_len - 1 and 0 <= xx < WP and 0 <= head_cy + 1 < HP:
+            g[head_cy + 1][xx] = ramp["dark"]
+    # eye
+    if 0 <= head_cx < WP and 0 <= head_cy - 1 < HP:
+        g[head_cy - 1][head_cx] = ramp["outline"]
+    # tail nub off the left-back
+    tail_x = body_cx - body_rx
+    if 0 <= tail_x < WP and 0 <= body_cy < HP:
+        g[body_cy][tail_x] = ramp["dark"]
+    # waterline: dashed line at the middle of the body
+    waterline_y = body_cy + body_ry - 1
+    for x in range(WP):
+        if 0 <= waterline_y < HP:
+            if x % 3 != 2:
+                cur = g[waterline_y][x]
+                if cur is None:
+                    g[waterline_y][x] = ramp["dark"]
+                elif cur in (ramp["mid"], ramp["light"]):
+                    g[waterline_y][x] = ramp["outline"]
+    return g, body_rx + 2
+
+
+def form_wading_bird(ramp, P):
+    """Long-legged wader — heron / stork / kingfisher-tall variant. Small body high up
+    on tall legs, S-curve neck, dagger bill."""
+    g = _blank()
+    s = P["size"]
+    body_rx = max(4, int(round(5 * s)))
+    body_ry = max(2, int(round(3 * s)))
+    body_cx = CX - 3
+    body_cy = CY - 1
+    _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
+    # neck — S curve rising up from the shoulder
+    neck_base_x = body_cx + body_rx - 1
+    for i, (dx, dy) in enumerate(((0, -1), (1, -2), (1, -3), (2, -4))):
+        xx, yy = neck_base_x + dx, body_cy + dy
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["outline"] if i == 3 else ramp["dark"]
+    # head — small oval at top of neck
+    head_cx = neck_base_x + 3
+    head_cy = body_cy - 4
+    for dy, dx_range in ((0, range(0, 3)), (-1, range(1, 3))):
+        for dx in dx_range:
+            xx, yy = head_cx + dx, head_cy + dy
+            if 0 <= xx < WP and 0 <= yy < HP:
+                g[yy][xx] = ramp["dark"]
+    # dagger bill — long pointy horizontal
+    bill_len = max(3, int(round(5 * s)))
+    for k in range(1, bill_len + 1):
+        xx, yy = head_cx + 3 + k - 1, head_cy
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["outline"]
+    # eye
+    if 0 <= head_cx + 1 < WP and 0 <= head_cy - 1 < HP:
+        g[head_cy - 1][head_cx + 1] = ramp["outline"]
+    # long legs going down to the bottom of the frame
+    for dx_off in (-1, 2):
+        xx = body_cx + dx_off
+        for yy in range(body_cy + body_ry, HP):
+            if 0 <= xx < WP and 0 <= yy < HP:
+                g[yy][xx] = ramp["outline"]
+    # tail — short triangle off the back
+    for k in range(1, 3):
+        xx, yy = body_cx - body_rx - k + 1, body_cy + k - 1
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["dark"]
+    return g, body_rx + 3
+
+
+def form_raptor(ramp, P):
+    """Top-down / sky view raptor with broad spread wings. Similar to bat but
+    larger, no ears, tail fan visible, no wing-finger struts."""
+    g = _blank()
+    s = P["size"]
+    body_rx = max(2, int(round(2 * s)))
+    body_ry = max(4, int(round(6 * s)))
+    body_cy = CY
+    _fill_ellipse(g, CX, body_cy, body_rx, body_ry, ramp, span=body_rx)
+    # broad wings — V-shape / M-shape from the shoulder
+    wing_span = max(11, int(round(14 * s)))
+    shoulder_y = body_cy - body_ry + 2
+    for sign in (-1, 1):
+        for step in range(1, wing_span + 1):
+            frac = step / wing_span
+            xx = CX + sign * (body_rx + step - 1)
+            # leading edge tilts back slightly
+            upper = int(round(shoulder_y - 3 * (frac ** 0.6)))
+            # trailing edge falls behind
+            lower = int(round(shoulder_y + 3 - 4 * (frac ** 1.2)))
+            for yy in range(upper, lower + 1):
+                if 0 <= xx < WP and 0 <= yy < HP and g[yy][xx] is None:
+                    if yy == upper or yy == lower:
+                        g[yy][xx] = ramp["dark"]
+                    else:
+                        g[yy][xx] = shade(xx, CX, wing_span + body_rx, ramp)
+        # wingtip primaries — 2-3 splayed pixels at the tip
+        for k in range(2):
+            xx = CX + sign * (body_rx + wing_span + k)
+            yy = int(round(shoulder_y - 3 * ((wing_span / wing_span) ** 0.6))) + k
+            if 0 <= xx < WP and 0 <= yy < HP:
+                g[yy][xx] = ramp["outline"]
+    # tail fan — trapezoid off the bottom of the body
+    tail_top = body_cy + body_ry - 1
+    for k in range(1, 4):
+        for dx in range(-1 - k // 2, 2 + k // 2):
+            xx = CX + dx
+            yy = tail_top + k
+            if 0 <= xx < WP and 0 <= yy < HP and g[yy][xx] is None:
+                is_edge = (dx == -1 - k // 2 or dx == 1 + k // 2 or k == 3)
+                g[yy][xx] = ramp["outline"] if is_edge else ramp["dark"]
+    # head — small circle above body (leading end)
+    head_cy = body_cy - body_ry - 1
+    for dx in (-1, 0, 1):
+        xx = CX + dx
+        if 0 <= xx < WP and 0 <= head_cy < HP:
+            g[head_cy][xx] = ramp["outline"] if abs(dx) == 1 else ramp["dark"]
+    return g, body_rx + wing_span // 2
+
+
+def form_gull(ramp, P):
+    """Long-winged side-glide gull. Streamlined side-view body + long slender
+    wings extended horizontally back-and-sideways. Distinct from raptor (which
+    is top-down). Wings taper to a thin sharp tip."""
+    g = _blank()
+    s = P["size"]
+    body_rx = max(5, int(round(7 * s)))
+    body_ry = max(2, int(round(3 * s)))
+    body_cx = CX - 2
+    body_cy = CY + 1
+    _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
+    # wing — long thin ellipse arching up-and-back from the mid-body
+    wing_rx = max(9, int(round(12 * s)))
+    wing_ry = max(1, int(round(2 * s)))
+    wing_cx = body_cx - wing_rx // 3
+    wing_cy = body_cy - body_ry
+    for y in range(HP):
+        for x in range(WP):
+            if ((x - wing_cx) / wing_rx) ** 2 + ((y - wing_cy) / wing_ry) ** 2 <= 1.0:
+                if g[y][x] is None:
+                    dist = ((x - wing_cx) / wing_rx) ** 2 + ((y - wing_cy) / wing_ry) ** 2
+                    if dist > 0.75:
+                        g[y][x] = ramp["outline"]
+                    else:
+                        g[y][x] = shade(x, wing_cx, wing_rx, ramp)
+    # dark wingtip (primaries) — end of the wing
+    tip_x = wing_cx - wing_rx
+    for k in range(3):
+        xx, yy = tip_x + k, wing_cy
+        if 0 <= xx < WP and 0 <= yy < HP and g[yy][xx] is not None:
+            g[yy][xx] = ramp["outline"]
+    # head — small circle on the right of the body
+    head_r = max(2, int(round(2 * s)))
+    head_cx = body_cx + body_rx - 1
+    head_cy = body_cy - 1
+    _fill_ellipse(g, head_cx, head_cy, head_r + 1, head_r, ramp, span=head_r)
+    # bill — short dagger
+    for k in range(1, 3):
+        xx, yy = head_cx + head_r + k, head_cy
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["outline"]
+    # eye
+    if 0 <= head_cx + 1 < WP and 0 <= head_cy - 1 < HP:
+        g[head_cy - 1][head_cx + 1] = ramp["outline"]
+    # tail — thin fork off the back-left
+    for k in range(1, 3):
+        xx = body_cx - body_rx - k + 1
+        yy = body_cy
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["dark"]
+    return g, body_rx + wing_rx // 2
+
+
+def form_mollusc(ramp, P):
+    """Mollusc side view. Two modes via --aspect:
+        aspect >= 1.0 → SLUG (elongated fleshy body, no shell, two eyestalks up-front)
+        aspect <  1.0 → SNAIL (body low + spiral shell visible on the back)"""
+    g = _blank()
+    s = P["size"]
+    seed = P.get("seed", 0)
+    if P["aspect"] >= 1.0:
+        # SLUG — long fleshy body, tapering back
+        body_rx = max(8, int(round(11 * s)))
+        body_ry = max(2, int(round(3 * s)))
+        body_cx = CX - 1
+        body_cy = CY + 2
+        _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
+        # foot / underside — dark line
+        for x in range(body_cx - body_rx, body_cx + body_rx + 1):
+            yy = body_cy + body_ry
+            if 0 <= x < WP and 0 <= yy < HP:
+                g[yy][x] = ramp["outline"]
+        # two eyestalks — thin verticals rising up from the head end
+        for stalk_dx in (-2, 0):
+            xx = body_cx + body_rx - 1 + stalk_dx
+            for k in range(1, 4):
+                yy = body_cy - body_ry - k
+                if 0 <= xx < WP and 0 <= yy < HP:
+                    g[yy][xx] = ramp["outline"] if k == 3 else ramp["dark"]
+        # mantle groove — small horizontal dark stripe on top
+        for x in range(body_cx - body_rx + 2, body_cx + body_rx // 2 + 1):
+            yy = body_cy - body_ry + 1
+            if 0 <= x < WP and 0 <= yy < HP and g[yy][x] is not None:
+                g[yy][x] = ramp["dark"]
+        return g, body_rx
+    else:
+        # SNAIL — foot below + spiral shell above
+        foot_rx = max(6, int(round(9 * s)))
+        foot_ry = max(2, int(round(2 * s)))
+        foot_cx = CX - 1
+        foot_cy = CY + 4
+        _fill_ellipse(g, foot_cx, foot_cy, foot_rx, foot_ry, ramp, span=foot_rx)
+        # foot underline
+        for x in range(foot_cx - foot_rx, foot_cx + foot_rx + 1):
+            yy = foot_cy + foot_ry
+            if 0 <= x < WP and 0 <= yy < HP:
+                g[yy][x] = ramp["outline"]
+        # spiral shell on top — dome ellipse
+        shell_rx = max(5, int(round(7 * s)))
+        shell_ry = max(4, int(round(5 * s)))
+        shell_cx = foot_cx - 1
+        shell_cy = foot_cy - foot_ry - shell_ry + 1
+        # draw shell with a spiral swirl inside
+        for y in range(HP):
+            for x in range(WP):
+                if ((x - shell_cx) / shell_rx) ** 2 + ((y - shell_cy) / shell_ry) ** 2 <= 1.0:
+                    if g[y][x] is None:
+                        # spiral rings — distance-mod-3 gives the swirl look
+                        dx = x - shell_cx
+                        dy = y - shell_cy
+                        d = int(round(math.hypot(dx, dy)))
+                        ang = math.atan2(dy, dx)
+                        band = (d + int(ang * 2)) % 3
+                        if band == 0:
+                            g[y][x] = ramp["outline"]
+                        else:
+                            g[y][x] = shade(x, shell_cx, shell_rx, ramp)
+        # eyestalks poking forward off the foot's head end
+        head_x = foot_cx + foot_rx - 1
+        for stalk_dx in (0, 1):
+            xx = head_x + stalk_dx
+            for k in range(1, 3):
+                yy = foot_cy - k
+                if 0 <= xx < WP and 0 <= yy < HP and g[yy][xx] is None:
+                    g[yy][xx] = ramp["outline"] if k == 2 else ramp["dark"]
+        return g, foot_rx + 2
+
+
+def form_dragonfly(ramp, P):
+    """Top-down dragonfly / damselfly. Long thin abdomen horizontal, 4 wings out
+    to the sides (2 forward + 2 back), pair of large compound eyes at the head."""
+    g = _blank()
+    s = P["size"]
+    body_len = max(14, int(round(18 * s)))
+    body_x0 = CX - body_len // 2
+    body_x1 = body_x0 + body_len
+    # abdomen — thin horizontal bar down the middle
+    for x in range(body_x0, body_x1 + 1):
+        if 0 <= x < WP:
+            for dy in (-1, 0, 1):
+                yy = CY + dy
+                if 0 <= yy < HP:
+                    if dy == 0:
+                        g[yy][x] = ramp["mid"]
+                    else:
+                        g[yy][x] = ramp["dark"]
+    # abdominal segmentation — small dark ticks every 2 pixels
+    for x in range(body_x0 + 3, body_x1 - 2, 2):
+        if 0 <= x < WP and 0 <= CY < HP:
+            g[CY][x] = ramp["outline"]
+    # 2 forewings top-left of centre, 2 forewings top-right — actually 2 wings
+    # per side (fore + hind), stacked. Fore is bigger.
+    wing_cx = CX + 2
+    for wing_sign_x in (-1, 1):
+        wc_x = CX + wing_sign_x * 3
+        # forewing (upper)
+        fw_rx = max(5, int(round(8 * s)))
+        fw_ry = max(1, int(round(2 * s)))
+        fw_cy = CY - 4
+        for y in range(HP):
+            for x in range(WP):
+                if ((x - wc_x) / fw_rx) ** 2 + ((y - fw_cy) / fw_ry) ** 2 <= 1.0 and g[y][x] is None:
+                    d = ((x - wc_x) / fw_rx) ** 2 + ((y - fw_cy) / fw_ry) ** 2
+                    g[y][x] = ramp["outline"] if d > 0.75 else ramp["light"]
+        # hindwing (lower — slightly narrower)
+        hw_rx = max(4, int(round(6 * s)))
+        hw_ry = max(1, int(round(2 * s)))
+        hw_cx = wc_x + wing_sign_x
+        hw_cy = CY + 4
+        for y in range(HP):
+            for x in range(WP):
+                if ((x - hw_cx) / hw_rx) ** 2 + ((y - hw_cy) / hw_ry) ** 2 <= 1.0 and g[y][x] is None:
+                    d = ((x - hw_cx) / hw_rx) ** 2 + ((y - hw_cy) / hw_ry) ** 2
+                    g[y][x] = ramp["outline"] if d > 0.75 else ramp["light"]
+    # head — small block at right end with 2 big eyes
+    head_x = body_x1
+    for dy in (-1, 0, 1):
+        xx, yy = head_x + 1, CY + dy
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["dark"]
+    # compound eyes: 2x2 dark blocks either side of the head
+    for eye_dy in (-1, 1):
+        xx, yy = head_x + 2, CY + eye_dy
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["outline"]
+    return g, body_len // 2
+
+
+def form_mushroom(ramp, P):
+    """Iconic cap-on-stipe mushroom / toadstool. Dome cap on top, straight stipe
+    below, dark gill-line under the cap. --accent-hue paints cap spots (amanita
+    style) at --accent > 0."""
+    g = _blank()
+    s = P["size"]
+    seed = P.get("seed", 0)
+    # cap
+    cap_rx = max(6, int(round(9 * s)))
+    cap_ry = max(3, int(round(5 * s)))
+    cap_cx = CX
+    cap_cy = CY - 2
+    # draw only the top half (dome)
+    for y in range(HP):
+        for x in range(WP):
+            if y > cap_cy:
+                continue
+            if ((x - cap_cx) / cap_rx) ** 2 + ((y - cap_cy) / cap_ry) ** 2 <= 1.0:
+                g[y][x] = shade(x, cap_cx, cap_rx, ramp)
+    # cap rim — dark line along the bottom of the dome
+    for x in range(cap_cx - cap_rx, cap_cx + cap_rx + 1):
+        if 0 <= x < WP and 0 <= cap_cy < HP and g[cap_cy][x] is not None:
+            g[cap_cy][x] = ramp["outline"]
+    # gill line — a slightly darker horizontal beneath the cap
+    gill_y = cap_cy + 1
+    for x in range(cap_cx - cap_rx + 1, cap_cx + cap_rx):
+        if 0 <= x < WP and 0 <= gill_y < HP and g[gill_y][x] is None:
+            g[gill_y][x] = ramp["dark"]
+    # stipe (stem) — vertical column below cap
+    stipe_w = max(2, int(round(3 * s)))
+    stipe_top = cap_cy + 2
+    stipe_bot = HP - 1
+    stipe_cx = cap_cx
+    for y in range(stipe_top, stipe_bot + 1):
+        for dx in range(-stipe_w // 2, stipe_w - stipe_w // 2):
+            xx = stipe_cx + dx
+            if 0 <= xx < WP and 0 <= y < HP:
+                is_edge = (dx == -stipe_w // 2 or dx == stipe_w - stipe_w // 2 - 1)
+                g[y][xx] = ramp["outline"] if is_edge else shade(xx, stipe_cx, stipe_w, ramp)
+    return g, cap_rx
+
+
+def form_grasshopper(ramp, P):
+    """Side view grasshopper / cricket. Compact torpedo body + huge angled hind
+    leg (jumping-ready) — the hind leg is the identity. Long antennae, small head."""
+    g = _blank()
+    s = P["size"]
+    # SMALL body — grasshopper reads via hind leg, not body mass
+    body_rx = max(4, int(round(5 * s)))
+    body_ry = max(2, int(round(2 * s)))
+    body_cx = CX
+    body_cy = CY + 2
+    _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
+    # head — small oval on the right
+    head_r = max(2, int(round(2 * s)))
+    head_cx = body_cx + body_rx + 1
+    head_cy = body_cy - 1
+    _fill_ellipse(g, head_cx, head_cy, head_r, head_r, ramp, span=head_r)
+    # big eye
+    if 0 <= head_cx + head_r - 1 < WP and 0 <= head_cy - 1 < HP:
+        g[head_cy - 1][head_cx + head_r - 1] = ramp["outline"]
+    # antennae — two long thin lines curving up-forward from the head
+    for stalk_dx in (0, 1):
+        for k in range(1, max(5, int(round(6 * s))) + 1):
+            yy = head_cy - k
+            xx = head_cx + head_r - 1 + stalk_dx + k // 3
+            if 0 <= xx < WP and 0 <= yy < HP:
+                g[yy][xx] = ramp["outline"]
+    # HIND LEG — dominant Z-shape on the back-left. Thick angled thigh (femur)
+    # rising from body's rear.
+    femur_len = max(6, int(round(7 * s)))
+    fx0 = body_cx - body_rx + 1     # base at back of body
+    fy0 = body_cy                    # attaches at body midline
+    for k in range(femur_len):
+        # goes up-and-back: dx = -k, dy = -k*2//3
+        xx = fx0 - k
+        yy = fy0 - (k * 2) // 3
+        # thick 2-pixel femur
+        for dy in (0, 1):
+            if 0 <= xx < WP and 0 <= yy + dy < HP:
+                g[yy + dy][xx] = ramp["outline"] if dy == 0 else ramp["dark"]
+    # knee position
+    knee_x = fx0 - (femur_len - 1)
+    knee_y = fy0 - ((femur_len - 1) * 2) // 3
+    # tibia (shin) — goes down-and-back from knee at steep angle
+    tibia_len = max(5, int(round(6 * s)))
+    for k in range(1, tibia_len + 1):
+        xx = knee_x + k // 2 - 1
+        yy = knee_y + k
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["outline"]
+    # 2 small front legs under the body
+    foot_y = body_cy + body_ry
+    for dx_off in (0, 2):
+        xx = body_cx + dx_off
+        for k in range(1, 3):
+            yy = foot_y + k - 1
+            if 0 <= xx < WP and 0 <= yy < HP:
+                g[yy][xx] = ramp["outline"]
+    return g, body_rx + 3
+
+
+def form_lagomorph(ramp, P):
+    """Rabbit / hare — like the mammal form but with two tall upright ears that
+    are the whole identity. Slightly rounder body, upright posture."""
+    g = _blank()
+    s = P["size"]
+    body_rx = max(5, int(round(7 * s)))
+    body_ry = max(4, int(round(5 * s)))
+    body_cx = CX - 1
+    body_cy = CY + 3
+    _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
+    # head — smaller oval on top-right
+    head_r = max(2, int(round(3 * s)))
+    head_cx = body_cx + body_rx - head_r
+    head_cy = body_cy - body_ry - 1
+    _fill_ellipse(g, head_cx, head_cy, head_r + 1, head_r, ramp, span=head_r)
+    # TALL EARS — the signature. Two clearly separated upright ears with a
+    # gap between them so they don't fuse into a "chef hat".
+    ear_h = max(5, int(round(6 * s)))
+    # Two ear columns with a 2-pixel gap between their inside edges
+    ear_left_x = head_cx - 1
+    ear_right_x = head_cx + head_r + 1
+    for (ear_x, sign) in ((ear_left_x, -1), (ear_right_x, +1)):
+        for k in range(1, ear_h + 1):
+            yy = head_cy - head_r - k + 1
+            if not (0 <= yy < HP):
+                continue
+            # 2-column ear: outline column and inner mid column
+            outer_x = ear_x
+            inner_x = ear_x - sign  # inner column faces the other ear (with gap)
+            # tip cap and base cap use outline; middle uses mid inside, outline outer
+            if k == 1 or k == ear_h:
+                # cap: both cols outline
+                if 0 <= outer_x < WP:
+                    g[yy][outer_x] = ramp["outline"]
+                if 0 <= inner_x < WP:
+                    g[yy][inner_x] = ramp["outline"]
+            else:
+                if 0 <= outer_x < WP:
+                    g[yy][outer_x] = ramp["outline"]
+                if 0 <= inner_x < WP:
+                    g[yy][inner_x] = ramp["mid"]
+    # eye + nose
+    if 0 <= head_cx + 1 < WP and 0 <= head_cy < HP:
+        g[head_cy][head_cx + 1] = ramp["outline"]
+    if 0 <= head_cx + head_r < WP and 0 <= head_cy + 1 < HP:
+        g[head_cy + 1][head_cx + head_r] = ramp["outline"]
+    # small legs
+    foot_y = body_cy + body_ry
+    for dx_off in (-body_rx + 2, body_rx - 3):
+        for k in range(1, 3):
+            xx, yy = body_cx + dx_off, foot_y + k - 1
+            if 0 <= xx < WP and 0 <= yy < HP:
+                g[yy][xx] = ramp["outline"] if k == 2 else ramp["dark"]
+    # tiny puff tail
+    for xx in (body_cx - body_rx, body_cx - body_rx + 1):
+        yy = body_cy
+        if 0 <= xx < WP and 0 <= yy < HP:
+            g[yy][xx] = ramp["light"]
+    return g, body_rx + 2
+
+
 FORMS = {
     "bug": form_bug,
     "beetle": form_beetle,
@@ -593,6 +1372,21 @@ FORMS = {
     "mammal": form_mammal,
     "bat": form_bat,
     "fungus": form_fungus,
+    # New forms (2026-06-30) — C3.D.1 sprite library expansion.
+    "reptile": form_reptile,
+    "fish": form_fish,
+    "amphibian": form_amphibian,
+    "large-mammal": form_large_mammal,
+    "aquatic-mammal": form_aquatic_mammal,
+    "water-bird": form_water_bird,
+    "wading-bird": form_wading_bird,
+    "raptor": form_raptor,
+    "gull": form_gull,
+    "mollusc": form_mollusc,
+    "dragonfly": form_dragonfly,
+    "mushroom": form_mushroom,
+    "grasshopper": form_grasshopper,
+    "lagomorph": form_lagomorph,
 }
 
 
