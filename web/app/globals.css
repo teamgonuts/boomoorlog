@@ -1907,6 +1907,213 @@ main {
   line-height: 1.55;
 }
 
+/* ------------------------------------------------------------------ */
+/* Per-organism sprite gallery (bottom of /sprites)                     */
+/* ------------------------------------------------------------------ */
+.sl-gallery {
+  margin-top: 12px;
+}
+.sl-gallery-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  position: sticky;
+  top: var(--nav-height, 56px);
+  z-index: 30;
+  backdrop-filter: blur(8px);
+  background: rgba(14, 21, 20, 0.92);
+}
+.sl-gallery-search {
+  flex: 1 1 260px;
+  min-width: 220px;
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-family: var(--font-body);
+}
+.sl-gallery-search:focus {
+  outline: none;
+  border-color: var(--gold, #d4a843);
+}
+.sl-gallery-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--dim);
+  cursor: pointer;
+  user-select: none;
+}
+.sl-gallery-clear {
+  background: rgba(212, 168, 67, 0.14);
+  color: var(--gold, #d4a843);
+  border: 1px solid rgba(212, 168, 67, 0.35);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-display, monospace);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.sl-gallery-clear:hover {
+  background: rgba(212, 168, 67, 0.24);
+}
+
+.sl-gallery-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.sl-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--dim);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: var(--font-body);
+}
+.sl-chip code {
+  color: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+.sl-chip-count {
+  font-size: 10px;
+  padding: 1px 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  color: var(--dim);
+}
+.sl-chip:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--ink);
+}
+.sl-chip-active {
+  background: rgba(80, 200, 120, 0.14);
+  border-color: rgba(80, 200, 120, 0.4);
+  color: #6fd18f;
+}
+.sl-chip-active code {
+  color: #6fd18f;
+}
+.sl-chip-active .sl-chip-count {
+  background: rgba(80, 200, 120, 0.25);
+  color: #cdefd6;
+}
+
+.sl-gallery-summary {
+  font-size: 12px;
+  color: var(--dim);
+  margin: 4px 0 10px;
+}
+.sl-gallery-summary b {
+  color: var(--ink);
+}
+
+.sl-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.sl-gcard {
+  margin: 0;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  scroll-margin-top: 120px;
+}
+.sl-gcard-imgs {
+  display: flex;
+  gap: 3px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 3px;
+  border-radius: 5px;
+}
+.sl-gcard-photo,
+.sl-gcard-sprite {
+  width: 58px;
+  height: 58px;
+  background: #e8e2d4;   /* same warm off-white as the form-tile bg */
+  border-radius: 3px;
+  display: block;
+}
+.sl-gcard-photo {
+  object-fit: cover;
+}
+.sl-gcard-sprite {
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+.sl-gcard-nophoto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  color: #666;
+  font-style: italic;
+}
+.sl-gcard figcaption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  min-width: 0;
+  max-width: 128px;
+}
+.sl-gcard-slug {
+  font-size: 10px;
+  color: var(--dim);
+  word-break: break-word;
+  text-align: center;
+  line-height: 1.2;
+}
+.sl-gcard-form {
+  font-size: 9px;
+  color: var(--gold, #d4a843);
+  font-family: var(--font-display, monospace);
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+.sl-gallery-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--dim);
+  font-style: italic;
+}
+.sl-gallery-empty button {
+  margin-left: 8px;
+  background: transparent;
+  color: var(--gold, #d4a843);
+  border: 1px solid rgba(212, 168, 67, 0.4);
+  padding: 4px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 @media (max-width: 720px) {
   .sl-row {
     grid-template-columns: 60px 1fr;

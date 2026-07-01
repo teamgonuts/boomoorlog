@@ -18,6 +18,8 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { loadGallery, galleryFormCounts } from "@/lib/sprite-gallery";
+import { Gallery } from "./Gallery";
 
 export const metadata = {
   title: "Sprite library (admin) — Creatures AMS",
@@ -404,6 +406,8 @@ function FormRow({ form, kind }: { form: FormEntry; kind: "new" | "creature" | "
 // Page
 // --------------------------------------------------------------------------- //
 export default function SpriteLibraryPage() {
+  const galleryItems = loadGallery();
+  const formCounts = galleryFormCounts(galleryItems);
   return (
     <main className="sprite-library">
       <header className="sl-hero">
@@ -418,7 +422,9 @@ export default function SpriteLibraryPage() {
         <p className="sl-counts">
           <b>{NEW_FORMS.length}</b> new forms (C3.D.1 batch) ·{" "}
           <b>{CREATURE_FORMS.length}</b> existing creature forms ·{" "}
-          <b>{TREE_FORMS.length}</b> existing tree forms
+          <b>{TREE_FORMS.length}</b> existing tree forms ·{" "}
+          <b>{galleryItems.length.toLocaleString()}</b> per-organism sprites
+          &nbsp;→&nbsp;<a href="#gallery">jump to gallery ↓</a>
         </p>
       </header>
 
@@ -466,12 +472,31 @@ export default function SpriteLibraryPage() {
         </div>
       </section>
 
+      <section id="gallery">
+        <h2>
+          Per-organism sprite gallery ({galleryItems.length.toLocaleString()})
+          <span className="sl-tag-new">full backfill</span>
+        </h2>
+        <p className="sl-note">
+          Every organism that has both a photo on disk and a rendered sprite,
+          shown as a <b>photo | sprite</b> pair. Filter by form using the chips,
+          search by slug, or toggle &ldquo;only with photo&rdquo; to hide the
+          curated older sprites that don&apos;t have a matching real-world photo
+          on disk yet. Each card has an anchor id{" "}
+          <code>#g-&lt;slug&gt;</code> so you can link to individual sprites in
+          feedback.
+        </p>
+        <Gallery items={galleryItems} formCounts={formCounts} />
+      </section>
+
       <footer className="sl-footer">
         <p>
           Feedback protocol: reference forms by <code>#id</code> anchors
-          (e.g. <code>#new-water-bird</code>, <code>#creature-bee</code>).
-          When the new-form batch reads well against its photo groupings,
-          the bulk render pass (C3.D.3) can proceed.
+          (e.g. <code>#new-water-bird</code>, <code>#creature-bee</code>) or
+          per-organism sprites by <code>#g-&lt;slug&gt;</code>
+          (e.g. <code>#g-cyprinus-carpio</code>). When the new-form batch reads
+          well against its photo groupings, the bulk render pass (C3.D.3) can
+          proceed.
         </p>
       </footer>
     </main>
