@@ -727,15 +727,23 @@ def form_reptile(ramp, P):
         body_rx = shell_r + 1
         body_ry = shell_r // 2
         _fill_ellipse(g, cx, cy + 1, body_rx, body_ry, ramp, span=body_rx)
-        # 4 legs poking out at the diagonals
+        # 4 legs poking out at the diagonals — drawn as 2x2 blocks so they
+        # visibly stick out from under the shell (was: 1-pixel nubs, too subtle)
         for (dx_off, dy_off) in ((-shell_r, +1), (+shell_r, +1),
-                                  (-shell_r + 1, -1), (+shell_r - 1, -1)):
+                                  (-shell_r + 1, -2), (+shell_r - 1, -2)):
             lx = cx + dx_off
             ly = cy + dy_off
-            for k in (0, 1):
-                xx = lx + (1 if dx_off > 0 else -1) * k
-                if 0 <= xx < WP and 0 <= ly < HP:
-                    g[ly][xx] = ramp["outline"] if k == 1 else ramp["dark"]
+            sign = 1 if dx_off > 0 else -1
+            # 2-pixel-wide leg extending out
+            for k in range(0, 3):
+                xx = lx + sign * k
+                for dy in (0, 1):
+                    yy = ly + dy
+                    if 0 <= xx < WP and 0 <= yy < HP:
+                        if k == 2 or dy == 1:
+                            g[yy][xx] = ramp["outline"]
+                        else:
+                            g[yy][xx] = ramp["dark"]
         # HEAD — poking out on the right
         head_cx = cx + shell_r
         head_cy = cy
@@ -781,14 +789,19 @@ def form_fish(ramp, P):
     """Side-view fusiform fish — body ellipse, tail fin left, dorsal fin top, eye + gill."""
     g = _blank()
     s = P["size"]
-    body_rx = max(7, int(round(10 * s * P["aspect"])))
+    # Cap body width so the tail fin doesn't get clipped off the left edge.
+    # Was: body_rx = 10 * s * aspect  → with aspect=1.2 → 12, then tail_len=5,
+    # meaning left tail tip lands at x=-2 (off frame). Now:
+    body_rx = max(6, min(9, int(round(8 * s * P["aspect"]))))
     body_ry = max(3, int(round(4 * s / max(0.7, P["aspect"]))))
-    body_cx = CX - 1
+    tail_len = max(3, int(round(5 * s)))
+    # Center body so BOTH the tail (left) and the head+eye (right) fit.
+    # Left edge = body_cx - body_rx - tail_len must be >= 1.
+    body_cx = max(body_rx + tail_len + 1, CX + 1)
     body_cy = CY + 1
     _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
-    # tail fin — triangle on the left
+    # tail fin — triangle on the left, closed with an outline at the tip
     tail_root_x = body_cx - body_rx
-    tail_len = max(3, int(round(5 * s)))
     for k in range(1, tail_len + 1):
         h = k * 2
         for dy in range(-h, h + 1):
@@ -799,6 +812,14 @@ def form_fish(ramp, P):
                     g[yy][xx] = ramp["outline"]
                 elif g[yy][xx] is None:
                     g[yy][xx] = shade(xx, body_cx, body_rx + tail_len, ramp)
+    # CLOSE THE TAIL — draw a hard dark outline along the leftmost tail
+    # column so the fin ends in a distinct closing edge, not a fade-out.
+    tail_tip_x = tail_root_x - tail_len
+    tip_height = tail_len * 2 - (tail_len - 1)   # ≈ tail_len + 1
+    for dy in range(-tip_height, tip_height + 1):
+        yy = body_cy + dy
+        if 0 <= tail_tip_x < WP and 0 <= yy < HP and g[yy][tail_tip_x] is not None:
+            g[yy][tail_tip_x] = ramp["outline"]
     # dorsal fin — triangle up on top-middle
     dorsal_h = max(2, int(round(3 * s)))
     for k in range(1, dorsal_h + 1):
@@ -827,14 +848,37 @@ def form_fish(ramp, P):
 
 
 def form_amphibian(ramp, P):
-    """Squat frog/toad — round body, tucked bent-jump legs, small head, big eye, no tail."""
+    """Frog / toad / newt side-view. Body proportions vary by --aspect
+    so a single form covers the whole class:
+      aspect >= 1.15 → newt / salamander (elongated body + visible tail)
+      0.85 < aspect < 1.15 → regular frog (medium round body, no tail)
+      aspect <= 0.85 → toad / bufo (FAT round body — chunky and squat)
+    """
     g = _blank()
     s = P["size"]
-    body_rx = max(6, int(round(8 * s)))
-    body_ry = max(4, int(round(5 * s)))
+    a = P["aspect"]
+    is_newt = a >= 1.15
+    is_toad = a <= 0.85
+    # Toad: fatter body. Newt: slimmer, longer body. Frog: medium.
+    if is_toad:
+        body_rx = max(7, int(round(9 * s)))
+        body_ry = max(5, int(round(6 * s)))     # extra vertical bulk
+    elif is_newt:
+        body_rx = max(8, int(round(10 * s)))    # elongated
+        body_ry = max(2, int(round(3 * s)))
+    else:
+        body_rx = max(6, int(round(8 * s)))
+        body_ry = max(4, int(round(5 * s)))
     body_cx = CX
     body_cy = CY + 2
     _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
+    # NEWT tail — thin taper off the LEFT (only for aspect >= 1.15)
+    if is_newt:
+        for k in range(1, max(5, int(round(7 * s))) + 1):
+            xx = body_cx - body_rx - k + 1
+            yy = body_cy + (k // 4)
+            if 0 <= xx < WP and 0 <= yy < HP:
+                g[yy][xx] = ramp["dark"] if k < 3 else ramp["outline"]
     # head bump — a smaller ellipse tucked on the top of the body
     head_r = max(2, int(round(3 * s)))
     head_cx = body_cx + body_rx - head_r - 1
@@ -877,23 +921,48 @@ def form_amphibian(ramp, P):
 
 
 def form_large_mammal(ramp, P):
-    """Side-view large mammal — deer / boar / big fox / badger proportions.
-    Body is HIGH off the ground (so legs are ~half the total silhouette
-    height), neck lifts head up above the shoulder, 4 tall separated legs.
-    Distinct from the small `mammal` (squirrel-y) and `rodent` (mouse) forms.
+    """Side-view large mammal — deer / boar / fox / badger. Three sub-modes
+    keyed off --aspect so a single form covers the whole family without
+    every species looking identical:
+
+      aspect >= 1.15 → TALL (deer, boar, roe). Body high off ground, long
+                       legs. Boar can bulk up further via --size.
+      0.75 < aspect < 1.15 → MID (fox / canid). Medium legs, BUSHY
+                       trailing tail (tail=bushy triggers), pointier snout.
+      aspect <= 0.75 → LOW (badger / mustelid). Body sits LOW to the
+                       ground, short legs, thick body. `--tail=none` +
+                       head-stripe is drawn if P["head_stripe"] is set.
     """
     g = _blank()
     s = P["size"]
-    # Body: not-too-tall oval sitting HIGH so long legs can go under it.
-    body_rx = max(7, int(round(9 * s)))
-    body_ry = max(2, int(round(3 * s)))
+    a = P["aspect"]
+
+    # Pick proportion tuning per sub-mode
+    if a >= 1.15:
+        mode = "tall"
+        body_rx = max(7, int(round(9 * s)))
+        body_ry = max(2, int(round(3 * s)))
+        body_cy = CY - 2
+        leg_style = "long"           # from body underside to HP-1
+    elif a <= 0.75:
+        mode = "low"
+        body_rx = max(7, int(round(9 * s)))
+        body_ry = max(3, int(round(4 * s)))   # thicker
+        body_cy = CY + 2                       # body sits LOW
+        leg_style = "short"
+    else:
+        mode = "mid"
+        body_rx = max(6, int(round(8 * s)))
+        body_ry = max(2, int(round(3 * s)))
+        body_cy = CY
+        leg_style = "medium"
+
     body_cx = CX - 3
-    body_cy = CY - 2                    # body sits high (was CY+1)
     _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
 
-    # Neck rising up-right from the shoulder (thicker, more vertical)
+    # Neck rising up-right from the shoulder
     neck_base_x = body_cx + body_rx - 2
-    neck_len = max(4, int(round(4 * s)))
+    neck_len = 4 if mode == "tall" else (3 if mode == "mid" else 2)
     for k in range(0, neck_len):
         xx = neck_base_x + (k // 2)
         yy = body_cy - body_ry - k
@@ -907,6 +976,7 @@ def form_large_mammal(ramp, P):
     head_cx = neck_base_x + (neck_len // 2) + head_r
     head_cy = body_cy - body_ry - neck_len + 1
     _fill_ellipse(g, head_cx, head_cy, head_r + 1, head_r, ramp, span=head_r)
+
     # Upright ears (2 nubs on top of head)
     for sign in (-1, 1):
         xx = head_cx + sign
@@ -915,43 +985,88 @@ def form_large_mammal(ramp, P):
             g[yy][xx] = ramp["dark"]
         if 0 <= xx < WP and 0 <= yy + 1 < HP and g[yy + 1][xx] is None:
             g[yy + 1][xx] = ramp["dark"]
-    # Snout — small extension in front of head
-    snout_x = head_cx + head_r + 1
-    if 0 <= snout_x < WP and 0 <= head_cy + 1 < HP:
-        g[head_cy + 1][snout_x] = ramp["outline"]
+
+    # Snout — for fox (mid) draw longer/pointier; for badger (low) short
+    snout_len = 2 if mode == "mid" else 1
+    for k in range(1, snout_len + 1):
+        snout_x = head_cx + head_r + k
+        if 0 <= snout_x < WP and 0 <= head_cy + 1 < HP:
+            g[head_cy + 1][snout_x] = ramp["outline"]
+
     # Eye
     if 0 <= head_cx + 1 < WP and 0 <= head_cy < HP:
         g[head_cy][head_cx + 1] = ramp["outline"]
 
-    # 4 LONG LEGS — spread wide so they read as 4 distinct legs, not 2
-    # blocks. Front pair near the neck; back pair near the tail. Reach
-    # from body underside all the way to the bottom of the frame.
-    leg_top_y = body_cy + body_ry
-    leg_bot_y = HP - 1
-    # Legs at positions roughly 1/5 and 4/5 across the body width, doubled
-    # for near + far leg on each side.
+    # BADGER HEAD STRIPE — one dark vertical line from crown down through
+    # snout, drawn if P.get("head_stripe") is truthy. Uses shell-ramp-style
+    # dark accent (build a stripe ramp with same hue but very dark + very light).
+    if P.get("head_stripe"):
+        stripe_ramp = build_ramp(P.get("hue", 25), 5)  # near-grey ramp
+        # Draw a white/light stripe down the forehead + a dark stripe on
+        # each side. This is the signature badger face.
+        for dy in (-1, 0, 1):
+            sy = head_cy + dy
+            sx = head_cx + 1
+            if 0 <= sx < WP and 0 <= sy < HP:
+                g[sy][sx] = stripe_ramp["light"]
+        # dark side stripes
+        for dy in (0, 1):
+            sy = head_cy + dy
+            for sx in (head_cx, head_cx + 2):
+                if 0 <= sx < WP and 0 <= sy < HP:
+                    g[sy][sx] = stripe_ramp["outline"]
+
+    # LEGS — number, height, spread depend on sub-mode
+    if leg_style == "long":
+        leg_top_y = body_cy + body_ry
+        leg_bot_y = HP - 1
+    elif leg_style == "medium":
+        leg_top_y = body_cy + body_ry
+        leg_bot_y = HP - 2
+    else:  # short (badger)
+        leg_top_y = body_cy + body_ry
+        leg_bot_y = min(HP - 1, leg_top_y + 3)
+
     leg_positions = [
-        body_cx - body_rx + 2,   # back-left  (far)
-        body_cx - body_rx + 4,   # back-right (near)
-        body_cx + body_rx - 4,   # front-left (far)
-        body_cx + body_rx - 2,   # front-right(near)
+        body_cx - body_rx + 2,   # back-left
+        body_cx - body_rx + 4,   # back-right
+        body_cx + body_rx - 4,   # front-left
+        body_cx + body_rx - 2,   # front-right
     ]
     for xx in leg_positions:
         for yy in range(leg_top_y, leg_bot_y + 1):
             if 0 <= xx < WP and 0 <= yy < HP:
                 if yy == leg_bot_y:
-                    g[yy][xx] = ramp["outline"]     # hoof
+                    g[yy][xx] = ramp["outline"]
                 elif yy == leg_top_y:
-                    g[yy][xx] = ramp["dark"]        # shoulder attachment
+                    g[yy][xx] = ramp["dark"]
                 else:
-                    g[yy][xx] = ramp["outline"]     # slim leg silhouette
+                    g[yy][xx] = ramp["outline"]
 
-    # Short tail — thin nub off the back
-    tail_x = body_cx - body_rx
-    if 0 <= tail_x < WP and 0 <= body_cy < HP:
-        g[body_cy][tail_x] = ramp["outline"]
-    if 0 <= tail_x - 1 < WP and 0 <= body_cy + 1 < HP:
-        g[body_cy + 1][tail_x - 1] = ramp["outline"]
+    # TAIL — style depends on P["tail"]
+    tail_style = P.get("tail", "thin")
+    tail_root_x = body_cx - body_rx
+    tail_root_y = body_cy
+    if tail_style == "bushy":
+        # Big drooping bushy tail — fox style. Sits behind and hangs low.
+        for k in range(0, 6):
+            for dy in range(-1, 2):
+                xx = tail_root_x - k - (1 if k > 2 else 0)
+                yy = tail_root_y + k + dy
+                if 0 <= xx < WP and 0 <= yy < HP and g[yy][xx] is None:
+                    if dy == -1 or dy == 1 or k == 5:
+                        g[yy][xx] = ramp["outline"]
+                    else:
+                        g[yy][xx] = ramp["dark"]
+    elif tail_style == "none":
+        pass  # badger — no tail nub
+    else:
+        # Thin short nub — deer / boar
+        if 0 <= tail_root_x < WP and 0 <= tail_root_y < HP:
+            g[tail_root_y][tail_root_x] = ramp["outline"]
+        if 0 <= tail_root_x - 1 < WP and 0 <= tail_root_y + 1 < HP:
+            g[tail_root_y + 1][tail_root_x - 1] = ramp["outline"]
+
     return g, body_rx + 2
 
 
@@ -1004,12 +1119,9 @@ def form_aquatic_mammal(ramp, P):
                     g[yy2][xx] = ramp["outline"]
                 elif g[yy2][xx] is None:
                     g[yy2][xx] = shade(xx, body_cx, body_rx + tail_len, ramp)
-    # waterline: dashed horizontal line under the body
-    waterline_y = min(HP - 1, body_cy + body_ry + 1)
-    for x in range(WP):
-        if 0 <= waterline_y < HP and g[waterline_y][x] is None:
-            if x % 3 != 2:
-                g[waterline_y][x] = ramp["dark"]
+    # NOTE: no waterline is drawn — the map basemap already renders water.
+    # This keeps the sprite transparent below the belly so it composites
+    # onto real canals cleanly.
     return g, body_rx + 2
 
 
@@ -1056,16 +1168,8 @@ def form_water_bird(ramp, P):
     tail_x = body_cx - body_rx
     if 0 <= tail_x < WP and 0 <= body_cy < HP:
         g[body_cy][tail_x] = ramp["dark"]
-    # waterline: dashed line at the middle of the body
-    waterline_y = body_cy + body_ry - 1
-    for x in range(WP):
-        if 0 <= waterline_y < HP:
-            if x % 3 != 2:
-                cur = g[waterline_y][x]
-                if cur is None:
-                    g[waterline_y][x] = ramp["dark"]
-                elif cur in (ramp["mid"], ramp["light"]):
-                    g[waterline_y][x] = ramp["outline"]
+    # NOTE: no waterline is drawn — the map basemap already renders water
+    # under the duck. The bottom of the body is the natural waterline.
     return g, body_rx + 2
 
 
@@ -1784,6 +1888,8 @@ def main():
                     help="caterpillar bristles/hairs (default off)")
     ap.add_argument("--tail", choices=("none", "thin", "bushy"), default="thin",
                     help="mammal tail style (default thin)")
+    ap.add_argument("--head-stripe", action="store_true", default=False,
+                    help="badger-style black+white head stripe (large-mammal low mode)")
     ap.add_argument("--accent-hue", type=float,
                     help="hue for stripes/spots/wing-markings (e.g. 50 yellow bee stripes, "
                          "10 red ladybird spots)")
@@ -1804,13 +1910,14 @@ def main():
     hue = a.hue if a.hue is not None else hue_from_hex(a.base_color)
 
     P = {
-        "size":     a.size,
-        "aspect":   a.aspect,
-        "legs":     a.legs,
-        "antennae": a.antennae,
-        "bristles": a.bristles,
-        "tail":     a.tail,
-        "seed":     a.seed,
+        "size":        a.size,
+        "aspect":      a.aspect,
+        "legs":        a.legs,
+        "antennae":    a.antennae,
+        "bristles":    a.bristles,
+        "tail":        a.tail,
+        "head_stripe": a.head_stripe,
+        "seed":        a.seed,
     }
     acc_ramp = None
     if a.accent and a.accent_hue is not None:

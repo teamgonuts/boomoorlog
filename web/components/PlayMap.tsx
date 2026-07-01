@@ -1,25 +1,21 @@
 "use client";
 
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
+import maplibregl from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef } from "react";
 
 import type { ViewportMarker } from "@/lib/trees-api";
 
-// CARTO Voyager — light raster tiles, very close visual match to OSM Liberty
-// (beige residential, soft greens for parks, yellow/orange roads, light blue
-// water) but served as plain raster PNGs so Leaflet can render it directly
-// without dragging in MapLibre GL. Free for non-commercial; attributed below.
-const BASEMAP_URL =
-  "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png";
-const BASEMAP_ATTR =
-  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
+// OpenFreeMap Liberty — vector tiles, buttery zoom, warm palette that mirrors
+// the previous CARTO Voyager (beige residential, soft greens, yellow/orange
+// roads, blue water). Free, no key.
+const STYLE_URL = "https://tiles.openfreemap.org/styles/liberty";
 
 // Map opens centered on Amsterdam if no address has been searched. Zoom 15
 // is neighborhood-scale (a few hundred meters across) — wide enough to feel
 // like "you can see your area" without triggering the citywide-bbox slow
 // path on /api/trees.
-const AMSTERDAM_CENTER: [number, number] = [52.3676, 4.9041];
+const AMSTERDAM_CENTER: [number, number] = [4.9041, 52.3676]; // [lng, lat] for MapLibre
 const AMSTERDAM_ZOOM = 15;
 
 // Today's calendar year. Used to compute ages. Fine to refresh on a 1-yr cadence.
@@ -32,7 +28,7 @@ const CREATURE_K = 3;
 const CREATURE_MIN_SLOTS = 4;
 const CREATURE_MAX_SLOTS = 14;
 
-function slotsForBounds(bounds: L.LatLngBounds): number {
+function slotsForBounds(bounds: maplibregl.LngLatBounds): number {
   const south = bounds.getSouth();
   const north = bounds.getNorth();
   const latKm = (north - south) * 111.32;
@@ -114,45 +110,71 @@ function tooltipForCluster(m: Marker, photoSlugs: Set<string>): string {
   return treePhotoBlock(m.slug, photoSlugs) + `<div class="ttl-body">${body}</div>`;
 }
 
-const SPRITE_ICON_CACHE = new Map<string, L.Icon>();
 const EMPTY_SLUG_SET: Set<string> = new Set();
 
-function iconForIndividual(slug: string | null): L.Icon | L.DivIcon {
+// Build an HTML element for an individual tree marker. Returns anchor `bottom`
+// so the sprite foot sits on the coordinate (matches previous L.icon anchor).
+function elementForIndividual(slug: string | null): {
+  el: HTMLElement;
+  anchor: maplibregl.PositionAnchor;
+} {
   if (!slug) {
-    return L.divIcon({
-      className: "tree-dot",
-      iconSize: [6, 6],
-      iconAnchor: [3, 3],
-    });
+    const dot = document.createElement("div");
+    dot.className = "tree-dot";
+    dot.style.width = "6px";
+    dot.style.height = "6px";
+    return { el: dot, anchor: "center" };
   }
-  let icon = SPRITE_ICON_CACHE.get(slug);
-  if (!icon) {
-    icon = L.icon({
-      iconUrl: `/sprites/${slug}.png`,
-      iconSize: [22, 28],
-      iconAnchor: [11, 26],
-      tooltipAnchor: [0, -22],
-      className: "tree-pin",
-    });
-    SPRITE_ICON_CACHE.set(slug, icon);
-  }
-  return icon;
+  const img = document.createElement("img");
+  img.className = "tree-pin";
+  img.src = `/sprites/${slug}.png`;
+  img.alt = "";
+  img.width = 22;
+  img.height = 28;
+  img.style.display = "block";
+  return { el: img, anchor: "bottom" };
 }
 
-function iconForCluster(slug: string | null, n: number): L.DivIcon {
+function elementForCluster(
+  slug: string | null,
+  n: number,
+): { el: HTMLElement; anchor: maplibregl.PositionAnchor } {
+  const wrap = document.createElement("div");
+  wrap.className = "tree-cluster";
   const sprite = slug
     ? `<img class="tree-cluster-sprite pixel" src="/sprites/${slug}.png" alt="" />`
     : `<span class="tree-cluster-dot"></span>`;
-  // Compact number; >=1k → "1.2k" so the badge stays readable at city zoom.
   const label =
     n >= 1000 ? (n / 1000).toFixed(n >= 10_000 ? 0 : 1) + "k" : String(n);
-  return L.divIcon({
-    className: "tree-cluster",
-    html: `${sprite}<span class="tree-cluster-count">${label}</span>`,
-    iconSize: [36, 44],
-    iconAnchor: [18, 40],
-    tooltipAnchor: [0, -34],
+  wrap.innerHTML = `${sprite}<span class="tree-cluster-count">${label}</span>`;
+  return { el: wrap, anchor: "bottom" };
+}
+
+// Attach a hover-triggered popup to a MapLibre marker. Uses one popup per
+// marker (cheap enough at ~400 markers cap) and toggles on mouseenter/leave.
+function attachHoverTooltip(
+  marker: maplibregl.Marker,
+  html: string,
+  className: string,
+  map: maplibregl.Map,
+) {
+  const popup = new maplibregl.Popup({
+    closeButton: false,
+    closeOnClick: false,
+    className,
+    offset: 12,
+    anchor: "bottom",
+    maxWidth: "260px",
+  }).setHTML(html);
+  const el = marker.getElement();
+  el.addEventListener("mouseenter", () => {
+    popup.setLngLat(marker.getLngLat()).addTo(map);
   });
+  el.addEventListener("mouseleave", () => {
+    popup.remove();
+  });
+  // If the marker moves (creature flights), keep popup pinned to it.
+  return { popup };
 }
 
 /** Creature data needed to render + identify the marker on hover. */
@@ -204,7 +226,8 @@ type FlyPoint = { lat: number; lng: number };
  * — the parent uses that to respawn a fresh pick in the same slot.
  */
 function startCreatureFlight(
-  layer: L.LayerGroup,
+  map: maplibregl.Map,
+  activeMarkers: Set<maplibregl.Marker>,
   creature: CreatureForMap,
   pointsRef: { current: FlyPoint[] },
   speedMps: number,
@@ -220,12 +243,11 @@ function startCreatureFlight(
   const PERCH_MS = 500;
   const MIN_DURATION_MS = 800;
 
-  const icon = L.divIcon({
-    className: "creature-flying",
-    html: `<img src="/creature_sprites/${creature.slug}.png" alt="" />`,
-    iconSize: [56, 40],
-    iconAnchor: [28, 20],
-  });
+  const el = document.createElement("div");
+  el.className = "creature-flying";
+  el.style.width = "56px";
+  el.style.height = "40px";
+  el.innerHTML = `<img src="/creature_sprites/${creature.slug}.png" alt="" />`;
 
   const fromIdx = Math.floor(Math.random() * points.length);
   let toIdx = Math.floor(Math.random() * points.length);
@@ -233,13 +255,10 @@ function startCreatureFlight(
   const from = points[fromIdx];
   const to = points[toIdx];
 
-  const marker = L.marker([from.lat, from.lng], {
-    icon,
-    interactive: true,
-    keyboard: false,
-    bubblingMouseEvents: false,
-    zIndexOffset: 1000,
-  }).addTo(layer);
+  const marker = new maplibregl.Marker({ element: el, anchor: "center" })
+    .setLngLat([from.lng, from.lat])
+    .addTo(map);
+  activeMarkers.add(marker);
 
   const photoBlock = creature.photo_url
     ? `<div class="creature-tip-photo"><img src="${escapeForAttr(creature.photo_url)}" alt="" loading="lazy" /></div>`
@@ -251,19 +270,32 @@ function startCreatureFlight(
   const lastSeenLine = lastSeen
     ? `<div class="creature-tip-lastseen">${escapeForAttr(lastSeen)}</div>`
     : "";
-  marker.bindTooltip(
+  const tipHTML =
     photoBlock +
-      `<div class="creature-tip-name">${escapeForAttr(creature.common_name)}</div>` +
-      latinLine +
-      lastSeenLine,
-    { direction: "top", className: "creature-tip", offset: [0, -8], sticky: true },
-  );
+    `<div class="creature-tip-name">${escapeForAttr(creature.common_name)}</div>` +
+    latinLine +
+    lastSeenLine;
+  const popup = new maplibregl.Popup({
+    closeButton: false,
+    closeOnClick: false,
+    className: "creature-tip",
+    offset: 20,
+    anchor: "bottom",
+    maxWidth: "240px",
+  }).setHTML(tipHTML);
+  el.addEventListener("mouseenter", () => {
+    popup.setLngLat(marker.getLngLat()).addTo(map);
+  });
+  el.addEventListener("mouseleave", () => {
+    popup.remove();
+  });
 
   // Click → open this creature's wiki page in a new tab. Note: the creature is
   // a moving target while in flight; the click hit-area is the sprite itself
   // so the user has to chase it. The brief perch at the end of each flight
   // makes it easier (the marker is stationary for PERCH_MS).
-  marker.on("click", () => {
+  el.addEventListener("click", (e) => {
+    e.stopPropagation();
     window.open(`/wiki/creatures/${creature.slug}`, "_blank", "noopener");
   });
 
@@ -275,12 +307,12 @@ function startCreatureFlight(
   }
 
   function setSpriteRotation() {
-    const el = marker.getElement()?.querySelector("img") as HTMLImageElement | null;
-    if (!el) return;
+    const img = el.querySelector("img") as HTMLImageElement | null;
+    if (!img) return;
     const dLat = to.lat - from.lat;
     const dLng = to.lng - from.lng;
     const angleDeg = (Math.atan2(-dLat, dLng) * 180) / Math.PI;
-    el.style.transform =
+    img.style.transform =
       Math.abs(angleDeg) > 90 ? "scaleX(-1)" : `rotate(${angleDeg}deg)`;
   }
 
@@ -299,10 +331,11 @@ function startCreatureFlight(
     if (!running) return;
     if (mode === "flying") {
       const t = Math.min(1, (now - segmentStart) / segmentDurMs);
-      marker.setLatLng([
-        from.lat + (to.lat - from.lat) * t,
-        from.lng + (to.lng - from.lng) * t,
-      ]);
+      const lat = from.lat + (to.lat - from.lat) * t;
+      const lng = from.lng + (to.lng - from.lng) * t;
+      marker.setLngLat([lng, lat]);
+      // Keep popup pinned if it's currently visible.
+      if (popup.isOpen()) popup.setLngLat([lng, lat]);
       if (t >= 1) {
         mode = "perched";
         perchUntil = now + PERCH_MS;
@@ -310,7 +343,9 @@ function startCreatureFlight(
     } else if (now >= perchUntil) {
       // Journey done — disappear and let the parent spawn a replacement.
       running = false;
+      popup.remove();
       marker.remove();
+      activeMarkers.delete(marker);
       onComplete();
       return;
     }
@@ -320,7 +355,9 @@ function startCreatureFlight(
 
   return () => {
     running = false;
+    popup.remove();
     marker.remove();
+    activeMarkers.delete(marker);
   };
 }
 
@@ -330,6 +367,22 @@ export type Bbox = {
   lat_max: number;
   lng_max: number;
 };
+
+// Compute a bounding box that is roughly a 2*radiusM square around a point,
+// used for the initial fit-bounds when a new address is geocoded. Matches
+// what Leaflet's `L.latLng(...).toBounds(N)` produced.
+function boundsAround(
+  lat: number,
+  lng: number,
+  radiusM: number,
+): maplibregl.LngLatBoundsLike {
+  const dLat = radiusM / 111_320;
+  const dLng = radiusM / (111_320 * Math.cos((lat * Math.PI) / 180));
+  return [
+    [lng - dLng, lat - dLat],
+    [lng + dLng, lat + dLat],
+  ];
+}
 
 export default function PlayMap({
   center,
@@ -361,12 +414,13 @@ export default function PlayMap({
 }) {
   const photoSlugSet = treePhotoSlugs ?? EMPTY_SLUG_SET;
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const mapRef = useRef<L.Map | null>(null);
-  const addressLayerRef = useRef<L.LayerGroup | null>(null);
-  const markerLayerRef = useRef<L.LayerGroup | null>(null);
-  const creatureLayerRef = useRef<L.LayerGroup | null>(null);
+  const mapRef = useRef<maplibregl.Map | null>(null);
+  // A single address marker; we keep the handle to remove on center change.
+  const addressMarkerRef = useRef<maplibregl.Marker | null>(null);
   // Marker handles keyed by Marker.key for diff-update on marker prop change.
-  const markerHandlesRef = useRef<Map<string, L.Marker>>(new Map());
+  const markerHandlesRef = useRef<Map<string, maplibregl.Marker>>(new Map());
+  // Active creature markers so cleanup can tear them all down.
+  const creatureMarkersRef = useRef<Set<maplibregl.Marker>>(new Set());
   // Marker positions exposed to creature loops via ref so flights survive
   // marker-prop changes without restarting.
   const flyPointsRef = useRef<FlyPoint[]>([]);
@@ -379,36 +433,24 @@ export default function PlayMap({
   // First-fit guard: only auto-fit when a new center arrives. After that,
   // panning/zooming is the user's.
   const lastFitCenterRef = useRef<string | null>(null);
+  // Style-loaded gate — moveend can fire before style.load in some flows.
+  const styleReadyRef = useRef(false);
 
   // ---- Mount the map once ----
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
 
-    const map = L.map(containerRef.current, {
+    const map = new maplibregl.Map({
+      container: containerRef.current,
+      style: STYLE_URL,
       center: AMSTERDAM_CENTER,
       zoom: AMSTERDAM_ZOOM,
-      scrollWheelZoom: true,
-      zoomControl: false,
-      // Perf: see bench results — disabling these avoids per-marker animation
-      // costs and makes pan/zoom snap. Acceptable trade since markers are
-      // capped at ~400 and zoom is the dominant cost (~50ms at the cap).
-      fadeAnimation: false,
-      zoomAnimation: false,
-      markerZoomAnimation: false,
+      attributionControl: { compact: true },
     });
-    L.control.zoom({ position: "bottomleft" }).addTo(map);
-    L.tileLayer(BASEMAP_URL, {
-      subdomains: "abcd",
-      maxZoom: 19,
-      attribution: BASEMAP_ATTR,
-      updateWhenZooming: false,
-      updateWhenIdle: true,
-      keepBuffer: 1,
-    }).addTo(map);
-
-    addressLayerRef.current = L.layerGroup().addTo(map);
-    markerLayerRef.current = L.layerGroup().addTo(map);
-    creatureLayerRef.current = L.layerGroup().addTo(map);
+    map.addControl(
+      new maplibregl.NavigationControl({ showCompass: false }),
+      "bottom-left",
+    );
     mapRef.current = map;
 
     const emitViewport = () => {
@@ -424,61 +466,76 @@ export default function PlayMap({
       );
     };
     map.on("moveend", emitViewport);
+    // Emit once the style has finished loading, so the parent picks up the
+    // initial viewport (Leaflet fired moveend implicitly on mount; MapLibre
+    // doesn't).
+    const onStyleLoad = () => {
+      styleReadyRef.current = true;
+      emitViewport();
+    };
+    map.once("style.load", onStyleLoad);
 
-    // Capture the marker-handles map up front so cleanup uses the same Map
-    // instance that the effect set up with (silences react-hooks/exhaustive-deps).
+    // Capture the marker-handles + creature-set up front so cleanup uses the
+    // same instances the effect set up with.
     const handlesAtMount = markerHandlesRef.current;
+    const creaturesAtMount = creatureMarkersRef.current;
     return () => {
       map.off("moveend", emitViewport);
       map.remove();
       mapRef.current = null;
-      addressLayerRef.current = null;
-      markerLayerRef.current = null;
-      creatureLayerRef.current = null;
+      addressMarkerRef.current = null;
+      styleReadyRef.current = false;
       handlesAtMount.clear();
+      creaturesAtMount.clear();
     };
   }, []);
 
   // ---- Address pin + initial fit when center changes ----
   useEffect(() => {
     const map = mapRef.current;
-    const layer = addressLayerRef.current;
-    if (!map || !layer) return;
+    if (!map) return;
 
-    layer.clearLayers();
+    // Clear any existing address marker.
+    if (addressMarkerRef.current) {
+      addressMarkerRef.current.remove();
+      addressMarkerRef.current = null;
+    }
+
     if (!center) {
-      map.setView(AMSTERDAM_CENTER, AMSTERDAM_ZOOM);
+      map.jumpTo({ center: AMSTERDAM_CENTER, zoom: AMSTERDAM_ZOOM });
       lastFitCenterRef.current = null;
       return;
     }
 
-    L.circleMarker([center.lat, center.lng], {
-      radius: 6,
-      color: "#c0463b",
-      fillColor: "#c0463b",
-      fillOpacity: 1,
-      weight: 2,
-    })
-      .bindTooltip("Your address", { direction: "top" })
-      .addTo(layer);
+    // Small red dot, mirroring the previous L.circleMarker styling.
+    const dot = document.createElement("div");
+    dot.style.width = "12px";
+    dot.style.height = "12px";
+    dot.style.borderRadius = "50%";
+    dot.style.background = "#c0463b";
+    dot.style.border = "2px solid #c0463b";
+    dot.style.boxShadow = "0 0 0 1px rgba(255,255,255,0.8)";
+    dot.title = "Your address";
+    const marker = new maplibregl.Marker({ element: dot, anchor: "center" })
+      .setLngLat([center.lng, center.lat])
+      .addTo(map);
+    addressMarkerRef.current = marker;
 
     const centerKey = `${center.lat},${center.lng}`;
     if (lastFitCenterRef.current !== centerKey) {
-      // New address — auto-fit. Leaflet's toBounds(N) makes a square of side
-      // N meters, so passing 2*R produces a ±R box around the address.
-      const bounds = L.latLng(center.lat, center.lng).toBounds(
-        initialRadiusM * 2,
-      );
-      map.fitBounds(bounds, { padding: [40, 40], maxZoom: 18, animate: false });
+      map.fitBounds(boundsAround(center.lat, center.lng, initialRadiusM), {
+        padding: 40,
+        maxZoom: 18,
+        animate: false,
+      });
       lastFitCenterRef.current = centerKey;
     }
   }, [center, initialRadiusM]);
 
   // ---- Markers: diff-update on prop change ----
   useEffect(() => {
-    const layer = markerLayerRef.current;
     const map = mapRef.current;
-    if (!layer || !map) return;
+    if (!map) return;
 
     const handles = markerHandlesRef.current;
     const incoming = new Set(markers.map((m) => m.key));
@@ -494,40 +551,34 @@ export default function PlayMap({
     // Add markers that are new (kept-same markers are skipped, no churn).
     for (const m of markers) {
       if (handles.has(m.key)) continue;
-      const icon =
+      const { el, anchor } =
         m.mode === "cluster"
-          ? iconForCluster(m.slug, m.n)
-          : iconForIndividual(m.slug);
-      const marker = L.marker([m.lat, m.lng], {
-        icon,
-        keyboard: false,
-        bubblingMouseEvents: false,
-      });
+          ? elementForCluster(m.slug, m.n)
+          : elementForIndividual(m.slug);
+      const marker = new maplibregl.Marker({ element: el, anchor })
+        .setLngLat([m.lng, m.lat])
+        .addTo(map);
       const tip =
         m.mode === "cluster"
           ? tooltipForCluster(m, photoSlugSet)
           : tooltipForIndividual(m, photoSlugSet);
-      marker.bindTooltip(tip, {
-        direction: "top",
-        className: "tree-tip",
-        offset: [0, -4],
-      });
+      attachHoverTooltip(marker, tip, "tree-tip", map);
       if (m.mode === "cluster") {
         // Click a cluster → drill in two zoom levels. Two levels usually
         // splits a dense cluster into finer ones (or unblocks individual mode
         // if total drops under max_pins).
-        marker.on("click", () => {
+        el.addEventListener("click", (e) => {
+          e.stopPropagation();
           const target = Math.min(map.getZoom() + 2, 19);
-          map.setView([m.lat, m.lng], target, { animate: false });
+          map.jumpTo({ center: [m.lng, m.lat], zoom: target });
         });
       } else if (m.slug) {
         // Click an individual tree → open its genus wiki page in a new tab.
-        // `noopener` is the right default for window.open from user gestures.
-        marker.on("click", () => {
+        el.addEventListener("click", (e) => {
+          e.stopPropagation();
           window.open(`/wiki/trees/${m.slug}`, "_blank", "noopener");
         });
       }
-      marker.addTo(layer);
       handles.set(m.key, marker);
     }
 
@@ -540,28 +591,26 @@ export default function PlayMap({
   // ---- Creatures: spawn N slots, each respawns on completion ----
   // Depends on `markers` so the loop fully resets on every map change (pan or
   // zoom triggers a /api/trees refetch → new markers → cleanup tears every
-  // creature down, then 5 fresh picks spawn against the new viewport's perches).
+  // creature down, then N fresh picks spawn against the new viewport's perches).
   useEffect(() => {
-    const creatureLayer = creatureLayerRef.current;
-    if (!creatureLayer) return;
+    const map = mapRef.current;
+    if (!map) return;
     const pool = creatures ?? [];
     if (pool.length === 0) return;
 
-    const map = mapRef.current;
     // Admin override wins if provided (including 0 to disable creatures
     // entirely). Falls back to the viewport-area heuristic otherwise.
     const NUM_CREATURE_SLOTS =
       typeof creatureSlots === "number"
         ? creatureSlots
-        : map
-          ? slotsForBounds(map.getBounds())
-          : CREATURE_MIN_SLOTS;
+        : slotsForBounds(map.getBounds());
     if (NUM_CREATURE_SLOTS <= 0) return;
     const speed =
       typeof creatureSpeedMps === "number" && creatureSpeedMps > 0
         ? creatureSpeedMps
         : 6;
     const slotStops: Array<(() => void) | null> = Array(NUM_CREATURE_SLOTS).fill(null);
+    const activeMarkers = creatureMarkersRef.current;
     let mounted = true;
 
     const spawnSlot = (slot: number) => {
@@ -573,8 +622,13 @@ export default function PlayMap({
         return;
       }
       const c = pool[Math.floor(Math.random() * pool.length)];
-      slotStops[slot] = startCreatureFlight(creatureLayer, c, flyPointsRef, speed, () =>
-        spawnSlot(slot),
+      slotStops[slot] = startCreatureFlight(
+        map,
+        activeMarkers,
+        c,
+        flyPointsRef,
+        speed,
+        () => spawnSlot(slot),
       );
     };
     for (let i = 0; i < NUM_CREATURE_SLOTS; i++) spawnSlot(i);
@@ -582,7 +636,9 @@ export default function PlayMap({
     return () => {
       mounted = false;
       slotStops.forEach((stop) => stop?.());
-      creatureLayer.clearLayers();
+      // Safety net — should already be empty via slotStops teardown.
+      for (const m of activeMarkers) m.remove();
+      activeMarkers.clear();
     };
   }, [creatures, markers, creatureSlots, creatureSpeedMps]);
 

@@ -39,14 +39,30 @@ function loadSpriteImages(): Promise<SpriteImages> {
 // each frame in map-projected pixel coords. The animated-zoom trick: on
 // `zoomanim`, project the canvas origin into the target zoom's pixel space and
 // CSS-transform it so it moves with the tile pane. Redraws crisp on `zoomend`.
+type SpriteLayerCtx = L.Layer & {
+  _map: L.Map;
+  _canvas: HTMLCanvasElement;
+  _reset: () => void;
+  _animateZoom: (e: { zoom: number; center: L.LatLng }) => void;
+  _draw: () => void;
+};
+// `_latLngBoundsToNewLayerBounds` is a private Leaflet method not on the type,
+// so we access it via a widened cast at the one call site.
+type MapWithPrivate = L.Map & {
+  _latLngBoundsToNewLayerBounds: (
+    b: L.LatLngBounds,
+    z: number,
+    c: L.LatLng,
+  ) => { min: L.Point };
+};
 function createSpriteLayer(sprites: Sprite[], images: SpriteImages) {
   const CanvasLayer = L.Layer.extend({
-    onAdd(this: L.Layer & { _map: L.Map }, map: L.Map) {
+    onAdd(this: SpriteLayerCtx, map: L.Map) {
       const canvas = document.createElement("canvas");
       canvas.style.position = "absolute";
       canvas.style.pointerEvents = "none";
       canvas.style.imageRendering = "pixelated";
-      (this as unknown as { _canvas: HTMLCanvasElement })._canvas = canvas;
+      this._canvas = canvas;
       map.getPane("overlayPane")!.appendChild(canvas);
 
       map.on("moveend", this._reset, this);
@@ -56,7 +72,7 @@ function createSpriteLayer(sprites: Sprite[], images: SpriteImages) {
       this._reset();
       return this;
     },
-    onRemove(this: L.Layer & { _map: L.Map }, map: L.Map) {
+    onRemove(this: SpriteLayerCtx, map: L.Map) {
       const c = (this as unknown as { _canvas: HTMLCanvasElement })._canvas;
       c.parentNode?.removeChild(c);
       map.off("moveend", this._reset, this);
@@ -64,10 +80,9 @@ function createSpriteLayer(sprites: Sprite[], images: SpriteImages) {
       map.off("zoomanim", this._animateZoom, this);
       return this;
     },
-    _reset(this: L.Layer & { _map: L.Map }) {
+    _reset(this: SpriteLayerCtx) {
       const map = this._map;
-      const canvas = (this as unknown as { _canvas: HTMLCanvasElement })
-        ._canvas;
+      const canvas = this._canvas;
       const size = map.getSize();
       const topLeft = map.containerPointToLayerPoint([0, 0]);
       L.DomUtil.setPosition(canvas, topLeft);
@@ -81,21 +96,17 @@ function createSpriteLayer(sprites: Sprite[], images: SpriteImages) {
       this._draw();
     },
     _animateZoom(
-      this: L.Layer & { _map: L.Map },
+      this: SpriteLayerCtx,
       e: { zoom: number; center: L.LatLng },
     ) {
       const map = this._map;
-      const canvas = (this as unknown as { _canvas: HTMLCanvasElement })
-        ._canvas;
+      const canvas = this._canvas;
       const scale = map.getZoomScale(e.zoom, map.getZoom());
-      const offset = map
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        ._latLngBoundsToNewLayerBounds(
-          map.getBounds(),
-          e.zoom,
-          e.center,
-        )
-        .min;
+      const offset = (map as MapWithPrivate)._latLngBoundsToNewLayerBounds(
+        map.getBounds(),
+        e.zoom,
+        e.center,
+      ).min;
       const topLeft = map.containerPointToLayerPoint([0, 0]);
       L.DomUtil.setTransform(
         canvas,
@@ -103,10 +114,9 @@ function createSpriteLayer(sprites: Sprite[], images: SpriteImages) {
         scale,
       );
     },
-    _draw(this: L.Layer & { _map: L.Map }) {
+    _draw(this: SpriteLayerCtx) {
       const map = this._map;
-      const canvas = (this as unknown as { _canvas: HTMLCanvasElement })
-        ._canvas;
+      const canvas = this._canvas;
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
       ctx.imageSmoothingEnabled = false;

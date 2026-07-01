@@ -44,6 +44,11 @@ class Sample(NamedTuple):
     sat: float = 55.0
     size: float = 1.0
     seed: int = 1
+    # Per-organism styling flags — expose the render script's rarely-used
+    # CLI toggles so a per-species Sample can request e.g. a bushy tail
+    # (fox) or a head stripe (badger).
+    tail: str = "thin"          # "none" | "thin" | "bushy"
+    head_stripe: bool = False
 
 
 # Curated samples covering every row on the /sprites page, so no "dash" gaps.
@@ -58,17 +63,20 @@ SAMPLES: list[Sample] = [
     Sample("scardinius-erythrophthalmus",  "fish", aspect=1.2, sat=50),
     Sample("leucaspius-delineatus",        "fish", aspect=1.2, sat=35),
     Sample("cypriniformes",                "fish", aspect=1.2, sat=45),
-    # --- amphibian ---
-    Sample("bufo-bufo",             "amphibian", sat=45),
-    Sample("rana-temporaria",       "amphibian", sat=50),
-    Sample("lissotriton-vulgaris",  "amphibian", aspect=1.2, sat=45),
-    Sample("pelophylax",            "amphibian", sat=55),
-    Sample("pelophylax-esculentus", "amphibian", sat=55),
-    # --- large-mammal (deer/boar/fox/badger) ---
-    Sample("capreolus-capreolus", "large-mammal", sat=45),  # roe deer
-    Sample("sus-scrofa",          "large-mammal", sat=25),  # wild boar
-    Sample("vulpes-vulpes",       "large-mammal", sat=55),  # red fox
-    Sample("meles-meles",         "large-mammal", sat=15),  # badger
+    # --- amphibian (aspect controls fat toad vs. medium frog vs. slim newt) ---
+    Sample("bufo-bufo",             "amphibian", aspect=0.75, sat=45),  # toad — fat
+    Sample("rana-temporaria",       "amphibian", aspect=1.0, sat=50),   # frog — medium
+    Sample("pelophylax",            "amphibian", aspect=0.95, sat=55),
+    Sample("pelophylax-esculentus", "amphibian", aspect=0.9, sat=55),
+    Sample("lissotriton-vulgaris",  "amphibian", aspect=1.25, sat=45),  # newt — slim + tail
+    # --- large-mammal — 3 sub-modes via aspect ---
+    # aspect >= 1.15 → TALL (deer, boar). Boar gets bigger size for thicker body.
+    Sample("capreolus-capreolus", "large-mammal", aspect=1.25, sat=45),  # roe deer, tall
+    Sample("sus-scrofa",          "large-mammal", aspect=1.30, size=1.15, sat=25),  # boar, thicker
+    # aspect ~1.0 → MID (fox) — smaller legs + bushy tail
+    Sample("vulpes-vulpes",       "large-mammal", aspect=0.95, sat=55, tail="bushy"),
+    # aspect <= 0.75 → LOW/COMPACT (badger) — short legs, thick, head stripe
+    Sample("meles-meles",         "large-mammal", aspect=0.55, sat=8, tail="none", head_stripe=True),
     # --- aquatic-mammal ---
     Sample("lutra-lutra",         "aquatic-mammal", sat=40),
     Sample("ondatra-zibethicus",  "aquatic-mammal", sat=35),
@@ -201,8 +209,11 @@ def render(sample: Sample) -> tuple[bool, str]:
         "--size", f"{sample.size:.2f}",
         "--aspect", f"{sample.aspect:.2f}",
         "--seed", str(sample.seed),
+        "--tail", sample.tail,
         "--out", str(out),
     ]
+    if sample.head_stripe:
+        cmd.append("--head-stripe")
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
         return False, f"render failed for {sample.slug}: {r.stderr.strip()[:200]}"

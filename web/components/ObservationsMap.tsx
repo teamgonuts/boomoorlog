@@ -202,7 +202,9 @@ export default function ObservationsMap({
         if (clusterId == null || !src) return;
         try {
           const zoom = await src.getClusterExpansionZoom(clusterId);
-          const geom = feat.geometry as { coordinates: [number, number] };
+          const geom = feat.geometry as unknown as {
+            coordinates: [number, number];
+          };
           map.easeTo({ center: geom.coordinates, zoom });
         } catch {
           /* cluster gone (data changed mid-request) — ignore */
@@ -228,7 +230,9 @@ export default function ObservationsMap({
         if (!f) return;
         map.getCanvas().style.cursor = "pointer";
         const p = f.properties as unknown as ObservationPin;
-        const geom = f.geometry as { coordinates: [number, number] };
+        const geom = f.geometry as unknown as {
+          coordinates: [number, number];
+        };
         popup.setLngLat(geom.coordinates).setHTML(tooltipFor(p)).addTo(map);
       });
       map.on("mouseleave", POINT_LAYER, () => {
