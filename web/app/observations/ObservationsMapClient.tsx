@@ -1,8 +1,8 @@
 "use client";
 
-// Tiny client wrapper so the leaflet.markercluster import (which touches
-// `window` at module load) never reaches the SSR pass. The actual map lives
-// in components/ObservationsMap.tsx.
+// Tiny client wrapper so the MapLibre GL import (which touches `window` at
+// module load) never reaches the SSR pass. The actual map lives in
+// components/ObservationsMap.tsx.
 import dynamic from "next/dynamic";
 
 const ObservationsMap = dynamic(() => import("@/components/ObservationsMap"), {
