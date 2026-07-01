@@ -19,6 +19,7 @@ const BACKFILL_CSV = path.join(REPO_ROOT, "data", "full_sprite_backfill", "backf
 export type GalleryItem = {
   slug: string;
   form: string;                       // "fish" | "bird" | "moth" | ...
+  aspect: number | null;              // sub-mode key (e.g. reptile <1 → turtle, >=1 → lizard)
   spriteUrl: string;                  // /creature_sprites/<slug>.png
   photoUrl: string | null;            // /organism_photos/<slug>.jpg or /creature_photos/...
 };
@@ -35,36 +36,44 @@ function photoUrlFor(slug: string): string | null {
   return null;
 }
 
-/** Parse the backfill.csv → { slug → form } map. Skips rows where the form column is empty. */
-function loadFormMap(): Map<string, string> {
-  const map = new Map<string, string>();
+type BackfillRow = { form: string; aspect: number | null };
+
+/** Parse the backfill.csv → { slug → {form, aspect} } map. */
+function loadBackfillMap(): Map<string, BackfillRow> {
+  const map = new Map<string, BackfillRow>();
   if (!fs.existsSync(BACKFILL_CSV)) return map;
   const text = fs.readFileSync(BACKFILL_CSV, "utf8");
   const lines = text.split(/\r?\n/);
   const header = lines[0].split(",");
   const slugIdx = header.indexOf("slug");
   const formIdx = header.indexOf("form");
+  const aspectIdx = header.indexOf("aspect");
   if (slugIdx < 0 || formIdx < 0) return map;
   for (let i = 1; i < lines.length; i++) {
     if (!lines[i]) continue;
     const cols = lines[i].split(",");
     const slug = cols[slugIdx]?.trim();
     const form = cols[formIdx]?.trim();
-    if (slug && form) map.set(slug, form);
+    if (!slug || !form) continue;
+    const rawAspect = aspectIdx >= 0 ? cols[aspectIdx]?.trim() : "";
+    const aspect = rawAspect ? Number(rawAspect) : NaN;
+    map.set(slug, { form, aspect: Number.isFinite(aspect) ? aspect : null });
   }
   return map;
 }
 
 /** Enumerate every sprite PNG in /creature_sprites/ and build gallery items. */
 export function loadGallery(): GalleryItem[] {
-  const formMap = loadFormMap();
+  const backfillMap = loadBackfillMap();
   if (!fs.existsSync(SPRITE_DIR)) return [];
   const files = fs.readdirSync(SPRITE_DIR).filter((f) => f.endsWith(".png"));
   const items: GalleryItem[] = files.map((f) => {
     const slug = f.replace(/\.png$/, "");
+    const b = backfillMap.get(slug);
     return {
       slug,
-      form: formMap.get(slug) ?? "other",
+      form: b?.form ?? "other",
+      aspect: b?.aspect ?? null,
       spriteUrl: `/creature_sprites/${slug}.png`,
       photoUrl: photoUrlFor(slug),
     };
@@ -76,10 +85,33 @@ export function loadGallery(): GalleryItem[] {
   return items;
 }
 
-export function galleryFormCounts(items: GalleryItem[]): { form: string; count: number }[] {
+export type FormChipInfo = {
+  form: string;
+  count: number;
+  thumbSrc: string;   // sprite thumbnail for this form
+};
+
+/**
+ * Count items per form and pick a representative sprite thumbnail for each.
+ * Priority for the thumbnail:
+ *   1. A hand-curated form template if one is supplied (via `templates`)
+ *   2. Otherwise the first gallery item that uses this form
+ */
+export function galleryFormCounts(
+  items: GalleryItem[],
+  templates: Record<string, string> = {},
+): FormChipInfo[] {
   const c = new Map<string, number>();
-  for (const it of items) c.set(it.form, (c.get(it.form) ?? 0) + 1);
+  const firstForForm = new Map<string, string>();
+  for (const it of items) {
+    c.set(it.form, (c.get(it.form) ?? 0) + 1);
+    if (!firstForForm.has(it.form)) firstForForm.set(it.form, it.spriteUrl);
+  }
   return Array.from(c.entries())
-    .map(([form, count]) => ({ form, count }))
+    .map(([form, count]) => ({
+      form,
+      count,
+      thumbSrc: templates[form] ?? firstForForm.get(form) ?? "",
+    }))
     .sort((a, b) => b.count - a.count || a.form.localeCompare(b.form));
 }
