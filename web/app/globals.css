@@ -1649,7 +1649,7 @@ main {
 }
 .sl-row {
   display: grid;
-  grid-template-columns: 80px 260px 1fr;
+  grid-template-columns: auto 260px 1fr;
   gap: 14px;
   align-items: center;
   padding: 10px 14px;
@@ -1663,19 +1663,35 @@ main {
   border-color: rgba(80, 200, 120, 0.2);
 }
 .sl-row-sprite {
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.04);
+  /* Warm off-white to match CARTO Voyager basemap — this is the tone
+     sprites are actually seen against on the live map, so QA judgements
+     match reality. */
+  background: #e8e2d4;
   border-radius: 8px;
   overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  min-width: 80px;
+  min-height: 80px;
 }
 .sl-row-sprite img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 80px;
+  max-height: 80px;
   image-rendering: pixelated;
+}
+/* When multiple sub-mode sprites are shown, keep them a bit smaller so
+   they fit side-by-side in the 80px column. */
+.sl-row-sprite.sl-row-sprite-multi {
+  min-width: 168px;
+  padding: 6px;
+}
+.sl-row-sprite.sl-row-sprite-multi img {
+  max-width: 76px;
+  max-height: 76px;
 }
 .sl-row-meta {
   min-width: 0;
@@ -1762,6 +1778,29 @@ main {
   color: var(--dim);
   font-style: italic;
   padding: 8px 0;
+}
+.sl-photo-note {
+  font-size: 11px;
+  color: var(--dim);
+  font-style: italic;
+  padding: 8px 12px;
+  line-height: 1.45;
+  border-left: 2px solid var(--line);
+  max-width: 520px;
+}
+.sl-sprite-tile {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.sl-sprite-tile figcaption {
+  font-size: 9px;
+  color: #444;             /* dark on the light-cream sprite background */
+  text-align: center;
+  line-height: 1.2;
+  max-width: 76px;
 }
 .sl-footer {
   margin-top: 48px;
