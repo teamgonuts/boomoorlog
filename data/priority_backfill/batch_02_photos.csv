@@ -1,0 +1,14 @@
+slug,latin_name,taxon_id,photo_url,photo_license,attribution,status,note
+chorthippus-brunneus,Chorthippus brunneus,127308,https://inaturalist-open-data.s3.amazonaws.com/photos/37915818/medium.jpg,cc-by-sa,"(c) Jörg Hempel, some rights reserved (CC BY-SA)",ok,
+cepaea-nemoralis,Cepaea nemoralis,48586,https://inaturalist-open-data.s3.amazonaws.com/photos/6050328/medium.jpg,cc-by-nc-sa,"(c) Gary Yankech, some rights reserved (CC BY-NC-SA), uploaded by Gary Yankech",ok,
+cyprinus-carpio,Cyprinus carpio,53911,https://inaturalist-open-data.s3.amazonaws.com/photos/2754663/medium.JPG,cc-by-nc,"(c) lonnyholmes, some rights reserved (CC BY-NC), uploaded by lonnyholmes",ok,
+clethrionomys-glareolus,Clethrionomys glareolus,1431273,https://inaturalist-open-data.s3.amazonaws.com/photos/13472563/medium.jpg,cc-by-nc,"(c) Bird Explorers, some rights reserved (CC BY-NC), uploaded by Bird Explorers",ok,
+meconema,Meconema,119171,https://inaturalist-open-data.s3.amazonaws.com/photos/4593042/medium.jpg,cc-by-nc-sa,"(c) savo, some rights reserved (CC BY-NC-SA), uploaded by savo",ok,genus-level taxon
+arion,Arion,54582,https://inaturalist-open-data.s3.amazonaws.com/photos/43066782/medium.jpeg,cc-by-nc,"(c) Bill Lucas, some rights reserved (CC BY-NC), uploaded by Bill Lucas",ok,genus-level taxon
+chorthippus,Chorthippus,57651,https://inaturalist-open-data.s3.amazonaws.com/photos/10201347/medium.jpg,cc-by-nc,"(c) Nik Borrow, some rights reserved (CC BY-NC), uploaded by Nik Borrow",ok,genus-level taxon
+cypriniformes,Cypriniformes,49216,https://inaturalist-open-data.s3.amazonaws.com/photos/248587826/medium.jpg,cc-by-nc,"(c) Amatya Sharma, some rights reserved (CC BY-NC), uploaded by Amatya Sharma",ok,order-level taxon
+meconema-meridionale,Meconema meridionale,362291,https://inaturalist-open-data.s3.amazonaws.com/photos/19170469/medium.jpg,cc-by-sa,"(c) Gilles San Martin, some rights reserved (CC BY-SA)",ok,
+rodentia,Rodentia,43698,https://inaturalist-open-data.s3.amazonaws.com/photos/24165841/medium.jpg,cc-by-nc,"(c) Nikolai Vladimirov, some rights reserved (CC BY-NC), uploaded by Nikolai Vladimirov",ok,order-level taxon
+araneus-diadematus,Araneus diadematus,52628,https://inaturalist-open-data.s3.amazonaws.com/photos/156036389/medium.jpg,cc-by-sa,"(c) hedera.baltica, some rights reserved (CC BY-SA)",ok,
+pholcus-phalangioides,Pholcus phalangioides,67328,https://inaturalist-open-data.s3.amazonaws.com/photos/504575719/medium.jpg,cc-by,"(c) Michael, some rights reserved (CC BY), uploaded by Michael",ok,
+ixodes-ricinus,Ixodes ricinus,51671,https://inaturalist-open-data.s3.amazonaws.com/photos/68242550/medium.jpg,cc-by,"(c) George Mitchell, some rights reserved (CC BY), uploaded by George Mitchell",ok,

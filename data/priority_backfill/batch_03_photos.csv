@@ -1,0 +1,13 @@
+slug,latin_name,taxon_id,photo_url,photo_license,attribution,status,note
+coenagrion-puella,Coenagrion puella,51678,https://inaturalist-open-data.s3.amazonaws.com/photos/394160155/medium.jpg,cc-by-nc,"(c) Alison Place, some rights reserved (CC BY-NC), uploaded by Alison Place",ok,
+leptophyes-punctatissima,Leptophyes punctatissima,131035,https://inaturalist-open-data.s3.amazonaws.com/photos/321997215/medium.jpg,cc-by,"(c) Ludivine Lamare, some rights reserved (CC BY)",ok,default photo all-rights-reserved; used open-license observation
+rana-temporaria,Rana temporaria,25591,https://inaturalist-open-data.s3.amazonaws.com/photos/171173/medium.jpg,cc-by-sa,"(c) Jörg Hempel, some rights reserved (CC BY-SA)",ok,
+trachemys-scripta,Trachemys scripta,39782,https://inaturalist-open-data.s3.amazonaws.com/photos/120834277/medium.jpg,cc0,"no rights reserved, uploaded by Glenn Berry",ok,
+sympetrum-meridionale,Sympetrum meridionale,337499,https://inaturalist-open-data.s3.amazonaws.com/photos/49922973/medium.jpeg,cc-by-nc,"(c) Ernesto Cavallini, some rights reserved (CC BY-NC), uploaded by Ernesto Cavallini",ok,
+arion-vulgaris,Arion vulgaris,54583,https://inaturalist-open-data.s3.amazonaws.com/photos/3520425/medium.jpg,cc-by,"(c) Drepanostoma, some rights reserved (CC BY), uploaded by Drepanostoma",ok,
+chorthippus-dorsatus,Chorthippus dorsatus,473189,https://inaturalist-open-data.s3.amazonaws.com/photos/34293262/medium.jpeg,cc-by-nc,"(c) Lupoli Roland, some rights reserved (CC BY-NC), uploaded by Lupoli Roland",ok,
+erythromma-viridulum,Erythromma viridulum,209683,https://inaturalist-open-data.s3.amazonaws.com/photos/109136351/medium.jpg,cc-by-nc,"(c) elbebiber, some rights reserved (CC BY-NC)",ok,
+pelophylax,Pelophylax,64806,https://inaturalist-open-data.s3.amazonaws.com/photos/210781055/medium.jpeg,cc-by-nc,"(c) Anastasia Pedenko, some rights reserved (CC BY-NC)",ok,genus-level; default photo all-rights-reserved; used open-license observation
+scardinius-erythrophthalmus,Scardinius erythrophthalmus,112118,https://inaturalist-open-data.s3.amazonaws.com/photos/351728711/medium.jpg,cc-by-sa,"(c) Iidkk, some rights reserved (CC BY-SA)",ok,
+marpissa-muscosa,Marpissa muscosa,146723,https://inaturalist-open-data.s3.amazonaws.com/photos/257405686/medium.jpg,cc-by-nc,"(c) Plana Baptiste, some rights reserved (CC BY-NC), uploaded by Plana Baptiste",ok,
+nuctenea-umbratica,Nuctenea umbratica,130092,https://inaturalist-open-data.s3.amazonaws.com/photos/363584707/medium.jpg,cc-by-nc,"(c) Liam Ragan, some rights reserved (CC BY-NC)",ok,default photo all-rights-reserved; used open-license observation

@@ -1,0 +1,14 @@
+slug,latin_name,taxon_id,photo_url,photo_license,attribution,status,note
+tettigonia-viridissima,Tettigonia viridissima,133250,https://inaturalist-open-data.s3.amazonaws.com/photos/44530993/medium.jpeg,cc-by-nc,"(c) Pavelot Lise, some rights reserved (CC BY-NC)",ok,default photo all-rights-reserved; used open-license observation
+oryctolagus-cuniculus,Oryctolagus cuniculus,43151,https://inaturalist-open-data.s3.amazonaws.com/photos/520690657/medium.jpg,cc-by-nc,"(c) jitensha2021, some rights reserved (CC BY-NC)",ok,
+succinea-putris,Succinea putris,123943,https://inaturalist-open-data.s3.amazonaws.com/photos/28691828/medium.jpg,cc-by-nc,"(c) Vlad Proklov, some rights reserved (CC BY-NC)",ok,
+ambigolimax-valentianus,Ambigolimax valentianus,448331,https://inaturalist-open-data.s3.amazonaws.com/photos/137986410/medium.jpg,cc-by-nc,"(c) Thomas Everest, some rights reserved (CC BY-NC)",ok,default photo all-rights-reserved; used open-license observation
+erythromma-najas,Erythromma najas,209688,https://inaturalist-open-data.s3.amazonaws.com/photos/1847171/medium.jpg,cc-by-nc,"(c) Paul Cools, some rights reserved (CC BY-NC)",ok,
+agaricales,Agaricales,47167,https://inaturalist-open-data.s3.amazonaws.com/photos/7259109/medium.jpg,cc-by-nc,"(c) brian_nz, some rights reserved (CC BY-NC)",ok,order-level taxon; used order default photo
+cepaea-hortensis,Cepaea hortensis,51039,https://inaturalist-open-data.s3.amazonaws.com/photos/67498603/medium.jpg,cc-by-nc,"(c) bianca_t, some rights reserved (CC BY-NC)",ok,default photo all-rights-reserved; used open-license observation
+conocephalus-fuscus,Conocephalus fuscus,466317,https://inaturalist-open-data.s3.amazonaws.com/photos/50649914/medium.jpg,cc-by-sa,"(c) Gilles San Martin, some rights reserved (CC BY-SA)",ok,
+inonotus-hispidus,Inonotus hispidus,194483,https://inaturalist-open-data.s3.amazonaws.com/photos/93050048/medium.jpeg,cc-by,"(c) Davide Puddu, some rights reserved (CC BY)",ok,
+pseudemys-concinna,Pseudemys concinna,39830,https://inaturalist-open-data.s3.amazonaws.com/photos/366979152/medium.jpeg,cc-by-nc,"(c) nindustla, some rights reserved (CC BY-NC)",ok,default photo CC BY-NC-ND (not accepted); used open-license observation
+opilio-canestrinii,Opilio canestrinii,527576,https://inaturalist-open-data.s3.amazonaws.com/photos/605965313/medium.jpg,cc-by-nc,"(c) Wayne Sayers, some rights reserved (CC BY-NC)",ok,default photo all-rights-reserved; used open-license observation
+textrix-denticulata,Textrix denticulata,335613,https://inaturalist-open-data.s3.amazonaws.com/photos/30826534/medium.jpeg,cc-by-nc,"(c) Pascal Dubois, some rights reserved (CC BY-NC)",ok,
+agelena-labyrinthica,Agelena labyrinthica,130304,https://inaturalist-open-data.s3.amazonaws.com/photos/72504131/medium.jpg,cc-by,"(c) Tone Killick, some rights reserved (CC BY)",ok,

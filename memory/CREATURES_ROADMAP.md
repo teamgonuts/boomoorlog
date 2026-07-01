@@ -228,15 +228,26 @@ rather than a "trust the AI" leap.
      reads at any saturation.
    - Bee proportions tightened (abdomen shrunk to match thorax).
 
-   **Follow-up — fish photo backfill (2026-07-01).** The recent photo
-   backfill (internal pipeline name `c5_*`, unrelated to roadmap C5)
-   returned no captures for any of the 6 fish species labeled in the
-   DB (`cyprinus-carpio`, `leucaspius-delineatus`,
-   `oncorhynchus-mykiss`, `scardinius-erythrophthalmus`,
-   `squalius-cephalus`, `cypriniformes`). Same gap for lizards
-   (Podarcis / Zootoca / Lacerta / Anguis) and lagomorphs
-   (Oryctolagus / Lepus). Track as a targeted photo-backfill pass —
-   should NOT block the alive-map / creature-movement work in Phase 2.
+   **Follow-up — priority photo backfill (2026-07-01, in progress).**
+   The pipeline-C5 photo backfill (name conflict with roadmap C5 — the
+   pipeline's `c5_*` files are unrelated to the alive-map milestone)
+   ordered by `observations_count DESC NULLS LAST`, so the low-count
+   tail of the roster was skipped. Firing a targeted 51-organism
+   allowlist backfill for the user's priority categories: fish,
+   amphibian, turtle, mollusc, mushroom, lagomorph, grasshopper,
+   rodent, dragonfly, fungus/lichen, plus the top-10 spiders by obs
+   count. Deprioritized: insects (~450 organisms) + plants (~656).
+
+   **Follow-up — lizard / snake DB add (2026-07-01, later).** Zero
+   Squamata species in the current taxonomy CSVs — they're missing
+   from the DB entirely, not just missing photos. Constraint per user:
+   only add species that have Amsterdam-geotagged observations on iNat
+   / Waarneming. Candidate list to verify: `podarcis-muralis` (wall
+   lizard), `natrix-helvetica` (barred grass snake), `anguis-fragilis`
+   (slow worm), `zootoca-vivipara` (viviparous lizard), `lacerta-agilis`
+   (sand lizard). Small GBIF-taxonomy fetch + insert once the
+   Amsterdam-geotag filter is applied. Photos then follow via a
+   second targeted backfill pass.
 
    Each new form is a ~30–80-line Python function in
    `.claude/skills/creature-pixel-art/scripts/render_creature_sprite.py`.
