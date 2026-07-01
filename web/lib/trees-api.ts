@@ -21,6 +21,15 @@ export type ViewportMarker = {
   protection_status?: string | null;
 };
 
+/** A single (lat, lng) — used for C5 habitat-appropriate creature spawn points. */
+export type HabitatPoint = { lat: number; lng: number };
+
+/** Kinds of habitat we serve pre-picked spawn points for. `tree` reads from
+ *  the trees table; the others read from `osm_habitats`. Kept as a string
+ *  union so callers can extend it (e.g. `building` later) without changing
+ *  the API shape. */
+export type HabitatKind = "water" | "park" | "tree";
+
 export type ViewportTreesResponse = {
   mode: "individual" | "cluster";
   total: number;
@@ -31,4 +40,9 @@ export type ViewportTreesResponse = {
   // creatures (whose tree_genera array is empty, so the genus-overlap filter
   // alone would miss them).
   creatureSlugs: string[];
+  /** C5: server-picked spawn points for the current viewport, keyed by
+   *  habitat kind. `tree` is always present (falls back to the tree markers
+   *  themselves). `water` / `park` are present when osm_habitats has been
+   *  seeded and the viewport intersects any polygons; otherwise empty. */
+  habitatPointsByKind: Partial<Record<HabitatKind, HabitatPoint[]>>;
 };

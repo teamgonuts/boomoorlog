@@ -4,7 +4,7 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef } from "react";
 
-import type { ViewportMarker } from "@/lib/trees-api";
+import type { HabitatKind, HabitatPoint, ViewportMarker } from "@/lib/trees-api";
 
 // OpenFreeMap Liberty — vector tiles, buttery zoom, warm palette that mirrors
 // the previous CARTO Voyager (beige residential, soft greens, yellow/orange
@@ -187,7 +187,40 @@ type CreatureForMap = {
    *  or null if we have no observations on file. Drives the "Last spotted X
    *  ago" line in the hover tooltip. */
   last_observed_on: string | null;
+  /** C5: habitat_classes copied from `organisms.habitat_classes`. Used with
+   *  HABITAT_CLASS_TO_KIND below to pick where the sprite spawns. */
+  habitat_classes: string[];
 };
+
+// C5: habitat_class → habitat kind. Kinds we have polygons for are 'water'
+// and 'park'; 'tree' is a synthetic kind that maps to the existing tree
+// markers. `null` means "no habitat data for this class" — the creature
+// falls back to tree perches, matching the pre-C5 behaviour.
+//
+// Keep the table small and readable — new habitat_class values plug in with
+// one line, and the fallback is safe.
+const HABITAT_CLASS_TO_KIND: Record<string, HabitatKind | null> = {
+  "tree-canopy": "tree",
+  "tree-bark": "tree",
+  "tree-rooted": "tree",
+  "ground-park": "park",
+  "flower-visitor": "park",
+  "water-surface": "water",
+  "water-body": "water",
+  "water-edge": "water",
+  "wall-and-roof": null,
+  "ground-urban": null,
+  "sky-only": null,
+  "anywhere": null,
+};
+
+function habitatKindFor(classes: string[]): HabitatKind {
+  for (const cls of classes) {
+    const kind = HABITAT_CLASS_TO_KIND[cls];
+    if (kind) return kind;
+  }
+  return "tree"; // safe default: land in a tree
+}
 
 /**
  * Format an ISO observation date as a human-friendly "X ago" line. Returns
@@ -389,6 +422,7 @@ export default function PlayMap({
   initialRadiusM,
   markers,
   creatures,
+  habitatPointsByKind,
   treePhotoSlugs,
   onViewportChange,
   creatureSlots,
@@ -400,6 +434,9 @@ export default function PlayMap({
   initialRadiusM: number;
   markers: Marker[];
   creatures?: CreatureForMap[];
+  /** C5: server-picked habitat spawn points, one list per kind, for the
+   *  current viewport. Empty / missing kinds fall back to tree markers. */
+  habitatPointsByKind?: Partial<Record<HabitatKind, HabitatPoint[]>>;
   /** Genus slugs that have a photo on disk at /photos/<slug>.jpg. Used to
    *  decide whether to include a photo block in the tree hover tooltip — we
    *  only have ~55 of these, so most clusters/markers gracefully render
@@ -421,9 +458,16 @@ export default function PlayMap({
   const markerHandlesRef = useRef<Map<string, maplibregl.Marker>>(new Map());
   // Active creature markers so cleanup can tear them all down.
   const creatureMarkersRef = useRef<Set<maplibregl.Marker>>(new Set());
-  // Marker positions exposed to creature loops via ref so flights survive
-  // marker-prop changes without restarting.
-  const flyPointsRef = useRef<FlyPoint[]>([]);
+  // C5: per-habitat-kind spawn point pools. `tree` mirrors the tree markers
+  // (canopy species land on real trees). `water` / `park` come from the
+  // /api/trees response's habitatPointsByKind (server-picked polygons).
+  // Exposed via ref so creature flights survive marker-prop changes without
+  // restarting.
+  const habitatPointsRef = useRef<Record<HabitatKind, FlyPoint[]>>({
+    tree: [],
+    water: [],
+    park: [],
+  });
   // Callback captured into the mount-effect via ref so identity churn from
   // the parent doesn't trigger a remap remount.
   const onViewportChangeRef = useRef(onViewportChange);
@@ -582,11 +626,17 @@ export default function PlayMap({
       handles.set(m.key, marker);
     }
 
-    // Keep flyPointsRef in sync — creatures land on these on respawn. Using
-    // marker centroids for both modes is fine; cluster centroids are still
-    // "where trees are".
-    flyPointsRef.current = markers.map((m) => ({ lat: m.lat, lng: m.lng }));
-  }, [markers, photoSlugSet]);
+    // C5: keep per-habitat spawn pools in sync. The `tree` pool mirrors the
+    // tree markers (cluster centroids are still "where trees are"). Water
+    // and park come from the API response; when they're empty (older API,
+    // migrations not applied yet, or no polygons in this viewport), the
+    // fallback tree pool keeps everything working.
+    habitatPointsRef.current = {
+      tree: markers.map((m) => ({ lat: m.lat, lng: m.lng })),
+      water: habitatPointsByKind?.water ?? [],
+      park: habitatPointsByKind?.park ?? [],
+    };
+  }, [markers, photoSlugSet, habitatPointsByKind]);
 
   // ---- Creatures: spawn N slots, each respawns on completion ----
   // Depends on `markers` so the loop fully resets on every map change (pan or
@@ -615,18 +665,32 @@ export default function PlayMap({
 
     const spawnSlot = (slot: number) => {
       if (!mounted) return;
-      if (flyPointsRef.current.length < 2) {
+      // Need at least the tree pool populated to have anywhere to fall back to.
+      if (habitatPointsRef.current.tree.length < 2) {
         // No perches yet — the first /api/trees response will populate
-        // flyPointsRef. Try again shortly.
+        // habitatPointsRef. Try again shortly.
         setTimeout(() => spawnSlot(slot), 600);
         return;
       }
       const c = pool[Math.floor(Math.random() * pool.length)];
+      // C5: look up which habitat pool this creature belongs in. If that pool
+      // is empty in the current viewport (e.g. we're inland with no canals in
+      // view for a duck), fall back to tree so the creature still spawns.
+      const kind = habitatKindFor(c.habitat_classes);
+      const kindWithPoints: HabitatKind =
+        habitatPointsRef.current[kind].length >= 2 ? kind : "tree";
+      // Wrap the ref in a `.current` shim shaped like the pointsRef the
+      // flight function expects.
+      const pointsRef = {
+        get current(): FlyPoint[] {
+          return habitatPointsRef.current[kindWithPoints];
+        },
+      };
       slotStops[slot] = startCreatureFlight(
         map,
         activeMarkers,
         c,
-        flyPointsRef,
+        pointsRef,
         speed,
         () => spawnSlot(slot),
       );

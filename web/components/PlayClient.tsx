@@ -42,6 +42,10 @@ export type CreatureForMap = {
    *  "Last spotted X ago" line on hover. Null when we have no observations
    *  on file (e.g. curated but never sighted). */
   last_observed_on: string | null;
+  /** C5: habitat classes (from the master vocabulary) this species belongs
+   *  to. PlayMap picks a spawn point from the matching habitat kind (water
+   *  / park / tree). Empty array = no habitat data; falls back to tree. */
+  habitat_classes: string[];
 };
 
 type Props = {
@@ -207,6 +211,7 @@ export default function PlayClient(props: Props) {
           creatures={props.creaturesForMap}
           treePhotoSlugs={treePhotoSlugs}
           markers={markers}
+          habitatPointsByKind={data?.habitatPointsByKind}
           onViewportChange={handleViewportChange}
           creatureSlots={adminSettings.creatureSlots}
           creatureSpeedMps={adminSettings.creatureSpeedMps}

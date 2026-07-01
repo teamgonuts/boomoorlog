@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
-"""Seed the `osm_habitats` table from Overpass API (C5 — Slice 1).
+"""Seed the `osm_habitats` table from Overpass API (C5).
 
-Slice 1 imports only **water polygons** (natural=water) inside a bounding box
-that covers Amsterdam. Canals in Amsterdam are almost all mapped as area
-features with natural=water + water=canal, so this single query catches the
-Grachtengordel, the IJ river, the Amstel, and every pond in Vondelpark.
+Imports two polygon "kinds":
+  * `water` — natural=water. Catches the Grachtengordel, the IJ river, the
+    Amstel, and every pond in Vondelpark. Home to ducks, coots, herons,
+    fish and everything else with a `water-*` habitat_class.
+  * `park`  — leisure=park + landuse=grass|cemetery|recreation_ground.
+    Catches Vondelpark, Sarphatipark, Oosterpark, plus every neighbourhood
+    green and cemetery. Home to squirrels, hedgehogs, ground insects,
+    bees on flowering plants — everything with `ground-park` or
+    `flower-visitor`.
 
-Follow-up slices will add parks (leisure=park, landuse=grass, landuse=cemetery),
-and possibly `waterway=canal` linear features buffered into polygons for the
-few canals not mapped as areas.
+Buildings (`wall-and-roof`) deliberately skipped: ~200k polygons for
+Amsterdam, only ~4 species use that class, and their raw observation
+coords are usually already accurate.
 
 Env: reads SUPABASE_DB_URL from .env at repo root.
 Deps: psycopg2 only (no shapely, no overpy). WKT is built by hand from the
@@ -17,8 +22,10 @@ Overpass `out geom` response.
 Idempotent — upserts on (osm_type, osm_id). Safe to re-run.
 
 Usage:
-    python pipeline/seed_osm_habitats.py            # canals + water, ~5s
-    python pipeline/seed_osm_habitats.py --dry-run  # print counts, no writes
+    python pipeline/seed_osm_habitats.py                  # all kinds
+    python pipeline/seed_osm_habitats.py --kind water     # water only
+    python pipeline/seed_osm_habitats.py --kind park      # park only
+    python pipeline/seed_osm_habitats.py --dry-run        # counts, no writes
 """
 from __future__ import annotations
 
@@ -42,17 +49,38 @@ AMS_BBOX = (52.28, 4.72, 52.44, 5.02)
 OVERPASS_URL = "https://overpass-api.de/api/interpreter"
 UA = "creatures-ams/0.1 (github.com/teamgonuts/boomoorlog; C5 habitat seed)"
 
-# Overpass QL: fetch every `natural=water` way inside the bbox. `out geom;`
-# returns each way's node coordinates inline so we don't need to resolve node
-# references separately. Relations (multi-part polygons like the IJ) skipped
-# in Slice 1 — Amsterdam canals are almost entirely simple ways.
-QUERY = f"""
-[out:json][timeout:120];
-(
-  way["natural"="water"]({AMS_BBOX[0]},{AMS_BBOX[1]},{AMS_BBOX[2]},{AMS_BBOX[3]});
-);
-out geom;
-""".strip()
+# Overpass QL queries keyed by habitat kind. `out geom;` returns each way's
+# node coordinates inline so we don't need node lookups. Relations (multi-
+# part polygons) skipped — Amsterdam habitat polygons are almost entirely
+# simple ways, and the few we miss (e.g. the IJ river as a relation) don't
+# meaningfully affect creature placement.
+BBOX = f"{AMS_BBOX[0]},{AMS_BBOX[1]},{AMS_BBOX[2]},{AMS_BBOX[3]}"
+
+def _q(*filters: str) -> str:
+    """Build an Overpass query fetching ways matching any of the given tag
+    filters (as OR). One filter per line inside the union."""
+    body = "\n  ".join(f'way{f}({BBOX});' for f in filters)
+    return f"[out:json][timeout:180];\n(\n  {body}\n);\nout geom;"
+
+# Per-kind: a list of separate Overpass queries, results merged locally.
+# Splitting park lookups into multiple small queries dodges Overpass 504s that
+# happen when a single UNION query stays open too long.
+QUERY_BATCHES: dict[str, list[str]] = {
+    "water": [
+        _q('["natural"="water"]'),
+    ],
+    "park": [
+        # One tag filter per batch — Overpass 504s repeatedly on Amsterdam's
+        # big grass footprint if we UNION multiple filters into one query.
+        _q('["leisure"="park"]'),
+        _q('["leisure"="garden"]'),
+        _q('["landuse"="grass"]'),
+        _q('["landuse"="village_green"]'),
+        _q('["landuse"="recreation_ground"]'),
+        _q('["landuse"="cemetery"]'),
+        _q('["natural"="grassland"]'),
+    ],
+}
 
 
 def load_env(path: Path = REPO / ".env") -> dict:
@@ -67,24 +95,28 @@ def load_env(path: Path = REPO / ".env") -> dict:
     return env
 
 
-def fetch_overpass() -> dict:
-    """POST the query, return parsed JSON. Retries once on 429/504."""
-    body = f"data={QUERY}".encode("utf-8")
-    for attempt in range(2):
+def fetch_overpass(query: str) -> dict | None:
+    """POST the query, return parsed JSON. Up to 3 attempts with exponential
+    backoff on 429/504. Returns None if all attempts fail so callers can
+    skip that batch instead of crashing the whole seed."""
+    body = f"data={query}".encode("utf-8")
+    for attempt in range(3):
         req = Request(
             OVERPASS_URL,
             data=body,
             headers={"User-Agent": UA, "Content-Type": "application/x-www-form-urlencoded"},
         )
         try:
-            with urlopen(req, timeout=180) as resp:
+            with urlopen(req, timeout=240) as resp:
                 return json.loads(resp.read().decode("utf-8"))
         except Exception as e:
+            wait = [20, 60, 120][attempt]
             print(f"[warn] overpass attempt {attempt + 1} failed: {e}", file=sys.stderr)
-            if attempt == 0:
-                time.sleep(30)  # Overpass rate-limits; back off before retry.
-                continue
-            raise
+            if attempt < 2:
+                print(f"[warn] backing off {wait}s before retry...", file=sys.stderr)
+                time.sleep(wait)
+    print("[warn] giving up on this batch — will continue with the next.", file=sys.stderr)
+    return None
 
 
 def way_to_wkt_multipolygon(geometry: list) -> str | None:
@@ -103,20 +135,37 @@ def way_to_wkt_multipolygon(geometry: list) -> str | None:
     return f"MULTIPOLYGON((({ring})))"
 
 
-def main() -> int:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--dry-run", action="store_true", help="Print counts, skip writes.")
-    args = ap.parse_args()
+def build_rows_for_kind(kind: str) -> list[tuple]:
+    """Fetch + WKT-convert one habitat kind. Returns rows ready for upsert.
+    Runs each Overpass batch query, dedupes across batches (a way can match
+    multiple filters, e.g. a park with a grass sub-polygon), and returns
+    the merged row set."""
+    batches = QUERY_BATCHES[kind]
+    print(
+        f"[info] querying Overpass for kind={kind} ({len(batches)} batch"
+        f"{'es' if len(batches) > 1 else ''}) in bbox {AMS_BBOX}...",
+        flush=True,
+    )
 
-    print(f"[info] querying Overpass for natural=water in bbox {AMS_BBOX}...", flush=True)
-    data = fetch_overpass()
-    elements = data.get("elements", [])
-    ways = [e for e in elements if e.get("type") == "way"]
-    print(f"[info] overpass returned {len(ways)} ways", flush=True)
+    seen: dict[int, dict] = {}
+    failed_batches: list[int] = []
+    for i, query in enumerate(batches, 1):
+        data = fetch_overpass(query)
+        if data is None:
+            failed_batches.append(i)
+            continue
+        ways = [e for e in data.get("elements", []) if e.get("type") == "way"]
+        for w in ways:
+            seen[w["id"]] = w
+        print(f"[info]   batch {i}/{len(batches)}: +{len(ways)} ways (cumulative {len(seen)})", flush=True)
+        if i < len(batches):
+            time.sleep(4)  # be polite between batches
+    if failed_batches:
+        print(f"[warn] {len(failed_batches)} batch(es) failed: {failed_batches}. Re-run to backfill.", file=sys.stderr)
 
     rows: list[tuple] = []
     skipped_degenerate = 0
-    for w in ways:
+    for w in seen.values():
         wkt = way_to_wkt_multipolygon(w.get("geometry") or [])
         if wkt is None:
             skipped_degenerate += 1
@@ -124,21 +173,41 @@ def main() -> int:
         rows.append((
             "way",
             w["id"],
-            "water",
+            kind,
             json.dumps(w.get("tags") or {}),
             wkt,
         ))
     print(
-        f"[info] built {len(rows)} water polygons "
+        f"[info] built {len(rows)} {kind} polygons "
         f"({skipped_degenerate} skipped as degenerate)",
         flush=True,
     )
+    return rows
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument(
+        "--kind",
+        choices=list(QUERY_BATCHES.keys()) + ["all"],
+        default="all",
+        help="Which habitat kind to seed. Default: all.",
+    )
+    ap.add_argument("--dry-run", action="store_true", help="Print counts, skip writes.")
+    args = ap.parse_args()
+
+    kinds = list(QUERY_BATCHES.keys()) if args.kind == "all" else [args.kind]
+    rows: list[tuple] = []
+    for kind in kinds:
+        rows.extend(build_rows_for_kind(kind))
+        # Be polite to Overpass between separate kind queries.
+        if len(kinds) > 1 and kind != kinds[-1]:
+            time.sleep(2)
 
     if args.dry_run:
         print("[info] --dry-run: not writing to DB.")
-        # Report a few sample tag bags so the user can sanity-check the query.
         for r in rows[:5]:
-            print(f"    osm_id={r[1]} tags={r[3][:120]}")
+            print(f"    kind={r[2]} osm_id={r[1]} tags={r[3][:120]}")
         return 0
 
     env = load_env()

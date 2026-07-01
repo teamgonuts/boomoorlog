@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 
 import { supabase } from "@/lib/supabase";
 import type {
+  HabitatKind,
+  HabitatPoint,
   ViewportMarker,
   ViewportTreesResponse,
 } from "@/lib/trees-api";
@@ -23,6 +25,13 @@ export const dynamic = "force-dynamic";
 const DEFAULT_MAX_PINS = 100;
 const DEFAULT_CELLS_PER_SIDE = 10;
 const DEFAULT_TOP_N = 100;
+
+// C5: how many habitat spawn points to pre-pick per kind, per viewport.
+// PlayMap's creature slot count caps around 14 — 60 gives plenty of variety
+// even when several creatures share a habitat kind. Cheap PostGIS query
+// after the GiST bbox filter — a couple hundred candidate polygons max.
+const HABITAT_POINTS_PER_KIND = 60;
+const HABITAT_KINDS: HabitatKind[] = ["water", "park", "tree"];
 
 // Cache the JSON for short windows — repeated pans to the same viewport
 // (Leaflet rounds to integers, so this hits often) bypass Postgres entirely.
@@ -84,6 +93,7 @@ export async function GET(req: Request) {
       markers: [],
       topGenera: [],
       creatureSlugs: [],
+      habitatPointsByKind: {},
     };
     return NextResponse.json(empty, { headers: CACHE_HEADERS });
   }
@@ -141,12 +151,63 @@ export async function GET(req: Request) {
     pct: total === 0 ? 0 : (Number(g.n) / total) * 100,
   }));
 
+  // C5: fetch habitat spawn points for each kind in parallel. Each call is a
+  // GiST-indexed intersect + random-limit — millisecond-scale at Amsterdam
+  // scale. Any RPC that errors (e.g. habitat_points_in_bbox not yet applied)
+  // degrades to an empty list for that kind so the map keeps working.
+  // Two-cast trick: (1) narrow the client to `unknown` to bypass the strict
+  // union of known-RPC-names in the generated types, then (2) declare the
+  // shape of our RPC's response. Migration 039 isn't in the generated types
+  // until they're regenerated.
+  type RpcClient = {
+    rpc: (
+      fn: string,
+      args: Record<string, unknown>,
+    ) => Promise<{
+      data: Array<{ lat: number; lng: number }> | null;
+      error: unknown;
+    }>;
+  };
+  const client = supabase as unknown as RpcClient;
+  const habitatResults = await Promise.all(
+    HABITAT_KINDS.map(async (kind) => {
+      const { data: pts, error: hErr } = await client.rpc(
+        "habitat_points_in_bbox",
+        {
+          min_lat: bbox.lat_min,
+          min_lng: bbox.lng_min,
+          max_lat: bbox.lat_max,
+          max_lng: bbox.lng_max,
+          h_kind: kind,
+          n: HABITAT_POINTS_PER_KIND,
+        },
+      );
+      if (hErr) {
+        // Migration 039 (habitat_points_in_bbox) not yet applied, or the
+        // osm_habitats table is empty for this kind. Return an empty list so
+        // the client can gracefully fall back to raw / tree-based placement.
+        console.warn(`[habitat_points ${kind}]`, hErr);
+        return [kind, []] as [HabitatKind, HabitatPoint[]];
+      }
+      const rows = pts ?? [];
+      return [kind, rows.map((r) => ({ lat: r.lat, lng: r.lng }))] as [
+        HabitatKind,
+        HabitatPoint[],
+      ];
+    }),
+  );
+  const habitatPointsByKind: Partial<Record<HabitatKind, HabitatPoint[]>> = {};
+  for (const [kind, points] of habitatResults) {
+    habitatPointsByKind[kind] = points;
+  }
+
   const body: ViewportTreesResponse = {
     mode: "individual",
     total,
     markers,
     topGenera,
     creatureSlugs: blob.creatureSlugs ?? [],
+    habitatPointsByKind,
   };
   return NextResponse.json(body, { headers: CACHE_HEADERS });
 }

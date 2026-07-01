@@ -65,7 +65,7 @@ export default async function PlayPage({
     supabase
       .from("organisms")
       .select(
-        "slug, common_name, latin_name, photo_path, tree_genera, sprite_pending",
+        "slug, common_name, latin_name, photo_path, tree_genera, sprite_pending, habitat_classes",
       )
       .neq("category", "tree")
       .not("sprite_path", "is", null)
@@ -144,6 +144,7 @@ export default async function PlayPage({
       latin_name: c.latin_name,
       photo_url: "/creature_photos/" + c.photo_path!.split("/").pop(),
       last_observed_on: latestByOrganism.get(c.slug) ?? null,
+      habitat_classes: c.habitat_classes ?? [],
     }));
 
   // Light shape for the area-panel filter (tree_genera overlap).
