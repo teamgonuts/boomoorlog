@@ -314,6 +314,26 @@ map *breathes* — real geography, motion, time of day, season, sound, weather.
 
 Most visitors will spend most of their time looking at the output of this phase.
 
+**Locked architecture decision (2026-07-01): move `/play` and all Phase-2 map work off
+Leaflet onto MapLibre GL JS.** Rationale established via side-by-side POC
+(`web/app/poc/leaflet` vs `web/app/poc/maplibre`, comparing 1,000 sprite renders):
+- MapLibre gives continuous, fractional-zoom smoothness that Leaflet's raster basemap
+  can't match — the DOM-marker performance ceiling on Leaflet becomes real once we
+  add hundreds of animated creatures (C6, C9).
+- MapLibre's built-in GeoJSON `cluster: true` replaces `leaflet.markercluster` — one
+  fewer dependency.
+- Basemap style: **OpenFreeMap Liberty** vector tiles (free, no key, close visual
+  match to current CARTO Voyager palette — warm beige residential, soft greens,
+  yellow/orange roads, blue water). CARTO Voyager's own vector variant is a fallback
+  if we ever need finer-grained styling control.
+- Not Mapbox proper: the free-tier ceiling (50k loads/mo → $0.60/1k) and the
+  credit-card requirement conflict with the solo/open-data-only ethos. Runtime engine
+  and vector tile provider are both free forever with the MapLibre + OpenFreeMap
+  combination.
+- Migration cost: ~2–3 focused days for `components/PlayMap.tsx` and
+  `components/ObservationsMap.tsx`. Fold into the start of Phase 2, before C5 lands,
+  so we don't rewrite the same map layer twice.
+
 ### C5 — Habitat-realistic placement
 Each organism appears where its `habitat_class` says it lives, not at the raw
 observation point (which is often a human's apartment).
