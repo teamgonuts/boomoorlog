@@ -307,12 +307,28 @@ const TREE_FORMS: FormEntry[] = [
 // --------------------------------------------------------------------------- //
 // Row component
 // --------------------------------------------------------------------------- //
+// Given an organism slug, does a rendered per-organism sprite exist on disk?
+const CREATURE_SPRITES_DIR = path.join(process.cwd(), "public", "creature_sprites");
+function creatureSpriteUrl(slug: string): string | null {
+  const p = path.join(CREATURE_SPRITES_DIR, `${slug}.png`);
+  return fs.existsSync(p) ? `/creature_sprites/${slug}.png` : null;
+}
+
 function FormRow({ form, kind }: { form: FormEntry; kind: "new" | "creature" | "tree" }) {
-  // For tree examples, use tree sprites as thumbnails (no photos available)
+  // For tree examples, use tree sprites as thumbnails (no photos available).
   const isTree = kind === "tree";
-  const photos = form.examples
-    .map((slug) => ({ slug, url: isTree ? `/sprites/${slug}.png` : photoUrl(slug) }))
-    .filter((p): p is { slug: string; url: string } => p.url !== null);
+  const pairs = form.examples
+    .map((slug) => {
+      const photoU = isTree ? `/sprites/${slug}.png` : photoUrl(slug);
+      // For creature/new forms, we may also have a per-organism sprite
+      // rendered by pipeline/sample_sprite_batch.py — show it beside the photo
+      // so the reviewer can compare form-vs-real.
+      const spriteU = isTree ? null : creatureSpriteUrl(slug);
+      return { slug, photoU, spriteU };
+    })
+    .filter((p): p is { slug: string; photoU: string; spriteU: string | null } =>
+      p.photoU !== null
+    );
   const multi = form.sprites.length > 1;
 
   return (
@@ -344,21 +360,38 @@ function FormRow({ form, kind }: { form: FormEntry; kind: "new" | "creature" | "
         </div>
       </div>
       <div className="sl-row-photos">
-        {photos.length === 0 && !form.photoNote && (
-          <div className="sl-no-photos">no photos on disk yet — pending C5 backfill for this category</div>
+        {pairs.length === 0 && !form.photoNote && (
+          <div className="sl-no-photos">no photos on disk yet — pending backfill for this category</div>
         )}
         {form.photoNote && (
           <div className="sl-photo-note">{form.photoNote}</div>
         )}
-        {photos.map((p) => (
-          <figure key={p.slug} className={`sl-photo${isTree ? " sl-photo-sprite" : ""}`}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className={isTree ? "pixel" : ""}
-              src={p.url}
-              alt={p.slug}
-              loading="lazy"
-            />
+        {pairs.map((p) => (
+          <figure key={p.slug} className={`sl-pair${isTree ? " sl-pair-tree" : ""}`}>
+            <div className="sl-pair-imgs">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className={"sl-pair-photo" + (isTree ? " pixel" : "")}
+                src={p.photoU}
+                alt={p.slug}
+                loading="lazy"
+              />
+              {p.spriteU ? (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                  className="sl-pair-sprite pixel"
+                  src={p.spriteU}
+                  alt={`${p.slug} sprite`}
+                  loading="lazy"
+                />
+              ) : (
+                !isTree && (
+                  <div className="sl-pair-sprite sl-pair-nospr" title="no per-organism sprite rendered yet">
+                    –
+                  </div>
+                )
+              )}
+            </div>
             <figcaption>{p.slug}</figcaption>
           </figure>
         ))}
