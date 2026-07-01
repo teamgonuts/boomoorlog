@@ -71,7 +71,7 @@ const NEW_FORMS: FormEntry[] = [
     count: "~2 organisms today (will grow)",
     desc: "Top-down elongated body, 4 splayed legs, long tail. Rendered via form=reptile with --aspect ≥ 1.",
     examples: [],
-    photoNote: "No lizard photos on disk yet — Podarcis, Zootoca, Lacerta, Anguis are all in the DB but weren't captured by the photo backfill. Added to the fish/reptile/lagomorph photo-backfill follow-up.",
+    photoNote: "No lizard photos on disk — Podarcis, Zootoca, Lacerta, Anguis are in the DB but the photo backfill sorts by observations_count DESC and never reached the low-count species (see the fish row for the full explanation). Same root cause; same targeted follow-up.",
   },
   {
     id: "new-turtle",
@@ -85,10 +85,10 @@ const NEW_FORMS: FormEntry[] = [
     id: "new-fish",
     label: "fish",
     sprites: [{ src: "/sprites/library/new/fish.png" }],
-    count: "6 organisms in DB (no photos on disk — see follow-up)",
+    count: "6 organisms in DB (1 photo backfilled, 5 still missing)",
     desc: "Side-view fusiform body + fin (Cyprinus, Scardinius, Squalius, Leucaspius, Oncorhynchus, plus Cypriniformes at order rank).",
-    examples: [],
-    photoNote: "Fish species are labeled in the DB but the recent photo backfill (internal pipeline name `c5_*`, unrelated to roadmap C5) returned no captures for any of them. Tracked as a fish-photo follow-up — should not block the alive-map / creature-movement work.",
+    examples: ["leucaspius-delineatus"],
+    photoNote: "The recent photo backfill (pipeline name `c5_*`, unrelated to roadmap C5) sorts organisms by observations_count DESC — meaning heavily-observed birds/insects/plants got processed first and low-observation fish (+ lizards, + lagomorphs) were left at the tail of the queue. Only 1 of the 6 fish species (leucaspius-delineatus) got a photo. Not \"no sightings\" — most of these DO have iNat captures for Amsterdam, the backfill just ran out of budget. Targeted follow-up pass tracked in the roadmap.",
   },
   {
     id: "new-amphibian",
