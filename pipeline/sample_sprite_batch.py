@@ -46,10 +46,9 @@ class Sample(NamedTuple):
     seed: int = 1
 
 
-# Curated ~35 samples across every priority category. Order = /sprites row order.
+# Curated samples covering every row on the /sprites page, so no "dash" gaps.
+# Order = /sprites row order.
 SAMPLES: list[Sample] = [
-    # --- reptile: lizard mode ---
-    # (no lizard slugs yet — DB add pending)
     # --- reptile: turtle mode ---
     Sample("trachemys-scripta-scripta", "reptile", aspect=0.85, sat=50),
     Sample("trachemys-scripta",         "reptile", aspect=0.85, sat=50),
@@ -58,10 +57,46 @@ SAMPLES: list[Sample] = [
     Sample("cyprinus-carpio",              "fish", aspect=1.2, sat=45),
     Sample("scardinius-erythrophthalmus",  "fish", aspect=1.2, sat=50),
     Sample("leucaspius-delineatus",        "fish", aspect=1.2, sat=35),
+    Sample("cypriniformes",                "fish", aspect=1.2, sat=45),
     # --- amphibian ---
-    Sample("bufo-bufo",              "amphibian", sat=45),
-    Sample("rana-temporaria",        "amphibian", sat=50),
-    Sample("lissotriton-vulgaris",   "amphibian", aspect=1.2, sat=45),
+    Sample("bufo-bufo",             "amphibian", sat=45),
+    Sample("rana-temporaria",       "amphibian", sat=50),
+    Sample("lissotriton-vulgaris",  "amphibian", aspect=1.2, sat=45),
+    Sample("pelophylax",            "amphibian", sat=55),
+    Sample("pelophylax-esculentus", "amphibian", sat=55),
+    # --- large-mammal (deer/boar/fox/badger) ---
+    Sample("capreolus-capreolus", "large-mammal", sat=45),  # roe deer
+    Sample("sus-scrofa",          "large-mammal", sat=25),  # wild boar
+    Sample("vulpes-vulpes",       "large-mammal", sat=55),  # red fox
+    Sample("meles-meles",         "large-mammal", sat=15),  # badger
+    # --- aquatic-mammal ---
+    Sample("lutra-lutra",         "aquatic-mammal", sat=40),
+    Sample("ondatra-zibethicus",  "aquatic-mammal", sat=35),
+    Sample("myocastor-coypus",    "aquatic-mammal", sat=35),
+    # --- water-bird (duck / coot / grebe) ---
+    Sample("anas-platyrhynchos",  "water-bird", sat=40),
+    Sample("fulica-atra",         "water-bird", sat=15),
+    Sample("podiceps-cristatus",  "water-bird", sat=30),
+    Sample("gallinula-chloropus", "water-bird", sat=30),
+    Sample("branta-canadensis",   "water-bird", sat=25),
+    Sample("alopochen-aegyptiaca","water-bird", sat=40),
+    Sample("aythya-ferina",       "water-bird", sat=35),
+    # --- wading-bird (heron / stork / spoonbill / lapwing) ---
+    Sample("ardea-cinerea",      "wading-bird", sat=15),  # grey heron
+    Sample("ciconia-ciconia",    "wading-bird", sat=5),   # white stork
+    Sample("platalea-leucorodia","wading-bird", sat=5),   # spoonbill
+    Sample("vanellus-vanellus",  "wading-bird", sat=35),  # lapwing
+    # --- raptor ---
+    Sample("buteo-buteo",         "raptor", sat=45),  # common buzzard
+    Sample("accipiter-nisus",     "raptor", sat=40),  # sparrowhawk
+    Sample("circus-aeruginosus",  "raptor", sat=35),  # marsh harrier
+    Sample("falco-tinnunculus",   "raptor", sat=55),  # kestrel
+    Sample("asio-otus",           "raptor", sat=35),  # long-eared owl
+    # --- gull ---
+    Sample("larus-fuscus",           "gull", sat=15),
+    Sample("larus-argentatus",       "gull", sat=15),
+    Sample("chroicocephalus-ridibundus","gull", sat=15),
+    Sample("sterna-hirundo",         "gull", sat=15),
     # --- mollusc: snail ---
     Sample("cornu-aspersum",   "mollusc", aspect=0.9, sat=55),
     Sample("cepaea-nemoralis", "mollusc", aspect=0.9, sat=60),
@@ -75,6 +110,7 @@ SAMPLES: list[Sample] = [
     Sample("agrocybe-praecox",    "mushroom", sat=45),
     # --- lagomorph ---
     Sample("oryctolagus-cuniculus", "lagomorph", sat=35),
+    Sample("lepus",                 "lagomorph", sat=35),
     # --- grasshopper ---
     Sample("tettigonia-viridissima",   "grasshopper", sat=55),
     Sample("chorthippus-brunneus",     "grasshopper", sat=40),
@@ -92,12 +128,12 @@ SAMPLES: list[Sample] = [
     Sample("marpissa-muscosa",     "spider", sat=45),
     Sample("opilio-canestrinii",   "spider", sat=45),
     # --- fungus / lichen ---
-    Sample("xanthoria-parietina", "fungus", aspect=0.85, sat=60),
-    Sample("physcia-adscendens",  "fungus", aspect=0.85, sat=25),
-    Sample("flavoparmelia-soredians", "fungus", aspect=0.85, sat=45),
-    # --- existing forms with new sample renders for the QA page ---
-    Sample("apis-mellifera", "bee", sat=55),
-    Sample("cyanistes-caeruleus", "bird", sat=55),
+    Sample("xanthoria-parietina",    "fungus", aspect=0.85, sat=60),
+    Sample("physcia-adscendens",     "fungus", aspect=0.85, sat=25),
+    Sample("flavoparmelia-soredians","fungus", aspect=0.85, sat=45),
+    # --- existing forms — refresh sample renders for the QA page ---
+    Sample("apis-mellifera",       "bee", sat=55),
+    Sample("cyanistes-caeruleus",  "bird", sat=55),
 ]
 
 

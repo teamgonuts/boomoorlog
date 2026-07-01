@@ -877,51 +877,81 @@ def form_amphibian(ramp, P):
 
 
 def form_large_mammal(ramp, P):
-    """Larger side-view mammal — deer / boar proportions. Longer body + longer legs +
-    longer neck lifting head high. No bushy tail (thin or absent)."""
+    """Side-view large mammal — deer / boar / big fox / badger proportions.
+    Body is HIGH off the ground (so legs are ~half the total silhouette
+    height), neck lifts head up above the shoulder, 4 tall separated legs.
+    Distinct from the small `mammal` (squirrel-y) and `rodent` (mouse) forms.
+    """
     g = _blank()
     s = P["size"]
-    body_rx = max(7, int(round(10 * s)))
-    body_ry = max(3, int(round(4 * s)))
+    # Body: not-too-tall oval sitting HIGH so long legs can go under it.
+    body_rx = max(7, int(round(9 * s)))
+    body_ry = max(2, int(round(3 * s)))
     body_cx = CX - 3
-    body_cy = CY + 1
+    body_cy = CY - 2                    # body sits high (was CY+1)
     _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
-    # neck rising up-right from the shoulder
+
+    # Neck rising up-right from the shoulder (thicker, more vertical)
     neck_base_x = body_cx + body_rx - 2
-    neck_top_x = neck_base_x + 2
-    neck_top_y = body_cy - body_ry - 2
-    for k in range(0, 4):
+    neck_len = max(4, int(round(4 * s)))
+    for k in range(0, neck_len):
         xx = neck_base_x + (k // 2)
         yy = body_cy - body_ry - k
         if 0 <= xx < WP and 0 <= yy < HP:
-            g[yy][xx] = ramp["dark"] if k in (0, 1) else ramp["outline"]
+            g[yy][xx] = ramp["dark"] if k < neck_len - 1 else ramp["outline"]
         if k >= 1 and 0 <= xx + 1 < WP and 0 <= yy < HP:
             g[yy][xx + 1] = ramp["mid"]
-    # head — small oval at the top of the neck
+
+    # Head — oval at top of neck
     head_r = max(2, int(round(2 * s)))
-    head_cx = neck_top_x + head_r
-    head_cy = neck_top_y
+    head_cx = neck_base_x + (neck_len // 2) + head_r
+    head_cy = body_cy - body_ry - neck_len + 1
     _fill_ellipse(g, head_cx, head_cy, head_r + 1, head_r, ramp, span=head_r)
-    # ears (2 upright)
+    # Upright ears (2 nubs on top of head)
     for sign in (-1, 1):
-        xx, yy = head_cx + sign, head_cy - head_r - 1
+        xx = head_cx + sign
+        yy = head_cy - head_r - 1
         if 0 <= xx < WP and 0 <= yy < HP:
             g[yy][xx] = ramp["dark"]
-    # eye
+        if 0 <= xx < WP and 0 <= yy + 1 < HP and g[yy + 1][xx] is None:
+            g[yy + 1][xx] = ramp["dark"]
+    # Snout — small extension in front of head
+    snout_x = head_cx + head_r + 1
+    if 0 <= snout_x < WP and 0 <= head_cy + 1 < HP:
+        g[head_cy + 1][snout_x] = ramp["outline"]
+    # Eye
     if 0 <= head_cx + 1 < WP and 0 <= head_cy < HP:
         g[head_cy][head_cx + 1] = ramp["outline"]
-    # 4 long legs (front pair + back pair, each 4 px tall)
-    leg_top_y = body_cy + body_ry - 1
+
+    # 4 LONG LEGS — spread wide so they read as 4 distinct legs, not 2
+    # blocks. Front pair near the neck; back pair near the tail. Reach
+    # from body underside all the way to the bottom of the frame.
+    leg_top_y = body_cy + body_ry
     leg_bot_y = HP - 1
-    for dx_off in (-body_rx + 2, -body_rx + 4, body_rx - 4, body_rx - 2):
-        xx = body_cx + dx_off
+    # Legs at positions roughly 1/5 and 4/5 across the body width, doubled
+    # for near + far leg on each side.
+    leg_positions = [
+        body_cx - body_rx + 2,   # back-left  (far)
+        body_cx - body_rx + 4,   # back-right (near)
+        body_cx + body_rx - 4,   # front-left (far)
+        body_cx + body_rx - 2,   # front-right(near)
+    ]
+    for xx in leg_positions:
         for yy in range(leg_top_y, leg_bot_y + 1):
             if 0 <= xx < WP and 0 <= yy < HP:
-                g[yy][xx] = ramp["outline"] if yy == leg_bot_y else ramp["dark"]
-    # short tail nub off the back
+                if yy == leg_bot_y:
+                    g[yy][xx] = ramp["outline"]     # hoof
+                elif yy == leg_top_y:
+                    g[yy][xx] = ramp["dark"]        # shoulder attachment
+                else:
+                    g[yy][xx] = ramp["outline"]     # slim leg silhouette
+
+    # Short tail — thin nub off the back
     tail_x = body_cx - body_rx
     if 0 <= tail_x < WP and 0 <= body_cy < HP:
         g[body_cy][tail_x] = ramp["outline"]
+    if 0 <= tail_x - 1 < WP and 0 <= body_cy + 1 < HP:
+        g[body_cy + 1][tail_x - 1] = ramp["outline"]
     return g, body_rx + 2
 
 
@@ -1040,52 +1070,68 @@ def form_water_bird(ramp, P):
 
 
 def form_wading_bird(ramp, P):
-    """Long-legged wader — heron / stork / kingfisher-tall variant. Small body high up
-    on tall legs, S-curve neck, dagger bill."""
+    """Long-legged wader — heron / stork / spoonbill / egret / lapwing.
+    The identity is TALL STILT LEGS + high S-curve neck. Body is deliberately
+    small and sits high up so ~half the total silhouette height is leg.
+    """
     g = _blank()
     s = P["size"]
-    body_rx = max(4, int(round(5 * s)))
-    body_ry = max(2, int(round(3 * s)))
+    # SMALL body, sitting HIGH so tall legs read
+    body_rx = max(3, int(round(4 * s)))
+    body_ry = max(2, int(round(2 * s)))
     body_cx = CX - 3
-    body_cy = CY - 1
+    body_cy = CY - 3                    # body lifted high (was CY-1)
     _fill_ellipse(g, body_cx, body_cy, body_rx, body_ry, ramp, span=body_rx)
-    # neck — S curve rising up from the shoulder
+
+    # S-CURVE NECK rising up-and-forward from the shoulder
     neck_base_x = body_cx + body_rx - 1
-    for i, (dx, dy) in enumerate(((0, -1), (1, -2), (1, -3), (2, -4))):
+    for i, (dx, dy) in enumerate(((0, -1), (1, -2), (2, -3), (2, -4), (3, -5))):
         xx, yy = neck_base_x + dx, body_cy + dy
         if 0 <= xx < WP and 0 <= yy < HP:
-            g[yy][xx] = ramp["outline"] if i == 3 else ramp["dark"]
-    # head — small oval at top of neck
-    head_cx = neck_base_x + 3
-    head_cy = body_cy - 4
-    for dy, dx_range in ((0, range(0, 3)), (-1, range(1, 3))):
+            g[yy][xx] = ramp["outline"] if i >= 3 else ramp["dark"]
+
+    # Small round HEAD at top of neck
+    head_cx = neck_base_x + 4
+    head_cy = body_cy - 5
+    for dy, dx_range in ((0, range(-1, 2)), (-1, range(0, 2))):
         for dx in dx_range:
             xx, yy = head_cx + dx, head_cy + dy
             if 0 <= xx < WP and 0 <= yy < HP:
                 g[yy][xx] = ramp["dark"]
-    # dagger bill — long pointy horizontal
-    bill_len = max(3, int(round(5 * s)))
+    # DAGGER BILL — long pointy horizontal off the head
+    bill_len = max(3, int(round(4 * s)))
     for k in range(1, bill_len + 1):
-        xx, yy = head_cx + 3 + k - 1, head_cy
+        xx, yy = head_cx + 2 + k, head_cy
         if 0 <= xx < WP and 0 <= yy < HP:
             g[yy][xx] = ramp["outline"]
-    # eye
-    if 0 <= head_cx + 1 < WP and 0 <= head_cy - 1 < HP:
-        g[head_cy - 1][head_cx + 1] = ramp["outline"]
-    # long legs going down to the bottom of the frame — 5px gap so they read
-    # as two distinct stilts, not a solid block
+    # Eye
+    if 0 <= head_cx < WP and 0 <= head_cy - 1 < HP:
+        g[head_cy - 1][head_cx] = ramp["outline"]
+
+    # TALL STILT LEGS — go from body underside all the way to the bottom.
+    # With body_cy=CY-3=9 and body_ry=2, body underside is y=11. Legs
+    # extend to y=23, so ~12 px of visible leg — well over half the total
+    # silhouette. 5px gap so they read as two distinct stilts.
     for dx_off in (-2, 3):
         xx = body_cx + dx_off
         for yy in range(body_cy + body_ry, HP):
             if 0 <= xx < WP and 0 <= yy < HP:
                 g[yy][xx] = ramp["outline"]
-    # small feet — 2 pixels wide at the bottom to plant the stilt visually
+    # Small feet — 3 pixels wide at the bottom
     for dx_off in (-2, 3):
         for foot_dx in (-1, 0, 1):
             xx = body_cx + dx_off + foot_dx
             if 0 <= xx < WP and 0 <= HP - 1 < HP:
                 g[HP - 1][xx] = ramp["outline"]
-    # tail — short triangle off the back
+    # Optional visible "knee" halfway down the leg — a small mid-tone
+    # pixel that makes the leg read as jointed rather than a plain stroke
+    knee_y = body_cy + body_ry + (HP - 1 - body_cy - body_ry) // 2
+    for dx_off in (-2, 3):
+        xx = body_cx + dx_off
+        if 0 <= xx < WP and 0 <= knee_y < HP:
+            g[knee_y][xx] = ramp["dark"]
+
+    # Short tail nub off the back
     for k in range(1, 3):
         xx, yy = body_cx - body_rx - k + 1, body_cy + k - 1
         if 0 <= xx < WP and 0 <= yy < HP:
